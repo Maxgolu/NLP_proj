@@ -58,6 +58,17 @@ olmo    0sh      33     25      10     <- with NO demos, completes the rewired
    completion (0-shot 33 gold -> 12-shot 6 gold): demo-induced prior competes
    with in-context evidence (a circuit-competition phenomenon in itself).
 
+   CAVEAT (post-hoc audit, 2026-09-10): in broken/first — and only there —
+   the rewiring gives the new bridge a third mention, making it the unique
+   most-frequent name in the fact block (68/68 rows; every other condition
+   has tied counts, so no frequency rule is even definable there). The
+   bridge-answer reading of the FREE-generation anatomy is therefore
+   confounded with a frequency-weighted copy rule. Counter-evidence: at
+   0-shot OLMo outputs the max-frequency name only 10/68. Candidate-metric
+   results are unaffected: gold/distractor mentions are exactly balanced in
+   136/136 rows of every condition. Fix for the next data revision: equalize
+   mention counts in the broken conditions as well.
+
 ## Pre-registered decision rule — honest verdict
 
 At 12-shot: (1) direct+twohop >= Pythia: PASS. (2) broken/first > 50% both

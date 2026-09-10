@@ -1,0 +1,70 @@
+{
+ "tokenizer": "json:../pilot_v2/tokenizer_source/tokenizer.json",
+ "files": 6,
+ "rows": 4500,
+ "broken_pair_rows": 0,
+ "broken_boundary_rows": 0,
+ "affected_families": [],
+ "reports": [
+  {
+   "file": "data_singlehop/singlehop_loc_v1_0shot.jsonl",
+   "rows": 300,
+   "skipped_unmatched": 0,
+   "broken_pairs": [],
+   "broken_boundary": [],
+   "length_histogram": {
+    "3": 100
+   }
+  },
+  {
+   "file": "data_singlehop/singlehop_loc_v1_12shot.jsonl",
+   "rows": 300,
+   "skipped_unmatched": 0,
+   "broken_pairs": [],
+   "broken_boundary": [],
+   "length_histogram": {
+    "3": 100
+   }
+  },
+  {
+   "file": "data_singlehop/singlehop_loc_v1_4shot.jsonl",
+   "rows": 300,
+   "skipped_unmatched": 0,
+   "broken_pairs": [],
+   "broken_boundary": [],
+   "length_histogram": {
+    "3": 100
+   }
+  },
+  {
+   "file": "data_singlehop/singlehop_v1_0shot.jsonl",
+   "rows": 1200,
+   "skipped_unmatched": 0,
+   "broken_pairs": [],
+   "broken_boundary": [],
+   "length_histogram": {
+    "3": 400
+   }
+  },
+  {
+   "file": "data_singlehop/singlehop_v1_12shot.jsonl",
+   "rows": 1200,
+   "skipped_unmatched": 0,
+   "broken_pairs": [],
+   "broken_boundary": [],
+   "length_histogram": {
+    "3": 400
+   }
+  },
+  {
+   "file": "data_singlehop/singlehop_v1_4shot.jsonl",
+   "rows": 1200,
+   "skipped_unmatched": 0,
+   "broken_pairs": [],
+   "broken_boundary": [],
+   "length_histogram": {
+    "3": 400
+   }
+  }
+ ]
+}

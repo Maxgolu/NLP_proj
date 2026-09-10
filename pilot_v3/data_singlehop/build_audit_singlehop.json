@@ -1,0 +1,23 @@
+{
+ "counts": {
+  "('kinship', 'base', 0)": 400,
+  "('kinship', 'base', 4)": 400,
+  "('kinship', 'base', 12)": 400,
+  "('kinship', 'corrupted', 0)": 400,
+  "('kinship', 'corrupted', 4)": 400,
+  "('kinship', 'corrupted', 12)": 400,
+  "('kinship', 'reorder', 0)": 400,
+  "('kinship', 'reorder', 4)": 400,
+  "('kinship', 'reorder', 12)": 400,
+  "('location', 'base', 0)": 100,
+  "('location', 'base', 4)": 100,
+  "('location', 'base', 12)": 100,
+  "('location', 'corrupted', 0)": 100,
+  "('location', 'corrupted', 4)": 100,
+  "('location', 'corrupted', 12)": 100,
+  "('location', 'reorder', 0)": 100,
+  "('location', 'reorder', 4)": 100,
+  "('location', 'reorder', 12)": 100
+ },
+ "problems": []
+}

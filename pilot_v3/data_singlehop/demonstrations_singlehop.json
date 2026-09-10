@@ -1,0 +1,40 @@
+{
+ "demos": {
+  "kinship": [
+   "Dalnla is the mother of Tostra.\nVerlra is the mother of Dalnla.\nBildla is the mother of Paldia.\nMalnna is the mother of Bildla.\nQuestion: Who is the mother of Dalnla?\nAnswer: Verlra.",
+   "Mistna is the mother of Bolmna.\nKildla is the mother of Mistna.\nKulma is the mother of Ralnia.\nVurlra is the mother of Kulma.\nQuestion: Who is the mother of Kulma?\nAnswer: Vurlra.",
+   "Soldna is the mother of Girva.\nJintia is the mother of Soldna.\nFordla is the mother of Listla.\nZornia is the mother of Fordla.\nQuestion: Who is the mother of Soldna?\nAnswer: Jintia.",
+   "Lusmna is the mother of Verva.\nNelnla is the mother of Lusmna.\nBundra is the mother of Gantra.\nNurdra is the mother of Bundra.\nQuestion: Who is the mother of Bundra?\nAnswer: Nurdra.",
+   "Tultra is the mother of Dilda.\nDesmra is the mother of Tultra.\nDorlla is the mother of Dilmra.\nZundla is the mother of Dorlla.\nQuestion: Who is the mother of Tultra?\nAnswer: Desmra.",
+   "Lesmia is the mother of Tolnla.\nVirlia is the mother of Lesmia.\nHarvla is the mother of Holnia.\nMasmra is the mother of Harvla.\nQuestion: Who is the mother of Harvla?\nAnswer: Masmra.",
+   "Mulnla is the mother of Garnla.\nJendia is the mother of Mulnla.\nKolmia is the mother of Rerva.\nNiltna is the mother of Kolmia.\nQuestion: Who is the mother of Mulnla?\nAnswer: Jendia.",
+   "Toltia is the mother of Fernla.\nPildia is the mother of Toltia.\nWurdla is the mother of Furnla.\nVasmia is the mother of Wurdla.\nQuestion: Who is the mother of Wurdla?\nAnswer: Vasmia.",
+   "Belmia is the mother of Linda.\nDirdna is the mother of Belmia.\nSulna is the mother of Larvia.\nTalmna is the mother of Sulna.\nQuestion: Who is the mother of Belmia?\nAnswer: Dirdna.",
+   "Marvia is the mother of Wordia.\nRoldna is the mother of Marvia.\nHoltra is the mother of Rarvia.\nLuntla is the mother of Holtra.\nQuestion: Who is the mother of Holtra?\nAnswer: Luntla.",
+   "Nulta is the mother of Kismla.\nWusmia is the mother of Nulta.\nGarva is the mother of Mentia.\nPordla is the mother of Garva.\nQuestion: Who is the mother of Nulta?\nAnswer: Wusmia.",
+   "Sorlna is the mother of Lilna.\nLornna is the mother of Sorlna.\nLostna is the mother of Fundna.\nSistna is the mother of Lostna.\nQuestion: Who is the mother of Lostna?\nAnswer: Sistna.",
+   "Wendla is the mother of Sorvna.\nPosmra is the mother of Wendla.\nLorva is the mother of Kulta.\nGervra is the mother of Lorva.\nQuestion: Who is the mother of Wendla?\nAnswer: Posmra.",
+   "Tesmla is the mother of Rusma.\nSirlia is the mother of Tesmla.\nJeldla is the mother of Derdna.\nNustra is the mother of Jeldla.\nQuestion: Who is the mother of Jeldla?\nAnswer: Nustra.",
+   "Sulnia is the mother of Vasta.\nSalmna is the mother of Sulnia.\nNilmna is the mother of Dilmna.\nRirla is the mother of Nilmna.\nQuestion: Who is the mother of Sulnia?\nAnswer: Salmna.",
+   "Rantna is the mother of Surdra.\nSostia is the mother of Rantna.\nKolta is the mother of Hulnna.\nFirdna is the mother of Kolta.\nQuestion: Who is the mother of Kolta?\nAnswer: Firdna."
+  ],
+  "location": [
+   "The seldar is inside the zestel.\nThe zestel is inside the zintin.\nThe rerpin is inside the vorpel.\nThe vorpel is inside the kultar.\nQuestion: Where is the zestel?\nAnswer: zintin.",
+   "The rendar is inside the gulgot.\nThe gulgot is inside the lelgar.\nThe lastot is inside the jurmin.\nThe jurmin is inside the nirmot.\nQuestion: Where is the jurmin?\nAnswer: nirmot.",
+   "The montul is inside the fermul.\nThe fermul is inside the vurvel.\nThe runtin is inside the mantar.\nThe mantar is inside the pormul.\nQuestion: Where is the fermul?\nAnswer: vurvel.",
+   "The ristel is inside the golgel.\nThe golgel is inside the rildel.\nThe darmin is inside the tolgel.\nThe tolgel is inside the bintot.\nQuestion: Where is the tolgel?\nAnswer: bintot.",
+   "The sendar is inside the tantar.\nThe tantar is inside the jaldel.\nThe lentar is inside the pandul.\nThe pandul is inside the daldar.\nQuestion: Where is the tantar?\nAnswer: jaldel.",
+   "The naltin is inside the formin.\nThe formin is inside the jeldul.\nThe tentot is inside the mistot.\nThe mistot is inside the sarvot.\nQuestion: Where is the mistot?\nAnswer: sarvot.",
+   "The ruskul is inside the sirpar.\nThe sirpar is inside the nendul.\nThe malgot is inside the naldin.\nThe naldin is inside the kuskot.\nQuestion: Where is the sirpar?\nAnswer: nendul.",
+   "The firvul is inside the guskel.\nThe guskel is inside the dantin.\nThe mildar is inside the kerpin.\nThe kerpin is inside the jundel.\nQuestion: Where is the kerpin?\nAnswer: jundel.",
+   "The jurpin is inside the derpul.\nThe derpul is inside the duntar.\nThe foltar is inside the bondul.\nThe bondul is inside the jultel.\nQuestion: Where is the derpul?\nAnswer: duntar.",
+   "The randul is inside the gulgel.\nThe gulgel is inside the tildar.\nThe doskul is inside the runtel.\nThe runtel is inside the zermot.\nQuestion: Where is the runtel?\nAnswer: zermot.",
+   "The fervar is inside the baskel.\nThe baskel is inside the zaskot.\nThe lendul is inside the veltot.\nThe veltot is inside the pindel.\nQuestion: Where is the baskel?\nAnswer: zaskot.",
+   "The termot is inside the dontin.\nThe dontin is inside the tistul.\nThe meskin is inside the poltot.\nThe poltot is inside the rervot.\nQuestion: Where is the poltot?\nAnswer: rervot.",
+   "The pestot is inside the meldel.\nThe meldel is inside the fildel.\nThe goldul is inside the turmul.\nThe turmul is inside the gildel.\nQuestion: Where is the meldel?\nAnswer: fildel.",
+   "The bulgot is inside the fantel.\nThe fantel is inside the zistin.\nThe giltel is inside the muldot.\nThe muldot is inside the miskar.\nQuestion: Where is the muldot?\nAnswer: miskar.",
+   "The valgin is inside the zalgot.\nThe zalgot is inside the lormul.\nThe tolgar is inside the darvel.\nThe darvel is inside the kaldul.\nQuestion: Where is the zalgot?\nAnswer: lormul.",
+   "The juldel is inside the kurvel.\nThe kurvel is inside the farpul.\nThe sestin is inside the kermin.\nThe kermin is inside the vundar.\nQuestion: Where is the kermin?\nAnswer: vundar."
+  ]
+ }
+}
