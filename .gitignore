@@ -20,3 +20,13 @@ desktop.ini
 tmp/
 .idea/
 
+
+# RI test extension: large per-head/per-family tables live on OneDrive
+results/ri_test_v2/heads/
+results/ri_test_v2/head_summary.csv
+results/ri_test_v2/family_metrics.csv
+results/ri_test_v2/paired_variants.csv
+results/ri_test_v2/events.jsonl.gz
+results/stage1_v4_review/stage1_v4_calibrated/dominance_*.f32
+results/stage1_v4_review/stage1_v4_calibrated/ri_events.jsonl.gz
+results/stage1_v4_review/stage1_v4_calibrated/audit_prompts.jsonl.gz

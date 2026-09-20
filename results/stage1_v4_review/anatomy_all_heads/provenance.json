@@ -1,0 +1,10 @@
+{
+  "run": "results\\stage1_v4_review\\stage1_v4_calibrated",
+  "files": {
+    "audit_prompts.jsonl.gz": "ca02efdb8a8be62d2928b4f1ca1c670e520bbb3e3a4d6e9cbad070e1d492ffe3",
+    "ri_events.jsonl.gz": "7c939242b1bdad5552e280349233e7df58fcf077c58edbd9634b0f2d702e1c28",
+    "head_stats.csv": "8a3334c0dd99bd9b3141d414fc91e3e6156c2a91e4f52945badedfb673493545"
+  },
+  "script_sha256": "14e76a3ddfa8f93f4e35f1f71ca0bc142b97be5dcb0e3638cffbdb9243a0261f",
+  "partition_reconciliation": "passed"
+}

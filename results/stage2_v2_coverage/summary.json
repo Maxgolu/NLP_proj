@@ -1,0 +1,240 @@
+{
+ "groups": {
+  "A": 59,
+  "B": 19,
+  "C": 25,
+  "D": 92,
+  "union": 148
+ },
+ "overlaps": {
+  "A_and_D": 13,
+  "B_and_D": 3,
+  "C_and_D": 25,
+  "A_and_B": 9,
+  "A_and_C": 8,
+  "B_and_C": 2
+ },
+ "already_full_exact": {
+  "A": 13,
+  "B": 3,
+  "C": 25
+ },
+ "missing_scopeP": {
+  "heads": 56,
+  "pairs_each": 138,
+  "forwards": 7728,
+  "hours_one_replica": 0.33
+ },
+ "scopeF": {
+  "heads": 69,
+  "pairs_each": 178,
+  "forwards": 12282,
+  "hours_one_replica": 0.52
+ },
+ "total_forwards": 20010,
+ "total_hours_one_replica": 0.84,
+ "historical_ri_first_vs_exact40_spearman": 0.13480815726260728,
+ "top_exact40": [
+  {
+   "head": "L17H1",
+   "flat_id": 545,
+   "importance_exact40": 5.741884040832519,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L27H6",
+   "flat_id": 870,
+   "importance_exact40": 3.221560478210449,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L18H19",
+   "flat_id": 595,
+   "importance_exact40": 3.0803802490234373,
+   "in_A": true,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L18H18",
+   "flat_id": 594,
+   "importance_exact40": 2.767562675476074,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L21H18",
+   "flat_id": 690,
+   "importance_exact40": 1.8497880935668944,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L20H1",
+   "flat_id": 641,
+   "importance_exact40": -1.4342435836791991,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L25H17",
+   "flat_id": 817,
+   "importance_exact40": 1.3193326950073243,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L30H18",
+   "flat_id": 978,
+   "importance_exact40": -1.1451318740844727,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L22H5",
+   "flat_id": 709,
+   "importance_exact40": 1.0682638168334961,
+   "in_A": true,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L23H15",
+   "flat_id": 751,
+   "importance_exact40": -0.9492952346801757,
+   "in_A": true,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L16H21",
+   "flat_id": 533,
+   "importance_exact40": 0.9031507492065429,
+   "in_A": true,
+   "in_B": true,
+   "in_D": true
+  },
+  {
+   "head": "L16H1",
+   "flat_id": 513,
+   "importance_exact40": 0.8772293090820312,
+   "in_A": true,
+   "in_B": true,
+   "in_D": true
+  },
+  {
+   "head": "L19H16",
+   "flat_id": 624,
+   "importance_exact40": -0.8508807420730591,
+   "in_A": true,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L13H10",
+   "flat_id": 426,
+   "importance_exact40": -0.8156453132629394,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L21H6",
+   "flat_id": 678,
+   "importance_exact40": 0.7522012710571289,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L30H13",
+   "flat_id": 973,
+   "importance_exact40": 0.6981149673461914,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L15H25",
+   "flat_id": 505,
+   "importance_exact40": 0.6612307786941528,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L18H24",
+   "flat_id": 600,
+   "importance_exact40": -0.6463672637939453,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L21H23",
+   "flat_id": 695,
+   "importance_exact40": 0.6337644577026367,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L17H3",
+   "flat_id": 547,
+   "importance_exact40": -0.524808692932129,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L17H17",
+   "flat_id": 561,
+   "importance_exact40": 0.5068926811218262,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L17H24",
+   "flat_id": 568,
+   "importance_exact40": 0.4964737892150879,
+   "in_A": true,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L19H22",
+   "flat_id": 630,
+   "importance_exact40": 0.48919200897216797,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L26H23",
+   "flat_id": 855,
+   "importance_exact40": -0.43740090131759646,
+   "in_A": true,
+   "in_B": false,
+   "in_D": true
+  },
+  {
+   "head": "L14H26",
+   "flat_id": 474,
+   "importance_exact40": 0.40526065826416013,
+   "in_A": false,
+   "in_B": false,
+   "in_D": true
+  }
+ ],
+ "note": "Coverage read from saved stage2_v1 outputs; no model forwards. Spearman values are exploratory descriptives on discovery families."
+}

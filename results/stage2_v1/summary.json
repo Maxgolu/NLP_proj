@@ -1,0 +1,11 @@
+{
+ "complete": true,
+ "pairs": 178,
+ "all_head_exact_pairs": 40,
+ "exact_extension_heads": 92,
+ "estimate_method": "first_order",
+ "estimate_validated": true,
+ "ri_vs_exact_subset_spearman": 0.13480815726260728,
+ "comparison": "RI versus negative signed exact mean: positive importance means movement toward corrupted answer",
+ "warning": "Head exact effects do not establish circuit edges or semantic specificity."
+}

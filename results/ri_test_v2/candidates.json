@@ -1,0 +1,2135 @@
+{
+  "policy": {
+    "seed": 20260916,
+    "word_controls": 3,
+    "min_events": 20,
+    "min_families": 10,
+    "top_k": 10,
+    "tau": 2.2,
+    "anchors": [
+      "first",
+      "last"
+    ],
+    "selection": "Union of top10 positive family-mean target/name-gap/word-gap for each anchor, scope and all_test/final position; >=20 scored events and >=10 active families for the corresponding metric. Descriptive discovery shortlist, not a significance claim.",
+    "scopes": [
+      "all_facts",
+      "query_fact"
+    ],
+    "normalization": "Original unique visible FULL-context token IDs, including demos",
+    "words": "Up to 3 unique ASCII alphabetic non-name word types in visible test; sample once per prompt/position, shared across heads/facts; first/last token anchors",
+    "names": "All other fully visible fact-tail names in test, equal weight per name; no token-length exclusion; collisions retained as ties",
+    "families": "Conditional event means within family; equal active-family weight. Frequency also reported with zero-pass families included.",
+    "post_selection": "Token concentration and leave-family-out diagnostics deferred"
+  },
+  "candidates": [
+    {
+      "layer": 1,
+      "head": 27,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 3,
+          "score": 0.032518590086318244,
+          "events": 411,
+          "families": 84
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 9,
+          "score": 0.015929036874660973,
+          "events": 411,
+          "families": 84
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 1,
+          "score": 0.032517891305427635,
+          "events": 269,
+          "families": 75
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 10,
+          "score": 0.0030032779434674283,
+          "events": 269,
+          "families": 75
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 3,
+          "score": 0.01750819784279358,
+          "events": 269,
+          "families": 75
+        }
+      ]
+    },
+    {
+      "layer": 2,
+      "head": 21,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 6,
+          "score": 0.02539669153365222,
+          "events": 93,
+          "families": 22
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 10,
+          "score": 0.017743605308279717,
+          "events": 93,
+          "families": 22
+        }
+      ]
+    },
+    {
+      "layer": 2,
+      "head": 22,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 5,
+          "score": 0.0085262415646058,
+          "events": 30,
+          "families": 13
+        }
+      ]
+    },
+    {
+      "layer": 4,
+      "head": 0,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 9,
+          "score": 0.007005810148669644,
+          "events": 130,
+          "families": 27
+        }
+      ]
+    },
+    {
+      "layer": 5,
+      "head": 18,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 6,
+          "score": 0.0040988170650846775,
+          "events": 45,
+          "families": 14
+        }
+      ]
+    },
+    {
+      "layer": 6,
+      "head": 2,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 10,
+          "score": 0.0066829417055414885,
+          "events": 927,
+          "families": 89
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 7,
+          "score": 0.006648067789064001,
+          "events": 411,
+          "families": 85
+        }
+      ]
+    },
+    {
+      "layer": 6,
+      "head": 24,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 7,
+          "score": 0.023008441053503675,
+          "events": 246,
+          "families": 75
+        }
+      ]
+    },
+    {
+      "layer": 7,
+      "head": 18,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 10,
+          "score": 0.023035192545640782,
+          "events": 528,
+          "families": 88
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 9,
+          "score": 0.02249704230304236,
+          "events": 375,
+          "families": 88
+        }
+      ]
+    },
+    {
+      "layer": 7,
+      "head": 25,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 4,
+          "score": 0.005098206787240795,
+          "events": 23,
+          "families": 15
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 4,
+          "score": 0.026101408578041527,
+          "events": 23,
+          "families": 15
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 8,
+          "score": 0.017641917955026856,
+          "events": 23,
+          "families": 15
+        }
+      ]
+    },
+    {
+      "layer": 8,
+      "head": 8,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 1,
+          "score": 0.014273123016170999,
+          "events": 30,
+          "families": 13
+        }
+      ]
+    },
+    {
+      "layer": 8,
+      "head": 15,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 10,
+          "score": 0.014189359457782918,
+          "events": 448,
+          "families": 81
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 10,
+          "score": 0.015469399430522961,
+          "events": 42,
+          "families": 28
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 6,
+          "score": 0.012119294005173116,
+          "events": 42,
+          "families": 28
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 4,
+          "score": 0.00814213326210966,
+          "events": 31,
+          "families": 23
+        }
+      ]
+    },
+    {
+      "layer": 8,
+      "head": 16,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 7,
+          "score": 0.003968464997193457,
+          "events": 64,
+          "families": 38
+        }
+      ]
+    },
+    {
+      "layer": 9,
+      "head": 6,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 6,
+          "score": 0.02436363533435559,
+          "events": 72,
+          "families": 22
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 2,
+          "score": 0.011549985932939353,
+          "events": 46,
+          "families": 18
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 5,
+          "score": 0.02436363533435559,
+          "events": 72,
+          "families": 22
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 6,
+          "score": 0.021325770183466375,
+          "events": 72,
+          "families": 22
+        }
+      ]
+    },
+    {
+      "layer": 9,
+      "head": 16,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 7,
+          "score": 0.007398279100012952,
+          "events": 343,
+          "families": 87
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 6,
+          "score": 0.006938484598031848,
+          "events": 244,
+          "families": 76
+        }
+      ]
+    },
+    {
+      "layer": 9,
+      "head": 17,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 8,
+          "score": 0.007283193141285499,
+          "events": 38,
+          "families": 22
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 3,
+          "score": 0.008666847942946239,
+          "events": 24,
+          "families": 13
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 9,
+          "score": 0.01610458906927508,
+          "events": 25,
+          "families": 14
+        }
+      ]
+    },
+    {
+      "layer": 10,
+      "head": 16,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 8,
+          "score": 0.015773151489179908,
+          "events": 53,
+          "families": 26
+        }
+      ]
+    },
+    {
+      "layer": 11,
+      "head": 3,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 7,
+          "score": 0.0035343227393847586,
+          "events": 28,
+          "families": 20
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 5,
+          "score": 0.010683832786404914,
+          "events": 28,
+          "families": 20
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 7,
+          "score": 0.0036109780616528702,
+          "events": 25,
+          "families": 17
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 4,
+          "score": 0.012569215042829313,
+          "events": 25,
+          "families": 17
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 4,
+          "score": 0.0005158235065394009,
+          "events": 25,
+          "families": 17
+        }
+      ]
+    },
+    {
+      "layer": 11,
+      "head": 4,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 5,
+          "score": 0.006522607090628401,
+          "events": 94,
+          "families": 39
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 7,
+          "score": 0.016135561728486042,
+          "events": 53,
+          "families": 29
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 2,
+          "score": 0.0070796049947554245,
+          "events": 53,
+          "families": 29
+        }
+      ]
+    },
+    {
+      "layer": 11,
+      "head": 7,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 8,
+          "score": 0.022471313534898573,
+          "events": 1378,
+          "families": 89
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 6,
+          "score": 0.021444046899096576,
+          "events": 1378,
+          "families": 89
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 3,
+          "score": 0.023202505785637626,
+          "events": 375,
+          "families": 88
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 1,
+          "score": 0.02214000551089387,
+          "events": 375,
+          "families": 88
+        }
+      ]
+    },
+    {
+      "layer": 11,
+      "head": 15,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 8,
+          "score": 0.006294145143374063,
+          "events": 434,
+          "families": 88
+        }
+      ]
+    },
+    {
+      "layer": 12,
+      "head": 2,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 3,
+          "score": 0.00715573147655151,
+          "events": 52,
+          "families": 32
+        }
+      ]
+    },
+    {
+      "layer": 12,
+      "head": 9,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 10,
+          "score": 0.0056240744472019774,
+          "events": 49,
+          "families": 24
+        }
+      ]
+    },
+    {
+      "layer": 13,
+      "head": 1,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 10,
+          "score": 0.020203830979087137,
+          "events": 37,
+          "families": 11
+        }
+      ]
+    },
+    {
+      "layer": 13,
+      "head": 22,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 7,
+          "score": 0.018309529409371965,
+          "events": 74,
+          "families": 40
+        }
+      ]
+    },
+    {
+      "layer": 14,
+      "head": 10,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 9,
+          "score": 0.0035645233281408452,
+          "events": 92,
+          "families": 45
+        }
+      ]
+    },
+    {
+      "layer": 14,
+      "head": 23,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 5,
+          "score": 0.017876216589178005,
+          "events": 517,
+          "families": 89
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 0,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 7,
+          "score": 0.02450198826126224,
+          "events": 23,
+          "families": 15
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 7,
+          "score": 0.02105276573320562,
+          "events": 23,
+          "families": 15
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 2,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 9,
+          "score": 0.009236631574673644,
+          "events": 89,
+          "families": 44
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 3,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 9,
+          "score": 0.006049786297541683,
+          "events": 52,
+          "families": 27
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 18,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 6,
+          "score": 0.007893532374978855,
+          "events": 110,
+          "families": 50
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 28,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 10,
+          "score": 0.02225281304812857,
+          "events": 20,
+          "families": 14
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 5,
+          "score": 0.018693333105479795,
+          "events": 20,
+          "families": 14
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 29,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 9,
+          "score": 0.018178186792273034,
+          "events": 38,
+          "families": 19
+        }
+      ]
+    },
+    {
+      "layer": 16,
+      "head": 1,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 6,
+          "score": 0.009277917476560616,
+          "events": 223,
+          "families": 76
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 3,
+          "score": 0.00655791267781964,
+          "events": 223,
+          "families": 76
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 6,
+          "score": 0.0037734729406350346,
+          "events": 223,
+          "families": 76
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 5,
+          "score": 0.0010534681418940576,
+          "events": 223,
+          "families": 76
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 6,
+          "score": 0.009277917476560616,
+          "events": 223,
+          "families": 76
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 3,
+          "score": 0.00655791267781964,
+          "events": 223,
+          "families": 76
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 6,
+          "score": 0.0037734729406350346,
+          "events": 223,
+          "families": 76
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 5,
+          "score": 0.0010534681418940576,
+          "events": 223,
+          "families": 76
+        }
+      ]
+    },
+    {
+      "layer": 16,
+      "head": 2,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 5,
+          "score": 0.0097365781132664,
+          "events": 81,
+          "families": 42
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 4,
+          "score": 0.011689670661571509,
+          "events": 81,
+          "families": 42
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 4,
+          "score": 0.0011411129498377526,
+          "events": 81,
+          "families": 42
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 4,
+          "score": 0.0097365781132664,
+          "events": 81,
+          "families": 42
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 5,
+          "score": 0.011689670661571509,
+          "events": 81,
+          "families": 42
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 4,
+          "score": 0.0011411129498377526,
+          "events": 81,
+          "families": 42
+        }
+      ]
+    },
+    {
+      "layer": 16,
+      "head": 4,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 1,
+          "score": 0.01415589768451658,
+          "events": 63,
+          "families": 32
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 1,
+          "score": 0.00041638198134200544,
+          "events": 63,
+          "families": 32
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 2,
+          "score": 0.00875194134641788,
+          "events": 63,
+          "families": 32
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 7,
+          "score": 0.000988428977507283,
+          "events": 63,
+          "families": 32
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 8,
+          "score": 0.010262235836650304,
+          "events": 78,
+          "families": 37
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 1,
+          "score": 0.01415589768451658,
+          "events": 63,
+          "families": 32
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 1,
+          "score": 0.00041638198134200544,
+          "events": 63,
+          "families": 32
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 2,
+          "score": 0.00875194134641788,
+          "events": 63,
+          "families": 32
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 7,
+          "score": 0.000988428977507283,
+          "events": 63,
+          "families": 32
+        }
+      ]
+    },
+    {
+      "layer": 16,
+      "head": 16,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 9,
+          "score": 0.01564971533701802,
+          "events": 77,
+          "families": 32
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 3,
+          "score": 0.006737707783723015,
+          "events": 75,
+          "families": 32
+        }
+      ]
+    },
+    {
+      "layer": 16,
+      "head": 21,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 4,
+          "score": 0.009786698997378317,
+          "events": 230,
+          "families": 79
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 2,
+          "score": 0.018495307651958483,
+          "events": 230,
+          "families": 79
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 3,
+          "score": 0.0021692556449907684,
+          "events": 230,
+          "families": 79
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 3,
+          "score": 0.003928382506669441,
+          "events": 230,
+          "families": 79
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 5,
+          "score": 0.00965913253902101,
+          "events": 222,
+          "families": 77
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 2,
+          "score": 0.01906419224672733,
+          "events": 222,
+          "families": 77
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 3,
+          "score": 0.003350484595247,
+          "events": 222,
+          "families": 77
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 3,
+          "score": 0.0044655327865107675,
+          "events": 222,
+          "families": 77
+        }
+      ]
+    },
+    {
+      "layer": 16,
+      "head": 24,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 3,
+          "score": 0.011341950545043108,
+          "events": 68,
+          "families": 35
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 4,
+          "score": 0.001235581919311713,
+          "events": 68,
+          "families": 35
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 1,
+          "score": 0.022721252403266372,
+          "events": 68,
+          "families": 35
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 2,
+          "score": 0.003585940890960276,
+          "events": 68,
+          "families": 35
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 2,
+          "score": 0.012614883777534978,
+          "events": 68,
+          "families": 35
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 3,
+          "score": 0.011341950545043108,
+          "events": 68,
+          "families": 35
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 4,
+          "score": 0.001235581919311713,
+          "events": 68,
+          "families": 35
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 1,
+          "score": 0.022721252403266372,
+          "events": 68,
+          "families": 35
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 2,
+          "score": 0.003585940890960276,
+          "events": 68,
+          "families": 35
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 2,
+          "score": 0.012614883777534978,
+          "events": 68,
+          "families": 35
+        }
+      ]
+    },
+    {
+      "layer": 16,
+      "head": 31,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 3,
+          "score": 0.02937963526208131,
+          "events": 52,
+          "families": 28
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 3,
+          "score": 0.026854552259291748,
+          "events": 52,
+          "families": 28
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 2,
+          "score": 0.012882887287386915,
+          "events": 23,
+          "families": 14
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 1,
+          "score": 0.01219223949102877,
+          "events": 23,
+          "families": 14
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 3,
+          "score": 0.01623025922925167,
+          "events": 23,
+          "families": 14
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 1,
+          "score": 0.003830537212909096,
+          "events": 23,
+          "families": 14
+        },
+        {
+          "scope": "all_facts",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 1,
+          "score": 0.015539611432893527,
+          "events": 23,
+          "families": 14
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 7,
+          "score": 0.011333628892316483,
+          "events": 30,
+          "families": 18
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 5,
+          "score": 0.025189295894017926,
+          "events": 30,
+          "families": 18
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 2,
+          "score": 0.010848694563596106,
+          "events": 30,
+          "families": 18
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 3,
+          "score": 0.02331456453787353,
+          "events": 30,
+          "families": 18
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 2,
+          "score": 0.012882887287386915,
+          "events": 23,
+          "families": 14
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 1,
+          "score": 0.01219223949102877,
+          "events": 23,
+          "families": 14
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 3,
+          "score": 0.01623025922925167,
+          "events": 23,
+          "families": 14
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 1,
+          "score": 0.003830537212909096,
+          "events": 23,
+          "families": 14
+        },
+        {
+          "scope": "query_fact",
+          "position": "final",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 1,
+          "score": 0.015539611432893527,
+          "events": 23,
+          "families": 14
+        }
+      ]
+    },
+    {
+      "layer": 17,
+      "head": 5,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 7,
+          "score": 0.022880036868702838,
+          "events": 65,
+          "families": 34
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 7,
+          "score": 0.006059165166116858,
+          "events": 65,
+          "families": 34
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 2,
+          "score": 0.025760038934337592,
+          "events": 32,
+          "families": 20
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 1,
+          "score": 0.00818287800405718,
+          "events": 32,
+          "families": 20
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 5,
+          "score": 0.01274667883941826,
+          "events": 32,
+          "families": 20
+        }
+      ]
+    },
+    {
+      "layer": 17,
+      "head": 24,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 1,
+          "score": 0.04774379096208857,
+          "events": 21,
+          "families": 13
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 1,
+          "score": 0.04191331915820065,
+          "events": 21,
+          "families": 13
+        }
+      ]
+    },
+    {
+      "layer": 18,
+      "head": 15,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 9,
+          "score": 0.021350123325458895,
+          "events": 45,
+          "families": 18
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 4,
+          "score": 0.0068013697353800934,
+          "events": 39,
+          "families": 17
+        }
+      ]
+    },
+    {
+      "layer": 18,
+      "head": 19,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 10,
+          "score": 0.008927089717837013,
+          "events": 132,
+          "families": 53
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 16,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 8,
+          "score": 0.00384809974506731,
+          "events": 129,
+          "families": 62
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 6,
+          "score": 0.02456321453813602,
+          "events": 138,
+          "families": 63
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 10,
+          "score": 0.005433802665766215,
+          "events": 129,
+          "families": 62
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 10,
+          "score": 0.015204004953344143,
+          "events": 138,
+          "families": 63
+        }
+      ]
+    },
+    {
+      "layer": 20,
+      "head": 7,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 5,
+          "score": 0.028216991218782607,
+          "events": 26,
+          "families": 21
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 4,
+          "score": 0.0106743466476762,
+          "events": 26,
+          "families": 21
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 8,
+          "score": 0.020765466401667616,
+          "events": 26,
+          "families": 21
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 3,
+          "score": 0.02812038396950811,
+          "events": 20,
+          "families": 16
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 1,
+          "score": 0.013667176687401177,
+          "events": 20,
+          "families": 16
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 4,
+          "score": 0.02281248783947376,
+          "events": 20,
+          "families": 16
+        }
+      ]
+    },
+    {
+      "layer": 20,
+      "head": 14,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 7,
+          "score": 0.017502858479188203,
+          "events": 33,
+          "families": 18
+        }
+      ]
+    },
+    {
+      "layer": 21,
+      "head": 24,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 6,
+          "score": 0.006074111859999137,
+          "events": 49,
+          "families": 23
+        }
+      ]
+    },
+    {
+      "layer": 21,
+      "head": 25,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 4,
+          "score": 0.02931109256482719,
+          "events": 125,
+          "families": 52
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 3,
+          "score": 0.026349071096170757,
+          "events": 125,
+          "families": 52
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 4,
+          "score": 0.022067112938882697,
+          "events": 71,
+          "families": 37
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 2,
+          "score": 0.019695025823878224,
+          "events": 71,
+          "families": 37
+        }
+      ]
+    },
+    {
+      "layer": 21,
+      "head": 27,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 8,
+          "score": 0.02292010003535322,
+          "events": 360,
+          "families": 80
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 6,
+          "score": 0.018409273271005742,
+          "events": 360,
+          "families": 80
+        }
+      ]
+    },
+    {
+      "layer": 22,
+      "head": 5,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 2,
+          "score": 0.03447990846605255,
+          "events": 24,
+          "families": 13
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 2,
+          "score": 0.027746838373526476,
+          "events": 24,
+          "families": 13
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 10,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 5,
+          "score": 0.02826998244038097,
+          "events": 60,
+          "families": 24
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 1,
+          "score": 0.021504580506896468,
+          "events": 60,
+          "families": 24
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 4,
+          "score": 0.02529894612869746,
+          "events": 60,
+          "families": 24
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 15,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 9,
+          "score": 0.023178246578711093,
+          "events": 72,
+          "families": 39
+        }
+      ]
+    },
+    {
+      "layer": 24,
+      "head": 17,
+      "reasons": [
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 4,
+          "score": 0.013029094348851123,
+          "events": 67,
+          "families": 28
+        }
+      ]
+    },
+    {
+      "layer": 25,
+      "head": 18,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 4,
+          "score": 0.028554712082499194,
+          "events": 55,
+          "families": 18
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 2,
+          "score": 0.013070671115258954,
+          "events": 46,
+          "families": 17
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 4,
+          "score": 0.022397370318804736,
+          "events": 55,
+          "families": 18
+        }
+      ]
+    },
+    {
+      "layer": 26,
+      "head": 23,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 8,
+          "score": 0.005871625139086379,
+          "events": 58,
+          "families": 28
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "target",
+          "rank": 6,
+          "score": 0.016673796058360797,
+          "events": 32,
+          "families": 18
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 5,
+          "score": 0.004150561269888582,
+          "events": 29,
+          "families": 17
+        }
+      ]
+    },
+    {
+      "layer": 26,
+      "head": 31,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "words_gap",
+          "rank": 8,
+          "score": 0.017274331317766515,
+          "events": 26,
+          "families": 11
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 8,
+          "score": 0.023736864928099698,
+          "events": 26,
+          "families": 11
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 3,
+          "score": 0.01233195295455915,
+          "events": 26,
+          "families": 11
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 5,
+          "score": 0.02216460826539372,
+          "events": 26,
+          "families": 11
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 23,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 2,
+          "score": 0.03210016550576447,
+          "events": 533,
+          "families": 89
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 2,
+          "score": 0.03026270708313372,
+          "events": 533,
+          "families": 89
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 2,
+          "score": 0.030917732562165193,
+          "events": 214,
+          "families": 89
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 2,
+          "score": 0.02916833122110299,
+          "events": 214,
+          "families": 89
+        }
+      ]
+    },
+    {
+      "layer": 30,
+      "head": 3,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 1,
+          "score": 0.05212400539455416,
+          "events": 183,
+          "families": 48
+        },
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 1,
+          "score": 0.045438360456139824,
+          "events": 183,
+          "families": 48
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "target",
+          "rank": 1,
+          "score": 0.052022171368645065,
+          "events": 42,
+          "families": 21
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "names_gap",
+          "rank": 5,
+          "score": 0.008019093236831762,
+          "events": 40,
+          "families": 21
+        },
+        {
+          "scope": "query_fact",
+          "position": "all_test",
+          "anchor": "last",
+          "metric": "words_gap",
+          "rank": 1,
+          "score": 0.04676706379847096,
+          "events": 42,
+          "families": 21
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 1,
+      "reasons": [
+        {
+          "scope": "all_facts",
+          "position": "all_test",
+          "anchor": "first",
+          "metric": "names_gap",
+          "rank": 9,
+          "score": 0.005662964999634209,
+          "events": 76,
+          "families": 26
+        }
+      ]
+    }
+  ],
+  "historical_reference_heads": [
+    "L3H11",
+    "L9H22"
+  ],
+  "note": "Descriptive union; no p-values, no semantic/causal claim. Post-selection audit deferred."
+}

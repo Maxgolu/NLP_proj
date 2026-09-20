@@ -1,0 +1,406 @@
+Replica 2: loading pinned model on allocated GPUs.
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:01<00:09,  1.86s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [00:03<00:07,  1.85s/it]Loading checkpoint shards:  50%|█████     | 3/6 [00:05<00:05,  1.84s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:07<00:03,  1.82s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:09<00:01,  1.82s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:11<00:00,  1.86s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:11<00:00,  1.85s/it]
+Gate pair passed: 000/direct/base/0/order0; shared prefix []
+Gate pair passed: 000/direct/base/0/order1; shared prefix []
+Gate pair passed: 002/direct/base/0/order0; shared prefix []
+Gate pair passed: 002/direct/base/0/order1; shared prefix []
+Gate pair passed: 168/direct/base/0/order0; shared prefix [650]
+Gate pair passed: 168/direct/base/0/order1; shared prefix [650]
+Gate pair passed: 174/direct/base/0/order0; shared prefix [480]
+Gate pair passed: 174/direct/base/0/order1; shared prefix [480]
+Replica 2: screen 1/150 002/direct/base/0/order0
+Replica 2: screen 2/150 002/direct/base/0/order1
+Replica 2: screen 3/150 004/direct/base/0/order0
+Replica 2: screen 4/150 004/direct/base/0/order1
+Replica 2: screen 5/150 006/direct/base/0/order0
+Replica 2: screen 6/150 006/direct/base/0/order1
+Replica 2: screen 7/150 008/direct/base/0/order0
+Replica 2: screen 8/150 008/direct/base/0/order1
+Replica 2: screen 9/150 012/direct/base/0/order0
+Replica 2: screen 10/150 012/direct/base/0/order1
+Replica 2: screen 11/150 014/direct/base/0/order0
+Replica 2: screen 12/150 014/direct/base/0/order1
+Replica 2: screen 13/150 016/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 14/150 016/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 15/150 020/direct/base/0/order0
+Replica 2: screen 16/150 020/direct/base/0/order1
+Replica 2: screen 17/150 024/direct/base/0/order0
+Replica 2: screen 18/150 024/direct/base/0/order1
+Replica 2: screen 19/150 026/direct/base/0/order0
+Replica 2: screen 20/150 026/direct/base/0/order1
+Replica 2: screen 21/150 028/direct/base/0/order0
+Replica 2: screen 22/150 028/direct/base/0/order1
+Replica 2: screen 23/150 030/direct/base/0/order0
+Replica 2: screen 24/150 030/direct/base/0/order1
+Replica 2: screen 25/150 032/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 26/150 032/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 27/150 034/direct/base/0/order0
+Replica 2: screen 28/150 034/direct/base/0/order1
+Replica 2: screen 29/150 036/direct/base/0/order0
+Replica 2: screen 30/150 036/direct/base/0/order1
+Replica 2: screen 31/150 038/direct/base/0/order0
+Replica 2: screen 32/150 038/direct/base/0/order1
+Replica 2: screen 33/150 040/direct/base/0/order0
+Replica 2: screen 34/150 040/direct/base/0/order1
+Replica 2: screen 35/150 044/direct/base/0/order0
+Replica 2: screen 36/150 044/direct/base/0/order1
+Replica 2: screen 37/150 046/direct/base/0/order0
+Replica 2: screen 38/150 046/direct/base/0/order1
+Replica 2: screen 39/150 048/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 40/150 048/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 41/150 050/direct/base/0/order0
+Replica 2: screen 42/150 050/direct/base/0/order1
+Replica 2: screen 43/150 052/direct/base/0/order0
+Replica 2: screen 44/150 052/direct/base/0/order1
+Replica 2: screen 45/150 054/direct/base/0/order0
+Replica 2: screen 46/150 054/direct/base/0/order1
+Replica 2: screen 47/150 058/direct/base/0/order0
+Replica 2: screen 48/150 058/direct/base/0/order1
+Replica 2: screen 49/150 060/direct/base/0/order0
+Replica 2: screen 50/150 060/direct/base/0/order1
+Replica 2: screen 51/150 062/direct/base/0/order0
+Replica 2: screen 52/150 062/direct/base/0/order1
+Replica 2: screen 53/150 066/direct/base/0/order0
+Replica 2: screen 54/150 066/direct/base/0/order1
+Replica 2: screen 55/150 068/direct/base/0/order0
+Replica 2: screen 56/150 068/direct/base/0/order1
+Replica 2: screen 57/150 070/direct/base/0/order0
+Replica 2: screen 58/150 070/direct/base/0/order1
+Replica 2: screen 59/150 072/direct/base/0/order0
+Replica 2: screen 60/150 072/direct/base/0/order1
+Replica 2: screen 61/150 076/direct/base/0/order0
+Replica 2: screen 62/150 076/direct/base/0/order1
+Replica 2: screen 63/150 078/direct/base/0/order0
+Replica 2: screen 64/150 078/direct/base/0/order1
+Replica 2: screen 65/150 080/direct/base/0/order0
+Replica 2: screen 66/150 080/direct/base/0/order1
+Replica 2: screen 67/150 084/direct/base/0/order0
+Replica 2: screen 68/150 084/direct/base/0/order1
+Replica 2: screen 69/150 086/direct/base/0/order0
+Replica 2: screen 70/150 086/direct/base/0/order1
+Replica 2: screen 71/150 088/direct/base/0/order0
+Replica 2: screen 72/150 088/direct/base/0/order1
+Replica 2: screen 73/150 090/direct/base/0/order0
+Replica 2: screen 74/150 090/direct/base/0/order1
+Replica 2: screen 75/150 092/direct/base/0/order0
+Replica 2: screen 76/150 092/direct/base/0/order1
+Replica 2: screen 77/150 094/direct/base/0/order0
+Replica 2: screen 78/150 094/direct/base/0/order1
+Replica 2: screen 79/150 096/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 80/150 096/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 81/150 100/direct/base/0/order0
+Replica 2: screen 82/150 100/direct/base/0/order1
+Replica 2: screen 83/150 104/direct/base/0/order0
+Replica 2: screen 84/150 104/direct/base/0/order1
+Replica 2: screen 85/150 108/direct/base/0/order0
+Replica 2: screen 86/150 108/direct/base/0/order1
+Replica 2: screen 87/150 110/direct/base/0/order0
+Replica 2: screen 88/150 110/direct/base/0/order1
+Replica 2: screen 89/150 112/direct/base/0/order0
+Replica 2: screen 90/150 112/direct/base/0/order1
+Replica 2: screen 91/150 114/direct/base/0/order0
+Replica 2: screen 92/150 114/direct/base/0/order1
+Replica 2: screen 93/150 118/direct/base/0/order0
+Replica 2: screen 94/150 118/direct/base/0/order1
+Replica 2: screen 95/150 120/direct/base/0/order0
+Replica 2: screen 96/150 120/direct/base/0/order1
+Replica 2: screen 97/150 122/direct/base/0/order0
+Replica 2: screen 98/150 122/direct/base/0/order1
+Replica 2: screen 99/150 124/direct/base/0/order0
+Replica 2: screen 100/150 124/direct/base/0/order1
+Replica 2: screen 101/150 126/direct/base/0/order0
+Replica 2: screen 102/150 126/direct/base/0/order1
+Replica 2: screen 103/150 128/direct/base/0/order0
+Replica 2: screen 104/150 128/direct/base/0/order1
+Replica 2: screen 105/150 132/direct/base/0/order0
+Replica 2: screen 106/150 132/direct/base/0/order1
+Replica 2: screen 107/150 134/direct/base/0/order0
+Replica 2: screen 108/150 134/direct/base/0/order1
+Replica 2: screen 109/150 136/direct/base/0/order0
+Replica 2: screen 110/150 136/direct/base/0/order1
+Replica 2: screen 111/150 138/direct/base/0/order0
+Replica 2: screen 112/150 138/direct/base/0/order1
+Replica 2: screen 113/150 140/direct/base/0/order0
+Replica 2: screen 114/150 140/direct/base/0/order1
+Replica 2: screen 115/150 142/direct/base/0/order0
+Replica 2: screen 116/150 142/direct/base/0/order1
+Replica 2: screen 117/150 148/direct/base/0/order0
+Replica 2: screen 118/150 148/direct/base/0/order1
+Replica 2: screen 119/150 152/direct/base/0/order0
+Replica 2: screen 120/150 152/direct/base/0/order1
+Replica 2: screen 121/150 156/direct/base/0/order0
+Replica 2: screen 122/150 156/direct/base/0/order1
+Replica 2: screen 123/150 158/direct/base/0/order0
+Replica 2: screen 124/150 158/direct/base/0/order1
+Replica 2: screen 125/150 160/direct/base/0/order0
+Replica 2: screen 126/150 160/direct/base/0/order1
+Replica 2: screen 127/150 166/direct/base/0/order0
+Replica 2: screen 128/150 166/direct/base/0/order1
+Replica 2: screen 129/150 168/direct/base/0/order0
+Replica 2: screen 130/150 168/direct/base/0/order1
+Replica 2: screen 131/150 170/direct/base/0/order0
+Replica 2: screen 132/150 170/direct/base/0/order1
+Replica 2: screen 133/150 172/direct/base/0/order0
+Replica 2: screen 134/150 172/direct/base/0/order1
+Replica 2: screen 135/150 174/direct/base/0/order0
+Replica 2: screen 136/150 174/direct/base/0/order1
+Replica 2: screen 137/150 180/direct/base/0/order0
+Replica 2: screen 138/150 180/direct/base/0/order1
+Replica 2: screen 139/150 182/direct/base/0/order0
+Replica 2: screen 140/150 182/direct/base/0/order1
+Replica 2: screen 141/150 186/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 142/150 186/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 143/150 188/direct/base/0/order0
+Replica 2: screen 144/150 188/direct/base/0/order1
+Replica 2: screen 145/150 192/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 146/150 192/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 2: screen 147/150 194/direct/base/0/order0
+Replica 2: screen 148/150 194/direct/base/0/order1
+Replica 2: screen 149/150 198/direct/base/0/order0
+Replica 2: screen 150/150 198/direct/base/0/order1
+Replica 2: extension 1/150 002/direct/base/0/order0
+Replica 2: extension 2/150 002/direct/base/0/order1
+Replica 2: extension 3/150 004/direct/base/0/order0
+Replica 2: extension 4/150 004/direct/base/0/order1
+Replica 2: extension 5/150 006/direct/base/0/order0
+Replica 2: extension 6/150 006/direct/base/0/order1
+Replica 2: extension 7/150 008/direct/base/0/order0
+Replica 2: extension 8/150 008/direct/base/0/order1
+Replica 2: extension 9/150 012/direct/base/0/order0
+Replica 2: extension 10/150 012/direct/base/0/order1
+Replica 2: extension 11/150 014/direct/base/0/order0
+Replica 2: extension 12/150 014/direct/base/0/order1
+Replica 2: extension 13/150 016/direct/base/0/order0
+Replica 2: extension 14/150 016/direct/base/0/order1
+Replica 2: extension 15/150 020/direct/base/0/order0
+Replica 2: extension 16/150 020/direct/base/0/order1
+Replica 2: extension 17/150 024/direct/base/0/order0
+Replica 2: extension 18/150 024/direct/base/0/order1
+Replica 2: extension 19/150 026/direct/base/0/order0
+Replica 2: extension 20/150 026/direct/base/0/order1
+Replica 2: extension 21/150 028/direct/base/0/order0
+Replica 2: extension 22/150 028/direct/base/0/order1
+Replica 2: extension 23/150 030/direct/base/0/order0
+Replica 2: extension 24/150 030/direct/base/0/order1
+Replica 2: extension 25/150 032/direct/base/0/order0
+Replica 2: extension 26/150 032/direct/base/0/order1
+Replica 2: extension 27/150 034/direct/base/0/order0
+Replica 2: extension 28/150 034/direct/base/0/order1
+Replica 2: extension 29/150 036/direct/base/0/order0
+Replica 2: extension 30/150 036/direct/base/0/order1
+Replica 2: extension 31/150 038/direct/base/0/order0
+Replica 2: extension 32/150 038/direct/base/0/order1
+Replica 2: extension 33/150 040/direct/base/0/order0
+Replica 2: extension 34/150 040/direct/base/0/order1
+Replica 2: extension 35/150 044/direct/base/0/order0
+Replica 2: extension 36/150 044/direct/base/0/order1
+Replica 2: extension 37/150 046/direct/base/0/order0
+Replica 2: extension 38/150 046/direct/base/0/order1
+Replica 2: extension 39/150 048/direct/base/0/order0
+Replica 2: extension 40/150 048/direct/base/0/order1
+Replica 2: extension 41/150 050/direct/base/0/order0
+Replica 2: extension 42/150 050/direct/base/0/order1
+Replica 2: extension 43/150 052/direct/base/0/order0
+Replica 2: extension 44/150 052/direct/base/0/order1
+Replica 2: extension 45/150 054/direct/base/0/order0
+Replica 2: extension 46/150 054/direct/base/0/order1
+Replica 2: extension 47/150 058/direct/base/0/order0
+Replica 2: extension 48/150 058/direct/base/0/order1
+Replica 2: extension 49/150 060/direct/base/0/order0
+Replica 2: extension 50/150 060/direct/base/0/order1
+Replica 2: extension 51/150 062/direct/base/0/order0
+Replica 2: extension 52/150 062/direct/base/0/order1
+Replica 2: extension 53/150 066/direct/base/0/order0
+Replica 2: extension 54/150 066/direct/base/0/order1
+Replica 2: extension 55/150 068/direct/base/0/order0
+Replica 2: extension 56/150 068/direct/base/0/order1
+Replica 2: extension 57/150 070/direct/base/0/order0
+Replica 2: extension 58/150 070/direct/base/0/order1
+Replica 2: extension 59/150 072/direct/base/0/order0
+Replica 2: extension 60/150 072/direct/base/0/order1
+Replica 2: extension 61/150 076/direct/base/0/order0
+Replica 2: extension 62/150 076/direct/base/0/order1
+Replica 2: extension 63/150 078/direct/base/0/order0
+Replica 2: extension 64/150 078/direct/base/0/order1
+Replica 2: extension 65/150 080/direct/base/0/order0
+Replica 2: extension 66/150 080/direct/base/0/order1
+Replica 2: extension 67/150 084/direct/base/0/order0
+Replica 2: extension 68/150 084/direct/base/0/order1
+Replica 2: extension 69/150 086/direct/base/0/order0
+Replica 2: extension 70/150 086/direct/base/0/order1
+Replica 2: extension 71/150 088/direct/base/0/order0
+Replica 2: extension 72/150 088/direct/base/0/order1
+Replica 2: extension 73/150 090/direct/base/0/order0
+Replica 2: extension 74/150 090/direct/base/0/order1
+Replica 2: extension 75/150 092/direct/base/0/order0
+Replica 2: extension 76/150 092/direct/base/0/order1
+Replica 2: extension 77/150 094/direct/base/0/order0
+Replica 2: extension 78/150 094/direct/base/0/order1
+Replica 2: extension 79/150 096/direct/base/0/order0
+Replica 2: extension 80/150 096/direct/base/0/order1
+Replica 2: extension 81/150 100/direct/base/0/order0
+Replica 2: extension 82/150 100/direct/base/0/order1
+Replica 2: extension 83/150 104/direct/base/0/order0
+Replica 2: extension 84/150 104/direct/base/0/order1
+Replica 2: extension 85/150 108/direct/base/0/order0
+Replica 2: extension 86/150 108/direct/base/0/order1
+Replica 2: extension 87/150 110/direct/base/0/order0
+Replica 2: extension 88/150 110/direct/base/0/order1
+Replica 2: extension 89/150 112/direct/base/0/order0
+Replica 2: extension 90/150 112/direct/base/0/order1
+Replica 2: extension 91/150 114/direct/base/0/order0
+Replica 2: extension 92/150 114/direct/base/0/order1
+Replica 2: extension 93/150 118/direct/base/0/order0
+Replica 2: extension 94/150 118/direct/base/0/order1
+Replica 2: extension 95/150 120/direct/base/0/order0
+Replica 2: extension 96/150 120/direct/base/0/order1
+Replica 2: extension 97/150 122/direct/base/0/order0
+Replica 2: extension 98/150 122/direct/base/0/order1
+Replica 2: extension 99/150 124/direct/base/0/order0
+Replica 2: extension 100/150 124/direct/base/0/order1
+Replica 2: extension 101/150 126/direct/base/0/order0
+Replica 2: extension 102/150 126/direct/base/0/order1
+Replica 2: extension 103/150 128/direct/base/0/order0
+Replica 2: extension 104/150 128/direct/base/0/order1
+Replica 2: extension 105/150 132/direct/base/0/order0
+Replica 2: extension 106/150 132/direct/base/0/order1
+Replica 2: extension 107/150 134/direct/base/0/order0
+Replica 2: extension 108/150 134/direct/base/0/order1
+Replica 2: extension 109/150 136/direct/base/0/order0
+Replica 2: extension 110/150 136/direct/base/0/order1
+Replica 2: extension 111/150 138/direct/base/0/order0
+Replica 2: extension 112/150 138/direct/base/0/order1
+Replica 2: extension 113/150 140/direct/base/0/order0
+Replica 2: extension 114/150 140/direct/base/0/order1
+Replica 2: extension 115/150 142/direct/base/0/order0
+Replica 2: extension 116/150 142/direct/base/0/order1
+Replica 2: extension 117/150 148/direct/base/0/order0
+Replica 2: extension 118/150 148/direct/base/0/order1
+Replica 2: extension 119/150 152/direct/base/0/order0
+Replica 2: extension 120/150 152/direct/base/0/order1
+Replica 2: extension 121/150 156/direct/base/0/order0
+Replica 2: extension 122/150 156/direct/base/0/order1
+Replica 2: extension 123/150 158/direct/base/0/order0
+Replica 2: extension 124/150 158/direct/base/0/order1
+Replica 2: extension 125/150 160/direct/base/0/order0
+Replica 2: extension 126/150 160/direct/base/0/order1
+Replica 2: extension 127/150 166/direct/base/0/order0
+Replica 2: extension 128/150 166/direct/base/0/order1
+Replica 2: extension 129/150 168/direct/base/0/order0
+Replica 2: extension 130/150 168/direct/base/0/order1
+Replica 2: extension 131/150 170/direct/base/0/order0
+Replica 2: extension 132/150 170/direct/base/0/order1
+Replica 2: extension 133/150 172/direct/base/0/order0
+Replica 2: extension 134/150 172/direct/base/0/order1
+Replica 2: extension 135/150 174/direct/base/0/order0
+Replica 2: extension 136/150 174/direct/base/0/order1
+Replica 2: extension 137/150 180/direct/base/0/order0
+Replica 2: extension 138/150 180/direct/base/0/order1
+Replica 2: extension 139/150 182/direct/base/0/order0
+Replica 2: extension 140/150 182/direct/base/0/order1
+Replica 2: extension 141/150 186/direct/base/0/order0
+Replica 2: extension 142/150 186/direct/base/0/order1
+Replica 2: extension 143/150 188/direct/base/0/order0
+Replica 2: extension 144/150 188/direct/base/0/order1
+Replica 2: extension 145/150 192/direct/base/0/order0
+Replica 2: extension 146/150 192/direct/base/0/order1
+Replica 2: extension 147/150 194/direct/base/0/order0
+Replica 2: extension 148/150 194/direct/base/0/order1
+Replica 2: extension 149/150 198/direct/base/0/order0
+Replica 2: extension 150/150 198/direct/base/0/order1

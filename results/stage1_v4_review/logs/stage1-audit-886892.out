@@ -1,0 +1,67 @@
+s-004
+working set from baseline: 176 families
+scan set: 534 prompts (89 families x variants x orders)
+=== preflight ===
+P1 runner replication: max drift 0.0 -> OK
+P2 inert hooks diff 0.0, attention-forward diff 0.0390625, attn available True -> OK
+P3 self-patch delta 0.000000 -> OK
+P4 early-head twin-patch floor: {'L0H3': -0.00037, 'L0H17': -0.00287, 'L1H8': -0.02106, 'L2H25': 0.00024, 'L3H1': 0.00195, 'L3H30': 0.03784, 'L2H5': 0.01953, 'L1H22': 0.02509}
+preflight PASSED; starting scan.
+10/534 prompts; 2.62 s/prompt
+20/534 prompts; 2.46 s/prompt
+30/534 prompts; 2.37 s/prompt
+40/534 prompts; 2.23 s/prompt
+50/534 prompts; 2.05 s/prompt
+60/534 prompts; 1.97 s/prompt
+70/534 prompts; 1.95 s/prompt
+80/534 prompts; 1.93 s/prompt
+90/534 prompts; 1.88 s/prompt
+100/534 prompts; 1.82 s/prompt
+110/534 prompts; 1.77 s/prompt
+120/534 prompts; 1.74 s/prompt
+130/534 prompts; 1.71 s/prompt
+140/534 prompts; 1.69 s/prompt
+150/534 prompts; 1.66 s/prompt
+160/534 prompts; 1.64 s/prompt
+170/534 prompts; 1.62 s/prompt
+180/534 prompts; 1.60 s/prompt
+190/534 prompts; 1.58 s/prompt
+200/534 prompts; 1.57 s/prompt
+210/534 prompts; 1.56 s/prompt
+220/534 prompts; 1.54 s/prompt
+230/534 prompts; 1.53 s/prompt
+240/534 prompts; 1.52 s/prompt
+250/534 prompts; 1.51 s/prompt
+260/534 prompts; 1.50 s/prompt
+270/534 prompts; 1.49 s/prompt
+280/534 prompts; 1.49 s/prompt
+290/534 prompts; 1.48 s/prompt
+300/534 prompts; 1.47 s/prompt
+310/534 prompts; 1.47 s/prompt
+320/534 prompts; 1.46 s/prompt
+330/534 prompts; 1.46 s/prompt
+340/534 prompts; 1.45 s/prompt
+350/534 prompts; 1.45 s/prompt
+360/534 prompts; 1.44 s/prompt
+370/534 prompts; 1.44 s/prompt
+380/534 prompts; 1.43 s/prompt
+390/534 prompts; 1.43 s/prompt
+400/534 prompts; 1.43 s/prompt
+410/534 prompts; 1.43 s/prompt
+420/534 prompts; 1.42 s/prompt
+430/534 prompts; 1.42 s/prompt
+440/534 prompts; 1.42 s/prompt
+450/534 prompts; 1.42 s/prompt
+460/534 prompts; 1.42 s/prompt
+470/534 prompts; 1.42 s/prompt
+480/534 prompts; 1.42 s/prompt
+490/534 prompts; 1.41 s/prompt
+500/534 prompts; 1.41 s/prompt
+510/534 prompts; 1.41 s/prompt
+520/534 prompts; 1.40 s/prompt
+530/534 prompts; 1.40 s/prompt
+done: 534 prompts in 12.5 min; outputs in /home/yandex/DLWorkShop2025b/maximg/storage/runs/stage1_v4_calibrated
+Reading saved events; no model loading.
+Randomizing 6173 head/family groups, 100000 draws.
+Done: 80 tested; 0 Holm-selected. Outputs: /home/yandex/DLWorkShop2025b/maximg/storage/runs/stage1_v4_calibrated/null_calibration
+Scan, candidate audit and null calibration complete: /home/yandex/DLWorkShop2025b/maximg/storage/runs/stage1_v4_calibrated

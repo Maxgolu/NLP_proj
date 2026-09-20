@@ -1,0 +1,150 @@
+Replica 1: loading pinned model on allocated GPUs.
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:01<00:09,  1.81s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [00:03<00:07,  1.91s/it]Loading checkpoint shards:  50%|█████     | 3/6 [00:05<00:05,  1.97s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:07<00:03,  1.98s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:09<00:01,  1.96s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:11<00:00,  1.90s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:11<00:00,  1.92s/it]
+Gate pair passed: 000/direct/base/0/order0; shared prefix []
+Gate pair passed: 000/direct/base/0/order1; shared prefix []
+Gate pair passed: 002/direct/base/0/order0; shared prefix []
+Gate pair passed: 002/direct/base/0/order1; shared prefix []
+Gate pair passed: 168/direct/base/0/order0; shared prefix [650]
+Gate pair passed: 168/direct/base/0/order1; shared prefix [650]
+Gate pair passed: 174/direct/base/0/order0; shared prefix [480]
+Gate pair passed: 174/direct/base/0/order1; shared prefix [480]
+Replica 1: screen 1/14 056/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 2/14 056/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 3/14 064/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 4/14 064/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 5/14 130/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 6/14 130/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 7/14 150/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 8/14 150/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 9/14 176/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 10/14 176/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 11/14 178/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 12/14 178/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 13/14 196/direct/base/0/order0
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: screen 14/14 196/direct/base/0/order1
+  exact heads 128/1024
+  exact heads 256/1024
+  exact heads 384/1024
+  exact heads 512/1024
+  exact heads 640/1024
+  exact heads 768/1024
+  exact heads 896/1024
+  exact heads 1024/1024
+Replica 1: extension 1/14 056/direct/base/0/order0
+Replica 1: extension 2/14 056/direct/base/0/order1
+Replica 1: extension 3/14 064/direct/base/0/order0
+Replica 1: extension 4/14 064/direct/base/0/order1
+Replica 1: extension 5/14 130/direct/base/0/order0
+Replica 1: extension 6/14 130/direct/base/0/order1
+Replica 1: extension 7/14 150/direct/base/0/order0
+Replica 1: extension 8/14 150/direct/base/0/order1
+Replica 1: extension 9/14 176/direct/base/0/order0
+Replica 1: extension 10/14 176/direct/base/0/order1
+Replica 1: extension 11/14 178/direct/base/0/order0
+Replica 1: extension 12/14 178/direct/base/0/order1
+Replica 1: extension 13/14 196/direct/base/0/order0
+Replica 1: extension 14/14 196/direct/base/0/order1

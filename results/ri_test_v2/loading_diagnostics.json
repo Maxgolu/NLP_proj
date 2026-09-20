@@ -1,0 +1,87 @@
+{
+  "host": "s-004",
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.14.0+cu126",
+    "transformers": "4.51.3",
+    "accelerate": "1.6.0",
+    "safetensors": "0.5.3",
+    "numpy": "2.5.2"
+  },
+  "model_dir": "/home/yandex/DLWorkShop2025b/maximg/storage/model/7df9a82518afdecae4e8c026b27adccc8c1f0032",
+  "slurm": {
+    "SLURM_JOB_ID": "905839",
+    "SLURMD_NODENAME": "s-004",
+    "CUDA_VISIBLE_DEVICES": "0,1",
+    "SLURM_CPUS_PER_TASK": "4",
+    "SLURM_MEM_PER_NODE": "32768"
+  },
+  "mount": {
+    "returncode": 0,
+    "stdout": "TARGET       SOURCE                  FSTYPE OPTIONS\n/home/yandex netapp1:/Netapp5_yandex nfs    rw,nosuid,relatime,vers=3,rsize=32768,wsize=32768,namlen=255,soft,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=132.67.192.53,mountvers=3,mountport=635,mountproto=tcp,fsc,local_lock=all,addr=132.67.192.53\n",
+    "stderr": ""
+  },
+  "gpus": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 2080 Ti, 575.64.03, 11264 MiB\nNVIDIA GeForce RTX 2080 Ti, 575.64.03, 11264 MiB\nNVIDIA GeForce RTX 2080 Ti, 575.64.03, 11264 MiB\nNVIDIA GeForce RTX 2080 Ti, 575.64.03, 11264 MiB\nNVIDIA GeForce RTX 2080 Ti, 575.64.03, 11264 MiB\nNVIDIA GeForce RTX 2080 Ti, 575.64.03, 11264 MiB\nNVIDIA GeForce RTX 2080 Ti, 575.64.03, 11264 MiB\nNVIDIA GeForce RTX 2080 Ti, 575.64.03, 11264 MiB\n",
+    "stderr": ""
+  },
+  "read_probe": {
+    "bytes_per_shard": 67108864,
+    "shards": [
+      {
+        "file": "model-00001-of-00006.safetensors",
+        "file_bytes": 4949546184,
+        "bytes_read": 67108864,
+        "seconds": 20.814009284600616,
+        "mib_per_second": 3.0748520924006137
+      },
+      {
+        "file": "model-00002-of-00006.safetensors",
+        "file_bytes": 4991622816,
+        "bytes_read": 67108864,
+        "seconds": 20.850425804033875,
+        "mib_per_second": 3.0694816787683106
+      },
+      {
+        "file": "model-00003-of-00006.safetensors",
+        "file_bytes": 4924546896,
+        "bytes_read": 67108864,
+        "seconds": 19.485285941511393,
+        "mib_per_second": 3.2845296800933568
+      },
+      {
+        "file": "model-00004-of-00006.safetensors",
+        "file_bytes": 4857404928,
+        "bytes_read": 67108864,
+        "seconds": 20.331819424405694,
+        "mib_per_second": 3.1477753497641414
+      },
+      {
+        "file": "model-00005-of-00006.safetensors",
+        "file_bytes": 4857404928,
+        "bytes_read": 67108864,
+        "seconds": 20.85422278754413,
+        "mib_per_second": 3.068922810119114
+      },
+      {
+        "file": "model-00006-of-00006.safetensors",
+        "file_bytes": 4613984792,
+        "bytes_read": 67108864,
+        "seconds": 19.29705723375082,
+        "mib_per_second": 3.3165678696367813
+      }
+    ],
+    "caveat": "Reads only each shard prefix; may warm cache. Following load is not a cold-load measurement."
+  },
+  "before_load": {
+    "io": "rchar: 434645113\nwchar: 16574\nsyscr: 770\nsyscw: 60\nread_bytes: 434331648\nwrite_bytes: 32768\ncancelled_write_bytes: 0\n",
+    "status": "Name:\tpython3\nUmask:\t0022\nState:\tR (running)\nTgid:\t3544023\nNgid:\t0\nPid:\t3544023\nPPid:\t3544019\nTracerPid:\t0\nUid:\t76608\t76608\t76608\t76608\nGid:\t1199\t1199\t1199\t1199\nFDSize:\t64\nGroups:\t1199 6836 6838 6839 38821 38919 40250 \nNStgid:\t3544023\nNSpid:\t3544023\nNSpgid:\t3544023\nNSsid:\t3544018\nKthread:\t0\nVmPeak:\t  499956 kB\nVmSize:\t  483000 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  291956 kB\nVmRSS:\t  275312 kB\nRssAnon:\t  258300 kB\nRssFile:\t   17012 kB\nRssShmem:\t       0 kB\nVmData:\t  419664 kB\nVmStk:\t     132 kB\nVmExe:\t    2956 kB\nVmLib:\t   38012 kB\nVmPTE:\t     664 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t4\nSigQ:\t0/1029650\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000100000002\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tfffff\nCpus_allowed_list:\t0-19\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000003\nMems_allowed_list:\t0-1\nvoluntary_ctxt_switches:\t4230\nnonvoluntary_ctxt_switches:\t50\nx86_Thread_features:\t\nx86_Thread_features_locked:\t\n"
+  },
+  "status": "loaded",
+  "load_seconds": 2317.9858138151467,
+  "after_load": {
+    "io": "rchar: 535368639\nwchar: 113746\nsyscr: 9165\nsyscw: 149\nread_bytes: 29741543424\nwrite_bytes: 45056\ncancelled_write_bytes: 0\n",
+    "status": "Name:\tpython3\nUmask:\t0022\nState:\tR (running)\nTgid:\t3544023\nNgid:\t3544023\nPid:\t3544023\nPPid:\t3544019\nTracerPid:\t0\nUid:\t76608\t76608\t76608\t76608\nGid:\t1199\t1199\t1199\t1199\nFDSize:\t128\nGroups:\t1199 6836 6838 6839 38821 38919 40250 \nNStgid:\t3544023\nNSpid:\t3544023\nNSpgid:\t3544023\nNSsid:\t3544018\nKthread:\t0\nVmPeak:\t38815176 kB\nVmSize:\t29066936 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t 6101244 kB\nVmRSS:\t 1194708 kB\nRssAnon:\t  707560 kB\nRssFile:\t  466668 kB\nRssShmem:\t   20480 kB\nVmData:\t 1371532 kB\nVmStk:\t     132 kB\nVmExe:\t    2956 kB\nVmLib:\t 2259768 kB\nVmPTE:\t    3508 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t13\nSigQ:\t0/1029650\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000100000002\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tthread vulnerable\nSpeculationIndirectBranch:\tconditional enabled\nCpus_allowed:\tfffff\nCpus_allowed_list:\t0-19\nMems_allowed:\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000003\nMems_allowed_list:\t0-1\nvoluntary_ctxt_switches:\t133438\nnonvoluntary_ctxt_switches:\t1153\nx86_Thread_features:\t\nx86_Thread_features_locked:\t\n"
+  }
+}

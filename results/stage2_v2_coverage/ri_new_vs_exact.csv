@@ -1,0 +1,26 @@
+statistic,scope,position,anchor,support_rule,heads,spearman,spearman_zero_filled_1024
+historical pooled RI first,pooled,all,first,none (zero-filled),1024,0.13480815726260728,
+test-only target,all_facts,all_test,first,>=20 events & >=10 families,172,-0.012562997761913856,0.13615442285205245
+test-only names_gap,all_facts,all_test,first,>=20 events & >=10 families,167,-0.25192729858699126,-0.07741461398475147
+test-only target,all_facts,all_test,last,>=20 events & >=10 families,172,-0.1933668692500171,0.12910250736426307
+test-only names_gap,all_facts,all_test,last,>=20 events & >=10 families,167,-0.09067063806981564,0.011655318456877043
+test-only target,all_facts,earlier,first,>=20 events & >=10 families,172,-0.005964299106416397,0.1365433478097308
+test-only names_gap,all_facts,earlier,first,>=20 events & >=10 families,167,-0.2554933162934029,-0.09140096138625708
+test-only target,all_facts,earlier,last,>=20 events & >=10 families,172,-0.1782167476764232,0.1300397512065834
+test-only names_gap,all_facts,earlier,last,>=20 events & >=10 families,167,-0.07656116338751069,0.02014511272384541
+test-only target,all_facts,final,first,>=20 events & >=10 families,7,-0.5,0.047542019344663115
+test-only names_gap,all_facts,final,first,>=20 events & >=10 families,7,0.42857142857142866,-0.016082108224983023
+test-only target,all_facts,final,last,>=20 events & >=10 families,7,-0.28571428571428575,0.04749409463239549
+test-only names_gap,all_facts,final,last,>=20 events & >=10 families,7,-0.5357142857142858,-0.08563840679646177
+test-only target,query_fact,all_test,first,>=20 events & >=10 families,104,-0.11874533233756536,0.12635719397065767
+test-only names_gap,query_fact,all_test,first,>=20 events & >=10 families,103,-0.3351820937486271,-0.11143862593176376
+test-only target,query_fact,all_test,last,>=20 events & >=10 families,104,-0.1978128667449056,0.12202011499815839
+test-only names_gap,query_fact,all_test,last,>=20 events & >=10 families,103,-0.13017835961867943,-0.06658134910829337
+test-only target,query_fact,earlier,first,>=20 events & >=10 families,100,-0.09498949894989499,0.12268847797743852
+test-only names_gap,query_fact,earlier,first,>=20 events & >=10 families,99,-0.34810142238713665,-0.11515029635930098
+test-only target,query_fact,earlier,last,>=20 events & >=10 families,100,-0.15755175517551753,0.11883209052819045
+test-only names_gap,query_fact,earlier,last,>=20 events & >=10 families,99,-0.09189857761286332,-0.03819560523612235
+test-only target,query_fact,final,first,>=20 events & >=10 families,7,-0.642857142857143,0.04752917677470904
+test-only names_gap,query_fact,final,first,>=20 events & >=10 families,7,0.42857142857142866,-0.016082108224983023
+test-only target,query_fact,final,last,>=20 events & >=10 families,7,-0.21428571428571433,0.04750106407584617
+test-only names_gap,query_fact,final,last,>=20 events & >=10 families,7,-0.4642857142857144,-0.05133292673171484

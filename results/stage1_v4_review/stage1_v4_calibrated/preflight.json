@@ -1,0 +1,26 @@
+{
+ "P1_runner_replication": {
+  "max_drift": 0.0,
+  "n": 6
+ },
+ "P2_hooks": {
+  "inert_hook_max_logit_diff": 0.0,
+  "attention_forward_max_logit_diff": 0.0390625,
+  "attention_available": true
+ },
+ "P3_self_patch": {
+  "m_clean": 5.4532470703125,
+  "m_self": 5.4532470703125,
+  "delta": 0.0
+ },
+ "P4_early_head_floor": {
+  "L0H3": -0.00037,
+  "L0H17": -0.00287,
+  "L1H8": -0.02106,
+  "L2H25": 0.00024,
+  "L3H1": 0.00195,
+  "L3H30": 0.03784,
+  "L2H5": 0.01953,
+  "L1H22": 0.02509
+ }
+}

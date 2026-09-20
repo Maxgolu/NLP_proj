@@ -1,0 +1,22 @@
+{
+  "candidates": 59,
+  "full_exact": 13,
+  "subset_only": 46,
+  "missing_exact_measurements": 6348,
+  "all_1024_attribution_pairs": [
+    178
+  ],
+  "common_exact_pairs": 40,
+  "code_hash_matches": {
+    "stage2_run.py": true,
+    "stage2_engine.py": true,
+    "stage2_common.py": true,
+    "stage1_scan.py": true,
+    "stage1_audit.py": true
+  },
+  "quality": {
+    "mean_head_signed_spearman": 0.9453648910062344,
+    "mean_head_absolute_spearman": 0.9208538144759169,
+    "pair_head_spearman": 0.9027674059217408
+  }
+}
