@@ -27,7 +27,7 @@ for p in pairs:
             with np.load(src / 'screen' / f.name) as old:
                 if not np.array_equal(old['exact_delta'][hp], z['scopeP_delta']): problems.append('v1 copy mismatch ' + f.name)
         if int(z['first_diff']) >= int(z['n']): problems.append('first_diff ' + f.name)
-gates = sorted(run.glob('gate_*.json'))
+gates = sorted(p for p in run.glob('gate_*.json') if p.stem[5:].isdigit())
 for g in gates:
     G = json.loads(g.read_text())
     if not G.get('passed'): problems.append(g.name + ' not passed')

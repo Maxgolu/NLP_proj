@@ -1,0 +1,52 @@
+x,y,n,rho
+historical RI first (zero-filled),I_40 all heads,1024,0.13480815726260728
+test-only target all_facts/all_test/first (supported),I_40 all heads,172,-0.012562997761913856
+"test-only target all_facts/all_test/first (supported, within-layer ranks)",I_40 all heads,163,-0.029514963302315546
+test-only names_gap all_facts/all_test/first (supported),I_40 all heads,167,-0.25192729858699126
+"test-only names_gap all_facts/all_test/first (supported, within-layer ranks)",I_40 all heads,158,-0.3022553511528222
+test-only target all_facts/all_test/last (supported),I_40 all heads,172,-0.1933668692500171
+"test-only target all_facts/all_test/last (supported, within-layer ranks)",I_40 all heads,163,-0.026438154390700824
+test-only names_gap all_facts/all_test/last (supported),I_40 all heads,167,-0.09067063806981564
+"test-only names_gap all_facts/all_test/last (supported, within-layer ranks)",I_40 all heads,158,-0.11989550698491361
+test-only target all_facts/earlier/first (supported),I_40 all heads,172,-0.005964299106416397
+"test-only target all_facts/earlier/first (supported, within-layer ranks)",I_40 all heads,163,-0.02390740030299042
+test-only names_gap all_facts/earlier/first (supported),I_40 all heads,167,-0.2554933162934029
+"test-only names_gap all_facts/earlier/first (supported, within-layer ranks)",I_40 all heads,158,-0.32024402210441
+test-only target all_facts/earlier/last (supported),I_40 all heads,172,-0.1782167476764232
+"test-only target all_facts/earlier/last (supported, within-layer ranks)",I_40 all heads,163,-0.01937164491314928
+test-only names_gap all_facts/earlier/last (supported),I_40 all heads,167,-0.07656116338751069
+"test-only names_gap all_facts/earlier/last (supported, within-layer ranks)",I_40 all heads,158,-0.11477697954588452
+test-only target all_facts/final/first (supported),I_40 all heads,7,-0.5
+"test-only target all_facts/final/first (supported, within-layer ranks)",I_40 all heads,6,-0.4285714285714286
+test-only names_gap all_facts/final/first (supported),I_40 all heads,7,0.42857142857142866
+"test-only names_gap all_facts/final/first (supported, within-layer ranks)",I_40 all heads,6,0.5428571428571429
+test-only target all_facts/final/last (supported),I_40 all heads,7,-0.28571428571428575
+"test-only target all_facts/final/last (supported, within-layer ranks)",I_40 all heads,6,-0.2571428571428572
+test-only names_gap all_facts/final/last (supported),I_40 all heads,7,-0.5357142857142858
+"test-only names_gap all_facts/final/last (supported, within-layer ranks)",I_40 all heads,6,-0.6
+test-only target query_fact/all_test/first (supported),I_40 all heads,104,-0.11874533233756536
+"test-only target query_fact/all_test/first (supported, within-layer ranks)",I_40 all heads,90,-0.1338078894962078
+test-only names_gap query_fact/all_test/first (supported),I_40 all heads,103,-0.3351820937486271
+"test-only names_gap query_fact/all_test/first (supported, within-layer ranks)",I_40 all heads,87,-0.27460751620517815
+test-only target query_fact/all_test/last (supported),I_40 all heads,104,-0.1978128667449056
+"test-only target query_fact/all_test/last (supported, within-layer ranks)",I_40 all heads,90,-0.06611160544044743
+test-only names_gap query_fact/all_test/last (supported),I_40 all heads,103,-0.13017835961867943
+"test-only names_gap query_fact/all_test/last (supported, within-layer ranks)",I_40 all heads,87,-0.11953426505301812
+test-only target query_fact/earlier/first (supported),I_40 all heads,100,-0.09498949894989499
+"test-only target query_fact/earlier/first (supported, within-layer ranks)",I_40 all heads,86,-0.13515650162504025
+test-only names_gap query_fact/earlier/first (supported),I_40 all heads,99,-0.34810142238713665
+"test-only names_gap query_fact/earlier/first (supported, within-layer ranks)",I_40 all heads,83,-0.30223419477929064
+test-only target query_fact/earlier/last (supported),I_40 all heads,100,-0.15755175517551753
+"test-only target query_fact/earlier/last (supported, within-layer ranks)",I_40 all heads,86,-0.047789847646375616
+test-only names_gap query_fact/earlier/last (supported),I_40 all heads,99,-0.09189857761286332
+"test-only names_gap query_fact/earlier/last (supported, within-layer ranks)",I_40 all heads,83,-0.03810922730032088
+test-only target query_fact/final/first (supported),I_40 all heads,7,-0.642857142857143
+"test-only target query_fact/final/first (supported, within-layer ranks)",I_40 all heads,6,-0.6
+test-only names_gap query_fact/final/first (supported),I_40 all heads,7,0.42857142857142866
+"test-only names_gap query_fact/final/first (supported, within-layer ranks)",I_40 all heads,6,0.5428571428571429
+test-only target query_fact/final/last (supported),I_40 all heads,7,-0.21428571428571433
+"test-only target query_fact/final/last (supported, within-layer ranks)",I_40 all heads,6,-0.2571428571428572
+test-only names_gap query_fact/final/last (supported),I_40 all heads,7,-0.4642857142857144
+"test-only names_gap query_fact/final/last (supported, within-layer ranks)",I_40 all heads,6,-0.6
+test-only names_gap all_facts/all_test/first (supported),I_P_178 full-coverage heads,75,-0.26435277382645805
+historical RI first,I_P_178 full-coverage heads,148,-0.09263522606448092

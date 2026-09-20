@@ -1,5 +1,7 @@
 # Stage 2 extension v2 — targeted exact patching for the updated Stage-1 candidates
 
+> Renamed from README_STAGE2_V2.md on 20 September 2026 (run books are RUNBOOK_*.md; the project README is the root README.md).
+
 Adds exact measurements to the completed, immutable `stage2_v1` run. Same model,
 data, metric and patch mechanics (`stage2_engine.py` is imported unchanged).
 

@@ -1,5 +1,9 @@
-% Overleaf: upload this file together with stage2_ri_vs_causal_effect.png
-% and compile with pdfLaTeX.
+% Overleaf: upload this file together with stage2_ri_vs_causal_effect.png and the
+% five extension-v2 figures stage2_v2_fig1_ri_vs_causal_v2.png,
+% stage2_v2_fig2_scopeP_vs_scopeF.png, stage2_v2_fig3_scopeF_logit_decomposition.png,
+% stage2_v2_fig4_groupA_importance.png, stage2_v2_fig5_scopeF_share_by_layer.png
+% (results/stage2_v2_analysis/), then compile with pdfLaTeX.
+% Updated in place on 20 September 2026 after the stage2_v2_extension run.
 \documentclass[11pt,a4paper]{article}
 \usepackage[margin=2.2cm]{geometry}
 \usepackage[T1]{fontenc}
@@ -15,7 +19,7 @@
 
 \title{Stage 2: Results and Analysis\\\large Single-hop Causal Head Map in OLMo-2-7B}
 \author{Daniella Simonovsky and Max Golubkov}
-\date{September 2026}
+\date{September 2026 --- updated after the extension-v2 run}
 
 \begin{document}
 \maketitle
@@ -40,6 +44,23 @@ screen and extension files; 40 pairs have exact effects for all 1,024 heads;
 and all 178 pairs have exact effects for the 92-head extension set. The raw
 arrays reproduce \texttt{head\_effects.csv}. Model, data, baseline, Stage-1,
 and code hashes match the saved manifest.
+
+\textbf{Extension v2.} After the Stage-1 test-only RI extension replaced the
+candidate list, a targeted second run, \texttt{stage2\_v2\_extension}, added
+exact measurements without recomputing or modifying \texttt{stage2\_v1}.
+Slurm job 912879 completed in 32m51s with exit code 0 on the same node, three
+replicas, six GPUs. It measured 56 heads at all prompt positions on the 138
+pairs outside the 40-pair common subset (7{,}728 forwards) and 69 heads at the
+final prompt position only on all 178 pairs (12{,}282 forwards). The head lists
+were fixed beforehand by a CPU coverage audit of the first run
+(\texttt{results/stage2\_v2\_coverage/}). All three replicas passed the
+original gate plus four new checks: final-position self-patch drift 0; patching
+corrupted activations at all positions before the first differing token changed
+the metric by 0 and the activations themselves differed by 0 there (the prefix is
+identical under causal attention); and the six probe heads reproduced the saved
+first-run \texttt{exact\_delta} on family 0 with maximum deviation 0.0. The
+new all-position values on the common subset therefore coincide bit-for-bit
+with the first run, and the two runs are pooled below without adjustment.
 
 \section{Intervention and outcome measure}
 For each family and fact order, let $x_c$ be the clean prompt and $x_r$ its
@@ -74,6 +95,17 @@ $-5.491$ ($[-5.850,-5.141]$). The mean gap was 11.170
 ($[10.632,11.725]$). Every clean pair had positive $M$ and every corrupted pair
 had negative $M$. The intervention contrast is therefore behaviorally strong
 and sign-consistent.
+
+\textbf{Two patch scopes.} Because the twins share the demonstrations and the
+first test fact, every activation before the first differing token is identical
+on the two runs; the all-position patch (\emph{Scope~P}) is therefore active on
+the last 43.5 of 281.7 prompt tokens on average. The extension adds
+\emph{Scope~F}: the head is replaced only at the last prompt position, the colon
+after \texttt{Answer}. Scope~F is measured for the 69 heads of groups A and B
+defined below and is reported separately; it is not pooled with Scope~P. For every
+Scope-F forward the run also stored the clean-answer logit, the corrupted-answer
+logit and the logit of the source (child) name, so that ``promote the corrupted
+answer'' and ``suppress the clean answer'' can be separated.
 
 Intervals in this report are descriptive percentile bootstrap intervals from
 20,000 resamples of whole families (seed 20260915), after averaging the two
@@ -161,7 +193,7 @@ causal effects have low RI.}
 \label{fig:map}
 \end{figure}
 
-\section{RI has weak correspondence with causal importance}
+\section{Historical pooled RI has weak correspondence with causal importance}
 The Spearman correlation between pooled first-target RI and exact importance
 over all heads was 0.135 on the random exact subset. A family bootstrap gave a
 descriptive stability interval of $[0.063,0.168]$. The last-target sensitivity
@@ -187,6 +219,200 @@ were all self-attention. More than 99\% of their summed first-target scores came
 from demonstrations. Stage 2 now shows that the large observational scores do
 not translate into movement of the answer metric when their contextual head
 activations are transplanted.
+
+
+\section{The test-only RI candidates under exact patching}
+\subsection{Coverage and head groups}
+The Stage-1 extension produced a 59-head discovery union (group~A). We also
+measured the 19 heads with at least one final-position QK event to a test-fact
+source (group~B; 9 overlap with A), and checked the 25 heads with the largest
+exact effect on the common subset (group~C). Of A, 13 heads already had
+178-pair exact results in the first run's 92-head extension (group~D); the
+other 46 were measured in extension v2. All 25 heads of C were already in D,
+because the first run's extension included the attribution top~25. In total 148
+heads now have Scope-P exact importance on all 89 families.
+
+\subsection{Group A: mostly small effects, and the large ones were already known}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{stage2_v2_fig4_groupA_importance.png}
+\caption{Scope-P importance of the 59 test-only RI candidates on all 178 pairs,
+with 95\% family-bootstrap intervals (symmetric-log axis). Red: positive name
+gap at the first anchor; blue: non-positive; grey: no supported statistic.}
+\label{fig:groupA}
+\end{figure}
+
+Eight A heads have $|I_h|>0.3$ logits (Table~\ref{tab:A}); all eight were
+already in D, having entered the first run's extension through the attribution
+ranking, not through RI. Among the 46 heads measured for the first time, the
+largest effects are L8H15 ($+0.279$, $[0.196,0.361]$), L14H23 ($-0.212$),
+L16H31 ($-0.188$), L15H3 ($-0.106$), L6H24 ($+0.101$) and L9H16 ($+0.095$,
+$[0.039,0.155]$). Thirteen of 59 A heads exceed $0.1$ logit in absolute value;
+the remaining 46 are below 1\% of the 11.17-logit clean--corrupted gap.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrrrrl}
+\toprule
+Head & Name gap (first) & Scope P $I_h$ & Scope F $I_h$ & F/P & Selection reasons \\
+\midrule
+L18H19 & $-.0150$ & $3.072\ [2.868,3.275]$ & $3.079$ & $1.00$ & word gap \\
+L22H5  & $+.0013$ & $.983\ [.901,1.063]$ & $.984$ & $1.00$ & target, word gap \\
+L23H15 & $-.0058$ & $-.947\ [-1.062,-.841]$ & $-.953$ & $1.01$ & target (last) \\
+L16H21 & $+.0008$ & $.925\ [.807,1.048]$ & $.893$ & $.97$ & target, name gap (last), word gap \\
+L16H1  & $-.0035$ & $.868\ [.765,.973]$ & $.857$ & $.99$ & target, word gap \\
+L19H16 & $+.0008$ & $-.820\ [-.911,-.733]$ & $-.829$ & $1.01$ & name gap, target, word gap \\
+L17H24 & --- & $.433\ [.391,.478]$ & $.429$ & $.99$ & target, word gap \\
+L26H23 & $+.0059$ & $-.367\ [-.458,-.284]$ & $-.369$ & $1.01$ & name gap, target \\
+\midrule
+L8H15  & $-.0031$ & $.279\ [.196,.361]$ & $-.000$ & $.00$ & name gap (last), target, word gap \\
+L9H16  & $-.0007$ & $.095\ [.039,.155]$ & $-.001$ & $-.01$ & name gap (last) \\
+L11H4  & $+.0065$ & $.004\ [-.000,.008]$ & $.000$ & --- & name gap, target \\
+L17H5  & $+.0061$ & $-.013\ [-.024,-.002]$ & $-.059$ & --- & name gap, target, word gap \\
+\bottomrule
+\end{tabular}
+\caption{Group-A heads with $|I_h|>0.3$ (top block, all previously in D) and
+the three Stage-1 interpretive priority heads plus L8H15 (bottom). Importance in
+logits on all 178 pairs; negative values mean the corrupted-run activation moves
+the metric \emph{toward the clean answer}. ``Name gap'' is the test-only
+all-facts/all-test first-anchor statistic; --- means fewer than 20 events or 10
+families.}
+\label{tab:A}
+\end{table}
+
+The three heads that the Stage-1 report singled out as interpretive priorities
+are causally weak. L11H4, the strongest name-gap candidate, has
+$I_h=0.004$ logits with an interval that includes zero. L17H5 is slightly
+negative under both scopes. L9H16 has a small positive all-position effect that
+disappears entirely at the final position, so whatever it contributes is written
+at earlier test positions. Name-gap membership is, if anything, inversely
+related to effect size inside A: the 36 heads that entered through at least one
+name-gap ranking have mean $|I_h|=0.099$ on the common subset, against $0.303$
+for the 23 heads that entered only through raw-target or word-gap rankings.
+
+\subsection{The new RI statistics are negatively rank-correlated with causal importance}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{stage2_v2_fig1_ri_vs_causal_v2.png}
+\caption{Exact importance on the 40 common pairs (all 1{,}024 heads,
+symmetric-log axis) against the historical pooled RI (left) and against the
+test-only name gap at the first anchor for the 167 heads with at least 20
+comparisons in 10 families (right). Colours mark groups A and B.}
+\label{fig:newri}
+\end{figure}
+
+Table~\ref{tab:corr} compares RI statistics with exact importance on the common
+subset, where every head has the same 40 pairs. The historical pooled score has
+a weak positive correlation (0.135, as reported above). Every test-only name-gap
+statistic is \emph{negatively} correlated: $-0.252$ for the main all-facts/all-test
+first-anchor statistic (family-bootstrap interval $[-0.289,-0.169]$), $-0.335$
+for the query-fact subset, and $-0.302$ when ranks are taken within layer, so
+the sign is not a layer artefact. Removing layers 16--18 ($-0.278$) or the 25
+strongest heads ($-0.214$) does not change it. The raw target statistic is near
+zero. Top-$k$ overlap tells the same story: the Jaccard overlap between the
+name-gap top~25 and the exact top~25 is 0.02, identical to the historical score
+and against 0.52 for the gradient screen.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+Statistic (heads with support) & $n$ & Spearman vs.\ exact $I_h$ (40 pairs) \\
+\midrule
+Historical pooled RI, first target (all heads, zero-filled) & 1024 & $+0.135$ \\
+Test-only target, all facts / all test / first & 172 & $-0.013$ \\
+Test-only name gap, all facts / all test / first & 167 & $-0.252$ \\
+\quad same, ranks within layer & 158 & $-0.302$ \\
+\quad same, without layers 16--18 & 144 & $-0.278$ \\
+\quad same, positive gaps only & 78 & $-0.102$ \\
+Test-only name gap, query fact / all test / first & 103 & $-0.335$ \\
+Test-only name gap, all facts / all test / last & 167 & $-0.091$ \\
+Test-only name gap, self-attention events only & 39 & $-0.537$ \\
+Test-only name control mean (other visible names) & 167 & $+0.143$ \\
+\bottomrule
+\end{tabular}
+\caption{Rank correlations between Stage-1 statistics and exact causal
+importance on the 40 common pairs. Support: at least 20 comparisons in 10
+families. All values are exploratory descriptives on discovery families.}
+\label{tab:corr}
+\end{table}
+
+\textbf{Why negative? A copying hypothesis.} The name gap subtracts, from the
+target's raw-embedding OV score, the mean score of the \emph{other} visible
+names. A head whose OV circuit copies its current token promotes whatever name
+is at the current position; at the many events where that name is a control
+rather than the target, its control score rises and its gap falls. Two
+observations fit this reading: the control-name mean itself is positively
+correlated with importance ($+0.143$; $+0.235$ with $|I_h|$), and the negative
+correlation is strongest on self-attention events ($-0.537$), where the current
+token is a name. The strongest causal heads (Section~\ref{sec:scopeF}) act by
+promoting the retrieved name at the answer position, which is exactly the
+behaviour a copy-type OV produces. Under this hypothesis the name gap is not
+merely uninformative: it penalizes the mechanism that carries the effect. The
+hypothesis is testable from weights alone (the copying score of
+$W_EW^h_{OV}W_U$ on name tokens, which Stage 2 did not compute) and from the
+saved events (score of the current-token name at self events); both are Stage-3
+items.
+
+\section{Where the effects arise: final-position patching}
+\label{sec:scopeF}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.62\textwidth]{stage2_v2_fig2_scopeP_vs_scopeF.png}
+\caption{Scope-P (all positions) against Scope-F (final position only)
+importance for the 69 heads of A$\cup$B on all 178 pairs. Dashed line: equality.}
+\label{fig:scopes}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{stage2_v2_fig5_scopeF_share_by_layer.png}
+\caption{Ratio of Scope-F to Scope-P importance by layer for A$\cup$B heads with
+$|I_h|>0.04$. Layers 6--11: the effect vanishes when only the final position is
+patched. Layers 16--26: the final position carries the whole effect.}
+\label{fig:share}
+\end{figure}
+
+For the 69 A$\cup$B heads the two scopes correlate at 0.788, but the ratio is
+bimodal (Figure~\ref{fig:share}). Every head in layers 16--26 with a measurable
+effect has $I^{F}_h/I^{P}_h$ between 0.91 and 1.09: L18H19 ($3.072$ vs.\
+$3.079$), L22H5, L23H15, L16H21, L16H1, L19H16, L17H24 and L26H23 lose nothing
+when the patch is restricted to the colon. Their contribution is therefore
+delivered at the answer position itself. Every head in layers 6--11 with a
+measurable all-position effect (L6H24, L8H8, L8H15, L9H16, L10H16, L11H15) has a
+final-position effect indistinguishable from zero; L14H23 and L15H3 are
+intermediate (0.12 and 0.46). These heads matter only through what they write
+at earlier test positions, which later components read. Single-position
+patching does not identify those readers, and the two scopes need not add; but
+the split is sharp and layer-ordered, which is what a writer-then-reader
+organization would produce.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{stage2_v2_fig3_scopeF_logit_decomposition.png}
+\caption{Scope-F patch, ten largest effects: mean change of the clean-answer,
+corrupted-answer and source-name logits at the first divergent token (89
+families, orders averaged).}
+\label{fig:logits}
+\end{figure}
+
+The stored logits show \emph{how} the final-position heads act
+(Figure~\ref{fig:logits}). For L18H19 the patch raises the corrupted-answer logit
+by 2.88 and lowers the clean-answer logit by only 0.20; for L22H5, L16H21 and
+L16H1 the pattern is the same ($+0.92$, $+0.90$, $+0.81$ on the corrupted answer
+against $-0.06$, $+0.01$, $-0.05$ on the clean one). These heads promote the
+name retrieved on the run that produced the donor activation; they do not
+suppress the alternative. The source-name logit also rises for L18H19, L16H21
+and L16H1 ($+0.37$, $+0.32$, $+0.33$), so the promotion is not perfectly
+specific to the answer. Three heads have the opposite sign: L23H15
+($-0.947$), L19H16 ($-0.820$) and L26H23 ($-0.367$) \emph{lower} the
+corrupted-answer logit when their corrupted-run activation is inserted. The
+consistent reading is that they suppress the name retrieved on their own run,
+i.e.\ they behave like the negative name movers of the IOI circuit. Under RI
+such heads can rank highly (L19H16 and L26H23 entered A through the name gap),
+because the observational statistic has no sign.
 
 \section{Pre-registered audit verdicts}
 The earlier methodology defined three non-exclusive verdicts. The available
@@ -220,8 +446,35 @@ These verdicts concern the implemented RI adaptation and causal experiment on
 this dataset. They are not a universal rejection of semantic induction heads or
 of attention-based diagnostics.
 
-\section{Two distinct ways RI misses important heads}
-The combination of Stage-1 events and Stage-2 effects suggests at least two
+\subsection*{Verdicts under the test-only definition}
+The same three criteria were re-evaluated with ``RI-passing'' meaning membership
+in the 59-head discovery union. Because that union was selected after inspecting
+Stage-1 results, these are exploratory readings.
+
+\textbf{Incomplete: supported, more strongly.} 88 of the 102 heads in the top
+decile of exact importance are outside A, including three of the top four
+(L17H1, L27H6, L18H18). Of the 88, 23 have no test-only QK pass at all and a
+further 22 fall below the 20-event/10-family support rule, so 45 are misses of
+the QK stage; 18 are supported with non-positive name gap at both anchors; 25
+have a positive gap that did not reach any top~10.
+
+\textbf{Misleading: not supported by the letter of the criterion, but the
+margin is negligible.} The median 178-pair importance of A is $0.0033$ logits
+against $0.0002$ for the 25 random controls; the family-bootstrap interval of the
+difference, $[0.0005,0.0130]$, excludes zero. The difference is 0.03\% of the
+clean--corrupted gap, and 56\% of A heads have positive sign against 60\% of
+the controls. The criterion distinguishes the groups statistically, not
+scientifically.
+
+\textbf{Sound: weakly and unevenly.} The pooled layer-matched mean difference
+between A heads and same-layer non-A heads on the common subset is $+0.035$
+logits ($[0.023,0.047]$), but only 12 of 28 layers show a positive difference,
+and the pooled value is carried by four heads in layers 16, 18 and 22 that the
+gradient screen had already selected. Layer medians are $0.005$ for A against
+$0.0001$ for the rest.
+
+\section{How RI misses important heads}
+The combination of Stage-1 events and Stage-2 effects suggests at least three
 failure modes.
 
 \textbf{QK-selection miss.} L17H1 had only two scored Stage-1 QK passes across
@@ -238,7 +491,14 @@ $e_jW_V^hW_O^hW_U$ does not promote the annotated target token. Its actual
 contextual input may carry information absent from the raw token embedding, or
 its downstream effect may be indirect rather than a direct target-token write.
 
-L16H1 and L16H21 provide a third informative pattern. Stage 1 found 223 and 230
+\textbf{Sign-blind, copy-penalizing OV.} The test-only extension adds a third
+mode. Its name-gap control was designed to remove heads that merely prefer
+names in general, but the heads that carry the effect promote names by copying,
+and the statistic scores that behaviour as a failure whenever the current token
+is not the target (Table~\ref{tab:corr}). It is also blind to sign: L19H16 and
+L26H23 rank well under the gap and turn out to suppress the retrieved answer.
+
+L16H1 and L16H21 provide a fourth informative pattern. Stage 1 found 223 and 230
 dominant-attention events, respectively, from the final prompt token to
 test-fact sources across 76 and 79 families. Stage 2 found exact effects of
 0.868 and 0.925 logits. This agreement makes them promising query-position
@@ -254,46 +514,66 @@ can therefore coexist with only a small causal effect on the answer contrast.
 
 \section{Interpretation and next mechanistic questions}
 Stage 2 establishes a reliable causal screen under a precisely specified
-intervention. It provides strong evidence that the implemented RI definition is
-not a complete causal account of the model's single-hop relational behavior.
-It also identifies a compact set of robust intervention-sensitive heads,
-concentrated mainly in layers 16--27, for the next stage.
+intervention. It provides strong evidence that neither the historical pooled RI
+rule nor the test-only, control-adjusted redefinition is a complete or useful
+causal selection rule for the model's single-hop relational behavior. It also
+identifies a compact set of robust intervention-sensitive heads and, through the
+final-position scope, a first structural fact about them.
 
-The result does \emph{not} yet identify a circuit. Because each patch replaced a
-head at all original prompt positions, it does not localize the effect to the
-question, relevant fact, or answer-prediction position. A large effect may
-reflect semantic relation processing, entity binding, name copying, or another
-feature that differs between the token-aligned twins. Single-head effects also
-do not establish necessity under redundancy, edges between heads, or additive
-composition.
+The result does \emph{not} yet identify a circuit. A large effect may reflect
+semantic relation processing, entity binding, name copying, or another feature
+that differs between the token-aligned twins. Single-head effects do not
+establish necessity under redundancy, edges between heads, or additive
+composition. Scope~F narrows \emph{where} the effect enters the residual stream,
+not what the head computes, and it does not identify which downstream components
+read the early-layer heads' output.
 
-Stage 3 should therefore begin with L17H1, L18H19, L27H6, L18H18, L16H1, and
-L16H21, while retaining the original RI heads and random controls. The first
+What the extension adds is a working hypothesis with a definite shape: a set of
+layer-6--11 heads whose contribution is written at test-fact positions, and a set
+of layer-16--26 heads that promote (L18H19, L22H5, L16H21, L16H1, L17H24) or
+suppress (L23H15, L19H16, L26H23) the retrieved name at the answer position by
+what looks like copying. The strongest heads of the first run, L17H1, L27H6 and
+L18H18, still lack a Scope-F measurement and should receive one first.
+
+Stage 3 should therefore begin with L17H1, L18H19, L27H6, L18H18, L22H5, L16H1
+and L16H21 as readers, L8H15, L9H16, L6H24 and L14H23 as candidate writers, and
+L23H15 and L19H16 as negative movers, retaining the random controls. The first
 questions are:
 \begin{enumerate}
-\item At which prompt positions does each exact effect arise?
-\item Where does each head attend on clean and corrupted twins, and does the
+\item Scope-F for L17H1, L27H6 and L18H18, and a per-position patch profile
+across the test block for the writer candidates: at which fact tokens does the
+effect enter?
+\item Where does each reader attend on clean and corrupted twins, and does the
 attention track the query-relevant fact rather than a fixed location?
-\item What does the head's \emph{actual contextual output}, rather than its raw
-embedding OV projection, write into the residual stream?
-\item Which upstream components supply its queries, keys, and values, and which
-downstream components consume its output?
+\item Does the reader's \emph{actual contextual output} at the colon promote the
+attended name (copying), and does its weight-space copying score explain the
+negative name-gap correlation?
+\item Path patching from writer to reader: do the layer-6--11 heads supply the
+readers' keys or values, or act through a different route?
 \item Do pairwise and group interventions reveal redundancy or nonlinear
-interactions that single-head patches cannot detect?
+interactions that single-head patches cannot detect, in particular between the
+positive and negative movers?
 \end{enumerate}
 Only after these position- and edge-level tests should the components be called
 a semantic circuit or evaluated for minimal-circuit faithfulness on the held-out
 validation families.
 
 \section{Conclusion}
-The causal map changes the Stage-1 picture. The two heads selected by pooled RI
-have essentially zero exact effect, while several low-RI heads have large,
-stable, and correctly signed effects. The first-order screen is strongly
-validated against exact patching, so this contrast is not explained by a failed
-approximation. Within the implemented task and patching scope, RI is incomplete
-and descriptively misleading as a causal selection rule. The main positive
-result is not merely that RI fails: Stage 2 identifies a reproducible set of
-mid-to-late-layer heads whose mechanisms can now be tested at position and edge
-resolution.
+The causal map changes the Stage-1 picture, and the extension sharpens it. The
+two heads selected by pooled RI have essentially zero exact effect, while several
+low-RI heads have large, stable, and correctly signed effects. The redesigned
+test-only RI does not repair this: its three priority heads are causally
+negligible, its 46 newly measured candidates reach at most 0.28 logits, and its
+name-gap statistic is negatively rank-correlated with causal importance, most
+plausibly because the causal heads act by copying names and the control
+penalizes copying. The first-order screen is strongly validated against exact
+patching, so none of this is explained by a failed approximation. Within the
+implemented task and patching scopes, RI in both forms is incomplete as a causal
+selection rule, and the redefinition is not misleading only in a sense too small
+to matter. The positive result is structural: the causal heads split by layer
+into a group whose effect is written at earlier test positions and a group that
+delivers its entire effect by promoting or suppressing the retrieved name at the
+answer position. Those two groups, and the edges between them, are what Stage 3
+has to test.
 
 \end{document}

@@ -1,0 +1,138 @@
+Replica 1: loading pinned model.
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:01<00:09,  1.98s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [00:04<00:08,  2.02s/it]Loading checkpoint shards:  50%|█████     | 3/6 [00:06<00:06,  2.01s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:07<00:03,  2.00s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:09<00:01,  1.98s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:11<00:00,  1.91s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:11<00:00,  1.95s/it]
+Gate pair passed: 000/direct/base/0/order0; shared prefix []
+Gate pair passed: 000/direct/base/0/order1; shared prefix []
+Gate pair passed: 002/direct/base/0/order0; shared prefix []
+Gate pair passed: 002/direct/base/0/order1; shared prefix []
+Gate pair passed: 168/direct/base/0/order0; shared prefix [650]
+Gate pair passed: 168/direct/base/0/order1; shared prefix [650]
+Gate pair passed: 174/direct/base/0/order0; shared prefix [480]
+Gate pair passed: 174/direct/base/0/order1; shared prefix [480]
+Gate v2 pair passed: 000/direct/base/0/order0 {'id': '000/direct/base/0/order0', 'n': 278, 'first_diff': 234, 'source_token': 31651, 'scopeF_self_patch_max': 0.0, 'prefix_patch_max': 0.0, 'v1_replication_max': 0.0, 'readout_consistency': 0.0, 'prefix_activation_max_abs_diff': 0.0}
+Gate v2 pair passed: 000/direct/base/0/order1 {'id': '000/direct/base/0/order1', 'n': 278, 'first_diff': 236, 'source_token': 31651, 'scopeF_self_patch_max': 0.0, 'prefix_patch_max': 0.0, 'v1_replication_max': 0.0, 'readout_consistency': 0.0, 'prefix_activation_max_abs_diff': 0.0}
+Gate v2 pair passed: 002/direct/base/0/order0 {'id': '002/direct/base/0/order0', 'n': 280, 'first_diff': 235, 'source_token': 16132, 'scopeF_self_patch_max': 0.0, 'prefix_patch_max': 0.0, 'readout_consistency': 0.0, 'prefix_activation_max_abs_diff': 0.0}
+Gate v2 pair passed: 002/direct/base/0/order1 {'id': '002/direct/base/0/order1', 'n': 280, 'first_diff': 237, 'source_token': 16132, 'scopeF_self_patch_max': 0.0, 'prefix_patch_max': 0.0, 'readout_consistency': 0.0, 'prefix_activation_max_abs_diff': 0.0}
+Gate v2 pair passed: 168/direct/base/0/order0 {'id': '168/direct/base/0/order0', 'n': 278, 'first_diff': 238, 'source_token': 30594, 'scopeF_self_patch_max': 0.0, 'prefix_patch_max': 0.0, 'readout_consistency': 0.0, 'prefix_activation_max_abs_diff': 0.0}
+Gate v2 pair passed: 168/direct/base/0/order1 {'id': '168/direct/base/0/order1', 'n': 278, 'first_diff': 237, 'source_token': 30594, 'scopeF_self_patch_max': 0.0, 'prefix_patch_max': 0.0, 'readout_consistency': 0.0, 'prefix_activation_max_abs_diff': 0.0}
+Gate v2 pair passed: 174/direct/base/0/order0 {'id': '174/direct/base/0/order0', 'n': 280, 'first_diff': 234, 'source_token': 622, 'scopeF_self_patch_max': 0.0, 'prefix_patch_max': 0.0, 'readout_consistency': 0.0, 'prefix_activation_max_abs_diff': 0.0}
+Gate v2 pair passed: 174/direct/base/0/order1 {'id': '174/direct/base/0/order1', 'n': 280, 'first_diff': 232, 'source_token': 622, 'scopeF_self_patch_max': 0.0, 'prefix_patch_max': 0.0, 'readout_consistency': 0.0, 'prefix_activation_max_abs_diff': 0.0}
+Replica 1: 1/60 004/direct/base/0/order0
+  heads 64/69
+Replica 1: 2/60 004/direct/base/0/order1
+  heads 64/69
+Replica 1: 3/60 012/direct/base/0/order0
+  heads 64/69
+Replica 1: 4/60 012/direct/base/0/order1
+  heads 64/69
+Replica 1: 5/60 016/direct/base/0/order0
+  heads 64/69
+Replica 1: 6/60 016/direct/base/0/order1
+  heads 64/69
+Replica 1: 7/60 024/direct/base/0/order0
+  heads 64/69
+Replica 1: 8/60 024/direct/base/0/order1
+  heads 64/69
+Replica 1: 9/60 030/direct/base/0/order0
+  heads 64/69
+Replica 1: 10/60 030/direct/base/0/order1
+  heads 64/69
+Replica 1: 11/60 038/direct/base/0/order0
+  heads 64/69
+Replica 1: 12/60 038/direct/base/0/order1
+  heads 64/69
+Replica 1: 13/60 046/direct/base/0/order0
+  heads 64/69
+Replica 1: 14/60 046/direct/base/0/order1
+  heads 64/69
+Replica 1: 15/60 054/direct/base/0/order0
+  heads 64/69
+Replica 1: 16/60 054/direct/base/0/order1
+  heads 64/69
+Replica 1: 17/60 056/direct/base/0/order0
+  heads 64/69
+Replica 1: 18/60 056/direct/base/0/order1
+  heads 64/69
+Replica 1: 19/60 062/direct/base/0/order0
+  heads 64/69
+Replica 1: 20/60 062/direct/base/0/order1
+  heads 64/69
+Replica 1: 21/60 070/direct/base/0/order0
+  heads 64/69
+Replica 1: 22/60 070/direct/base/0/order1
+  heads 64/69
+Replica 1: 23/60 078/direct/base/0/order0
+  heads 64/69
+Replica 1: 24/60 078/direct/base/0/order1
+  heads 64/69
+Replica 1: 25/60 086/direct/base/0/order0
+  heads 64/69
+Replica 1: 26/60 086/direct/base/0/order1
+  heads 64/69
+Replica 1: 27/60 092/direct/base/0/order0
+  heads 64/69
+Replica 1: 28/60 092/direct/base/0/order1
+  heads 64/69
+Replica 1: 29/60 096/direct/base/0/order0
+  heads 64/69
+Replica 1: 30/60 096/direct/base/0/order1
+  heads 64/69
+Replica 1: 31/60 104/direct/base/0/order0
+  heads 64/69
+Replica 1: 32/60 104/direct/base/0/order1
+  heads 64/69
+Replica 1: 33/60 112/direct/base/0/order0
+  heads 64/69
+Replica 1: 34/60 112/direct/base/0/order1
+  heads 64/69
+Replica 1: 35/60 116/direct/base/0/order0
+  heads 64/69
+Replica 1: 36/60 116/direct/base/0/order1
+  heads 64/69
+Replica 1: 37/60 120/direct/base/0/order0
+  heads 64/69
+Replica 1: 38/60 120/direct/base/0/order1
+  heads 64/69
+Replica 1: 39/60 126/direct/base/0/order0
+  heads 64/69
+Replica 1: 40/60 126/direct/base/0/order1
+  heads 64/69
+Replica 1: 41/60 134/direct/base/0/order0
+  heads 64/69
+Replica 1: 42/60 134/direct/base/0/order1
+  heads 64/69
+Replica 1: 43/60 140/direct/base/0/order0
+  heads 64/69
+Replica 1: 44/60 140/direct/base/0/order1
+  heads 64/69
+Replica 1: 45/60 152/direct/base/0/order0
+  heads 64/69
+Replica 1: 46/60 152/direct/base/0/order1
+  heads 64/69
+Replica 1: 47/60 154/direct/base/0/order0
+  heads 64/69
+Replica 1: 48/60 154/direct/base/0/order1
+  heads 64/69
+Replica 1: 49/60 160/direct/base/0/order0
+  heads 64/69
+Replica 1: 50/60 160/direct/base/0/order1
+  heads 64/69
+Replica 1: 51/60 170/direct/base/0/order0
+  heads 64/69
+Replica 1: 52/60 170/direct/base/0/order1
+  heads 64/69
+Replica 1: 53/60 178/direct/base/0/order0
+  heads 64/69
+Replica 1: 54/60 178/direct/base/0/order1
+  heads 64/69
+Replica 1: 55/60 180/direct/base/0/order0
+  heads 64/69
+Replica 1: 56/60 180/direct/base/0/order1
+  heads 64/69
+Replica 1: 57/60 194/direct/base/0/order0
+  heads 64/69
+Replica 1: 58/60 194/direct/base/0/order1
+  heads 64/69
+Replica 1: 59/60 196/direct/base/0/order0
+  heads 64/69
+Replica 1: 60/60 196/direct/base/0/order1
+  heads 64/69

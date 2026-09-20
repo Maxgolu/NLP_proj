@@ -1,0 +1,10 @@
+{
+ "complete": true,
+ "pairs": 178,
+ "scopeP_heads": 56,
+ "scopeF_heads": 69,
+ "scopeP_new_forwards": 7728,
+ "scopeF_forwards": 12282,
+ "importance": "minus mean delta; family-level means over 89 families (orders averaged first)",
+ "note": "Scope-P values for the 40 v1 exact-subset pairs are copied from stage2_v1/screen; Scope-F values are all new."
+}

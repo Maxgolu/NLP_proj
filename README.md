@@ -13,28 +13,63 @@ confounds, the current priority became a controlled **single-hop causal audit**:
 Two-hop composition and checkpoint-development analyses remain later extensions.
 No circuit has yet been established.
 
-## Current status
+## Current status (20 September 2026)
 
 Model: base `allenai/OLMo-2-1124-7B`, revision
 `7df9a82518afdecae4e8c026b27adccc8c1f0032`, with 32 layers and 32 attention
 heads. The model is used without fine-tuning.
 
 - Stage 0: hook, metric, numerical, and costing checks completed.
-- Stage 1: observational RI scan completed for all 1,024 heads on 534 prompts.
-- Stage 1 follow-up: matched-target calibration and saved-event anatomy completed.
-- Stage 2: submitted to Slurm as job `888691`, run name `stage2_v1`. The last
-  user-observed state was `RUNNING` on `s-004` with six GPUs. This repository
-  does **not** currently contain downloaded Stage-2 results, and neither gate
-  passage nor successful completion has been verified.
-- Stages 3–4: not started.
+- Stage 1: observational RI scan completed for all 1,024 heads on 534 prompts;
+  matched-target calibration and saved-event anatomy completed.
+- Stage 1 extension: test-only RI with name/word controls (`ri_test_v2`, job
+  905839) completed; 59 descriptive candidates. Report:
+  `חומר כתוב/Stage1_Results_and_Analysis_updated.tex`.
+- Stage 2: `stage2_v1` (job 888691) completed and analyzed: first-order screen
+  for all heads on 178 pairs, exact patching for all heads on 40 pairs, exact
+  extension for 92 heads on 178 pairs. Screen calibration Spearman 0.945.
+- Stage 2 extension v2: `stage2_v2_extension` (job 912879) completed: exact
+  all-position patching for the 56 uncovered new candidates on the remaining
+  138 pairs, and final-position-only patching for 69 heads on all 178 pairs,
+  with separate answer/source logits. Report (updated in place):
+  `חומר כתוב/Stage2_Results_and_Analysis.tex`; analysis
+  `results/stage2_v2_analysis/`.
+- Main Stage-2 findings: the historical RI heads have no effect; the test-only
+  RI priority heads are causally negligible; the name-gap statistic is
+  negatively rank-correlated with causal importance (copying hypothesis, untested);
+  causal heads split into layer-6–11 heads acting at test-fact positions and
+  layer-16–26 heads acting entirely at the answer position.
+- Stages 3–4: not started. Next: final-position scope for L17H1/L27H6/L18H18,
+  weight copying score, path patching writer→reader.
 
-The authoritative transition notes are in `RESEARCH_HANDOFF.md`. For the current
-method and evidence, read the files in this order:
+The authoritative transition notes are in `RESEARCH_HANDOFF.md` (its top
+"UPDATE" section is the latest state). For the current method and evidence,
+read the files in this order:
 
-1. `חומר כתוב/Single_Hop_Methodology_stage1_updated.tex`
+1. `חומר כתוב/Single_Hop_Methodology_stage1_updated.tex` (+ Section 4 and 5
+   replacement fragments in the same folder, not yet merged)
 2. `חומר כתוב/Stage1_Results_and_Analysis_updated.tex`
-3. `pilot_v2/README_STAGE2.md`
-4. `pilot_v2/STAGE1_AUDIT_README.md`
+3. `חומר כתוב/Stage2_Results_and_Analysis.tex`
+4. `pilot_v2/RUNBOOK_stage2_v1.md`, `pilot_v2/RUNBOOK_stage2_v2_extension.md` (run books)
+
+## Documentation map
+
+There is one entry point: this file. Every other `README*`/`*_README*` is a
+**run book** for a specific experiment (commands to upload, submit, monitor,
+verify and download) written at the time of that run, or a historical record.
+
+| File | Role | Status |
+|---|---|---|
+| `README.md` (this file) | project entry point, status, reading order | current |
+| `RESEARCH_HANDOFF.md` | assistant/collaborator handoff, evidence hierarchy | current |
+| `pilot_v2/RUNBOOK_stage2_v1.md` | run book: `stage2_v1` (job 888691) | current |
+| `pilot_v2/RUNBOOK_stage2_v2_extension.md` | run book: `stage2_v2_extension` (job 912879) | current |
+| `pilot_v2/RUNBOOK_stage1_audit.md` | run book: Stage-1 audit and calibration | current |
+
+Historical run books of the behavioral pilots (Pythia-1B, completion v1–v3.1,
+OLMo-2 comparison) were removed on 20 September 2026; they remain in the Git
+history up to that commit, and their scientific content is in
+`research_history_overleaf_en.tex` and `experimental_setup.tex`.
 
 ## Why the project changed direction
 
@@ -59,9 +94,8 @@ then proceeded through several controlled revisions:
   single-hop components only if the evidence supports it.
 
 Historical context is preserved in `research_history_overleaf_en.tex`,
-`חומר כתוב/NLP___current_position.pdf`, `pilot_v3/README_HE.md`, and
-`pilot_v2/README_OLMO2.md`. These are historical records, not the final Stage-2
-specification.
+`experimental_setup.tex` and `חומר כתוב/NLP___current_position.pdf`. These are
+historical records, not the final Stage-2 specification.
 
 ## Current experimental substrate
 
@@ -133,7 +167,7 @@ the corrupted answer.
 
 For one head, exact patching replaces its `o_proj` input slice with corrupted-run
 activations at all original prompt positions. Shared answer-prefix positions are
-recomputed. The planned run contains:
+recomputed. The completed `stage2_v1` run contains:
 
 1. first-order gradient attribution for all 1,024 heads on all 178 discovery
    clean/corrupted pairs;
@@ -156,10 +190,17 @@ on effect sign, head usefulness, or approximation agreement. CPU unit tests
 passed locally, but those tests do not establish that the OLMo GPU gate passed.
 
 Monitoring, resumption, and safe download commands are documented in
-`pilot_v2/README_STAGE2.md`. Completion requires both a successful Slurm exit and
-`summary.json` with `complete: true`.
+`pilot_v2/RUNBOOK_stage2_v1.md`. Completion requires both a successful Slurm exit and
+`summary.json` with `complete: true`. Both `stage2_v1` and `stage2_v2_extension`
+met this; see the Stage-2 report for results.
 
-## Interpreting future Stage-2 results
+The extension (`pilot_v2/stage2_extension_v2.py`, run book
+`pilot_v2/RUNBOOK_stage2_v2_extension.md`) adds a second patch scope — the final prompt
+position only — and stores the clean-answer, corrupted-answer and source-name
+logits separately. Head lists come from `pilot_v2/stage2_coverage_audit_v2.py`.
+Analysis: `analyze_stage2_results.py` (v1) and `analyze_stage2_v2_results.py` (v2).
+
+## Interpreting Stage-2 results
 
 Before scientific interpretation, verify the gate files, manifest and hashes,
 successful job exit, pair counts, completion marker, and absence of missing or
@@ -190,6 +231,9 @@ clean–corrupted logit-difference gap.
 - `research_history_overleaf_en.tex` — detailed pre-Phase-A research history.
 - `RESEARCH_HANDOFF.md` — current handoff, evidence hierarchy, and collaboration
   guidance.
+- `analyze_stage2_results.py`, `analyze_stage2_v2_results.py` — Stage-2 analysis
+  scripts (CPU only). Older `analyze_*.py` files at the root belong to the
+  behavioral pilots.
 
 The original proposal and course requirements are one directory above this
 repository. The final submission is an ACL-format paper limited to eight pages,
