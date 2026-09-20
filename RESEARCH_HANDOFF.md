@@ -1,0 +1,229 @@
+# Research handoff — read this first
+
+Snapshot: 18 September 2026, after the test-only Stage-1 RI extension and the in-place Overleaf results-report update. This supersedes the 13 September handoff's pending-job status. Stage 2 job 888691 and RI-extension job 905839 completed; their results are local. Read the artifacts before making scientific claims.
+
+**Immediate next task:** decide whether the existing Stage-2 measurements already cover the new Stage-1 candidates, or whether a targeted additional calculation is needed. Do NOT assume that a changed RI shortlist requires rerunning Stage 2. Conversely, do NOT assume all new candidates have exact measurements on all families. Audit coverage first, then discuss the necessary update to the Stage-2 results report with the user. This coverage comparison has NOT yet been performed.
+
+## 1. Working with the researcher
+
+Act as a rigorous NLP research collaborator and mentor, with strong mathematical grounding in transformers, probability, statistics, causal inference, experimental design and mechanistic interpretability. Demonstrate expertise through correct analysis, not claims of exceptional authority. The user wants to become an outstanding independent NLP researcher: help them develop judgment, technical skill and the ability to challenge interpretations.
+
+- Speak Hebrew in conversation. Write research documents and Overleaf LaTeX in simple, professional, concise English. Avoid long narratives and unnecessary jargon.
+- Keep explanations direct; the user explicitly finds long responses tiring. Separate Hebrew prose from English formulas/tables where possible. In experiment reports briefly remind the reader what was tested, why, and why that comparison was chosen. Expand only where it changes the interpretation.
+- Edit existing Overleaf sources in place when requested, rather than replacing the report with a newly structured document. Preserve authors, historical results and meaningful section structure. Do not confuse a PDF's user-facing name with the local source filename.
+- Explain a metric by stating its inputs, operation, denominator, meaning and limitations. Use a concrete prompt/token example when helpful. Define terms rather than inventing labels. Distinguish characters, tokens, entities and positions.
+- Be direct about what was actually measured. Separate observations, interpretations, hypotheses and causal evidence. Do not infer a circuit from several important heads or from correlations between their outputs.
+- Welcome the user's objections. Correct yourself explicitly when needed; do not defend an earlier implementation merely because you wrote it, or agree without checking.
+- The user knows the course material in the parent NLP directory and has studied the core Anthropic papers. Do not repeatedly explain basics, but develop mathematical arguments when they answer the question.
+- Work autonomously on authorized tasks. Avoid repeated permission requests and unnecessary reruns. For consequential methodological changes, make the change explicit and preserve comparison with the previous specification.
+- Give copyable commands, clearly separating local PowerShell from remote Bash. Never put markdown escape backslashes before underscores or @ inside commands.
+- Inspect actual code, prompts, results and provenance before reporting conclusions. A saved assistant report is a secondary source. Validate against raw artifacts where necessary.
+- Show progress during longer work. Report what changed, what was tested, what remains unverified, and the next concrete action.
+- Keep artifacts under this project. Preserve existing results and unrelated edits. Do not download models, submit extra jobs, rewrite SSH trust, or publish messages on the user's behalf without authorization for that action.
+
+## 2. Source hierarchy and reading order
+
+All paths below are relative to:
+`C:/Users/User/OneDrive/Documents/computer science/4B/NLP/final proj/project`
+
+Start with these, not the root README:
+
+1. `חומר כתוב/Stage1_Results_and_Analysis_updated.tex` — CURRENT concise Overleaf report, updated in place on 18 September. Same six main sections and authors; Section 1 adds extension validation, Section 5 now has four subsections covering the new experiment/results/diagnostics, and Section 6 updates the conclusion. This is the source corresponding to the user's `pahse_1___results_and_analysis` report. The local PDF with that name and older `.tex` are not the updated authority. Structural LaTeX checks passed; no local compiler was available and no new PDF was compiled.
+2. `חומר כתוב/Stage1_RI_Test_Extension_Results_and_Analysis.md` — detailed supporting analysis, including candidate qualifications and raw-OV invariance. `results/ri_test_v2_analysis/post_selection_audit.json` contains the calculations. Neither replaces the concise Overleaf report.
+3. `חומר כתוב/Single_Hop_Methodology_section4_RI_extension.tex` — replacement methodology Section 4 for the new Stage-1 design. Read alongside `חומר כתוב/Single_Hop_Methodology_stage1_updated.tex` for the overall design. Do not assume the fragment was merged into the full local document. The full document still contains a stale Stage-3 SVD statement (see Section 10 below).
+4. `חומר כתוב/Stage2_Results_and_Analysis.tex`, then `pilot_v2/README_STAGE2.md`, `stage2_run.py`, `stage2_common.py`, `stage2_engine.py`, and `analyze_stage2_results.py`. This is the existing source corresponding to `phase_2__Results_and_Analysis.pdf`. It predates the new RI candidate analysis and has NOT been updated for it.
+5. Actual Stage-2 outputs under `results/stage2_v1/` and derived analysis under `results/stage2_v1_analysis/`; actual extension outputs under `results/ri_test_v2/`, extension implementation `pilot_v2/ri_test_audit.py`, and independent analysis `pilot_v2/analyze_ri_test_results.py`.
+6. `pilot_v2/STAGE1_AUDIT_README.md` and original Stage-1 code/results below for the historical definitions/calibration. For earlier history: `research_history_overleaf_en.tex`, `חומר כתוב/NLP___current_position.pdf`, `pilot_v3/README_HE.md`, and `pilot_v2/README_OLMO2.md`.
+
+The root `README.md` is stale: it still describes Pythia and an earlier multi-hop behavioral pilot. Do not treat it as the current model/task specification. No root/project `AGENTS.md` was found during this handoff; inspect any instructions supplied by the new session normally. This file supplements rather than replaces them.
+
+The original proposal and course instructions are in the parent directory: `../NLP Projects_Proposal.pdf`, `../NLP_course_2025b___project_guidelines.pdf`. The parent also has course PDFs and `../papers/`. Refer to these instead of reconstructing their contents from this handoff.
+
+## 3. Research objective and literature
+
+Original direction: identify semantic induction circuits involved in double-hop reasoning. Following discussion and instructor approval, the current priority is **single-hop first**: audit whether heads selected by the semantic induction head (SIH) definition actually carry the model's in-context relational ability, whether the definition misses important heads, and whether the mechanism requires a larger circuit. Two-hop composition is a later extension, not the experiment currently running.
+
+Core sources (available locally where noted):
+- Ren et al., *Identifying Semantic Induction Heads to Understand In-Context Learning*: `../papers/Identifying Semantic Induction Heads to Understand In-Context Learning.pdf`; https://aclanthology.org/2024.findings-acl.412.pdf
+- Olsson et al., *In-context Learning and Induction Heads*: local paper; https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html
+- Elhage et al., *A Mathematical Framework for Transformer Circuits*: https://transformer-circuits.pub/2021/framework/index.html
+- Local supporting papers include *Towards Best Practices of Activation Patching in Language Models*, *Towards Automated Circuit Discovery*, *Position-aware Automatic Circuit Discovery*, *Have Faith in Faithfulness*, *Function Vectors*, *Patchscopes*, and the IOI circuit paper. Read the relevant paper before attributing a specific method or claim to it.
+
+Do not equate Ren-style SIH selection with verification of the classical induction circuit. An intervention can support a causal effect within a specified computational experiment; it does not automatically establish semantic specificity, a complete circuit, or a universal causal account.
+
+## 4. History in brief
+
+The project began with the proposal, literature study and methodological planning. Behavioral pilots used Pythia-1B and then Pythia-6.9B to test whether a tractable model could perform the task before attempting internal interpretation.
+
+The dataset and scoring were revised repeatedly: yes/no prompts had strong answer biases; names and 0/4/12-shot conditions were explored; name completion exposed ambiguity of intermediate versus final entities, mention-frequency shortcuts and option-order effects. An explicit graph-navigation wording failed even on simple checks. Natural-language named relations and balanced mentions were developed, with counterfactual/broken-link checks and tokenizer audits. Poor results were not attributed automatically to model size. Exact earlier numbers belong in the saved behavioral reports, not in recollection.
+
+OLMo-2-1124-7B was then adopted. After the single-hop scope decision, Stage 0 established hooks, metric checks and cost estimates; Stage 1 scanned all heads and was revised to collect full dominance distributions, event-level metadata and matched-target calibration. Stage 2 subsequently completed and was analyzed. The user then revisited Stage 1 in depth: repeated demonstrations, fact-position denominators, restrictive matched-name controls, first/last token choice and semantic specificity motivated a broader test-only RI extension. That extension is now complete and analyzed, and its results have been integrated into the existing Stage-1 Overleaf report. The next question is how this changes the Stage-2 analysis, not starting the project again.
+
+## 5. Current substrate
+
+Model: base `allenai/OLMo-2-1124-7B`, revision `7df9a82518afdecae4e8c026b27adccc8c1f0032`, pinned in `pilot_v2/model_lock_olmo2.json`. 32 layers x 32 heads = 1,024 heads. HF Transformers/PyTorch, fp16, model sharding across GPUs; CPU offload rejected by the loader. No fine-tuning in these stages.
+
+Single-hop dataset: generator `pilot_v3/build_data_singlehop.py`, local data `pilot_v3/data_singlehop/`; cluster-facing input `pilot_v2/data/singlehop_v1_4shot.jsonl`. Inspect the file for exact templates and annotations.
+
+There were 200 families; behavioral eligibility retained 176. Discovery uses 89 even-ID families; 87 odd-ID validation families remain reserved for later validation. Stage 1: 89 x 3 variants (base/corrupted/reorder) x 2 orders = 534 prompts, four ICL demonstrations each. Stage 2: clean/corrupted pairs, both orders = 178 discovery pairs. Shared demonstration prefixes are intentional controls within families, not independent observations. Do not select heads or tune thresholds on held-out validation families.
+
+Baseline report: `results/singlehop_baseline/singlehop_baseline_report.md`. Stage-1 provenance pins the data and baseline hashes.
+
+## 6. Stage 1: precise definition and results
+
+Authoritative run: `results/stage1_v4_review/stage1_v4_calibrated/`, archive `results/stage1_v4_calibrated_results.tar.gz`. Read its config/provenance, `head_stats.csv`, `metric_specs.json`, `audit_prompts.jsonl.gz`, `ri_events.jsonl.gz` and calibration outputs as needed.
+
+Relevant code: `pilot_v2/stage1_scan.py`, `stage1_audit.py`, `run_stage1_audit.py`, `analyze_stage1_audit.py`, and calibration helpers referenced by those files.
+
+QK condition: at current position j, maximal attention must point to annotated SOURCE position s and exceed the strongest competitor by tau=2.2. Source anchor = last token of the source name. In the kinship task, the child is the source and mother is the target. Do not reverse them. Eligible positions include j=s when both names are visible.
+
+OV statistic: raw current-token embedding e_j projected through head W_V W_O and unembedding; normalize using visible-context tokens as implemented. First target token is primary, last token is sensitivity. This is NOT the actual contextual head output and NOT its final-logit causal effect. Strength is conditional on scored passes; frequency uses fact-position opportunities, not prompt count.
+
+Historical pooled selection chose L3H11 and L9H22. That old cross-head control-mean percentile is descriptive, not calibrated significance:
+- L3H11: 149 passes, pooled RI .2431; 144 demo passes (.2502), 5 test passes (.0384). All attend one token backward from the same period/newline token. Events span 17 families; test events only one family.
+- L9H22: 86 passes, pooled RI .3739; 72 demo passes (.4453), 14 test passes (.00674). All are self-attention. Events span 15 families; test events span four.
+- Demonstrations account for >99% of summed first-target scores for each. These are static raw-embedding preferences conditioned on QK events; earlier layers might still write relational information into those positions. Neither a semantic mechanism nor its absence has been established.
+
+Matched-target calibration is a DIFFERENT, restricted statistic: matched test-block events, both candidate mentions visible, same token length, distinct first token. Minimum 50 events across 10 families. Equal active-family means, 100,000 family-consistent target/control swaps; Holm across 1,024. 80 heads eligible, 944 insufficient support; neither pooled candidate had any eligible matched events. No head survived correction. L16H4 had smallest raw p=.00581 (87 events, 40 families, target .01471 vs control .00930). Insufficient data is not a negative causal result; exchangeability assumptions still matter.
+
+Full dominance collection: 1,455,940 ratios, p95=4.482, versus old restricted-sample 3.658. Tau is a selection threshold, NOT temperature. Both event weighting and dataset/tokenization affect it; it is not evidence of a purely model-specific difference. Filtering saved events at 4.482 retained 72,797 passes; no new model run or null recalibration for that sensitivity.
+
+Stage-1 loading took 38m44s, scan 12.5min, calibration ~7s. Earlier long run was waiting on I/O (`D`, `folio_wait_bit_common`, growing read_bytes), not established to be an infinite loop.
+
+## 7. Independent saved-event analysis — completed
+
+Code: `pilot_v2/stage1_anatomy.py`. Output: `results/stage1_v4_review/anatomy_all_heads/` (`head_anatomy.csv`, `summary.md`, provenance). No GPU forward passes. All heads' event/denominator counts reconcile with the scan.
+
+Partitioned QK-passing events by distance (self / previous / >=2), fact block (demo/test), current-position block (demo/test/final bare-prompt token). Twenty heads emerged with at least one qualifying event from the final prompt token: they were NOT a preselected set of 20. 748 such events total, 744 to test-fact sources and 4 to demo sources. Neither L3H11 nor L9H22 appears in that set.
+
+Examples, final-prompt attention to test-fact source satisfying BOTH argmax and dominance>2.2:
+- L16H21: 230 events, 79 families.
+- L16H1: 223 events, 76 families.
+- L16H4: 63 events, 32 families.
+
+These counts are not correct-answer counts, independent trials, proof of query-relevant fact selection, or evidence of target promotion. No common semantic rule for all 20 was established. The final bare-prompt position precedes any common answer prefix used by Stage 2. This analysis did not change the already submitted Stage-2 shortlist rule.
+
+## 8. Stage 2 — completed, existing coverage must be reconciled with new candidates
+
+User supplied `sacct`: job **888691**, `stage2`, COMPLETED in **01:14:42**, exit **0:0**, on s-004 with six GPUs. Local artifacts: `results/stage2_v1/`, archive `results/stage2_v1_results.tar.gz`. Its saved `summary.json` confirms complete=true, 178 pairs, 40 all-head exact pairs, **92 full-coverage extension heads**, first-order estimate and estimate_validated=true. The existing results report records all three replica gates passed and raw-array/provenance checks. This handoff update inspected the summary/quality metadata, not a fresh full-array rerun of those checks.
+
+Code: `pilot_v2/stage2_run.py` (controller/workers), `stage2_engine.py` (metrics/hooks), `stage2_common.py` (pairing/work plan), `stage2.sbatch`, `submit_stage2.sh`, `test_stage2.py`. Read these before analyzing output. The README provides all commands; do not substitute the older methodology's Stage-2 description for actual code.
+
+Six GPUs -> three persistent replicas, two GPUs each. Whole-family scheduling weighted by expected exact work. Initial loading staggered to reduce shared-storage contention. Every replica must pass its gate before any begins the full experiment; failures stop workers. Models remain loaded between phases.
+
+Gate: identity/hash and token-alignment checks, behavioral replication, self-patch, self-attribution, full corrupted embedding replacement, and six-head exact/gradient previews on four families/both orders including common answer prefixes. Does NOT gate on scientific usefulness, effect sign or estimate agreement.
+
+Metric: clean-answer logit minus corrupted-answer logit at FIRST DIVERGENT answer token, conditioned on shared answer prefix. Fix clean-gold sign even on corrupted input. Head patch replaces the o_proj input slice at ALL ORIGINAL PROMPT positions using corrupted donor activations. Common answer-prefix positions remain live/recomputed. Negative delta means movement toward corrupted answer. Not loss difference, sequence likelihood, or single-position patching.
+
+Scope:
+1. First-order gradient attribution for all 1,024 heads on all 178 pairs.
+2. Exact single-head patching for all 1,024 heads on 40 pairs (20 randomly sampled whole families, both orders). NOT all-head exact patching on all 178.
+3. If signed-mean head Spearman against exact results is <.7 or undefined, five-step midpoint INPUT-EMBEDDING IG estimate on all 178. It is an approximation contracting gradients with fixed head deltas, not an exact head-path integral. If agreement still fails, mark estimate unvalidated; exact results remain useful.
+4. Exact extension to all pairs for union of top25 supported first-target RI, top25 last-target RI, top25 absolute mean estimated effects, L3H11/L9H22/L16H4, plus25 random controls. Reuse the 40-pair exact results.
+
+Local validation before submission: all 16 CPU tests passed, including exact/Taylor/IG agreement on a linear toy model, nonlinear finite differences, prefix patch scope, self controls and scheduling. GPU gates subsequently passed as recorded in the results. Test-only CPU PyTorch under `tmp/stage2_test_deps` is not the Slurm runtime and must not enter Git/upload bundles.
+
+Saved outputs include manifest, gate files, worker logs, per-pair NPZ, quality reports, `shortlist.json`, `head_effects.csv` and final `summary.json`. Signed mean-head Spearman was **0.945364891**, absolute mean-head correlation **0.920853814**, pair-head correlation **0.902767406**. First-order passed the prespecified agreement check, so the IG fallback was NOT run. Global agreement does not guarantee each new candidate's approximation accuracy.
+
+Existing report/analysis: `חומר כתוב/Stage2_Results_and_Analysis.tex`, `analyze_stage2_results.py`, `results/stage2_v1_analysis/summary.json`, figure `results/stage2_v1_analysis/ri_vs_causal_effect.png` (the Overleaf source expects an image named `stage2_ri_vs_causal_effect.png`; check its local/upload copy). The existing comparison uses historical pooled RI; its reported RI/exact Spearman ~0.135 is NOT a result for the new test-only contrasts. Its earlier Stage-3 prioritization must be reassessed, not automatically overwritten or assumed validated for the new shortlist.
+
+### 8A. Test-only Stage-1 extension: implementation and execution history
+
+The user wanted Stage 1 to produce a strong, broad **RI-based discovery list**, keeping contextual/intervention methods for later stages. They explicitly approved test-only events, first/last anchors, general-word and alternative-name controls, fact/query distinction, position/distance separation, paired variants, and post-selection token/family concentration checks.
+
+Code: `pilot_v2/ri_test_audit.py` (prepare/OV/analyze/run), `ri_test_audit.sbatch`, `submit_ri_test_audit.sh`, `ri_test_diagnostics.py`, `build_ri_test_bundle.py`, `pack_ri_test_results.sh`, `verify_ri_test_results.py`, `test_ri_test_audit.py`, `test_ri_test_diagnostics.py`. Code-only archives `ri_test_audit_v1_update.tar.gz` and `ri_test_audit_v2_update.tar.gz` deploy into versioned remote directories; do not confuse local flat code paths with the remote `ri_test_audit_v2/` import directory.
+
+Preparation reuses original saved attention events and metadata. GPU work adds the missing alternative-name last-token scores and sampled word-control scores, while replicating saved scores; it loads weights but performs no full-model forwards. CPU analysis then summarizes and selects candidates. Do not describe this as a new attention scan or as entirely GPU-free.
+
+Execution history:
+- Job **899730**, v1, s-003, failed after 2h01m21s. Weight loading alone took ~1h57m. Error: `Previously scored event now has zero denominator`. Do not claim a proven root cause or silently relax RI math/tolerances.
+- v2 added loading/environment/I/O diagnostics and concurrency protection. Job **905799**, s-004, failed immediately on the existing `.running.lock` while another job used the same output. This was a collision, not evidence that s-004 was broken. Never remove a lock without checking job liveness.
+- Job **905807**, s-002, failed during CUDA initialization (`CUDA unknown error`) after 5m06s, before model load completed. The message suggests possible environment problems but does not prove the exact cause. No evidence here establishes that s-005 was repaired either.
+- Job **905839**, s-004, completed in **47m06s**, exit **0:0**. Authoritative output `results/ri_test_v2/`; archive `results/ri_test_v2_results.tar.gz`. Model loading still took ~38m38s. Weights are on NFS (`netapp1:/Netapp5_yandex`); resource/node/cache/I/O differences can affect loading. Do not attribute success or slowness to a single unproven cause.
+- The user wants short practical transfer commands, not unnecessary environment setup or checksum ceremonies. An unset `$PILOT_RUNS` and the nonexistent relative `storage/runs` previously caused tar failures. Use verified absolute storage paths when needed.
+
+Frozen extension policy: tau=2.2; seed=20260916; up to three unique visible non-name word types; all other fully visible test fact-tail names; no equal-length exclusion; first/last target and control anchors; collisions retained as ties. Test-only excludes demo events, not demo context or normalization tokens. QK failures are skipped, not RI=0; valid scored zeros remain zeros. RI subtracts the mean, clamps max(0, ...), and normalizes over unique visible token IDs.
+
+Conditional means: average within family, then equally over active families for that metric. Frequency includes zero-pass families. All-test includes final; all-facts includes query-fact. Do not present overlapping views as independent replications. Counts for target-only and name-comparison subsets can differ because controls must be fully visible.
+
+Selection: union of top10 positive family means for target/name-gap/word-gap over two anchors, two fact scopes and all-test/final position scopes; minimum **20 events and 10 families for each corresponding metric**. Output **59 descriptive candidates**, with **36 entering at least one name-gap ranking**. This is NOT the earlier matched calibration (50 events, same token lengths, distinct first tokens, family swaps/Holm) and NOT a new multiplicity-corrected discovery claim.
+
+### 8B. Completed local analysis and main findings
+
+`pilot_v2/analyze_ri_test_results.py` was added for independent read-only verification/post-selection diagnostics; output `results/ri_test_v2_analysis/post_selection_audit.json`. It does not alter frozen source results or selection. It checks every event and all active-head aggregates and analyzes all 59 selected heads plus both historical heads, not just the reported examples.
+
+Verified: **46,634/46,634 scored events**, 340 active heads, summaries for 1,024 heads; 237,685 replication checks, maximum absolute error **0.000195890665**, within unchanged atol=0.0002/rtol=0.002. Independent checks reproduced **8,160** target/name-gap/word-gap summary values and checked denominators, identities, ranks, collision ties and empty-head summaries. These are saved-calculation checks, not an independent new GPU replication.
+
+Key all-facts/all-test **name-comparison-subset** results (equal-family means; events are comparisons, not wins):
+
+| Head | Anchor | Events / families | Name gap | Interpretation |
+|---|---|---:|---:|---|
+| L11H4 | first | 94 / 39 | +0.006523 | Priority candidate; survives single-family and dominant-token removal; 78 nonlocal events, no current-target-name overlap. Query subset 53 / 29, +0.007080. Last-token gap slightly negative. |
+| L17H5 | first | 65 / 34 | +0.006059 | Priority candidate; all nonlocal, no current-target-name overlap. Query subset 32 / 20, +0.008183. Current `mother` token contributes 66.3% of target RI; last-token gap negative; descriptive bootstrap includes zero. |
+| L9H16 | last | 343 / 87 | +0.007398 | Priority candidate; survives deletions, all nonlocal. But 299 events are reorder, 21 base, 23 corrupted; base gap slightly negative. Query subset 244 / 76, +0.006938. |
+| L12H2 | first | 52 / 32 | +0.007156 | Secondary; query support only 7 events / 6 families. |
+| L25H18 | last | 46 / 17 | +0.013071 | Secondary; query support spans only 9 families. |
+| L23H10 | first | 60 / 24 | +0.021505 | Highest eligible first-token gap; 31 events process the target name itself. Removing these leaves +0.007177 on 29 / 17. Useful comparator, not automatically best semantic candidate. |
+
+Additional comparators: L15H18 positive at both anchors but **104/110** comparisons process the target name itself and only one concerns the query fact; L6H2 last-gap **+0.006683**, 927 comparisons, all 89 families, but all self-attention. Do not reject self-attention as logically incapable of contributing to semantics; distinguish what raw RI measures from contextual computation.
+
+The historical heads remain low-support: L3H11 five test events in one family (three with name controls); L9H22 fourteen in four (nine with controls, first gap ~+0.000018). The new interpretive priorities are NOT a replacement calibrated rule and are not proof of semantics.
+
+Paired diagnostics: L11H4 has 21 jointly passing base/corrupted source-order pairs across 18 families, all targets changed, but only five families positive in both versions; only five jointly passing reorder pairs. L17H5 has none jointly passing under reorder. Positive pooled variant averages do not prove paired robustness. All-test paired means may involve different positions. Leave-family-out and dominant-token removal diagnose concentration, not significance. 5,000 family-bootstrap resamples are descriptive and not selection-adjusted intervals.
+
+### 8C. Answer-boundary interpretation and the last clarification to the user
+
+Among 744 final-position test QK events, **718 are query-relevant**. These are head-prompt events, not distinct prompts. The query-final frequency denominator is exactly 534 (one opportunity/prompt), unlike general fact-position frequency.
+- L16H21: 222 query events / 77 families (41.6%); 222 of its 230 final test events are query-relevant. First name gap -0.000417; last +0.003350. Removing target suffix `la` reverses last gap to -0.006410; it supplies 55.9% of target RI.
+- L16H1: 223 / 76 (41.8%); both anchor name gaps negative. Useful QK-versus-OV contrast.
+- L16H24: 68 / 35; last gap +0.003586, reverses after removing `na` (71.9% target-RI share).
+- L16H4's small first-token final advantage and L16H31's last-token final advantage fail single-family deletion.
+
+**Crucial limitation:** raw-current-token OV, not contextual output. At final position the input token is always `:`. Same head + same current-token ID + same visible token-ID set implies the same RI score for each candidate, even if mothers are swapped. Directly verified for all 49 jointly passing L16H21 base/corrupted query pairs: old-vs-new correct-name contrasts negate exactly at both anchors, with no strict correct win in both versions. This is an algebraic limitation of the measurement, not a GPU bug or evidence the model cannot follow a swap. Contextual QK can still change.
+
+The user asked whether this issue disappears earlier in the test. Clarified: the constant colon is final-specific, but the invariance applies at **any** position with identical current token and visible token set. Earlier tokens can vary and produce different scores; that alone does not show adaptation to the relation. We do measure earlier events, but the reported all-test aggregate includes final; do not claim an earlier-only aggregate was the main table. The saved position metadata permits a separate earlier-only analysis if useful.
+
+## 9. Remote environment, Git and operations
+
+Cluster directory: `/home/yandex/DLWorkShop2025b/maximg/pilot_v2`.
+Storage: `/home/yandex/DLWorkShop2025b/maximg/storage`; `source runtime.sh` sets PILOT_RUNS and reuses the working CUDA/Python package directories from the old pythia_pilot. Do not casually upgrade packages or overwrite runtime.sh.
+
+Resources: partition studentkillable, account gpu-students. The current local RI sbatch file excludes s-002,s-005 AND pins s-004; the user previously also requested an unpinned option for the first available suitable node. Inspect wrapper/CLI overrides before giving commands; do not silently require s-004 for every future task. The failed 905807 run shows s-002 was not usable for that CUDA job on 17 September, not its perpetual status. Maximum previously requested for Stage 2: six GPUs. Cluster access/storage exist; actual quotas and present deadline are not known. Earlier three-week deadline estimate is historical, not a current countdown.
+
+SSH hostname `slurm-client.cs.tau.ac.il` repeatedly presented differing keys. We used a direct endpoint verified via the user's already connected session:
+- c-002 at `132.67.130.126`.
+- ED25519 fingerprint `SHA256:L711K3bD0LdigTycyRlvdk8tutdEuD5AejKRKXxn7mY`.
+- Local known-hosts file `tmp/slurm_c002_known_hosts`.
+- Full safe upload/download commands in README_STAGE2.md. Keep strict host checking. Do not accept a newly changed key merely because the user needs results quickly. User handles interactive authentication; do not assume this assistant has SSH access.
+
+Update bundle: `pilot_v2/stage2_v1_update.tar.gz`, code-only, verified archive members/LF. User already submitted Stage 2 from it; no need to re-upload unless actually changing code for a subsequent run.
+
+Git: main branch, origin `https://github.com/Maxgolu/NLP_proj.git`. We prepared explicit add/commit/push commands but did NOT execute commit/push. User may since have done so: inspect fresh status. Pre-existing unrelated edits included deletion of `research_history_overleaf.tex`, modification of the methodology PDF, and untracked reports/results. Do not stage everything or revert those. Root README remains outdated.
+
+## 10. Next actions — audit Stage-2 coverage before deciding on reruns
+
+The user explicitly wants to resolve whether the updated Stage-1 candidate list requires new Stage-2 computation, or whether existing results suffice and only the Stage-2 analysis/report needs updating. **Do not ask them to download the completed runs again. Do not submit a new job just because the candidate list changed.** This handoff task did not perform the candidate-overlap analysis or modify Stage-2 code/results/report.
+
+1. Read the updated Stage-1 Overleaf report and the actual extension policy/candidates, then the existing Stage-2 report, implementation, manifest, shortlist and per-pair outputs. Verify identity/coverage as needed. Use the full 59-head discovery union and label the smaller interpretive priority/comparator groups separately.
+2. Build a head-by-head coverage table: new RI selection reason/anchor/scope; first-order coverage on 178 pairs; exact coverage on the common 40 pairs; membership in the old 92-head full-exact extension; actual available exact pair/family counts. Decode flattened head IDs consistently (32 heads/layer, zero-based) and confirm against implementation. Do not infer measured coverage solely from a candidate being mentioned in an old report.
+3. Distinguish conclusions already answerable locally from genuinely missing measurements. Every newly selected head should already have first-order estimates on all pairs and exact estimates on the common 40-pair subset under the implemented design; verify actual files. Some may also have exact results on all 178 pairs. If broader exact coverage is scientifically needed for heads outside the old extension, discuss a **targeted extension of missing head-pair measurements**, not an automatic full rerun. Keep the original run immutable; changed-shortlist computation is not ordinary identical-config resume.
+4. Reanalyze correlations/comparisons with the **new** RI definitions, respecting conditional support, anchors, query/all-facts and positions. Keep historical pooled-RI comparisons explicitly labeled rather than silently replacing their meaning. Use common exact subsets for fair all-head comparisons; do not mix 20-family and 89-family exact means as if identically supported. Aggregate at family level. Selection and post-selection inference remain exploratory.
+5. Report a concise evidence-backed recommendation to the user: report-only/local reanalysis sufficient, or precise missing measurements and why they matter. Then update `חומר כתוב/Stage2_Results_and_Analysis.tex` in place when proceeding with the agreed scope, along with any affected figure. The user calls this report `phase_2__Results_and_Analysis`; its existing PDF may be stale. Do not rewrite from scratch or silently turn partial-coverage estimates into full-coverage exact claims.
+
+Stage-2 patches replace a head at **all original prompt positions**, including demonstrations; the new Stage-1 selection uses **test events**. Candidate selection alone does not change this intervention scope. The outcome is the first divergent answer token, which may follow a shared prefix, whereas Stage-1 final events occur at the bare prompt boundary. These distinctions can limit interpretation without invalidating the existing run. Explain if a new scientific question would require a genuinely different intervention.
+
+Do not call high-RI/low-effect heads false positives immediately: position scope, metric, redundancy and nonlinear interactions matter. Low RI does not establish lack of semantic processing. A head list is not an edge-validated circuit. Keep the 87 validation families held out from tuning. Stage 3 and later faithfulness/generalization checks follow only after this Stage-2 reconciliation; two-hop/checkpoint extensions come later if justified.
+
+### Stage-3 methodology correction discussed, not yet a completed experiment
+
+The user raised the incorrect planned phrase ``SVD of W_OV^A W_QK^B`` and RoPE/QK-normalization complications. A replacement for methodology Section 6.5 was provided in chat for the user to paste. The full local `Single_Hop_Methodology_stage1_updated.tex` still contains the old writer-reader-product SVD wording, so do NOT assume the local document was patched or that an experiment was implemented.
+
+Design direction to verify against the original sources before implementation: decompose the **writer's OV matrix itself** into rank-one components, then evaluate components against reader channels, rather than presenting an SVD of the writer-reader product as the referenced method. A global static QK-composition interpretation is problematic with position-dependent RoPE and input-dependent QK normalization in OLMo-2. Contextual/position-aware measurements and causal path/component interventions should carry the interpretation; any static composition score is a limited descriptive diagnostic. The exact chat replacement may need to be recovered from the user if they want that wording preserved. No Stage-3 run or new validated decomposition is claimed here.
+
+Similarly, discussion of Ren et al.'s threshold usage in different paper sections is not permission to assert that the paper is internally inconsistent without checking the source. The implemented RI skip/clamp/unique-token rules are recorded above; keep implementation facts separate from literature interpretation.
+
+### Local workflow notes
+
+Bundled Python used successfully: `C:/Users/User/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe`. Source RI results were not modified by the post-selection analysis. No new GPU submission, commit or push occurred during the latest local analysis/report/handoff updates. Git status can report dubious ownership under the sandbox account; do not change global trust configuration merely to inspect this report task. The Stage-1 `.tex` passed brace/environment checks, but no local `pdflatex`/`tectonic` was available. Do not claim PDF compilation or visual verification.
+
+The new assistant should acknowledge what it has actually read and any gaps, summarize the current research state briefly, and continue mentoring/research with the user. Do not claim complete project mastery after reading only this handoff.

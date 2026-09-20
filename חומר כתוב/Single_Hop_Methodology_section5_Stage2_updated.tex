@@ -1,0 +1,78 @@
+% Replacement for Section 5 of Single_Hop_Methodology_stage1_updated.tex.
+% Paste over the existing "\section{Stage 2 --- Full Causal Map (all heads)}" block.
+% Uses the document's existing macros/packages: \file, enumitem, booktabs, tikz, \cite{attrpatch}, \cite{eapig}.
+
+\section{Stage 2 --- Full Causal Map (all heads)}
+\textbf{Implemented scope.} Stage 2 measures, for every head, how much replacing its output changes the answer contrast on the 178 discovery twin pairs (89 families $\times$ two fact orders). The first run, \file{stage2_v1}, was completed and analyzed against the historical pooled RI rule. The Stage-1 test-only RI extension (Section~4) then replaced the candidate list. Stage 2 is therefore completed in two parts: the original run, which is kept immutable, and a targeted extension (\file{stage2_v2_extension}) that adds exact measurements for the new candidates. Nothing in the first run is recomputed or overwritten. Where this section differs from the earlier plan, the specification below applies.
+
+\subsection{Intervention, outcome and patch scope}
+For a twin pair $(x_c, x_r)$ the corruption swaps the two answer-side names in the facts, so the clean distractor becomes the corrupted answer. The outcome is the logit contrast at the first divergent answer token, conditioned on any shared answer prefix $c$:
+\begin{equation}
+M(x)=\operatorname{logit}(y_c\mid x,c)-\operatorname{logit}(y_r\mid x,c),
+\end{equation}
+with the sign fixed to the clean answer on both inputs. For head $h$, exact patching runs the \emph{clean} prompt and replaces $h$'s slice of the input to the attention output projection with the activation recorded on the \emph{corrupted} run:
+\begin{equation}
+\Delta_h = M\!\left(x_c;\, a_h \leftarrow a_h^{r}\right) - M(x_c), \qquad I_h = -\Delta_h .
+\end{equation}
+$I_h>0$ means the patch moves the model toward the corrupted answer (``causal importance'', in logits). This is a necessity (noising) measurement: it asks how much the answer depends on $h$, not whether $h$ alone suffices to restore it.
+
+Because the two prompts of a twin share their four demonstrations and the first test fact, and attention is causal, every head activation before the first differing token is identical on the clean and corrupted runs. Replacing it therefore changes nothing; a patch over all prompt positions is effectively a patch over the positions from the first differing token onward. Restricting the patch to the whole test block would not be a different experiment. Two genuinely different scopes are used.
+\begin{description}[itemsep=1pt,leftmargin=1.6cm]
+\item[Scope P (all prompt positions).] The head is replaced at every original prompt position; shared answer-prefix positions remain live. This is the scope of the first run and the scope of record for all-head comparisons.
+\item[Scope F (final position only).] The head is replaced only at the last prompt position, the colon after \texttt{Answer}. Scope F is measured for groups A and B below and reported separately. It isolates the head's contribution at the answer boundary, where the Stage-1 final-position QK events were observed, from contributions written into earlier test-fact positions and read out by later heads. It is not pooled with Scope P.
+\end{description}
+A large Scope-P effect with a negligible Scope-F effect suggests that the head matters mainly through what it writes at earlier positions; a substantial Scope-F effect suggests a contribution at the answer boundary itself. Both readings are descriptive: single-position patching does not identify the downstream path, and the two scopes need not be additive. Patching a head only at the head's own Stage-1 event positions is deferred to Stage 3. As a sanity check, the gate patches probe heads at demonstration positions only and requires $|\Delta_h|<10^{-3}$.
+
+The extension additionally records, for every patched forward, the two answer logits separately and the logit of the source (child) name, so that ``promote the corrupted answer'' and ``suppress the clean answer'' can be distinguished post hoc. The first run stored only the contrast.
+
+\subsection{First-order screen and its calibration}
+Exact patching of all heads on all pairs ($1024\times178\approx1.8\times10^{5}$ forwards) is affordable on the cluster but was not the design of the first run. Instead, every head receives a first-order estimate from three passes per pair \cite{attrpatch}:
+\begin{equation}
+\widehat{\Delta M}_h=\big(a_h^{\text{corr}}-a_h^{\text{clean}}\big)^{\!\top}\frac{\partial M}{\partial a_h}\bigg|_{\text{clean}},
+\end{equation}
+where $a_h$ is head $h$'s output-projection input at all original prompt positions (matching Scope P), and the contraction sums over positions. One clean forward, one corrupted forward and one backward pass yield $\widehat{\Delta M}_h$ for all heads at once.
+
+\textbf{Known failure mode and mitigation.} The estimate is a first-order Taylor approximation and under-estimates where the path from $a_h$ to $M$ crosses saturated softmax plateaus, i.e.\ it is biased against sharply attending heads. Therefore:
+\begin{enumerate}[itemsep=1pt]
+\item \textbf{Calibration (pre-registered, executed).} Exact Scope-P patching of \emph{all} 1024 heads on a common subset of 40 pairs (20 whole families sampled at random, seed 20260914, both orders). The signed Spearman correlation between mean exact and mean estimated effects on these same pairs is a reported result. If $\rho<0.7$, the screen is upgraded to integrated-gradients attribution (five midpoint steps between clean and corrupted input embeddings, contracted with the same head deltas \cite{eapig}) and re-calibrated. Outcome: $\rho=0.945$; the fallback was not needed.
+\item Exact patching is the measurement of record for any head individually discussed. The estimate serves only to draw all 1024 heads on the 178-pair map and to nominate heads for exact extension.
+\item Global agreement does not certify each head. For every head in the extension, the residual $|I_h^{\text{exact}}-\hat I_h|$ on the 40-pair subset is reported alongside its effect.
+\end{enumerate}
+
+\subsection{Exact extension to all 178 pairs}
+Exact Scope-P measurements on all 178 pairs are obtained for the union of the following groups. Group membership is recorded per head; a head may belong to several groups.
+\begin{description}[itemsep=1pt,leftmargin=0.9cm]
+\item[A.] The 59-head Stage-1 test-only RI discovery union (all anchors, fact scopes and position scopes; Section~4). The three interpretive priority heads and the comparators named in the Stage-1 report are labels within A, not a separate selection.
+\item[B.] The 19 heads with at least one final-position QK event whose source is a test fact (argmax and dominance $>2.2$; e.g.\ L16H21, L16H1, L16H4). The one further head whose only final-position events point to demonstration sources (L31H21) is excluded. These provide the QK-versus-OV contrast: heads that attend to the relevant fact at the answer boundary but score low under raw RI.
+\item[C.] The top 25 heads by $|I_h|$ on the common 40-pair exact subset, regardless of any RI ranking.
+\item[D.] The 92 heads of the first run's extension: top 25 supported pooled RI (first and last anchor), top 25 by $|\widehat{\Delta M}_h|$, the historical heads L3H11, L9H22, L16H4, and 25 random controls (seed 20260914). These already have exact results on all 178 pairs and are kept unchanged for continuity.
+\end{description}
+The extension computes only $(A\cup B\cup C)\setminus D$ on the 138 pairs outside the common subset, and Scope F for all of $A\cup B$ on all 178 pairs. The exact list is fixed by the coverage audit of the first run before submission and stored in \file{extension_v2_heads.json}. Only heads with exact results on all 178 pairs enter 89-family comparisons; 20-family and 89-family means are never mixed.
+
+\subsection{The central figure and the audit verdict}
+The main deliverable is a scatter of all 1024 heads: $x$ = Stage-1 RI statistic, $y$ = causal importance $I_h$ (exact on the common 40-pair subset for all heads; exact on 178 pairs where available). The $x$ axis is drawn twice, once with the historical pooled first-target RI (as in the first run) and once with the test-only name-gap statistic of Section~4, with anchor and scope stated in the caption. Threshold-free statistics are reported for each: Spearman rank correlation between RI and $I_h$ over all heads on the common subset, and top-$k$ overlap curves (Jaccard). The weight-based copy score planned earlier is not used: it measures literal token copying, which is not the relational property under test.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[font=\small]
+\draw[->] (0,0) -- (7.6,0) node[below left]{RI statistic};
+\draw[->] (0,0) -- (0,4.6) node[above left=0mm and -6mm]{causal importance $I_h$};
+\draw[dashed] (3.8,0) -- (3.8,4.4) node[above]{selection boundary};
+\draw[dashed] (0,2.2) -- (7.4,2.2);
+\node[align=center] at (5.7,3.4) {\textbf{confirmed SIH}\\definition works};
+\node[align=center] at (1.9,3.4) {\textbf{false negatives}\\circuit members the\\definition misses};
+\node[align=center] at (5.7,1.0) {\textbf{false positives}\\high RI, no causal role\\(after redundancy gate)};
+\node[align=center] at (1.9,1.0) {background};
+\end{tikzpicture}
+\caption{Quadrant reading of the central scatter. The vertical boundary is the Stage-1 selection rule (historical: 99.9\% null percentile; test-only: membership in the discovery union), not a significance threshold. Stage 4 characterizes the two off-diagonal quadrants.}
+\end{figure}
+
+\textbf{Verdict criteria.} The three non-exclusive verdicts of the original plan are retained and evaluated twice: for the historical rule (already reported for the first run) and for the test-only discovery union, with ``RI-passing'' meaning membership in group A. In all cases the comparison set is exact Scope-P importance on the common 40-pair subset for all-head statements, and on all 178 pairs for statements about individual heads.
+\begin{itemize}[itemsep=1pt]
+\item \emph{Sound}: RI-passing heads have systematically larger $I_h$ than non-passing heads in the same layer (layer-matched comparison; family-level bootstrap interval on the difference of means, descriptive).
+\item \emph{Incomplete}: at least one head in the top decile of exact $I_h$ is outside group A and has non-positive name gap at both anchors, so that the claim cannot be manufactured by our own strictness.
+\item \emph{Misleading}: the median $I_h$ of RI-passing heads does not exceed that of the 25 random controls.
+\end{itemize}
+Selection never gates which heads are studied: the causal map covers all 1024 heads unconditionally, and the primary quantitative claims are threshold-free. Because group A was selected on the discovery families after inspecting Stage-1 results, all Stage-2 comparisons involving it are exploratory; confirmatory tests are deferred to the 87 held-out validation families, which are not used for any selection or tuning here.
+
+\textbf{Interpretive limits.} A single-head necessity effect does not establish an edge, a circuit, or semantic specificity; redundancy and nonlinear interactions can hide a head with a real role, and a positive effect can arise from position or token-identity features. Scope F narrows where the effect arises but not what the head computes. These questions belong to Stage 3.

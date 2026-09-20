@@ -1,0 +1,150 @@
+% Overleaf: compile with pdfLaTeX. Self-contained.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,booktabs}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue!60!black]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.15}
+
+\title{Stage 1: Results and Analysis\\\large Single-hop Semantic Induction Head Audit}
+\author{Daniella Simonovsky and Max Golubkov}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+\section{Run and validation}
+Run \texttt{stage1\_v4\_calibrated} scanned all 1,024 heads of OLMo-2-1124-7B on 534 prompts: 89 behaviorally eligible discovery families, three variants, two fact orders, and four ICL demonstrations. No model training or broad causal scan was performed.
+
+The mandatory preflight checks passed. Behavioral-score replication and inert hooks had zero drift on the checked inputs; self-patching changed the metric by zero. Attention capture had a maximum vocabulary-logit drift of 0.0391 on one checked prompt. These were limited checks, not full-dataset equivalence tests. Checkpoint loading took 38m44s, the scan 12.5 minutes, and null calibration 7.2 seconds.
+
+The subsequent test-only RI extension, \texttt{ri\_test\_v2} (job 905839), completed successfully. All 46,634 saved test events received scores; 237,685 saved-score replication checks passed the existing tolerances. Independent event-level checks reproduced the reported means, contrasts, support counts and frequency denominators. The extension reused captured attention and added OV calculations, without new model forward passes. All results below remain discovery-set observations, not held-out validation.
+
+\section{Pooled RI hides concentration in demonstrations}
+The pooled head-statistics table exactly reproduced the previous run. The historical 99.9th-percentile control-mean rule selected L3H11 and L9H22. This rule is descriptive, not a calibrated significance test.
+
+\begin{center}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Head & Pooled RI & QK frequency (\%) & Demo: count / RI & Test: count / RI \\
+\midrule
+L3H11 & 0.2431 & 0.00967 & 144 / 0.2502 & 5 / 0.0384 \\
+L9H22 & 0.3739 & 0.00558 & 72 / 0.4453 & 14 / 0.00674 \\
+\bottomrule
+\end{tabular}
+\end{center}
+RI means use scored QK passes. Frequency uses eligible fact--position evaluations, not prompts. Demo and test columns require both the annotated fact and the current position to be in that block type.
+
+Demonstrations contributed over 99\% of each head's summed first-target scores. Neither head had a passing event from a test position attending to an annotated demo source. Events occurred in only 17 and 15 of the 89 families, respectively. Shared demonstration prefixes repeat across variants and families; their stable scores do not establish robustness to changes in the test facts.
+
+\section{What the selected events actually show}
+\textbf{L9H22: self-attention.} All 86 passes attended from position $j$ to that same position. In \texttt{Mulnla is the mother of Garnla.}, the final \texttt{la} of \texttt{Garnla} attended to itself; the embedding-level OV score for target token \texttt{Mul} was about 0.528.
+
+\textbf{L3H11: previous-token attention.} All 149 passes attended one token backward, from a period/newline token to the end of the preceding name. Every OV calculation therefore used the same period/newline embedding. The target score was about 0.768 for \texttt{Tes} in \texttt{Tesmla is the mother of Rusma.}, but zero for \texttt{T} in \texttt{Toltia is the mother of Fernla.}
+
+\textbf{Interpretation.} Our RI projection is $e_jW_V^hW_O^hW_U$, using the raw current-token embedding. For a fixed head and input token, this vocabulary vector is fixed; the selected target and visible-context normalization change the reported score. Local attention and static token preferences thus provide an alternative explanation for high pooled RI. The scores are neither final-logit changes nor evidence that attention caused answer promotion.
+
+This does \emph{not} rule out a semantic circuit. Earlier layers may write relational information into the current or preceding position, which the actual head then reads. Raw-embedding RI does not measure that contextual information. Testing this explanation requires interventions on the relevant representations and paths.
+
+\section{Matched-target calibration}
+The additional calibration tested a narrower statistic: true-target versus alternative-candidate scores on matched test-block events. Both candidate mentions had to be fully visible, equal in token length, and distinct in first token. It retained 19,901 of 278,134 QK events; most excluded events were outside the test-block scope.
+
+Eighty heads met the minimum of 50 matched events across 10 families. Scores were averaged equally across active families, with 100,000 family-consistent target/control swaps. No head passed Holm correction across 1,024 heads at $\alpha=0.05$.
+
+\begin{center}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Head & Events & Families & Target mean & Control mean & Raw $p$ \\
+\midrule
+L16H4 & 87 & 40 & 0.01471 & 0.00930 & 0.00581 \\
+L9H18 & 187 & 54 & 0.01304 & 0.01003 & 0.02254 \\
+L13H13 & 148 & 57 & 0.01366 & 0.01053 & 0.02527 \\
+\bottomrule
+\end{tabular}
+\end{center}
+These are the smallest raw $p$ values; none would pass Holm even over 80 heads alone. Interpretation remains conditional on exchangeability of target/control assignments under the null.
+
+\textbf{Neither original candidate was tested:} both had zero matched events. L3H11's five test events concerned noncandidate facts. L9H22's test events failed the candidate, visibility or token-distinctness conditions. Insufficient support is not a negative result about a head's causal role, and this restricted test does not establish absence of semantic capability.
+
+\section{Additional analysis of saved attention events}
+\subsection{Test-only RI and control comparisons}
+To separate target-specific preference from demonstration repetition and general name preference, we extended the saved-event analysis to all heads. Both the fact and current position must be in the test. The original QK gate is retained: maximal attention to the source's last token, exceeding the strongest competitor by a factor greater than $2.2$. Failed gates are omitted from conditional RI means, not scored as zero. The normalization still subtracts the visible-token mean, clamps at zero and sums over distinct visible token IDs, including demonstrations.
+
+For each passing event, we compare first- and last-target-token RI with (i) the mean score of other fully visible test fact-tail names and (ii) up to three sampled visible non-name word types. Unlike Section 4, name controls need not match token length; anchor collisions remain ties. Word controls mainly represent template vocabulary and provide a weaker specificity check. We also retain target ranks with ties. Metric means give equal weight to active families; frequency includes zero-pass families.
+
+We distinguish all test facts from the query-relevant fact, all test positions from the final position, and self/previous-token attention from longer distances. The all-position summary \emph{includes} the final position; these are overlapping views, not independent replications. At earlier positions, comparisons across variants need not involve identical current positions or visible controls.
+
+The frozen discovery rule takes the top ten positive family means for target RI, name contrast and word contrast, separately by anchor, fact scope and position scope. Each ranking requires at least 20 events across ten families. Its union contains 59 heads, of which 36 enter a name-contrast ranking. This is a descriptive shortlist, not a significance test.
+
+\subsection{Candidates and alternative explanations}
+The table reports all test facts and positions. Every mean and count uses the same name-control-eligible subset. Events count comparisons, not wins; families count contributing families. All head indices are zero-based.
+
+\begin{center}
+\small
+\begin{tabular}{llrrrrr}
+\toprule
+Head & Anchor & Events & Families & Target & Control & Difference \\
+\midrule
+L11H4  & First & 94  & 39 & 0.01466 & 0.00814 & $+0.00652$ \\
+L17H5  & First & 65  & 34 & 0.02288 & 0.01682 & $+0.00606$ \\
+L9H16  & Last  & 343 & 87 & 0.02087 & 0.01347 & $+0.00740$ \\
+L12H2  & First & 52  & 32 & 0.02009 & 0.01293 & $+0.00716$ \\
+L25H18 & Last  & 46  & 17 & 0.02869 & 0.01562 & $+0.01307$ \\
+L23H10 & First & 60  & 24 & 0.02827 & 0.00677 & $+0.02150$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{L11H4} is a relatively well-supported first-token candidate: its contrast survives deletion of any one family or the dominant target/current token. Of 94 comparisons, 78 involve nonlocal source attention; none processes the target name itself. The query-fact subset retains $+0.00708$ across 29 families. However, the last-token contrast is slightly negative, and the target strictly exceeds all name controls in only 27.1\% of family-averaged comparisons.
+
+\textbf{L17H5} also survives these deletion checks, with exclusively nonlocal attention and a query-fact contrast of $+0.00818$ across 20 families. However, the current token \texttt{mother} contributes 66.3\% of its family-weighted target RI. Template dependence remains plausible, and the last-token contrast is negative.
+
+\textbf{L9H16} has broader last-token support and survives the same deletions, but 299 of 343 comparisons occur after reordering. Its base contrast is slightly negative. Broad family coverage therefore does not establish order robustness. \textbf{L12H2 and L25H18} are secondary candidates: their query-fact name comparisons cover only six and nine families, respectively.
+
+\textbf{High scores need not imply relational retrieval.} L23H10 has the largest eligible first-token name contrast, but 31 of 60 comparisons process the target name itself. Excluding them reduces the contrast to $+0.00718$, without eliminating it. L15H18 has positive contrasts at both anchors, yet 104 of 110 comparisons process the target name. Conversely, L6H2 has a robust last-token contrast of $+0.00668$ across all 89 families, but every comparison is self-attention. These heads are useful alternative-mechanism comparators, not automatically semantic or nonsemantic heads.
+
+\subsection{Paired variants and post-selection checks}
+To test whether patterns follow changed facts rather than pooled averages, we paired events by family, source and order. L11H4 has 21 jointly passing base/corrupted pairs across 18 families, all with changed targets; only five families have positive mean name contrasts in both versions. Only five reorder pairs pass jointly. L17H5 has no jointly passing reorder pairs. Thus paired order robustness is not established; a missing pass is not negative RI.
+
+Single-family and dominant-token deletions diagnose concentration, not significance. Token removal changes the remaining active-family population. We also computed 5,000 family-bootstrap resamples as descriptive sensitivity distributions, not selection-adjusted confidence intervals; L17H5's distribution includes zero. These post-selection checks do not replace the separate calibration in Section 4.
+
+\subsection{Answer-position fact selection and the raw-OV limitation}
+To distinguish earlier fact processing from answer-fact selection, we examined the final prompt token separately. The original audit found 748 events across 20 heads: 744 to test sources and four to demonstration sources. The extension identifies 718 of the 744 test events as query-relevant. These are head--prompt events, not distinct prompts. Neither historical RI candidate passes at this position.
+
+\begin{center}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Head & Query events & Families & QK (\%) & First gap & Last gap \\
+\midrule
+L16H21 & 222 & 77 & 41.6 & $-0.00042$ & $+0.00335$ \\
+L16H1  & 223 & 76 & 41.8 & $-0.00250$ & $-0.00342$ \\
+L16H24 & 68  & 35 & 12.7 & $-0.00283$ & $+0.00359$ \\
+L16H4  & 63  & 32 & 11.8 & $+0.00042$ & $-0.00715$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Here QK frequency has one query-fact opportunity per prompt, hence denominator 534. L16H21 selects the query fact in 222 of its 230 final test events, making it interesting for fact selection. Its last-token advantage nevertheless reverses after removing target token \texttt{la}; L16H24's reverses after removing \texttt{na}. L16H4's small first-token advantage fails single-family deletion.
+
+The raw-embedding OV projection imposes a further limitation. The final token is always \texttt{:}. For a fixed head, identical current tokens and visible token-ID sets give identical scores, even when mothers are reassigned. In all 49 jointly passing L16H21 base/corrupted query pairs, the contrast between the old and new correct names reverses sign exactly when the target label changes, at both anchors. This score cannot demonstrate adaptive target promotion in those pairs; contextual QK selection can still change.
+
+The same invariance applies at \emph{earlier} positions whenever current token and visible token set are unchanged. Earlier tokens can vary, but resulting score differences need not reflect changed relations. This limits the measurement, not the model's possible semantic computation or the actual contextual head output.
+
+\section{Sensitivity and implications}
+Full collection yielded 1,455,940 eligible dominance ratios. The 95th percentile was 4.482, versus 3.658 in the earlier restricted sample; 80.9\% of ratios were at or below 2.2. This population remains event-weighted and includes repeated demonstrations.
+
+Offline filtering at 4.482 retained 72,797 passes. L3H11 retained 30 with mean first-target RI zero; L9H22 retained 49 with mean 0.5174, just below the historical 50-event cutoff. No extra model run or matched-null recalibration was used for this sensitivity. Target-token choice also matters: using the last target token places L29H14 at the top of the previously reported conditional-strength ranking.
+
+\textbf{Conclusion.} The test-only extension broadens discovery beyond the demonstration-heavy historical pair. We prioritize L11H4 and L17H5 for first-token RI and L9H16 for last-token RI, preserving their anchor and variant restrictions; L12H2 and L25H18 are secondary. L23H10, L15H18 and L6H2 provide contrasting high-RI patterns. L16H21 is separately interesting for answer-fact selection. This prioritization is interpretive, not an additional calibrated selection rule.
+
+The historical pair remains useful for comparison but lacks the extension's minimum test support. No candidate is established as a semantic mechanism or a causal contributor by Stage 1. Held-out validation and later contextual/intervention analyses must distinguish relational computation from lexical and positional alternatives. Removing demonstration events did not remove demonstrations from the input or RI normalization.
+
+\end{document}

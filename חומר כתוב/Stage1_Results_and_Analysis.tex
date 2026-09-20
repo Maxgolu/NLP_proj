@@ -1,0 +1,82 @@
+% Overleaf: compile with pdfLaTeX. Self-contained.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,booktabs}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue!60!black]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.15}
+
+\title{Stage 1: Results and Analysis\\\large Single-hop Semantic Induction Head Audit}
+\author{Daniella Simonovsky and Max Golubkov}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+\section{Run and validation}
+Run \texttt{stage1\_v4\_calibrated} scanned all 1,024 heads of OLMo-2-1124-7B on 534 prompts: 89 behaviorally eligible discovery families, three variants, two fact orders, and four ICL demonstrations. No model training or broad causal scan was performed.
+
+The mandatory preflight checks passed. Behavioral-score replication and inert hooks had zero drift on the checked inputs; self-patching changed the metric by zero. Attention capture had a maximum vocabulary-logit drift of 0.0391 on one checked prompt. These were limited checks, not full-dataset equivalence tests. Checkpoint loading took 38m44s, the scan 12.5 minutes, and null calibration 7.2 seconds.
+
+\section{Pooled RI hides concentration in demonstrations}
+The pooled head-statistics table exactly reproduced the previous run. The historical 99.9th-percentile control-mean rule selected L3H11 and L9H22. This rule is descriptive, not a calibrated significance test.
+
+\begin{center}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Head & Pooled RI & QK frequency (\%) & Demo: count / RI & Test: count / RI \\
+\midrule
+L3H11 & 0.2431 & 0.00967 & 144 / 0.2502 & 5 / 0.0384 \\
+L9H22 & 0.3739 & 0.00558 & 72 / 0.4453 & 14 / 0.00674 \\
+\bottomrule
+\end{tabular}
+\end{center}
+RI means use scored QK passes. Frequency uses eligible fact--position evaluations, not prompts. Demo and test columns require both the annotated fact and the current position to be in that block type.
+
+Demonstrations contributed over 99\% of each head's summed first-target scores. Neither head had a passing event from a test position attending to an annotated demo source. Events occurred in only 17 and 15 of the 89 families, respectively. Shared demonstration prefixes repeat across variants and families; their stable scores do not establish robustness to changes in the test facts.
+
+\section{What the selected events actually show}
+\textbf{L9H22: self-attention.} All 86 passes attended from position $j$ to that same position. In \texttt{Mulnla is the mother of Garnla.}, the final \texttt{la} of \texttt{Garnla} attended to itself; the embedding-level OV score for target token \texttt{Mul} was about 0.528.
+
+\textbf{L3H11: previous-token attention.} All 149 passes attended one token backward, from a period/newline token to the end of the preceding name. Every OV calculation therefore used the same period/newline embedding. The target score was about 0.768 for \texttt{Tes} in \texttt{Tesmla is the mother of Rusma.}, but zero for \texttt{T} in \texttt{Toltia is the mother of Fernla.}
+
+\textbf{Interpretation.} Our RI projection is $e_jW_V^hW_O^hW_U$, using the raw current-token embedding. For a fixed head and input token, this vocabulary vector is fixed; the selected target and visible-context normalization change the reported score. Local attention and static token preferences thus provide an alternative explanation for high pooled RI. The scores are neither final-logit changes nor evidence that attention caused answer promotion.
+
+This does \emph{not} rule out a semantic circuit. Earlier layers may write relational information into the current or preceding position, which the actual head then reads. Raw-embedding RI does not measure that contextual information. Testing this explanation requires interventions on the relevant representations and paths.
+
+\section{Matched-target calibration}
+The additional calibration tested a narrower statistic: true-target versus alternative-candidate scores on matched test-block events. Both candidate mentions had to be fully visible, equal in token length, and distinct in first token. It retained 19,901 of 278,134 QK events; most excluded events were outside the test-block scope.
+
+Eighty heads met the minimum of 50 matched events across 10 families. Scores were averaged equally across active families, with 100,000 family-consistent target/control swaps. No head passed Holm correction across 1,024 heads at $\alpha=0.05$.
+
+\begin{center}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Head & Events & Families & Target mean & Control mean & Raw $p$ \\
+\midrule
+L16H4 & 87 & 40 & 0.01471 & 0.00930 & 0.00581 \\
+L9H18 & 187 & 54 & 0.01304 & 0.01003 & 0.02254 \\
+L13H13 & 148 & 57 & 0.01366 & 0.01053 & 0.02527 \\
+\bottomrule
+\end{tabular}
+\end{center}
+These are the smallest raw $p$ values; none would pass Holm even over 80 heads alone. Interpretation remains conditional on exchangeability of target/control assignments under the null.
+
+\textbf{Neither original candidate was tested:} both had zero matched events. L3H11's five test events concerned noncandidate facts. L9H22's test events failed the candidate, visibility or token-distinctness conditions. Insufficient support is not a negative result about a head's causal role, and this restricted test does not establish absence of semantic capability.
+
+\section{Sensitivity and implications}
+Full collection yielded 1,455,940 eligible dominance ratios. The 95th percentile was 4.482, versus 3.658 in the earlier restricted sample; 80.9\% of ratios were at or below 2.2. This population remains event-weighted and includes repeated demonstrations.
+
+Offline filtering at 4.482 retained 72,797 passes. L3H11 retained 30 with mean first-target RI zero; L9H22 retained 49 with mean 0.5174, just below the historical 50-event cutoff. No extra model run or matched-null recalibration was used for this sensitivity. Target-token choice also matters: using the last target token places L29H14 at the top of the previously reported conditional-strength ranking.
+
+\textbf{Conclusion.} Stage 1 replicated the pooled scores and identified concrete local patterns behind the selected heads. It did not establish or exclude their causal role. Stage 2 should compare RI with exact patching and gradient estimates under the same metric and patch scope, with sanity checks included at its start. The two RI candidates remain useful test cases, not confirmed semantic mechanisms or confirmed false positives.
+
+\end{document}

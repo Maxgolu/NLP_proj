@@ -1,0 +1,85 @@
+% Replace Section 4, from its \section command up to (but not including) Stage 2.
+% Fragment for the existing document; uses its packages and bibliography key ren.
+% The new RI extension is implemented; its OLMo GPU completion is not yet verified.
+
+\section{Stage 1 --- Observational Scan (all heads)}
+
+\textbf{Aim and scope.} Identify candidates using RI and characterize what their scores measure, before assessing their causal role with other methods. The completed scan, \texttt{stage1\_v4\_calibrated}, covered all 1,024 heads of the pinned OLMo-2-1124-7B model on 534 prompts: 89 discovery families, three variants, and two fact orders. The extension below reuses this population; validation families and Stage-2 effects are not used for selection. It is implemented but awaits GPU completion and verification. This specification supersedes earlier Stage-1 planning summaries elsewhere in this document.
+
+\subsection{RI definition and original checks}
+
+For a fact $T=(t_s,r,t_o)$, the source is the child and the target is its mother. Anchor the source at its last token $s$; score the target's first and last tokens separately. For each position $j\geq\max(s,o_{\mathrm{last}})$, require
+\begin{equation}
+s=\arg\max_{k\leq j}A^h_{j,k},\qquad
+\frac{A^h_{j,s}}{\max_{k\leq j,\,k\neq s}A^h_{j,k}+10^{-9}}>2.2.
+\end{equation}
+This QK condition uses captured model attention and permits self-attention. For a passing event, project the raw current-token embedding:
+\begin{equation}
+p^{h,j}=\operatorname{softmax}(e_jW_V^hW_O^hW_U),\qquad
+q_t^{h,j}=\max\left(0,p_t^{h,j}-\frac{1}{|C_j|}\sum_{u\in C_j}p_u^{h,j}\right),
+\end{equation}
+\begin{equation}
+\operatorname{RI}_{h,j}(t)=\frac{q_t^{h,j}}{\sum_{u\in C_j}q_u^{h,j}},
+\end{equation}
+where $C_j$ contains unique token IDs visible through $j$. A zero denominator gives an undefined score. This follows the RI projection in \cite{ren}, with explicit adaptations: names remain multi-token, function words remain, and QK uses the model's contextual attention. It is not an exact replication of the paper's semantic-relation preprocessing. The OV score is neither the actual contextual head output nor a causal logit change.
+
+Before the original scan, mandatory checks covered behavioral-score replication on six rows from one family, exact inert-hook agreement, attention availability, and a one-prompt self-patch. Behavioral drift had to be below $0.05$ and self-patch metric drift below $10^{-3}$. Attention-capture logit drift was recorded without a numerical acceptance threshold. A small eight-head patching preview was descriptive. Intervention checks used the first differing answer token after any shared answer prefix, with patches confined to original prompt positions. These limited checks were not full-dataset equivalence tests.
+
+\subsection{Test-only scope and comparison groups}
+
+The extension includes events only when \emph{both the annotated fact and current position are in the test block}. Four demonstrations precede each test. Their sequence repeats across the six variants/orders of a family, and demonstrations are drawn from a shared bank of 16. Excluding demo events avoids directly pooling their repeated scores; it does not remove ICL conditioning. RI normalization still uses the full visible context, including demonstrations.
+
+Two scopes are reported separately:
+\begin{enumerate}[itemsep=1pt]
+\item \textbf{Relation in a fact:} all four test facts, including distractors.
+\item \textbf{Query-relevant fact:} only the fact whose source is named in the question and whose target is the correct answer for that variant.
+\end{enumerate}
+Separate all-test positions, earlier test positions, and the final bare-prompt token, which predicts the first answer token. Within each group, distinguish self, previous-token, and longer-distance attention. These overlapping views are not additive.
+
+For each scored event, compare the target with two control sets:
+\begin{itemize}[itemsep=1pt]
+\item \textbf{Alternative names:} all other fully visible fact-target names in the same test, without an equal-token-length restriction.
+\item \textbf{General words:} up to three unique alphabetic non-name word types from the visible test. Sample deterministically using seed 20260916 and the prompt ID/position; share the sample across heads and facts at that position. Use each word's first fully visible occurrence. Exclude entity names and punctuation.
+\end{itemize}
+Compute separate first-token and last-token scores for targets and controls. Equal anchor-token IDs remain ties, not evidence of successful or failed entity discrimination. General words test preference above linguistic background; alternative names test specificity among entities. Neither comparison alone establishes semantic ability.
+
+\subsection{Event statistics, aggregation and variant consistency}
+
+For anchor $a$ and available control set $B_e$, report the target score and
+\begin{equation}
+\Delta_{h,e}^{(a)}=
+\operatorname{RI}_{h,e}(t_o^{(a)})-
+\frac{1}{|B_e|}\sum_{b\in B_e}\operatorname{RI}_{h,e}(b^{(a)}).
+\end{equation}
+Also record the target's rank interval, fractions of controls beaten or tied, and whether it ranks first with or without ties. An empty control set yields an undefined comparison. Preserve control identities, positions and scores.
+
+Average each statistic within a family, then equally across families with defined observations for that statistic. Report its event count and active-family count. Target/control means used in a comparison share the same event population. Families without observations have undefined conditional strength, not RI zero. QK frequency is passes divided by eligible fact--position opportunities: report both the equal-family mean, including zero-pass families, and the pooled event-weighted ratio. All 1,024 heads remain in the tables.
+
+Compare base with corrupted and reordered prompts by matching family, order and source-name identity, not fact index. Report changes in QK counts/frequencies and RI statistics, with missing passes explicit. Final-position comparisons align the prediction position; all-test means may include different passing positions. Variants are not independent samples. For fixed head, current token and visible token set, the raw-embedding OV vector is fixed: a changed target assignment can change the scored coordinate without changing that vector. Thus paired RI differences alone do not demonstrate contextual tracking.
+
+\subsection{Candidate selection and follow-up audit}
+
+Before computing the additional OV scores, fix a descriptive discovery rule: require at least 20 scored events across 10 active families for the statistic, then take the top 10 positive family means for each combination of
+\begin{itemize}[itemsep=1pt]
+\item target RI, alternative-name gap, or general-word gap;
+\item first or last target token;
+\item all facts or the query-relevant fact;
+\item all-test or final positions.
+\end{itemize}
+The shortlist is their union, with layer/head order breaking ranking ties. These are exploratory selection rules, informed by the earlier audit, not calibrated significance thresholds. Record every selection reason and retain unsupported heads in the full results. Historical candidates L3H11/L9H22 remain references, not forced selections.
+
+\textbf{After selection}, inspect family and token concentration, removal of the most influential family, repeated current/target tokens, concrete examples, and first/last-token sensitivity. These planned diagnostics investigate why a head was selected; they do not independently validate semantics. Validation families remain reserved for later tests.
+
+\subsection{Historical calibration and sensitivity}
+
+Retain the original pooled RI as a reference. Its historical rule used the 99.9th percentile of random-token control means among heads with at least 50 scored events; it is descriptive, not a calibrated per-head test.
+
+The completed matched-target analysis is a separate statistic: test--test events with a candidate fact target, both candidates fully visible, equal token lengths and distinct first tokens. It compared target/control family means using 100,000 family-consistent swaps, required 50 events across 10 families, and applied Holm correction across 1,024 heads. Its interpretation assumes conditional target/control exchangeability. The new, broader name/word comparisons do not inherit its calibration or $p$-values.
+
+The original scan also retained all dominance ratios for which the annotated source was the attention argmax. Filtering saved events at their global 95th percentile, approximately 4.482, provided a completed sensitivity analysis without recalibrating the matched null. That population includes repeated demonstrations and is event-weighted; the percentile is not an independently justified optimal threshold. The extension retains $\tau=2.2$.
+
+\subsection{Execution, verification and outputs}
+
+CPU preparation validates the original event counts, discovery population, annotations and token positions, and freezes code/input hashes and selection rules. GPU completion reuses saved QK events and computes missing OV scores, including last-token alternative names and general-word controls. No new model forward pass is required. Token IDs/offsets must reproduce the saved prompts; recomputed historical scores must agree within absolute tolerance $2\times10^{-4}$ and relative tolerance $2\times10^{-3}$. Failure stops the run. Verified per-head files support resumption.
+
+CPU analysis produces event scores, all-head summaries, family statistics, paired-variant comparisons and the candidate list. Completion is recorded only after all expected events and output files are verified. The extension provides RI-based candidates and diagnostics; contextual-output measurements, causal effects and circuit tests belong to later stages.

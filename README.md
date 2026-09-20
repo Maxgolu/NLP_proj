@@ -1,46 +1,197 @@
-# NLP Final Project — Semantic Induction Circuits (SICs) for Multi-hop Reasoning
+# NLP Final Project — From Semantic Induction Heads to Circuits
 
-Behavioral pilot phase: measuring whether Pythia-6.9B resolves 1-hop and 2-hop
-semantic relations in-context, as groundwork for mechanistic circuit analysis
-(Relation Index, activation/path patching, faithfulness) across training checkpoints.
+This repository studies how language models implement in-context semantic
+relations. The original proposal targeted multi-hop reasoning and asked whether
+it is carried by isolated Semantic Induction Heads (SIHs) or by distributed
+Semantic Induction Circuits (SICs). After behavioral pilots exposed several task
+confounds, the current priority became a controlled **single-hop causal audit**:
 
-## Repository layout
+> Do heads selected by the Relation Index (RI) definition of Ren et al. causally
+> carry OLMo-2-7B's in-context relational ability, and does RI miss important
+> components of a larger circuit?
 
-- `pilot_v2/` — runner code (Slurm + HF Transformers) and datasets v1/v2.
-  - `pilot.py`, `parallel.py` — evaluation runner (candidate log-prob scoring + free generation), multi-GPU worker launcher.
-  - `completion_evaluation.py` — name-completion scoring (multi-token candidates).
-  - `data/` — question files per prompt format and shot count (0/4/12).
-- `pilot_v3/` — current dataset generator and data (`build_data_v3.py`, `data/`).
-  Natural-language multi-hop with a named composed relation (mother→grandmother),
-  three content worlds, mention-balanced candidates, no options line.
-  See `pilot_v3/README_HE.md` for the full design rationale.
-- `results/` — per-run metrics, audits and reports (raw `results.jsonl` files are
-  git-ignored for size; they are kept on OneDrive and on the cluster).
-- `data_pipeline_plan.tex` — end-to-end pipeline plan (Overleaf).
+Two-hop composition and checkpoint-development analyses remain later extensions.
+No circuit has yet been established.
 
-## Dataset versions — status
+## Current status
 
-- **v1 (`completion_*`)** — syllogistic completion ("Therefore, all X are").
-  Strong 1-hop signal (80–91%), but 2-hop confounded by a mention-frequency
-  shortcut and an options-line position bias. Frozen.
-- **v2 (`completion_v2_*`)** — graph-navigation phrasing ("shortest chain of
-  exactly K steps"). Collapsed to chance on all checks, including 1-hop:
-  base LMs are highly sensitive to unnatural, meta-linguistic prompt formats.
-  **Frozen deliberately as a documented negative result** (format-sensitivity
-  evidence for the report); not developed further.
-- **v3 (`completion_v3_*`)** — current. Natural language, named composed
-  relation, balanced mentions (frequency baseline = exactly 50%), candidate
-  scoring without an options line, token-length-matched candidate pairs,
-  pipeline-control questions in a separate file.
+Model: base `allenai/OLMo-2-1124-7B`, revision
+`7df9a82518afdecae4e8c026b27adccc8c1f0032`, with 32 layers and 32 attention
+heads. The model is used without fine-tuning.
 
-## Running (Slurm)
+- Stage 0: hook, metric, numerical, and costing checks completed.
+- Stage 1: observational RI scan completed for all 1,024 heads on 534 prompts.
+- Stage 1 follow-up: matched-target calibration and saved-event anatomy completed.
+- Stage 2: submitted to Slurm as job `888691`, run name `stage2_v1`. The last
+  user-observed state was `RUNNING` on `s-004` with six GPUs. This repository
+  does **not** currently contain downloaded Stage-2 results, and neither gate
+  passage nor successful completion has been verified.
+- Stages 3–4: not started.
 
-```bash
-bash submit.sh 2 --name completion_v3_12shot_v1 --shots 12 --prompt-version completion_v3
-# or, avoiding a specific node / GPU type:
-sbatch --gres=gpu:2 --cpus-per-task=4 --mem=32G --exclude=s-002 slurm_flex.sbatch \
-  --gpus 2 --name completion_v3_12shot_v1 --shots 12 --prompt-version completion_v3
-```
+The authoritative transition notes are in `RESEARCH_HANDOFF.md`. For the current
+method and evidence, read the files in this order:
 
-Model: EleutherAI/pythia-6.9b (fp16, sharded across 2 GPUs via device_map;
-revision pinned in `pilot_v2/model_lock.json`).
+1. `חומר כתוב/Single_Hop_Methodology_stage1_updated.tex`
+2. `חומר כתוב/Stage1_Results_and_Analysis_updated.tex`
+3. `pilot_v2/README_STAGE2.md`
+4. `pilot_v2/STAGE1_AUDIT_README.md`
+
+## Why the project changed direction
+
+The project began with a multi-hop semantic-reasoning proposal. Behavioral work
+then proceeded through several controlled revisions:
+
+- Pythia-1B and Pythia-6.9B yes/no prompts showed strong label bias and poor
+  compliance.
+- Name-completion v1 produced a real direct-retrieval signal, but two-hop scores
+  were confounded by candidate frequency, option position, and valid bridge-name
+  completions.
+- v2 balanced those factors but used unnatural graph-navigation instructions;
+  performance fell to chance even for one-hop retrieval. It is retained as a
+  negative result.
+- v3/v3.1 returned to natural language and named composed relations. Crossing
+  hop count with fact order exposed a strong layout dependence in Pythia.
+- A dual-tokenizer audit and model comparison selected OLMo-2-7B as the primary
+  mechanistic platform. OLMo improved order symmetry and shuffled-fact behavior,
+  but still showed a composition bottleneck on rewired two-hop examples.
+- To avoid building a multi-hop explanation on an unverified primitive, Phase A
+  now audits the single-hop mechanism first. Phase B will compose verified
+  single-hop components only if the evidence supports it.
+
+Historical context is preserved in `research_history_overleaf_en.tex`,
+`חומר כתוב/NLP___current_position.pdf`, `pilot_v3/README_HE.md`, and
+`pilot_v2/README_OLMO2.md`. These are historical records, not the final Stage-2
+specification.
+
+## Current experimental substrate
+
+The single-hop dataset is generated by `pilot_v3/build_data_singlehop.py` and
+stored under `pilot_v3/data_singlehop/`. It contains 200 fictitious kinship
+families using the relation *mother of*. Every family has:
+
+- a base prompt;
+- a token-aligned corrupted twin in which the two answer-side names swap;
+- a reordered-facts control;
+- both fact orders;
+- construction-time fact, entity, and character-span annotations;
+- four single-hop-only demonstrations shared across its variants and orders.
+
+Behavioral eligibility retained 176 families. The discovery set contains 89
+even-ID families; 87 odd-ID families are reserved for later validation. At four
+shots, both-orders accuracy was 0.93 for base, 0.94 for corrupted, and 0.89 for
+reordered prompts. The full report is
+`results/singlehop_baseline/singlehop_baseline_report.md`.
+
+## Stage 1: what was measured
+
+The final run is under
+`results/stage1_v4_review/stage1_v4_calibrated/`.
+
+For each annotated fact and eligible current position, RI first applies a QK
+condition: the head's maximal attention must point to the last token of the
+annotated source name and exceed the strongest competitor by `tau = 2.2`. In
+the kinship task the child is the source and the mother is the target.
+
+The OV statistic then projects the **raw current-token embedding** through that
+head's value and output matrices and the unembedding. It is normalized over
+visible context tokens. The first target token is primary and the last target
+token is a sensitivity measure. This is not the head's contextual output, a
+final-logit contribution, or a causal effect.
+
+The historical pooled rule selected L3H11 and L9H22, but event inspection showed
+that their scores were concentrated in repeated demonstrations and local
+attention patterns:
+
+- L3H11: 149 scored passes, all one token backward from a period/newline token;
+- L9H22: 86 scored passes, all self-attention;
+- more than 99% of each head's summed first-target score came from demonstrations.
+
+A separate matched-target randomization test retained test-block events with
+both candidate mentions visible, equal token lengths, and distinct first tokens.
+It weighted active families equally, used 100,000 family-consistent swaps, and
+applied Holm correction across all 1,024 heads. Only 80 heads had sufficient
+support, and none survived correction. L16H4 had the smallest raw p-value
+(`p = 0.00581`, 87 events across 40 families). Insufficient support is not a
+negative causal result.
+
+An offline anatomy of all saved QK-passing events found 20 heads with at least
+one dominant-attention event from the final bare-prompt token. There were 748
+such events, including 744 to test-fact sources. L16H21, L16H1, and L16H4 had
+230, 223, and 63 test-source events respectively. These are attention events,
+not correct answers or proof of target promotion.
+
+## Stage 2: implemented causal map
+
+The implemented Stage-2 code is in `pilot_v2/stage2_run.py`,
+`pilot_v2/stage2_engine.py`, and `pilot_v2/stage2_common.py`.
+
+The intervention metric is the clean-answer logit minus the corrupted-answer
+logit at the first answer token where the candidates diverge, conditioned on
+their shared answer prefix. Its sign remains fixed to the clean answer even on
+the corrupted input. A negative patching delta therefore means movement toward
+the corrupted answer.
+
+For one head, exact patching replaces its `o_proj` input slice with corrupted-run
+activations at all original prompt positions. Shared answer-prefix positions are
+recomputed. The planned run contains:
+
+1. first-order gradient attribution for all 1,024 heads on all 178 discovery
+   clean/corrupted pairs;
+2. exact patching for all 1,024 heads on 40 pairs (20 whole families, both
+   orders);
+3. a five-step input-embedding IG fallback if signed-mean Spearman agreement
+   between first-order and exact effects is below 0.7 or undefined;
+4. exact patching on all 178 pairs for the union of supported top-RI heads,
+   top estimated-effect heads, L3H11/L9H22/L16H4, and random controls.
+
+The IG fallback is still an approximation: gradients are sampled along the
+input-embedding path and contracted with fixed clean-to-corrupted head-output
+deltas. Exact measurements remain the record for individually discussed heads.
+
+All three persistent model replicas must pass the gate before the experiment
+continues. The gate checks model/data identity, all-pair token alignment,
+behavioral replication, self-patching, self-attribution, complete corrupted
+embedding replacement, and six-head exact/gradient previews. It does not gate
+on effect sign, head usefulness, or approximation agreement. CPU unit tests
+passed locally, but those tests do not establish that the OLMo GPU gate passed.
+
+Monitoring, resumption, and safe download commands are documented in
+`pilot_v2/README_STAGE2.md`. Completion requires both a successful Slurm exit and
+`summary.json` with `complete: true`.
+
+## Interpreting future Stage-2 results
+
+Before scientific interpretation, verify the gate files, manifest and hashes,
+successful job exit, pair counts, completion marker, and absence of missing or
+non-finite vectors. Keep these distinctions explicit:
+
+- exact all-head results cover 40 pairs; exact all-pair results cover only the
+  selected extension heads;
+- gradient and IG values are estimates until calibrated against exact effects;
+- repeated variants and orders within a family are not independent samples;
+- a high-RI/low-effect head is not automatically a false positive because patch
+  scope, redundancy, nonlinear interactions, and the chosen output metric matter;
+- a list of intervention-sensitive heads is not an edge-validated circuit.
+
+If Stage 2 passes these checks, the next scientific stage is QK/OV mechanism
+analysis, path interventions, redundancy tests, and a minimal-circuit
+faithfulness evaluation on the held-out validation families. The pre-registered
+faithfulness criterion is at least 80% recovery of the full model's
+clean–corrupted logit-difference gap.
+
+## Repository map
+
+- `pilot_v2/` — OLMo/Pythia runners, Stage 0–2 code, Slurm wrappers, tests, model
+  locks, and operational documentation.
+- `pilot_v3/` — later behavioral generators, tokenizer audits, and the current
+  single-hop generator/data.
+- `results/` — downloaded run outputs, audits, and reports.
+- `חומר כתוב/` — current methodology and research reports for Overleaf.
+- `research_history_overleaf_en.tex` — detailed pre-Phase-A research history.
+- `RESEARCH_HANDOFF.md` — current handoff, evidence hierarchy, and collaboration
+  guidance.
+
+The original proposal and course requirements are one directory above this
+repository. The final submission is an ACL-format paper limited to eight pages,
+excluding references and appendix; it must report reproducible settings,
+baselines, limitations, negative results, and an AI disclosure.

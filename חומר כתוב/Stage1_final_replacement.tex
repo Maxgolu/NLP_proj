@@ -1,0 +1,74 @@
+\section{Stage 1 --- Observational Scan (all heads)}
+\textbf{Implemented scope.} The final run, \file{stage1_v4_calibrated}, scanned all 1024 heads on 534 prompts: 89 working-set discovery families $\times$ three variants $\times$ two fact orders, with four ICL demonstrations. The model, dataset and behavioral working set were unchanged. Demonstrations were shared across variants and orders within each family. This section records the completed Stage-1 procedure; where it differs from the original plan elsewhere in this document, the specification below applies to Stage 1.
+
+\subsection{Preflight and intervention-metric specification}
+Raw PyTorch hooks on the HF model were used. Before scanning, the following checks were run:
+\begin{enumerate}[itemsep=1pt]
+\item Reproduce the behavioral runner's summed log-probability scores, scoring each complete candidate under its own continuation, on the first six selected prompts. Abort if no reference comparisons are available or the maximum drift is $\ge 0.05$.
+\item Require inert hooks to preserve answer-position logits exactly and require attention capture to be available. Record the logit drift from the attention-capturing forward; no numerical acceptance threshold was imposed on that drift. Attention capture used the library's eager-attention fallback.
+\item Require a self-patch of L16H0 on one prompt to change the intervention metric by less than $10^{-3}$.
+\item Record exact twin-patching effects for eight early-layer heads on one aligned pair. This was a descriptive preview, not a structural-zero test or a full causal screen.
+\end{enumerate}
+The first three checks were mandatory. The six behavioral checks were rows from one family, not six independent families.
+
+\textbf{Collision-free intervention metric.} For this run's intervention checks, tokenize each candidate continuation with a terminal period and find the first token at which the two continuations differ. If their common token prefix is $c$ and their first differing tokens are $g_k,d_k$, use
+\begin{equation}
+M(x)=\mathrm{logit}(g_k\mid x,c)-\mathrm{logit}(d_k\mid x,c).
+\end{equation}
+The prefix is empty when the first tokens already differ. Patches replace one head's slice of the input to the output projection at all \emph{original prompt} positions only; shared answer-prefix positions are recomputed. Tokenization-boundary inconsistencies or candidates without a differing token cause an error. Specifications were saved for all selected prompts, but shared-prefix families were not separately tested by the small GPU preflight. No new broad gradient-attribution or exact-patching scan was performed in Stage 1.
+
+\subsection{Relation Index and multi-token adaptation}
+For each annotated fact, $t_s$ is the child-name source and $t_o$ is the mother-name target. The source anchor is its \emph{last} token; the target's \emph{first} token is primary and its \emph{last} token is a sensitivity measure. Both scores are computed for every scored event, not only a subsample. Names remain multi-token: unlike the semantic-relation preprocessing in \cite{ren}, they are not replaced by single letters and function words are not removed.
+
+For every fact and current position $j\ge\max(s,o_{\mathrm{last}})$:
+\begin{enumerate}[itemsep=1pt]
+\item \textbf{QK filter.} Using the model's captured attention, require
+\begin{equation}
+s=\arg\max_{k\le j} A^h_{j,k},\qquad
+\frac{A^h_{j,s}}{\max_{k\ne s} A^h_{j,k}+10^{-9}}>\tau,\qquad \tau=2.2.
+\end{equation}
+Self-attention is allowed by this position range. This is an attention-dominance condition, not an activation-magnitude threshold.
+\item \textbf{Embedding-level OV score.} Following the explicit projection in \cite{ren}, use the \emph{raw embedding of the current token}, $e_j=W_E[t_j]$:
+\begin{equation}
+p^{h,j}=\mathrm{softmax}(e_jW_V^hW_O^hW_U).
+\end{equation}
+Let $C_j$ contain the distinct token IDs visible through position $j$. Define
+\begin{equation}
+q_t^{h,j}=\max\left(0,p_t^{h,j}-\frac{1}{|C_j|}\sum_{u\in C_j}p_u^{h,j}\right),
+\qquad a^{h,j}_{T}=\frac{q_{t_o}^{h,j}}{\sum_{u\in C_j}q_u^{h,j}}.
+\end{equation}
+Skip undefined scores, including a zero denominator. The target need not have the largest logit. This projection is not the head's actual attention-weighted contextual output and is not a causal logit change.
+\end{enumerate}
+OV projections are computed only after QK filtering and cached by head and current-token ID within a prompt.
+
+\subsection{Frequency, strength and event-level audit}
+Frequency is the number of QK passes divided by the number of eligible fact--position evaluations for that head. Strength is the mean RI over passes with defined scores. Neither quantity is behavioral accuracy or the fraction of prompts solved. Pooled statistics are retained per variant for comparison with the earlier run.
+
+Every pass is also saved with its prompt/family, variant, fact, current position, block indices, token IDs, dominance ratio and available scores. Separate denominators retain zero-pass groups. Prompt text, token strings, offsets, annotations and demonstration IDs permit reconstruction of individual examples.
+
+Analyses distinguish the \emph{fact's block} from the \emph{current position's block}: demo--demo, demo--test and test--test. The focused audit of L9H22 and L3H11 reports family coverage, conditional family means, repeated prefix/fact conditions, concrete events and comparisons with other visible tail names in the same individual block. Shared target/control tokens are flagged. Identical demonstration prefixes are not independent evidence; stability across variants alone is not evidence of semantic tracking. Corruption swaps answer-side names, so tracking is assessed against the actual annotations rather than assuming that the source must move.
+
+\subsection{Descriptive controls and matched-target calibration}
+\textbf{Historical pooled rule.} The scan retains a position-10 fake-target score and one uniformly sampled visible unique-token control per scored event. The earlier selection rule compared a head's pooled strength with the 99.9th percentile of random-token control means across heads having at least 50 scored events. This is retained as a historical descriptive comparison, \emph{not} as a calibrated per-head significance test; it does not justify an expected false-positive count. The saved small legacy null reservoir is not used for the new calibration.
+
+\textbf{Additional calibration, specified before the final run.} This is a separate, narrower statistic, not a replacement for pooled RI. Include only test--test events whose fact target is one of the two answer candidates. Both candidate tail mentions must be fully visible, equal in token length at their fact occurrences, and distinct in first-token ID. Compare the true fact target's first-token score with the other candidate's score, holding the prompt, QK selection and normalization fixed. Exclusion reasons are recorded.
+
+For each head and active family, average the true and alternative scores over matched events. Average these family means with equal family weight. Require at least 50 matched events across at least 10 families; otherwise report \emph{insufficient support}, not a negative finding.
+
+Generate $B=100{,}000$ null draws (seed 20260913). Each draw uses one fair true/alternative swap per family, shared across all its events, variants, orders and heads. For observed family-averaged score $S_h$ and null scores $S_h^{(b)}$, compute the one-sided Monte Carlo value
+\begin{equation}
+p_h=\frac{1+\sum_{b=1}^{B}\mathbf{1}[S_h^{(b)}\ge S_h]}{B+1},
+\end{equation}
+with floating-point tie tolerance. Apply Holm correction across all 1024 heads, assigning unsupported heads $p=1$ internally. Selection requires adjusted $p\le0.05$ and a positive true-minus-alternative effect. Report support, effect, null mean/standard deviation, 95/99/99.9 percentiles and raw/adjusted $p$ values.
+
+The interpretation assumes conditional exchangeability of true/alternative assignments under the null. Matching and family blocking do not prove that assumption; name preferences, QK selection and working-set selection can limit it. This is not a causal test. Only the first-target, matched-test statistic receives this calibration; demo and last-target scores remain descriptive. No bootstrap confidence intervals were computed.
+
+\subsection{Dominance sensitivity, outputs and boundaries}
+All dominance ratios satisfying $\arg\max A^h_{j,k}=s$ are collected \emph{before} thresholding, over every head, layer and eligible fact--position evaluation. Raw float32 values are stored on disk without a sampling cap. Exact empirical percentiles are computed globally and per layer. The global population is event-weighted and includes repeated demonstration prefixes, not family-balanced.
+
+The final full-population 95th percentile was $\tau^*_{\mathrm{ours}}\approx4.482$. Since it exceeds 2.2, higher-threshold RI sensitivity can be computed by filtering saved events; this offline filtering was performed. No separate model run or matched-null recalibration at $\tau^*_{\mathrm{ours}}$ was performed. Other previously proposed threshold runs are not claimed as completed. Differences from 2.2 may reflect data, tokenization and sampling scope as well as the model.
+
+\textbf{Execution and provenance.} One job ran the GPU scan, the two-head descriptive analysis and CPU-only calibration in sequence. Calibration reused saved scores without extra model forwards. Outputs include \file{head_stats.csv}, detailed compressed event/opportunity/prompt files, dominance values and percentiles, candidate analyses, and \file{null_calibration/}. Preflight results, model revision, input/code hashes, selected prompt IDs, metric specifications, seeds and calibration rules are recorded.
+
+\textbf{Not implemented in this stage.} The originally proposed weight-only copying, token-matching and relation-word functionality scores were not computed. A contextual-residual OV variant and a broad causal head map were also not run. References elsewhere to these planned measurements do not imply completed Stage-1 results.
+
