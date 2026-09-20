@@ -65,6 +65,8 @@ verify and download) written at the time of that run, or a historical record.
 | `pilot_v2/RUNBOOK_stage2_v1.md` | run book: `stage2_v1` (job 888691) | current |
 | `pilot_v2/RUNBOOK_stage2_v2_extension.md` | run book: `stage2_v2_extension` (job 912879) | current |
 | `pilot_v2/RUNBOOK_stage1_audit.md` | run book: Stage-1 audit and calibration | current |
+| `pilot_v2/RUNBOOK_ri_test_v2.md` | run book: Stage-1 test-only RI extension (`ri_test_v2`, job 905839) | current |
+| `pilot_v2/RUNBOOK_ri_test_v2_retry.md` | notes on the failed attempts (jobs 899730, 905799, 905807) before the completed run | current |
 
 Historical run books of the behavioral pilots (Pythia-1B, completion v1–v3.1,
 OLMo-2 comparison) were removed on 20 September 2026; they remain in the Git

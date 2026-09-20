@@ -40,3 +40,7 @@ results/ri_test_v2/events.jsonl.gz
 results/stage1_v4_review/stage1_v4_calibrated/dominance_*.f32
 results/stage1_v4_review/stage1_v4_calibrated/ri_events.jsonl.gz
 results/stage1_v4_review/stage1_v4_calibrated/audit_prompts.jsonl.gz
+
+# local virtual environments
+.venv/
+venv/
