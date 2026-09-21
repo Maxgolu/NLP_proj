@@ -1,0 +1,311 @@
+% Replacement proposal, 21 September 2026. No Stage-3 model measurements run.
+% Standalone Overleaf source. For the main methodology, copy the content
+% between \section{...} and \end{document}; retain the main document's preamble.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\setlist{itemsep=2pt,topsep=3pt}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\title{Stage 3: Head-Level Characterization\\\large Revised experimental plan}
+\author{Phase A: Single-hop SIH Audit}
+\date{21 September 2026}
+
+\begin{document}
+\maketitle
+\section{Stage 3: Head-Level Characterization}
+
+\subsection{Question, scope and outcome}
+Stage 3 asks why RI-based selection and single-head intervention effects disagree,
+and what the selected heads actually do in the single-hop task. Stage 2 found
+several large effects outside the RI selection, small effects for several RI
+priorities, and definition-dependent rank correlations. These observations do
+not establish copying, semantic specificity, or a writer--reader circuit.
+
+For each head we seek an evidence-based profile: \emph{where its activity affects
+the answer; what it attends to; what its contextual output writes; and which
+alternative explanations remain}. A familiar type, a precisely described new
+pattern, or an unexplained result are all acceptable outcomes. We do not require
+every head to receive a categorical label.
+
+All work uses discovery families. The 87 validation families and the location
+world remain untouched. Inter-head paths, joint head interventions, circuits and
+faithfulness belong to Stage 4. The layer-wise residual divergence analysis is
+also moved to Stage 4 as a descriptive guide, not a constraint that rules out
+important computation in later layers. The proposed weight-only relation
+classifier is removed: fictitious child--mother assignments are supplied by the
+context, not fixed associations in the weights.
+
+\subsection{Fixed head inventory}
+Let $I_h$ be the saved exact Scope-P mean on the same 178 pairs (89 families,
+orders averaged), with positive sign denoting movement toward the corrupted
+answer. Use only the 148 heads with this coverage; never substitute a 40-pair
+mean for a missing 178-pair mean. Absence from this population does not imply a
+small effect.
+
+Let $R$ be the union of the 59 test-only RI candidates and the historical
+pair L3H11/L9H22. This denotes selection by the recorded rules, not a calibrated
+SIH discovery or a universally high RI score. The historical top-25 extension
+rankings are not added to $R$.
+
+The thresholds below are descriptive choices made after inspecting Stages 1--2
+and before Stage-3 measurements. They are not significance thresholds or evidence
+of irrelevance. Membership depends on the written rule, with no named exceptions.
+\begin{description}[style=nextline,leftmargin=0pt,font=\bfseries]
+\item[RI-selected, small mean effect (48 heads).]
+$h\in R$ and $|I_h|<0.1$. Includes the historical pair and L11H4, L17H5 and
+L9H16. A small signed mean can conceal heterogeneous effects.
+\item[Strong positive effect outside RI selection (12 heads).]
+$h\notin R$ and $I_h\geq0.3$. Includes L17H1, L27H6 and L18H18. ``Outside
+selection'' is not synonymous with a supported low RI score.
+\item[Strong positive effect within RI selection (5 heads).]
+$h\in R$ and $I_h\geq0.3$: L16H1, L16H21, L17H24, L18H19 and L22H5.
+Final-position QK agreement is recorded separately, not assumed for this group.
+\item[Strong negative effect (8 heads).]
+$I_h\leq-0.3$, irrespective of RI membership. Record RI membership separately.
+These are negative intervention effects, not established negative name movers.
+\item[Random reference heads (25 heads).]
+The unchanged Stage-2 random controls. Preserve their original selection
+provenance; they were sampled outside the original deterministic shortlist.
+They are descriptive references, not a calibrated null population.
+\end{description}
+
+\textbf{Moderate-effect supplement (7 heads).}
+Include all heads in the same 148-head population with $0.1\leq|I_h|<0.3$:
+L6H24, L7H1, L8H15, L12H17, L14H23, L15H3 and L16H31.
+This explicit band retains informative intermediate effects without relabeling
+them as strong. L9H16 remains in the small-effect RI group under the same rule.
+
+The inventory contains \textbf{105 unique heads}, including all 61 members of
+$R$ and all 25 controls. A head receives every applicable label; no head is
+added by example alone. There are no overlaps between the five groups and the
+supplement in the current snapshot. RI membership and final-position QK support
+remain separate attributes. The audit files are
+\file{results/stage3_plan/head_inventory.csv} (all 148 heads, including exclusions)
+and \file{results/stage3_plan/inventory_policy.json} (rules, lists and source hashes).
+Only inventory calculations have been performed; no Stage-3 effects were computed.
+
+\subsection{Required analyses, in order}
+The order follows dependencies: establish what is known, locate the effect,
+then interpret reading and writing at the relevant sites. It is not a requirement
+to load the model separately for each analysis. Compatible captures should share
+forward passes and be saved for reuse.
+
+\subsubsection*{Evidence Review and Logit-Change Decomposition}
+\textbf{Purpose.} Establish the measured effects and alternative explanations
+already available, without treating a previous narrative report as primary data.
+
+\textbf{Procedure.} Assemble saved per-head Scope-P/Scope-F effects, family and
+order variation, RI selection reasons, and event support. Distinguish unavailable
+Scope-F results from zero effects. For available Scope-F readouts report
+\[
+P_h=z_{\mathrm{corr}}^{\mathrm{patched}}-z_{\mathrm{corr}}^{\mathrm{clean}},\qquad
+S_h=z_{\mathrm{clean}}^{\mathrm{clean}}-z_{\mathrm{clean}}^{\mathrm{patched}},
+\qquad I_h^F=P_h+S_h.
+\]
+These describe the logit changes caused by replacing one activation with another;
+they do not identify a head's direct promotion or suppression mechanism.
+The existing child-name readout uses its first token. Flag shared-prefix cases
+and token collisions; do not interpret it as whole-name probability or as a
+validated specificity measure.
+
+\textbf{Validity prerequisite.} Resolve the previously identified cross-sample
+\file{residual_40} and family-bootstrap indexing errors before using those
+statistics. Reuse valid measurements; do not silently recompute missing or invalid
+analyses. Record the correction task separately from the experiment. Missing
+attention or residual caches must be identified before classifying work as CPU-only.
+
+\subsubsection*{Causal Position Profile and Reverse Patching}
+\textbf{Purpose.} Locate the sites where a head's activity influences the answer,
+without assuming that it is a fact-position writer or an answer-position reader.
+
+\textbf{Procedure.} Preserve the Stage-2 outcome: the first divergent answer-token
+logit contrast with a fixed clean-answer sign and any shared answer prefix.
+Complete missing Scope-F measurements for all inventory heads on the 178 pairs;
+46 inventory heads currently lack them. Scope F always patches the last original
+prompt token, not an appended answer-prefix position. Save the two answer logits
+and their clean baselines for every new intervention.
+
+On the original common 40 pairs, patch each head separately at each test-block
+position from the first differing token through the final colon. Earlier identical
+prefix positions are checked with neutral probe patches rather than exhaustively
+recomputed. Annotate positions by fact, entity role, token anchor, question and
+punctuation. Report the position profile, both signed means and family variation,
+with Scope P and F compared on these same 40 pairs. Do not subtract P and F to
+claim an additive contribution of earlier positions.
+
+For the ten largest $|I_h|$ inventory heads, fixed from the saved 178-pair means,
+also perform reverse patches (clean donor into corrupted recipient) at all prompt
+positions and at the final colon on all 178 pairs. Report
+$M(x_r;a_h\leftarrow a_h^c)-M(x_r)$ alongside the noising effect. Recovery here
+is conditional on the rest of the corrupted model; it is not proof that the head
+alone suffices to solve the task. The fixed ten-head list is in the inventory policy.
+
+The position scan is the expensive component. Before submission, measure runtime
+on probe pairs and report the total work for this fixed scope. Any later reduction
+or expansion of scope must be documented, not introduced by dropping costly heads.
+
+\subsubsection*{Relation-Tracking Attention Profile}
+\textbf{Purpose.} Test whether attention selects relevant entities or follows
+positions, token identities, punctuation, or local offsets.
+
+\textbf{Procedure.} Inspect the final colon and test-block rows, marking the
+causally sensitive sites from the position scan. Use the 20 common discovery
+families with both orders and base/corrupted/reorder variants. Record attention
+to the child and mother separately, both over each full name span and at the
+Stage-1 anchors; compare with the same roles in distractor facts. Record argmax,
+relative offset, self/previous-token attention and the original RI dominance gate.
+Analyze all eligible rows, including QK failures. Saved passing events alone
+cannot supply this unconditional profile; capture missing attention in new runs.
+
+For each base prompt in these families, add a paired query asking about the other
+answer-side child while leaving facts unchanged. Re-annotate the relevant fact
+and report the model's response on this new condition; do not select cases by
+whether the desired attention pattern appears. This query control is a new
+discovery measurement, distinct from the original corruption.
+
+Use reordering to test sensitivity to physical location and the query control to
+test relevance to the question. In the original corruption, mothers change at
+fixed fact positions: correct tracking can preserve the same attention location.
+Report paired role-specific attention differences and support; no positional or
+semantic label follows from argmax movement alone. Tokenization-length changes
+are handled through spans and roles, not assumed position alignment.
+
+\subsubsection*{Contextual Output Profile}
+\textbf{Purpose.} Describe what each head writes at the positions examined above,
+and compare this with the raw-embedding diagnostic used by RI.
+
+\textbf{Procedure.} On the same clean and corrupted inputs, record the actual
+per-head output-projection contribution $o_j^h$, using the model's real value
+inputs and attention weights. This is the head's contribution before any
+subsequent attention-output normalization; such normalization is shared across
+heads and must not be treated as an additive per-head operation.
+Inspect $o_j^hW_U$ for the current token and the
+annotated first/last tokens of the target, source and other visible names. Use
+the same token IDs for raw/contextual comparisons, retain collision ties, and
+report ranks and signed contrasts rather than ``logit shares.''
+
+This vocabulary projection is a diagnostic, not the final model distribution or
+the causal effect. Do not apply final normalization to an isolated head vector
+and call the result an exact logit contribution. A later normalization-aware
+variant must specify its fixed reference or local linearization explicitly.
+Keep the bare-colon site separate from the later metric site in shared-prefix
+cases. An output at an early site need not encode the final answer directly.
+
+\subsection{Planned diagnostic analyses after the core profiles}
+All four analyses below are included in Stage 3; they are not alternatives selected
+only after a promising result. Apply them to the fixed inventory, including the
+random reference heads, wherever their inputs and sites are well defined.
+Record the head list, input set, sites, controls and scoring protocol before each
+analysis. Missing support is reported as insufficient data, never as a zero score
+or a negative finding. Eligibility must not depend on obtaining the expected result.
+
+The core profiles establish the relevant sites and interpretation. Weight-based
+copying and synthetic fingerprints then test complementary static and behavioral
+properties; contextual RI tests the embedding choice; attention--value interventions
+test routing and content causally. These analyses may share captures and run in
+parallel where independent; their scientific scope is not reduced by this scheduling.
+
+\paragraph{Copying and Token-Preference Diagnostic.}
+\textbf{Purpose and scope:} test copying and lexical preference in every inventory
+head, and whether current-name/control overlap helps explain RI contrasts.
+First partition the available saved events by
+whether the current token belongs to the target, a control name, or neither;
+report support and target/control scores in each partition. Then inspect the
+weight map $e_tW_V^hW_O^hW_U$: self-token rank and self-versus-other-name contrast,
+with equal weight per distinct token ID. Include a fixed non-name reference sample
+to distinguish name-token behavior from broader copying. The weight diagnostic
+does not require QK passes; report missing event-based comparisons separately.
+Positive or negative contrast
+is descriptive, not an established mover type. Broad spectral analysis is not
+required; weight alignment alone cannot decide the copy-penalizing hypothesis.
+
+\paragraph{Matched Contextual RI Comparison.}
+\textbf{Purpose and scope:} compare raw and contextual RI for every inventory head
+with valid saved QK events, whether or not its core profiles suggest disagreement.
+Retain the extension's metric-specific support rule (at least 20 comparisons across
+10 families) for summary rankings and correlations; retain smaller samples as
+explicitly insufficient-support descriptives. Replace only the raw embedding in the RI projection by the
+contextual activation entering the head's value projection, including the model's
+actual pre-value normalization. Hold event IDs, visible-token normalization,
+controls, anchors and family aggregation fixed. Undefined scores are reported
+and matched comparisons use common valid support. This current-position projection
+is still distinct from the attention-weighted head output. Compare raw and
+contextual scores on the same heads and pairs, reporting eligibility. It cannot
+repair missing QK events; a correlation in this selected inventory is not an
+all-1,024-head result. This is a sensitivity analysis, not a claimed novel method.
+
+\paragraph{Attention--Value Intervention.}
+\textbf{Purpose and scope:} test routing, values and their interaction for every
+inventory head at the final colon, including heads with small effects. Additional
+sites may be selected from the causal position profile under a documented rule
+fixed before these interventions; label those results as post-selection exploration.
+At each specified site compare clean attention/clean values, corrupted attention/clean
+values, clean attention/corrupted values, and corrupted attention/corrupted values.
+Use captured post-softmax attention and actual value activations while preserving
+the model's other computations. Gate the joint replacement against the ordinary
+head-output patch at that site. Report both single replacements and the interaction
+between them; do not force an additive or pattern/value-dominated classification.
+
+\paragraph{Repeated-Sequence and Retrieval Fingerprints.}
+\textbf{Purpose and scope:} test all inventory heads on both a repeated-sequence
+benchmark (prefix matching and copying) and a retrieval benchmark (attention to
+the copied token during defined copy events). Neither benchmark is conditional
+on a prior type label. Fix their token sampling, lengths, seeds, event definitions,
+handling of repeated token occurrences and scoring protocol before measurement.
+Run both attention and output checks with the same reference heads. Report task
+success and event denominators, including heads with insufficient eligible events.
+Transfer to a synthetic task
+supports a behavioral capability, not proof that the same algorithm solves the
+kinship task. Function-vector mediation and other additional fingerprints are not
+required; they need a separately justified task-level question and protocol.
+
+\subsection{Optional extensions}
+The following readout remains conditional. Broad spectral copying analysis,
+function-vector mediation and additional synthetic benchmarks may also be proposed
+separately when they answer a remaining question; none replaces the four planned
+analyses above or is required for completion.
+
+\paragraph{Controlled Representation Readout (Patchscopes-style).}
+\textbf{Trigger:} a causal site is localized but vocabulary projections cannot
+explain the information present there. This remains optional within Stage 3,
+not automatically assigned to Stage 4. A residual-stream readout describes a
+multi-component representation; it cannot be attributed to one head merely because
+it was captured near that head. Compare intact and head-intervened representations
+in the same readout prompt, with no-injection, irrelevant-injection and entity-swap
+controls. Treat decoded text as supporting exploration, not a causal verdict;
+fictitious names do not rule out lexical copying or information from the readout
+prompt. Questions about transfer between heads belong to Stage 4.
+
+\subsection{Reporting, completion and handoff}
+Average orders within family and report family support, heterogeneity and missing
+data. Random controls provide context; their 95th percentile is not a universal
+property-detection or significance threshold. Any uncertainty interval must name
+its population, resampling unit, number of draws and quantities held fixed.
+Do not reuse an invalid interval or turn exploratory selection into confirmation.
+
+Deliver a head-profile table and short evidence cards covering inventory reasons,
+position effects, attention roles, contextual output, alternative explanations,
+and results of all four planned diagnostic analyses. For each head and analysis,
+distinguish completed, insufficient support, unavailable input and unresolved
+implementation; unsupported cells must not be silently omitted or zero-filled.
+Track optional extensions separately (not triggered, completed, or unresolved).
+Completion requires the core profiles and all four planned analyses on their
+applicable populations, with exclusions documented; unavailable inputs and
+implementation failures remain outstanding rather than counting as completion.
+It does not require favorable results or a type label for every head.
+
+The copying, contextual-information and early/late-position hypotheses receive
+separate evidence assessments, not forced yes/no verdicts. Stage 4 receives
+candidate components and specific communication hypotheses to test with path and
+group interventions, then faithfulness and held-out validation. Neither a similar
+fingerprint nor a large single-head effect establishes an edge or circuit.
+
+\end{document}

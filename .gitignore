@@ -45,6 +45,15 @@ results/stage1_v4_review/stage1_v4_calibrated/audit_prompts.jsonl.gz
 .venv/
 venv/
 
+# Stage 3 portable raw inputs / model measurements (keep on OneDrive + cluster)
+results/stage3_inputs/
+results/stage3_inputs_v1/*.gz
+results/stage3_inputs_v1/*.npz
+results/stage3_v1/replica_*/
+results/stage3_v1/worker_*.log
+results/stage3_v1/analysis/position_profiles.csv
+results/stage3_v1/analysis/family_effects.npz
+
 # local virtual environments
 .venv/
 venv/

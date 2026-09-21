@@ -1,5 +1,45 @@
 # Research handoff — read this first
 
+## UPDATE 21 September 2026 — Stage-3 implementation and pending GPU gate
+
+- User authorized code, local CPU preparation/tests, README and run instructions;
+  user will upload and submit. No SSH connection, GPU job, Git commit or push was
+  performed. Stage-3 research results do not yet exist.
+- Current plan: `חומר כתוב/Stage3_Head_Level_Characterization_revised.tex`.
+  Stage 3 characterizes 105 individual heads. All four agreed diagnostics run
+  for applicable populations; none is selected only after promising results.
+  Stage 4 owns paths, groups, circuits and residual divergence.
+- Code: `pilot_v2/stage3_{common,prepare,engine,measure,run,analyze}.py`,
+  `test_stage3.py`, `submit_stage3.sh`, `stage3.sbatch`, `build_stage3_bundle.py`.
+  Run book: `pilot_v2/RUNBOOK_stage3_v1.md`. Root README updated.
+- Portable inputs: `results/stage3_inputs_v1/`; 178 pairs / 89 discovery families,
+  534 saved prompts, 17,263 saved scored RI events (34,526 anchor comparisons), 105 heads. Original
+  Stage-1/2 results unchanged. Behavioral gate reference copied from the archived
+  baseline and verified against the Stage-2 manifest hash. Old preparatory
+  `results/stage3_inputs/` is superseded, ignored by Git and not uploaded.
+- CPU correction outputs are explicit: same-40-pair approximation errors and
+  20,000 paired resamples using all 89 families, alongside target/control overlap
+  diagnostics. Do not confuse these sensitivity summaries with new model results.
+- New interventions: 8,188 missing F + 176,820 position-profile forwards + 74,760
+  attention/value factorial forwards + 3,560 reverse forwards = 263,328. Reuse
+  valid saved F elsewhere. Original prompt positions only; shared answer-prefix
+  positions remain live. Capture actual SDPA Q/K after QK norm/RoPE and actual V;
+  preserve installed forward implementation. OLMo2 shared post-attention norm
+  does not become an additive per-head logit attribution.
+- Cluster upload extracts into isolated `pilot_v2/stage3_v1/`, sourcing parent
+  `runtime.sh`. First run `stage3_v1_gate` with `--gate-only`, inspect its measured
+  costing, then `stage3_v1`. Two GPUs per replica; support 2/4/6. Resume requires
+  identical inputs/code/allocation, retains checksummed pair/head-batch and prompt
+  checkpoints, and reruns gates. Never remove a lock while its recorded job runs.
+- Local implementation tests cover real tiny random OLMo2 SDPA hooks, QK/RoPE
+  reconstruction, F/shared-prefix handling, projection weights, the real saved
+  tokenizer/prompts, contextual RI and causal diagnostics, plus resampling and
+  checkpoint integrity. All 12 tests passed, including complete CPU reporting
+  from synthetic fixtures and rejection of missing required artifacts. They do
+  not replace the pinned-7B GPU gate.
+- The five final Stage-2 questions: 1–3 are addressed by Stage 3; 4–5 require
+  Stage 4. Mechanism labels in older reports/handoff remain hypotheses.
+
 ## UPDATE 20 September 2026 (supersedes the "Immediate next task" below)
 
 Completed since the 18 September snapshot:
@@ -21,6 +61,11 @@ Open items / next: (1) Scope F for L17H1, L27H6, L18H18 (not in A∪B, so not me
 Snapshot: 18 September 2026, after the test-only Stage-1 RI extension and the in-place Overleaf results-report update. This supersedes the 13 September handoff's pending-job status. Stage 2 job 888691 and RI-extension job 905839 completed; their results are local. Read the artifacts before making scientific claims.
 
 **Immediate next task:** decide whether the existing Stage-2 measurements already cover the new Stage-1 candidates, or whether a targeted additional calculation is needed. Do NOT assume that a changed RI shortlist requires rerunning Stage 2. Conversely, do NOT assume all new candidates have exact measurements on all families. Audit coverage first, then discuss the necessary update to the Stage-2 results report with the user. This coverage comparison has NOT yet been performed.
+
+### 21 September — corrections and Stage-3 plan
+- Two analysis errors, flagged in the Stage-3 plan, fixed in `analyze_stage2_v2_results.py`: (1) the "misleading" median-difference bootstrap resampled 20 family indices (common subset) instead of the 89 families of the 178-pair data; corrected CI is [0.0009, 0.0067] (report updated in place; conclusion unchanged). (2) `residual_40` in `stage2_v2_coverage/coverage_v2.csv` mixed the 178-pair attribution mean with the 40-pair exact mean; renamed `residual_cross_sample_178attr_vs_40exact`, and a same-pair residual `residual_40_same_pairs` (attribution and exact on the identical 40 pairs) was added to `stage2_v2_analysis/head_table_v2.csv`. Same-pair residuals: L17H1 2.24, L27H6 0.51, L18H19 0.28, L16H21 0.22, L16H1 0.04 — the first-order estimate under-shoots the strongest heads, as the methodology predicted.
+- Name-control definition verified in `ri_test_audit.py`: controls = tails (MOTHER names) of the other test facts, fully visible at j. Child names are controls only when they are also mothers in another fact (chain structure: "X is the mother of Y. Z is the mother of X."). The copy hypothesis therefore predicts negative gaps specifically at self events on chain-middle names (child in one fact, mother/control in the previous), and positive target scores at events that process a target name's second mention. Not yet tested event-by-event (planned as Stage-3 "Copying and Token-Preference Diagnostic", partition by current-token role).
+- Stage 3/4 redesigned by the user: Stage 3 = head-level characterization (fixed 105-head inventory in `results/stage3_plan/`, five groups + moderate supplement; core profiles: evidence review, causal position profile + reverse patching, relation-tracking attention profile, contextual output profile; four planned diagnostics: copying/token preference, matched contextual RI, attention–value intervention, repeated-sequence/retrieval fingerprints; optional Patchscopes-style readout). Stage 4 = circuits: paths, group interventions, faithfulness, validation families. Plan: `חומר כתוב/new_stage_3_experiment.pdf` (source `Stage3_Head_Level_Characterization_revised.tex`); earlier draft `Stage3 new idea BETA.pdf`. No Stage-3 measurements yet.
 
 ## 1. Working with the researcher
 

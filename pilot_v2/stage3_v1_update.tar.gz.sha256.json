@@ -1,0 +1,17 @@
+{
+  "archive": "stage3_v1_update.tar.gz",
+  "sha256": "ab031b97cfe964dd5a672e81393c5c8bbbbf2dd17d563820da2c6d12d35b0e15",
+  "bytes": 4808446,
+  "files": 25,
+  "heads": 105,
+  "workload": {
+    "patched_forwards": 263328,
+    "components": {
+      "missing_final_position": 8188,
+      "position_scan_extra": 176820,
+      "attention_value": 74760,
+      "reverse": 3560
+    },
+    "note": "Excludes gates, captures and diagnostics; wall time measured by GPU gate."
+  }
+}

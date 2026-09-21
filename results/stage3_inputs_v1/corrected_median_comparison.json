@@ -1,0 +1,11 @@
+{
+  "difference": 0.00305167744668682,
+  "interval": [
+    0.0009703720553537432,
+    0.006622627544938844
+  ],
+  "families": 89,
+  "draws": 20000,
+  "seed": 20260921,
+  "interpretation": "descriptive; head selection held fixed"
+}

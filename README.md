@@ -13,7 +13,7 @@ confounds, the current priority became a controlled **single-hop causal audit**:
 Two-hop composition and checkpoint-development analyses remain later extensions.
 No circuit has yet been established.
 
-## Current status (20 September 2026)
+## Current status (21 September 2026)
 
 Model: base `allenai/OLMo-2-1124-7B`, revision
 `7df9a82518afdecae4e8c026b27adccc8c1f0032`, with 32 layers and 32 attention
@@ -34,13 +34,17 @@ heads. The model is used without fine-tuning.
   with separate answer/source logits. Report (updated in place):
   `חומר כתוב/Stage2_Results_and_Analysis.tex`; analysis
   `results/stage2_v2_analysis/`.
-- Main Stage-2 findings: the historical RI heads have no effect; the test-only
-  RI priority heads are causally negligible; the name-gap statistic is
-  negatively rank-correlated with causal importance (copying hypothesis, untested);
-  causal heads split into layer-6–11 heads acting at test-fact positions and
-  layer-16–26 heads acting entirely at the answer position.
-- Stages 3–4: not started. Next: final-position scope for L17H1/L27H6/L18H18,
-  weight copying score, path patching writer→reader.
+- Main Stage-2 findings: several RI priority heads have small signed mean effects;
+  some large effects occur outside RI selection. Associations depend on the RI
+  definition and population. Scope-P/Scope-F differences motivate position
+  profiles; copying and writer/reader roles remain hypotheses to test.
+- Stage 3: head-characterization code and portable inputs prepared for 105 heads.
+  CPU data checks and tiny-OLMo2 implementation tests completed; the 7B GPU gate
+  and research measurements are pending. All four agreed diagnostic analyses
+  are mandatory. Upload, Git, gate, full-run and resume instructions:
+  [Stage-3 run book](pilot_v2/RUNBOOK_stage3_v1.md).
+- Stage 4: future paths, group interventions, circuits and validation. It is
+  deliberately separate from Stage-3 individual-head characterization.
 
 The authoritative transition notes are in `RESEARCH_HANDOFF.md` (its top
 "UPDATE" section is the latest state). For the current method and evidence,
@@ -51,6 +55,8 @@ read the files in this order:
 2. `חומר כתוב/Stage1_Results_and_Analysis_updated.tex`
 3. `חומר כתוב/Stage2_Results_and_Analysis.tex`
 4. `pilot_v2/RUNBOOK_stage2_v1.md`, `pilot_v2/RUNBOOK_stage2_v2_extension.md` (run books)
+5. `חומר כתוב/Stage3_Head_Level_Characterization_revised.tex` (current Stage-3 plan)
+6. `pilot_v2/RUNBOOK_stage3_v1.md` (current implementation and execution instructions)
 
 ## Documentation map
 
@@ -62,6 +68,7 @@ verify and download) written at the time of that run, or a historical record.
 |---|---|---|
 | `README.md` (this file) | project entry point, status, reading order | current |
 | `RESEARCH_HANDOFF.md` | assistant/collaborator handoff, evidence hierarchy | current |
+| `pilot_v2/RUNBOOK_stage3_v1.md` | Stage-3 CPU preparation, GPU gate/run, analysis, Git and transfer | ready for GPU gate |
 | `pilot_v2/RUNBOOK_stage2_v1.md` | run book: `stage2_v1` (job 888691) | current |
 | `pilot_v2/RUNBOOK_stage2_v2_extension.md` | run book: `stage2_v2_extension` (job 912879) | current |
 | `pilot_v2/RUNBOOK_stage1_audit.md` | run book: Stage-1 audit and calibration | current |

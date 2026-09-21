@@ -1,0 +1,3322 @@
+[
+  {
+    "head": "L1H27",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 366,
+    "families": 84,
+    "target": 0.03308643194561746,
+    "control": 0.03109184968786297,
+    "gap": 0.001994582257754487
+  },
+  {
+    "head": "L1H27",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 366,
+    "families": 84,
+    "target": 0.008169221805222886,
+    "control": 0.0073240268583030866,
+    "gap": 0.0008451949469197987
+  },
+  {
+    "head": "L1H27",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 40,
+    "families": 23,
+    "target": 0.02823822440755,
+    "control": 0.03010258554753168,
+    "gap": -0.0018643611399816794
+  },
+  {
+    "head": "L1H27",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 40,
+    "families": 23,
+    "target": 0.01086144887342833,
+    "control": 0.008919869507168046,
+    "gap": 0.0019415793662602848
+  },
+  {
+    "head": "L1H27",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 5,
+    "families": 1,
+    "target": 0.05846955180168152,
+    "control": 0.05257745496928692,
+    "gap": 0.0058920968323946
+  },
+  {
+    "head": "L1H27",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 5,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L2H21",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 53,
+    "families": 16,
+    "target": 0.009341122617721947,
+    "control": 0.011581637607863134,
+    "gap": -0.0022405149901411885
+  },
+  {
+    "head": "L2H21",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 53,
+    "families": 16,
+    "target": 0.01773679122561589,
+    "control": 0.01673856316629099,
+    "gap": 0.0009982280593249014
+  },
+  {
+    "head": "L2H21",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 15,
+    "families": 8,
+    "target": 0.005699297762475908,
+    "control": 0.006613846472949565,
+    "gap": -0.0009145487104736578
+  },
+  {
+    "head": "L2H21",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 15,
+    "families": 8,
+    "target": 0.027710818802006543,
+    "control": 0.023289643034028508,
+    "gap": 0.004421175767978031
+  },
+  {
+    "head": "L2H21",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 9,
+    "families": 2,
+    "target": 0.004027513476709525,
+    "control": 0.013356005359027121,
+    "gap": -0.009328491882317597
+  },
+  {
+    "head": "L2H21",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 9,
+    "families": 2,
+    "target": 0.0,
+    "control": 0.0007331701409485606,
+    "gap": -0.0007331701409485606
+  },
+  {
+    "head": "L2H22",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 18,
+    "families": 9,
+    "target": 0.007962214386228609,
+    "control": 0.009108573938202526,
+    "gap": -0.0011463595519739167
+  },
+  {
+    "head": "L2H22",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 18,
+    "families": 9,
+    "target": 0.01038659492559317,
+    "control": 0.005974194285011402,
+    "gap": 0.004412400640581769
+  },
+  {
+    "head": "L2H22",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 3,
+    "families": 3,
+    "target": 0.0,
+    "control": 0.006627379153441223,
+    "gap": -0.006627379153441223
+  },
+  {
+    "head": "L2H22",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 3,
+    "families": 3,
+    "target": 0.014884311705827713,
+    "control": 0.01538420610854195,
+    "gap": -0.0004998944027142384
+  },
+  {
+    "head": "L2H22",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 9,
+    "families": 3,
+    "target": 0.011812418735644314,
+    "control": 0.0,
+    "gap": 0.011812418735644314
+  },
+  {
+    "head": "L2H22",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 9,
+    "families": 3,
+    "target": 0.05896142264828086,
+    "control": 0.02951968606147501,
+    "gap": 0.029441736586805854
+  },
+  {
+    "head": "L3H11",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 3,
+    "families": 1,
+    "target": 0.03651334593693415,
+    "control": 0.012336155399680138,
+    "gap": 0.024177190537254017
+  },
+  {
+    "head": "L3H11",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 3,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.009386424285670122,
+    "gap": -0.009386424285670122
+  },
+  {
+    "head": "L4H0",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 69,
+    "families": 20,
+    "target": 0.008471863995128798,
+    "control": 0.0063674457098906205,
+    "gap": 0.0021044182852381797
+  },
+  {
+    "head": "L4H0",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 69,
+    "families": 20,
+    "target": 0.020512571211050577,
+    "control": 0.016955382199393212,
+    "gap": 0.0035571890116573614
+  },
+  {
+    "head": "L4H0",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 61,
+    "families": 12,
+    "target": 0.004057731497030343,
+    "control": 0.0132598548265243,
+    "gap": -0.00920212332949396
+  },
+  {
+    "head": "L4H0",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 61,
+    "families": 12,
+    "target": 0.01889580539168997,
+    "control": 0.004664855445002171,
+    "gap": 0.014230949946687799
+  },
+  {
+    "head": "L5H18",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 181,
+    "families": 59,
+    "target": 0.010272363789741208,
+    "control": 0.0055119826203858385,
+    "gap": 0.004760381169355367
+  },
+  {
+    "head": "L5H18",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 181,
+    "families": 59,
+    "target": 0.01270542332826965,
+    "control": 0.008903512622980938,
+    "gap": 0.0038019107052887128
+  },
+  {
+    "head": "L5H18",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 133,
+    "families": 50,
+    "target": 0.007078337506513992,
+    "control": 0.005990858323162621,
+    "gap": 0.001087479183351369
+  },
+  {
+    "head": "L5H18",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 133,
+    "families": 50,
+    "target": 0.01402870953751897,
+    "control": 0.015866553824418605,
+    "gap": -0.001837844286899634
+  },
+  {
+    "head": "L5H18",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 71,
+    "families": 20,
+    "target": 0.01508844809635775,
+    "control": 0.003961724350210426,
+    "gap": 0.011126723746147326
+  },
+  {
+    "head": "L5H18",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 71,
+    "families": 20,
+    "target": 0.01720375625908976,
+    "control": 0.012801100625638068,
+    "gap": 0.004402655633451695
+  },
+  {
+    "head": "L6H2",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 811,
+    "families": 89,
+    "target": 0.006602676571496443,
+    "control": 0.006906297198761602,
+    "gap": -0.000303620627265156
+  },
+  {
+    "head": "L6H2",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 811,
+    "families": 89,
+    "target": 0.012599454408555163,
+    "control": 0.0056821275115247006,
+    "gap": 0.006917326897030462
+  },
+  {
+    "head": "L6H2",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 116,
+    "families": 37,
+    "target": 0.009427151863097347,
+    "control": 0.005893110234340379,
+    "gap": 0.0035340416287569674
+  },
+  {
+    "head": "L6H2",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 116,
+    "families": 37,
+    "target": 0.02019470938083376,
+    "control": 0.01005989633071098,
+    "gap": 0.010134813050122779
+  },
+  {
+    "head": "L6H24",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 346,
+    "families": 86,
+    "target": 0.009636491859526064,
+    "control": 0.008468268507971756,
+    "gap": 0.0011682233515543114
+  },
+  {
+    "head": "L6H24",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 346,
+    "families": 86,
+    "target": 0.02328221339517118,
+    "control": 0.02257618902417876,
+    "gap": 0.0007060243709924173
+  },
+  {
+    "head": "L6H24",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 20,
+    "families": 12,
+    "target": 0.005376555688498128,
+    "control": 0.010996683332551683,
+    "gap": -0.005620127644053557
+  },
+  {
+    "head": "L6H24",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 20,
+    "families": 12,
+    "target": 0.014568069445279738,
+    "control": 0.011625534104395126,
+    "gap": 0.00294253534088461
+  },
+  {
+    "head": "L7H1",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 116,
+    "families": 45,
+    "target": 0.008511312694668217,
+    "control": 0.009997201994726907,
+    "gap": -0.001485889300058688
+  },
+  {
+    "head": "L7H1",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 116,
+    "families": 45,
+    "target": 0.008624424864268534,
+    "control": 0.007679428916423075,
+    "gap": 0.0009449959478454582
+  },
+  {
+    "head": "L7H1",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 20,
+    "families": 6,
+    "target": 0.01285376351637145,
+    "control": 0.009944303367390401,
+    "gap": 0.0029094601489810484
+  },
+  {
+    "head": "L7H1",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 20,
+    "families": 6,
+    "target": 0.006973223547295977,
+    "control": 0.021453807076775574,
+    "gap": -0.014480583529479596
+  },
+  {
+    "head": "L7H18",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 487,
+    "families": 88,
+    "target": 0.008486816341432122,
+    "control": 0.00984596769235932,
+    "gap": -0.0013591513509272016
+  },
+  {
+    "head": "L7H18",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 487,
+    "families": 88,
+    "target": 0.02306832088103954,
+    "control": 0.019631995764368363,
+    "gap": 0.003436325116671178
+  },
+  {
+    "head": "L7H18",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 39,
+    "families": 19,
+    "target": 0.010491994613977639,
+    "control": 0.009334494612024477,
+    "gap": 0.001157500001953163
+  },
+  {
+    "head": "L7H18",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 39,
+    "families": 19,
+    "target": 0.021096706874015037,
+    "control": 0.024053703020571877,
+    "gap": -0.0029569961465568404
+  },
+  {
+    "head": "L7H25",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 48,
+    "families": 31,
+    "target": 0.011996675137823487,
+    "control": 0.011694697345608079,
+    "gap": 0.0003019777922154088
+  },
+  {
+    "head": "L7H25",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 48,
+    "families": 31,
+    "target": 0.016580593645177097,
+    "control": 0.020561124645883937,
+    "gap": -0.003980531000706834
+  },
+  {
+    "head": "L7H25",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 25,
+    "families": 12,
+    "target": 0.016129620234520796,
+    "control": 0.008869143683679996,
+    "gap": 0.007260476550840798
+  },
+  {
+    "head": "L7H25",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 25,
+    "families": 12,
+    "target": 0.018210343030902246,
+    "control": 0.01718273341151265,
+    "gap": 0.0010276096193895963
+  },
+  {
+    "head": "L8H8",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 15,
+    "families": 4,
+    "target": 0.013132059869046012,
+    "control": 0.012671792258818943,
+    "gap": 0.00046026761022706884
+  },
+  {
+    "head": "L8H8",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 15,
+    "families": 4,
+    "target": 0.008274700861268986,
+    "control": 0.016016712100180384,
+    "gap": -0.007742011238911396
+  },
+  {
+    "head": "L8H8",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 15,
+    "families": 9,
+    "target": 0.015132310860617846,
+    "control": 0.010022891885859685,
+    "gap": 0.005109418974758161
+  },
+  {
+    "head": "L8H8",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 15,
+    "families": 9,
+    "target": 0.02840806029012634,
+    "control": 0.004350433160585386,
+    "gap": 0.024057627129540952
+  },
+  {
+    "head": "L8H15",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 273,
+    "families": 75,
+    "target": 0.014821411987743524,
+    "control": 0.018043755550162924,
+    "gap": -0.0032223435624194013
+  },
+  {
+    "head": "L8H15",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 273,
+    "families": 75,
+    "target": 0.012337320460019528,
+    "control": 0.01255849351996812,
+    "gap": -0.00022117305994859212
+  },
+  {
+    "head": "L8H15",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 7,
+    "families": 3,
+    "target": 0.005219150024155776,
+    "control": 0.004159930162131786,
+    "gap": 0.0010592198620239894
+  },
+  {
+    "head": "L8H15",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 7,
+    "families": 3,
+    "target": 0.022027816126743954,
+    "control": 0.00650375181188186,
+    "gap": 0.015524064314862092
+  },
+  {
+    "head": "L8H16",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 99,
+    "families": 32,
+    "target": 0.011179909277704307,
+    "control": 0.009690825768042385,
+    "gap": 0.0014890835096619214
+  },
+  {
+    "head": "L8H16",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 99,
+    "families": 32,
+    "target": 0.008321589921090184,
+    "control": 0.012889632875966426,
+    "gap": -0.004568042954876243
+  },
+  {
+    "head": "L8H16",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 161,
+    "families": 67,
+    "target": 0.010915202511390798,
+    "control": 0.009243725116179706,
+    "gap": 0.0016714773952110921
+  },
+  {
+    "head": "L8H16",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 161,
+    "families": 67,
+    "target": 0.016580625019690418,
+    "control": 0.017539123952681417,
+    "gap": -0.0009584989329910005
+  },
+  {
+    "head": "L8H16",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 69,
+    "families": 33,
+    "target": 0.010530525611506567,
+    "control": 0.009841097889973519,
+    "gap": 0.0006894277215330479
+  },
+  {
+    "head": "L8H16",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 69,
+    "families": 33,
+    "target": 0.011795893851244315,
+    "control": 0.010609004588136043,
+    "gap": 0.0011868892631082724
+  },
+  {
+    "head": "L9H6",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 46,
+    "families": 18,
+    "target": 0.025989134354447878,
+    "control": 0.014439148421508527,
+    "gap": 0.011549985932939355
+  },
+  {
+    "head": "L9H6",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 46,
+    "families": 18,
+    "target": 0.017395816493296513,
+    "control": 0.019786787108319846,
+    "gap": -0.0023909706150233336
+  },
+  {
+    "head": "L9H16",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 311,
+    "families": 87,
+    "target": 0.0070306861155975155,
+    "control": 0.0074644729567247894,
+    "gap": -0.00043378684112727343
+  },
+  {
+    "head": "L9H16",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 311,
+    "families": 87,
+    "target": 0.020689937542719118,
+    "control": 0.013053860730365857,
+    "gap": 0.007636076812353262
+  },
+  {
+    "head": "L9H16",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 32,
+    "families": 28,
+    "target": 0.015154417381771574,
+    "control": 0.013776649228973493,
+    "gap": 0.0013777681527980816
+  },
+  {
+    "head": "L9H16",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 32,
+    "families": 28,
+    "target": 0.024908697947726717,
+    "control": 0.01706884794596893,
+    "gap": 0.007839850001757786
+  },
+  {
+    "head": "L9H17",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 13,
+    "families": 7,
+    "target": 0.015358277205710433,
+    "control": 0.010843840474817193,
+    "gap": 0.004514436730893239
+  },
+  {
+    "head": "L9H17",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 13,
+    "families": 7,
+    "target": 0.008634600056601422,
+    "control": 0.01085634194757967,
+    "gap": -0.0022217418909782453
+  },
+  {
+    "head": "L9H17",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 25,
+    "families": 20,
+    "target": 0.007462559634586796,
+    "control": 0.004806612006116969,
+    "gap": 0.0026559476284698266
+  },
+  {
+    "head": "L9H17",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 25,
+    "families": 20,
+    "target": 0.02513296969118528,
+    "control": 0.01589598464197479,
+    "gap": 0.00923698504921049
+  },
+  {
+    "head": "L9H22",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 5,
+    "families": 4,
+    "target": 0.004707056097686291,
+    "control": 0.004689208542307218,
+    "gap": 1.7847555379072897e-05
+  },
+  {
+    "head": "L9H22",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 5,
+    "families": 4,
+    "target": 0.007871405221521854,
+    "control": 0.017269616713747382,
+    "gap": -0.009398211492225528
+  },
+  {
+    "head": "L9H22",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 4,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L9H22",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 4,
+    "families": 1,
+    "target": 0.0013937422772869468,
+    "control": 0.0019135867866377036,
+    "gap": -0.0005198445093507569
+  },
+  {
+    "head": "L10H16",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 90,
+    "families": 39,
+    "target": 0.016133375934255012,
+    "control": 0.01768074447231565,
+    "gap": -0.0015473685380606383
+  },
+  {
+    "head": "L10H16",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 90,
+    "families": 39,
+    "target": 0.01097681021082024,
+    "control": 0.006484931228338129,
+    "gap": 0.004491878982482112
+  },
+  {
+    "head": "L10H16",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 2,
+    "families": 2,
+    "target": 0.0,
+    "control": 0.007217111997306347,
+    "gap": -0.007217111997306347
+  },
+  {
+    "head": "L10H16",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 2,
+    "families": 2,
+    "target": 0.0,
+    "control": 0.010878581320866942,
+    "gap": -0.010878581320866942
+  },
+  {
+    "head": "L11H3",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 71,
+    "families": 37,
+    "target": 0.009250009567623639,
+    "control": 0.00926857886633342,
+    "gap": -1.856929870978143e-05
+  },
+  {
+    "head": "L11H3",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 71,
+    "families": 37,
+    "target": 0.009501759816267368,
+    "control": 0.01004967402711206,
+    "gap": -0.0005479142108446901
+  },
+  {
+    "head": "L11H3",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 176,
+    "families": 55,
+    "target": 0.005397986502721354,
+    "control": 0.005193438369283658,
+    "gap": 0.00020454813343769395
+  },
+  {
+    "head": "L11H3",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 176,
+    "families": 55,
+    "target": 0.006537442541085174,
+    "control": 0.007896829435961813,
+    "gap": -0.0013593868948766378
+  },
+  {
+    "head": "L11H3",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 2,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.013565702402653793,
+    "gap": -0.013565702402653793
+  },
+  {
+    "head": "L11H3",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 2,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.04228394664824009,
+    "gap": -0.04228394664824009
+  },
+  {
+    "head": "L11H4",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 51,
+    "families": 28,
+    "target": 0.016379591070913843,
+    "control": 0.010139410849510495,
+    "gap": 0.006240180221403346
+  },
+  {
+    "head": "L11H4",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 51,
+    "families": 28,
+    "target": 0.017313140224792904,
+    "control": 0.018575877802620183,
+    "gap": -0.0012627375778272779
+  },
+  {
+    "head": "L11H4",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 43,
+    "families": 21,
+    "target": 0.012534095274861014,
+    "control": 0.006830944262307,
+    "gap": 0.005703151012554015
+  },
+  {
+    "head": "L11H4",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 43,
+    "families": 21,
+    "target": 0.007863199499080934,
+    "control": 0.004059440939423565,
+    "gap": 0.003803758559657369
+  },
+  {
+    "head": "L11H7",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 1232,
+    "families": 89,
+    "target": 0.022422338339580114,
+    "control": 0.022791489981460213,
+    "gap": -0.0003691516418801028
+  },
+  {
+    "head": "L11H7",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 1232,
+    "families": 89,
+    "target": 0.01464592490870849,
+    "control": 0.013443103032382242,
+    "gap": 0.0012028218763262492
+  },
+  {
+    "head": "L11H15",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 862,
+    "families": 89,
+    "target": 0.012905358282231395,
+    "control": 0.012868587455701802,
+    "gap": 3.677082652959925e-05
+  },
+  {
+    "head": "L11H15",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 862,
+    "families": 89,
+    "target": 0.018195671937175466,
+    "control": 0.012527417593191753,
+    "gap": 0.005668254343983713
+  },
+  {
+    "head": "L11H15",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 158,
+    "families": 51,
+    "target": 0.01383566649641101,
+    "control": 0.0141362446220079,
+    "gap": -0.0003005781255968895
+  },
+  {
+    "head": "L11H15",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 158,
+    "families": 51,
+    "target": 0.017129184749850482,
+    "control": 0.015760340294522068,
+    "gap": 0.001368844455328413
+  },
+  {
+    "head": "L11H27",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 347,
+    "families": 82,
+    "target": 0.010517529943269583,
+    "control": 0.013872558503641266,
+    "gap": -0.003355028560371683
+  },
+  {
+    "head": "L11H27",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 347,
+    "families": 82,
+    "target": 0.013508556335438059,
+    "control": 0.00979798508570512,
+    "gap": 0.0037105712497329424
+  },
+  {
+    "head": "L11H27",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 71,
+    "families": 47,
+    "target": 0.009263902074279238,
+    "control": 0.006884989743451322,
+    "gap": 0.002378912330827915
+  },
+  {
+    "head": "L11H27",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 71,
+    "families": 47,
+    "target": 0.01850653934743531,
+    "control": 0.02074912009932628,
+    "gap": -0.00224258075189097
+  },
+  {
+    "head": "L12H2",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 40,
+    "families": 27,
+    "target": 0.016802475937170745,
+    "control": 0.013997320664487013,
+    "gap": 0.0028051552726837342
+  },
+  {
+    "head": "L12H2",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 40,
+    "families": 27,
+    "target": 0.011113938579787097,
+    "control": 0.014116688395171032,
+    "gap": -0.003002749815383934
+  },
+  {
+    "head": "L12H2",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 8,
+    "families": 5,
+    "target": 0.040280163660645484,
+    "control": 0.012612250274590526,
+    "gap": 0.02766791338605496
+  },
+  {
+    "head": "L12H2",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 8,
+    "families": 5,
+    "target": 0.04114601835608482,
+    "control": 0.013815922072778148,
+    "gap": 0.027330096283306682
+  },
+  {
+    "head": "L12H2",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 4,
+    "families": 3,
+    "target": 0.01596512831747532,
+    "control": 0.005173500782499711,
+    "gap": 0.010791627534975609
+  },
+  {
+    "head": "L12H2",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 4,
+    "families": 3,
+    "target": 0.020411804939309757,
+    "control": 0.03214078634563419,
+    "gap": -0.011728981406324439
+  },
+  {
+    "head": "L12H9",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 34,
+    "families": 18,
+    "target": 0.014418463422744363,
+    "control": 0.012169887308572257,
+    "gap": 0.002248576114172105
+  },
+  {
+    "head": "L12H9",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 34,
+    "families": 18,
+    "target": 0.008202382951923128,
+    "control": 0.011563141208036408,
+    "gap": -0.003360758256113277
+  },
+  {
+    "head": "L12H9",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 15,
+    "families": 9,
+    "target": 0.027898268601684664,
+    "control": 0.01530948373845514,
+    "gap": 0.01258878486322952
+  },
+  {
+    "head": "L12H9",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 15,
+    "families": 9,
+    "target": 0.019671101899196703,
+    "control": 0.013091702229791771,
+    "gap": 0.006579399669404935
+  },
+  {
+    "head": "L12H17",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 62,
+    "families": 30,
+    "target": 0.0155734293172524,
+    "control": 0.014696089498595228,
+    "gap": 0.0008773398186571691
+  },
+  {
+    "head": "L12H17",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 62,
+    "families": 30,
+    "target": 0.007957818877055413,
+    "control": 0.014134514516529938,
+    "gap": -0.006176695639474524
+  },
+  {
+    "head": "L12H17",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 5,
+    "families": 3,
+    "target": 0.0,
+    "control": 0.01469996271448003,
+    "gap": -0.01469996271448003
+  },
+  {
+    "head": "L12H17",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 5,
+    "families": 3,
+    "target": 0.01032277507086595,
+    "control": 0.020776941337519225,
+    "gap": -0.010454166266653275
+  },
+  {
+    "head": "L13H1",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 20,
+    "families": 8,
+    "target": 0.017101561557501553,
+    "control": 0.008961109524049486,
+    "gap": 0.008140452033452069
+  },
+  {
+    "head": "L13H1",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 20,
+    "families": 8,
+    "target": 0.009275603690184653,
+    "control": 0.006632100406226489,
+    "gap": 0.0026435032839581636
+  },
+  {
+    "head": "L13H10",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 31,
+    "families": 19,
+    "target": 0.020379621339471715,
+    "control": 0.017529661577243946,
+    "gap": 0.0028499597622277696
+  },
+  {
+    "head": "L13H10",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 31,
+    "families": 19,
+    "target": 0.011467064559263619,
+    "control": 0.013539774686490235,
+    "gap": -0.002072710127226616
+  },
+  {
+    "head": "L13H10",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 2,
+    "families": 2,
+    "target": 0.016050497069954872,
+    "control": 0.0008889839518815279,
+    "gap": 0.015161513118073344
+  },
+  {
+    "head": "L13H10",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 2,
+    "families": 2,
+    "target": 0.035827670246362686,
+    "control": 0.02268028321365515,
+    "gap": 0.013147387032707535
+  },
+  {
+    "head": "L13H10",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 8,
+    "families": 5,
+    "target": 0.0011216644197702408,
+    "control": 0.01677297065034509,
+    "gap": -0.015651306230574848
+  },
+  {
+    "head": "L13H10",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 8,
+    "families": 5,
+    "target": 0.008604468777775764,
+    "control": 0.018495335512691075,
+    "gap": -0.00989086673491531
+  },
+  {
+    "head": "L13H22",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 149,
+    "families": 56,
+    "target": 0.002990903990437454,
+    "control": 0.004971808003785323,
+    "gap": -0.001980904013347869
+  },
+  {
+    "head": "L13H22",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 149,
+    "families": 56,
+    "target": 0.01568278107096419,
+    "control": 0.0241547050757141,
+    "gap": -0.008471924004749911
+  },
+  {
+    "head": "L13H22",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 5,
+    "families": 5,
+    "target": 0.012001554761081935,
+    "control": 0.011077031741539638,
+    "gap": 0.0009245230195422973
+  },
+  {
+    "head": "L13H22",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 5,
+    "families": 5,
+    "target": 0.011870958469808101,
+    "control": 0.01609039803345998,
+    "gap": -0.004219439563651879
+  },
+  {
+    "head": "L14H10",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 240,
+    "families": 76,
+    "target": 0.008999764521240535,
+    "control": 0.0067220913982888215,
+    "gap": 0.0022776731229517144
+  },
+  {
+    "head": "L14H10",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 240,
+    "families": 76,
+    "target": 0.013766377396700958,
+    "control": 0.012929173421029795,
+    "gap": 0.0008372039756711574
+  },
+  {
+    "head": "L14H10",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 5,
+    "families": 4,
+    "target": 0.009630070417188108,
+    "control": 0.011523666636397442,
+    "gap": -0.0018935962192093332
+  },
+  {
+    "head": "L14H10",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 5,
+    "families": 4,
+    "target": 0.02439419543952681,
+    "control": 0.019483930043255288,
+    "gap": 0.004910265396271522
+  },
+  {
+    "head": "L14H23",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 872,
+    "families": 89,
+    "target": 0.015694273665523704,
+    "control": 0.01445317518867586,
+    "gap": 0.0012410984768478509
+  },
+  {
+    "head": "L14H23",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 872,
+    "families": 89,
+    "target": 0.003171822299580536,
+    "control": 0.006960970864460663,
+    "gap": -0.003789148564880127
+  },
+  {
+    "head": "L14H23",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 677,
+    "families": 89,
+    "target": 0.01551214479890216,
+    "control": 0.016221383083994283,
+    "gap": -0.0007092382850921167
+  },
+  {
+    "head": "L14H23",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 677,
+    "families": 89,
+    "target": 0.004806096422583015,
+    "control": 0.0049309271427824255,
+    "gap": -0.00012483072019940986
+  },
+  {
+    "head": "L14H26",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 27,
+    "families": 13,
+    "target": 0.008723981750126068,
+    "control": 0.012409508515609045,
+    "gap": -0.003685526765482977
+  },
+  {
+    "head": "L14H26",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 27,
+    "families": 13,
+    "target": 0.010686869888255993,
+    "control": 0.009301460881391142,
+    "gap": 0.0013854090068648516
+  },
+  {
+    "head": "L14H26",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 9,
+    "families": 8,
+    "target": 0.008800636802334338,
+    "control": 0.009261900682759006,
+    "gap": -0.00046126388042466715
+  },
+  {
+    "head": "L14H26",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 9,
+    "families": 8,
+    "target": 0.029775694361887872,
+    "control": 0.020838666969211772,
+    "gap": 0.0089370273926761
+  },
+  {
+    "head": "L15H0",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 11,
+    "families": 6,
+    "target": 0.0039652641280554235,
+    "control": 0.011478536194449085,
+    "gap": -0.00751327206639366
+  },
+  {
+    "head": "L15H0",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 11,
+    "families": 6,
+    "target": 0.016596957251264637,
+    "control": 0.019705225894641545,
+    "gap": -0.0031082686433769086
+  },
+  {
+    "head": "L15H0",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.03283868730068207,
+    "gap": -0.03283868730068207
+  },
+  {
+    "head": "L15H0",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 1,
+    "families": 1,
+    "target": 0.03897791728377342,
+    "control": 0.0,
+    "gap": 0.03897791728377342
+  },
+  {
+    "head": "L15H0",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 11,
+    "families": 10,
+    "target": 0.011171234617359005,
+    "control": 0.005628186867882808,
+    "gap": 0.005543047749476197
+  },
+  {
+    "head": "L15H0",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 11,
+    "families": 10,
+    "target": 0.025464235106483102,
+    "control": 0.031726245465688405,
+    "gap": -0.006262010359205305
+  },
+  {
+    "head": "L15H2",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 147,
+    "families": 66,
+    "target": 0.0146735911579765,
+    "control": 0.015763531409902498,
+    "gap": -0.0010899402519259978
+  },
+  {
+    "head": "L15H2",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 147,
+    "families": 66,
+    "target": 0.011125821855992658,
+    "control": 0.01257352038870026,
+    "gap": -0.001447698532707602
+  },
+  {
+    "head": "L15H2",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 49,
+    "families": 29,
+    "target": 0.01199119464606689,
+    "control": 0.01586295939157663,
+    "gap": -0.0038717647455097453
+  },
+  {
+    "head": "L15H2",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 49,
+    "families": 29,
+    "target": 0.007820016910568222,
+    "control": 0.012052351128045912,
+    "gap": -0.00423233421747769
+  },
+  {
+    "head": "L15H3",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 53,
+    "families": 30,
+    "target": 0.013620924774246913,
+    "control": 0.008176413380941893,
+    "gap": 0.005444511393305018
+  },
+  {
+    "head": "L15H3",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 53,
+    "families": 30,
+    "target": 0.022800298821918353,
+    "control": 0.021381254291940155,
+    "gap": 0.001419044529978203
+  },
+  {
+    "head": "L15H3",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 34,
+    "families": 20,
+    "target": 0.011236890277359635,
+    "control": 0.014844067856029142,
+    "gap": -0.003607177578669507
+  },
+  {
+    "head": "L15H3",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 34,
+    "families": 20,
+    "target": 0.005459027229032168,
+    "control": 0.00934565565257799,
+    "gap": -0.0038866284235458204
+  },
+  {
+    "head": "L15H3",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.008290801818172136,
+    "gap": -0.008290801818172136
+  },
+  {
+    "head": "L15H3",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L15H18",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 104,
+    "families": 47,
+    "target": 0.015288298838261634,
+    "control": 0.009993380301160818,
+    "gap": 0.005294918537100813
+  },
+  {
+    "head": "L15H18",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 104,
+    "families": 47,
+    "target": 0.01427481026183946,
+    "control": 0.007988831788260119,
+    "gap": 0.006285978473579342
+  },
+  {
+    "head": "L15H18",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 4,
+    "families": 4,
+    "target": 0.014696603640913963,
+    "control": 0.005786084880431494,
+    "gap": 0.008910518760482471
+  },
+  {
+    "head": "L15H18",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 4,
+    "families": 4,
+    "target": 0.0473414845764637,
+    "control": 0.021822617234041292,
+    "gap": 0.025518867342422407
+  },
+  {
+    "head": "L15H18",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 2,
+    "families": 2,
+    "target": 0.0,
+    "control": 0.01097019761800766,
+    "gap": -0.01097019761800766
+  },
+  {
+    "head": "L15H18",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 2,
+    "families": 2,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L15H28",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 49,
+    "families": 17,
+    "target": 0.008172323559286954,
+    "control": 0.011722202040820296,
+    "gap": -0.003549878481533343
+  },
+  {
+    "head": "L15H28",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 49,
+    "families": 17,
+    "target": 0.013187046145305496,
+    "control": 0.02409086924524113,
+    "gap": -0.010903823099935638
+  },
+  {
+    "head": "L15H28",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 19,
+    "families": 17,
+    "target": 0.010493989376460804,
+    "control": 0.011721568307656723,
+    "gap": -0.0012275789311959173
+  },
+  {
+    "head": "L15H28",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 19,
+    "families": 17,
+    "target": 0.01807860706878059,
+    "control": 0.016317754300826874,
+    "gap": 0.0017608527679537167
+  },
+  {
+    "head": "L15H28",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 35,
+    "families": 21,
+    "target": 0.009277045744515601,
+    "control": 0.008022283922111947,
+    "gap": 0.001254761822403654
+  },
+  {
+    "head": "L15H28",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 35,
+    "families": 21,
+    "target": 0.021198545218933197,
+    "control": 0.029832274502355156,
+    "gap": -0.008633729283421956
+  },
+  {
+    "head": "L15H29",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 33,
+    "families": 17,
+    "target": 0.00827432229804496,
+    "control": 0.004099937963407498,
+    "gap": 0.004174384334637462
+  },
+  {
+    "head": "L15H29",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 33,
+    "families": 17,
+    "target": 0.017429803105472933,
+    "control": 0.013002078289933064,
+    "gap": 0.00442772481553987
+  },
+  {
+    "head": "L15H29",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 1,
+    "families": 1,
+    "target": 0.008882974274456501,
+    "control": 0.008385374986877045,
+    "gap": 0.0004975992875794564
+  },
+  {
+    "head": "L15H29",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 1,
+    "families": 1,
+    "target": 0.026674242690205574,
+    "control": 0.01663229924937089,
+    "gap": 0.010041943440834682
+  },
+  {
+    "head": "L16H1",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 242,
+    "families": 75,
+    "target": 0.008673535482728822,
+    "control": 0.010683051399340256,
+    "gap": -0.0020095159166114325
+  },
+  {
+    "head": "L16H1",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 242,
+    "families": 75,
+    "target": 0.011813862402243391,
+    "control": 0.010653012544281353,
+    "gap": 0.0011608498579620448
+  },
+  {
+    "head": "L16H1",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 331,
+    "families": 82,
+    "target": 0.007994878908092846,
+    "control": 0.012089069930855846,
+    "gap": -0.004094191022763002
+  },
+  {
+    "head": "L16H1",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 331,
+    "families": 82,
+    "target": 0.0067564310381863935,
+    "control": 0.008671889587828203,
+    "gap": -0.00191545854964181
+  },
+  {
+    "head": "L16H1",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 88,
+    "families": 34,
+    "target": 0.007833337152773952,
+    "control": 0.011753361108842201,
+    "gap": -0.0039200239560682505
+  },
+  {
+    "head": "L16H1",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 88,
+    "families": 34,
+    "target": 0.010232118341709971,
+    "control": 0.00883717405881042,
+    "gap": 0.001394944282899552
+  },
+  {
+    "head": "L16H2",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 100,
+    "families": 48,
+    "target": 0.01007752484228048,
+    "control": 0.009791584019775553,
+    "gap": 0.00028594082250492646
+  },
+  {
+    "head": "L16H2",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 100,
+    "families": 48,
+    "target": 0.011930809790747945,
+    "control": 0.013175340916017443,
+    "gap": -0.0012445311252694982
+  },
+  {
+    "head": "L16H2",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 3,
+    "families": 3,
+    "target": 0.03755225737889608,
+    "control": 0.021630483795888722,
+    "gap": 0.015921773583007354
+  },
+  {
+    "head": "L16H2",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 3,
+    "families": 3,
+    "target": 0.015848901743690174,
+    "control": 0.019091560246629845,
+    "gap": -0.0032426585029396737
+  },
+  {
+    "head": "L16H4",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 88,
+    "families": 40,
+    "target": 0.014638794903252608,
+    "control": 0.013278361798848753,
+    "gap": 0.0013604331044038548
+  },
+  {
+    "head": "L16H4",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 88,
+    "families": 40,
+    "target": 0.004110860696689795,
+    "control": 0.01002074727706376,
+    "gap": -0.005909886580373966
+  },
+  {
+    "head": "L16H4",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 3,
+    "families": 3,
+    "target": 0.010619420558214188,
+    "control": 0.007806945902605851,
+    "gap": 0.002812474655608336
+  },
+  {
+    "head": "L16H4",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 3,
+    "families": 3,
+    "target": 0.006929073482751846,
+    "control": 0.018482666505102923,
+    "gap": -0.011553593022351075
+  },
+  {
+    "head": "L16H16",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 221,
+    "families": 62,
+    "target": 0.008827230971005906,
+    "control": 0.008339868518464846,
+    "gap": 0.00048736245254105853
+  },
+  {
+    "head": "L16H16",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 221,
+    "families": 62,
+    "target": 0.016193120531762927,
+    "control": 0.013261563753243914,
+    "gap": 0.0029315567785190124
+  },
+  {
+    "head": "L16H21",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 149,
+    "families": 67,
+    "target": 0.01822575502106584,
+    "control": 0.014057596496847508,
+    "gap": 0.004168158524218332
+  },
+  {
+    "head": "L16H21",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 149,
+    "families": 67,
+    "target": 0.017786321466277816,
+    "control": 0.016613173238872462,
+    "gap": 0.0011731482274053467
+  },
+  {
+    "head": "L16H21",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 307,
+    "families": 82,
+    "target": 0.009935860358477424,
+    "control": 0.010635113410689108,
+    "gap": -0.0006992530522116802
+  },
+  {
+    "head": "L16H21",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 307,
+    "families": 82,
+    "target": 0.01851752763168195,
+    "control": 0.017679831966218217,
+    "gap": 0.0008376956654637308
+  },
+  {
+    "head": "L16H24",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 163,
+    "families": 61,
+    "target": 0.01096523932268906,
+    "control": 0.014729692039192261,
+    "gap": -0.003764452716503204
+  },
+  {
+    "head": "L16H24",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 163,
+    "families": 61,
+    "target": 0.016760087554862142,
+    "control": 0.017624558968505517,
+    "gap": -0.0008644714136433766
+  },
+  {
+    "head": "L16H24",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 54,
+    "families": 33,
+    "target": 0.013504782222996869,
+    "control": 0.0141879853411101,
+    "gap": -0.0006832031181132303
+  },
+  {
+    "head": "L16H24",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 54,
+    "families": 33,
+    "target": 0.014154619853687826,
+    "control": 0.01653424933289044,
+    "gap": -0.002379629479202611
+  },
+  {
+    "head": "L16H31",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 47,
+    "families": 26,
+    "target": 0.013249982425268406,
+    "control": 0.013459906617575528,
+    "gap": -0.0002099241923071193
+  },
+  {
+    "head": "L16H31",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 47,
+    "families": 26,
+    "target": 0.02991303372889375,
+    "control": 0.02331516243025867,
+    "gap": 0.006597871298635075
+  },
+  {
+    "head": "L16H31",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L16H31",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 1,
+    "families": 1,
+    "target": 0.011308081448078156,
+    "control": 0.019587669521570206,
+    "gap": -0.00827958807349205
+  },
+  {
+    "head": "L17H1",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 2,
+    "families": 1,
+    "target": 0.009365052916109562,
+    "control": 0.0,
+    "gap": 0.009365052916109562
+  },
+  {
+    "head": "L17H1",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 2,
+    "families": 1,
+    "target": 0.002594135934486985,
+    "control": 0.0,
+    "gap": 0.002594135934486985
+  },
+  {
+    "head": "L17H3",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 2,
+    "families": 1,
+    "target": 0.03776923939585686,
+    "control": 0.018707633639375366,
+    "gap": 0.01906160575648149
+  },
+  {
+    "head": "L17H3",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 2,
+    "families": 1,
+    "target": 0.06099161319434643,
+    "control": 0.04557968520869811,
+    "gap": 0.015411927985648315
+  },
+  {
+    "head": "L17H3",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 6,
+    "families": 3,
+    "target": 0.013164433495452007,
+    "control": 0.0057872117807467776,
+    "gap": 0.007377221714705229
+  },
+  {
+    "head": "L17H3",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 6,
+    "families": 3,
+    "target": 0.0017211356510718663,
+    "control": 0.00986402802583244,
+    "gap": -0.008142892374760574
+  },
+  {
+    "head": "L17H5",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 64,
+    "families": 34,
+    "target": 0.022880036868702838,
+    "control": 0.016820871702585977,
+    "gap": 0.006059165166116857
+  },
+  {
+    "head": "L17H5",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 64,
+    "families": 34,
+    "target": 0.004635104984866784,
+    "control": 0.006853822050698892,
+    "gap": -0.002218717065832108
+  },
+  {
+    "head": "L17H5",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L17H5",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.035581668838858604,
+    "gap": -0.035581668838858604
+  },
+  {
+    "head": "L17H24",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 12,
+    "families": 11,
+    "target": 0.052358828358013525,
+    "control": 0.018861779202283782,
+    "gap": 0.033497049155729736
+  },
+  {
+    "head": "L17H24",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 12,
+    "families": 11,
+    "target": 0.004681859313595024,
+    "control": 0.00664863478265364,
+    "gap": -0.0019667754690586166
+  },
+  {
+    "head": "L17H24",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 5,
+    "families": 2,
+    "target": 0.07019699551165104,
+    "control": 0.011129078377659122,
+    "gap": 0.05906791713399192
+  },
+  {
+    "head": "L17H24",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 5,
+    "families": 2,
+    "target": 0.041253264993429184,
+    "control": 0.009133968502283096,
+    "gap": 0.03211929649114609
+  },
+  {
+    "head": "L17H24",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 2,
+    "families": 1,
+    "target": 0.21681952476501465,
+    "control": 0.1447592775026957,
+    "gap": 0.07206024726231894
+  },
+  {
+    "head": "L17H24",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 2,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L18H15",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 39,
+    "families": 17,
+    "target": 0.02250842030845755,
+    "control": 0.015707050573077457,
+    "gap": 0.0068013697353800934
+  },
+  {
+    "head": "L18H15",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 39,
+    "families": 17,
+    "target": 0.011680878016644502,
+    "control": 0.007856451888452215,
+    "gap": 0.003824426128192286
+  },
+  {
+    "head": "L18H18",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 19,
+    "families": 13,
+    "target": 0.015849018374678846,
+    "control": 0.0107502487940071,
+    "gap": 0.005098769580671745
+  },
+  {
+    "head": "L18H18",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 19,
+    "families": 13,
+    "target": 0.012560094497763574,
+    "control": 0.009122580100541426,
+    "gap": 0.0034375143972221506
+  },
+  {
+    "head": "L18H18",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 5,
+    "families": 4,
+    "target": 0.021302853535075883,
+    "control": 0.005862115561778106,
+    "gap": 0.015440737973297775
+  },
+  {
+    "head": "L18H18",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 5,
+    "families": 4,
+    "target": 0.025608941446989775,
+    "control": 0.009191860794089735,
+    "gap": 0.01641708065290004
+  },
+  {
+    "head": "L18H18",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.007590669207274914,
+    "gap": -0.007590669207274914
+  },
+  {
+    "head": "L18H18",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.052409082651138306,
+    "control": 0.04373541846871376,
+    "gap": 0.008673664182424545
+  },
+  {
+    "head": "L18H19",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 51,
+    "families": 32,
+    "target": 0.018238785641491024,
+    "control": 0.017902089236486063,
+    "gap": 0.00033669640500496234
+  },
+  {
+    "head": "L18H19",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 51,
+    "families": 32,
+    "target": 0.006686504676319297,
+    "control": 0.010894747344473722,
+    "gap": -0.004208242668154425
+  },
+  {
+    "head": "L18H19",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 111,
+    "families": 48,
+    "target": 0.017764328869978068,
+    "control": 0.04058423086194293,
+    "gap": -0.02281990199196486
+  },
+  {
+    "head": "L18H19",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 111,
+    "families": 48,
+    "target": 0.006583552917896263,
+    "control": 0.00954890296640298,
+    "gap": -0.002965350048506715
+  },
+  {
+    "head": "L18H19",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.10110556334257126,
+    "control": 0.0,
+    "gap": 0.10110556334257126
+  },
+  {
+    "head": "L18H19",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.008833267726004124,
+    "control": 0.0,
+    "gap": 0.008833267726004124
+  },
+  {
+    "head": "L18H22",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 33,
+    "families": 17,
+    "target": 0.008784833605334696,
+    "control": 0.008223811751792433,
+    "gap": 0.0005610218535422626
+  },
+  {
+    "head": "L18H22",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 33,
+    "families": 17,
+    "target": 0.020273535881199317,
+    "control": 0.02134050390779638,
+    "gap": -0.001066968026597063
+  },
+  {
+    "head": "L18H22",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 4,
+    "families": 2,
+    "target": 0.0,
+    "control": 0.017110265092924237,
+    "gap": -0.017110265092924237
+  },
+  {
+    "head": "L18H22",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 4,
+    "families": 2,
+    "target": 0.0025954794449110827,
+    "control": 0.001730319629940722,
+    "gap": 0.0008651598149703606
+  },
+  {
+    "head": "L19H16",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 144,
+    "families": 61,
+    "target": 0.012525776829354242,
+    "control": 0.014260486831753056,
+    "gap": -0.001734710002398816
+  },
+  {
+    "head": "L19H16",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 144,
+    "families": 61,
+    "target": 0.016083705097645565,
+    "control": 0.015591437112169877,
+    "gap": 0.0004922679854756878
+  },
+  {
+    "head": "L19H16",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 92,
+    "families": 59,
+    "target": 0.014315026350540378,
+    "control": 0.009153708239088605,
+    "gap": 0.005161318111451773
+  },
+  {
+    "head": "L19H16",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 92,
+    "families": 59,
+    "target": 0.026293486008146977,
+    "control": 0.019732252464247358,
+    "gap": 0.00656123354389962
+  },
+  {
+    "head": "L19H16",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 18,
+    "families": 6,
+    "target": 0.015854013462861378,
+    "control": 0.01276238119074454,
+    "gap": 0.00309163227211684
+  },
+  {
+    "head": "L19H16",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 18,
+    "families": 6,
+    "target": 0.02414592761003102,
+    "control": 0.02764982309114809,
+    "gap": -0.00350389548111707
+  },
+  {
+    "head": "L19H22",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 79,
+    "families": 47,
+    "target": 0.005804953285441767,
+    "control": 0.005855949332714125,
+    "gap": -5.0996047272357975e-05
+  },
+  {
+    "head": "L19H22",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 79,
+    "families": 47,
+    "target": 0.00578369666600983,
+    "control": 0.004737764318959664,
+    "gap": 0.0010459323470501656
+  },
+  {
+    "head": "L19H22",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 19,
+    "families": 13,
+    "target": 0.004638711295018976,
+    "control": 0.019411845686800707,
+    "gap": -0.014773134391781729
+  },
+  {
+    "head": "L19H22",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 19,
+    "families": 13,
+    "target": 0.0016626202716277195,
+    "control": 0.003452919817601259,
+    "gap": -0.0017902995459735394
+  },
+  {
+    "head": "L20H1",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 3,
+    "families": 2,
+    "target": 0.015519466251134872,
+    "control": 0.02824507560580969,
+    "gap": -0.012725609354674816
+  },
+  {
+    "head": "L20H1",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 3,
+    "families": 2,
+    "target": 0.0,
+    "control": 0.0181919876486063,
+    "gap": -0.0181919876486063
+  },
+  {
+    "head": "L20H7",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 18,
+    "families": 15,
+    "target": 0.012217517266981304,
+    "control": 0.008783379230509227,
+    "gap": 0.003434138036472076
+  },
+  {
+    "head": "L20H7",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 18,
+    "families": 15,
+    "target": 0.031652804588278134,
+    "control": 0.015241304629792765,
+    "gap": 0.016411499958485364
+  },
+  {
+    "head": "L20H7",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 8,
+    "families": 7,
+    "target": 0.0004266892626349415,
+    "control": 0.003583085091252412,
+    "gap": -0.0031563958286174704
+  },
+  {
+    "head": "L20H7",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 8,
+    "families": 7,
+    "target": 0.020375810297472135,
+    "control": 0.020172650160800134,
+    "gap": 0.00020316013667200292
+  },
+  {
+    "head": "L20H14",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 30,
+    "families": 17,
+    "target": 0.018305753480971736,
+    "control": 0.01289102088453041,
+    "gap": 0.0054147325964413245
+  },
+  {
+    "head": "L20H14",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 30,
+    "families": 17,
+    "target": 0.010726837075529985,
+    "control": 0.012906272064938568,
+    "gap": -0.0021794349894085838
+  },
+  {
+    "head": "L21H6",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 421,
+    "families": 85,
+    "target": 0.0050140682753946385,
+    "control": 0.029550032482669995,
+    "gap": -0.024535964207275357
+  },
+  {
+    "head": "L21H6",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 421,
+    "families": 85,
+    "target": 0.012003597033136755,
+    "control": 0.015058961999550778,
+    "gap": -0.003055364966414027
+  },
+  {
+    "head": "L21H6",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 116,
+    "families": 70,
+    "target": 0.006340232832423811,
+    "control": 0.010725527605274461,
+    "gap": -0.004385294772850651
+  },
+  {
+    "head": "L21H6",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 116,
+    "families": 70,
+    "target": 0.01851554345006921,
+    "control": 0.014326198600218281,
+    "gap": 0.004189344849850935
+  },
+  {
+    "head": "L21H18",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 194,
+    "families": 65,
+    "target": 0.010889487970763674,
+    "control": 0.027679403708555175,
+    "gap": -0.01678991573779151
+  },
+  {
+    "head": "L21H18",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 194,
+    "families": 65,
+    "target": 0.007545472269941969,
+    "control": 0.010691101848626407,
+    "gap": -0.003145629578684437
+  },
+  {
+    "head": "L21H18",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 185,
+    "families": 74,
+    "target": 0.011351868102092405,
+    "control": 0.01024118529592076,
+    "gap": 0.001110682806171643
+  },
+  {
+    "head": "L21H18",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 185,
+    "families": 74,
+    "target": 0.00940824031629902,
+    "control": 0.012532346348049322,
+    "gap": -0.0031241060317502996
+  },
+  {
+    "head": "L21H24",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 30,
+    "families": 20,
+    "target": 0.009575940192250224,
+    "control": 0.0073352483848187445,
+    "gap": 0.0022406918074314797
+  },
+  {
+    "head": "L21H24",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 30,
+    "families": 20,
+    "target": 0.0071385916545599086,
+    "control": 0.007221917759064429,
+    "gap": -8.332610450452193e-05
+  },
+  {
+    "head": "L21H24",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 14,
+    "families": 4,
+    "target": 0.0345601849257946,
+    "control": 0.005963747127195045,
+    "gap": 0.028596437798599557
+  },
+  {
+    "head": "L21H24",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 14,
+    "families": 4,
+    "target": 0.005689437501132488,
+    "control": 0.0032301762141287325,
+    "gap": 0.0024592612870037557
+  },
+  {
+    "head": "L21H24",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 5,
+    "families": 3,
+    "target": 0.0028481228897968927,
+    "control": 0.01746864559956723,
+    "gap": -0.014620522709770337
+  },
+  {
+    "head": "L21H24",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 5,
+    "families": 3,
+    "target": 0.010723851000269255,
+    "control": 0.0012431806988186308,
+    "gap": 0.009480670301450623
+  },
+  {
+    "head": "L21H25",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 56,
+    "families": 35,
+    "target": 0.023848396385354655,
+    "control": 0.019155031545752925,
+    "gap": 0.0046933648396017295
+  },
+  {
+    "head": "L21H25",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 56,
+    "families": 35,
+    "target": 0.012856200525891924,
+    "control": 0.008433004745526152,
+    "gap": 0.004423195780365772
+  },
+  {
+    "head": "L21H25",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 51,
+    "families": 34,
+    "target": 0.01939918305930298,
+    "control": 0.04204722574072281,
+    "gap": -0.022648042681419824
+  },
+  {
+    "head": "L21H25",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 51,
+    "families": 34,
+    "target": 0.008524223514969516,
+    "control": 0.011109966233312197,
+    "gap": -0.0025857427183426825
+  },
+  {
+    "head": "L21H25",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 5,
+    "families": 1,
+    "target": 0.13019152283668517,
+    "control": 0.0006419826609392961,
+    "gap": 0.12954954017574588
+  },
+  {
+    "head": "L21H25",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 5,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0017122118423382442,
+    "gap": -0.0017122118423382442
+  },
+  {
+    "head": "L21H27",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 140,
+    "families": 66,
+    "target": 0.003057646942803141,
+    "control": 0.0034269545831438664,
+    "gap": -0.00036930764034072546
+  },
+  {
+    "head": "L21H27",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 140,
+    "families": 66,
+    "target": 0.01650174460791968,
+    "control": 0.020758920115522366,
+    "gap": -0.00425717550760269
+  },
+  {
+    "head": "L21H27",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 305,
+    "families": 72,
+    "target": 0.00384643496903486,
+    "control": 0.017050150156872883,
+    "gap": -0.013203715187838026
+  },
+  {
+    "head": "L21H27",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 305,
+    "families": 72,
+    "target": 0.021912587874597548,
+    "control": 0.022464819835659133,
+    "gap": -0.000552231961061589
+  },
+  {
+    "head": "L21H27",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 13,
+    "families": 3,
+    "target": 0.06128565035760403,
+    "control": 0.006588928918871615,
+    "gap": 0.054696721438732415
+  },
+  {
+    "head": "L21H27",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 13,
+    "families": 3,
+    "target": 0.014177216837803522,
+    "control": 0.016509532640965417,
+    "gap": -0.0023323158031618926
+  },
+  {
+    "head": "L22H5",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 14,
+    "families": 5,
+    "target": 0.05281306626275182,
+    "control": 0.019518127121652167,
+    "gap": 0.03329493914109965
+  },
+  {
+    "head": "L22H5",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 14,
+    "families": 5,
+    "target": 0.0014395722188055514,
+    "control": 0.015478653181344271,
+    "gap": -0.01403908096253872
+  },
+  {
+    "head": "L22H5",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 10,
+    "families": 8,
+    "target": 0.02302168484311551,
+    "control": 0.041739823403380186,
+    "gap": -0.018718138560264684
+  },
+  {
+    "head": "L22H5",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 10,
+    "families": 8,
+    "target": 0.00549776580495139,
+    "control": 0.01079910309636034,
+    "gap": -0.005301337291408951
+  },
+  {
+    "head": "L23H10",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 29,
+    "families": 17,
+    "target": 0.01498288320213118,
+    "control": 0.007805838873168588,
+    "gap": 0.007177044328962594
+  },
+  {
+    "head": "L23H10",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 29,
+    "families": 17,
+    "target": 0.012383035721951256,
+    "control": 0.008045464469628937,
+    "gap": 0.0043375712523223186
+  },
+  {
+    "head": "L23H10",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 31,
+    "families": 12,
+    "target": 0.04232028999023088,
+    "control": 0.004361915475412926,
+    "gap": 0.03795837451481795
+  },
+  {
+    "head": "L23H10",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 31,
+    "families": 12,
+    "target": 0.006234662219261129,
+    "control": 0.016425739722628216,
+    "gap": -0.010191077503367086
+  },
+  {
+    "head": "L23H15",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 30,
+    "families": 26,
+    "target": 0.008379387176738909,
+    "control": 0.020212785639346406,
+    "gap": -0.011833398462607501
+  },
+  {
+    "head": "L23H15",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 30,
+    "families": 26,
+    "target": 0.02220296200651389,
+    "control": 0.019057061933637712,
+    "gap": 0.0031459000728761726
+  },
+  {
+    "head": "L23H15",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 32,
+    "families": 25,
+    "target": 0.004530683387808192,
+    "control": 0.005442660129629076,
+    "gap": -0.000911976741820884
+  },
+  {
+    "head": "L23H15",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 32,
+    "families": 25,
+    "target": 0.01795833818614483,
+    "control": 0.019171259816115102,
+    "gap": -0.0012129216299702724
+  },
+  {
+    "head": "L24H17",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 82,
+    "families": 38,
+    "target": 0.012501535487995407,
+    "control": 0.012848054201330932,
+    "gap": -0.00034651871333552366
+  },
+  {
+    "head": "L24H17",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 82,
+    "families": 38,
+    "target": 0.008661158785444536,
+    "control": 0.008164034522620536,
+    "gap": 0.0004971242628240011
+  },
+  {
+    "head": "L24H17",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 34,
+    "families": 18,
+    "target": 0.018850693660270836,
+    "control": 0.021863802602402522,
+    "gap": -0.003013108942131684
+  },
+  {
+    "head": "L24H17",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 34,
+    "families": 18,
+    "target": 0.006808751348095636,
+    "control": 0.007204362460308606,
+    "gap": -0.00039561111221296915
+  },
+  {
+    "head": "L25H17",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 58,
+    "families": 25,
+    "target": 0.01285162892351703,
+    "control": 0.012710055641498505,
+    "gap": 0.000141573282018524
+  },
+  {
+    "head": "L25H17",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 58,
+    "families": 25,
+    "target": 0.010687848580380282,
+    "control": 0.012197723015098645,
+    "gap": -0.0015098744347183638
+  },
+  {
+    "head": "L25H17",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 73,
+    "families": 32,
+    "target": 0.012503812853083218,
+    "control": 0.011616940252931978,
+    "gap": 0.0008868726001512387
+  },
+  {
+    "head": "L25H17",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 73,
+    "families": 32,
+    "target": 0.01257041543597855,
+    "control": 0.008338419992267315,
+    "gap": 0.004231995443711236
+  },
+  {
+    "head": "L25H18",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 32,
+    "families": 16,
+    "target": 0.008634219489370782,
+    "control": 0.004850434035688522,
+    "gap": 0.0037837854536822606
+  },
+  {
+    "head": "L25H18",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 32,
+    "families": 16,
+    "target": 0.027050028344206115,
+    "control": 0.016131825433212222,
+    "gap": 0.010918202910993893
+  },
+  {
+    "head": "L25H18",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 10,
+    "families": 7,
+    "target": 0.007790420869631427,
+    "control": 0.008923276349724759,
+    "gap": -0.0011328554800933322
+  },
+  {
+    "head": "L25H18",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 10,
+    "families": 7,
+    "target": 0.015967267232814004,
+    "control": 0.014150432510567563,
+    "gap": 0.0018168347222464426
+  },
+  {
+    "head": "L25H18",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 4,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.012844419727722805,
+    "gap": -0.012844419727722805
+  },
+  {
+    "head": "L25H18",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 4,
+    "families": 1,
+    "target": 0.13046452030539513,
+    "control": 0.020829685032367706,
+    "gap": 0.10963483527302742
+  },
+  {
+    "head": "L26H23",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 39,
+    "families": 22,
+    "target": 0.01345667509436184,
+    "control": 0.010193492748922754,
+    "gap": 0.0032631823454390874
+  },
+  {
+    "head": "L26H23",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 39,
+    "families": 22,
+    "target": 0.014841811003861949,
+    "control": 0.016694584536845938,
+    "gap": -0.001852773532983988
+  },
+  {
+    "head": "L26H23",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 18,
+    "families": 16,
+    "target": 0.01629248460085364,
+    "control": 0.0071058071140820776,
+    "gap": 0.009186677486771561
+  },
+  {
+    "head": "L26H23",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 18,
+    "families": 16,
+    "target": 0.011033021262846887,
+    "control": 0.012539565082988702,
+    "gap": -0.0015065438201418144
+  },
+  {
+    "head": "L26H23",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L26H23",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.03854791447520256,
+    "control": 0.01284930482506752,
+    "gap": 0.02569860965013504
+  },
+  {
+    "head": "L26H31",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 7,
+    "families": 4,
+    "target": 0.04697807878255844,
+    "control": 0.02231984135384361,
+    "gap": 0.024658237428714827
+  },
+  {
+    "head": "L26H31",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 7,
+    "families": 4,
+    "target": 0.007530659029725939,
+    "control": 0.0030200219092269736,
+    "gap": 0.0045106371204989655
+  },
+  {
+    "head": "L26H31",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 19,
+    "families": 9,
+    "target": 0.02029100846740659,
+    "control": 0.011541123272575162,
+    "gap": 0.008749885194831424
+  },
+  {
+    "head": "L26H31",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 19,
+    "families": 9,
+    "target": 0.02577852151805052,
+    "control": 0.012768882424800575,
+    "gap": 0.013009639093249944
+  },
+  {
+    "head": "L27H6",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.07663169503211975,
+    "gap": -0.07663169503211975
+  },
+  {
+    "head": "L27H6",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 1,
+    "families": 1,
+    "target": 0.020999081432819366,
+    "control": 0.0,
+    "gap": 0.020999081432819366
+  },
+  {
+    "head": "L27H23",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 533,
+    "families": 89,
+    "target": 0.007799879665297285,
+    "control": 0.009796731013372438,
+    "gap": -0.0019968513480751546
+  },
+  {
+    "head": "L27H23",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 533,
+    "families": 89,
+    "target": 0.03210016550576447,
+    "control": 0.030113679361349434,
+    "gap": 0.0019864861444150402
+  },
+  {
+    "head": "L30H3",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 96,
+    "families": 31,
+    "target": 0.006056365653759472,
+    "control": 0.00918892259792858,
+    "gap": -0.0031325569441691074
+  },
+  {
+    "head": "L30H3",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 96,
+    "families": 31,
+    "target": 0.04126951037210641,
+    "control": 0.04778682139172151,
+    "gap": -0.006517311019615096
+  },
+  {
+    "head": "L30H3",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 39,
+    "families": 24,
+    "target": 0.005151986173283755,
+    "control": 0.008244277116722917,
+    "gap": -0.0030922909434391646
+  },
+  {
+    "head": "L30H3",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 39,
+    "families": 24,
+    "target": 0.045161881464688726,
+    "control": 0.04460753940252795,
+    "gap": 0.0005543420621607897
+  },
+  {
+    "head": "L30H3",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 27,
+    "families": 9,
+    "target": 0.0023368308320641518,
+    "control": 0.006270029227088355,
+    "gap": -0.003933198395024203
+  },
+  {
+    "head": "L30H3",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 27,
+    "families": 9,
+    "target": 0.03621489954767403,
+    "control": 0.04954298677635782,
+    "gap": -0.013328087228683779
+  },
+  {
+    "head": "L30H13",
+    "anchor": "first",
+    "current_role": "control",
+    "events": 5,
+    "families": 3,
+    "target": 0.03762211153904597,
+    "control": 0.01778313336479995,
+    "gap": 0.01983897817424602
+  },
+  {
+    "head": "L30H13",
+    "anchor": "last",
+    "current_role": "control",
+    "events": 5,
+    "families": 3,
+    "target": 0.01693937989572684,
+    "control": 0.015431166109111572,
+    "gap": 0.0015082137866152662
+  },
+  {
+    "head": "L30H13",
+    "anchor": "first",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.054438948476066194,
+    "gap": -0.054438948476066194
+  },
+  {
+    "head": "L30H13",
+    "anchor": "last",
+    "current_role": "target",
+    "events": 1,
+    "families": 1,
+    "target": 0.025312576442956924,
+    "control": 0.021302742262681324,
+    "gap": 0.0040098341802756
+  },
+  {
+    "head": "L30H18",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L30H18",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 1,
+    "families": 1,
+    "target": 0.0,
+    "control": 0.0,
+    "gap": 0.0
+  },
+  {
+    "head": "L31H1",
+    "anchor": "first",
+    "current_role": "neither",
+    "events": 76,
+    "families": 26,
+    "target": 0.015797093683758225,
+    "control": 0.010134128684124017,
+    "gap": 0.00566296499963421
+  },
+  {
+    "head": "L31H1",
+    "anchor": "last",
+    "current_role": "neither",
+    "events": 76,
+    "families": 26,
+    "target": 0.02124896475310939,
+    "control": 0.017137072993799123,
+    "gap": 0.004111891759310263
+  }
+]
