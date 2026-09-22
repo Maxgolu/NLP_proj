@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "heads": 105,
+  "pairs": 178,
+  "families": 89,
+  "common_position_pairs": 40,
+  "core_prompts": 160,
+  "matched_RI_anchor_comparisons": 34526,
+  "missing_support": "See contextual_ri.csv and synthetic_support.csv; never encoded as zero.",
+  "attended_name_classification": {
+    "events": 94015,
+    "heads": 105,
+    "labels": {
+      "neither": 79,
+      "insufficient": 19,
+      "name_mover": 6,
+      "negative_name_mover": 1
+    },
+    "mismatches": [],
+    "file": "analysis/attended_name_movers.csv"
+  },
+  "interpretation": "Descriptive discovery results, fixed selected inventory; no significance/type/circuit claims",
+  "source_corrections": "inputs/matched_approximation_error.csv and corrected_median_comparison.json"
+}

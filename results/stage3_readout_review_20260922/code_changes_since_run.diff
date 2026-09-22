@@ -1,0 +1,22 @@
+--- run_source
++++ local_source
+@@ -290,8 +290,18 @@
+ 
+ 
+ # ----------------------------------------------------------------------------- analyze (CPU)
++def locate_plan(out):
++    """The manifest stores the cluster path of the plan; on another machine fall back to
++    a local copy whose SHA-256 equals the recorded plan_hash."""
++    manifest=json_read(out/'manifest.json'); recorded=Path(manifest['plan'])
++    candidates=[recorded,out/'inputs'/'readout_plan.json',ROOT.parent/'results/stage3_readout_inputs_v1/readout_plan.json']
++    for c in candidates:
++        if c.exists() and digest(c)==manifest['plan_hash']: return c
++    raise FileNotFoundError(f"No plan with hash {manifest['plan_hash']} at {[str(c) for c in candidates]}")
++
++
+ def analyze(out):
+-    plan=json_read(Path(json_read(out/'manifest.json')['plan']))
++    plan=json_read(locate_plan(out))
+     if not json_read(out/'done.json').get('complete'):raise ValueError('Run incomplete')
+     if not json_read(out/'gate.json').get('passed'):raise ValueError('Gate did not pass')
+     recs=list(read_lines(out/'readout_records.jsonl.gz'))

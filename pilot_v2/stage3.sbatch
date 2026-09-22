@@ -2,6 +2,7 @@
 #SBATCH --job-name=stage3heads
 #SBATCH --partition=studentkillable
 #SBATCH --account=gpu-students
+#SBATCH --exclude=s-002,s-005
 #SBATCH --gres=gpu:2
 #SBATCH --ntasks=1
 #SBATCH --nodes=1

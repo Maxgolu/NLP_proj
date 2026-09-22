@@ -1,0 +1,30 @@
+{
+  "records": 1920,
+  "unique_expected_coverage": true,
+  "plan_hash_matches": true,
+  "code_hash_matches": {
+    "stage3_readout.py": false,
+    "stage3_common.py": true,
+    "stage3_engine.py": true,
+    "stage3_measure.py": true,
+    "stage2_engine.py": true,
+    "stage1_scan.py": true,
+    "stage1_audit.py": true,
+    "model_lock_olmo2.json": true
+  },
+  "four_csvs_byte_identical": {
+    "readout_events.csv": true,
+    "readout_family_summary.csv": true,
+    "readout_paired.csv": true,
+    "readout_summary.csv": true
+  },
+  "head_site_head_span_all_saved_outputs_equal": true,
+  "original_csvs_unchanged": true,
+  "run_source_recovered_from_bundle": true,
+  "local_code_change": "Only hashed local-plan lookup for analysis; measurement code unchanged.",
+  "source_position_profiles_hash_matches": true,
+  "pairs_hash_matches": true,
+  "all_160_saved_site_importances_match": true,
+  "common_pairs_only": true,
+  "shared_prefix_pairs": []
+}

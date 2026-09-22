@@ -1,0 +1,21 @@
+{
+  "plan_hash": "9752e9956cbcfb24fd4718ad4959c7db2e0f8abd4d3b7377013b7cdbbd68655b",
+  "code_hashes": {
+    "stage3_readout.py": "abc9852fec232fcb3d6051a8ecf732047ce0ffaaf5b896822f11a1e1b6afe5b3",
+    "stage3_common.py": "19e264bd8392f0a4f0fce4d7eee9ec95a7d1873014611d9c13d61c843b8dd2b9",
+    "stage3_engine.py": "3d86f871796c819aa5b1fb2a313a8c2bc15f65b6bc80ab274b5caf3531057836",
+    "stage3_measure.py": "8b54662a10dc0334e4c353f8c8afaa56bf6fe605e3063033bc7f84ad360e6c61",
+    "stage2_engine.py": "2aa8cec1db807fd6610c6dc46d6172652014a3bed9b07ee09395552fac3a4de1",
+    "stage1_scan.py": "ae4a6f0f01a3e1f13af6a04da456b8a130260c3ae9d3babe43003d2aae38656f",
+    "stage1_audit.py": "37db25ad1ac25190b2fc95ae10185d9cdab25f594e9965901084bf9c898da77a",
+    "model_lock_olmo2.json": "ecd00ed1eea1fd55fab523fb50aa8bec0f4bdbb718c0aa751905cc0a5b710d37"
+  },
+  "gate_only": false,
+  "identity": "2e6cd1ad48717797f3f0b1515930ed91de791117f696a87a5dd3bda8a171bf4e",
+  "plan": "/home/yandex/DLWorkShop2025b/maximg/pilot_v2/stage3_readout_v1/inputs/readout_plan.json",
+  "model": {
+    "model_id": "allenai/OLMo-2-1124-7B",
+    "revision": "7df9a82518afdecae4e8c026b27adccc8c1f0032",
+    "requested_revision": "main"
+  }
+}

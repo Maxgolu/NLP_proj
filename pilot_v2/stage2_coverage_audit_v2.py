@@ -93,7 +93,7 @@ def main():
                          first_order_pairs=178, exact_pairs=178 if f in D else 40, exact_families=89 if f in D else 20,
                          importance_exact40=-e['delta_exact40'], importance_first_order=-e['delta_first_order'],
                          importance_exact178=(-e['delta_exact178']) if e['delta_exact178'] is not None else None,
-                         residual_40=abs(e['delta_exact40'] - e['delta_first_order']),
+                         residual_cross_sample_178attr_vs_40exact=abs(e['delta_exact40'] - e['delta_first_order']),  # NOT a same-pair residual; see analyze_stage2_v2_results.py residual_40_same_pairs
                          needs_scopeP_138=(f in (set(A) | set(B) | C)) and f not in D,
                          needs_scopeF_178=f in (set(A) | set(B))))
     with open(out / 'coverage_v2.csv', 'w', newline='') as fh:

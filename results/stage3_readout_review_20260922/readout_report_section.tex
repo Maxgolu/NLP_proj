@@ -1,0 +1,125 @@
+\subsection{Controlled representation readout (Stage-3 plan, Section~1.5)}
+\label{sec:readout}
+\textbf{Question and completed run.} The optional readout asks whether the causal
+sites of L17H1 and L15H25 expose information about the mother's identity, and whether
+that readout depends on the selected head. Run \texttt{stage3\_readout\_v1} contains
+1{,}920 records: the 40 common pairs (20 discovery families, both orders), four
+writer/site combinations, six conditions and two readout prompts. The frozen plan
+matches the manifest hash; the gate passed with zero identity-injection and self-patch
+drift and exact reproduction of three saved single-position importance probes. All
+four analysis tables were regenerated locally and matched byte-for-byte. The 87
+validation families were not used.
+
+\textbf{Intervention and measurement.} Capture the residual at the output of the
+writer's decoder block, including its MLP and shared normalization, and inject it at
+the placeholder of a fixed readout prompt at the same block output. The prompts are
+an identity completion (``cat $\to$ cat; \ldots; x $\to$'') and a
+\texttt{mother\_of} question (``Who is the mother of this person?''). Conditions are
+the intact clean source, replacement of the head at the capture site
+(\texttt{head\_site}), replacement from the first differing token through that site
+(\texttt{head\_span}), the intact corrupted source, the same token role in the other
+answer-side fact (\texttt{irrelevant}), and no injection. The other-fact control
+contains the competing mother's information; it is not an information-free vector.
+
+Let $t_q,t_o$ be the first tokens of the query mother and the other candidate mother.
+The primary statistic and paired change are
+\[
+ C=\log p(t_q)-\log p(t_o),\qquad
+ \Delta C_c=C_c-C_{\mathrm{intact\ clean}}.
+\]
+A negative change moves the readout toward the swapped-in mother. Average the two
+orders within each family, then average the 20 family values. The measurement concerns
+first-token preference, not full-name generation. The source residual combines
+multiple components; head dependence is assessed only through the paired intervention.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrrr}
+\toprule
+Writer & Site & Readout & Clean $C$ & Source swap $\Delta C$ & Head-site $\Delta C$ & Negative families \\
+\midrule
+L17H1 & is & identity & $+0.51465$ & $-0.52070$ & $-0.45840$ & 20/20 \\
+L17H1 & period & identity & $+0.28789$ & $-0.04609$ & $-0.04121$ & 20/20 \\
+L17H1 & is & mother\_of & $+0.25459$ & $-0.00903$ & $-0.00981$ & 17/20 \\
+L17H1 & period & mother\_of & $+0.26479$ & $-0.02686$ & $-0.02319$ & 20/20 \\
+L15H25 & child last & identity & $+0.18213$ & $+0.02021$ & $+0.00605$ & 8/20 \\
+L15H25 & child last & mother\_of & $+0.24312$ & $+0.00181$ & $-0.00020$ & 9/20 \\
+L15H25 & is & identity & $+0.29395$ & $-0.15117$ & $+0.00303$ & 7/20 \\
+L15H25 & is & mother\_of & $+0.25063$ & $-0.00171$ & $+0.00020$ & 5/20 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Controlled readout, family-level descriptives. Source swap uses the intact
+corrupted prompt; head-site replaces only the selected head at the capture position.
+The last column counts families with a negative head-site change after averaging
+orders. The head-span condition is identical by construction at this capture layer
+(see below). Values come from \texttt{readout\_family\_summary.csv}.}
+\label{tab:readout}
+\end{table}
+
+\textbf{L17H1: identity-sensitive information, strongest at ``is''.} In the identity
+readout, the contrast at ``is'' falls from $+0.515$ to $+0.056$ after head replacement,
+compared with $-0.006$ for the corrupted source and $+0.002$ for the other-fact control.
+The head-induced shift is negative in every family (median $-0.459$, range
+$[-0.701,-0.234]$). Its magnitude is about 88\% of the mean full-source-swap shift.
+This supports a contribution of the head's local output to the mother-token
+preference exposed by this readout. The ratio compares two readout changes; it is
+not a fraction of encoded information or of the original task's causal effect.
+
+At the period, the identity shift is weaker but also negative in every family:
+$-0.0412$ for head replacement versus $-0.0461$ for source swap, with median $-0.0410$
+and range $[-0.0723,-0.0117]$. The \texttt{mother\_of} readout at the period also
+responds consistently ($-0.0232$ versus $-0.0269$). These small responses do not by
+themselves establish a relational binding. For comparison, the original-task
+single-position effects are $+1.769$ logits at ``is'' and $+1.377$ at the period.
+The head's approximately $5.7$-logit Scope-P effect is an all-position measurement,
+not the effect at either site; none of these effects is numerically decomposed by
+the readout shifts.
+
+\textbf{L15H25: the child's-site content remains unresolved.} The child's last-token
+site has original-task importance $+0.429$ logits, positive in every family. Replacing
+the head changes the captured residual (mean norm difference 1.106), but the
+\texttt{mother\_of} contrast barely changes: $-0.00020$ under head replacement,
+and only $+0.00181$ under the full source swap. Identity readout also lacks a
+consistent mother-swap response there. Since even the source-swap control does not
+expose the expected information, the small head effect cannot distinguish missing
+information from an insensitive readout. The query mother ranks first among the
+candidates in 55\% of \texttt{mother\_of} probes for clean, head-replaced, corrupted
+and no-injection conditions alike. Nor does identity readout reliably recover the
+child: its first token ranks first in only 15\% of intact probes.
+
+At L15H25's secondary ``is'' site, identity readout does respond to source swap
+($-0.151$, negative in 18/20 families), while the head shift is approximately zero
+($+0.003$), consistent with that site's small original-task effect ($+0.00394$).
+This does not assign an address-only role to the head at its different, causal
+child-last site.
+
+\textbf{Readout quality and scope.} For every intact-clean probe, the top next token
+is ``hello'' under identity and ``Mary'' under \texttt{mother\_of}; the experiment
+has not freely decoded the names. At L17H1/``is'', identity readout assigns the query
+mother's first token mean probability $0.000373$ (0.0373\%), compared with $0.0000429$
+without injection, $0.000282$ for the other-fact residual, $0.000290$ after head
+replacement and $0.000285$ for the corrupted source. Thus there is a positive
+probability-relevance check and a source-specific contrast, but low absolute decoding
+probability. These are means of per-example probabilities, not exponentiated mean
+log probabilities. A null readout does not establish absent information; a
+\texttt{mother\_of} prompt does not itself establish successful relation decoding.
+
+\textbf{Why head-site and head-span are identical.} All 320 paired readout outputs
+are exactly identical between these conditions. The head is replaced after its
+layer's attention mixing, and the residual is captured at the output of that same
+block. The remaining projection, normalization, residual addition and MLP act
+independently at each position. Extra replacements at earlier positions therefore
+cannot change the captured position within this block. This is a structural property
+of the intervention, not evidence that earlier writes are unimportant. Testing their
+propagation requires a later capture layer or a path intervention. The two conditions
+must not be counted as independent corroboration.
+
+\textbf{Implication.} The extension strengthens the hypothesis that L17H1 contributes
+mother-identity-sensitive information at ``is'' and the period, while leaving the
+representation at L15H25's child-last site unresolved. No writer-to-reader edge or
+circuit has been demonstrated. Stage 4 should test consumers of these actual source
+positions and retain L15H25 as a causal candidate despite the inconclusive readout.
+

@@ -1,0 +1,507 @@
+configuration,panel,source,source_site,receiver,receiver_type,channel,receiver_site,output_row,path
+P1_0000,P1,L17H1,query_mother_span,L18H18,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0001,P1,L17H1,query_mother_span,L18H18,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0002,P1,L17H1,query_mother_span,L18H19,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0003,P1,L17H1,query_mother_span,L18H19,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0004,P1,L17H1,query_mother_span,L18H24,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0005,P1,L17H1,query_mother_span,L18H24,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0006,P1,L17H1,query_mother_span,L19H16,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0007,P1,L17H1,query_mother_span,L19H16,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0008,P1,L17H1,query_mother_span,L19H22,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0009,P1,L17H1,query_mother_span,L19H22,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0010,P1,L17H1,query_mother_span,L20H1,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0011,P1,L17H1,query_mother_span,L20H1,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0012,P1,L17H1,query_mother_span,L21H6,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0013,P1,L17H1,query_mother_span,L21H6,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0014,P1,L17H1,query_mother_span,L21H18,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0015,P1,L17H1,query_mother_span,L21H18,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0016,P1,L17H1,query_mother_span,L21H23,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0017,P1,L17H1,query_mother_span,L21H23,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0018,P1,L17H1,query_mother_span,L22H5,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0019,P1,L17H1,query_mother_span,L22H5,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0020,P1,L17H1,query_mother_span,L23H15,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0021,P1,L17H1,query_mother_span,L23H15,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0022,P1,L17H1,query_mother_span,L25H17,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0023,P1,L17H1,query_mother_span,L25H17,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0024,P1,L17H1,query_mother_span,L26H23,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0025,P1,L17H1,query_mother_span,L26H23,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0026,P1,L17H1,query_mother_span,L27H6,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0027,P1,L17H1,query_mother_span,L27H6,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0028,P1,L17H1,query_mother_span,L30H13,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0029,P1,L17H1,query_mother_span,L30H13,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0030,P1,L17H1,query_mother_span,L30H18,head,K,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0031,P1,L17H1,query_mother_span,L30H18,head,V,query_mother_span,colon,direct with intervening residual branch increments frozen
+P1_0032,P1,L17H1,query_mother_span,MLP17,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0033,P1,L17H1,query_mother_span,MLP18,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0034,P1,L17H1,query_mother_span,MLP19,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0035,P1,L17H1,query_mother_span,MLP20,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0036,P1,L17H1,query_mother_span,MLP21,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0037,P1,L17H1,query_mother_span,MLP22,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0038,P1,L17H1,query_mother_span,MLP23,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0039,P1,L17H1,query_mother_span,MLP24,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0040,P1,L17H1,query_mother_span,MLP25,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0041,P1,L17H1,query_mother_span,MLP26,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0042,P1,L17H1,query_mother_span,MLP27,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0043,P1,L17H1,query_mother_span,MLP28,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0044,P1,L17H1,query_mother_span,MLP29,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0045,P1,L17H1,query_mother_span,MLP30,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0046,P1,L17H1,query_mother_span,MLP31,mlp,input,query_mother_span,live downstream,direct with intervening residual branch increments frozen
+P1_0047,P1,L17H1,query_is,L18H18,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0048,P1,L17H1,query_is,L18H18,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0049,P1,L17H1,query_is,L18H19,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0050,P1,L17H1,query_is,L18H19,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0051,P1,L17H1,query_is,L18H24,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0052,P1,L17H1,query_is,L18H24,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0053,P1,L17H1,query_is,L19H16,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0054,P1,L17H1,query_is,L19H16,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0055,P1,L17H1,query_is,L19H22,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0056,P1,L17H1,query_is,L19H22,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0057,P1,L17H1,query_is,L20H1,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0058,P1,L17H1,query_is,L20H1,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0059,P1,L17H1,query_is,L21H6,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0060,P1,L17H1,query_is,L21H6,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0061,P1,L17H1,query_is,L21H18,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0062,P1,L17H1,query_is,L21H18,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0063,P1,L17H1,query_is,L21H23,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0064,P1,L17H1,query_is,L21H23,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0065,P1,L17H1,query_is,L22H5,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0066,P1,L17H1,query_is,L22H5,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0067,P1,L17H1,query_is,L23H15,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0068,P1,L17H1,query_is,L23H15,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0069,P1,L17H1,query_is,L25H17,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0070,P1,L17H1,query_is,L25H17,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0071,P1,L17H1,query_is,L26H23,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0072,P1,L17H1,query_is,L26H23,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0073,P1,L17H1,query_is,L27H6,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0074,P1,L17H1,query_is,L27H6,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0075,P1,L17H1,query_is,L30H13,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0076,P1,L17H1,query_is,L30H13,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0077,P1,L17H1,query_is,L30H18,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P1_0078,P1,L17H1,query_is,L30H18,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P1_0079,P1,L17H1,query_is,MLP17,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0080,P1,L17H1,query_is,MLP18,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0081,P1,L17H1,query_is,MLP19,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0082,P1,L17H1,query_is,MLP20,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0083,P1,L17H1,query_is,MLP21,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0084,P1,L17H1,query_is,MLP22,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0085,P1,L17H1,query_is,MLP23,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0086,P1,L17H1,query_is,MLP24,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0087,P1,L17H1,query_is,MLP25,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0088,P1,L17H1,query_is,MLP26,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0089,P1,L17H1,query_is,MLP27,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0090,P1,L17H1,query_is,MLP28,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0091,P1,L17H1,query_is,MLP29,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0092,P1,L17H1,query_is,MLP30,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0093,P1,L17H1,query_is,MLP31,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P1_0094,P1,L17H1,query_period,L18H18,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0095,P1,L17H1,query_period,L18H18,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0096,P1,L17H1,query_period,L18H19,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0097,P1,L17H1,query_period,L18H19,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0098,P1,L17H1,query_period,L18H24,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0099,P1,L17H1,query_period,L18H24,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0100,P1,L17H1,query_period,L19H16,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0101,P1,L17H1,query_period,L19H16,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0102,P1,L17H1,query_period,L19H22,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0103,P1,L17H1,query_period,L19H22,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0104,P1,L17H1,query_period,L20H1,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0105,P1,L17H1,query_period,L20H1,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0106,P1,L17H1,query_period,L21H6,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0107,P1,L17H1,query_period,L21H6,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0108,P1,L17H1,query_period,L21H18,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0109,P1,L17H1,query_period,L21H18,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0110,P1,L17H1,query_period,L21H23,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0111,P1,L17H1,query_period,L21H23,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0112,P1,L17H1,query_period,L22H5,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0113,P1,L17H1,query_period,L22H5,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0114,P1,L17H1,query_period,L23H15,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0115,P1,L17H1,query_period,L23H15,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0116,P1,L17H1,query_period,L25H17,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0117,P1,L17H1,query_period,L25H17,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0118,P1,L17H1,query_period,L26H23,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0119,P1,L17H1,query_period,L26H23,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0120,P1,L17H1,query_period,L27H6,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0121,P1,L17H1,query_period,L27H6,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0122,P1,L17H1,query_period,L30H13,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0123,P1,L17H1,query_period,L30H13,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0124,P1,L17H1,query_period,L30H18,head,K,query_period,colon,direct with intervening residual branch increments frozen
+P1_0125,P1,L17H1,query_period,L30H18,head,V,query_period,colon,direct with intervening residual branch increments frozen
+P1_0126,P1,L17H1,query_period,MLP17,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0127,P1,L17H1,query_period,MLP18,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0128,P1,L17H1,query_period,MLP19,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0129,P1,L17H1,query_period,MLP20,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0130,P1,L17H1,query_period,MLP21,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0131,P1,L17H1,query_period,MLP22,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0132,P1,L17H1,query_period,MLP23,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0133,P1,L17H1,query_period,MLP24,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0134,P1,L17H1,query_period,MLP25,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0135,P1,L17H1,query_period,MLP26,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0136,P1,L17H1,query_period,MLP27,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0137,P1,L17H1,query_period,MLP28,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0138,P1,L17H1,query_period,MLP29,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0139,P1,L17H1,query_period,MLP30,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P1_0140,P1,L17H1,query_period,MLP31,mlp,input,query_period,live downstream,direct with intervening residual branch increments frozen
+P2_0141,P2,L15H25,query_child_last,L16H1,head,K,query_child_last,colon,direct with intervening residual branch increments frozen
+P2_0142,P2,L15H25,query_child_last,L16H1,head,V,query_child_last,colon,direct with intervening residual branch increments frozen
+P2_0143,P2,L15H25,query_child_last,L16H1,head,KV,query_child_last,colon,direct with intervening residual branch increments frozen
+P2_0144,P2,L15H25,query_child_last,L16H21,head,K,query_child_last,colon,direct with intervening residual branch increments frozen
+P2_0145,P2,L15H25,query_child_last,L16H21,head,V,query_child_last,colon,direct with intervening residual branch increments frozen
+P2_0146,P2,L15H25,query_child_last,L16H21,head,KV,query_child_last,colon,direct with intervening residual branch increments frozen
+P2_0147,P2,L15H25,query_child_last,MLP15,mlp,input,query_child_last,live downstream,direct with intervening residual branch increments frozen
+P2_0148,P2,L15H25,query_child_last,MLP16,mlp,input,query_child_last,live downstream,direct with intervening residual branch increments frozen
+P2_0149,P2,L15H25,query_is,L16H1,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P2_0150,P2,L15H25,query_is,L16H1,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P2_0151,P2,L15H25,query_is,L16H1,head,KV,query_is,colon,direct with intervening residual branch increments frozen
+P2_0152,P2,L15H25,query_is,L16H21,head,K,query_is,colon,direct with intervening residual branch increments frozen
+P2_0153,P2,L15H25,query_is,L16H21,head,V,query_is,colon,direct with intervening residual branch increments frozen
+P2_0154,P2,L15H25,query_is,L16H21,head,KV,query_is,colon,direct with intervening residual branch increments frozen
+P2_0155,P2,L15H25,query_is,MLP15,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P2_0156,P2,L15H25,query_is,MLP16,mlp,input,query_is,live downstream,direct with intervening residual branch increments frozen
+P3_0157,P3,L16H1,colon,L17H1,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0158,P3,L16H1,colon,L17H1,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0159,P3,L16H1,colon,L17H3,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0160,P3,L16H1,colon,L17H3,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0161,P3,L16H1,colon,L17H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0162,P3,L16H1,colon,L17H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0163,P3,L16H1,colon,L17H24,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0164,P3,L16H1,colon,L17H24,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0165,P3,L16H1,colon,L18H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0166,P3,L16H1,colon,L18H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0167,P3,L16H1,colon,L18H19,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0168,P3,L16H1,colon,L18H19,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0169,P3,L16H1,colon,L18H24,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0170,P3,L16H1,colon,L18H24,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0171,P3,L16H1,colon,L19H16,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0172,P3,L16H1,colon,L19H16,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0173,P3,L16H1,colon,L19H22,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0174,P3,L16H1,colon,L19H22,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0175,P3,L16H1,colon,L20H1,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0176,P3,L16H1,colon,L20H1,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0177,P3,L16H1,colon,L21H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0178,P3,L16H1,colon,L21H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0179,P3,L16H1,colon,L21H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0180,P3,L16H1,colon,L21H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0181,P3,L16H1,colon,L21H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0182,P3,L16H1,colon,L21H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0183,P3,L16H1,colon,L22H5,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0184,P3,L16H1,colon,L22H5,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0185,P3,L16H1,colon,L23H15,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0186,P3,L16H1,colon,L23H15,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0187,P3,L16H1,colon,L25H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0188,P3,L16H1,colon,L25H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0189,P3,L16H1,colon,L26H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0190,P3,L16H1,colon,L26H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0191,P3,L16H1,colon,L27H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0192,P3,L16H1,colon,L27H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0193,P3,L16H1,colon,L30H13,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0194,P3,L16H1,colon,L30H13,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0195,P3,L16H1,colon,L30H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0196,P3,L16H1,colon,L30H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0197,P3,L16H1,colon,MLP16,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0198,P3,L16H1,colon,MLP17,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0199,P3,L16H1,colon,MLP18,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0200,P3,L16H1,colon,MLP19,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0201,P3,L16H1,colon,MLP20,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0202,P3,L16H1,colon,MLP21,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0203,P3,L16H1,colon,MLP22,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0204,P3,L16H1,colon,MLP23,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0205,P3,L16H1,colon,MLP24,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0206,P3,L16H1,colon,MLP25,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0207,P3,L16H1,colon,MLP26,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0208,P3,L16H1,colon,MLP27,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0209,P3,L16H1,colon,MLP28,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0210,P3,L16H1,colon,MLP29,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0211,P3,L16H1,colon,MLP30,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0212,P3,L16H1,colon,MLP31,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0213,P3,L16H1,colon,output,residual bypass,final norm and unembedding,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0214,P3,L16H21,colon,L17H1,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0215,P3,L16H21,colon,L17H1,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0216,P3,L16H21,colon,L17H3,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0217,P3,L16H21,colon,L17H3,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0218,P3,L16H21,colon,L17H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0219,P3,L16H21,colon,L17H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0220,P3,L16H21,colon,L17H24,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0221,P3,L16H21,colon,L17H24,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0222,P3,L16H21,colon,L18H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0223,P3,L16H21,colon,L18H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0224,P3,L16H21,colon,L18H19,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0225,P3,L16H21,colon,L18H19,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0226,P3,L16H21,colon,L18H24,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0227,P3,L16H21,colon,L18H24,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0228,P3,L16H21,colon,L19H16,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0229,P3,L16H21,colon,L19H16,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0230,P3,L16H21,colon,L19H22,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0231,P3,L16H21,colon,L19H22,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0232,P3,L16H21,colon,L20H1,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0233,P3,L16H21,colon,L20H1,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0234,P3,L16H21,colon,L21H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0235,P3,L16H21,colon,L21H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0236,P3,L16H21,colon,L21H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0237,P3,L16H21,colon,L21H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0238,P3,L16H21,colon,L21H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0239,P3,L16H21,colon,L21H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0240,P3,L16H21,colon,L22H5,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0241,P3,L16H21,colon,L22H5,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0242,P3,L16H21,colon,L23H15,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0243,P3,L16H21,colon,L23H15,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0244,P3,L16H21,colon,L25H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0245,P3,L16H21,colon,L25H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0246,P3,L16H21,colon,L26H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0247,P3,L16H21,colon,L26H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0248,P3,L16H21,colon,L27H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0249,P3,L16H21,colon,L27H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0250,P3,L16H21,colon,L30H13,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0251,P3,L16H21,colon,L30H13,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0252,P3,L16H21,colon,L30H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0253,P3,L16H21,colon,L30H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0254,P3,L16H21,colon,MLP16,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0255,P3,L16H21,colon,MLP17,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0256,P3,L16H21,colon,MLP18,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0257,P3,L16H21,colon,MLP19,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0258,P3,L16H21,colon,MLP20,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0259,P3,L16H21,colon,MLP21,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0260,P3,L16H21,colon,MLP22,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0261,P3,L16H21,colon,MLP23,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0262,P3,L16H21,colon,MLP24,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0263,P3,L16H21,colon,MLP25,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0264,P3,L16H21,colon,MLP26,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0265,P3,L16H21,colon,MLP27,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0266,P3,L16H21,colon,MLP28,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0267,P3,L16H21,colon,MLP29,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0268,P3,L16H21,colon,MLP30,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0269,P3,L16H21,colon,MLP31,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0270,P3,L16H21,colon,output,residual bypass,final norm and unembedding,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0271,P3,L17H24,colon,L18H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0272,P3,L17H24,colon,L18H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0273,P3,L17H24,colon,L18H19,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0274,P3,L17H24,colon,L18H19,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0275,P3,L17H24,colon,L18H24,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0276,P3,L17H24,colon,L18H24,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0277,P3,L17H24,colon,L19H16,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0278,P3,L17H24,colon,L19H16,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0279,P3,L17H24,colon,L19H22,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0280,P3,L17H24,colon,L19H22,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0281,P3,L17H24,colon,L20H1,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0282,P3,L17H24,colon,L20H1,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0283,P3,L17H24,colon,L21H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0284,P3,L17H24,colon,L21H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0285,P3,L17H24,colon,L21H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0286,P3,L17H24,colon,L21H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0287,P3,L17H24,colon,L21H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0288,P3,L17H24,colon,L21H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0289,P3,L17H24,colon,L22H5,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0290,P3,L17H24,colon,L22H5,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0291,P3,L17H24,colon,L23H15,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0292,P3,L17H24,colon,L23H15,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0293,P3,L17H24,colon,L25H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0294,P3,L17H24,colon,L25H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0295,P3,L17H24,colon,L26H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0296,P3,L17H24,colon,L26H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0297,P3,L17H24,colon,L27H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0298,P3,L17H24,colon,L27H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0299,P3,L17H24,colon,L30H13,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0300,P3,L17H24,colon,L30H13,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0301,P3,L17H24,colon,L30H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0302,P3,L17H24,colon,L30H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0303,P3,L17H24,colon,MLP17,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0304,P3,L17H24,colon,MLP18,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0305,P3,L17H24,colon,MLP19,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0306,P3,L17H24,colon,MLP20,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0307,P3,L17H24,colon,MLP21,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0308,P3,L17H24,colon,MLP22,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0309,P3,L17H24,colon,MLP23,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0310,P3,L17H24,colon,MLP24,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0311,P3,L17H24,colon,MLP25,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0312,P3,L17H24,colon,MLP26,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0313,P3,L17H24,colon,MLP27,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0314,P3,L17H24,colon,MLP28,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0315,P3,L17H24,colon,MLP29,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0316,P3,L17H24,colon,MLP30,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0317,P3,L17H24,colon,MLP31,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0318,P3,L17H24,colon,output,residual bypass,final norm and unembedding,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0319,P3,L18H18,colon,L19H16,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0320,P3,L18H18,colon,L19H16,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0321,P3,L18H18,colon,L19H22,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0322,P3,L18H18,colon,L19H22,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0323,P3,L18H18,colon,L20H1,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0324,P3,L18H18,colon,L20H1,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0325,P3,L18H18,colon,L21H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0326,P3,L18H18,colon,L21H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0327,P3,L18H18,colon,L21H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0328,P3,L18H18,colon,L21H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0329,P3,L18H18,colon,L21H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0330,P3,L18H18,colon,L21H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0331,P3,L18H18,colon,L22H5,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0332,P3,L18H18,colon,L22H5,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0333,P3,L18H18,colon,L23H15,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0334,P3,L18H18,colon,L23H15,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0335,P3,L18H18,colon,L25H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0336,P3,L18H18,colon,L25H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0337,P3,L18H18,colon,L26H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0338,P3,L18H18,colon,L26H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0339,P3,L18H18,colon,L27H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0340,P3,L18H18,colon,L27H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0341,P3,L18H18,colon,L30H13,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0342,P3,L18H18,colon,L30H13,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0343,P3,L18H18,colon,L30H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0344,P3,L18H18,colon,L30H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0345,P3,L18H18,colon,MLP18,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0346,P3,L18H18,colon,MLP19,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0347,P3,L18H18,colon,MLP20,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0348,P3,L18H18,colon,MLP21,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0349,P3,L18H18,colon,MLP22,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0350,P3,L18H18,colon,MLP23,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0351,P3,L18H18,colon,MLP24,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0352,P3,L18H18,colon,MLP25,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0353,P3,L18H18,colon,MLP26,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0354,P3,L18H18,colon,MLP27,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0355,P3,L18H18,colon,MLP28,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0356,P3,L18H18,colon,MLP29,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0357,P3,L18H18,colon,MLP30,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0358,P3,L18H18,colon,MLP31,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0359,P3,L18H18,colon,output,residual bypass,final norm and unembedding,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0360,P3,L18H19,colon,L19H16,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0361,P3,L18H19,colon,L19H16,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0362,P3,L18H19,colon,L19H22,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0363,P3,L18H19,colon,L19H22,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0364,P3,L18H19,colon,L20H1,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0365,P3,L18H19,colon,L20H1,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0366,P3,L18H19,colon,L21H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0367,P3,L18H19,colon,L21H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0368,P3,L18H19,colon,L21H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0369,P3,L18H19,colon,L21H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0370,P3,L18H19,colon,L21H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0371,P3,L18H19,colon,L21H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0372,P3,L18H19,colon,L22H5,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0373,P3,L18H19,colon,L22H5,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0374,P3,L18H19,colon,L23H15,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0375,P3,L18H19,colon,L23H15,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0376,P3,L18H19,colon,L25H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0377,P3,L18H19,colon,L25H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0378,P3,L18H19,colon,L26H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0379,P3,L18H19,colon,L26H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0380,P3,L18H19,colon,L27H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0381,P3,L18H19,colon,L27H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0382,P3,L18H19,colon,L30H13,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0383,P3,L18H19,colon,L30H13,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0384,P3,L18H19,colon,L30H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0385,P3,L18H19,colon,L30H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0386,P3,L18H19,colon,MLP18,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0387,P3,L18H19,colon,MLP19,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0388,P3,L18H19,colon,MLP20,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0389,P3,L18H19,colon,MLP21,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0390,P3,L18H19,colon,MLP22,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0391,P3,L18H19,colon,MLP23,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0392,P3,L18H19,colon,MLP24,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0393,P3,L18H19,colon,MLP25,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0394,P3,L18H19,colon,MLP26,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0395,P3,L18H19,colon,MLP27,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0396,P3,L18H19,colon,MLP28,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0397,P3,L18H19,colon,MLP29,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0398,P3,L18H19,colon,MLP30,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0399,P3,L18H19,colon,MLP31,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0400,P3,L18H19,colon,output,residual bypass,final norm and unembedding,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0401,P3,L19H16,colon,L20H1,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0402,P3,L19H16,colon,L20H1,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0403,P3,L19H16,colon,L21H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0404,P3,L19H16,colon,L21H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0405,P3,L19H16,colon,L21H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0406,P3,L19H16,colon,L21H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0407,P3,L19H16,colon,L21H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0408,P3,L19H16,colon,L21H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0409,P3,L19H16,colon,L22H5,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0410,P3,L19H16,colon,L22H5,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0411,P3,L19H16,colon,L23H15,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0412,P3,L19H16,colon,L23H15,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0413,P3,L19H16,colon,L25H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0414,P3,L19H16,colon,L25H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0415,P3,L19H16,colon,L26H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0416,P3,L19H16,colon,L26H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0417,P3,L19H16,colon,L27H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0418,P3,L19H16,colon,L27H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0419,P3,L19H16,colon,L30H13,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0420,P3,L19H16,colon,L30H13,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0421,P3,L19H16,colon,L30H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0422,P3,L19H16,colon,L30H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0423,P3,L19H16,colon,MLP19,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0424,P3,L19H16,colon,MLP20,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0425,P3,L19H16,colon,MLP21,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0426,P3,L19H16,colon,MLP22,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0427,P3,L19H16,colon,MLP23,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0428,P3,L19H16,colon,MLP24,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0429,P3,L19H16,colon,MLP25,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0430,P3,L19H16,colon,MLP26,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0431,P3,L19H16,colon,MLP27,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0432,P3,L19H16,colon,MLP28,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0433,P3,L19H16,colon,MLP29,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0434,P3,L19H16,colon,MLP30,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0435,P3,L19H16,colon,MLP31,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0436,P3,L19H16,colon,output,residual bypass,final norm and unembedding,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0437,P3,L20H1,colon,L21H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0438,P3,L20H1,colon,L21H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0439,P3,L20H1,colon,L21H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0440,P3,L20H1,colon,L21H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0441,P3,L20H1,colon,L21H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0442,P3,L20H1,colon,L21H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0443,P3,L20H1,colon,L22H5,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0444,P3,L20H1,colon,L22H5,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0445,P3,L20H1,colon,L23H15,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0446,P3,L20H1,colon,L23H15,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0447,P3,L20H1,colon,L25H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0448,P3,L20H1,colon,L25H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0449,P3,L20H1,colon,L26H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0450,P3,L20H1,colon,L26H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0451,P3,L20H1,colon,L27H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0452,P3,L20H1,colon,L27H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0453,P3,L20H1,colon,L30H13,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0454,P3,L20H1,colon,L30H13,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0455,P3,L20H1,colon,L30H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0456,P3,L20H1,colon,L30H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0457,P3,L20H1,colon,MLP20,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0458,P3,L20H1,colon,MLP21,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0459,P3,L20H1,colon,MLP22,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0460,P3,L20H1,colon,MLP23,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0461,P3,L20H1,colon,MLP24,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0462,P3,L20H1,colon,MLP25,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0463,P3,L20H1,colon,MLP26,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0464,P3,L20H1,colon,MLP27,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0465,P3,L20H1,colon,MLP28,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0466,P3,L20H1,colon,MLP29,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0467,P3,L20H1,colon,MLP30,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0468,P3,L20H1,colon,MLP31,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0469,P3,L20H1,colon,output,residual bypass,final norm and unembedding,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0470,P3,L23H15,colon,L25H17,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0471,P3,L23H15,colon,L25H17,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0472,P3,L23H15,colon,L26H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0473,P3,L23H15,colon,L26H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0474,P3,L23H15,colon,L27H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0475,P3,L23H15,colon,L27H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0476,P3,L23H15,colon,L30H13,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0477,P3,L23H15,colon,L30H13,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0478,P3,L23H15,colon,L30H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0479,P3,L23H15,colon,L30H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0480,P3,L23H15,colon,MLP23,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0481,P3,L23H15,colon,MLP24,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0482,P3,L23H15,colon,MLP25,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0483,P3,L23H15,colon,MLP26,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0484,P3,L23H15,colon,MLP27,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0485,P3,L23H15,colon,MLP28,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0486,P3,L23H15,colon,MLP29,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0487,P3,L23H15,colon,MLP30,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0488,P3,L23H15,colon,MLP31,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0489,P3,L23H15,colon,output,residual bypass,final norm and unembedding,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0490,P3,L25H17,colon,L26H23,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0491,P3,L25H17,colon,L26H23,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0492,P3,L25H17,colon,L27H6,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0493,P3,L25H17,colon,L27H6,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0494,P3,L25H17,colon,L30H13,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0495,P3,L25H17,colon,L30H13,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0496,P3,L25H17,colon,L30H18,head,Q,colon,colon,direct with intervening residual branch increments frozen
+P3_0497,P3,L25H17,colon,L30H18,head,KV,colon,colon,direct with intervening residual branch increments frozen
+P3_0498,P3,L25H17,colon,MLP25,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0499,P3,L25H17,colon,MLP26,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0500,P3,L25H17,colon,MLP27,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0501,P3,L25H17,colon,MLP28,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0502,P3,L25H17,colon,MLP29,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0503,P3,L25H17,colon,MLP30,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0504,P3,L25H17,colon,MLP31,mlp,input,colon,live downstream,direct with intervening residual branch increments frozen
+P3_0505,P3,L25H17,colon,output,residual bypass,final norm and unembedding,colon,live downstream,direct with intervening residual branch increments frozen

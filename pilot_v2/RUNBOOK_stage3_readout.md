@@ -1,7 +1,14 @@
 # Stage 3, Section 1.5 — controlled representation readout (optional extension)
 
-Prepared 22 September 2026. **The 7B GPU readout has not run.** Local tests use a
-tiny random OLMo2; they are implementation tests, not research results.
+Prepared 22 September 2026; **run completed 22 September 2026** as `stage3_readout_v1`
+(gate-only job 918601, full job 918689 on s-004, 32:45; gate passed; 1,920 records;
+`analyze` outputs regenerated locally and identical to the cluster's). Results in
+`results/stage3_readout_v1/`; reported in Section 7.7 of the Stage-3 report. Local
+tests use a tiny random OLMo2; they are implementation tests, not research results.
+
+Note for local `analyze`: `manifest.json` records the cluster path of the plan;
+`locate_plan()` falls back to `results/stage3_readout_inputs_v1/readout_plan.json` and
+accepts it only if its SHA-256 equals the recorded `plan_hash`.
 
 ## What it measures
 

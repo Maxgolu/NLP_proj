@@ -1,4 +1,4 @@
-head,flat_id,layer,head_index,in_A,in_B,in_C,in_D,A_reasons,A_names_gap_rank,B_final_events,B_final_families,first_order_pairs,exact_pairs,exact_families,importance_exact40,importance_first_order,importance_exact178,residual_40,needs_scopeP_138,needs_scopeF_178
+head,flat_id,layer,head_index,in_A,in_B,in_C,in_D,A_reasons,A_names_gap_rank,B_final_events,B_final_families,first_order_pairs,exact_pairs,exact_families,importance_exact40,importance_first_order,importance_exact178,residual_cross_sample_178attr_vs_40exact,needs_scopeP_138,needs_scopeF_178
 L0H1,1,0,1,False,False,False,True,0,False,,,178,178,89,0.009851646423339844,0.04011024639345287,0.07954119028670065,0.030258599970113025,False,False
 L0H27,27,0,27,False,False,False,True,0,False,,,178,178,89,-0.0002501487731933594,-0.008513863112782703,9.953573848424332e-05,0.008263714339589345,False,False
 L1H9,41,1,9,False,False,False,True,0,False,,,178,178,89,0.0071380615234375,-0.005258389176366579,-0.004647351382823473,0.012396450699804079,False,False

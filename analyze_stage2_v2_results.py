@@ -8,6 +8,9 @@ CPU only. Inputs (relative to the project root unless --results is given):
   results/stage2_v2_coverage/coverage_v2.csv
 Outputs: results/stage2_v2_analysis/  (tables as CSV/JSON, figures as PNG, summary.md)
 
+Revision 21 Sept 2026: fixed the 'misleading' bootstrap (resampled 20 instead of 89 families) and added a
+same-pair residual (attribution vs exact on the identical 40 pairs); the coverage file's residual_40 mixed 178- and 40-pair means.
+
 Conventions (as in analyze_stage2_results.py): importance I_h = -delta; family-level means (orders
 averaged first); percentile bootstrap over whole families, 20,000 draws, seed 20260915. All intervals
 are descriptive; the head groups were selected on the same discovery families.
@@ -136,6 +139,8 @@ def main():
         r = dict(head=name(h), flat_id=h, layer=h // H, in_A=h in A, in_B=h in B, in_C=h in C, in_D=h in Dset, random_control=h in controls,
                  hist_ri_first=hist[h][0], ng_first=stat(MAIN, 'names_gap', h), ng_last=stat(('all_facts', 'all_test', 'last'), 'names_gap', h),
                  target_first=stat(MAIN, 'target', h), attribution_178=-attr[:, h].mean(),
+                 attribution_40=float(fam_mean(-attr[idx40][:, h], fam40)[0]),
+                 residual_40_same_pairs=float(abs(I40[h] - fam_mean(-attr[idx40][:, h], fam40)[0])),
                  I_P_178=IP[h], I_P_lo=ci_cols[h][0], I_P_hi=ci_cols[h][1], I_P_pos_fam=float((IP_fam[h] > 0).mean()),
                  I_P_gap_fraction=IP[h] / gap, I_40=I40[h])
         if h in IF:
@@ -227,8 +232,9 @@ def main():
     medA = float(np.median([IP[h] for h in A])); medR = float(np.median([IP[h] for h in controls]))
     bsm = []
     Afam = np.stack([IP_fam[h] for h in sorted(A)], axis=1); Rfam = np.stack([IP_fam[h] for h in sorted(controls)], axis=1)
+    nf89 = Afam.shape[0]  # 89 discovery families (178-pair data), NOT the 20-family common subset
     for _ in range(2000):
-        idx = rng.integers(0, nf, nf); bsm.append(float(np.median(Afam[idx].mean(axis=0)) - np.median(Rfam[idx].mean(axis=0))))
+        idx = rng.integers(0, nf89, nf89); bsm.append(float(np.median(Afam[idx].mean(axis=0)) - np.median(Rfam[idx].mean(axis=0))))
     misleading = dict(median_A=medA, median_random=medR, diff=medA - medR, diff_ci=[float(np.percentile(bsm, 2.5)), float(np.percentile(bsm, 97.5))],
                       mean_A=float(np.mean([IP[h] for h in A])), mean_random=float(np.mean([IP[h] for h in controls])),
                       A_positive_share=float(np.mean([IP[h] > 0 for h in A])), random_positive_share=float(np.mean([IP[h] > 0 for h in controls])),

@@ -1,0 +1,23 @@
+{
+  "label_fraction": 0.8,
+  "anchor_primary": "first",
+  "others_primary": "all_visible_names",
+  "events": "core anatomy rows whose attention argmax lies inside a fully visible test-name span",
+  "contrast": "o_j^h W_U logit of the attended name anchor minus the mean over the same anchor of the other visible distinct names",
+  "scopeF_near_zero": 0.05,
+  "candidates_checked_first": [
+    "L23H15",
+    "L19H16",
+    "L26H23"
+  ],
+  "min_events": 20,
+  "min_families": 10,
+  "population": "core (common-family) anatomy rows only: 20 families x 2 orders x {base,corrupted,reorder,query_change}",
+  "status_values": [
+    "name_mover",
+    "negative_name_mover",
+    "neither",
+    "insufficient"
+  ],
+  "note": "Descriptive; contextual projection before the shared post-attention norm; not a causal or circuit claim."
+}

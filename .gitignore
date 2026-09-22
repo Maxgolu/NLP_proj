@@ -65,3 +65,8 @@ results/stage3_v1/analysis/*_PROVISIONAL.*
 results/stage3_readout_v1/readout_records.jsonl.gz
 results/stage3_readout_v1/state.json
 results/stage3_readout_v1/.running.lock
+# Stage 3 result archives (1.2 GB / 0.2 MB): regenerable from the run directories
+results/stage3_v1_results.tar.gz
+results/stage3_readout_v1_results.tar.gz
+results/stage3_readout_v1/runtime.json
+# Overleaf ZIP bundles: regenerable from the .tex sources

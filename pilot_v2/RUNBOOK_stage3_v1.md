@@ -137,7 +137,29 @@ drift raises an error; it is never converted into missing/zero findings.
 Two GPUs hold one model replica. Supported allocations: 2, 4, 6 GPUs (one, two,
 three replicas). The default submission time limit is four hours. Node selection
 and time can be supplied with `--nodelist s-004`, `--exclude ...`, `--time ...`;
-no historical node exclusion is silently imposed on this new run.
+the default excludes s-002 and s-005, as in the successful Stage-2 workflow.
+
+### Retry after job 916685
+
+Job 916685 failed on s-002 during CUDA initialization, at `cudaMemGetInfo`,
+before model weights were loaded. This is not an observed out-of-memory error.
+The message about changing CUDA_VISIBLE_DEVICES is a generic possible cause;
+workers receive their GPU masks before a fresh Python process starts, as in
+Stage 2. The underlying node/driver/device cause is not yet established.
+For the already-uploaded package, retry on the previously successful s-004
+without changing code, deleting results, or uploading again:
+
+```bash
+bash stage3_v1/submit_stage3.sh 6 --name stage3_v1_gate_s004 --gate-only --nodelist s-004
+```
+
+This submits only the gate. It may wait for s-004 resources. Inspect the new job
+and `storage/runs/stage3_v1_gate_s004/` rather than the failed run directory.
+If it succeeds, use `--nodelist s-004` for the full run too. If the same CUDA
+initialization error recurs there, inspect allocation/device mapping and the
+driver instead of repeatedly resubmitting. The local sbatch and rebuilt upload
+archive now restore the historical exclusions; the retry command also works
+with the original uploaded archive.
 
 ## 4. Inspect the gate, then run the experiment
 

@@ -13,7 +13,7 @@ confounds, the current priority became a controlled **single-hop causal audit**:
 Two-hop composition and checkpoint-development analyses remain later extensions.
 No circuit has yet been established.
 
-## Current status (21 September 2026)
+## Current status (23 September 2026)
 
 Model: base `allenai/OLMo-2-1124-7B`, revision
 `7df9a82518afdecae4e8c026b27adccc8c1f0032`, with 32 layers and 32 attention
@@ -38,13 +38,43 @@ heads. The model is used without fine-tuning.
   some large effects occur outside RI selection. Associations depend on the RI
   definition and population. Scope-P/Scope-F differences motivate position
   profiles; copying and writer/reader roles remain hypotheses to test.
-- Stage 3: head-characterization code and portable inputs prepared for 105 heads.
-  CPU data checks and tiny-OLMo2 implementation tests completed; the 7B GPU gate
-  and research measurements are pending. All four agreed diagnostic analyses
-  are mandatory. Upload, Git, gate, full-run and resume instructions:
-  [Stage-3 run book](pilot_v2/RUNBOOK_stage3_v1.md).
-- Stage 4: future paths, group interventions, circuits and validation. It is
-  deliberately separate from Stage-3 individual-head characterization.
+- Stage 3: `stage3_v1` completed (3 replicas, 6 GPUs; gates passed; 263,328 patched
+  forwards; `summary.json` complete) and analyzed for the fixed 105-head inventory:
+  Scope-F for all heads, single-position causal profiles on the 40 common pairs,
+  reverse patching, attention/output profiles with changed-query, reorder and
+  corruption controls, and all four planned diagnostics (weight copying, attended-name
+  mover classification, matched contextual RI, attention/value factorial, synthetic
+  fingerprints). Report: `חומר כתוב/Stage3_Results_and_Analysis.tex` (figures in
+  `חומר כתוב/figs/`, table in `חומר כתוב/tables/`), corrected after an external
+  review; analysis tables in `results/stage3_v1/analysis/`.
+- Main Stage-3 findings: the strongest head L17H1 (5.7 logits) has no effect at the
+  answer position; its effect enters inside the query-fact sentence (mother tokens,
+  "is", period). Twenty strong heads act only at the final colon, mainly through their
+  values; their attention follows the queried fact under a changed query. Six heads
+  promote the first token of the name they attend to (L27H6 writes the answer directly,
+  +3 logits), one suppresses it (L20H1); several strong effects are not explained by the
+  head's own vocabulary projection (hypothesis for Stage-4 path tests). Neither raw nor
+  contextual RI tracks the causal effects. Labels are descriptive; no circuit is claimed.
+- Stage 3, optional Section 1.5: controlled representation readout of the L17H1 and
+  L15H25 sites completed (`stage3_readout_v1`, Slurm job 918689; gate passed with zero
+  identity-injection and self-patch drift; 1,920 records; analysis regenerated locally
+  byte-for-byte). Code `pilot_v2/stage3_readout.py`, run book
+  `pilot_v2/RUNBOOK_stage3_readout.md`, plan `results/stage3_readout_inputs_v1/`,
+  results `results/stage3_readout_v1/` (analysis CSVs committed; raw records on
+  OneDrive/cluster). Reported as Section 7.7 of the Stage-3 report. Finding: replacing
+  L17H1 alone removes ~88% of the readable mother-token preference at the query-fact
+  "is" (negative in 20/20 families); L15H25's child-last site is unresolved because the
+  source-swap control itself exposes no mother preference. Independent check:
+  `results/stage3_readout_review_20260922/Stage3_section1_5_analysis.md`.
+- Stage 4 (planning only, no GPU code or runs): proposed protocol
+  `חומר כתוב/Stage4_Protocol.tex` integrating
+  `Stage4_Circuits_and_Communication_preliminary.tex` and `Stage4_Experiment.tex`;
+  configuration registry `results/stage4_design_v1/` (`manifest_proposal.json`,
+  `seed_route_configurations.csv`). External review of Stage 3:
+  `results/stage3_review_20260922/Stage3_review.md`.
+- Stage 4 will test paths, group interventions, circuits and validation on the
+  components handed off in Section 10 of the Stage-3 report. It is deliberately
+  separate from Stage-3 individual-head characterization.
 
 The authoritative transition notes are in `RESEARCH_HANDOFF.md` (its top
 "UPDATE" section is the latest state). For the current method and evidence,
@@ -55,8 +85,12 @@ read the files in this order:
 2. `חומר כתוב/Stage1_Results_and_Analysis_updated.tex`
 3. `חומר כתוב/Stage2_Results_and_Analysis.tex`
 4. `pilot_v2/RUNBOOK_stage2_v1.md`, `pilot_v2/RUNBOOK_stage2_v2_extension.md` (run books)
-5. `חומר כתוב/Stage3_Head_Level_Characterization_revised.tex` (current Stage-3 plan)
-6. `pilot_v2/RUNBOOK_stage3_v1.md` (current implementation and execution instructions)
+5. `חומר כתוב/Stage3_Head_Level_Characterization_revised.tex` (Stage-3 plan; the
+   attended-name paragraph is in `Stage3_plan_attended_name_paragraph.tex`)
+6. `חומר כתוב/Stage3_Results_and_Analysis.tex` (Stage-3 results and analysis,
+   including the Section-7.7 readout; Overleaf copy `חומר כתוב/Stage3_Overleaf/main.tex`)
+7. `pilot_v2/RUNBOOK_stage3_v1.md`, `pilot_v2/RUNBOOK_stage3_readout.md` (run books)
+8. `חומר כתוב/Stage4_Protocol.tex` (proposed Stage-4 protocol; not yet implemented)
 
 ## Documentation map
 
@@ -68,7 +102,8 @@ verify and download) written at the time of that run, or a historical record.
 |---|---|---|
 | `README.md` (this file) | project entry point, status, reading order | current |
 | `RESEARCH_HANDOFF.md` | assistant/collaborator handoff, evidence hierarchy | current |
-| `pilot_v2/RUNBOOK_stage3_v1.md` | Stage-3 CPU preparation, GPU gate/run, analysis, Git and transfer | ready for GPU gate |
+| `pilot_v2/RUNBOOK_stage3_v1.md` | run book: `stage3_v1` (completed) — preparation, gate/run, analysis, transfer | current |
+| `pilot_v2/RUNBOOK_stage3_readout.md` | run book: Section-1.5 readout (`stage3_readout_v1`, job 918689, completed) — prepare, gate/run, analysis, transfer | current |
 | `pilot_v2/RUNBOOK_stage2_v1.md` | run book: `stage2_v1` (job 888691) | current |
 | `pilot_v2/RUNBOOK_stage2_v2_extension.md` | run book: `stage2_v2_extension` (job 912879) | current |
 | `pilot_v2/RUNBOOK_stage1_audit.md` | run book: Stage-1 audit and calibration | current |
@@ -207,7 +242,10 @@ The extension (`pilot_v2/stage2_extension_v2.py`, run book
 `pilot_v2/RUNBOOK_stage2_v2_extension.md`) adds a second patch scope — the final prompt
 position only — and stores the clean-answer, corrupted-answer and source-name
 logits separately. Head lists come from `pilot_v2/stage2_coverage_audit_v2.py`.
-Analysis: `analyze_stage2_results.py` (v1) and `analyze_stage2_v2_results.py` (v2).
+Analysis: `analyze_stage2_results.py` (v1), `analyze_stage2_v2_results.py` (v2),
+`pilot_v2/stage3_analyze.py` (Stage-3 integrity audit, summaries and the attended-name
+classification; `--attended-only` re-runs only the latter), `pilot_v2/stage3_report_figures.py`
+(report figures and numbers), `pilot_v2/stage3_readout.py analyze` (Section-1.5).
 
 ## Interpreting Stage-2 results
 
@@ -223,16 +261,19 @@ non-finite vectors. Keep these distinctions explicit:
   scope, redundancy, nonlinear interactions, and the chosen output metric matter;
 - a list of intervention-sensitive heads is not an edge-validated circuit.
 
-If Stage 2 passes these checks, the next scientific stage is QK/OV mechanism
-analysis, path interventions, redundancy tests, and a minimal-circuit
-faithfulness evaluation on the held-out validation families. The pre-registered
+Stage 3 passed these checks and characterized the heads individually. The next
+scientific stage (Stage 4) is path interventions between the localized writer sites
+(L17H1, L15H25) and the answer-position heads, downstream tests for the heads whose
+effects exceed their vocabulary projections, joint positive/negative-head
+interventions, and a minimal-circuit faithfulness evaluation on the held-out
+validation families. The pre-registered
 faithfulness criterion is at least 80% recovery of the full model's
 clean–corrupted logit-difference gap.
 
 ## Repository map
 
-- `pilot_v2/` — OLMo/Pythia runners, Stage 0–2 code, Slurm wrappers, tests, model
-  locks, and operational documentation.
+- `pilot_v2/` — OLMo/Pythia runners, Stage 0–3 code (incl. the Section-1.5 readout),
+  Slurm wrappers, tests, model locks, and operational documentation.
 - `pilot_v3/` — later behavioral generators, tokenizer audits, and the current
   single-hop generator/data.
 - `results/` — downloaded run outputs, audits, and reports.

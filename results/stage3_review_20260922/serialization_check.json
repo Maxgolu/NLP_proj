@@ -1,0 +1,144 @@
+{
+  "event_columns": {
+    "head": {
+      "exactly_equal": true
+    },
+    "id": {
+      "exactly_equal": true
+    },
+    "family": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "order": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "variant": {
+      "exactly_equal": true
+    },
+    "j": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "site": {
+      "exactly_equal": true
+    },
+    "self_event": {
+      "exactly_equal": true
+    },
+    "argmax": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "argmax_anchor": {
+      "exactly_equal": true
+    },
+    "attended_name": {
+      "exactly_equal": true
+    },
+    "attended_role": {
+      "exactly_equal": true
+    },
+    "attended_fact_query": {
+      "exactly_equal": true
+    },
+    "attended_is_answer": {
+      "exactly_equal": true
+    },
+    "dominance": {
+      "max_abs_difference": 2.8125009521318134e-07,
+      "missingness_equal": true
+    },
+    "qk_pass": {
+      "exactly_equal": true
+    },
+    "attended_roles": {
+      "exactly_equal": true
+    },
+    "contrast_first_all": {
+      "max_abs_difference": 4.9853515624997e-08,
+      "missingness_equal": true,
+      "sign_mismatches": 0
+    },
+    "others_first_all": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "collisions_first_all": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "contrast_first_same_role": {
+      "max_abs_difference": 4.793294270805375e-08,
+      "missingness_equal": true,
+      "sign_mismatches": 0
+    },
+    "others_first_same_role": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "collisions_first_same_role": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "contrast_last_all": {
+      "max_abs_difference": 4.9853515624997e-08,
+      "missingness_equal": true,
+      "sign_mismatches": 0
+    },
+    "others_last_all": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "collisions_last_all": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "contrast_last_same_role": {
+      "max_abs_difference": 4.9853515624997e-08,
+      "missingness_equal": true,
+      "sign_mismatches": 0
+    },
+    "others_last_same_role": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    },
+    "collisions_last_same_role": {
+      "max_abs_difference": 0.0,
+      "missingness_equal": true
+    }
+  },
+  "event_table_matches_at_absolute_tolerance_3e_7": true,
+  "family_arrays_max_abs_difference": {
+    "heads": 0.0,
+    "families": 0.0,
+    "scopeP": 0.0,
+    "scopeF": 0.0,
+    "promotion": 0.0,
+    "suppression": 0.0,
+    "routing": 0.0,
+    "values": 0.0,
+    "interaction": 0.0
+  },
+  "av_interactions": [
+    {
+      "head": "L27H6",
+      "signed_mean": 0.2047054526511203,
+      "mean_absolute_family": 1.253567331292656,
+      "max_absolute_family": 4.579179763793945
+    },
+    {
+      "head": "L18H18",
+      "signed_mean": -0.27089053593324813,
+      "mean_absolute_family": 0.8106310233641206,
+      "max_absolute_family": 3.27069091796875
+    },
+    {
+      "head": "L18H19",
+      "signed_mean": -0.15917288855220493,
+      "mean_absolute_family": 0.5423982545231165,
+      "max_absolute_family": 3.2543869018554688
+    }
+  ]
+}

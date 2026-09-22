@@ -1,5 +1,48 @@
 # Research handoff — read this first
 
+## CURRENT: complete Stage 3 including §1.5; proposed precise Stage-4 protocol
+
+This entry supersedes the older status/interpretation paragraphs below. Stage 3 and
+its controlled-readout extension are complete. The current integrated report is
+`חומר כתוב/Stage3_Results_and_Analysis.tex`; the Overleaf copy is
+`חומר כתוב/Stage3_Overleaf/main.tex`. Independent checks and interpretation limits
+are recorded in `results/stage3_review_20260922/Stage3_review.md` and
+`results/stage3_readout_review_20260922/Stage3_section1_5_analysis.md`.
+
+The new planning deliverable is `חומר כתוב/Stage4_Protocol.tex`, with a standalone
+Overleaf ZIP. It incorporates both `Stage4_Circuits_and_Communication_preliminary.tex`
+and the user's `Stage4_Experiment.tex`, without replacing either original proposal.
+`results/stage4_design_v1/manifest_proposal.json` contains exact rosters, reference
+cohorts, proposed thresholds and source hashes; `seed_route_configurations.csv`
+enumerates 506 initial direct-route configurations (P1 141, P2 16, P3 349).
+This is a proposed scientific protocol/configuration registry, not implemented
+Stage-4 GPU code. No Stage-4 model measurements or jobs have been run/submitted.
+
+Important evidence/design corrections:
+- RI test-only membership includes eight of the 25 strong heads: five positive
+  plus L19H16, L23H15 and L26H23. These negative/mediation candidates must be tracked
+  in the RI audit. Main RI denominator is 59; historical-inclusive sensitivity is 61.
+- Exact Stage-2 common-40 data contain L13H18 (+0.387) and L24H19 (+0.390), outside
+  the 105-head Stage-3 inventory. Their 178-pair effects/sites are not established;
+  the protocol includes a small mandatory coverage check.
+- Fact-to-colon K/V are patched at fact positions; same-layer head consumption is
+  impossible. L26H31 cannot retarget its attention after downstream L27H6 removal.
+- Stage-3 signed-average additivity/AV/attention conclusions were too strong;
+  pre-normalization projection is not a direct causal attribution. Keep these limits.
+- The readout supports L17H1 mother-token preference, strongest at `is`, with weak
+  free decoding. L15H25 content remains unresolved. Head-site/head-span equality
+  at the same block is structural, not evidence against earlier-position influence.
+- Exact group/RI tests and exact seeded paths precede any conditional approximate
+  expansion. Writer restoration followed by receiver blocking tests communication
+  in the otherwise live model. Query-only fact-site donor patches are causal nulls.
+- Circuit evaluation masks must retain analogous roles in all facts, not use the
+  externally known answer fact as an oracle. Primary claim is a head mechanism
+  conditional on live MLPs/demonstrations/prefix computation; full edge isolation
+  is a separate extension. Held-out 87-family evaluation follows one frozen suite.
+
+The new LaTeX source was checked for balanced structure, references and roster/route
+counts. No local TeX compiler was available, so it has not been compiled locally.
+
 ## 22 September 2026 — Stage-3 run COMPLETE; results analyzed; report drafted (LATEST)
 
 Observed (from files downloaded by the user to `results/stage3_v1/`): `summary.json`
