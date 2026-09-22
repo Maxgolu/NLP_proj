@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "seconds_per_patch": [
+    0.15242260756591958,
+    0.15122160346557698,
+    0.1513894811893503
+  ],
+  "patched_forwards": 263328,
+  "estimated_patch_wall_hours": 3.7164018893628215,
+  "caveat": "Approximate; add model load, diagnostics, captures, IO and imbalance. No scope reduction."
+}

@@ -1,5 +1,240 @@
 # Research handoff — read this first
 
+## 22 September 2026 — Stage-3 run COMPLETE; results analyzed; report drafted (LATEST)
+
+Observed (from files downloaded by the user to `results/stage3_v1/`): `summary.json`
+`complete: true`, `gate_passed.json` passed on all 3 replicas, 105 heads x 178 pairs,
+40 common position-scan pairs, 160 core prompts, 34,526 matched RI comparisons; gate
+cost 0.151-0.152 s/patched forward, 263,328 forwards (~3.7 GPU-h). The user ran
+`stage3_analyze.py` on the cluster and downloaded the archive; `analysis/*.csv` exist.
+
+Deliverables produced in this session (written to the user's folder on 22 Sept):
+- `Stage3_Results_and_Analysis.tex` (+ figs/fig1..fig9, fig2b, tables/tab_profiles.tex),
+  compiled locally to a 12-page PDF; intended location `חומר כתוב/`.
+- `stage3_analyze.py` UPDATED: attended-name mover classification implemented
+  (`attended_name_event`, `summarize_attended`, `attended_only`, CLI `--attended-only`),
+  also integrated into the full `analyze()`; writes `analysis/attended_name_movers.csv`,
+  `attended_name_events.csv`, `attended_name_rule.json`, appends to `head_cards.md` and
+  `summary.json`. Decisions taken (documented in the rule file): primary contrast on the
+  FIRST token of the attended name (last token = sensitivity); controls = all other
+  visible distinct names, both roles (same-role = sensitivity); self events included
+  (non-self = sensitivity); all four core variants incl. query_change; extra sensitivity
+  labels for final-site-only and base-only. Cross-check uses the SIGN of the 178-pair
+  Scope-F importance (name mover <-> I_F>0; negative <-> I_F<0); |I_F|<0.05 reported as
+  "no causal contrast to check".
+- Attended-name classification FINAL (all 480 core prompt records, 94,015 events):
+  name movers L27H6 (96%), L17H24 (94%), L26H31 (91%, mean +2.09 but I_F=+0.027 —
+  moves names it attends to but attends to the answer in only 6% of events: moving and
+  selecting are separable), L18H19 (84%), L22H5 (82%), L21H6 (82%); negative name mover
+  L20H1 (17% positive). L21H18 79%, L19H22 78% (colon-site-only: name movers), L18H18
+  74%, L23H15 64% (NOT a negative mover; effect indirect), L30H18 67% positive on the
+  distractor it attends. 19 heads insufficient. Files: `results/stage3_v1/analysis/
+  attended_name_movers.csv`, `attended_name_events.csv`, `attended_name_rule.json`;
+  `head_cards.md` and `summary.json` updated. The two *_PROVISIONAL files can be deleted.
+- Plan paragraph with corrected cross-check sentence: `חומר כתוב/Stage3_plan_attended_name_paragraph.tex`
+  (the local plan .tex never contained the paragraph; paste this version into Overleaf).
+
+Main Stage-3 findings (family-level descriptives, 89 discovery families; details and
+exact numbers in the report and `results/stage3_v1/analysis/`):
+- L17H1 (I_P=+5.70) has NO colon effect (I_F=-0.056). Its effect enters inside the
+  query-fact sentence "<mother> is the mother of <child>.": mother middle +1.15, mother
+  last +1.67, "is" +1.77, "of" +0.36, period +1.38; nothing at question/colon; small
+  negative at distractor mothers. Reverse patching recovers +5.21 (P), -0.055 (F).
+  The Stage-2 label "layer-16-26 heads are readers at the colon" does not hold for it.
+- Other early-position heads: L15H25 (+0.68; acts at the query child's LAST token,
+  +0.43), L14H26 (+0.40; diffuse), L13H10 (-0.68; "is"/"of"/mother-last, negative).
+  All other 21 heads with |I_P|>=0.3 have I_F/I_P in [0.96,1.07].
+- Single-position patches are near-additive within a head: sum over positions vs
+  Scope-P on the same 40 pairs, Spearman 0.913, median |resid| 0.013, max 0.135.
+- Logit decomposition: promotion (corrupted-answer logit) carries 88-98% of I_F for all
+  strong heads except L27H6 (P=+1.96, S=+1.10).
+- Attention at the colon (base, 20 families): mother-attenders L27H6 .58, L21H18 .60,
+  L23H15 .51, L22H5 .34, L19H22 .31, L21H6 .30, L19H16/L26H23 .21, L20H1 .17, L18H18
+  .14, L18H19 .13; child-attenders L16H21 .40, L16H1 .36; self-attenders L25H17 .57,
+  L21H23/L30H13/L17H17 ~.19, L13H10 .42; L30H18 attends distractor mothers (.11) more
+  than the query mother (.05). Changed-query control moves attention to the new fact in
+  100% of families (e.g. L21H18 +1.07, L16H21 +0.83 to the new child); reorder <=0.11,
+  corruption <=0.085; random controls <=0.18. Model answers the changed query correctly
+  in 38/40 prompts.
+- Attention/value factorial: values carry the effect for every head; routing term small
+  (only negative heads -0.1..-0.22 and L27H6 +0.27); interactions within +-0.27.
+- Contextual output o_j W_U at the colon (query mother - distractor mothers, first
+  token): L27H6 +2.99 (direct writer), L30H13 +.76, L22H5 +.41, L21H6 +.33, L21H18 +.25;
+  L30H18 -0.88; INDIRECT heads: L18H19 +.16 (I_F 3.08), L18H18 +.11, L20H1 -.09,
+  L23H15 +.04, L19H16 -.04, L25H17 +.16; L16H21/L16H1 ~0. Raw-embedding projection
+  uninformative for all heads (|x|<0.008; rho -0.07); contextual rho +0.32.
+- Weight copying (314 name tokens): rho with signed I_P +0.37, with |I_P| +0.02.
+  Copiers: L30H18 +.60 (!), L21H6 +.35, L17H24 +.19, L19H22 +.17, L18H19 +.13, L21H18
+  +.12; anti-copiers L26H23 -.20, L20H1 -.17, L19H16 -.09, L18H18 -.08. L27H6 +.04,
+  L17H1 +.01. Random controls within +-0.044.
+- Attended-name movers (80% rule, final): name movers L27H6 (96%), L17H24 (94%), L26H31
+  (91%, no causal effect), L18H19 (84%), L22H5 (82%), L21H6 (82%); negative name mover
+  L20H1 (17% positive). L21H18 79% (borderline). L19H16 77% negative, L26H23 79%
+  negative (below rule). L23H15 is NOT a negative mover: positive contrast in 64% of
+  2,428 events while I_F=-0.95 -> its negative effect is indirect. L30H18: positive
+  contrast (67%, +0.60) on the DISTRACTOR it attends -> negative effect by copying the
+  wrong name. All labels vanish at the last-token anchor.
+- Matched contextual RI does not repair RI: names_gap rho -0.26 (raw) -> -0.17
+  (contextual); target ~0. 35 inventory heads insufficient.
+- Synthetic fingerprints (model correct: KV 100%, repeated 96.1%): retrieval-type
+  attention L19H16 .97, L21H18 .88, L23H15 .84, L18H18 .56, L16H1 .47; induction-type
+  L23H15 .66, L21H6 .64, L16H1 .45, L21H18 .39, L19H16 .36. Output sign: L21H6/L21H18/
+  L18H19/L22H5/L16H1 promote the copied token; L19H16 -.24, L26H23 -.19, L23H15 -.05 do
+  not. L27H6, L17H1, L20H1, L30H18 show no fingerprint (task-specific).
+- Hypothesis assessments: copying partly supported (5 movers; not necessary: L18H18,
+  L27H6 weights ~0; not sufficient: L30H18); contextual-information supported for
+  location (attended positions, values), content open; early/late supported and
+  sharpened (writer L17H1 in the same layer band as readers).
+- Stage-4 hand-off: path patching L17H1 (mother tokens/"is"/period) -> mother-attenders'
+  values vs keys; L15H25 -> L16H21/L16H1; downstream readers of the indirect heads
+  L18H19/L18H18/L20H1/L23H15/L19H16 at the colon; joint positive-vs-negative group
+  interventions; only then faithfulness on the 87 held-out families.
+- Bridge note: the desktop link works only briefly after each user message; stage/commit
+  in the first calls of a turn.
+
+## LATEST OBSERVED STATUS — 22 September 2026, job 916699
+
+Supersedes the unconfirmed full-run status below. User supplied scheduler and
+run outputs: full Stage-3 job 916699 is RUNNING on s-004, elapsed 02:27:47 at
+the first snapshot. Global gate passed. Cost estimate: 263,328 patched forwards,
+0.1524–0.1532 seconds per patch across three replicas, 3.7364 estimated patch
+wall hours EXCLUDING loading, diagnostics, captures and IO.
+
+Two snapshots approximately 6–7 minutes apart show causal-profile progress:
+replicas moved from pair/chunk 101/3, 94/1, 103/4 to 105/6, 97/6, 106/1
+(178 pairs and seven chunks each). Completed checkpoint markers rose from
+2,071 to 2,158. This is evidence of ongoing computation, not a final scientific
+correctness verdict or completion of Stage 3. Pair progress is not proportional
+to total runtime: common-subset position scans cost more, and diagnostics follow.
+
+User attempted `scontrol update JobId=916699 TimeLimit=08:00:00` and received
+Access/permission denied. No extension was confirmed; submitted default remains
+four hours unless an administrator changes it. Let the job continue; request an
+administrator extension if desired, otherwise resume only after it has stopped
+with identical code/inputs/six-GPU allocation and `--name stage3_v1 --resume`.
+For future submissions the user permits s-005 and excludes only s-002. If a hard
+kill leaves a lock, verify its recorded job has ended before removing only that
+lock. Full completion and output integrity still need verification.
+
+## 22 September — תכנון ראשוני מוסכם לשלב 4
+
+נכתב מסמך עצמאי לאוברליף, בזמן ההמתנה לתוצאות שלב 3:
+`חומר כתוב/Stage4_Circuits_and_Communication_preliminary.tex`.
+זהו תכנון בלבד; לא בוצעו מדידות שלב 4 ולא שונה קוד הריצה הנוכחית.
+
+- שלב 4 עוסק במסלולים, קבוצות, מעגלים ובהשתתפות מועמדי RI. 105 הראשים הם נקודת פתיחה, לא גבול החיפוש; יש לאפשר רכיבים נוספים ותיווך MLP.
+- חברות דורשת מסלול סיבתי ותרומה מותנית למנגנון, גם בנוכחות גיבויים. תוצאה קטנה בבדיקה בודדת אינה שוללת חברות; אפקט קבוצתי אינו מוכיח תרומה של כל חבר.
+- הסדר: מפת הבדלים בין שכבות; סינון קשתות מודע־פוזיציה וכיול נפרד; אימות מסלולים בשילוב בדיקות קבוצתיות; שני צירי השחתה (עובדות ושאילתה); בניית מעגל ובדיקות נאמנות, שלמות ומינימליות; אימות קפוא.
+- קריאת ייצוגים ופירוק ערוצי תקשורת הם העמקות מותנות. עקומת המרחק בין ייצוגים היא תיאורית ואינה שוללת תפקיד בשכבות מאוחרות.
+- המשתמש הסכים להשאיר את 87 משפחות האימות של אותה משימת אם–בת, ולהוציא משלב 4 את עולם location, מדד תצפיתי חדש ו-parent-coverage.
+- בחירת ראשים/אתרים, ספים, תקציבי חיפוש וכללי עצירה ייקבעו לאחר שלב 3 ולפני המדידות הרלוונטיות. סף הנאמנות המקורי של 80% נשמר. אין להציג את המסמך עדיין כפרוטוקול מוכן להגשה.
+- נבדקו מבנה LaTeX והפניות פנימיות; לא בוצעה קומפילציה מקומית.
+
+## 21 September (evening) — Stage-3 plan addition: attended-name mover classification
+
+Decided in the plan-review conversation while the Stage-3 full run was still in
+progress (no code change; no new measurement). The plan paragraph
+"Copying and Token-Preference Diagnostic" in
+`Stage3_Head_Level_Characterization_revised.tex` /
+`חומר כתוב/new_stage_3_experiment.pdf` gained a second paragraph
+"Attended-name mover classification" (user pasted it into Overleaf; recompile).
+
+- What: for each inventory head, take the saved core-family test-block records
+  (`anatomy` records in `prompts/*.jsonl.gz`: attention `argmax`, per-fact
+  source/target mass, and `projections['output']` = `o_j^h W_U` over visible name
+  tokens). Select events whose argmax falls on a name token; compute the contextual
+  logit of that attended name minus the mean of the other visible names.
+- Labels: name mover = contrast positive in >= 80% of events; negative name mover =
+  negative in >= 80%; support rule >= 20 events and >= 10 families; below support
+  report "insufficient", not "neither". The 80% threshold was fixed before results.
+- Cross-check against Scope-F logit decomposition sign; a mismatch is reported as
+  a finding, not relabeled. Candidates checked first: L23H15, L19H16, L26H23;
+  classification applies to the whole inventory incl. random controls.
+- Limitation: anatomy records exist only for the 20 `common_families` prompts
+  (~60 prompts, all test positions), not all 89 families.
+- Implementation: CPU-only addition to `pilot_v2/stage3_analyze.py` after the run;
+  report it in the evidence cards under "contextual output" with the four status
+  values of §1.6. Not yet implemented.
+- Rejected for now (user decision): relation-specificity test (swap `mother` for
+  another relation word in the 178 prompts, compare attention/output per head).
+  Kept here as a future idea only.
+- Plan review status: user has gone through §1.2–§1.6 of the Stage-3 plan with the
+  mentor. Stage-3 results analysis will start in a NEW conversation once the run
+  completes and outputs are verified/downloaded.
+
+### 22 September (late) — review corrections applied; Section-1.5 readout code written (NOT run)
+- External review of the Stage-3 report accepted almost entirely; report .tex corrected in place:
+  signed means vs absolute per-family magnitudes (position additivity, AV interactions,
+  reorder/corruption attention changes), projection != attribution (no "indirect/mediated"
+  claims; hypotheses for Stage 4), self-attenders do read fact spans (L17H17 0.22),
+  L26H31 colon-site answer fraction 12.9%, L18H19 colon-site label insufficient (17 ev/9 fam),
+  count 20 (not 21) with L17H3 as mixed-position, new subsection on the current-token RI
+  partition (current_name_diagnostics.json), Section-1.5 recommendation stated.
+- Section-1.5 readout implemented: `pilot_v2/stage3_readout.py` (prepare/run/analyze),
+  `test_stage3_readout.py` (5 tests incl. tiny-model end-to-end dry run, all pass),
+  `stage3_readout.sbatch`, `submit_stage3_readout.sh`, `build_stage3_readout_bundle.py`,
+  `RUNBOOK_stage3_readout.md`; frozen plan `results/stage3_readout_inputs_v1/` (160 items:
+  L17H1 at query-fact "is"/period, L15H25 at child last token/"is"; 6 conditions x 2 readouts;
+  240 captures + 1,602 readout forwards; 2 GPUs). Policy in READOUT_POLICY. GPU run not done.
+- `git_update_2026-09-22.ps1` at project root stages/commits/pushes the Stage-3 state
+  (adds .gitignore rules for attended_name_events.csv and readout raw records). Not executed.
+
+## (superseded) Stage-3 submission clarifications and conversation transfer
+
+This section supersedes older scheduling instructions below. This file is a
+curated research handoff and source index, not a complete transcript or a copy
+of all data/code/papers. A new assistant must read the current methodology,
+implementation and primary result files relevant to its task before making
+claims. Older interpretations (copying, writer/reader and negative-mover labels)
+remain hypotheses; do not inherit them as established mechanisms.
+
+- Job 916685 failed on s-002 at CUDA initialization, before model loading.
+- User then submitted job 916696: `stage3_v1_gate_s004 --gate-only --nodelist s-004`.
+  Its last observed state in the conversation was PENDING (Resources).
+  Gate-only jobs NEVER continue into the full experiment.
+- User prefers any eligible node rather than pinning s-004. They were instructed
+  to cancel 916696 and submit `stage3_v1` without `--gate-only`, excluding
+  s-002,s-005 at that time. A full run gates every replica and automatically
+  proceeds to measurements in the SAME job only after all gates pass. No separate
+  gate job is required. Cancellation and the new full-run job ID have NOT been
+  confirmed by a pasted scheduler result; do not invent their status.
+- Subsequent user instruction: for FUTURE submissions exclude only s-002;
+  permit s-005. Other users running there do not prove our runtime works, so rely
+  on our gate. The locally rebuilt sbatch/archive still exclude s-002,s-005;
+  use explicit `--exclude s-002` to override, or update defaults before a future
+  release. Do not silently change a submitted job or overwrite its frozen code.
+- The full run includes BOTH sections 1.3 and 1.4 of
+  `חומר כתוב/new_stage_3_experiment.pdf` (source:
+  `Stage3_Head_Level_Characterization_revised.tex`): core profiles plus ALL four
+  mandatory diagnostics (copying/token preference, matched contextual RI,
+  attention/value interventions, repeated-sequence AND retrieval fingerprints).
+  There is no results-review pause between mandatory analyses. Section 1.5
+  optional extensions remain conditional on analysis of the mandatory results.
+- Successful full execution plus automatic CPU integrity/coverage analysis
+  should supply mandatory Stage-3 data when combined with saved Stage-1/2 data.
+  Require `summary.json` with `complete: true`; a scheduler finish alone is not
+  sufficient. Insufficient RI/copy-event support is explicitly reported, not
+  zero-filled. Four hours is the default job limit; interrupted runs can resume
+  with identical code/inputs/GPU count. No successful 7B Stage-3 gate or completed
+  Stage-3 research results have yet been supplied in this conversation.
+- Next action: inspect the actual current job status/logs supplied by the user;
+  resolve any failure, or verify/download completed outputs and analyze them.
+- Handoff maintenance: update at substantive decisions/results, not implicitly
+  after every message. Keep the latest actionable state at the top, distinguish
+  observed outcomes from commands merely suggested, and keep explanations short
+  in Hebrew with English commands/identifiers on separate lines.
+
+## Stage-3 gate failure: job 916685
+
+User submitted the gate; it failed on s-002 during CUDA initialization in
+`torch.cuda.mem_get_info`, before loading weights. No Stage-3 measurements ran.
+Do not label this OOM or assert that the generic CUDA_VISIBLE_DEVICES hint proves
+a mask bug. The worker mask is passed before fresh subprocess startup, matching
+the Stage-2 launcher. Restore default exclusions s-002,s-005 (done locally and
+in rebuilt archive). Retry the existing cluster package with a new gate name
+`stage3_v1_gate_s004 --gate-only --nodelist s-004`; no reupload needed for this
+explicit node selection. Underlying cause remains unconfirmed until the retry.
+
 ## UPDATE 21 September 2026 — Stage-3 implementation and pending GPU gate
 
 - User authorized code, local CPU preparation/tests, README and run instructions;

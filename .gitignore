@@ -57,3 +57,11 @@ results/stage3_v1/analysis/family_effects.npz
 # local virtual environments
 .venv/
 venv/
+
+# Stage 3: 21 MB event table (regenerate: stage3_analyze.py --attended-only) and provisional files
+results/stage3_v1/analysis/attended_name_events.csv
+results/stage3_v1/analysis/*_PROVISIONAL.*
+# Section-1.5 readout raw run state (analysis CSVs are committed)
+results/stage3_readout_v1/readout_records.jsonl.gz
+results/stage3_readout_v1/state.json
+results/stage3_readout_v1/.running.lock

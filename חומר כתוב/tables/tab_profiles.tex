@@ -1,0 +1,38 @@
+\begin{table}[p]
+\centering\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llrrlrrrrl}
+\toprule
+Head & Group & $I_h$ (P) & $I_h^{F}$ & Attention at colon & Ctx.\ out. & Copy & KV & Rep. & Attended-name label \\
+ & & 178 pairs & 178 pairs & Q-mother/Q-child/D-mother/self & $\Delta$ mother & weights & src att. & src argmax & (fraction positive; events/families) \\
+\midrule
+L17H1 & S+ & $+5.70$ & $-0.06$ & 0.05/0.06/0.02/0.04 & $-0.00$ & $+0.01$ & 0.00 & 0.00 & neither (77\%; 3469/20) \\
+L18H19 & S+RI & $+3.07$ & $+3.08$ & 0.13/0.05/0.03/0.00 & $+0.16$ & $+0.12$ & 0.16 & 0.02 & NM (84\%; 646/20) \\
+L27H6 & S+ & $+3.07$ & $+3.06$ & 0.58/0.00/0.05/0.00 & $+2.99$ & $+0.04$ & 0.05 & 0.01 & NM (96\%; 768/20) \\
+L18H18 & S+ & $+2.70$ & $+2.72$ & 0.14/0.03/0.03/0.00 & $+0.11$ & $-0.08$ & 0.27 & 0.06 & neither (73\%; 332/20) \\
+L21H18 & S+ & $+1.70$ & $+1.70$ & 0.60/0.00/0.10/0.00 & $+0.25$ & $+0.11$ & 0.46 & 0.39 & neither (80\%; 1656/20) \\
+L25H17 & S+ & $+1.27$ & $+1.27$ & 0.00/0.00/0.00/0.57 & $+0.15$ & $-0.01$ & 0.01 & 0.00 & neither (43\%; 625/20) \\
+L22H5 & S+RI & $+0.98$ & $+0.98$ & 0.34/0.01/0.08/0.01 & $+0.41$ & $+0.04$ & 0.18 & 0.22 & NM (82\%; 730/20) \\
+L16H21 & S+RI & $+0.92$ & $+0.89$ & 0.01/0.40/0.01/0.00 & $-0.01$ & $-0.02$ & 0.04 & 0.00 & neither (60\%; 551/20) \\
+L16H1 & S+RI & $+0.87$ & $+0.86$ & 0.01/0.36/0.02/0.01 & $-0.00$ & $+0.01$ & 0.28 & 0.45 & neither (50\%; 669/20) \\
+L21H6 & S+ & $+0.70$ & $+0.69$ & 0.29/0.01/0.04/0.00 & $+0.33$ & $+0.35$ & 0.12 & 0.64 & NM (81\%; 858/20) \\
+L15H25 & S+ & $+0.68$ & $+0.17$ & 0.03/0.06/0.02/0.01 & $-0.00$ & $+0.04$ & 0.00 & 0.00 & neither (42\%; 1797/20) \\
+L30H13 & S+ & $+0.63$ & $+0.63$ & 0.02/0.01/0.01/0.19 & $+0.76$ & $-0.03$ & 0.03 & 0.00 & neither (37\%; 917/20) \\
+L21H23 & S+ & $+0.61$ & $+0.60$ & 0.05/0.01/0.02/0.20 & $+0.07$ & $-0.00$ & 0.04 & 0.00 & insuff. (25\%; 20/8) \\
+L17H17 & S+ & $+0.53$ & $+0.51$ & 0.04/0.05/0.03/0.19 & $+0.00$ & $+0.01$ & 0.01 & 0.00 & neither (39\%; 103/19) \\
+L17H24 & S+RI & $+0.43$ & $+0.43$ & 0.13/0.03/0.05/0.02 & $+0.03$ & $+0.18$ & 0.02 & 0.00 & NM (94\%; 1073/20) \\
+L19H22 & S+ & $+0.43$ & $+0.42$ & 0.31/0.06/0.07/0.01 & $+0.07$ & $+0.17$ & 0.04 & 0.01 & neither (78\%; 1127/20) \\
+L14H26 & S+ & $+0.40$ & $+0.01$ & 0.01/0.05/0.00/0.01 & $+0.01$ & $-0.00$ & 0.00 & 0.00 & neither (54\%; 959/20) \\
+L26H23 & S$-$ & $-0.37$ & $-0.37$ & 0.21/0.02/0.03/0.01 & $-0.04$ & $-0.20$ & 0.16 & 0.15 & neither (21\%; 1670/20) \\
+L18H24 & S$-$ & $-0.53$ & $-0.57$ & 0.06/0.06/0.04/0.02 & $+0.00$ & $-0.06$ & 0.02 & 0.00 & neither (34\%; 70/15) \\
+L17H3 & S$-$ & $-0.55$ & $-0.40$ & 0.06/0.10/0.02/0.04 & $+0.00$ & $-0.03$ & 0.08 & 0.00 & neither (44\%; 319/20) \\
+L13H10 & S$-$ & $-0.68$ & $-0.03$ & 0.00/0.01/0.00/0.42 & $+0.00$ & $-0.03$ & 0.00 & 0.00 & neither (43\%; 700/20) \\
+L19H16 & S$-$ & $-0.82$ & $-0.83$ & 0.21/0.04/0.03/0.01 & $-0.04$ & $-0.09$ & 0.55 & 0.36 & neither (23\%; 1906/20) \\
+L23H15 & S$-$ & $-0.95$ & $-0.95$ & 0.51/0.01/0.05/0.00 & $+0.04$ & $+0.09$ & 0.49 & 0.66 & neither (64\%; 2428/20) \\
+L30H18 & S$-$ & $-1.06$ & $-1.06$ & 0.05/0.01/0.11/0.00 & $-0.88$ & $+0.60$ & 0.05 & 0.00 & neither (67\%; 2528/20) \\
+L20H1 & S$-$ & $-1.56$ & $-1.53$ & 0.17/0.05/0.01/0.02 & $-0.09$ & $-0.17$ & 0.02 & 0.00 & neg.\ NM (17\%; 437/20) \\
+\bottomrule
+\end{tabular}
+\caption{Head-profile table for the 25 inventory heads with $|I_h|\ge 0.3$, ordered by Scope-P importance. Group codes: S+ strong positive outside RI; S+RI strong positive RI-selected; S$-$ strong negative. Attention: mean probability mass at the final colon on base prompts (20 common families) on the query-fact mother, the query-fact child, one distractor mother (mean of three) and the colon itself. Ctx.\ out.: contextual output projection $o^h_j W_U$ at the colon, first token of the query mother minus mean of the distractor mothers. Copy: weight copying score on name tokens (self minus mean of other names). KV / Rep.: synthetic retrieval and repeated-sequence fingerprints (attention to the copy source; argmax on the source). Attended-name label under the fixed 80\% rule (NM = name mover; Section~\ref{sec:attended}), with the fraction of events favouring the attended name and the event/family support.}
+\label{tab:profiles}
+\end{table}

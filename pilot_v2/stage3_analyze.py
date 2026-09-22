@@ -27,6 +27,159 @@ def rankcorr(a,b):
     return float(np.corrcoef(a,b)[0,1]) if len(a)>=3 and a.std()>0 and b.std()>0 else None
 
 
+# ---------------------------------------------------------------------------
+# Attended-name mover classification (plan §1.4, "Attended-name mover
+# classification"; added 21-22 September 2026). CPU only; uses the saved core
+# anatomy records: attention argmax and the contextual projection o_j^h W_U over
+# the visible first/last name anchors. Rules fixed before results were seen:
+# label = name mover if the contrast is positive in >= ATTENDED_RULE['label_fraction']
+# of events, negative name mover if negative in >= that fraction; support
+# >= POLICY['min_events'] events and >= POLICY['min_families'] families, otherwise
+# "insufficient" (never "neither"). The label is cross-checked against the sign of
+# the saved 178-pair Scope-F importance; a mismatch is reported, not relabeled.
+ATTENDED_RULE=dict(label_fraction=0.8,anchor_primary='first',others_primary='all_visible_names',
+                   events='core anatomy rows whose attention argmax lies inside a fully visible test-name span',
+                   contrast='o_j^h W_U logit of the attended name anchor minus the mean over the same anchor of the other visible distinct names',
+                   scopeF_near_zero=0.05,candidates_checked_first=['L23H15','L19H16','L26H23'])
+
+
+def attended_name_event(x,ann):
+    """Return one event record if the row's argmax falls on a visible test-name token, else None."""
+    if 'argmax' not in x or 'projection_tokens' not in x:return None
+    ids=ann['ids'];j=x['j'];arg=int(x['argmax'])
+    spans=[]  # (name, role, fact index, query, positions)
+    for f in ann['facts']:
+        for role in ['source','target']:
+            pos=f[role+'_positions']
+            if pos[-1]<=j:spans.append((f[role],role,f['index'],f['query'],pos))
+    hit=[s for s in spans if arg in s[4]]
+    if not hit:return None
+    name,role,fact,query,pos=hit[0]
+    lookup={v:i for i,v in enumerate(x['projection_tokens'])};z=x['projections']['output']['logits']
+    ev=dict(head=x['head'],id=x['id'],family=x['family'],order=x['order'],variant=x['variant'],j=j,
+            site='final' if x['final'] else 'earlier',self_event=arg==j,argmax=arg,
+            argmax_anchor='first' if arg==pos[0] else ('last' if arg==pos[-1] else 'middle'),
+            attended_name=name,attended_role=role,attended_fact_query=bool(query),
+            attended_is_answer=bool(query and role=='target'),dominance=x.get('dominance'),
+            qk_pass=bool(x.get('dominance') is not None and x['dominance']>POLICY['dominance'] and role=='source'),
+            attended_roles=';'.join(sorted({s[1] for s in spans if s[0]==name})))
+    for anchor,ai in [('first',0),('last',-1)]:
+        att=ids[pos[ai]]
+        # Other distinct visible names; a name sharing the attended anchor token is a collision and is excluded.
+        others={}
+        for s in spans:
+            if s[0]==name:continue
+            others.setdefault(s[0],dict(ids=set(),roles=set()));others[s[0]]['ids'].add(ids[s[4][ai]]);others[s[0]]['roles'].add(s[1])
+        for scope in ['all','same_role']:
+            vals=[];collisions=0
+            for oname,o in others.items():
+                if scope=='same_role' and role not in o['roles']:continue
+                tok=[t for t in o['ids'] if t!=att]
+                if len(tok)<len(o['ids']):collisions+=1
+                if tok:vals.append(float(np.mean([z[lookup[t]] for t in tok])))
+            key=f'contrast_{anchor}_{scope}'
+            ev[key]=float(z[lookup[att]]-np.mean(vals)) if vals else None
+            ev[f'others_{anchor}_{scope}']=len(vals);ev[f'collisions_{anchor}_{scope}']=collisions
+    return ev
+
+
+def summarize_attended(events,F_mean,F_promotion,F_suppression,heads,result):
+    """Write per-event and per-head tables; heads = full inventory so unsupported heads are listed."""
+    rule=ATTENDED_RULE;fr=rule['label_fraction'];by=collections.defaultdict(list)
+    for ev in events:by[ev['head']].append(ev)
+    def classify(evs,key):
+        vals=[(e['family'],e[key]) for e in evs if e.get(key) is not None]
+        fams={f for f,v in vals}
+        out=dict(events=len(vals),families=len(fams))
+        if not vals:
+            out.update(positive_fraction=None,negative_fraction=None,mean_contrast=None,family_mean_positive_fraction=None,label='insufficient')
+            return out
+        v=np.array([x[1] for x in vals]);f=np.array([x[0] for x in vals]);fm=family_means(v,f)
+        pos=float(np.mean(v>0));neg=float(np.mean(v<0))
+        supported=len(vals)>=POLICY['min_events'] and len(fams)>=POLICY['min_families']
+        label='insufficient' if not supported else ('name_mover' if pos>=fr else ('negative_name_mover' if neg>=fr else 'neither'))
+        out.update(positive_fraction=pos,negative_fraction=neg,mean_contrast=float(v.mean()),
+                   family_mean_positive_fraction=float(np.mean(fm>0)),label=label)
+        return out
+    rows=[]
+    for h in heads:
+        evs=by.get(h,[]);name=head_name(h)
+        primary=classify(evs,'contrast_first_all')
+        row=dict(head=name,rule=f"{int(fr*100)}% of events; support >= {POLICY['min_events']} events / {POLICY['min_families']} families",
+                 anchor='first',others='all_visible_names',**primary,
+                 self_event_fraction=float(np.mean([e['self_event'] for e in evs])) if evs else None,
+                 final_site_events=sum(e['site']=='final' for e in evs),
+                 answer_name_events=sum(e['attended_is_answer'] for e in evs),
+                 argmax_middle_events=sum(e['argmax_anchor']=='middle' for e in evs))
+        # Sensitivity labels; same rule, different event set or anchor/control population.
+        row['label_last_anchor']=classify(evs,'contrast_last_all')['label']
+        row['label_same_role_controls']=classify(evs,'contrast_first_same_role')['label']
+        row['label_excluding_self']=classify([e for e in evs if not e['self_event']],'contrast_first_all')['label']
+        row['label_final_site_only']=classify([e for e in evs if e['site']=='final'],'contrast_first_all')['label']
+        row['label_base_variant_only']=classify([e for e in evs if e['variant']=='base'],'contrast_first_all')['label']
+        f=F_mean.get(h);row.update(scopeF_importance_178=f,scopeF_promotion=F_promotion.get(h),scopeF_suppression=F_suppression.get(h))
+        if f is None:row['scopeF_cross_check']='unavailable input: no Scope-F mean'
+        elif primary['label']=='insufficient':row['scopeF_cross_check']='not applicable (insufficient support)'
+        elif primary['label']=='neither':row['scopeF_cross_check']='not applicable (no label)'
+        elif abs(f)<rule['scopeF_near_zero']:row['scopeF_cross_check']=f'labelled but |Scope-F| < {rule["scopeF_near_zero"]}: no causal contrast to check'
+        else:
+            expected=f>0 if primary['label']=='name_mover' else f<0
+            row['scopeF_cross_check']='consistent' if expected else 'MISMATCH: label sign and Scope-F sign disagree (reported as a finding)'
+        rows.append(row)
+    table(result/'attended_name_movers.csv',rows)
+    if events:
+        with (result/'attended_name_events.csv').open('w',encoding='utf-8',newline='') as fobj:
+            keys=list(dict.fromkeys(k for e in events for k in e));w=csv.DictWriter(fobj,keys);w.writeheader()
+            for e in events:w.writerow(dict(e,head=head_name(e['head'])))
+    json_write(result/'attended_name_rule.json',dict(rule,min_events=POLICY['min_events'],min_families=POLICY['min_families'],
+               population='core (common-family) anatomy rows only: 20 families x 2 orders x {base,corrupted,reorder,query_change}',
+               status_values=['name_mover','negative_name_mover','neither','insufficient'],
+               note='Descriptive; contextual projection before the shared post-attention norm; not a causal or circuit claim.'))
+    return rows
+
+
+def attended_only(out,inputs):
+    """Standalone CPU pass over an already analysed run: only the attended-name classification is (re)written."""
+    m=json_read(out/'manifest.json');plan=json_read(inputs/'plan.json')
+    if digest(inputs/'plan.json')!=m['input_hash']:raise ValueError('Wrong inputs for this run')
+    if not json_read(out/'summary.json').get('complete'):raise ValueError('Run analysis not complete; run the full analyze first')
+    result=out/'analysis';profiles={r['head']:r for r in csv.DictReader((result/'head_profiles.csv').open(encoding='utf-8'))}
+    F={h:float(profiles[head_name(h)]['stage3_F']) for h in plan['heads']}
+    Fp={h:float(profiles[head_name(h)]['F_promotion']) for h in plan['heads']};Fs={h:float(profiles[head_name(h)]['F_suppression']) for h in plan['heads']}
+    events=[];seen=collections.Counter()
+    for rank,heads in enumerate(m['shards']):
+        base=out/f'replica_{rank}'/'prompts'
+        for path in sorted(base.glob('*.jsonl.gz')):
+            it=iter(read_lines(path));meta=next(it)
+            if not meta['core']:continue
+            if meta['family'] not in plan['common_families']:raise ValueError('Core prompt outside common families: '+meta['id'])
+            seen[rank]+=1;ann=meta['annotation']
+            for x in it:
+                if x['kind']!='anatomy':continue
+                if x['head'] not in heads:raise ValueError('Unexpected head in prompt record')
+                ev=attended_name_event(x,ann)
+                if ev:events.append(ev)
+    expected=len(plan['common_families'])*8
+    for rank in range(len(m['shards'])):
+        if seen[rank]!=expected:raise ValueError(f'Replica {rank}: {seen[rank]} core prompts found, expected {expected}')
+    rows=summarize_attended(events,F,Fp,Fs,plan['heads'],result)
+    cards=(result/'head_cards.md').read_text(encoding='utf-8')
+    marker='\n# Attended-name mover classification (contextual output)\n'
+    if marker in cards:cards=cards[:cards.index(marker)]
+    lines=[marker,'\nRule: '+rows[0]['rule']+'; primary anchor first, controls = other visible distinct names. Cross-check = sign of the 178-pair Scope-F importance.\n']
+    for r in rows:
+        lines.append(f"- {r['head']}: {r['label']} ({r['events']} events, {r['families']} families, positive {r['positive_fraction'] if r['positive_fraction'] is None else round(r['positive_fraction'],3)}); "
+                     f"Scope-F {r['scopeF_importance_178']:+.4f}; cross-check: {r['scopeF_cross_check']}; sensitivity last/same-role/non-self/final/base: "
+                     f"{r['label_last_anchor']}/{r['label_same_role_controls']}/{r['label_excluding_self']}/{r['label_final_site_only']}/{r['label_base_variant_only']}")
+    (result/'head_cards.md').write_text(cards+'\n'.join(lines)+'\n',encoding='utf-8')
+    s=json_read(out/'summary.json');s['attended_name_classification']=dict(events=len(events),heads=len(rows),
+        labels=dict(collections.Counter(r['label'] for r in rows)),
+        mismatches=[r['head'] for r in rows if r['scopeF_cross_check'].startswith('MISMATCH')],
+        file='analysis/attended_name_movers.csv')
+    json_write(out/'summary.json',s)
+    print('ATTENDED-NAME CLASSIFICATION WRITTEN:',s['attended_name_classification'],flush=True)
+
+
 def analyze(out,inputs):
     from stage3_run import validate_inputs,checkpoint_done,pair_filename,CHUNK_SIZE
     plan,pairs,prompts,_=validate_inputs(inputs);m=json_read(out/'manifest.json')
@@ -38,7 +191,7 @@ def analyze(out,inputs):
     F=np.full_like(P,np.nan);promote=F.copy();suppress=F.copy();routing=F.copy();values=F.copy();interaction=F.copy()
     reverse={};position=[];position_counts=collections.Counter();attention=collections.defaultdict(list)
     contextual=collections.defaultdict(list);output=collections.defaultdict(list);synthetic=collections.defaultdict(list)
-    weights=[];final_attention={};ri_counts=collections.Counter();expected_ri=collections.Counter()
+    weights=[];final_attention={};ri_counts=collections.Counter();expected_ri=collections.Counter();attended_events=[]
     all_events=list(read_lines(inputs/'events.jsonl.gz'))
     for ev in all_events:
         for anchor in ev['scores']:expected_ri[(ev['layer']*32+ev['head'],ev['id'],ev['event_id'],anchor)]+=1
@@ -106,6 +259,9 @@ def analyze(out,inputs):
                     continue
                 if x['kind']!='anatomy':raise ValueError('Unknown measurement kind')
                 anatomy_count[(h,x['j'])]+=1
+                if core:
+                    ev=attended_name_event(x,ann)
+                    if ev:attended_events.append(ev)
                 site='final' if x['final'] else 'earlier';key=(h,x['variant'],site)
                 attention[key+('self',)].append((family,x['self_attention']))
                 attention[key+('previous',)].append((family,x['previous_attention']))
@@ -181,6 +337,9 @@ def analyze(out,inputs):
             r=np.stack([reverse[(i,h)] for i in range(len(pairs))]);row['reverse_P_recovery']=describe(r[:,0],families)['mean'];row['reverse_F_recovery']=describe(r[:,1],families)['mean']
         rows.append(row)
     table(result/'head_profiles.csv',rows);table(result/'position_profiles.csv',position)
+    attended={r['head']:r for r in summarize_attended(attended_events,{h:float(describe(F[:,hi],families)['mean']) for hi,h in enumerate(H)},
+              {h:float(describe(promote[:,hi],families)['mean']) for hi,h in enumerate(H)},
+              {h:float(describe(suppress[:,hi],families)['mean']) for hi,h in enumerate(H)},H,result)}
     npz_write(result/'family_effects.npz',heads=H,families=sorted(set(families.tolist())),
               **{k:family_means(v,families) for k,v in dict(scopeP=P,scopeF=F,promotion=promote,suppression=suppress,
                                                           routing=routing,values=values,interaction=interaction).items()})
@@ -244,7 +403,8 @@ def analyze(out,inputs):
     for r in rows:
         h=r['head'];cards.append(f"## {h}\n\nSelection: {r['groups']}. Scope P: {r['stage2_P']:+.5f}; F: {r['stage3_F']:+.5f}. "
             f"Routing: {r['routing_importance']:+.5f}; values: {r['value_importance']:+.5f}; interaction: {r['AV_interaction_importance']:+.5f}. "
-            f"Contextual RI: {r['contextual_RI_status']}.\n\n"
+            f"Contextual RI: {r['contextual_RI_status']}. Attended-name classification: {attended[h]['label']} "
+            f"({attended[h]['events']} events, {attended[h]['families']} families; Scope-F cross-check: {attended[h]['scopeF_cross_check']}).\n\n"
             "Inspect this head's rows in position_profiles, attention_profiles, paired_attention_controls, output_profiles, "
             "copying_weights, contextual_ri and synthetic_profiles before assigning a mechanism. All projections are pre-shared-normalization diagnostics. "
             "Optional Patchscopes/spectral/mediation extensions: not triggered. No circuit or semantic label is inferred automatically.\n")
@@ -252,6 +412,10 @@ def analyze(out,inputs):
     json_write(out/'summary.json',dict(complete=True,heads=len(H),pairs=len(pairs),families=len(set(families)),
                common_position_pairs=int(sum(common)),core_prompts=160,matched_RI_anchor_comparisons=sum(ri_counts.values()),
                missing_support='See contextual_ri.csv and synthetic_support.csv; never encoded as zero.',
+               attended_name_classification=dict(events=len(attended_events),heads=len(attended),
+                   labels=dict(collections.Counter(r['label'] for r in attended.values())),
+                   mismatches=[r['head'] for r in attended.values() if r['scopeF_cross_check'].startswith('MISMATCH')],
+                   file='analysis/attended_name_movers.csv'),
                interpretation='Descriptive discovery results, fixed selected inventory; no significance/type/circuit claims',
                source_corrections='inputs/matched_approximation_error.csv and corrected_median_comparison.json'))
     print('STAGE 3 COMPLETE: integrity and coverage checks passed; CPU summaries written.',flush=True)
@@ -259,4 +423,7 @@ def analyze(out,inputs):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('run',type=Path);p.add_argument('--inputs',type=Path,required=True)
-    a=p.parse_args();analyze(a.run,a.inputs)
+    p.add_argument('--attended-only',action='store_true',help='Only (re)write the attended-name mover classification for an already analysed run')
+    a=p.parse_args()
+    if a.attended_only:attended_only(a.run,a.inputs)
+    else:analyze(a.run,a.inputs)

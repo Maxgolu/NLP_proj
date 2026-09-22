@@ -1,0 +1,3469 @@
+{
+  "policy": {
+    "version": 1,
+    "seed": 20260922,
+    "writers": {
+      "L17H1": {
+        "head": 545,
+        "layer": 17,
+        "sites": [
+          "query_is",
+          "query_period"
+        ]
+      },
+      "L15H25": {
+        "head": 505,
+        "layer": 15,
+        "sites": [
+          "query_child_last",
+          "query_is"
+        ]
+      }
+    },
+    "capture": "output of decoder block <layer> (residual stream after the writer's own layer) at the site position",
+    "injection": "replace the residual at the placeholder token of the readout prompt at the same block output",
+    "placeholder": " x",
+    "readouts": {
+      "identity": {
+        "prefix": "cat -> cat ; 1135 -> 1135 ; hello -> hello ;",
+        "suffix": " ->"
+      },
+      "mother_of": {
+        "prefix": "Fact about a person:",
+        "suffix": "\nQuestion: Who is the mother of this person?\nAnswer:"
+      }
+    },
+    "conditions": [
+      "intact_clean",
+      "head_site",
+      "head_span",
+      "intact_corrupted",
+      "irrelevant"
+    ],
+    "candidates": "first token of \" <name>\" for the query mother, the other candidate mother, the remaining distinct mothers and the queried child (last)",
+    "gate": {
+      "identity_injection_tolerance": 0.02,
+      "self_patch_tolerance": 0.001,
+      "saved_importance_tolerance": 0.05
+    },
+    "population": "20 common discovery families x 2 orders (the 40 common pairs); the 87 validation families are not used"
+  },
+  "items": [
+    {
+      "pair_id": "000/direct/base/0/order0",
+      "family": 0,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 237,
+      "control_j": 258,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Rarnia",
+        "other_candidate": "Dirlna",
+        "other_mothers": [
+          "Kulnra"
+        ],
+        "query_child": "Jarlia"
+      },
+      "saved_site_importance": 0.89697265625
+    },
+    {
+      "pair_id": "000/direct/base/0/order0",
+      "family": 0,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 243,
+      "control_j": 265,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Rarnia",
+        "other_candidate": "Dirlna",
+        "other_mothers": [
+          "Kulnra"
+        ],
+        "query_child": "Jarlia"
+      },
+      "saved_site_importance": 0.577880859375
+    },
+    {
+      "pair_id": "000/direct/base/0/order0",
+      "family": 0,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 242,
+      "control_j": 264,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Rarnia",
+        "other_candidate": "Dirlna",
+        "other_mothers": [
+          "Kulnra"
+        ],
+        "query_child": "Jarlia"
+      },
+      "saved_site_importance": 0.07598876953125
+    },
+    {
+      "pair_id": "000/direct/base/0/order0",
+      "family": 0,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 237,
+      "control_j": 258,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Rarnia",
+        "other_candidate": "Dirlna",
+        "other_mothers": [
+          "Kulnra"
+        ],
+        "query_child": "Jarlia"
+      },
+      "saved_site_importance": -0.0008544921875
+    },
+    {
+      "pair_id": "000/direct/base/0/order1",
+      "family": 0,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 259,
+      "control_j": 239,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Rarnia",
+        "other_candidate": "Dirlna",
+        "other_mothers": [
+          "Kulnra"
+        ],
+        "query_child": "Jarlia"
+      },
+      "saved_site_importance": 0.89111328125
+    },
+    {
+      "pair_id": "000/direct/base/0/order1",
+      "family": 0,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 265,
+      "control_j": 246,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Rarnia",
+        "other_candidate": "Dirlna",
+        "other_mothers": [
+          "Kulnra"
+        ],
+        "query_child": "Jarlia"
+      },
+      "saved_site_importance": 0.279296875
+    },
+    {
+      "pair_id": "000/direct/base/0/order1",
+      "family": 0,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 264,
+      "control_j": 245,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Rarnia",
+        "other_candidate": "Dirlna",
+        "other_mothers": [
+          "Kulnra"
+        ],
+        "query_child": "Jarlia"
+      },
+      "saved_site_importance": 0.325927734375
+    },
+    {
+      "pair_id": "000/direct/base/0/order1",
+      "family": 0,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 259,
+      "control_j": 239,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Rarnia",
+        "other_candidate": "Dirlna",
+        "other_mothers": [
+          "Kulnra"
+        ],
+        "query_child": "Jarlia"
+      },
+      "saved_site_importance": -0.006591796875
+    },
+    {
+      "pair_id": "016/direct/base/0/order0",
+      "family": 16,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 242,
+      "control_j": 263,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Gerdia",
+        "other_candidate": "Zildna",
+        "other_mothers": [
+          "Jintla"
+        ],
+        "query_child": "Burnna"
+      },
+      "saved_site_importance": 1.9899978637695312
+    },
+    {
+      "pair_id": "016/direct/base/0/order0",
+      "family": 16,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 248,
+      "control_j": 270,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Gerdia",
+        "other_candidate": "Zildna",
+        "other_mothers": [
+          "Jintla"
+        ],
+        "query_child": "Burnna"
+      },
+      "saved_site_importance": 3.70037841796875
+    },
+    {
+      "pair_id": "016/direct/base/0/order0",
+      "family": 16,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 247,
+      "control_j": 269,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Gerdia",
+        "other_candidate": "Zildna",
+        "other_mothers": [
+          "Jintla"
+        ],
+        "query_child": "Burnna"
+      },
+      "saved_site_importance": 0.2328033447265625
+    },
+    {
+      "pair_id": "016/direct/base/0/order0",
+      "family": 16,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 242,
+      "control_j": 263,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Gerdia",
+        "other_candidate": "Zildna",
+        "other_mothers": [
+          "Jintla"
+        ],
+        "query_child": "Burnna"
+      },
+      "saved_site_importance": 0.012725830078125
+    },
+    {
+      "pair_id": "016/direct/base/0/order1",
+      "family": 16,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 264,
+      "control_j": 243,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Gerdia",
+        "other_candidate": "Zildna",
+        "other_mothers": [
+          "Jintla"
+        ],
+        "query_child": "Burnna"
+      },
+      "saved_site_importance": 1.0751953125
+    },
+    {
+      "pair_id": "016/direct/base/0/order1",
+      "family": 16,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 270,
+      "control_j": 250,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Gerdia",
+        "other_candidate": "Zildna",
+        "other_mothers": [
+          "Jintla"
+        ],
+        "query_child": "Burnna"
+      },
+      "saved_site_importance": 0.8134765625
+    },
+    {
+      "pair_id": "016/direct/base/0/order1",
+      "family": 16,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 269,
+      "control_j": 249,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Gerdia",
+        "other_candidate": "Zildna",
+        "other_mothers": [
+          "Jintla"
+        ],
+        "query_child": "Burnna"
+      },
+      "saved_site_importance": 0.27734375
+    },
+    {
+      "pair_id": "016/direct/base/0/order1",
+      "family": 16,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 264,
+      "control_j": 243,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Gerdia",
+        "other_candidate": "Zildna",
+        "other_mothers": [
+          "Jintla"
+        ],
+        "query_child": "Burnna"
+      },
+      "saved_site_importance": 0.0068359375
+    },
+    {
+      "pair_id": "032/direct/base/0/order0",
+      "family": 32,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 249,
+      "control_j": 270,
+      "first_diff": 246,
+      "names": {
+        "query_mother": "Fasmra",
+        "other_candidate": "Susmna",
+        "other_mothers": [
+          "Wantra"
+        ],
+        "query_child": "Kerla"
+      },
+      "saved_site_importance": 2.141693115234375
+    },
+    {
+      "pair_id": "032/direct/base/0/order0",
+      "family": 32,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 255,
+      "control_j": 276,
+      "first_diff": 246,
+      "names": {
+        "query_mother": "Fasmra",
+        "other_candidate": "Susmna",
+        "other_mothers": [
+          "Wantra"
+        ],
+        "query_child": "Kerla"
+      },
+      "saved_site_importance": 2.289947509765625
+    },
+    {
+      "pair_id": "032/direct/base/0/order0",
+      "family": 32,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 254,
+      "control_j": 275,
+      "first_diff": 246,
+      "names": {
+        "query_mother": "Fasmra",
+        "other_candidate": "Susmna",
+        "other_mothers": [
+          "Wantra"
+        ],
+        "query_child": "Kerla"
+      },
+      "saved_site_importance": 0.271759033203125
+    },
+    {
+      "pair_id": "032/direct/base/0/order0",
+      "family": 32,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 249,
+      "control_j": 270,
+      "first_diff": 246,
+      "names": {
+        "query_mother": "Fasmra",
+        "other_candidate": "Susmna",
+        "other_mothers": [
+          "Wantra"
+        ],
+        "query_child": "Kerla"
+      },
+      "saved_site_importance": -0.004150390625
+    },
+    {
+      "pair_id": "032/direct/base/0/order1",
+      "family": 32,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 270,
+      "control_j": 248,
+      "first_diff": 245,
+      "names": {
+        "query_mother": "Fasmra",
+        "other_candidate": "Susmna",
+        "other_mothers": [
+          "Wantra"
+        ],
+        "query_child": "Kerla"
+      },
+      "saved_site_importance": 1.429931640625
+    },
+    {
+      "pair_id": "032/direct/base/0/order1",
+      "family": 32,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 276,
+      "control_j": 254,
+      "first_diff": 245,
+      "names": {
+        "query_mother": "Fasmra",
+        "other_candidate": "Susmna",
+        "other_mothers": [
+          "Wantra"
+        ],
+        "query_child": "Kerla"
+      },
+      "saved_site_importance": 0.46875
+    },
+    {
+      "pair_id": "032/direct/base/0/order1",
+      "family": 32,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 275,
+      "control_j": 253,
+      "first_diff": 245,
+      "names": {
+        "query_mother": "Fasmra",
+        "other_candidate": "Susmna",
+        "other_mothers": [
+          "Wantra"
+        ],
+        "query_child": "Kerla"
+      },
+      "saved_site_importance": 0.321533203125
+    },
+    {
+      "pair_id": "032/direct/base/0/order1",
+      "family": 32,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 270,
+      "control_j": 248,
+      "first_diff": 245,
+      "names": {
+        "query_mother": "Fasmra",
+        "other_candidate": "Susmna",
+        "other_mothers": [
+          "Wantra"
+        ],
+        "query_child": "Kerla"
+      },
+      "saved_site_importance": -0.048828125
+    },
+    {
+      "pair_id": "048/direct/base/0/order0",
+      "family": 48,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 242,
+      "control_j": 262,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Dondna",
+        "other_candidate": "Jirdra",
+        "other_mothers": [
+          "Bestla"
+        ],
+        "query_child": "Pulda"
+      },
+      "saved_site_importance": 2.4720458984375
+    },
+    {
+      "pair_id": "048/direct/base/0/order0",
+      "family": 48,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 248,
+      "control_j": 268,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Dondna",
+        "other_candidate": "Jirdra",
+        "other_mothers": [
+          "Bestla"
+        ],
+        "query_child": "Pulda"
+      },
+      "saved_site_importance": 1.208740234375
+    },
+    {
+      "pair_id": "048/direct/base/0/order0",
+      "family": 48,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 247,
+      "control_j": 267,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Dondna",
+        "other_candidate": "Jirdra",
+        "other_mothers": [
+          "Bestla"
+        ],
+        "query_child": "Pulda"
+      },
+      "saved_site_importance": 0.4094696044921875
+    },
+    {
+      "pair_id": "048/direct/base/0/order0",
+      "family": 48,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 242,
+      "control_j": 262,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Dondna",
+        "other_candidate": "Jirdra",
+        "other_mothers": [
+          "Bestla"
+        ],
+        "query_child": "Pulda"
+      },
+      "saved_site_importance": 0.0093994140625
+    },
+    {
+      "pair_id": "048/direct/base/0/order1",
+      "family": 48,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 262,
+      "control_j": 242,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Dondna",
+        "other_candidate": "Jirdra",
+        "other_mothers": [
+          "Bestla"
+        ],
+        "query_child": "Pulda"
+      },
+      "saved_site_importance": 0.5028076171875
+    },
+    {
+      "pair_id": "048/direct/base/0/order1",
+      "family": 48,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 268,
+      "control_j": 248,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Dondna",
+        "other_candidate": "Jirdra",
+        "other_mothers": [
+          "Bestla"
+        ],
+        "query_child": "Pulda"
+      },
+      "saved_site_importance": 0.4307861328125
+    },
+    {
+      "pair_id": "048/direct/base/0/order1",
+      "family": 48,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 267,
+      "control_j": 247,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Dondna",
+        "other_candidate": "Jirdra",
+        "other_mothers": [
+          "Bestla"
+        ],
+        "query_child": "Pulda"
+      },
+      "saved_site_importance": 0.2000732421875
+    },
+    {
+      "pair_id": "048/direct/base/0/order1",
+      "family": 48,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 262,
+      "control_j": 242,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Dondna",
+        "other_candidate": "Jirdra",
+        "other_mothers": [
+          "Bestla"
+        ],
+        "query_child": "Pulda"
+      },
+      "saved_site_importance": 0.020538330078125
+    },
+    {
+      "pair_id": "056/direct/base/0/order0",
+      "family": 56,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 245,
+      "control_j": 264,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Meldna",
+        "other_candidate": "Nulma",
+        "other_mothers": [
+          "Lelta"
+        ],
+        "query_child": "Bista"
+      },
+      "saved_site_importance": 0.63275146484375
+    },
+    {
+      "pair_id": "056/direct/base/0/order0",
+      "family": 56,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 251,
+      "control_j": 270,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Meldna",
+        "other_candidate": "Nulma",
+        "other_mothers": [
+          "Lelta"
+        ],
+        "query_child": "Bista"
+      },
+      "saved_site_importance": 1.892974853515625
+    },
+    {
+      "pair_id": "056/direct/base/0/order0",
+      "family": 56,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 250,
+      "control_j": 269,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Meldna",
+        "other_candidate": "Nulma",
+        "other_mothers": [
+          "Lelta"
+        ],
+        "query_child": "Bista"
+      },
+      "saved_site_importance": 0.284149169921875
+    },
+    {
+      "pair_id": "056/direct/base/0/order0",
+      "family": 56,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 245,
+      "control_j": 264,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Meldna",
+        "other_candidate": "Nulma",
+        "other_mothers": [
+          "Lelta"
+        ],
+        "query_child": "Bista"
+      },
+      "saved_site_importance": 0.009979248046875
+    },
+    {
+      "pair_id": "056/direct/base/0/order1",
+      "family": 56,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 264,
+      "control_j": 245,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Meldna",
+        "other_candidate": "Nulma",
+        "other_mothers": [
+          "Lelta"
+        ],
+        "query_child": "Bista"
+      },
+      "saved_site_importance": 1.804443359375
+    },
+    {
+      "pair_id": "056/direct/base/0/order1",
+      "family": 56,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 270,
+      "control_j": 251,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Meldna",
+        "other_candidate": "Nulma",
+        "other_mothers": [
+          "Lelta"
+        ],
+        "query_child": "Bista"
+      },
+      "saved_site_importance": 0.12109375
+    },
+    {
+      "pair_id": "056/direct/base/0/order1",
+      "family": 56,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 269,
+      "control_j": 250,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Meldna",
+        "other_candidate": "Nulma",
+        "other_mothers": [
+          "Lelta"
+        ],
+        "query_child": "Bista"
+      },
+      "saved_site_importance": 0.170166015625
+    },
+    {
+      "pair_id": "056/direct/base/0/order1",
+      "family": 56,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 264,
+      "control_j": 245,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Meldna",
+        "other_candidate": "Nulma",
+        "other_mothers": [
+          "Lelta"
+        ],
+        "query_child": "Bista"
+      },
+      "saved_site_importance": 0.029541015625
+    },
+    {
+      "pair_id": "064/direct/base/0/order0",
+      "family": 64,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 239,
+      "control_j": 260,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Tendna",
+        "other_candidate": "Nasmra",
+        "other_mothers": [
+          "Pelmla"
+        ],
+        "query_child": "Folna"
+      },
+      "saved_site_importance": 1.418212890625
+    },
+    {
+      "pair_id": "064/direct/base/0/order0",
+      "family": 64,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 245,
+      "control_j": 267,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Tendna",
+        "other_candidate": "Nasmra",
+        "other_mothers": [
+          "Pelmla"
+        ],
+        "query_child": "Folna"
+      },
+      "saved_site_importance": 1.210693359375
+    },
+    {
+      "pair_id": "064/direct/base/0/order0",
+      "family": 64,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 244,
+      "control_j": 266,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Tendna",
+        "other_candidate": "Nasmra",
+        "other_mothers": [
+          "Pelmla"
+        ],
+        "query_child": "Folna"
+      },
+      "saved_site_importance": 0.40380859375
+    },
+    {
+      "pair_id": "064/direct/base/0/order0",
+      "family": 64,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 239,
+      "control_j": 260,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Tendna",
+        "other_candidate": "Nasmra",
+        "other_mothers": [
+          "Pelmla"
+        ],
+        "query_child": "Folna"
+      },
+      "saved_site_importance": 0.013671875
+    },
+    {
+      "pair_id": "064/direct/base/0/order1",
+      "family": 64,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 261,
+      "control_j": 240,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Tendna",
+        "other_candidate": "Nasmra",
+        "other_mothers": [
+          "Pelmla"
+        ],
+        "query_child": "Folna"
+      },
+      "saved_site_importance": 0.677978515625
+    },
+    {
+      "pair_id": "064/direct/base/0/order1",
+      "family": 64,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 267,
+      "control_j": 247,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Tendna",
+        "other_candidate": "Nasmra",
+        "other_mothers": [
+          "Pelmla"
+        ],
+        "query_child": "Folna"
+      },
+      "saved_site_importance": 1.0625
+    },
+    {
+      "pair_id": "064/direct/base/0/order1",
+      "family": 64,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 266,
+      "control_j": 246,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Tendna",
+        "other_candidate": "Nasmra",
+        "other_mothers": [
+          "Pelmla"
+        ],
+        "query_child": "Folna"
+      },
+      "saved_site_importance": 0.138427734375
+    },
+    {
+      "pair_id": "064/direct/base/0/order1",
+      "family": 64,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 261,
+      "control_j": 240,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Tendna",
+        "other_candidate": "Nasmra",
+        "other_mothers": [
+          "Pelmla"
+        ],
+        "query_child": "Folna"
+      },
+      "saved_site_importance": 0.046875
+    },
+    {
+      "pair_id": "082/direct/base/0/order0",
+      "family": 82,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 237,
+      "control_j": 258,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Duldna",
+        "other_candidate": "Wulna",
+        "other_mothers": [
+          "Diltna"
+        ],
+        "query_child": "Hernia"
+      },
+      "saved_site_importance": 1.5888671875
+    },
+    {
+      "pair_id": "082/direct/base/0/order0",
+      "family": 82,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 243,
+      "control_j": 265,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Duldna",
+        "other_candidate": "Wulna",
+        "other_mothers": [
+          "Diltna"
+        ],
+        "query_child": "Hernia"
+      },
+      "saved_site_importance": 3.25634765625
+    },
+    {
+      "pair_id": "082/direct/base/0/order0",
+      "family": 82,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 242,
+      "control_j": 264,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Duldna",
+        "other_candidate": "Wulna",
+        "other_mothers": [
+          "Diltna"
+        ],
+        "query_child": "Hernia"
+      },
+      "saved_site_importance": 0.518310546875
+    },
+    {
+      "pair_id": "082/direct/base/0/order0",
+      "family": 82,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 237,
+      "control_j": 258,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Duldna",
+        "other_candidate": "Wulna",
+        "other_mothers": [
+          "Diltna"
+        ],
+        "query_child": "Hernia"
+      },
+      "saved_site_importance": 0.011962890625
+    },
+    {
+      "pair_id": "082/direct/base/0/order1",
+      "family": 82,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 259,
+      "control_j": 238,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Duldna",
+        "other_candidate": "Wulna",
+        "other_mothers": [
+          "Diltna"
+        ],
+        "query_child": "Hernia"
+      },
+      "saved_site_importance": 0.32958984375
+    },
+    {
+      "pair_id": "082/direct/base/0/order1",
+      "family": 82,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 265,
+      "control_j": 245,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Duldna",
+        "other_candidate": "Wulna",
+        "other_mothers": [
+          "Diltna"
+        ],
+        "query_child": "Hernia"
+      },
+      "saved_site_importance": 0.22088623046875
+    },
+    {
+      "pair_id": "082/direct/base/0/order1",
+      "family": 82,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 264,
+      "control_j": 244,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Duldna",
+        "other_candidate": "Wulna",
+        "other_mothers": [
+          "Diltna"
+        ],
+        "query_child": "Hernia"
+      },
+      "saved_site_importance": 0.1258544921875
+    },
+    {
+      "pair_id": "082/direct/base/0/order1",
+      "family": 82,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 259,
+      "control_j": 238,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Duldna",
+        "other_candidate": "Wulna",
+        "other_mothers": [
+          "Diltna"
+        ],
+        "query_child": "Hernia"
+      },
+      "saved_site_importance": -0.0003662109375
+    },
+    {
+      "pair_id": "096/direct/base/0/order0",
+      "family": 96,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 238,
+      "control_j": 260,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Juntia",
+        "other_candidate": "Helnna",
+        "other_mothers": [
+          "Nuldna"
+        ],
+        "query_child": "Rastra"
+      },
+      "saved_site_importance": 1.4725799560546875
+    },
+    {
+      "pair_id": "096/direct/base/0/order0",
+      "family": 96,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 244,
+      "control_j": 267,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Juntia",
+        "other_candidate": "Helnna",
+        "other_mothers": [
+          "Nuldna"
+        ],
+        "query_child": "Rastra"
+      },
+      "saved_site_importance": 4.8890228271484375
+    },
+    {
+      "pair_id": "096/direct/base/0/order0",
+      "family": 96,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 243,
+      "control_j": 266,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Juntia",
+        "other_candidate": "Helnna",
+        "other_mothers": [
+          "Nuldna"
+        ],
+        "query_child": "Rastra"
+      },
+      "saved_site_importance": 0.4808807373046875
+    },
+    {
+      "pair_id": "096/direct/base/0/order0",
+      "family": 96,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 238,
+      "control_j": 260,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Juntia",
+        "other_candidate": "Helnna",
+        "other_mothers": [
+          "Nuldna"
+        ],
+        "query_child": "Rastra"
+      },
+      "saved_site_importance": -0.02093505859375
+    },
+    {
+      "pair_id": "096/direct/base/0/order1",
+      "family": 96,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 261,
+      "control_j": 239,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Juntia",
+        "other_candidate": "Helnna",
+        "other_mothers": [
+          "Nuldna"
+        ],
+        "query_child": "Rastra"
+      },
+      "saved_site_importance": 1.921630859375
+    },
+    {
+      "pair_id": "096/direct/base/0/order1",
+      "family": 96,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 267,
+      "control_j": 246,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Juntia",
+        "other_candidate": "Helnna",
+        "other_mothers": [
+          "Nuldna"
+        ],
+        "query_child": "Rastra"
+      },
+      "saved_site_importance": 1.060546875
+    },
+    {
+      "pair_id": "096/direct/base/0/order1",
+      "family": 96,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 266,
+      "control_j": 245,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Juntia",
+        "other_candidate": "Helnna",
+        "other_mothers": [
+          "Nuldna"
+        ],
+        "query_child": "Rastra"
+      },
+      "saved_site_importance": 0.933837890625
+    },
+    {
+      "pair_id": "096/direct/base/0/order1",
+      "family": 96,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 261,
+      "control_j": 239,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Juntia",
+        "other_candidate": "Helnna",
+        "other_mothers": [
+          "Nuldna"
+        ],
+        "query_child": "Rastra"
+      },
+      "saved_site_importance": 0.036376953125
+    },
+    {
+      "pair_id": "098/direct/base/0/order0",
+      "family": 98,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 240,
+      "control_j": 262,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Zirlla",
+        "other_candidate": "Virlra",
+        "other_mothers": [
+          "Zustra"
+        ],
+        "query_child": "Dendna"
+      },
+      "saved_site_importance": 2.0623779296875
+    },
+    {
+      "pair_id": "098/direct/base/0/order0",
+      "family": 98,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 247,
+      "control_j": 269,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Zirlla",
+        "other_candidate": "Virlra",
+        "other_mothers": [
+          "Zustra"
+        ],
+        "query_child": "Dendna"
+      },
+      "saved_site_importance": 2.4395751953125
+    },
+    {
+      "pair_id": "098/direct/base/0/order0",
+      "family": 98,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 246,
+      "control_j": 268,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Zirlla",
+        "other_candidate": "Virlra",
+        "other_mothers": [
+          "Zustra"
+        ],
+        "query_child": "Dendna"
+      },
+      "saved_site_importance": 0.329498291015625
+    },
+    {
+      "pair_id": "098/direct/base/0/order0",
+      "family": 98,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 240,
+      "control_j": 262,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Zirlla",
+        "other_candidate": "Virlra",
+        "other_mothers": [
+          "Zustra"
+        ],
+        "query_child": "Dendna"
+      },
+      "saved_site_importance": 0.016357421875
+    },
+    {
+      "pair_id": "098/direct/base/0/order1",
+      "family": 98,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 262,
+      "control_j": 240,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Zirlla",
+        "other_candidate": "Virlra",
+        "other_mothers": [
+          "Zustra"
+        ],
+        "query_child": "Dendna"
+      },
+      "saved_site_importance": 2.7120361328125
+    },
+    {
+      "pair_id": "098/direct/base/0/order1",
+      "family": 98,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 269,
+      "control_j": 247,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Zirlla",
+        "other_candidate": "Virlra",
+        "other_mothers": [
+          "Zustra"
+        ],
+        "query_child": "Dendna"
+      },
+      "saved_site_importance": 1.064697265625
+    },
+    {
+      "pair_id": "098/direct/base/0/order1",
+      "family": 98,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 268,
+      "control_j": 246,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Zirlla",
+        "other_candidate": "Virlra",
+        "other_mothers": [
+          "Zustra"
+        ],
+        "query_child": "Dendna"
+      },
+      "saved_site_importance": 0.6368408203125
+    },
+    {
+      "pair_id": "098/direct/base/0/order1",
+      "family": 98,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 262,
+      "control_j": 240,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Zirlla",
+        "other_candidate": "Virlra",
+        "other_mothers": [
+          "Zustra"
+        ],
+        "query_child": "Dendna"
+      },
+      "saved_site_importance": -0.0594482421875
+    },
+    {
+      "pair_id": "102/direct/base/0/order0",
+      "family": 102,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 239,
+      "control_j": 259,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Palnra",
+        "other_candidate": "Wornna",
+        "other_mothers": [
+          "Zastra"
+        ],
+        "query_child": "Vistra"
+      },
+      "saved_site_importance": 2.2127532958984375
+    },
+    {
+      "pair_id": "102/direct/base/0/order0",
+      "family": 102,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 245,
+      "control_j": 265,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Palnra",
+        "other_candidate": "Wornna",
+        "other_mothers": [
+          "Zastra"
+        ],
+        "query_child": "Vistra"
+      },
+      "saved_site_importance": 1.9915008544921875
+    },
+    {
+      "pair_id": "102/direct/base/0/order0",
+      "family": 102,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 244,
+      "control_j": 264,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Palnra",
+        "other_candidate": "Wornna",
+        "other_mothers": [
+          "Zastra"
+        ],
+        "query_child": "Vistra"
+      },
+      "saved_site_importance": 0.2811422348022461
+    },
+    {
+      "pair_id": "102/direct/base/0/order0",
+      "family": 102,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 239,
+      "control_j": 259,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Palnra",
+        "other_candidate": "Wornna",
+        "other_mothers": [
+          "Zastra"
+        ],
+        "query_child": "Vistra"
+      },
+      "saved_site_importance": 0.0256500244140625
+    },
+    {
+      "pair_id": "102/direct/base/0/order1",
+      "family": 102,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 259,
+      "control_j": 240,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Palnra",
+        "other_candidate": "Wornna",
+        "other_mothers": [
+          "Zastra"
+        ],
+        "query_child": "Vistra"
+      },
+      "saved_site_importance": 3.015045166015625
+    },
+    {
+      "pair_id": "102/direct/base/0/order1",
+      "family": 102,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 265,
+      "control_j": 246,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Palnra",
+        "other_candidate": "Wornna",
+        "other_mothers": [
+          "Zastra"
+        ],
+        "query_child": "Vistra"
+      },
+      "saved_site_importance": 0.431640625
+    },
+    {
+      "pair_id": "102/direct/base/0/order1",
+      "family": 102,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 264,
+      "control_j": 245,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Palnra",
+        "other_candidate": "Wornna",
+        "other_mothers": [
+          "Zastra"
+        ],
+        "query_child": "Vistra"
+      },
+      "saved_site_importance": 0.431884765625
+    },
+    {
+      "pair_id": "102/direct/base/0/order1",
+      "family": 102,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 259,
+      "control_j": 240,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Palnra",
+        "other_candidate": "Wornna",
+        "other_mothers": [
+          "Zastra"
+        ],
+        "query_child": "Vistra"
+      },
+      "saved_site_importance": 0.0322265625
+    },
+    {
+      "pair_id": "116/direct/base/0/order0",
+      "family": 116,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 242,
+      "control_j": 263,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Bostia",
+        "other_candidate": "Tintla",
+        "other_mothers": [
+          "Hastia"
+        ],
+        "query_child": "Nirnia"
+      },
+      "saved_site_importance": 3.4749755859375
+    },
+    {
+      "pair_id": "116/direct/base/0/order0",
+      "family": 116,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 248,
+      "control_j": 269,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Bostia",
+        "other_candidate": "Tintla",
+        "other_mothers": [
+          "Hastia"
+        ],
+        "query_child": "Nirnia"
+      },
+      "saved_site_importance": 1.9969482421875
+    },
+    {
+      "pair_id": "116/direct/base/0/order0",
+      "family": 116,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 247,
+      "control_j": 268,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Bostia",
+        "other_candidate": "Tintla",
+        "other_mothers": [
+          "Hastia"
+        ],
+        "query_child": "Nirnia"
+      },
+      "saved_site_importance": 0.7017822265625
+    },
+    {
+      "pair_id": "116/direct/base/0/order0",
+      "family": 116,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 242,
+      "control_j": 263,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Bostia",
+        "other_candidate": "Tintla",
+        "other_mothers": [
+          "Hastia"
+        ],
+        "query_child": "Nirnia"
+      },
+      "saved_site_importance": 0.0030517578125
+    },
+    {
+      "pair_id": "116/direct/base/0/order1",
+      "family": 116,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 263,
+      "control_j": 243,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Bostia",
+        "other_candidate": "Tintla",
+        "other_mothers": [
+          "Hastia"
+        ],
+        "query_child": "Nirnia"
+      },
+      "saved_site_importance": 1.834716796875
+    },
+    {
+      "pair_id": "116/direct/base/0/order1",
+      "family": 116,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 269,
+      "control_j": 249,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Bostia",
+        "other_candidate": "Tintla",
+        "other_mothers": [
+          "Hastia"
+        ],
+        "query_child": "Nirnia"
+      },
+      "saved_site_importance": 0.7939453125
+    },
+    {
+      "pair_id": "116/direct/base/0/order1",
+      "family": 116,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 268,
+      "control_j": 248,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Bostia",
+        "other_candidate": "Tintla",
+        "other_mothers": [
+          "Hastia"
+        ],
+        "query_child": "Nirnia"
+      },
+      "saved_site_importance": 1.0302734375
+    },
+    {
+      "pair_id": "116/direct/base/0/order1",
+      "family": 116,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 263,
+      "control_j": 243,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Bostia",
+        "other_candidate": "Tintla",
+        "other_mothers": [
+          "Hastia"
+        ],
+        "query_child": "Nirnia"
+      },
+      "saved_site_importance": 0.04052734375
+    },
+    {
+      "pair_id": "130/direct/base/0/order0",
+      "family": 130,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 239,
+      "control_j": 259,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Pismia",
+        "other_candidate": "Masmia",
+        "other_mothers": [
+          "Dundla"
+        ],
+        "query_child": "Hantra"
+      },
+      "saved_site_importance": 2.399169921875
+    },
+    {
+      "pair_id": "130/direct/base/0/order0",
+      "family": 130,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 245,
+      "control_j": 265,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Pismia",
+        "other_candidate": "Masmia",
+        "other_mothers": [
+          "Dundla"
+        ],
+        "query_child": "Hantra"
+      },
+      "saved_site_importance": 0.767822265625
+    },
+    {
+      "pair_id": "130/direct/base/0/order0",
+      "family": 130,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 244,
+      "control_j": 264,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Pismia",
+        "other_candidate": "Masmia",
+        "other_mothers": [
+          "Dundla"
+        ],
+        "query_child": "Hantra"
+      },
+      "saved_site_importance": 0.134521484375
+    },
+    {
+      "pair_id": "130/direct/base/0/order0",
+      "family": 130,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 239,
+      "control_j": 259,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Pismia",
+        "other_candidate": "Masmia",
+        "other_mothers": [
+          "Dundla"
+        ],
+        "query_child": "Hantra"
+      },
+      "saved_site_importance": 0.01025390625
+    },
+    {
+      "pair_id": "130/direct/base/0/order1",
+      "family": 130,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 259,
+      "control_j": 239,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Pismia",
+        "other_candidate": "Masmia",
+        "other_mothers": [
+          "Dundla"
+        ],
+        "query_child": "Hantra"
+      },
+      "saved_site_importance": 1.804412841796875
+    },
+    {
+      "pair_id": "130/direct/base/0/order1",
+      "family": 130,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 265,
+      "control_j": 245,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Pismia",
+        "other_candidate": "Masmia",
+        "other_mothers": [
+          "Dundla"
+        ],
+        "query_child": "Hantra"
+      },
+      "saved_site_importance": 0.248199462890625
+    },
+    {
+      "pair_id": "130/direct/base/0/order1",
+      "family": 130,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 264,
+      "control_j": 244,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Pismia",
+        "other_candidate": "Masmia",
+        "other_mothers": [
+          "Dundla"
+        ],
+        "query_child": "Hantra"
+      },
+      "saved_site_importance": 0.216796875
+    },
+    {
+      "pair_id": "130/direct/base/0/order1",
+      "family": 130,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 259,
+      "control_j": 239,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Pismia",
+        "other_candidate": "Masmia",
+        "other_mothers": [
+          "Dundla"
+        ],
+        "query_child": "Hantra"
+      },
+      "saved_site_importance": -0.02642822265625
+    },
+    {
+      "pair_id": "150/direct/base/0/order0",
+      "family": 150,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 237,
+      "control_j": 257,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Dardla",
+        "other_candidate": "Mirvra",
+        "other_mothers": [
+          "Nestla"
+        ],
+        "query_child": "Pondia"
+      },
+      "saved_site_importance": 0.65814208984375
+    },
+    {
+      "pair_id": "150/direct/base/0/order0",
+      "family": 150,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 243,
+      "control_j": 263,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Dardla",
+        "other_candidate": "Mirvra",
+        "other_mothers": [
+          "Nestla"
+        ],
+        "query_child": "Pondia"
+      },
+      "saved_site_importance": 2.07757568359375
+    },
+    {
+      "pair_id": "150/direct/base/0/order0",
+      "family": 150,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 242,
+      "control_j": 262,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Dardla",
+        "other_candidate": "Mirvra",
+        "other_mothers": [
+          "Nestla"
+        ],
+        "query_child": "Pondia"
+      },
+      "saved_site_importance": 0.31427001953125
+    },
+    {
+      "pair_id": "150/direct/base/0/order0",
+      "family": 150,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 237,
+      "control_j": 257,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Dardla",
+        "other_candidate": "Mirvra",
+        "other_mothers": [
+          "Nestla"
+        ],
+        "query_child": "Pondia"
+      },
+      "saved_site_importance": 0.0240478515625
+    },
+    {
+      "pair_id": "150/direct/base/0/order1",
+      "family": 150,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 257,
+      "control_j": 237,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Dardla",
+        "other_candidate": "Mirvra",
+        "other_mothers": [
+          "Nestla"
+        ],
+        "query_child": "Pondia"
+      },
+      "saved_site_importance": 0.45361328125
+    },
+    {
+      "pair_id": "150/direct/base/0/order1",
+      "family": 150,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 263,
+      "control_j": 243,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Dardla",
+        "other_candidate": "Mirvra",
+        "other_mothers": [
+          "Nestla"
+        ],
+        "query_child": "Pondia"
+      },
+      "saved_site_importance": 0.40380859375
+    },
+    {
+      "pair_id": "150/direct/base/0/order1",
+      "family": 150,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 262,
+      "control_j": 242,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Dardla",
+        "other_candidate": "Mirvra",
+        "other_mothers": [
+          "Nestla"
+        ],
+        "query_child": "Pondia"
+      },
+      "saved_site_importance": 0.18310546875
+    },
+    {
+      "pair_id": "150/direct/base/0/order1",
+      "family": 150,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 257,
+      "control_j": 237,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Dardla",
+        "other_candidate": "Mirvra",
+        "other_mothers": [
+          "Nestla"
+        ],
+        "query_child": "Pondia"
+      },
+      "saved_site_importance": 0.0078125
+    },
+    {
+      "pair_id": "154/direct/base/0/order0",
+      "family": 154,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 238,
+      "control_j": 257,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Horlra",
+        "other_candidate": "Vildra",
+        "other_mothers": [
+          "Valna"
+        ],
+        "query_child": "Destna"
+      },
+      "saved_site_importance": 1.7646484375
+    },
+    {
+      "pair_id": "154/direct/base/0/order0",
+      "family": 154,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 244,
+      "control_j": 263,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Horlra",
+        "other_candidate": "Vildra",
+        "other_mothers": [
+          "Valna"
+        ],
+        "query_child": "Destna"
+      },
+      "saved_site_importance": 3.51123046875
+    },
+    {
+      "pair_id": "154/direct/base/0/order0",
+      "family": 154,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 243,
+      "control_j": 262,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Horlra",
+        "other_candidate": "Vildra",
+        "other_mothers": [
+          "Valna"
+        ],
+        "query_child": "Destna"
+      },
+      "saved_site_importance": 0.496337890625
+    },
+    {
+      "pair_id": "154/direct/base/0/order0",
+      "family": 154,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 238,
+      "control_j": 257,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Horlra",
+        "other_candidate": "Vildra",
+        "other_mothers": [
+          "Valna"
+        ],
+        "query_child": "Destna"
+      },
+      "saved_site_importance": 0.0361328125
+    },
+    {
+      "pair_id": "154/direct/base/0/order1",
+      "family": 154,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 257,
+      "control_j": 237,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Horlra",
+        "other_candidate": "Vildra",
+        "other_mothers": [
+          "Valna"
+        ],
+        "query_child": "Destna"
+      },
+      "saved_site_importance": 1.388427734375
+    },
+    {
+      "pair_id": "154/direct/base/0/order1",
+      "family": 154,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 263,
+      "control_j": 243,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Horlra",
+        "other_candidate": "Vildra",
+        "other_mothers": [
+          "Valna"
+        ],
+        "query_child": "Destna"
+      },
+      "saved_site_importance": 0.43701171875
+    },
+    {
+      "pair_id": "154/direct/base/0/order1",
+      "family": 154,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 262,
+      "control_j": 242,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Horlra",
+        "other_candidate": "Vildra",
+        "other_mothers": [
+          "Valna"
+        ],
+        "query_child": "Destna"
+      },
+      "saved_site_importance": 1.017333984375
+    },
+    {
+      "pair_id": "154/direct/base/0/order1",
+      "family": 154,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 257,
+      "control_j": 237,
+      "first_diff": 234,
+      "names": {
+        "query_mother": "Horlra",
+        "other_candidate": "Vildra",
+        "other_mothers": [
+          "Valna"
+        ],
+        "query_child": "Destna"
+      },
+      "saved_site_importance": -0.0430908203125
+    },
+    {
+      "pair_id": "162/direct/base/0/order0",
+      "family": 162,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 240,
+      "control_j": 260,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Lulda",
+        "other_candidate": "Hirdra",
+        "other_mothers": [
+          "Kuntra"
+        ],
+        "query_child": "Durlla"
+      },
+      "saved_site_importance": 2.2919921875
+    },
+    {
+      "pair_id": "162/direct/base/0/order0",
+      "family": 162,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 246,
+      "control_j": 266,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Lulda",
+        "other_candidate": "Hirdra",
+        "other_mothers": [
+          "Kuntra"
+        ],
+        "query_child": "Durlla"
+      },
+      "saved_site_importance": 1.5166015625
+    },
+    {
+      "pair_id": "162/direct/base/0/order0",
+      "family": 162,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 245,
+      "control_j": 265,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Lulda",
+        "other_candidate": "Hirdra",
+        "other_mothers": [
+          "Kuntra"
+        ],
+        "query_child": "Durlla"
+      },
+      "saved_site_importance": 0.8837890625
+    },
+    {
+      "pair_id": "162/direct/base/0/order0",
+      "family": 162,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 240,
+      "control_j": 260,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Lulda",
+        "other_candidate": "Hirdra",
+        "other_mothers": [
+          "Kuntra"
+        ],
+        "query_child": "Durlla"
+      },
+      "saved_site_importance": 0.0185546875
+    },
+    {
+      "pair_id": "162/direct/base/0/order1",
+      "family": 162,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 260,
+      "control_j": 241,
+      "first_diff": 238,
+      "names": {
+        "query_mother": "Lulda",
+        "other_candidate": "Hirdra",
+        "other_mothers": [
+          "Kuntra"
+        ],
+        "query_child": "Durlla"
+      },
+      "saved_site_importance": 2.89013671875
+    },
+    {
+      "pair_id": "162/direct/base/0/order1",
+      "family": 162,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 266,
+      "control_j": 247,
+      "first_diff": 238,
+      "names": {
+        "query_mother": "Lulda",
+        "other_candidate": "Hirdra",
+        "other_mothers": [
+          "Kuntra"
+        ],
+        "query_child": "Durlla"
+      },
+      "saved_site_importance": 0.546875
+    },
+    {
+      "pair_id": "162/direct/base/0/order1",
+      "family": 162,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 265,
+      "control_j": 246,
+      "first_diff": 238,
+      "names": {
+        "query_mother": "Lulda",
+        "other_candidate": "Hirdra",
+        "other_mothers": [
+          "Kuntra"
+        ],
+        "query_child": "Durlla"
+      },
+      "saved_site_importance": 0.5439453125
+    },
+    {
+      "pair_id": "162/direct/base/0/order1",
+      "family": 162,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 260,
+      "control_j": 241,
+      "first_diff": 238,
+      "names": {
+        "query_mother": "Lulda",
+        "other_candidate": "Hirdra",
+        "other_mothers": [
+          "Kuntra"
+        ],
+        "query_child": "Durlla"
+      },
+      "saved_site_importance": 0.0029296875
+    },
+    {
+      "pair_id": "176/direct/base/0/order0",
+      "family": 176,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 242,
+      "control_j": 263,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Jelmra",
+        "other_candidate": "Tervra",
+        "other_mothers": [
+          "Rorlra"
+        ],
+        "query_child": "Pistla"
+      },
+      "saved_site_importance": 3.72998046875
+    },
+    {
+      "pair_id": "176/direct/base/0/order0",
+      "family": 176,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 248,
+      "control_j": 271,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Jelmra",
+        "other_candidate": "Tervra",
+        "other_mothers": [
+          "Rorlra"
+        ],
+        "query_child": "Pistla"
+      },
+      "saved_site_importance": 0.91357421875
+    },
+    {
+      "pair_id": "176/direct/base/0/order0",
+      "family": 176,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 247,
+      "control_j": 270,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Jelmra",
+        "other_candidate": "Tervra",
+        "other_mothers": [
+          "Rorlra"
+        ],
+        "query_child": "Pistla"
+      },
+      "saved_site_importance": 0.21630859375
+    },
+    {
+      "pair_id": "176/direct/base/0/order0",
+      "family": 176,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 242,
+      "control_j": 263,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Jelmra",
+        "other_candidate": "Tervra",
+        "other_mothers": [
+          "Rorlra"
+        ],
+        "query_child": "Pistla"
+      },
+      "saved_site_importance": 0.00927734375
+    },
+    {
+      "pair_id": "176/direct/base/0/order1",
+      "family": 176,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 265,
+      "control_j": 243,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Jelmra",
+        "other_candidate": "Tervra",
+        "other_mothers": [
+          "Rorlra"
+        ],
+        "query_child": "Pistla"
+      },
+      "saved_site_importance": 3.20751953125
+    },
+    {
+      "pair_id": "176/direct/base/0/order1",
+      "family": 176,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 271,
+      "control_j": 251,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Jelmra",
+        "other_candidate": "Tervra",
+        "other_mothers": [
+          "Rorlra"
+        ],
+        "query_child": "Pistla"
+      },
+      "saved_site_importance": 0.7578125
+    },
+    {
+      "pair_id": "176/direct/base/0/order1",
+      "family": 176,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 270,
+      "control_j": 250,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Jelmra",
+        "other_candidate": "Tervra",
+        "other_mothers": [
+          "Rorlra"
+        ],
+        "query_child": "Pistla"
+      },
+      "saved_site_importance": 0.30126953125
+    },
+    {
+      "pair_id": "176/direct/base/0/order1",
+      "family": 176,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 265,
+      "control_j": 243,
+      "first_diff": 240,
+      "names": {
+        "query_mother": "Jelmra",
+        "other_candidate": "Tervra",
+        "other_mothers": [
+          "Rorlra"
+        ],
+        "query_child": "Pistla"
+      },
+      "saved_site_importance": -0.0048828125
+    },
+    {
+      "pair_id": "178/direct/base/0/order0",
+      "family": 178,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 245,
+      "control_j": 265,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Milmna",
+        "other_candidate": "Durdna",
+        "other_mothers": [
+          "Porvia"
+        ],
+        "query_child": "Lindla"
+      },
+      "saved_site_importance": 1.8186569213867188
+    },
+    {
+      "pair_id": "178/direct/base/0/order0",
+      "family": 178,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 251,
+      "control_j": 271,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Milmna",
+        "other_candidate": "Durdna",
+        "other_mothers": [
+          "Porvia"
+        ],
+        "query_child": "Lindla"
+      },
+      "saved_site_importance": 1.4696273803710938
+    },
+    {
+      "pair_id": "178/direct/base/0/order0",
+      "family": 178,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 250,
+      "control_j": 270,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Milmna",
+        "other_candidate": "Durdna",
+        "other_mothers": [
+          "Porvia"
+        ],
+        "query_child": "Lindla"
+      },
+      "saved_site_importance": 0.40853118896484375
+    },
+    {
+      "pair_id": "178/direct/base/0/order0",
+      "family": 178,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 245,
+      "control_j": 265,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Milmna",
+        "other_candidate": "Durdna",
+        "other_mothers": [
+          "Porvia"
+        ],
+        "query_child": "Lindla"
+      },
+      "saved_site_importance": -0.0181732177734375
+    },
+    {
+      "pair_id": "178/direct/base/0/order1",
+      "family": 178,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 265,
+      "control_j": 245,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Milmna",
+        "other_candidate": "Durdna",
+        "other_mothers": [
+          "Porvia"
+        ],
+        "query_child": "Lindla"
+      },
+      "saved_site_importance": 1.27685546875
+    },
+    {
+      "pair_id": "178/direct/base/0/order1",
+      "family": 178,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 271,
+      "control_j": 251,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Milmna",
+        "other_candidate": "Durdna",
+        "other_mothers": [
+          "Porvia"
+        ],
+        "query_child": "Lindla"
+      },
+      "saved_site_importance": 0.44775390625
+    },
+    {
+      "pair_id": "178/direct/base/0/order1",
+      "family": 178,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 270,
+      "control_j": 250,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Milmna",
+        "other_candidate": "Durdna",
+        "other_mothers": [
+          "Porvia"
+        ],
+        "query_child": "Lindla"
+      },
+      "saved_site_importance": 0.3642578125
+    },
+    {
+      "pair_id": "178/direct/base/0/order1",
+      "family": 178,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 265,
+      "control_j": 245,
+      "first_diff": 242,
+      "names": {
+        "query_mother": "Milmna",
+        "other_candidate": "Durdna",
+        "other_mothers": [
+          "Porvia"
+        ],
+        "query_child": "Lindla"
+      },
+      "saved_site_importance": -0.01904296875
+    },
+    {
+      "pair_id": "186/direct/base/0/order0",
+      "family": 186,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 239,
+      "control_j": 261,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Sintia",
+        "other_candidate": "Doltla",
+        "other_mothers": [
+          "Gesmna"
+        ],
+        "query_child": "Furnia"
+      },
+      "saved_site_importance": 1.87548828125
+    },
+    {
+      "pair_id": "186/direct/base/0/order0",
+      "family": 186,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 245,
+      "control_j": 268,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Sintia",
+        "other_candidate": "Doltla",
+        "other_mothers": [
+          "Gesmna"
+        ],
+        "query_child": "Furnia"
+      },
+      "saved_site_importance": 3.3245849609375
+    },
+    {
+      "pair_id": "186/direct/base/0/order0",
+      "family": 186,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 244,
+      "control_j": 267,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Sintia",
+        "other_candidate": "Doltla",
+        "other_mothers": [
+          "Gesmna"
+        ],
+        "query_child": "Furnia"
+      },
+      "saved_site_importance": 0.99139404296875
+    },
+    {
+      "pair_id": "186/direct/base/0/order0",
+      "family": 186,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 239,
+      "control_j": 261,
+      "first_diff": 236,
+      "names": {
+        "query_mother": "Sintia",
+        "other_candidate": "Doltla",
+        "other_mothers": [
+          "Gesmna"
+        ],
+        "query_child": "Furnia"
+      },
+      "saved_site_importance": -0.011474609375
+    },
+    {
+      "pair_id": "186/direct/base/0/order1",
+      "family": 186,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 262,
+      "control_j": 240,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Sintia",
+        "other_candidate": "Doltla",
+        "other_mothers": [
+          "Gesmna"
+        ],
+        "query_child": "Furnia"
+      },
+      "saved_site_importance": 1.05029296875
+    },
+    {
+      "pair_id": "186/direct/base/0/order1",
+      "family": 186,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 268,
+      "control_j": 247,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Sintia",
+        "other_candidate": "Doltla",
+        "other_mothers": [
+          "Gesmna"
+        ],
+        "query_child": "Furnia"
+      },
+      "saved_site_importance": 1.0205078125
+    },
+    {
+      "pair_id": "186/direct/base/0/order1",
+      "family": 186,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 267,
+      "control_j": 246,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Sintia",
+        "other_candidate": "Doltla",
+        "other_mothers": [
+          "Gesmna"
+        ],
+        "query_child": "Furnia"
+      },
+      "saved_site_importance": 0.770751953125
+    },
+    {
+      "pair_id": "186/direct/base/0/order1",
+      "family": 186,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 262,
+      "control_j": 240,
+      "first_diff": 237,
+      "names": {
+        "query_mother": "Sintia",
+        "other_candidate": "Doltla",
+        "other_mothers": [
+          "Gesmna"
+        ],
+        "query_child": "Furnia"
+      },
+      "saved_site_importance": -0.03369140625
+    },
+    {
+      "pair_id": "192/direct/base/0/order0",
+      "family": 192,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 238,
+      "control_j": 259,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Werdna",
+        "other_candidate": "Hirdna",
+        "other_mothers": [
+          "Bulna"
+        ],
+        "query_child": "Dastia"
+      },
+      "saved_site_importance": 2.823486328125
+    },
+    {
+      "pair_id": "192/direct/base/0/order0",
+      "family": 192,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 245,
+      "control_j": 265,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Werdna",
+        "other_candidate": "Hirdna",
+        "other_mothers": [
+          "Bulna"
+        ],
+        "query_child": "Dastia"
+      },
+      "saved_site_importance": 2.953857421875
+    },
+    {
+      "pair_id": "192/direct/base/0/order0",
+      "family": 192,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 244,
+      "control_j": 264,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Werdna",
+        "other_candidate": "Hirdna",
+        "other_mothers": [
+          "Bulna"
+        ],
+        "query_child": "Dastia"
+      },
+      "saved_site_importance": 0.267578125
+    },
+    {
+      "pair_id": "192/direct/base/0/order0",
+      "family": 192,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 238,
+      "control_j": 259,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Werdna",
+        "other_candidate": "Hirdna",
+        "other_mothers": [
+          "Bulna"
+        ],
+        "query_child": "Dastia"
+      },
+      "saved_site_importance": -0.0009765625
+    },
+    {
+      "pair_id": "192/direct/base/0/order1",
+      "family": 192,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 258,
+      "control_j": 238,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Werdna",
+        "other_candidate": "Hirdna",
+        "other_mothers": [
+          "Bulna"
+        ],
+        "query_child": "Dastia"
+      },
+      "saved_site_importance": 1.56121826171875
+    },
+    {
+      "pair_id": "192/direct/base/0/order1",
+      "family": 192,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 265,
+      "control_j": 244,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Werdna",
+        "other_candidate": "Hirdna",
+        "other_mothers": [
+          "Bulna"
+        ],
+        "query_child": "Dastia"
+      },
+      "saved_site_importance": 0.4019775390625
+    },
+    {
+      "pair_id": "192/direct/base/0/order1",
+      "family": 192,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 264,
+      "control_j": 243,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Werdna",
+        "other_candidate": "Hirdna",
+        "other_mothers": [
+          "Bulna"
+        ],
+        "query_child": "Dastia"
+      },
+      "saved_site_importance": 0.86865234375
+    },
+    {
+      "pair_id": "192/direct/base/0/order1",
+      "family": 192,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 258,
+      "control_j": 238,
+      "first_diff": 235,
+      "names": {
+        "query_mother": "Werdna",
+        "other_candidate": "Hirdna",
+        "other_mothers": [
+          "Bulna"
+        ],
+        "query_child": "Dastia"
+      },
+      "saved_site_importance": -0.0081787109375
+    },
+    {
+      "pair_id": "196/direct/base/0/order0",
+      "family": 196,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 241,
+      "control_j": 263,
+      "first_diff": 238,
+      "names": {
+        "query_mother": "Koltla",
+        "other_candidate": "Virdna",
+        "other_mothers": [
+          "Pelnia"
+        ],
+        "query_child": "Dalnra"
+      },
+      "saved_site_importance": 2.34375
+    },
+    {
+      "pair_id": "196/direct/base/0/order0",
+      "family": 196,
+      "order": 0,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 248,
+      "control_j": 270,
+      "first_diff": 238,
+      "names": {
+        "query_mother": "Koltla",
+        "other_candidate": "Virdna",
+        "other_mothers": [
+          "Pelnia"
+        ],
+        "query_child": "Dalnra"
+      },
+      "saved_site_importance": 1.466796875
+    },
+    {
+      "pair_id": "196/direct/base/0/order0",
+      "family": 196,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 247,
+      "control_j": 269,
+      "first_diff": 238,
+      "names": {
+        "query_mother": "Koltla",
+        "other_candidate": "Virdna",
+        "other_mothers": [
+          "Pelnia"
+        ],
+        "query_child": "Dalnra"
+      },
+      "saved_site_importance": 0.4091796875
+    },
+    {
+      "pair_id": "196/direct/base/0/order0",
+      "family": 196,
+      "order": 0,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 241,
+      "control_j": 263,
+      "first_diff": 238,
+      "names": {
+        "query_mother": "Koltla",
+        "other_candidate": "Virdna",
+        "other_mothers": [
+          "Pelnia"
+        ],
+        "query_child": "Dalnra"
+      },
+      "saved_site_importance": 0.0166015625
+    },
+    {
+      "pair_id": "196/direct/base/0/order1",
+      "family": 196,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_is",
+      "j": 263,
+      "control_j": 242,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Koltla",
+        "other_candidate": "Virdna",
+        "other_mothers": [
+          "Pelnia"
+        ],
+        "query_child": "Dalnra"
+      },
+      "saved_site_importance": 0.87451171875
+    },
+    {
+      "pair_id": "196/direct/base/0/order1",
+      "family": 196,
+      "order": 1,
+      "writer": "L17H1",
+      "head": 545,
+      "layer": 17,
+      "site": "query_period",
+      "j": 270,
+      "control_j": 249,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Koltla",
+        "other_candidate": "Virdna",
+        "other_mothers": [
+          "Pelnia"
+        ],
+        "query_child": "Dalnra"
+      },
+      "saved_site_importance": 0.61328125
+    },
+    {
+      "pair_id": "196/direct/base/0/order1",
+      "family": 196,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_child_last",
+      "j": 269,
+      "control_j": 248,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Koltla",
+        "other_candidate": "Virdna",
+        "other_mothers": [
+          "Pelnia"
+        ],
+        "query_child": "Dalnra"
+      },
+      "saved_site_importance": 0.19140625
+    },
+    {
+      "pair_id": "196/direct/base/0/order1",
+      "family": 196,
+      "order": 1,
+      "writer": "L15H25",
+      "head": 505,
+      "layer": 15,
+      "site": "query_is",
+      "j": 263,
+      "control_j": 242,
+      "first_diff": 239,
+      "names": {
+        "query_mother": "Koltla",
+        "other_candidate": "Virdna",
+        "other_mothers": [
+          "Pelnia"
+        ],
+        "query_child": "Dalnra"
+      },
+      "saved_site_importance": 0.0234375
+    }
+  ],
+  "pairs": [
+    "000/direct/base/0/order0",
+    "000/direct/base/0/order1",
+    "016/direct/base/0/order0",
+    "016/direct/base/0/order1",
+    "032/direct/base/0/order0",
+    "032/direct/base/0/order1",
+    "048/direct/base/0/order0",
+    "048/direct/base/0/order1",
+    "056/direct/base/0/order0",
+    "056/direct/base/0/order1",
+    "064/direct/base/0/order0",
+    "064/direct/base/0/order1",
+    "082/direct/base/0/order0",
+    "082/direct/base/0/order1",
+    "096/direct/base/0/order0",
+    "096/direct/base/0/order1",
+    "098/direct/base/0/order0",
+    "098/direct/base/0/order1",
+    "102/direct/base/0/order0",
+    "102/direct/base/0/order1",
+    "116/direct/base/0/order0",
+    "116/direct/base/0/order1",
+    "130/direct/base/0/order0",
+    "130/direct/base/0/order1",
+    "150/direct/base/0/order0",
+    "150/direct/base/0/order1",
+    "154/direct/base/0/order0",
+    "154/direct/base/0/order1",
+    "162/direct/base/0/order0",
+    "162/direct/base/0/order1",
+    "176/direct/base/0/order0",
+    "176/direct/base/0/order1",
+    "178/direct/base/0/order0",
+    "178/direct/base/0/order1",
+    "186/direct/base/0/order0",
+    "186/direct/base/0/order1",
+    "192/direct/base/0/order0",
+    "192/direct/base/0/order1",
+    "196/direct/base/0/order0",
+    "196/direct/base/0/order1"
+  ],
+  "source_run": "stage3_v1",
+  "source_hashes": {
+    "position_profiles.csv": "a1dca883749f3f031bf6a6f5a0ec951144d5ca62679dd2d0eb39767ff9f4942a",
+    "pairs.jsonl.gz": "1d6ad1e232c289ab59cb15b7e9a2554ce3e2f014cf2d58c04ec1d5ba0aba5fb5"
+  },
+  "model": {
+    "model_id": "allenai/OLMo-2-1124-7B",
+    "revision": "7df9a82518afdecae4e8c026b27adccc8c1f0032",
+    "requested_revision": "main"
+  },
+  "forwards": {
+    "source_captures": 240,
+    "readouts": 1602
+  }
+}

@@ -1,0 +1,30 @@
+% Paragraph "Attended-name mover classification" of the Stage-3 plan (Section 1.4,
+% after "Copying and Token-Preference Diagnostic"). This is the corrected version of the
+% text pasted into Overleaf on 21 September 2026; the local
+% Stage3_Head_Level_Characterization_revised.tex does not yet contain the paragraph.
+% Change from the Overleaf version: the cross-check sentence now states the expected
+% sign under the Stage-2 convention (the corrupted donor of a suppressor lowers the
+% CORRUPTED-answer logit, i.e. negative Scope-F importance), instead of "lower the
+% clean-answer logit". Implemented in pilot_v2/stage3_analyze.py (--attended-only).
+
+\paragraph{Attended-name mover classification.}
+The weight map describes the current token; the complementary question is what the head
+does to the token it attends to. Using the saved test-block records of the common
+families (attention argmax and the contextual output projection $o^h_j W_U$ over the
+visible name tokens at the same position), select for each head the events whose argmax
+falls on a name token and compute the contextual logit of that attended name's first
+token relative to the mean over the other visible distinct names (both roles; last-token
+anchor and same-role controls are sensitivity variants). A head is labeled a name mover
+if this contrast is positive in at least 80\% of its events, and a negative name mover if
+it is negative in at least 80\%, subject to the fixed support rule ($\geq 20$ events,
+$\geq 10$ families); heads below support are reported as insufficient, not as neither.
+The label is cross-checked against the sign of the saved 178-pair Scope-F importance:
+under the Stage-2 convention (clean recipient, corrupted donor, sign fixed to the clean
+answer) a head that suppresses the name it attends to yields a \emph{negative} Scope-F
+importance, carried by a fall of the corrupted-answer logit, and a name mover a positive
+one; a mismatch between the label and the sign of $I^F_h$ is reported as a finding rather
+than resolved by relabeling, and $|I^F_h|<0.05$ is reported as ``no causal contrast to
+check''. This classification uses only records already produced by the core capture and
+requires no additional measurement. The candidates L23H15, L19H16 and L26H23 are checked
+first but the classification is applied to the full inventory, including the random
+controls.
