@@ -1,0 +1,764 @@
+% Overleaf: upload this file together with the figures in figs/ (fig1_scopeP_vs_scopeF.png,
+% fig2_position_profiles.png, fig2b_query_fact_tokens.png, fig3_final_attention.png,
+% fig4_query_control.png, fig5_contextual_output.png, fig6_copying_weights.png,
+% fig7_synthetic.png, fig8_attention_value.png, fig9_attended_name.png) and tables/tab_profiles.tex,
+% then compile with pdfLaTeX. Source data: results/stage3_v1/analysis/ (run stage3_v1, job completed
+% 22 September 2026; summary.json complete=true).
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern,microtype}}{}
+\usepackage{amsmath,booktabs,graphicx}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue!60!black,linkcolor=blue!60!black]{hyperref}
+\graphicspath{{figs/}{./}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.15}
+
+\title{Stage 3: Results and Analysis\\\large Head-Level Characterization of the Single-hop Causal Heads in OLMo-2-7B}
+\author{Daniella Simonovsky and Max Golubkov}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+\section{Run and validation}
+Run \texttt{stage3\_v1} completed on the cluster with three model replicas (six GPUs)
+and exit code 0. Every replica passed the gate before measurements began: behavioral
+replication drift 0, self-patch drift 0, zero change when corrupted activations are
+patched before the first differing token, reproduction of the saved Stage-2
+\texttt{exact\_delta} on the six probe heads, first-divergent-token alignment,
+QK/RoPE-aware reconstruction of the SDPA attention patterns, replication of the saved
+raw RI scores within the frozen tolerances, and agreement between the joint
+attention+value replacement and the ordinary head-output patch. The gate measured
+0.151--0.152~s per patched forward and predicted 3.7~GPU-hours for the 263{,}328
+new patched forwards (8{,}188 missing Scope-F patches, 176{,}820 position-scan
+patches, 74{,}760 attention/value factorial patches and 3{,}560 reverse patches).
+
+The automatic CPU audit verified every checkpoint checksum, the coverage of all 105
+heads on all 178 pairs, the position scan on the 40 common pairs, the 160 core prompts
+(20 common families $\times$ two orders $\times$ \{base, corrupted, reorder,
+changed-query\}), the 34{,}526 matched contextual-RI anchor comparisons, the weight
+diagnostic and both synthetic benchmarks, and wrote \texttt{summary.json} with
+\texttt{complete: true}. The 46 heads that lacked a Scope-F measurement now have one
+on all 178 pairs; no saved Stage-1/2 value was recomputed or replaced. All results are
+descriptive. Causal measurements (Scope P, Scope F, reverse patches, the attention--value
+factorial) are family-level means over the 89 discovery families with the two orders
+averaged within family; the position scan, attention and output profiles and the
+attended-name classification use the 20 common families (the latter counts eligible
+events, not families); the synthetic fingerprints average over trials. The 87
+validation families remain untouched.
+
+\textbf{What Stage 3 measured.} For the fixed inventory of 105 heads (48 RI-selected
+small-effect, 12 strong positive outside RI, 5 strong positive RI-selected, 8 strong
+negative, 7 moderate, 25 random controls) we report: (i) Scope-P vs.\ Scope-F
+importance with the clean/corrupted logit decomposition; (ii) the causal position
+profile (single-position patches at every test-block position, 40 common pairs) and
+reverse patching for the ten largest heads; (iii) the unconditional attention profile
+at the final colon and the changed-query, reorder and corruption controls; (iv) the
+contextual output projection $o^h_j W_U$ against the raw-embedding projection used by
+RI; and the four planned diagnostics: (v) weight copying scores, (vi) attended-name
+mover classification, (vii) matched contextual RI, (viii) the attention--value
+factorial, and (ix) two synthetic fingerprints. The completed optional controlled
+readout for L17H1 and L15H25 is reported in Section~\ref{sec:readout}. Section~\ref{sec:cards} gives the
+head-profile table; Section~\ref{sec:hyp} the evidence assessment of the three Stage-2
+hypotheses; Section~\ref{sec:stage4} the hand-off to Stage~4.
+
+\section{Notation}
+As in Stage 2, $M(x)=\operatorname{logit}(y_c)-\operatorname{logit}(y_r)$ at the first
+divergent answer token, with the sign fixed to the clean answer. For head $h$,
+$I_h=-[M(x_c;a_h\leftarrow a^r_h)-M(x_c)]$ with the corrupted donor inserted at all
+original prompt positions (Scope~P) or at the final colon only (Scope~F, $I^F_h$).
+Positive importance means the patch moves the metric toward the corrupted answer. For
+every Scope-F patch the run stored the clean- and corrupted-answer logits, so
+$I^F_h=P_h+S_h$ where $P_h$ is the rise of the corrupted-answer logit (``promotion'')
+and $S_h$ the fall of the clean-answer logit (``suppression''). Reverse recovery is
+$M(x_r;a_h\leftarrow a^c_h)-M(x_r)$ (clean donor into the corrupted prompt). The test
+block reads ``$\langle$mother$\rangle$ is the mother of $\langle$child$\rangle$.''
+four times, then ``Question: Who is the mother of $\langle$child$\rangle$? Answer:''.
+The corruption swaps the two answer-side mothers; the \emph{query fact} is the fact
+whose child is asked about, and its mother is the answer.
+
+\section{Where the effect enters: Scope P vs.\ Scope F}
+\label{sec:scope}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.72\textwidth]{fig1_scopeP_vs_scopeF.png}
+\caption{Scope-P against Scope-F importance for all 105 inventory heads (178 pairs,
+symlog axes). Heads on the diagonal deliver their whole effect at the answer position;
+heads on the horizontal axis act only at earlier positions.}
+\label{fig:scope}
+\end{figure}
+
+Figure~\ref{fig:scope} completes the picture that Stage 2 could only sketch for 69
+heads. Of the 25 heads with $|I_h|\ge 0.3$, 20 have $I^F_h/I_h$ between 0.96 and 1.07:
+the final colon carries their entire effect, and the sign is consistent across
+families ($F$ positive in $\ge 97.8\%$ of families for every strong positive head,
+in $\le 4.5\%$ for every strong negative head). Five heads are different:
+
+\begin{center}
+\small
+\begin{tabular}{lrrrl}
+\toprule
+Head & $I_h$ (P) & $I^F_h$ & $F/P$ & Position of the effect (Section~\ref{sec:position}) \\
+\midrule
+L17H1  & $+5.701$ & $-0.056$ & $-0.01$ & query-fact sentence: mother tokens, ``is'', period \\
+L15H25 & $+0.679$ & $+0.169$ & $0.25$ & last token of the query-fact child \\
+L14H26 & $+0.399$ & $+0.007$ & $0.02$ & diffuse; template words \\
+L13H10 & $-0.681$ & $-0.029$ & $0.04$ & query-fact sentence: ``is'', ``of'', mother last token \\
+L17H3  & $-0.546$ & $-0.402$ & $0.74$ & mixed: colon plus earlier positions \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The most important single head of the whole project, L17H1 (5.7 logits, half the
+clean--corrupted gap), has \emph{no} effect at the answer position. Stage 2 had labelled
+the layer-16--26 heads ``readers at the colon'' from 69 heads; L17H1 was not among
+them, and the label does not hold for it. Twenty-five random controls have
+$|I^F_h|\le 0.019$ except L18H22 ($+0.089$), which also has a Scope-P effect of the
+same size.
+
+\textbf{Logit decomposition.} For every strong head the Scope-F effect is dominated by
+the corrupted-answer logit: $P_h$ accounts for 93\% (L18H19: $+2.88$ of $+3.08$),
+96\% (L18H18), 88\% (L21H18), 93\% (L22H5) and 98\% (L20H1: $-1.49$ of $-1.53$;
+L23H15: $-0.94$ of $-0.95$; L19H16: $-0.83$ of $-0.83$). L27H6 is the exception:
+$P=+1.96$, $S=+1.10$; it both promotes the donor's name and lowers the other. The
+negative heads therefore act by \emph{lowering} the corrupted-answer logit when their
+corrupted-run activation is inserted, with almost no change of the clean-answer logit.
+Under the sign convention of Stage 2, a head that suppresses the name it retrieves on
+its own run produces exactly this pattern (the corrupted-run activation suppresses
+the corrupted answer); Section~\ref{sec:attended} tests that reading directly.
+
+\textbf{Reverse patching.} For the ten fixed heads, inserting the clean activation into
+the corrupted prompt recovers the metric by almost exactly the noising effect
+(L17H1: $+5.21$ vs.\ $5.70$; L18H19 $+3.22$ vs.\ $3.07$; L27H6 $+3.06$; L18H18
+$+2.85$; L21H18 $+1.75$; L25H17 $+1.27$; L22H5 $+1.01$; L20H1 $-1.63$; L30H18
+$-1.20$; L23H15 $-0.93$). Recovery is symmetric with noising for every head, at
+Scope~P and at Scope~F alike (L17H1: $-0.055$ at the colon). This is conditional on
+the rest of the corrupted model and does not show that any head suffices alone.
+
+\section{Causal position profile}
+\label{sec:position}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig2_position_profiles.png}
+\caption{Single-position patches on the common 40 pairs, summed by position role within
+each prompt and averaged over the 20 families. Top: the four early-position heads and
+two moderate heads; bottom: four answer-position heads. Titles give Scope P and F on the
+same 40 pairs.}
+\label{fig:position}
+\end{figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig2b_query_fact_tokens.png}
+\caption{Token-by-token single-position importance inside the query-fact sentence
+(family mean $\pm$ SD, 20 families) for L17H1, L13H10 and L15H25.}
+\label{fig:tokens}
+\end{figure}
+
+\textbf{Sums of single-position effects vs.\ the all-position effect.} Summing a
+head's single-position effects over all test positions tracks its all-position Scope-P
+effect on the same 40 pairs in the aggregate: Spearman 0.913 over the 105 heads, and a
+signed mean residual of $-0.135$ logits for L17H1 (5.61 vs.\ 5.74). The signed mean
+hides large cancelling errors, however: for L17H1 the mean absolute residual per pair is
+0.94 logits (per family, orders averaged, 0.89) and the maximum is 2.85 (2.33 per
+family). For the answer-position heads the residuals are small at every level (L18H19:
+mean absolute family residual 0.06, maximum 0.14; L27H6: 0.03, 0.09), for the trivial
+reason that all of their effect sits at one position. The single-position profile
+therefore locates \emph{where} a head's activity influences the answer; it is not a
+proven additive partition of the total effect, and within-head interactions between
+positions are not established to be small for L17H1.
+
+\textbf{L17H1 acts inside the query-fact sentence, after the mother's first token.}
+Figure~\ref{fig:tokens} shows the profile: mother first token $+0.05$, middle
+$+1.15$, last $+1.67$, ``is'' $+1.77$, ``the'' $0.00$, ``mother'' $+0.33$, ``of''
+$+0.36$, child tokens $\approx 0$, period $+1.38$. Nothing at the question, nothing at
+the colon. At the mother tokens the clean and corrupted \emph{inputs} differ, so a
+head that writes a representation of the current name would show an effect there for
+trivial reasons; the effect at ``is'', ``of'' and the period, whose inputs are
+identical in the two prompts, shows that L17H1's output at those positions depends on
+the preceding mother and matters for the answer. The natural reading is that it carries
+mother-dependent information forward through the sentence into positions later heads
+read from; what that information is (the name, the relation, or a binding of the two)
+is not identified by this measurement (see Section~\ref{sec:readout} for the completed controlled
+readout). The same pattern with
+opposite sign describes L13H10 (``is'' $-0.22$, ``of'' $-0.22$, mother last $-0.14$).
+At the distractor facts L17H1 has small \emph{negative} effects (distractor mother
+$-0.53$ summed), as expected if the corrupted donor writes the wrong name identity into
+the other candidate fact.
+
+\textbf{L15H25 acts at the query child.} Its effect is concentrated on the last token
+of the query-fact child ($+0.43$ of 0.66), with $+0.13$ at the colon. The child's
+tokens are identical in the two prompts; the head therefore writes, at the child's
+position, something that depends on the preceding mother. L14H26 (0.40) is diffuse
+over template words with no dominant site.
+
+\textbf{Answer-position heads.} L18H19, L27H6, L18H18, L21H18, L25H17, L22H5, L16H21,
+L16H1, L21H6, L30H13, L21H23, L17H17, L17H24, L19H22 and all eight strong negative
+heads except L13H10 (and partly L17H3, $F/P=0.74$) have flat profiles with a single
+bar at the colon.
+
+\section{Relation-tracking attention profile}
+\label{sec:attention}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig3_final_attention.png}
+\caption{Attention mass at the final colon on base prompts (20 common families, both
+orders), for the 22 heads with $|I^F_h|\ge0.3$.}
+\label{fig:attention}
+\end{figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig4_query_control.png}
+\caption{Left: paired attention shift when the question is changed to the other
+answer-side child (facts unchanged), toward the newly queried mother ($x$) and child
+($y$), family means. Right: the same shift beside the paired change under reordering
+and under corruption for the strong heads.}
+\label{fig:query}
+\end{figure}
+
+The answer-position heads fall into three attention types (Figure~\ref{fig:attention};
+random controls: mean mass 0.017 on the query mother, maximum 0.109, 0.009 on the
+query child).
+
+\emph{Mother-attenders.} L27H6 (0.58 on the query mother), L21H18 (0.60), L23H15
+(0.51), L22H5 (0.34), L19H22 (0.31), L21H6 (0.30), L19H16 (0.21), L26H23 (0.21),
+L20H1 (0.17), L18H18 (0.14), L18H19 (0.13), L17H24 (0.13). They attend to the answer's
+own mention. Both signs occur: L23H15, L19H16, L26H23 and L20H1 attend to the same
+place as L27H6 and L21H18 but have negative effects.
+
+\emph{Child-attenders.} L16H21 (0.40 on the query child, 0.01 on the mother), L16H1
+(0.36), L16H24 (0.37, small effect), L16H31 (0.14, negative). They attend to the
+second mention of the queried child inside the facts, not to the answer.
+
+\emph{Self-attenders.} L25H17 (0.57 on the colon itself, 1.27 logits), L13H10 (0.42),
+L21H23 (0.20), L30H13 (0.19), L17H17 (0.19). Self attention is their largest single
+target, but it is not exclusive: the eight fact-name spans together receive 0.03
+(L25H17, L13H10), 0.09 (L30H13), 0.15 (L21H23) and 0.22 (L17H17) of their mass, and the
+remainder is spread over other positions. For L25H17 most of the value it carries
+comes from the colon's own residual stream; for L17H17 and L21H23 a fact-reading path
+cannot be excluded.
+
+L30H18 ($-1.06$) is the one strong head that attends more to the \emph{distractor}
+mothers (0.11 per fact) than to the query mother (0.05).
+
+\textbf{Attention follows the question, not the location or the token
+(Figure~\ref{fig:query}).} Changing only the queried child moves the mother-attenders'
+mass to the newly relevant fact in 100\% of families (L21H18 $+1.07$, L23H15 $+0.91$,
+L27H6 $+0.84$, L19H22 $+0.56$, L21H6 $+0.50$, L22H5 $+0.49$, L26H23 $+0.37$, L19H16
+$+0.33$, L20H1 $+0.32$, L18H19 $+0.23$, L18H18 $+0.20$), and moves the
+child-attenders' mass to the new child (L16H21 $+0.83$, L16H1 $+0.68$, L16H31
+$+0.27$). Random controls: at most $+0.18$. (The preference shift is a difference of
+two attention contrasts, so values above 1 are possible.) Reordering the facts and
+corrupting the mother change the family-mean attention on the query mother by at most
+0.11 (L21H6) and 0.085 (L27H6) respectively, but these signed means also hide
+prompt-level variation: for L21H18 the mean absolute change under reordering is 0.15
+per prompt (maximum 0.49) and under corruption 0.12; for L27H6 0.09 and 0.29; for
+L23H15 0.12 and 0.14 (the child-attender L16H21: 0.004 and 0.004). The heads therefore
+keep attending to the relevant fact \emph{on average} when it is moved or its name is
+swapped, but positional invariance at the level of individual prompts is not
+established; the changed-query result is the stronger evidence, because it is
+consistent in sign in every family. The model itself answers the changed query correctly in 38 of the 40 changed-query
+prompts (mean margin 5.25 vs.\ 5.85 on the base prompts). L30H18 is again the
+exception: its mass moves \emph{away} from the newly queried fact ($-0.19$, negative
+in every family). None of this establishes what the heads compute; it establishes that
+their routing is query-selective on these 20 families.
+
+\section{Contextual output profile}
+\label{sec:output}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig5_contextual_output.png}
+\caption{Scope-F importance against the vocabulary projection of the head's output at
+the colon (query-mother first token minus mean distractor-mother first token). Left:
+actual contextual output $o^h_j W_U$. Right: the raw-embedding projection of the colon
+token used by RI, on the same $x$ range as the left panel would need ($\pm0.02$).}
+\label{fig:output}
+\end{figure}
+
+The raw-embedding projection is uninformative at the colon for every head (all values
+within $\pm0.008$; Spearman with $I^F_h$ $-0.07$), as the algebraic argument of Stage 1
+predicted. The contextual projection is informative but partial (Spearman $+0.32$).
+Three groups emerge.
+
+\emph{Direct writers of the answer.} L27H6 writes $+2.99$ logits for the query mother
+against the distractor mothers (first token; at the last-token anchor only $+0.06$); L30H13 $+0.76$; L22H5
+$+0.41$; L21H6 $+0.33$; L21H18 $+0.25$. For L27H6 the projection is of the same size
+as its causal effect, but the two numbers are not an attribution equality: the
+projection is one clean vector through $W_U$ before the shared post-attention norm, on
+20 families, contrasting the query mother with the distractor mothers, whereas $I^F_h$
+is a clean-to-donor change in the full model on 89 families, at the first divergent
+answer token. L30H18 writes $-0.88$: its output lowers the query mother relative to the
+distractors, consistent with its distractor-directed attention and its causal sign.
+
+\emph{Heads whose projection does not explain their effect.} L18H19 ($I^F=3.08$)
+writes only $+0.16$ for the answer, L18H18 ($2.72$) $+0.11$, L20H1 ($-1.53$) $-0.09$,
+L23H15 ($-0.95$) $+0.04$, L19H16 ($-0.83$) $-0.04$, L25H17 ($1.27$) $+0.16$; L16H21 and
+L16H1 have contrasts within $\pm0.02$ on both mother and child tokens against
+$0.9$-logit effects. For these heads the selected vocabulary projection of the clean
+output vector does not account for the measured intervention effect. The hypothesis
+this suggests is mediation by later components at the colon (later layers, since the
+colon is the last prompt token), but the present data do not establish it: the
+projection ignores the shared post-attention normalization, whose response to the
+donor vector is itself a candidate explanation, and it is a property of one clean
+vector rather than of the clean-minus-donor difference that the intervention inserts.
+A matched clean-minus-donor projection under an explicit normalization reference would
+be a sharper diagnostic; identifying a downstream path requires the Stage-4 path
+interventions.
+
+All values are pre-normalization diagnostics of one head's vector; they are not logit
+attributions, and the shared post-attention norm of OLMo-2 is not assigned to heads.
+
+\section{Planned diagnostics}
+\subsection{Copying and token preference (weights)}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig6_copying_weights.png}
+\caption{Left: weight copying score on the 314 first/last test-name token IDs
+($e_tW^h_{OV}W_U$, self minus mean over other names) against signed Scope-P
+importance. Right: the same score on names against the 128-token ordinary-word
+reference sample.}
+\label{fig:copy}
+\end{figure}
+
+The static copying score separates the sign of the effect but not its size: Spearman
+with signed $I_h$ is $+0.37$ ($n=105$), with $|I_h|$ $+0.02$. Positive copiers with
+positive effects: L21H6 ($+0.35$; the token is its own top output for 60\% of names),
+L17H24 ($+0.19$), L19H22 ($+0.17$), L18H19 ($+0.13$), L21H18 ($+0.12$). Anti-copiers
+with negative effects: L26H23 ($-0.20$), L20H1 ($-0.17$), L19H16 ($-0.09$). Random
+controls lie in $[-0.044,+0.044]$. But the two largest heads at the colon are not
+copiers by weight (L27H6 $+0.04$, L18H18 $-0.08$), L17H1 is neutral ($+0.01$), and the
+strongest name-copier in the inventory, L30H18 ($+0.60$, far outside every other head),
+has a \emph{negative} effect because it applies its copying to the distractor it
+attends to. Name-token and ordinary-word scores are similar for most heads
+(Figure~\ref{fig:copy}, right); L30H18 alone is name-specific ($+0.60$ vs.\ $+0.03$).
+Weight alignment therefore neither identifies the important heads nor decides the
+copy-penalizing hypothesis on its own; the event-based test follows.
+
+
+\subsection{Copying and token preference (saved RI events by current-token role)}
+\label{sec:current}
+The plan's first copying diagnostic partitions the saved Stage-1 test-only RI events by
+whether the \emph{current} token belongs to the target name, to a control name, or to
+neither, and reports the raw target-minus-control gap in each partition. It was computed
+during preparation (\texttt{current\_name\_diagnostics.json}) and is reported here; it
+is distinct from the attended-name test, which concerns the token a head attends to.
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrlll}
+\toprule
+Head & $I_h$ & Current token $\in$ target & Current token $\in$ control name & Neither \\
+\midrule
+L18H19 & +3.07 & $+0.1011$ (1/1)$^{\dagger}$ & $-0.0228$ (111/48) & $+0.0003$ (51/32) \\
+L21H18 & +1.70 & -- & $-0.0168$ (194/65) & $+0.0011$ (185/74) \\
+L21H6 & +0.70 & -- & $-0.0245$ (421/85) & $-0.0044$ (116/70) \\
+L22H5 & +0.98 & -- & $-0.0187$ (10/8)$^{\dagger}$ & $+0.0333$ (14/5)$^{\dagger}$ \\
+L19H22 & +0.43 & -- & $-0.0148$ (19/13)$^{\dagger}$ & $-0.0001$ (79/47) \\
+L16H21 & +0.92 & -- & $+0.0042$ (149/67) & $-0.0007$ (307/82) \\
+L16H1 & +0.87 & $-0.0039$ (88/34) & $-0.0020$ (242/75) & $-0.0041$ (331/82) \\
+L25H17 & +1.27 & -- & $+0.0009$ (73/32) & $+0.0001$ (58/25) \\
+L14H26 & +0.40 & -- & $-0.0037$ (27/13) & $-0.0005$ (9/8)$^{\dagger}$ \\
+L19H16 & -0.82 & $+0.0031$ (18/6)$^{\dagger}$ & $+0.0052$ (92/59) & $-0.0017$ (144/61) \\
+L23H15 & -0.95 & -- & $-0.0118$ (30/26) & $-0.0009$ (32/25) \\
+L26H23 & -0.37 & $+0.0000$ (1/1)$^{\dagger}$ & $+0.0092$ (18/16)$^{\dagger}$ & $+0.0033$ (39/22) \\
+L13H10 & -0.68 & $+0.0152$ (2/2)$^{\dagger}$ & $-0.0157$ (8/5)$^{\dagger}$ & $+0.0028$ (31/19) \\
+\bottomrule
+\end{tabular}
+\caption{Saved Stage-1 test-only RI events partitioned by the role of the \emph{current} token (first anchor): family-weighted raw target-minus-control gap, with events/families. $^{\dagger}$: below the 20-event/10-family support rule. Heads with no scored QK events in a partition are marked --. Source: \texttt{results/stage3\_inputs\_v1/current\_name\_diagnostics.json}.}
+\label{tab:current}
+\end{table}
+
+For the positive movers with support in both partitions the name gap is clearly
+negative when the current token is a control name and near zero otherwise: L18H19
+$-0.023$ (111 events) vs.\ $+0.000$ (51); L21H18 $-0.017$ (194) vs.\ $+0.001$ (185);
+L21H6 $-0.025$ (421) vs.\ $-0.004$ (116). For the anti-copying head L19H16 the control
+partition is positive ($+0.005$, 92 events) and the neither partition slightly negative.
+This is the pattern the copy-penalizing hypothesis predicts: a head whose OV circuit
+raises its current token's logit scores badly on the name gap exactly at the events
+where the current token is a control name. The partitions differ in position and
+composition (control-token events are mostly self events on chain-middle names), so this
+is an association within the saved events, not an isolated causal explanation of the
+RI failure. Across the 33 heads with supported control-partition events the Spearman
+correlation of the control-partition gap with $I_h$ is $-0.26$ ($p=0.15$); the sample is
+too small for more than a direction. Many strong heads (L17H1, L27H6, L20H1, L30H18,
+L15H25, L21H23, L17H17) have no or almost no scored QK events and are insufficient in
+every partition.
+
+\subsection{Attended-name mover classification}
+\label{sec:attended}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.75\textwidth]{fig9_attended_name.png}
+\caption{Fraction of attended-name events (test-block rows of the core prompts whose
+attention argmax lies inside a visible test name) in which the contextual output
+$o^h_jW_U$ favours the attended name's first token over the other visible names,
+against Scope-F importance. Dashed lines: the fixed 80\% thresholds.}
+\label{fig:attended}
+\end{figure}
+
+Rule (fixed before results): a head is a \emph{name mover} if the contrast is positive
+in $\ge80\%$ of its attended-name events and a \emph{negative name mover} if negative in
+$\ge80\%$, with support $\ge20$ events in $\ge10$ families; below support the head is
+``insufficient'', never ``neither''. Contrast = contextual logit of the attended name's
+first token minus the mean over the other visible distinct names (both roles);
+collisions of anchor token IDs are excluded. Sensitivity variants: last-token anchor,
+same-role controls only, non-self events only, colon site only, base prompts only.
+All 160 core prompts of all three replicas enter the classification (94{,}015
+attended-name events over the 105 heads).
+
+Results (Figure~\ref{fig:attended}): six name movers, L27H6 (96\% of 768 events, mean
+contrast $+2.09$), L17H24 (94\% of 1{,}073), L26H31 (91\% of 621, mean $+2.09$),
+L18H19 (84\%), L22H5 (82\%), L21H6 (82\%); one negative name mover, L20H1 (17\%
+positive, mean $-0.10$). Six of the seven labels are consistent with the sign of
+$I^F_h$; the seventh, L26H31, is a strong mover of the name it attends to with a
+negligible individual causal effect ($I^F_h=+0.027$). Its attention rarely selects the
+answer: 12.9\% of its 62 colon-site name events land on the answer (25\% of the 16
+base-prompt colon events, nine families), and it puts 0.09 of its colon mass on the
+query mother. Strong name movement with weak answer selection is a consistent
+descriptive account of its small effect; it is not established as the explanation,
+since redundancy with other movers and the specific intervention are alternatives.
+L21H18 (79\%) and L19H22 (78\%) miss the threshold and are name movers on colon-site
+events only; L18H18 (74\%) is not labelled. One support detail matters for the
+strongest mover: L18H19's overall label rests on 646 events, but its colon-site subset
+has only 17 events in nine families and is \emph{insufficient} under the frozen rule,
+so the label describes its behaviour at earlier test positions, not specifically at
+the causal answer position. Every label disappears at the last-token anchor: what these heads move is the
+first token of the attended name, the token the model has to produce next.
+
+The three pre-registered candidates give a mixed answer. L19H16 is negative in 77\% of
+1{,}906 events (just under the rule; negative name mover on the colon site only) and
+L26H23 in 79\% (negative name mover with same-role controls). L23H15, however, favours
+the attended name in 64\% of 2{,}428 events (mean $+0.06$) while its causal effect is
+$-0.95$: it is \emph{not} a negative name mover by its own output. Its attention is the
+same as L27H6's (0.51 on the query mother, 100\% query-tracking), it is the strongest
+induction/retrieval head of the inventory on the synthetic tasks (below), and its
+direct vocabulary write at the colon is $+0.04$. The ``negative name mover''
+description inherited from Stage 2 is therefore not supported for L23H15; how its
+negative effect arises is open, and mediation by later components is the hypothesis to
+test in Stage 4. L30H18 is different again: its contrast on the attended name is
+positive (67\%, mean $+0.60$) --- it \emph{promotes} what it attends to --- and it
+attends to the distractor. Promotion of the distractor name is a hypothesis consistent
+with all three observations (attention, projection, causal sign); a targeted
+intervention on its attention would be needed to establish it. The label ``negative
+mover'' thus covers at least two different patterns; only L20H1 (and, marginally,
+L19H16 and L26H23) suppresses the name it attends to.
+
+L17H1 favours the attended name in 77\% of 3{,}469 events, but almost all are earlier-
+site events; its colon-site support is insufficient, consistent with its zero effect
+there.
+
+\subsection{Matched contextual RI}
+Replacing the raw current-token embedding by the actual normalized value input at the
+same position, with event IDs, controls, anchors and family weighting held fixed
+(70 heads with valid events; 27 inventory heads have no saved scored event and 8 have
+too few matched events), does not repair the Stage-1 statistics. On the main
+all-facts/all-test first-anchor name gap ($n=68$ supported heads) the Spearman
+correlation with Scope-P importance moves from $-0.26$ (raw) to $-0.17$ (contextual);
+with the RI-supported family/order subset of pairs, from $-0.28$ to $-0.19$. The
+raw target statistic is uncorrelated ($+0.01$ raw, $+0.02$ contextual); the last-anchor
+target statistic is negative under both ($-0.31$, $-0.23$). The embedding choice is
+not what makes RI fail: RI scores the current position's own residual, whereas the
+heads that matter act on what they attend to, or indirectly. This is a sensitivity
+analysis on a selected inventory, not an all-head result.
+
+\subsection{Attention--value factorial at the colon}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig8_attention_value.png}
+\caption{Ordinary Scope-F patch beside the two single replacements (corrupted attention
+pattern with clean values; clean pattern with corrupted values) and their interaction,
+178 pairs.}
+\label{fig:av}
+\end{figure}
+
+For every head the value replacement alone carries the effect (L18H19: values $+3.16$,
+pattern $+0.08$; L27H6: $+2.59$ vs.\ $+0.27$; L18H18 $+2.88$ vs.\ $+0.11$; L21H18
+$+1.70$ vs.\ $+0.01$; L25H17 $+1.29$ vs.\ $-0.02$). The routing term is small and
+non-zero only for the negative heads (L20H1 $-0.22$, L30H18 $-0.18$, L19H16 $-0.16$,
+L17H3 $-0.10$, L23H15 $-0.09$) and for L27H6 ($+0.27$). The family-mean interaction
+terms are also small ($-0.27$ for L18H18, $+0.21$ for L27H6, $-0.16$ for L18H19,
+otherwise near zero), but these means cancel large family-level interactions of both
+signs: the mean absolute interaction per family is 1.25 logits for L27H6 (maximum
+4.58), 0.81 for L18H18 (maximum 3.27), 0.54 for L18H19 (maximum 3.25), 0.47 for L21H18
+and 0.58 for L20H1, and the mean absolute routing term is 0.68 for L27H6 and 0.41 for
+L18H18. Value replacement carries the larger effect on average for the leading
+answer-position heads; a uniformly weak interaction between routing and values is not
+shown, and separability should not be assumed in Stage 4. On average the picture
+agrees with Section~\ref{sec:attention}: the corruption barely moves the family-mean
+attention of these heads, so what changes is mostly the content at the attended
+position and that content is what the reader carries to the colon. The factorial does
+not separate ``name copying'' from ``reading a relational binding'': both predict value
+dominance.
+
+\subsection{Repeated-sequence and retrieval fingerprints}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig7_synthetic.png}
+\caption{Synthetic fingerprints for all 105 heads: attention to the copy source against
+the head's output preference for the gold token, on the key--value retrieval task
+(left) and the repeated random sequence (right).}
+\label{fig:synth}
+\end{figure}
+
+The model solves both tasks (key--value retrieval 100\% of 32 trials; repeated
+sequence 96.1\% of 992 probes), so both fingerprints are defined for every head.
+Retrieval-type attention (argmax on the copy source) is shown by L19H16 (0.97 of
+probes), L21H18 (0.88), L23H15 (0.84), L18H18 (0.56), L16H1 (0.47), L18H19 (0.19),
+L22H5 (0.16), L26H23 (0.13); induction-type attention on the repeated sequence by
+L23H15 (0.66), L21H6 (0.64), L16H1 (0.45), L21H18 (0.39), L19H16 (0.36), L22H5
+(0.22), L26H23 (0.15). Random controls reach at most 0.44 and 0.17. Output sign on the
+gold token separates the two kinds of source-attender: L21H6 ($+0.42$ on repeats),
+L21H18 ($+0.15$/$+0.09$), L18H19, L22H5 and L16H1 promote the copied token; L19H16
+($-0.24$/$-0.10$), L26H23 ($-0.19$/$-0.17$) and L23H15 ($-0.05$/$-0.02$) attend to
+the source and \emph{do not} promote it. L25H17, L30H13 and L21H23 have positive gold
+output with self-attention on both tasks, as in the kinship task. L27H6, L17H1, L18H18
+(output), L20H1 and L30H18 show no fingerprint on either probe. Absence on these two
+probes is not evidence of task specificity; other synthetic tasks might reveal a
+transferable pattern. Transfer to a synthetic task supports a behavioural
+capability and does not show that the same algorithm solves the kinship task.
+
+\subsection{Controlled representation readout (Stage-3 plan, Section~1.5)}
+\label{sec:readout}
+\textbf{Question and completed run.} The optional readout asks whether the causal
+sites of L17H1 and L15H25 expose information about the mother's identity, and whether
+that readout depends on the selected head. Run \texttt{stage3\_readout\_v1} contains
+1{,}920 records: the 40 common pairs (20 discovery families, both orders), four
+writer/site combinations, six conditions and two readout prompts. The frozen plan
+matches the manifest hash; the gate passed with zero identity-injection and self-patch
+drift and exact reproduction of three saved single-position importance probes. All
+four analysis tables were regenerated locally and matched byte-for-byte. The 87
+validation families were not used.
+
+\textbf{Intervention and measurement.} Capture the residual at the output of the
+writer's decoder block, including its MLP and shared normalization, and inject it at
+the placeholder of a fixed readout prompt at the same block output. The prompts are
+an identity completion (``cat $\to$ cat; \ldots; x $\to$'') and a
+\texttt{mother\_of} question (``Who is the mother of this person?''). Conditions are
+the intact clean source, replacement of the head at the capture site
+(\texttt{head\_site}), replacement from the first differing token through that site
+(\texttt{head\_span}), the intact corrupted source, the same token role in the other
+answer-side fact (\texttt{irrelevant}), and no injection. The other-fact control
+contains the competing mother's information; it is not an information-free vector.
+
+Let $t_q,t_o$ be the first tokens of the query mother and the other candidate mother.
+The primary statistic and paired change are
+\[
+ C=\log p(t_q)-\log p(t_o),\qquad
+ \Delta C_c=C_c-C_{\mathrm{intact\ clean}}.
+\]
+A negative change moves the readout toward the swapped-in mother. Average the two
+orders within each family, then average the 20 family values. The measurement concerns
+first-token preference, not full-name generation. The source residual combines
+multiple components; head dependence is assessed only through the paired intervention.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrrr}
+\toprule
+Writer & Site & Readout & Clean $C$ & Source swap $\Delta C$ & Head-site $\Delta C$ & Negative families \\
+\midrule
+L17H1 & is & identity & $+0.51465$ & $-0.52070$ & $-0.45840$ & 20/20 \\
+L17H1 & period & identity & $+0.28789$ & $-0.04609$ & $-0.04121$ & 20/20 \\
+L17H1 & is & mother\_of & $+0.25459$ & $-0.00903$ & $-0.00981$ & 17/20 \\
+L17H1 & period & mother\_of & $+0.26479$ & $-0.02686$ & $-0.02319$ & 20/20 \\
+L15H25 & child last & identity & $+0.18213$ & $+0.02021$ & $+0.00605$ & 8/20 \\
+L15H25 & child last & mother\_of & $+0.24312$ & $+0.00181$ & $-0.00020$ & 9/20 \\
+L15H25 & is & identity & $+0.29395$ & $-0.15117$ & $+0.00303$ & 7/20 \\
+L15H25 & is & mother\_of & $+0.25063$ & $-0.00171$ & $+0.00020$ & 5/20 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Controlled readout, family-level descriptives. Source swap uses the intact
+corrupted prompt; head-site replaces only the selected head at the capture position.
+The last column counts families with a negative head-site change after averaging
+orders. The head-span condition is identical by construction at this capture layer
+(see below). Values come from \texttt{readout\_family\_summary.csv}.}
+\label{tab:readout}
+\end{table}
+
+\textbf{L17H1: identity-sensitive information, strongest at ``is''.} In the identity
+readout, the contrast at ``is'' falls from $+0.515$ to $+0.056$ after head replacement,
+compared with $-0.006$ for the corrupted source and $+0.002$ for the other-fact control.
+The head-induced shift is negative in every family (median $-0.459$, range
+$[-0.701,-0.234]$). Its magnitude is about 88\% of the mean full-source-swap shift.
+This supports a contribution of the head's local output to the mother-token
+preference exposed by this readout. The ratio compares two readout changes; it is
+not a fraction of encoded information or of the original task's causal effect.
+
+At the period, the identity shift is weaker but also negative in every family:
+$-0.0412$ for head replacement versus $-0.0461$ for source swap, with median $-0.0410$
+and range $[-0.0723,-0.0117]$. The \texttt{mother\_of} readout at the period also
+responds consistently ($-0.0232$ versus $-0.0269$). These small responses do not by
+themselves establish a relational binding. For comparison, the original-task
+single-position effects are $+1.769$ logits at ``is'' and $+1.377$ at the period.
+The head's approximately $5.7$-logit Scope-P effect is an all-position measurement,
+not the effect at either site; none of these effects is numerically decomposed by
+the readout shifts.
+
+\textbf{L15H25: the child's-site content remains unresolved.} The child's last-token
+site has original-task importance $+0.429$ logits, positive in every family. Replacing
+the head changes the captured residual (mean norm difference 1.106), but the
+\texttt{mother\_of} contrast barely changes: $-0.00020$ under head replacement,
+and only $+0.00181$ under the full source swap. Identity readout also lacks a
+consistent mother-swap response there. Since even the source-swap control does not
+expose the expected information, the small head effect cannot distinguish missing
+information from an insensitive readout. The query mother ranks first among the
+candidates in 55\% of \texttt{mother\_of} probes for clean, head-replaced, corrupted
+and no-injection conditions alike. Nor does identity readout reliably recover the
+child: its first token ranks first in only 15\% of intact probes.
+
+At L15H25's secondary ``is'' site, identity readout does respond to source swap
+($-0.151$, negative in 18/20 families), while the head shift is approximately zero
+($+0.003$), consistent with that site's small original-task effect ($+0.00394$).
+This does not assign an address-only role to the head at its different, causal
+child-last site.
+
+\textbf{Readout quality and scope.} For every intact-clean probe, the top next token
+is ``hello'' under identity and ``Mary'' under \texttt{mother\_of}; the experiment
+has not freely decoded the names. At L17H1/``is'', identity readout assigns the query
+mother's first token mean probability $0.000373$ (0.0373\%), compared with $0.0000429$
+without injection, $0.000282$ for the other-fact residual, $0.000290$ after head
+replacement and $0.000285$ for the corrupted source. Thus there is a positive
+probability-relevance check and a source-specific contrast, but low absolute decoding
+probability. These are means of per-example probabilities, not exponentiated mean
+log probabilities. A null readout does not establish absent information; a
+\texttt{mother\_of} prompt does not itself establish successful relation decoding.
+
+\textbf{Why head-site and head-span are identical.} All 320 paired readout outputs
+are exactly identical between these conditions. The head is replaced after its
+layer's attention mixing, and the residual is captured at the output of that same
+block. The remaining projection, normalization, residual addition and MLP act
+independently at each position. Extra replacements at earlier positions therefore
+cannot change the captured position within this block. This is a structural property
+of the intervention, not evidence that earlier writes are unimportant. Testing their
+propagation requires a later capture layer or a path intervention. The two conditions
+must not be counted as independent corroboration.
+
+\textbf{Implication.} The extension strengthens the hypothesis that L17H1 contributes
+mother-identity-sensitive information at ``is'' and the period, while leaving the
+representation at L15H25's child-last site unresolved. No writer-to-reader edge or
+circuit has been demonstrated. Stage 4 should test consumers of these actual source
+positions and retain L15H25 as a causal candidate despite the inconclusive readout.
+
+
+\section{Head-profile table}
+\label{sec:cards}
+\input{tables/tab_profiles.tex}
+
+Table~\ref{tab:profiles} summarizes the 25 strong heads; the per-head evidence cards
+(\texttt{analysis/head\_cards.md}) and the full tables cover all 105. For every head
+and analysis the status is one of completed, insufficient support, unavailable input,
+or unresolved: contextual RI is insufficient for 35 heads (no or too few saved QK
+events), the conditional synthetic scores are complete for all heads, the
+attended-name label is insufficient for 19 heads (mostly heads whose attention never
+lands on a name), and every other cell is completed.
+The controlled representation readout of Stage-3 plan Section~1.5 is completed
+for L17H1 and L15H25 (Section~\ref{sec:readout}). It provides an intervention-dependent
+mother-token preference for L17H1, strongest at ``is'', while L15H25's child-last
+representation remains unresolved under the current readouts. These measurements
+supplement the head-profile table. Broad spectral analysis and function-vector
+mediation were not run.
+
+\section{Evidence assessment of the Stage-2 hypotheses}
+\label{sec:hyp}
+\textbf{Copying.} Partly supported, with an important correction. Six heads
+(L27H6, L17H24, L26H31, L18H19, L22H5, L21H6) promote the first token of the name they
+attend to in $\ge80\%$ of events, and L27H6 writes the answer directly ($+2.99$
+logits).
+Weight copying scores have the right sign for these heads and for the anti-copiers
+L20H1, L26H23, L19H16. The Stage-2 conjecture that the negative name-gap correlation
+arises because ``the causal heads copy names'' is therefore consistent with the
+positive movers. But copying is neither necessary nor sufficient: L18H18 (2.7 logits)
+and L27H6 have weight scores near zero or negative, the strongest weight copier L30H18
+hurts the answer by copying the distractor, L26H31 moves names as strongly as L27H6 but
+attends to the wrong ones and has no effect, and the largest head, L17H1, does not act
+at the colon at all.
+
+\textbf{Contextual information.} Supported for the location, with limited new
+content evidence from the controlled readout.
+The heads' effects come mainly through their values (factorial, on average), their
+attention tracks the queried fact under query change (and on average under relocation),
+and their raw-embedding projections
+are uninformative while the contextual projections are partly informative. Contextual
+RI at the current position does not help, because the information the readers use is
+at the attended position, written there by earlier layers (Section~\ref{sec:position}).
+The controlled readout (Section~\ref{sec:readout}) supports a contribution of L17H1
+to mother-identity-sensitive information at ``is'' and the period; it does not
+establish a relational binding, and the content at L15H25's child-last site remains
+unresolved. How that information is used by downstream components is a Stage-4 question.
+
+\textbf{Early vs.\ late positions.} Supported and sharpened. The effect of L17H1,
+L15H25, L14H26 and L13H10 is written inside the query-fact sentence (L17H1 at the
+mother tokens, ``is'' and the period; L15H25 at the child's last token) and read
+later; all other strong heads act only at the colon. The earlier ``layer-6--11
+writers'' of Stage 2 (L6H24, L7H1, L8H15, L9H16, L12H17) are confirmed to have zero
+colon effect, but their all-position effects are small ($\le0.28$); the important
+writer is L17H1, in the same layer band as the readers.
+
+\textbf{What Stage 3 does not establish.} No edge between any writer and any reader has
+been tested; single-position additivity within one head says nothing about additivity
+across heads; the labels ``name mover'' and ``negative name mover'' describe the sign of
+one head's output on its attended token and are not mechanism claims; the changed-query
+control is a discovery measurement on 20 families; and all thresholds are descriptive.
+
+\section{Hand-off to Stage 4}
+\label{sec:stage4}
+Stage 4 receives the following components and specific communication hypotheses.
+
+\begin{enumerate}
+\item \textbf{Writer L17H1 $\rightarrow$ mother-attending readers.} L17H1 writes at
+the query mother's tokens, ``is'' and the period; L27H6, L21H18, L22H5, L18H19,
+L18H18 attend to the mother's tokens at the colon. Path patching L17H1's output at
+those positions into the readers' keys vs.\ values will test whether L17H1 supplies the
+content the readers carry (values) or the address they select (keys). The value
+dominance of the factorial predicts values. The controlled readout strengthens the
+content hypothesis at ``is'' and the period, but these positions are distinct from
+the mother-name tokens: test their actual consumers, including possible intermediate
+components, rather than assuming that mother-attending readers consume these sites.
+\item \textbf{L15H25 $\rightarrow$ child-attenders.} L15H25 writes at the query child's
+last token; L16H21 and L16H1 attend to the child at the colon and have no direct
+vocabulary output. Test whether they route through L15H25's write and where their
+$0.9$-logit effects surface (which later heads read them). Retain L15H25 despite the
+inconclusive child-last readout: the source-swap control did not expose the mother
+reliably, so a null head readout does not rule out a binding or other useful content.
+\item \textbf{Heads whose projection does not explain their effect.} L18H19, L18H18,
+L20H1, L23H15, L19H16 have colon effects far larger than their vocabulary projections.
+Test the mediation hypothesis: path-patch their output into later heads and MLPs at the
+colon, and compute a matched clean-minus-donor projection under an explicit
+normalization reference; L23H15's and L30H18's negative effects in particular need this
+before any type label. L17H3 ($F/P=0.74$) is a mixed-position candidate whose earlier
+sites should be located first.
+\item \textbf{Positive vs.\ negative movers.} Joint interventions on \{L27H6, L21H18,
+L22H5, L21H6\} against \{L20H1, L19H16, L26H23\} to test redundancy and whether the
+negative heads calibrate the positive ones; group ablation before any faithfulness
+claim.
+\item \textbf{Validation.} Only after edges are established: minimal-circuit
+faithfulness on the 87 held-out families and the reorder/changed-query conditions.
+\end{enumerate}
+
+\section{Conclusion}
+Stage 3 replaces the Stage-2 sketch with a measured profile of every inventory head.
+The largest causal head, L17H1, is not a reader at the answer position: it acts inside
+the query-fact sentence, at and after the mother's name, and its effect is recovered
+symmetrically by reverse patching. Twenty strong heads deliver their whole effect at
+the colon, mainly through their values, with attention that follows the queried fact
+under a changed query and, on average, under relocation and name swapping. Among them,
+six promote the first token of the name they attend to (L27H6 directly writing the
+answer at $+3$ logits; L26H31 as strongly, but at the wrong names and without effect),
+one suppresses it (L20H1), several have effects that their own vocabulary projection
+does not explain (L18H19, L18H18, L23H15, L19H16), and one attends to the distractor
+and promotes it, consistent with its negative effect (L30H18). Neither the raw-embedding RI projection nor its
+contextual variant tracks these effects, because the relevant information sits at the
+attended positions and, for the indirect heads, downstream. Stage 3 therefore ends
+with explicit components and edges to test, not with a circuit. The optional
+readout adds a consistent head-dependent mother-token preference for L17H1, strongest
+at ``is'', while leaving L15H25's child-last representation unresolved. These are
+controlled readout findings rather than successful free-text name decoding or
+evidence of a writer-to-reader channel.
+
+\end{document}

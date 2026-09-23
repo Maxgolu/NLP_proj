@@ -1,0 +1,16 @@
+{
+  "core_tests_passed": 10,
+  "pipeline_tests_passed": 4,
+  "slurm_syntax_checked": true,
+  "bundle_extraction_and_hashes_checked": true,
+  "gpu_run": false,
+  "bundle_sha256": "c9a61ff925a80562243843c308673f9fdcc265b27ddb1672786206984518a4c2",
+  "code_sha256": {
+    "stage4_pipeline.py": "086ac4e65bfb90fba1a550e2d66bd71ef6bc1ec7b5924453b1c20e10ab1d3bd6",
+    "stage4_pipeline.sbatch": "63dd1d1a45bbd90df2dedb0ad2493fa16fe5990e1b40af7c8220a29e8bd45ee5",
+    "submit_stage4_pipeline.sh": "518b47e85b7b73a3c247291fc08a55497072dd3feb58b48f384e3a4fffc48a6f",
+    "test_stage4_pipeline.py": "6dea3b61e851e352444f17be3ba6d8c3db64ba4fa0bff21a328289beb85ddcca",
+    "stage4_analyze.py": "5ad19aeb657bddd72c942593f21382d6bc2b0555ba4e098df4425384e597e747",
+    "build_stage4_bundle.py": "de74370f68a69cbbf76bd04decda6eb2d7cf538bbbba87ab49e13a2f053b5756"
+  }
+}

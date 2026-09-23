@@ -1,0 +1,208 @@
+% ============================================================
+% Stage 4 --- Execution Recipe (PROPOSAL v2, post-Stage-3)
+% Concretizes the adopted preliminary plan
+% (Stage4_Circuits_and_Communication_preliminary) using the
+% Stage-3 results. For discussion; not yet the frozen manifest.
+% Standalone-compilable; to merge into the main document, copy
+% everything between \begin{document} and \end{document}.
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, booktabs}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\title{Stage 4 --- Execution Recipe\\\large Proposal v2, instantiated from the Stage-3 results}
+\author{Phase A: Single-hop SIH Audit}
+\date{23 September 2026}
+
+\begin{document}
+\maketitle
+
+\section{What changes relative to the preliminary plan}
+
+The preliminary Stage-4 plan is retained in its definitions, baselines, OLMo
+normalization contract, calibration independence, and validation discipline. Stage 3
+changes its \emph{content}: the seed hypotheses, the head rosters, the order of
+experiments, and four additions. Specifically:
+
+\begin{enumerate}[leftmargin=1.4em]
+  \item \textbf{The writer--reader geometry is positional, not layer-banded.} The main
+        writer is \textbf{L17H1} (layer 17, the readers' own band), writing
+        mother-dependent information at the query-fact sentence (``is'', period, mother
+        tokens); the layer-6--11 heads are demoted to a single screening pass. The
+        divergence analysis (\S\ref{sec:div}) is extended to be position-resolved, and
+        the 11--16 layer-jump prediction is replaced by a positional prediction.
+  \item \textbf{Seeded, named edges replace a generic search} (\S\ref{sec:paths}); the
+        open expansion search remains, but as a budgeted second round around whatever
+        the seeded routes retain.
+  \item \textbf{Four additions} motivated by Stage-3 findings: a backup-head test for
+        L26H31 (strong mover, no individual effect); an attention-redirect intervention
+        for L30H18 (distractor-promotion hypothesis); the matched clean-minus-donor
+        projection under an explicit normalization reference (requested by the Stage-3
+        report itself); and a mediation-edge battery for the heads whose colon effects
+        their own vocabulary projection does not explain.
+  \item \textbf{One retraction propagated:} L23H15 is not treated as a negative name
+        mover anywhere in Stage 4; its negative effect is an open mediation question.
+\end{enumerate}
+
+\section{Head rosters (fixed from Stage-3 outputs)}
+\label{sec:rosters}
+
+\begin{center}\small
+\begin{tabular}{llp{7.6cm}}
+\toprule
+Roster & Members & Origin / note \\
+\midrule
+Writers $W$ & L17H1, L15H25; L13H10 ($-$), L14H26, L17H3 & position profiles; L17H3's earlier sites still to be located \\
+Mother-readers $R_m$ & L27H6, L21H18, L22H5, L21H6, L18H19, L18H18, L19H22, L17H24 & colon attention on query mother; \textbf{L17H24 (layer 17) cannot consume L17H1's write --- same-layer reads see the pre-attention residual; keep it as a control consumer} \\
+Child-readers $R_c$ & L16H21, L16H1 & colon attention on query child; no direct vocabulary output \\
+Self-attenders $S$ & L25H17, L30H13, L21H23, L17H17 & colon self-attention; L25H17 = 1.27 logits unexplained \\
+Negatives $N$ & L20H1, L19H16, L26H23, L23H15, L30H18 & only L20H1 is an established negative name mover; L30H18 = distractor promoter; L23H15 = mediation open \\
+Mediation set $M$ & L18H19, L18H18, L20H1, L23H15, L19H16, L25H17, L16H21, L16H1 & colon effect $\gg$ own vocabulary projection \\
+Backup candidate $B$ & L26H31 & 91\%-mover, wrong names, $I^F_h=+0.03$ \\
+Early minor writers $E$ & L6H24, L7H1, L8H15, L9H16, L12H17 & all $\le 0.28$; one screening pass only \\
+Controls & the 25 Stage-2 random heads & unchanged, in every experiment \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Rosters overlap ($R_m \cap M \ne \emptyset$ etc.); a head carries every applicable
+label. RI membership (the $R$ set of the preliminary plan) is tracked as an attribute
+throughout: note that five strong colon readers (L18H19, L22H5, L16H21, L16H1, L17H24)
+\emph{are} RI-selected, so the final participation analysis (\S\ref{sec:val}) will be
+genuinely two-sided.
+
+\section{Experiments, in order}
+
+\subsection{S4.0 --- Manifest freeze}
+Freeze, per the preliminary plan \S2.3, now fillable: the rosters above; the seeded
+edges of \S\ref{sec:paths}; edge-screen budget (all incoming/outgoing connections of
+$W \cup R_m \cup R_c \cup S \cup N \cup B$, plus one expansion round of the same size
+around retained components); the stratified exact-calibration sample for the edge
+screen; retention thresholds (proposal: retain an edge if its exact effect exceeds the
+95th percentile of matched random edges \emph{and} replicates in sign in $\ge 80\%$ of
+families); group subsets and seeds; stopping rules. Log any amendment before new
+batches.
+
+\subsection{S4.1 --- Position-resolved residual divergence}
+\label{sec:div}
+From cached runs, compute $d_\ell$ at four sites: query-mother last token, ``is'',
+the period, the query-child last token, and the colon (relative distances, zero
+denominators flagged). \emph{Prediction from Stage 3:} divergence at ``is''/period
+grows from layer 17 onward (L17H1's write), at child-last from layer 15 (L15H25), and
+at the colon late. Repeat after the writer-group intervention of \S\ref{sec:groups}
+(G3) with matched random-group controls. Purpose: a cheap map of where information
+becomes available, guiding receiver-layer choices below; not a constraint.
+
+\subsection{S4.2 --- Calibrated edge screen}
+As in the preliminary plan \S3.2 (adapted EAP through the implemented intervention,
+finite-difference checks, stratified exact calibration --- independent of Stage-2's
+0.945). Scope: the frozen budget of \S4.0, channels Q/K/V and MLP-in, position-aware
+(fact-sentence sites and colon separately). Deliverable: ranked edge table with
+calibration evidence; low scores are not evidence of no connection.
+
+\subsection{S4.3 --- Exact path patching: the seeded routes}
+\label{sec:paths}
+Three-step hybrid-channel protocol of the preliminary plan \S3.3 (cache $\to$ build
+hybrid receiver channel $\to$ insert in fresh clean run), self-donors and
+wrong-position/channel controls, reverse-direction recovery; 40 common pairs first,
+retained routes on all 178.
+
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{E1. $W\!\to\!R_m$ values vs.\ keys.} Source: L17H1's output at
+        \{mother tokens, ``is'', period\}. Receivers: each $R_m$ head's V and,
+        separately, K at the colon (receivers at layers $\ge 18$; L17H24 as the
+        expected-null control). \emph{Prediction:} value routes carry the effect
+        (factorial); key routes small. Repeat for L13H10 (expected opposite sign) and,
+        at reduced priority, L14H26/L17H3.
+  \item \textbf{E2. L15H25 $\to R_c$, then the second hop.} Source: L15H25's output at
+        the query-child last token into L16H21/L16H1's K and V (which is it --- do they
+        use the child site as an \emph{address} or as \emph{content}?). Then the second
+        hop: path-patch L16H21/L16H1's colon outputs into later heads and MLPs at the
+        colon to find where their 0.9-logit effects surface.
+  \item \textbf{E3. Mediation battery for $M$.} For each $M$ head: path-patch its colon
+        output into (a) each later attention head at the colon with $|I^F|>0.1$,
+        (b) each later MLP at the colon, (c) the direct-to-logits route with all
+        mediators frozen clean. Alongside, compute the \textbf{matched clean-minus-donor
+        projection}: project $(o_h^{\mathrm{clean}}-o_h^{\mathrm{donor}})$ under an
+        explicitly specified normalization reference (the clean run's final-LN scale at
+        the colon), so the diagnostic matches what the intervention inserts.
+        \emph{Decision value:} direct-route failure + one dominant mediated route
+        explains L18H19/L18H18/L23H15's ``projection gap''.
+  \item \textbf{E4. L30H18 attention redirect.} Replace only L30H18's attention pattern
+        at the colon with a pattern whose distractor mass is moved to the query fact
+        (donor: its own pattern from the changed-query condition), values live.
+        \emph{Prediction:} its negative effect shrinks or flips --- establishing
+        distractor-promotion causally. Matched-magnitude random-pattern control.
+  \item \textbf{E5. One screening pass on $E$} (early minor writers) against all
+        retained receivers; retire them from the narrative if nothing is retained.
+\end{itemize}
+
+\subsection{S4.4 --- Group effects and conditional membership}
+\label{sec:groups}
+Baselines and protocol per the preliminary plan \S3.5. Fixed rosters:
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{G1. Positive vs.\ negative movers.} $A=\{$L27H6, L21H18, L22H5,
+        L21H6$\}$, $B=\{$L20H1, L19H16, L26H23$\}$: singles, $A$, $B$, $A\cup B$,
+        interaction $I_{A\cup B}-I_A-I_B$; coalition-size curves with seeded subsets
+        and layer/site-matched random groups.
+  \item \textbf{G2. Backup test for L26H31.} Backgrounds $K_1=\{$L27H6$\}$,
+        $K_2=\{$L27H6, L21H18$\}$, $K_3=A$: measure $I_{K\cup\{\mathrm{L26H31}\}}-I_K$
+        and, in the same runs, whether L26H31's colon attention re-targets the query
+        mother once the primaries are ablated (the IOI backup signature). This is the
+        cleanest test that ``no individual effect'' $\ne$ ``no role''.
+  \item \textbf{G3. Writer sufficiency.} Jointly restore clean activations of
+        $\{$L17H1, L15H25$\}$ at their write sites only, in the corrupted prompt,
+        vs.\ matched irrelevant positions; report recovery of $M(x)$ and of each
+        $R_m/R_c$ head's attention/output (does restoring the writers restore the
+        readers?).
+  \item \textbf{G4. Mediation-set ablation.} Joint ablation of $M$ at the colon vs.\
+        matched random groups --- an upper bound on how much of the answer flows through
+        the unexplained colon heads.
+\end{itemize}
+
+\subsection{S4.5 --- Fact-swap $\times$ query-swap contrasts}
+Per the preliminary plan \S3.4, applied to retained routes and to G1--G3: which routes
+are sensitive to the fact assignment, which to the queried entity, which to both.
+Stage 3 validated the query axis behaviorally (38/40 correct, attention follows the
+query in 100\% of families); the crossed condition completes the design.
+
+\subsection{S4.6 --- Conditional analyses (triggers now concrete)}
+Channel content (preliminary \S4.1) triggers for verified E1 edges whose content
+remains unexplained: SVD of L17H1's $W_{OV}$, route-restricted component
+removal/restoration with rank- and magnitude-matched controls, identity-vs-position
+minimal contrasts. Readout (preliminary \S4.2) triggers for L15H25's child-last site
+--- this time with a \emph{later capture layer} (the Stage-3 readout showed same-block
+capture cannot test propagation) and for before/after G3 group interventions.
+
+\subsection{S4.7 --- Circuit assembly and discovery evaluation}
+Per the preliminary plan \S3.6, with the candidate graph now expected to take the form
+$W \to \{R_m, R_c, S\} \to (\text{mediators at the colon}) \to \text{logits}$, plus $N$
+as calibrating members. Edge-masked evaluation; $F(C)\ge 0.80$ on the primary mean
+baseline; completeness via $C\setminus K$ vs.\ $\mathrm{full}\setminus K$ for seeded
+$K$; overshoot from removing negative contributors reported, not celebrated.
+
+\subsection{S4.8 --- Frozen validation and RI participation}
+\label{sec:val}
+Unchanged from the preliminary plan \S5. The RI table should now be reported with the
+Stage-3 nuance stated up front: RI-selected heads include five genuine colon readers
+(L18H19, L22H5, L16H21, L16H1, L17H24) but exclude the main writer (L17H1), the top
+direct answer-writer (L27H6), and the mediation heads --- so both
+$|R\cap C_H|/|R|$ and $|R\cap C_H|/|C_H|$ are informative, and neither alone decides
+the audit.
+
+\section{Order, cost and stop conditions}
+
+Order: S4.0 $\to$ S4.1 (cache-only) $\to$ S4.2 (screen) $\to$ S4.3 E1--E4 on 40 pairs
+$\to$ retained routes to 178 pairs + S4.4 $\to$ S4.5 $\to$ S4.6 as triggered $\to$
+S4.7 $\to$ S4.8. E5 and the expansion round run opportunistically after E1--E4.
+Pilot-runtime measurement before submission, as in Stage 3 (0.151~s/forward
+predicted 3.7 GPU-hours there; the E1--E4 seeded scope is of comparable size; the
+factorial-style group runs of S4.4 dominate the budget and should be piloted first).
+Stop conditions: if E1 retains no L17H1 route, the expansion round around L17H1's
+sites (including MLP receivers) runs \emph{before} any circuit assembly; if G2 shows
+backup behavior, coalition curves are extended before minimality claims; validation
+opens once, after S4.7 freezes.
+
+\end{document}

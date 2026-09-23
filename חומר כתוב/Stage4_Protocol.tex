@@ -1,0 +1,732 @@
+% Standalone Overleaf document; pdfLaTeX; no external figures or tables.
+% Scientific execution protocol proposed after the completed Stage-3 readout.
+% This file does not record a Stage-4 model run.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.1cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,enumitem,graphicx}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\setlist{nosep,leftmargin=1.5em}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\newcommand{\Rtest}{R_{59}}
+\newcommand{\Rall}{R_{61}}
+\newcommand{\E}{\mathbb{E}}
+\title{Stage 4: Causal Groups, Communication and RI Participation\\
+\large A bounded execution protocol after the complete Stage-3 results}
+\author{Phase A: Single-hop SIH Audit}
+\date{Protocol v2: route-first, reduced RI audit}
+\begin{document}
+\maketitle
+
+\section{Target claim and strategy}
+Identify head groups that causally support the model's in-context mother-of
+behavior, identify specific communication routes between them, and determine which
+RI-selected candidates participate, including conditional and opposing contributions.
+The semantic claim is task-specific: selecting the mother bound to the queried child
+under the tested fact assignments and order changes; query-change claims require the optional query panel. It is not a claim of a general semantic
+faculty, relation specificity across domains, or the discovery of every valid circuit.
+
+Start with a finite list of exact path tests; construct group interventions from the measured routes. Use an
+approximate screen only if a stated expansion trigger occurs. A faithful head subset
+with tested communication is an acceptable result; a partially explained mechanism
+or failure of the faithfulness criterion must also be reported. Do not force a single
+chain or a single globally minimal circuit.
+
+\textbf{Status.} This is a proposed scientific execution protocol. The accompanying
+\file{results/stage4_design_v2/manifest_proposal.json} fixes seed rosters, reference
+cohorts, source hashes and decision defaults. Its preparation involved saved-data
+analysis only. No Stage-4 effect has been measured. Before GPU execution, the
+implementation must materialize the specified configurations and pass Section~
+\ref{sec:gates}; runtime and code hashes then complete the execution manifest.
+
+\subsection{Evidence that determines this design}
+The completed Stage-3 tables, not the older handoff's superseded interpretation,
+give the following starting points.
+\begin{itemize}
+\item L17H1 has Scope-P importance $+5.701$ but Scope-F $-0.056$. Its single-site
+effects at query-fact ``is'' and period are $+1.769$ and $+1.377$. The controlled
+identity readout at ``is'' changes by $-0.458$ after replacing the head and by
+$-0.521$ after source corruption, with the head shift negative in all 20 families.
+This motivates a content route; it neither identifies a receiver nor proves a binding.
+\item L15H25 has $P=+0.679$, with $+0.429$ at child-last. Its readout is inconclusive
+because the full source-swap control barely changes the mother contrast. Retain this
+writer and test its communication; do not require another successful readout first.
+\item Twenty of 25 strong heads have $F/P$ near one. L17H3 is mixed-position
+($P=-0.546$, $F=-0.402$). On the common pairs its non-query mother spans have summed
+mean importance $-0.053$; no individual early role is a strong established write site.
+\item Signed averages conceal large family interactions. For example, L27H6's
+attention/value interaction averages $+0.205$ but its mean absolute family effect is
+1.254. Group and path effects must therefore be measured, not added from singles.
+\item \textbf{Eight}, not only five, of the 25 strong heads are test-only RI
+candidates: five positive and three negative. L19H16, L23H15 and L26H23 are in RI.
+The mediation roster is therefore not disjoint from RI.
+\item Re-reading all 1,024 exact head effects on the original 40 pairs finds two
+outside the Stage-3 inventory above $0.3$: L13H18 ($+0.387$) and L24H19 ($+0.390$).
+Their all-discovery effects and positions are not established. They receive a small
+mandatory coverage check rather than being silently excluded from circuit search.
+\end{itemize}
+
+\subsection{Changes to the practical proposal}
+K/V for a fact-to-answer route are replaced at the \emph{fact/source positions};
+Q is at the receiver's query position, usually the colon. A same-layer head cannot
+read another head's current-layer output. L26H31 cannot change its attention in
+response to ablating downstream L27H6. A group ablation is not an upper bound on
+mediated importance. Residual caches required here are not present in the saved
+Stage-3 projection tables and must be collected. A fixed final-normalization scale
+alone does not handle OLMo's shared attention-output normalization. Random-edge
+percentiles and an 80\% sign rule do not establish significance or universal membership.
+
+\section{Populations, metrics and decision rules}
+\label{sec:metrics}
+Use the pinned \file{allenai/OLMo-2-1124-7B} revision
+\file{7df9a82518afdecae4e8c026b27adccc8c1f0032}, tokenizer and deterministic eval
+runtime. Preserve the original split: 89 discovery families, two orders each;
+the same 20 common families/40 pairs for initial exact tests; 87 held-out families
+opened once after the circuit and evaluation suite are frozen. The manifest lists
+the common family IDs. The unused 69 discovery families provide an expansion check,
+not a pristine confirmatory sample after previous Stage-2 use.
+
+For each pair, use its clean and corrupted gold answers at their first divergent
+token, with their shared answer prefix teacher-forced:
+\[
+ M(x)=z(y_c\mid x,c)-z(y_r\mid x,c),\quad
+ I_T=M(x_c)-M(x_c;T_{r\to c}),\quad
+ J_T=M(x_r;T_{c\to r})-M(x_r).
+\]
+Positive $I$ means noising moves the answer toward corruption; positive $J$ means
+restoration moves it back. Negative contributors remain eligible. Save both logits,
+candidate probabilities and full-vocabulary top token, not just the difference.
+Average orders within family and then families equally. Also retain per-order values,
+absolute family effects, median, range and sign fractions. Never substitute
+$|\E I|$ for $\E|I|$.
+
+The mean full-model gap on the saved 178 pairs is 11.17046 logits (11.20006 on the
+common 40). Report normalized effects as a ratio of means to the gap on the identical
+population, alongside raw effects. Do not average per-pair ratios. If the denominator
+is below 0.5 logits in a subgroup, suppress its ratio. The four shared-prefix pairs
+are families 168 and 174, both orders. During route discovery, patch only original
+prompt positions and let the prefix recompute. Include these pairs in full discovery;
+report a no-shared-prefix sensitivity rather than dropping them silently.
+
+\textbf{Operational retention, fixed before new effects.} The practical mean-effect
+threshold is $\tau=0.10$ logits, a design choice, not a significance threshold.
+A coherent route/member candidate has $|\bar I|\ge\tau$ and the selected mean sign in
+at least 70\% of families. Also retain a heterogeneous candidate if
+$\E_f|I_f|\ge\tau$ and at least 20\% of families have $|I_f|\ge\tau$; its label must
+remain heterogeneous until tested conditionally. Do not reject such a candidate merely
+because its signed mean cancels. The only prespecified context strata are query-fact
+before versus after the competing fact, and corruption axis; require at least ten
+families per reported stratum. No post-hoc token/name-based subgroup fishing.
+
+Use 20,000 whole-family bootstrap draws, seed 20260923, preserving all paired
+conditions/orders. Discovery intervals are descriptive after selection. On validation,
+freeze each claimed head's background, route, site and sign in advance. Report ordinary
+95\% family intervals and simultaneous 95\% intervals for the vector of claimed
+signed mean effects: use the 95th percentile of the bootstrap maximum absolute
+standardized mean deviation, with the original family standard errors held fixed.
+Flag zero-variance columns explicitly. A confirmed directional contribution must have
+the frozen sign, magnitude at least $\tau$, and a simultaneous interval excluding
+zero. An inconclusive interval is not evidence of absence. Nonlinear faithfulness
+ratios are bootstrapped jointly with their denominators.
+
+\section{Head rosters and positional masks}
+\label{sec:rosters}
+\begin{longtable}{p{.22\textwidth}p{.72\textwidth}}
+\toprule Roster & Members and use \\\midrule
+Primary writers & L17H1; L15H25. \\
+Secondary early/mixed & L13H10, L14H26, L17H3. \\
+Positive group $A$ & L27H6, L21H18, L22H5, L21H6, at the colon. \\
+Negative group $B$ & L20H1, L19H16, L26H23, at the colon; causal sign does not imply a mover mechanism. \\
+Mother-attending priority & L18H18, L18H19, L19H22, L21H6, L21H18, L22H5, L27H6. \\
+Child-attending priority & L16H1, L16H21. \\
+Additional colon sources & L17H24, L25H17, L21H23, L30H13, L17H17; self attention is not exclusive fact avoidance. \\
+Additional negatives & L23H15, L30H18, L18H24, L17H3, L13H10. \\
+RI strong positive & L16H1, L16H21, L17H24, L18H19, L22H5. \\
+RI strong negative & L19H16, L23H15, L26H23. \\
+Backup candidate & L26H31, also in RI. \\
+Early minor panel & L6H24, L7H1, L8H15, L9H16, L12H17. \\
+Outside-inventory reserve & L13H18, L24H19; exact 40-pair Scope-P evidence only. \\
+References & The unchanged 25 Stage-2 random heads; four fixed 23-head layer-matched reference cohorts for the reduced RI residual group. \\
+\bottomrule
+\end{longtable}
+
+$\Rtest$ is the original 59-head test-only RI union; the two historical extras
+L3H11 and L9H22 are not part of the mandatory v2 audit. Define $R_{31}$ by retaining
+an original candidate if its best eligible Stage-1 selection rank is at most three
+in any original scope/anchor/metric, OR if
+$\max(|P_h|,|F_h|)\ge0.10$ logits in the saved full-discovery effects.
+This keeps 23 by RI rank and eight additional causal candidates, dropping 28.
+It is a prioritization rule, not a significance or semanticity threshold.
+All eight strong RI heads and L26H31 remain. The CSV records every decision.
+The residual group $R_{23}$ comprises the 31 minus the five strong positive and
+three strong negative heads; it is not the set of the 23 rank-selected heads.
+
+The initial route pool is the 25 strong Stage-3 heads, including five source
+candidates L13H10, L14H26, L15H25, L17H1 and L17H3. Source and receiver roles can
+overlap; they are not exclusive classes. At a fact site, use later heads as
+receivers; at the colon, test eligible later heads and downstream MLPs/output.
+There are 21 heads with $|F|\ge0.3$ (14 positive, seven negative), and four further
+strong Scope-P heads. In particular 16 of the 21 are later than layer 17.
+The two coverage candidates and supported G2/G3 contributors can extend this pool.
+The old four-positive/three-negative roster is a background-selection reference,
+not a fixed coalition to exhaustively enumerate.
+
+\textbf{Source sites.} L17H1: query-mother token span, ``is'', period, each separately;
+also their union. L15H25: child-last, with ``is'' as a low-effect position control.
+For writer-group restoration use two masks: these narrow sites, and the entire query
+fact sentence. Include same-role positions in the other answer-side fact as controls.
+For L13H10/L14H26, start with the entire query fact; for L17H3, separate colon,
+non-query mother spans, and remaining earlier test positions. Derive indices from
+token offsets and fact annotations, assert the decoded text, and keep all masks in
+the manifest. Never treat the sum of site effects as a joint effect.
+
+\textbf{No answer-selection oracle in circuit evaluation.} Query-relevant sites can
+be used to localize interventions. A deployed circuit mask, however, must retain the
+corresponding fact roles in \emph{all four facts}, not just the fact known to contain
+the answer. Otherwise the experiment performs part of the semantic selection outside
+the model. Question-token and colon masks may depend on syntax, not answer identity.
+
+\section{Intervention implementation and gates}
+\label{sec:gates}
+\subsection{Two baselines}
+Use paired-donor replacement for exact paths, G1--G3 and writer restoration. Use
+discovery-mean replacement for circuit retention/removal, and as a sensitivity check for retained G1--G3 findings. Circuit conclusions also receive paired-donor sensitivity. Replace a head's
+$z_h=A_hV_h$ slice at the input to \texttt{o\_proj}, preserving all other slices.
+Replace MLP output at its residual branch boundary \emph{after} the MLP's shared
+post-feedforward normalization when freezing that branch. Keep all normalization
+operations in their declared live/frozen positions; do not normalize isolated heads.
+
+Means are estimated from the 178 discovery pairs, balanced over family, order and
+clean/corrupted variant. Match layer/head, test fact slot (textual slot 1--4), token
+role and within-span bucket (single, first, interior, last; fixed template tokens
+separately). Question names use the same token-role buckets. Do not condition on
+query relevance, candidate identity or gold answer. Average events within each
+family before families. For fewer than ten supporting families, drop fact slot,
+then within-span bucket, then use the component's all-test-position mean, recording
+the fallback. Discovery evaluation uses leave-one-family-out means; validation uses
+the frozen full-discovery means. Demonstrations and shared answer-prefix sites stay
+live in the primary scope, explicitly recorded below.
+
+\subsection{Exact channel/path intervention}
+\label{sec:path}
+This is an OLMo-specific path intervention inspired by the controlled-path and
+patching methodology of \cite{ioi,patch}, with its normalization boundaries specified
+explicitly rather than assumed additive.
+An attention path is $(u,S)\to(v,T,\gamma)\to$ answer, with
+$\gamma\in\{Q,K,V,KV\}$. A fact-site source feeding a reader's colon output uses
+$T=S$ for K/V and reader output row colon. Q at the colon has no direct same-position
+residual route from a different fact token. Such a cross-position Q effect requires
+a live intervening attention operation and must be named as a mediated path.
+
+For each pair and source, cache clean/corrupted source $z$, branch outputs and actual
+post-QK-normalization/RoPE Q,K plus actual V. Implement:
+\begin{enumerate}
+\item In a clean recipient, insert the corrupted source at $S$. For a
+\emph{direct residual route}, freeze intervening post-normalization attention and
+MLP residual-branch outputs to clean values. The source attention-output normalization
+is live; its downstream same-layer MLP is frozen unless it is the receiver. Capture
+the receiver's selected channel at $T$ before the receiver produces its output.
+Receiver Q/K normalization and RoPE run normally before capture.
+\item In a fresh clean run, insert only that hybrid channel slice at its matching
+SDPA boundary. Keep other channels, rows and positions clean at the receiver;
+subsequent model computation is live. Measure $I_{u\to v,\gamma}$. The source is
+not patched in this final run. Reverse recipient/donor roles for restoration $J$.
+\item For an MLP receiver, capture the changed MLP input at the same source position,
+inject it in a fresh clean run, and let its output and downstream computation run.
+The same-layer MLP after a source head is temporally eligible; a same-layer head is not.
+\end{enumerate}
+
+Freezing an intervening pre-normalization head sum while leaving its normalization
+live would create an unintended extra path. Freeze the \emph{actual residual branch
+increment} there. At the source itself the transmitted increment is
+\[
+ \delta_u=N_{\rm attn}\!\left(\sum_h o_h+o_u^r-o_u^c\right)
+             -N_{\rm attn}\!\left(\sum_h o_h\right),
+\]
+which depends on the other clean heads. Group replacements use one joint
+normalization; do not sum individually normalized increments. Direct-route results
+are conditional on this clean reference. Reverse runs use their own corrupted
+reference. Record the exact frozen/live branches with every route.
+
+For mediated paths, unfreeze only the named intermediate receiver output/branch and
+repeat the hybrid construction. A failure of the frozen direct route does not rule
+out mediation. An additional all-mediators-live capture can locate total source
+influence on a receiver, but must be labelled total influence rather than a direct edge.
+
+\subsection{Required implementation gates}
+Before scientific selection, test six fixed discovery pairs: the first two core
+families in both orders and family 168 in both orders. Require unchanged-hook and
+self-patch logit drift $\le10^{-3}$; saved Stage-2/3 baseline/patch replication
+$\le0.05$; reconstructed SDPA output max error $\le0.02$; and combined QKV receiver
+replacement versus ordinary receiver-output replacement readout drift $\le0.05$.
+Test same-layer head-to-head and future-to-past null paths ($\le10^{-3}$), direct
+cross-position residual nulls, mean-mask all-retained equivalence, finite values,
+causal masks, and exact gold/prefix alignment. Test the path code on a tiny model
+with an explicit manually isolated route before these real-model gates.
+
+For endpoint/no-op gates, compare all measured answer logits, not only top-five
+outputs or differences that could cancel. For joint group replacement, demonstrate
+that source masks are applied simultaneously; restoring a downstream head from an
+unmodified cache otherwise overwrites upstream influence. Stop on failed gates;
+do not reinterpret a numerical failure as a negative finding or relax tolerances
+after observing scientific effects.
+
+\section{S4.1: route mapping before coalition selection}
+\label{sec:routes}
+\textbf{Coverage check.} Complete Scope P and F on all 178 pairs for L13H18 and
+L24H19, reusing their existing 40-pair P values. If either meets the retention rule,
+add it to the exact candidate roster. If $|F/P|<0.8$ with $|P|\ge0.1$, localize it
+on the common pairs using six joint masks: all fact-mother spans, fact-child spans,
+fact template words, fact punctuation, question tokens and final colon. Split a
+retained fact-role mask by textual fact slot before path testing. These effects are
+joint mask measurements, not sums of unmeasured single-position effects.
+
+
+\textbf{Staged execution.} P tests nominate answer-relevant communication, not merely
+activation changes. Start on the common 40 pairs. P1/P2/P4 map candidate sources;
+P3 checks downstream continuation before interpreting a group as parallel branches.
+Do not wait to exhaust all possible routes before testing a supported group.
+All retained effects use the existing coherent/heterogeneous rule, including either sign.
+
+
+\textbf{P1: L17H1 routes.} For each of its three source roles, test K and V separately
+into every strong head in layers 18--31 (16 heads, including positive and negative
+ones). The receiver output row is the colon and the injected K/V positions are the
+source role. This is 96 attention-channel configurations on the common pairs.
+Initially test same-layer and next-layer MLPs at these roles; later MLPs are conditional expansion candidates, not a mandatory 45-configuration sweep.
+For any receiver where either channel is retained, measure joint KV and its
+interaction; test a union of the three source roles rather than adding them.
+L17H1 $\to$ L17H24 is a temporal null, not a candidate consumer. An effect at ``is''
+does not imply that a head attending a mother-name token consumes it.
+
+\textbf{P2: L15H25 routes.} At child-last test K and V separately into all 21
+strong answer-position candidates later than layer 15, starting with L16H1/L16H21.
+Use the colon output row. For retained receivers test joint KV; use ``is'' as the
+low-effect site control on those receivers. Initially test MLPs 15 and 16 at child-last.
+A failed readout does not exclude this source; unresolved strong influence triggers mediation.
+
+\textbf{P3: colon outputs and mediation.} Sources are L16H1, L16H21, L17H24,
+L18H18, L18H19, L19H16, L20H1, L23H15 and L25H17. Prioritize sources reached by P1/P2/P4 and retained G2/G3 contributors, then remaining listed sources. For each, test its colon output
+into (i) every later strong head's Q at the colon and its joint KV at the colon,
+(ii) its same-layer and next-layer MLP at the colon (more distant MLPs only on expansion), and (iii) a
+residual-to-logits route. The latter freezes all later residual branches to clean
+values but keeps the exact final normalization live; it measures the isolated
+residual bypass under that reference, not a linear vocabulary projection. Split a
+retained joint KV route into K and V. Do not first label these heads ``indirect''
+from their projection gap; the route results decide what can be said.
+On shared-prefix pairs, a colon-only residual bypass cannot directly reach the
+later metric position when all intervening branches are frozen. Its null effect is
+structural, not evidence against the source. Report those pairs separately and
+require an explicitly live prefix-position attention mediator to test that route.
+
+\textbf{P4: secondary sources.} Test L13H10 and L14H26 at the whole query sentence
+against all later strong answer-position K/V receivers, prioritizing receivers retained for other sources, and their own-layer/next-layer MLPs.
+L17H3's main source is the colon; apply the P3 recipe once, deduplicating overlapping configurations. Test its non-query mother spans and remaining
+earlier positions as joint auxiliary masks, not a confidently localized early write.
+Only if a source or route remains unexplained, the five early minor heads receive one common-pair source-group test each into the
+retained receiver groups; a null result means no route detected in that panel, not
+permission to claim those heads cannot participate elsewhere.
+
+\textbf{Controls and extension.} Every route gets a self-donor check; impossible
+routes are implementation controls, not a percentile reference. For the 24 largest
+retained routes include a same-source wrong-role position and two seeded,
+same-layer non-roster receiver heads; report intervention norms rather than assuming
+random effects have matched magnitude. Both effect signs are eligible. Extend
+retained routes to all 178 pairs and reverse recovery, including a separate summary
+on the 69 additional families. Prioritize one route per retained RI head and per
+effective writer before ranking further routes by absolute family effect. Cap the
+full-discovery panel at 96 routes; overflow stays explicitly untested rather than
+being declared absent.
+
+\section{S4.2: route-supported groups and reduced RI audit}
+\label{sec:groups}
+\textbf{G1: construct groups from measured routes.} For each source/site, form the
+set of recipients with retained exact answer effects. Conversely, for each
+receiver/site/channel form the set of supported sources. Preserve layer order,
+channel, position and effect sign; a chain is not a set of independent branches.
+An unexplained strong reader remains a search candidate even if no initial writer
+connects to it. Source labels never veto an incoming route.
+
+On the common pairs, test groups with at least two members using simultaneous
+paired-donor replacement at the mapped sites: each member alone, the whole group,
+and the group minus each member. For a group $S$ of size $n$, this is at most
+$2n+1$ nonempty configurations before deduplication and reuse, not $2^n$.
+Save $I(S)-\sum_{h\in S}I(h)$ and
+$\delta(h\mid S\setminus\{h\})=I(S)-I(S\setminus\{h\})$.
+Leaving one member active tests its conditional contribution; call it sufficient
+backup only if the remaining task performance also supports that interpretation.
+Run the receiver-blocking test below for supported source-to-group patterns.
+
+Bound selection to eight distinct groups initially. First take one outgoing group
+per effective source in fixed order L13H10, L14H26, L15H25, L17H1, L17H3; then
+incoming shared-receiver groups, ranked by the sum of mean absolute family route
+effects, with layer/head/site/channel tie-breaking. That ranking is only a priority
+score, never an estimate of joint importance. Deduplicate identical masks.
+Use at most 128 distinct common-pair group configurations. If a group would exceed
+the remaining budget, record it as untested rather than silently truncating members.
+Only a retained joint nonadditivity or conditional effect triggers pairwise splitting,
+within that same cap. Extend at most 16 informative group contrasts and their required
+baselines to 178 pairs, ranking by mean absolute family contrast with deterministic
+ID ties. Retained claims receive mean-replacement sensitivity; cancellations are
+reported per family rather than hidden by the signed mean.
+
+\textbf{Receiver blocking: a focused communication test.} For each supported source, choose its route-supported receiver group. Test joint source restoration only when sources share a supported receiver or a measured interaction motivates it. Keep head and MLP groups separately identified; do not combine the two primary writers by default.
+Compute in corrupted recipients
+\[
+ J_W=M(x_r;W_c)-M(x_r),\qquad
+ B_{W,V}=M(x_r;W_c)-M(x_r;W_c,V_r).
+\]
+Here $V_r$ clamps the receivers' \emph{outputs at their tested positions} to their
+original corrupted values, preventing their response to restored writers. Also run
+$M(x_r;V_r)$ as the self-clamp control. A positive $B$ shows that allowing these
+receivers to respond is needed for part of the measured writer restoration in this
+background. Reverse the experiment: noise $W$ in clean inputs and restore receivers
+to clean values. Report raw effects, source/receiver joint effects and interactions;
+do not call $B/J$ a mediated fraction unless the denominator is stable, and even then
+label it an intervention ratio. Overlapping receiver groups need not add to one.
+This test complements isolated paths with communication in the otherwise live model.
+
+
+\textbf{G2: focused RI participation.} Use the 31 selected heads, not all 59/61.
+Reuse existing Stage-2 single-head paired-donor Scope-P effects in the intact model,
+checking exact model/input/site/metric agreement. New effects use the same full
+original prompt mask and donor policy (identical-prefix sites have zero replacement
+change), not a narrower colon mask. Recompute only missing or incompatible baselines.
+
+Choose a weakened-reader background $K$ on the common pairs from prefixes of
+(L21H18, L22H5, L21H6, L27H6), patched at the colon: choose the smallest prefix
+leaving 30--80\% of the original gap, otherwise the closest fraction to 0.55 and
+flag floor effects. Record $I(K)$ and, for every $h\in R_{31}$, measure
+$I(K\cup\{h\})-I(K)$; if $h\in K$, use $K\setminus\{h\}$ as its background.
+Apply every donor mask simultaneously. Compare with the saved intact-model single.
+This requires 31 times 40 = 1,240 initial conditional intervention evaluations,
+plus background controls; no duplicate intact-model single sweep is required.
+Extend heads meeting the retention rule in their conditional effect or its change
+from the intact effect to all 178 pairs. Always carry the eight established strong
+RI candidates into route follow-up even if a conditional mean cancels.
+
+Test the five strong positive, three strong negative and remaining 23 as three
+fixed groups in intact and weakened backgrounds (incremental effect relative to
+$K$, deduplicating overlaps). Add four fixed reference cohorts of 23 non-RI,
+non-strong heads, matched exactly to the residual group's layer histogram, in both
+backgrounds. The manifest materializes these sets with PCG64 seed 20260923; exclude
+all original/historical RI and coverage reserves. These are descriptive controls,
+not null significance thresholds. Start on 40 pairs; extend retained contrasts only.
+No exhaustive subsets are taken. Mean replacement is a sensitivity test for retained
+claims, with both intact and weakened comparators recomputed consistently.
+
+\textbf{G3: L26H31 backup test.} This can run early alongside P mapping once gates
+and donor baselines pass; it does not require a completed route map or G1.
+Measure its incremental effect in backgrounds $\varnothing$, $\{$L21H18$\}$,
+$\{$L21H18,L22H5,L21H6$\}$ and that set plus L27H6, at the colon. Reuse compatible
+G2 conditions, otherwise keep the different source masks explicit. Capture its
+attention/output before its intervention; include reverse restoration for retained
+contrasts. Only upstream removals can change its attention: L27H6 removal alone is
+an attention-null control, though it can change the answer effect of L26H31.
+Call it backup only with a supported conditional contribution, not from attention
+alone. Start on 40 pairs and extend retained contrasts to 178.
+
+\textbf{Scheduling.} The reading order is P mapping, G1, G2, G3. Execution can
+interleave G2/G3 with P mapping; their supported contributors feed back into routes.
+S4.3 is a triggered return loop, not a mandatory barrier after all G tests.
+
+\section{S4.3: bounded expansion only where needed}
+\label{sec:expansion}
+Trigger expansion if a writer has a substantial total effect/restoration but no
+supported consumer, an RI conditional contributor lacks a route, or the candidate
+head mechanism fails discovery faithfulness/completeness. Do not expand merely to
+obtain a desired story. Run at most two rounds, adding at most 12 heads and four MLPs
+per round, with untested boundaries recorded.
+Limit each round to 256 new exact configurations. Prioritize a route for every
+unexplained primary writer and retained RI contributor before sorting remaining
+candidates by mean absolute family effect.
+
+\textbf{First expansion: exact local mediation.} For an unresolved writer, allow
+its own-layer and next-layer MLP branches live in the hybrid construction, one and
+then both, and recapture the previously tested receiver channels. For an unresolved
+colon source, use its same-layer MLP and the next two blocks as mediator candidates.
+Test actual ordered routes; reintroducing a whole block establishes a block-mediated
+route, not every head inside it. Split an effective block into its 32 head outputs
+and MLP to select the next route tests. Preserve same-layer attention causality.
+
+\textbf{Second expansion: broad candidate search.} Search all 1,024 head outputs
+and 32 MLP branches, without using RI membership as a filter. Use actual
+head-output attribution under the current full or weakened/circuit background,
+stratified by fact spans, question and colon; the score is
+$(z^{\rm donor}-z^{\rm recipient})^\top\nabla_z M$ through the real model, including
+normalization. Rank signed means and mean absolute family scores separately.
+This is a node screen to nominate exact tests, not an edge claim. Saved Stage-2
+all-head scores are an additional priority list, not calibration for this background.
+
+Calibrate on 48 candidates fixed after ranking but before their exact effects:
+12 highest absolute mean, 12 highest mean absolute excluding those, 12 middle,
+12 near-zero/random, spanning layers/sites. Accept prioritization only with Spearman
+$\ge0.8$ and sign agreement $\ge0.9$ among exact effects above $\tau$; report exact
+strong effects in the low-score strata. If fewer than ten above-threshold examples
+exist, sign calibration is insufficient. A failed screen falls back to exact tests
+of the 105-head inventory plus eight four-layer outside-inventory blocks, splitting
+effective or cancelling blocks under the remaining budget. This fallback bounds the
+search; null blocks do not prove all their heads are irrelevant.
+
+After adding candidates, return to exact channel paths and conditional contributions.
+An adapted edge EAP/EAP-IG implementation is optional only if the unresolved
+receiver-specific edge list exceeds 500 configurations. It must use the exact
+intervention Jacobian and fresh exact calibration above; ordinary EAP's
+two-forward/one-backward cost is not promised for OLMo's nonlinear branch graph
+\cite{eap,faith}. No approximate score alone establishes or excludes membership.
+
+\section{S4.4: test the task-level relational behavior}
+\label{sec:semantic}
+\textbf{Optional four-condition panel, not an entry gate.} Existing intact-model
+base, corrupted and 40 changed-query measurements already support task capability.
+Do not repeat a capability survey or expand it merely for new pairs. Enable this
+panel only if a specific unresolved mechanism question concerns joint fact/query
+selection; freeze that decision before held-out validation. Reuse compatible saved
+baselines and measure missing intact outputs only for actual intervention comparisons.
+No optional-panel result is required to start P/G experiments.
+
+\textbf{If enabled:} For each common family/order, cross original/swapped
+mother assignments with original/alternative answer-side queried child:
+$x_{00},x_{10},x_{01},x_{11}$. Keep demonstrations fixed and reconstruct gold answers
+from the fact table. If the two candidate mothers are $a,b$, the correct answers
+are $a,b,b,a$. With a fixed $a-b$ answer-token sign, the full model should therefore
+reverse under either factor and return under both. Measure
+\[
+ B_D=\E_{f,o}\,[M_D(x_{00})-M_D(x_{10})-M_D(x_{01})+M_D(x_{11})]/4.
+\]
+This is a crossed behavioral contrast, not a neuron semanticity score. Report all four
+condition accuracies/margins, not only $B_D$. Preserve model errors; the existing
+38/40 query-change success does not guarantee the new crossed condition works.
+
+Run the full model, the retained head mechanism, its RI-member removal, its
+non-RI-member removal, and the writer-restored/receiver-blocked mechanisms selected
+above (at most six configurations). Apply mean baselines symmetrically. Compare
+which intervention disrupts fact-assignment following, query following, or both.
+For route-level contrasts use the four adjacent edges of this square with their
+own recipient gold sign and first-divergent prefix, not the fact-swap sign blindly.
+
+\textbf{Important causal constraint.} Under query-only corruption, all fact-site
+activations preceding the changed question are identical by causality. A fact-site
+writer donor patch on that axis is therefore a deliberate null. Test query selection
+through receiver Q at the colon and through question/colon source heads identified
+in P3/expansion; do not classify a writer as lexical merely because its fact-site
+effect is zero on the query axis. The meaningful mechanism can combine a
+fact-dependent V route with a query-dependent Q route.
+
+Use tokenizer offsets to map unchanged tokens and annotated first/last anchors.
+Query names may differ in length: never reuse Stage-2's equal-length/six-token-change
+assertion for this new axis. Recompute causal masks, RoPE positions and prefixes;
+unmatched interior spans are unavailable for that route, not padded donor vectors.
+Use only original positions for route claims and disclose unsupported alignment.
+Do not discard entire families from behavioral or circuit evaluation.
+
+\textbf{Order robustness.} Evaluate the same frozen mechanisms on the existing
+reorder variants with role-mapped masks. Report absolute family changes and
+condition-specific performance, not invariance inferred from a near-zero signed mean.
+Extend selected order-robustness contrasts to all 89 discovery families before validation. Extend the four-condition panel only if explicitly enabled for a mechanistic question.
+This tests in-context binding/selection in the existing relation. Location-world
+transfer, parent coverage and a new observational RI are excluded.
+
+\section{S4.5: assemble and evaluate a head-level mechanism}
+\label{sec:circuit}
+\textbf{Primary achievable claim.} A position/role-defined attention-head mechanism
+with a tested communication map, conditional on live MLPs, demonstrations, embeddings,
+normalization and answer-prefix computation. It is not a fully isolated model circuit
+or an edge-minimal graph. This scope makes the central RI question answerable without
+first solving every nonlinear MLP/normalization interaction in OLMo.
+
+Start $C_0$ with the 25 strong Stage-3 heads plus new exact/conditional contributors.
+Initially retain each included head at all test-block positions; all other head
+slices there receive discovery means. This broad mask avoids losing an unlocalized
+source before testing it. Test finer role masks only by direct removal, broadening
+query-specific sites to all fact slots. MLPs stay live. Also evaluate the all-head-
+ablated baseline with this same background. If its gap already approaches the
+80\% criterion, report that the criterion does not isolate the head mechanism and
+include MLP interventions before making a self-contained circuit claim.
+
+For each family let $g_f(D)$ be its mean clean-minus-corrupted gap across orders.
+Evaluate
+\[
+ F(C)=\frac{\E_f g_f(C)}{\E_f g_f(\mathrm{full})},\qquad
+ L(C)=\frac{\E_f|g_f(C)-g_f(\mathrm{full})|}
+ {\E_f|g_f(\mathrm{full})|}.
+\]
+The inherited criterion remains $F\ge0.80$. To call the result a useful faithful
+mechanism, additionally require $F\le1.20$, $L\le0.20$ and candidate-accuracy loss
+no greater than five percentage points separately on clean and corrupted inputs.
+Report full-vocabulary first-token accuracy and per-family behavior as secondary
+checks. These added guards are prospective safeguards against overshoot/cancellation,
+not retroactive changes to Stage 3. On the reorder panel, and on the four-condition panel only if enabled, require
+the same five-point condition-wise accuracy guard relative to the full model;
+report $B_C/B_{\rm full}$ only with a stable denominator. Negative-head removal that
+improves one metric does not by itself make a more faithful explanation
+\cite{faith,robustness}.
+
+\textbf{Reduction.} Use the common pairs to greedily remove the head/role with the
+smallest measured increase in $L$, breaking ties by layer/head/role, only when all
+guards still pass. Re-evaluate contributions after every accepted removal. Limit
+to two full passes, then evaluate the resulting mask on all 178 pairs. If it fails,
+restore removed elements in reverse order until the guards pass, recording both
+curves. Do not choose another metric to salvage a failure. There is no claim of
+global or unique minimality.
+
+\textbf{Completeness and backup.} In the full model and $C$, remove the same
+predefined groups: retained writers, child readers, positive readers, negative
+contributors, RI members, and the selected weakened-reader background. Compare
+$g_f(\mathrm{full}\setminus K)$ with $g_f(C\setminus K)$ and both accuracies.
+A normalized absolute gap discrepancy above 0.20 or more than five points of
+condition-wise accuracy discrepancy triggers the bounded expansion/addback step.
+In addition test single-head addback for retained or conditionally supported $R_{31}$ heads absent from $C$, plus up to
+16 non-RI candidates ranked by prior exact conditional evidence. Absence from one
+compact faithful subset does not prove absence from the full model's alternative
+mechanisms. Whole-$C$ removal from the full model is useful evidence, but its failure
+to destroy behavior may reflect backups; joint group importance is not an upper bound.
+
+Repeat final retained/removal configurations with paired-other-condition donor
+replacement, applied symmetrically to clean and corrupted inputs. Report ablation-
+dependent results honestly. If the mean and donor stories conflict, call membership
+baseline-sensitive until the conflict is resolved \cite{best,robustness}.
+
+\textbf{Optional stronger circuit claim.} Only if needed after the head-level result,
+include and ablate MLP nodes, prefix positions and excluded paths. A claim of an
+edge-defined circuit requires actual excluded-edge masking with shared normalization
+explicitly retained in the computation graph; node ablation plus a path drawing does
+not establish edge faithfulness. This is a separately budgeted extension, not an
+implicit claim attached to the primary head-subset score.
+
+\section{Membership and the SIH/RI conclusion}
+\label{sec:membership}
+A \emph{supported head member} needs both (a) an exactly tested route to an answer-
+affecting receiver or residual-to-logits path, possibly through named mediators,
+and (b) a conditional removal/restoration contribution of at least $\tau$ in a
+declared full-model or circuit background. The latter may be negative. Specify the
+site and whether the effect is coherent or context-specific. Passing a group test
+alone does not establish every member; raw vocabulary alignment alone does not
+establish communication. A conditional contributor whose route is unresolved is
+reported separately and is not erased from the RI audit.
+
+Report the original 59-head ledger, marking the 28 dropped heads ``not selected
+for the v2 targeted audit'', not absent. For the 31, report saved baseline effect,
+conditional effect, site, route, sign, removal/addback, sensitivity and validation
+status. Historical extras are historical only unless independently rediscovered.
+Report $|R_{31}\cap C_H|/31$, $|\Rtest\cap C_H|/|C_H|$, and the count of supported
+conditional members outside $C$. A count divided by 59 is observed coverage, not a
+full-list exclusion or precision estimate. Selection partly used causal effects;
+do not present enrichment of $R_{31}$ as independent validation of RI ranking.
+
+The possible conclusions are: RI candidates participate in these mechanisms;
+participation is selective or includes opposing/backup functions; no contribution
+was detected under the bounded tested scope; or coverage/precision is insufficient.
+Even a clear positive result establishes participation of the implemented RI
+candidates, not that RI is a good universal semanticity ranking. Important non-RI
+writers and readers quantify its omissions. Conversely, low precision of the
+59-head list does not justify saying that SIH has no connection to the mechanism.
+
+\section{Frozen validation and stopping}
+\label{sec:validation}
+Freeze the code/model/input hashes, masks, selected exact routes, the enabled/disabled status of the optional query panel, one primary
+conditional background per claimed member, reference means, metric signs, semantic
+panel, thresholds and bootstrap procedure before opening the 87 held-out families.
+Run one frozen suite: full model; retained $C$; empty head mask; complement/$C$
+removal; RI-member removal; non-RI-member removal; the selected completeness groups;
+and the frozen route/conditional tests supporting individual claims. Also evaluate the frozen reorder panel; include the four-condition panel only if enabled and frozen during discovery. The 87 families are new examples of the same
+task, not different semantic relations. No selection or dropping of failures there.
+
+Require the discovery faithfulness guards on validation and report intervals and
+population-specific baseline accuracy. Mark each mechanistic claim confirmed,
+inconclusive or not reproduced. One evaluation means a fixed suite, not one forward.
+A post-validation revision is exploratory and needs fresh data for another
+confirmatory claim.
+
+Stop search after two expansion rounds or its allocated configuration limits;
+report remaining gaps. If faithfulness never passes, validate the bounded mechanism
+and its failure transparently rather than silently expanding to the whole model or
+claiming a minimal circuit. Completion means the declared scope and limits have
+been executed and reported, not that every hypothesis succeeds.
+
+\section{Conditional extras, cost and deliverables}
+\textbf{L30H18 redirect, only if its negative route remains unexplained.} Do not assume
+its changed-query pattern places mass on the desired mother. Explicitly move its
+colon attention mass on all mother spans onto the query mother's token span,
+uniformly within that span, leaving all other mass and V unchanged. Compare with
+moving the same mass to the other candidate mother and to a third mother. Save row
+sums, intervention norms, both logits and candidate identities. Run the intact and
+replaced head pattern on 40 pairs; extend only an informative result. This tests
+the causal effect of routing under the fixed values, not the complete claim that
+the head implements distractor copying. A changed-query donor can be a separate
+natural-pattern control only after its actual destination is verified.
+
+\textbf{Deferred.} No default SVD, new readout sweep, final-norm projection exercise,
+parent-coverage test or new RI statistic. An actual matched residual-bypass test is
+more informative than the old unmatched projection comparison. A revised L15H25
+readout is warranted only if knowing its content would distinguish two surviving
+mechanisms; first show source-swap sensitivity, then test head dependence. Broad
+weight decompositions do not address the present decision before a route is known.
+
+\textbf{Residual profiles.} During the necessary new baseline/group captures, save
+norms and clean/corrupt distances after all blocks at mother-last, ``is'', child-last,
+period and colon, including writer-restored differences where already computed.
+These five-site profiles are inexpensive auxiliary outputs of those forwards, not
+a separate search stage or a rule that excludes later heads. No old full-residual
+cache is assumed.
+
+\textbf{Cost accounting.} G1 has no exhaustive 25-head subset sweep. Its common-pair
+cap is 128 configurations times 40 pairs = 5,120 intervention evaluations, a ceiling
+rather than a required workload. G2 has 1,240 new conditional single evaluations,
+plus at most $7\times2\times40=560$ initial group/reference evaluations and backgrounds.
+G3 adds only nonduplicate configurations. Route capture and final injection are
+separate costs; share caches only for identical frozen/live specifications.
+Retain the cap of 96 full-discovery route contrasts in two directions:
+$96\times178\times2=34,176$ endpoint evaluations, excluding capture passes.
+The actual job manifest must count unique configurations and selected extensions.
+Load the model once per worker, batch compatible inputs and reuse verified caches;
+each distinct intervention still requires fresh affected computation. Do not quote
+a runtime until the pilot measures it. The previous 3.7-hour figure was wall time,
+not a transferable GPU-hour estimate.
+
+Pilot six pairs and representative group, hybrid-route and optional-gradient jobs
+on one two-GPU replica; record peak memory and seconds separately. Then estimate
+wall time as the actual per-type work divided by independently allocated replicas,
+plus load/cache/IO overhead. A six-GPU allocation supports three such replicas, not
+three-way model parallelism by assumption. Use the established cluster submission
+workflow; this document contains no submitted jobs or claimed runtime result.
+
+Store prompt/model/code hashes, donor/recipient IDs, source and receiver masks,
+channels and frozen/live branches, precomputed mean provenance, all logits,
+attention/channel diagnostics, no-op drift and completion checksums for every
+configuration. Resume only matching manifests, and verify exact ID coverage, not
+only record counts. Suggested outputs: \file{group_events},
+\file{route_events}, \file{receiver_blocking}, \file{family_summary},
+\file{circuit_masks}, \file{faithfulness}, \file{ri_membership},
+\file{search_boundary} and a separate immutable validation export.
+
+The execution order is: prepare/gate and reuse or collect necessary baselines;
+coverage and staged P mapping; route-supported G1 with receiver blocking; focused
+G2 and G3 (which may run alongside mapping); triggered S4.3 expansion and return;
+S4.4 order robustness/optional query panel and S4.5 reduction/completeness;
+freeze; one held-out suite. No Stage-4 GPU experiment is recorded by this document.
+
+\begin{thebibliography}{9}
+\bibitem{ioi} K. Wang et al. (2022). \emph{Interpretability in the Wild: a Circuit
+for Indirect Object Identification in GPT-2 small}.
+\url{https://arxiv.org/abs/2211.00593}. Inspiration for exact paths, backups and
+faithfulness/completeness/minimality; the thresholds here are project-specific.
+\bibitem{patch} S. Heimersheim and N. Nanda (2024). \emph{How to Use and Interpret
+Activation Patching}. \url{https://arxiv.org/abs/2404.15255}.
+\bibitem{best} F. Zhang and N. Nanda (2024). \emph{Towards Best Practices of
+Activation Patching in Language Models: Metrics and Methods}.
+\url{https://arxiv.org/abs/2309.16042}.
+\bibitem{eap} A. Syed, C. Rager and A. Conmy (2023). \emph{Attribution Patching
+Outperforms Automated Circuit Discovery}. \url{https://arxiv.org/abs/2310.10348}.
+\bibitem{faith} M. Hanna, S. Pezzelle and Y. Belinkov (2024). \emph{Have Faith in
+Faithfulness: Going Beyond Circuit Overlap When Finding Model Mechanisms}.
+\url{https://arxiv.org/abs/2403.17806}.
+\bibitem{robustness} J. Miller, B. Chughtai and W. Saunders (2024).
+\emph{Transformer Circuit Faithfulness Metrics are not Robust}.
+\url{https://arxiv.org/abs/2407.08734}.
+\end{thebibliography}
+\end{document}

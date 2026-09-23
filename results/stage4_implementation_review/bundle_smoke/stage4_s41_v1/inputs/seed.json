@@ -1,0 +1,5283 @@
+{
+  "policy": {
+    "version": 1,
+    "protocol": "stage4_design_v2",
+    "seed": 20260923,
+    "metric": "first divergent clean-minus-corrupt logits; prefix teacher forced",
+    "endpoint": "one receiver head at original final colon; K/V at source positions",
+    "freeze": "post-normalization residual branches; source attention live",
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "gate_inert": 0.001,
+    "gate_replication": 0.05,
+    "gate_reconstruction": 0.02,
+    "full_route_cap": 96,
+    "controls_top": 24
+  },
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "configs": [
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:513:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:513:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:533:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:533:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:547:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:547:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:561:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:561:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:568:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:568:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:594:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:594:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:595:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:595:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:600:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:600:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:624:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:624:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:630:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:630:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:641:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:641:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:678:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:678:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:690:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:690:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:695:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:695:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:709:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:709:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:751:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:751:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:817:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:817:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:855:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:855:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:870:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:870:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:973:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:973:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:978:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:978:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "mlp",
+      "receiver": 13,
+      "channel": "",
+      "panel": "P4",
+      "id": "426:query_sentence:mlp:13:"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "mlp",
+      "receiver": 14,
+      "channel": "",
+      "panel": "P4",
+      "id": "426:query_sentence:mlp:14:"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:513:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:513:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:533:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:533:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:547:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:547:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:561:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:561:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:568:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:568:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:594:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:594:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:595:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:595:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:600:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:600:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:624:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:624:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:630:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:630:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:641:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:641:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:678:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:678:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:690:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:690:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:695:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:695:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:709:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:709:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:751:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:751:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:817:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:817:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:855:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:855:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:870:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:870:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:973:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:973:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "K",
+      "panel": "P4",
+      "id": "474:query_sentence:head:978:K"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:978:V"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "mlp",
+      "receiver": 14,
+      "channel": "",
+      "panel": "P4",
+      "id": "474:query_sentence:mlp:14:"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "mlp",
+      "receiver": 15,
+      "channel": "",
+      "panel": "P4",
+      "id": "474:query_sentence:mlp:15:"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:513:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:513:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:533:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:533:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:547:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:547:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:561:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:561:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:568:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:568:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:594:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:594:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:595:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:595:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:600:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:600:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:624:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:624:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:630:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:630:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:641:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:641:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:678:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:678:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:690:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:690:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:695:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:695:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:709:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:709:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:751:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:751:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:817:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:817:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:855:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:855:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:870:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:870:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:973:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:973:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "K",
+      "panel": "P2",
+      "id": "505:query_child_last:head:978:K"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:978:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "mlp",
+      "receiver": 15,
+      "channel": "",
+      "panel": "P2",
+      "id": "505:query_child_last:mlp:15:"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "mlp",
+      "receiver": 16,
+      "channel": "",
+      "panel": "P2",
+      "id": "505:query_child_last:mlp:16:"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "513:colon:bypass:31:"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:547:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:547:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:561:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:561:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:568:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:568:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:594:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:594:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:595:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:595:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:600:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:600:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:624:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:624:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:630:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:630:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:641:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:641:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:678:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:678:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:690:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:690:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:695:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:695:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:709:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:709:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:751:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:751:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:817:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:817:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:855:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:855:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:870:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:870:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:973:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:973:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:978:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:978:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 16,
+      "channel": "",
+      "panel": "P3",
+      "id": "513:colon:mlp:16:"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P3",
+      "id": "513:colon:mlp:17:"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "533:colon:bypass:31:"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:547:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:547:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:561:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:561:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:568:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 568,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:568:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:594:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:594:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:595:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:595:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:600:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:600:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:624:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:624:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:630:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:630:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:641:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:641:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:678:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:678:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:690:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:690:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:695:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:695:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:709:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:709:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:751:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:751:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:817:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:817:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:855:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:855:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:870:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:870:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:973:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:973:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:978:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:978:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 16,
+      "channel": "",
+      "panel": "P3",
+      "id": "533:colon:mlp:16:"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P3",
+      "id": "533:colon:mlp:17:"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:594:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:595:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:600:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:624:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:624:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:630:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:630:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:641:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:641:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:678:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:678:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:690:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:690:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:695:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:695:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:709:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:709:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:751:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:751:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:817:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:817:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:855:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:855:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:870:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:870:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:973:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:973:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_is_token:head:978:K"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:978:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P1",
+      "id": "545:query_is_token:mlp:17:"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P1",
+      "id": "545:query_is_token:mlp:18:"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:594:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:595:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:600:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:624:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:624:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:630:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:630:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:641:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:641:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:678:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:678:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:690:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:690:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:695:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:695:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:709:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:709:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:751:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:751:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:817:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:817:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:855:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:855:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:870:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:870:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:973:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:973:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_mother:head:978:K"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:978:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P1",
+      "id": "545:query_mother:mlp:17:"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P1",
+      "id": "545:query_mother:mlp:18:"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:594:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:595:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:600:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:624:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:624:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:630:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:630:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:641:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:641:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:678:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:678:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:690:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:690:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:695:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:695:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:709:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:709:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:751:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:751:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:817:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:817:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:855:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:855:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:870:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:870:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:973:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:973:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "K",
+      "panel": "P1",
+      "id": "545:query_period:head:978:K"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:978:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P1",
+      "id": "545:query_period:mlp:17:"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P1",
+      "id": "545:query_period:mlp:18:"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "547:colon:bypass:31:"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:594:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:594:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:595:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:595:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:600:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:600:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:624:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:624:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:630:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:630:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:641:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:641:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:678:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:678:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:690:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:690:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:695:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:695:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:709:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:709:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:751:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:751:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:817:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:817:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:855:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:855:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:870:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:870:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:973:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:973:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "547:colon:head:978:KV"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:978:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P3",
+      "id": "547:colon:mlp:17:"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P3",
+      "id": "547:colon:mlp:18:"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:594:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:594:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:595:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:595:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:600:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:600:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:624:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:624:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:630:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:630:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:641:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:641:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:678:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:678:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:690:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:690:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:695:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:695:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:709:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:709:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:751:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:751:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:817:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:817:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:855:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:855:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:870:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:870:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:973:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:973:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:978:K"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:earlier_remaining:head:978:V"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P4",
+      "id": "547:earlier_remaining:mlp:17:"
+    },
+    {
+      "source": 547,
+      "site": "earlier_remaining",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P4",
+      "id": "547:earlier_remaining:mlp:18:"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:594:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:594:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:595:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:595:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:600:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:600:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:624:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:624:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:630:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:630:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:641:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:641:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:678:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:678:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:690:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:690:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:695:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:695:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:709:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:709:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:751:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:751:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:817:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:817:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:855:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:855:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:870:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:870:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:973:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:973:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "K",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:978:K"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "V",
+      "panel": "P4",
+      "id": "547:nonquery_mother:head:978:V"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P4",
+      "id": "547:nonquery_mother:mlp:17:"
+    },
+    {
+      "source": 547,
+      "site": "nonquery_mother",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P4",
+      "id": "547:nonquery_mother:mlp:18:"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "568:colon:bypass:31:"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:594:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:594:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:595:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:595:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:600:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:600:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:624:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:624:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:630:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:630:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:641:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:641:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:678:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:678:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:690:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:690:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:695:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:695:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:709:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:709:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:751:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:751:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:817:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:817:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:855:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:855:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:870:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:870:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:973:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:973:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "568:colon:head:978:KV"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "568:colon:head:978:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P3",
+      "id": "568:colon:mlp:17:"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P3",
+      "id": "568:colon:mlp:18:"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "594:colon:bypass:31:"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:624:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:624:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:630:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:630:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:641:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:641:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:678:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:678:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:690:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:690:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:695:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:695:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:709:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:709:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:751:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:751:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:817:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:817:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:855:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:855:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:870:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:870:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:973:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:973:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:978:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:978:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P3",
+      "id": "594:colon:mlp:18:"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 19,
+      "channel": "",
+      "panel": "P3",
+      "id": "594:colon:mlp:19:"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "595:colon:bypass:31:"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:624:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:624:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:630:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 630,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:630:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:641:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:641:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:678:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:678:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:690:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:690:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:695:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:695:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:709:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:709:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:751:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:751:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:817:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:817:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:855:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:855:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:870:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:870:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:973:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:973:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:978:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:978:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P3",
+      "id": "595:colon:mlp:18:"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 19,
+      "channel": "",
+      "panel": "P3",
+      "id": "595:colon:mlp:19:"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "624:colon:bypass:31:"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:641:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:641:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:678:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:678:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:690:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:690:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:695:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:695:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:709:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:709:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:751:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:751:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:817:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:817:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:855:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:855:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:870:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:870:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:973:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:973:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:978:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:978:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 19,
+      "channel": "",
+      "panel": "P3",
+      "id": "624:colon:mlp:19:"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 20,
+      "channel": "",
+      "panel": "P3",
+      "id": "624:colon:mlp:20:"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "641:colon:bypass:31:"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:678:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 678,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:678:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:690:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 690,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:690:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:695:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:695:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:709:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:709:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:751:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:751:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:817:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:817:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:855:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:855:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:870:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:870:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:973:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:973:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:978:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:978:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 20,
+      "channel": "",
+      "panel": "P3",
+      "id": "641:colon:mlp:20:"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 21,
+      "channel": "",
+      "panel": "P3",
+      "id": "641:colon:mlp:21:"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "751:colon:bypass:31:"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "751:colon:head:817:KV"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "751:colon:head:817:Q"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "751:colon:head:855:KV"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "751:colon:head:855:Q"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "751:colon:head:870:KV"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "751:colon:head:870:Q"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "751:colon:head:973:KV"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "751:colon:head:973:Q"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "751:colon:head:978:KV"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "751:colon:head:978:Q"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 23,
+      "channel": "",
+      "panel": "P3",
+      "id": "751:colon:mlp:23:"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 24,
+      "channel": "",
+      "panel": "P3",
+      "id": "751:colon:mlp:24:"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "817:colon:bypass:31:"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "817:colon:head:855:KV"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 855,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "817:colon:head:855:Q"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "817:colon:head:870:KV"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "817:colon:head:870:Q"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "817:colon:head:973:KV"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 973,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "817:colon:head:973:Q"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "817:colon:head:978:KV"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "817:colon:head:978:Q"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 25,
+      "channel": "",
+      "panel": "P3",
+      "id": "817:colon:mlp:25:"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 26,
+      "channel": "",
+      "panel": "P3",
+      "id": "817:colon:mlp:26:"
+    }
+  ],
+  "population": "core",
+  "directions": [
+    "noise"
+  ],
+  "phase": "seed",
+  "requires_coverage": true
+}

@@ -1,0 +1,446 @@
+% Standalone Overleaf document: compile with pdfLaTeX; no external assets.
+% Preliminary plan agreed while Stage 3 was still running. Not an execution record.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,booktabs,enumitem}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\setlist{itemsep=2pt,topsep=3pt}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\newcommand{\purpose}{\textbf{Question and rationale.} }
+\newcommand{\procedure}{\textbf{Procedure.} }
+\newcommand{\interpretation}{\textbf{Interpretation and output.} }
+\title{Stage 4: Circuits and Inter-Head Communication\\\large Preliminary experimental plan}
+\author{Phase A: Single-hop SIH Audit}
+\date{22 September 2026}
+
+\begin{document}
+\maketitle
+
+\section{Objective and scope}
+Stage 3 characterizes individual heads. Stage 4 asks how those heads exchange
+information, cooperate or compensate for one another, and form mechanisms that
+support the model's single-hop \emph{mother-of} behavior. It also asks whether
+the heads selected by the implemented Relation Index (RI) participate in these
+mechanisms, including through effects hidden in single-head interventions.
+
+This is a planning document, not a report of completed experiments. Stage-3
+results are pending. Writer, reader and mover labels remain hypotheses until
+supported by the corresponding measurements. This plan replaces the circuit
+and group-analysis portions of the original methodology's Stages 3--4; the
+revised Stage-3 plan remains the authority for individual-head characterization.
+
+All discovery uses the existing 89 discovery families. The 87 held-out families
+are new examples of the \emph{same mother-of task}, not a new semantic relation.
+They are used only after the circuit and evaluation protocol are frozen.
+The location world, a new observational metric and parent-coverage analysis are
+excluded from this stage. We do not assume that one circuit explains all cases,
+or that every interesting head belongs to an identifiable circuit.
+
+\section{Shared definitions and decisions to freeze}
+\subsection{Outcome, units and populations}
+Retain the pinned OLMo-2-1124-7B checkpoint, tokenizer and Stage-2 metric.
+For a clean/corrupted pair with first divergent answer tokens $y_c,y_r$ and
+shared answer prefix $c$, define
+\[
+ M(x)=z(y_c\mid x,c)-z(y_r\mid x,c),\qquad
+ I_T=M(x_c)-M(x_c;T).
+\]
+Here $T$ denotes the specified corrupted-donor or ablation intervention;
+positive $I_T$ means movement away from the clean answer. Reverse recovery is
+$J_T=M(x_r;T_{c\to r})-M(x_r)$, with the same answer sign.
+Save both answer logits, not only their difference. Neither quantity is an
+accuracy change or an additive share of the model's computation.
+
+Use the original common 20 discovery families, both orders (40 pairs), for
+screen calibration and initial exact tests. Extend retained edge and group
+tests to all 89 discovery families, both orders, before freezing the circuit.
+New query-control pairs are a separately reported contrast. Average orders
+within family, then families equally. Report signed means, absolute-effect
+summaries, family variation and support. Proposed uncertainty reporting is
+20,000 whole-family bootstrap draws with a recorded seed; discovery intervals
+are descriptive and hold the selected components fixed.
+
+\subsection{Search space and circuit membership}
+Start from the 105 Stage-3 heads, including the unchanged 25 random references.
+Let $R$ denote the 59 test-only RI candidates plus L3H11/L9H22; these are
+\emph{RI-selected candidates}, not established semantic heads. Keep the
+historical pair and the test-only selection distinguishable in reporting.
+
+The inventory is a starting point, not a closed universe. Screen incoming and
+outgoing connections of seed heads against all temporally valid heads and MLP
+blocks, including input and output connections. Expand around newly retained
+components in documented rounds. A bounded search must report its unexplored
+boundary; absence from it is not evidence of irrelevance.
+
+A circuit node is a component at a declared token position or annotated span;
+an edge additionally identifies the receiver channel (Q, K, V, MLP input or
+output readout). Record exact token positions and their cross-example roles.
+Candidate sites from Stage 3 guide priority, but do not exclude sites solely
+because their single-head effect was small.
+
+\textbf{Provisional membership rule.} A supported member must have (i) an
+exactly tested causal route toward the answer, possibly conditional on a
+specified group intervention, and (ii) a measurable conditional contribution
+when removed from or restored to the proposed mechanism. A large group effect
+does not establish every member's contribution. Preserve negative as well as
+positive contributors. Distinguish supported members, candidates, unresolved
+cases, and no detected contribution within the tested scope. A head can belong
+to several mechanisms; passing these tests does not establish semantic
+specificity by itself.
+
+\subsection{Interventions and implementation contract}
+\textbf{Two declared baselines.} Use paired corrupted-donor patching for the
+primary edge/path and recovery experiments. For circuit retention/removal,
+use discovery-mean ablation as the primary baseline, preserving the original
+methodology, and paired-donor replacement as a sensitivity analysis. Estimate
+means over discovery families only, balancing orders and base/corrupted
+variants, matched by component and position role/token offset. Specify handling
+of variable-length spans before use; never condition means on the correct
+answer identity. Record the exact activation site where each mean is applied
+and keep these means fixed for validation \cite{patchguide,bestpractices}.
+
+\textbf{OLMo-specific requirement.} Attention outputs undergo shared
+post-attention normalization. In general,
+$N(S+\delta)-N(S)\ne N(\delta)$, where $S$ is the sum of projected head
+outputs. Do not invent additive normalized head contributions. The graph must
+retain shared normalization operations, actual pre-projection normalization,
+QK normalization and RoPE. An adapted EAP score is the derivative of the
+\emph{implemented intervention}, checked against finite differences and exact
+replacement, not a weight-only formula assumed to transfer from GPT-2.
+
+\textbf{Scope and gates.} Distinguish the final original colon from the metric
+site after a shared answer prefix. Initial targeted interventions use original
+prompt positions, with answer-prefix positions live, matching Stage 2. A full
+circuit claim must additionally specify retained/ablated components at the
+metric-prefix positions; otherwise label it a prompt-position subcircuit with
+live background computation. Likewise, keeping all MLPs live gives a
+head subcircuit conditional on those MLPs, not a complete model circuit.
+Before measurement require unchanged-hook and self-patch checks, baseline
+replication, Q/K/V reconstruction checks, and full-retention equivalence. Freeze
+numeric tolerances from the established runtime and a separate implementation
+pilot; do not relax them after failures.
+
+\textbf{Execution manifest, still to be finalized after Stage 3.} Freeze seed
+sites/groups, edge-ranking and expansion budgets, calibration sample strata,
+screen-acceptance criteria, practically meaningful edge/member effect
+thresholds, family-support rules, group subsets, ablation means, seeds and
+stopping rules before their Stage-4 measurements. Do not transplant Stage-3
+event-support thresholds or the head-level correlation gate to edges without
+justification. Optional analyses need their own fixed site/layer/dimension
+budgets. These unresolved fields make this a preliminary plan, not yet a
+submission-ready protocol. Log discovery amendments before new batches;
+validation cannot be used to revise them.
+
+\section{Required discovery analyses}
+The order follows dependencies. Early group tests run alongside edge mapping;
+they need not wait for a finished graph. Reuse valid captures, but audit cache
+contents and measure pilot runtime before describing work as CPU-only or cheap.
+
+\subsection{Residual divergence across depth}
+\purpose Locate where clean and corrupted representations differ, providing
+a layer-level guide for targeted communication tests.
+
+\procedure Capture the residual after each complete transformer block and at
+the embedding boundary on the common 40 pairs. At the final original colon,
+compute $d_\ell=\|r^c_\ell-r^r_\ell\|_2$. Report the corresponding residual
+norms and relative distance
+$d_\ell/[(\|r^c_\ell\|_2+\|r^r_\ell\|_2)/2]$; flag zero denominators.
+Keep the post-prefix metric site separate where applicable. Plot family means
+and variation. Once a candidate writer group exists, repeat the profile after
+its intervention, with matched random-group controls.
+
+\interpretation A jump between layers 11--16 is a hypothesis, not a constraint.
+A flat distance can conceal rotations or transformations that make information
+usable downstream. This curve cannot exclude important later heads or establish
+a circuit edge. Deliver layer profiles and intervention-induced changes, with
+exact capture boundaries and cache provenance.
+
+\subsection{Position-aware edge screening and calibration}
+\purpose Find plausible communication routes without exhaustively running
+exact interventions on all edges. Position-aware scores reduce cancellation
+across token roles \cite{eap,peap}.
+
+\procedure For each allowed connection, estimate the effect of replacing its
+source signal only along the declared receiver route. In an additive graph the
+EAP approximation is $(z_u^r-z_u^c)^\top\nabla_{a_v}M$; use the corresponding
+derivative through the actual OLMo intervention instead. Separate same-position
+residual connections from cross-position attention computations: movement from
+a fact token to the colon must traverse the receiver's attention operation.
+Use semantic spans and token offsets to aggregate across examples and reorderings.
+
+The usual two-forward/one-backward EAP cost is a conceptual baseline, not a
+promise of identical runtime for this adaptation. Stage-2 saved head scores and
+its $0.945$ head-ranking correlation do not validate edge estimates.
+Calibrate exact effects on a preselected stratified sample spanning strong
+positive/negative, middle, near-zero and random edge scores, channels, layers
+and positions. Report sign agreement, magnitude error, ranking agreement and
+strong effects missed by the screen. If inadequate under the frozen criteria,
+test an explicitly defined EAP-IG variant or broaden exact sampling; neither
+inherits the Stage-2 approximation's validation \cite{faith}.
+
+\interpretation Deliver a ranked edge table with calibration evidence and
+coverage. Retain both signs and random low-score checks; a low approximate score
+is not grounds for a claim of no connection.
+
+\subsection{Exact path patching and route expansion}
+\purpose Determine whether a candidate source affects the answer through a
+particular receiver channel, rather than merely having a correlated output
+\cite{ioi,patchguide}.
+
+\procedure For a candidate route from source $A$ to receiver $B$:
+\begin{enumerate}
+\item Cache clean and corrupted activations. In a clean recipient, replace
+$A$ at the selected positions with its corrupted output. For a direct residual
+route, freeze intervening attention-head and MLP branch outputs to clean
+values, while keeping the designated normalization operations live. Other
+routes require an explicitly listed set of live mediators.
+\item Capture the resulting selected Q, K or V channel of $B$. Recompute
+normalization and RoPE consistently; do not splice a pre-normalization vector
+into a post-normalization site. Keep unselected channels and positions clean.
+\item In a fresh clean run, insert only this hybrid receiver channel and let
+the downstream model run normally. Compare its answer metric with the clean
+baseline. The source itself is not patched in this final run.
+\end{enumerate}
+Save source/receiver positions, frozen and live components, replacement tensors
+and answer logits. Test self-donors, matched wrong-position/channel controls and
+reverse-direction recovery. Run retained routes on all 178 discovery pairs;
+retain family/order heterogeneity. Test MLP-mediated routes separately where
+screening suggests them, and expand around newly supported components under
+the recorded budget.
+
+\interpretation This measures the specified path intervention, not every
+effect of $A$ on $B$. A failure on a direct route does not exclude an indirect
+route. Shared normalization is part of the measured route, not an additive
+contribution attributed solely to $A$. The proposed early-writer/late-reader
+organization is one candidate outcome, not the search boundary.
+
+\subsection{Fact-swap and query-swap contrasts}
+\purpose Separate sensitivity to changed fact assignments from sensitivity
+to which entity the question requests, without equating either with semantics.
+
+\procedure On the common families, construct four conditions: original/swapped
+mother assignments crossed with original/alternative query child. Reuse the
+Stage-3 query controls where valid; generate the missing crossed condition.
+Keep demonstrations fixed and check the gold answer and behavioral margin in
+every condition. Do not filter for the desired attention pattern.
+For each axis, compare matched endpoints differing only along that axis, using
+their own original-versus-counterfactual answer sign. Recompute shared answer
+prefixes. Patch only aligned sites: use verified span/anchor mappings for
+query-length changes, and report unmatched sites rather than forcing alignment.
+Apply the retained route and group tests to both axes and both orders; extend
+retained contrasts to the full discovery set under a frozen selection rule.
+
+\interpretation Report baseline task success, signed effects and recovery
+relative to each contrast's gap, flagging small denominators. Importance on both
+axes does not prove relational computation; importance on only one does not
+prove lexical processing. Use reordering and consistent entity renaming as
+targeted follow-ups when needed to separate location from identity. This is a
+proposed diagnostic design, not a claim of methodological novelty.
+
+\subsection{Group effects, backup roles and conditional membership}
+\purpose Find cooperation, cancellation and backup contributions missed by
+single-head averages, and test the participation of RI-selected candidates.
+
+\procedure Define groups from Stage-3 profiles and verified routes, including
+candidate writers/readers, opposite-sign contributors, and small-effect RI
+candidates with plausible related roles. Preserve the actual grouping criteria.
+For each group $G$, measure joint noising, mean ablation, and clean-donor
+recovery in corrupted recipients at the declared sites. Plot effects against
+coalition size using several seeded subsets/orders, with matched-size,
+layer/site-matched random groups. Do not interpret one greedy curve as a
+measure of distributedness.
+
+For selected disjoint groups $A,B$, run baseline, $A$, $B$, and $A\cup B$ and
+report $I_{A\cup B}-I_A-I_B$ under the same intervention and baseline. For a
+candidate $h$, evaluate $I_{K\cup\{h\}}-I_K$ for declared backgrounds $K$
+(including removal of plausible substitutes), and restoration of $h$ to the
+corresponding reduced circuit. These tests can support a conditional role even
+when $I_h$ alone is small. Restrict combinations by a recorded budget rather
+than exhaustively testing all subsets.
+
+For candidate writers, jointly restore clean activations at fact positions
+only; compare the recovered answer with restoration at matched irrelevant
+positions. This tests whether those activations support recovery given the
+remaining corrupted model, not whether the writers alone solve the task.
+
+\interpretation Deliver group curves, interaction tables and a conditional
+contribution record for each proposed member. Non-additivity alone does not
+identify its mechanism. No detected effect in sampled coalitions cannot rule
+out every possible contribution. Analyze $R$ throughout this process, including
+its small-effect members; do not postpone its assessment to a final overlap count.
+
+\subsection{Circuit construction and discovery evaluation}
+\purpose Assemble an explanation that reproduces the model's behavior and
+test which components are required within the searched mechanisms.
+
+\procedure Build input-to-output candidate graphs from verified routes, group
+effects and required computational operations. Check discovery performance as
+components are added or removed. Evaluate an edge-defined circuit by masking
+excluded \emph{edges}, not just by ablating other heads while leaving all
+connections among retained heads live. State the background treatment of
+MLPs, normalization, embeddings, residual paths and answer-prefix sites.
+
+For model or circuit $D$, define its same-sign clean--corrupted gap
+\[
+ G(D)=\frac1{89}\sum_f\frac12\sum_{o=0}^{1}
+ \bigl[M_D(x^c_{f,o})-M_D(x^r_{f,o})\bigr],\qquad
+ F(C)=\frac{G(C)}{G(\mathrm{full})}.
+\]
+The denominator uses the same families and orders and must be nonzero.
+For donor-baseline sensitivity, replace excluded signals with the paired other
+condition symmetrically and label this separate intervention. Use the primary
+mean baseline for the inherited criterion $F(C)\geq0.80$. Also report
+$|G(C)-G(\mathrm{full})|$, both condition means, per-family variation and answer
+accuracy: an overshoot can reflect removal of negative contributors and is not
+automatically a better explanation \cite{faith}.
+
+\textbf{Completeness and minimality.} Remove the circuit from the full model,
+but also compare $C\setminus K$ with $\mathrm{full}\setminus K$ for predefined
+role groups and seeded subsets $K\subseteq C$. A large discrepancy reveals
+possible missing backup computation. For each claimed member, seek a declared
+background in which its removal/restoration changes performance; apply the same
+logic to claimed edges. Report tested subsets and search limits. A greedy
+reduction establishes minimality only relative to that procedure, not a unique
+globally minimal circuit \cite{ioi}.
+
+\interpretation Deliver circuit-size/performance curves, the retained graph,
+ablation sensitivity and any unresolved completeness failures. Return to
+discovery expansion when justified and budgeted; do not open validation to
+choose a more favorable circuit.
+
+\section{Conditional interpretation analyses}
+These deepen an established causal finding; neither is required for every
+head or edge. Run them on discovery families only, with bounded sweeps and
+explicitly recorded triggers.
+
+\subsection{Communication-channel content}
+\purpose Explain what an important verified route carries: candidate identity,
+position-related information or another signal.
+
+\procedure Trigger this analysis when a verified route's content remains
+unexplained. Decompose the writer's $W_{OV}=\sum_i\sigma_i u_i v_i^\top$,
+not a writer--reader product. Use its components as candidate directions;
+weight-composition scores are descriptive screening only. Compare component
+removal/restoration along the verified route with controls matched for rank
+and actual intervention magnitude, sampling random directions in the same
+writer output space. Preserve real value inputs, attention and shared
+normalization, and include complementary-subspace controls. A global weight
+edit affects other routes and cannot by itself establish this channel
+\cite{talking,framework}.
+
+Use minimal contrasts that change identity at fixed sites and move the same
+entities across sites, with tokenization and answer annotations checked.
+Evaluate whether the channel's effect follows identity or position and whether
+it changes the receiver's routing or retrieved content. Neither outcome must
+fit a binary pointer/content label.
+
+\interpretation Report a supported subspace only if its route-specific causal
+effects exceed the matched controls under the frozen criterion. Singular value
+size and vocabulary projections alone do not establish what information the
+model uses.
+
+\subsection{Controlled representation readouts: Patchscopes-style}
+\purpose Read information at a causally localized site when direct vocabulary
+projections do not explain it, particularly before/after a group intervention
+\cite{patchscopes}. Reuse an adequate Stage-3 optional readout if already done.
+
+\procedure For writer sites, inject the residual into a fixed token-identity
+few-shot readout. For receiver inputs, also test a fixed relation-completion
+readout. Bound source/target-layer sweeps in advance and preserve residual
+boundary conventions. Use generic demonstration names disjoint from the test
+names; any supplied query entity must be identical across matched readouts.
+Compare clean, corrupted and head/group-intervened representations in the same
+readout prompt, alongside no injection, irrelevant injection and entity-swap
+controls. Save all sweep results, not only readable examples.
+
+For each prespecified candidate name, report teacher-forced sequence log
+probability and candidate ranking. For generated text, the SelfIE-style
+relevance diagnostic compares each token's probability with and without
+injection, conditioned on the \emph{same generated prefix} \cite{selfie}.
+Treat free text as spot-check evidence; check whether intervention changes the
+decoded candidate consistently across families.
+
+\interpretation Residuals contain many components, and the decoder prompt can
+perform additional computation. Fictitious names do not exclude lexical copying
+or prompt cues. Injection relevance measures an effect on the readout, not the
+truth of its explanation. Successful decoding does not establish original-task
+use; failed decoding does not establish information absence. Attribution to a
+group requires the matched group-intervention comparison and supporting causal
+tests.
+
+\section{Frozen validation and final RI assessment}
+\purpose Test whether the selected explanation transfers to unseen families
+of the same task, and answer where RI-selected heads participate.
+
+\procedure Before opening the 87 families, archive the circuit(s), membership
+and edge rules, masks, mean activations, metric definitions, selected group/path
+tests, optional-analysis decisions, code/input hashes and statistical plan.
+Evaluate baseline behavior and the frozen circuit under the primary ablation
+and prespecified sensitivity condition. Apply the gap formula above with 87
+families, retaining both orders; report the $80\%$ criterion, uncertainty and
+condition-specific behavior. Do not discard validation families because the
+circuit fails on them. ``One evaluation'' means one frozen evaluation suite,
+not one forward pass. Any revision after seeing its results is exploratory and
+requires fresh data for another confirmatory claim.
+
+For $R$, report both $|R\cap C_H|/|R|$ and $|R\cap C_H|/|C_H|$, where $C_H$
+is the set of supported head members; state if the search incompletely covers
+$R$. Preserve its historical/test-only split. Add a head-level table of verified
+routes, conditional group contributions, sign, token roles and validation
+status. Compare descriptive overlap with layer-matched reference sets, but
+base mechanistic conclusions on interventions. A candidate absent from one
+compact faithful circuit may still act in another valid or backup mechanism.
+
+\section{Deliverables and completion}
+Provide (i) a frozen execution manifest, (ii) residual and calibrated edge
+tables, (iii) exact route/group and conditional-membership evidence,
+(iv) candidate circuit graphs with discovery/validation faithfulness and
+completeness diagnostics, and (v) the RI participation table. Each test is
+marked completed, insufficient support, unavailable input or unresolved
+implementation; optional tests are additionally marked not triggered when
+appropriate. Missing measurements are never zero-filled.
+
+Stage 4 is complete when the declared search and evaluation scope is executed
+and reported, not when every head receives a label or the $80\%$ criterion is
+met. A failed criterion, several overlapping mechanisms or a partially explained
+circuit are legitimate outcomes. No claim extends automatically to other
+relations, two-hop reasoning or all circuits in the model.
+
+\begin{thebibliography}{99}
+\bibitem{eap} A. Syed, C. Rager and A. Conmy (2023).
+\emph{Attribution Patching Outperforms Automated Circuit Discovery}.
+\url{https://arxiv.org/abs/2310.10348}
+\bibitem{peap} T. Haklay et al. (2025).
+\emph{Position-aware Automatic Circuit Discovery}.
+\url{https://arxiv.org/abs/2502.04577}
+\bibitem{ioi} K. Wang et al. (2022).
+\emph{Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small}.
+\url{https://arxiv.org/abs/2211.00593}
+\bibitem{patchguide} S. Heimersheim and N. Nanda (2024).
+\emph{How to Use and Interpret Activation Patching}.
+\url{https://arxiv.org/abs/2404.15255}
+\bibitem{bestpractices} F. Zhang and N. Nanda (2024).
+\emph{Towards Best Practices of Activation Patching in Language Models: Metrics and Methods}.
+\url{https://arxiv.org/abs/2309.16042}
+\bibitem{faith} M. Hanna, S. Pezzelle and Y. Belinkov (2024).
+\emph{Have Faith in Faithfulness: Going Beyond Circuit Overlap When Finding Model Mechanisms}.
+\url{https://arxiv.org/abs/2403.17806}
+\bibitem{talking} J. Merullo, C. Eickhoff and E. Pavlick (2024).
+\emph{Talking Heads: Understanding Inter-layer Communication in Transformer Language Models}.
+\url{https://arxiv.org/abs/2406.09519}
+\bibitem{framework} N. Elhage et al. (2021).
+\emph{A Mathematical Framework for Transformer Circuits}.
+\url{https://transformer-circuits.pub/2021/framework/index.html}
+\bibitem{patchscopes} A. Ghandeharioun et al. (2024).
+\emph{Patchscopes: A Unifying Framework for Inspecting Hidden Representations of Language Models}.
+\url{https://arxiv.org/abs/2401.06102}
+\bibitem{selfie} H. Chen, C. Vondrick and C. Mao (2024).
+\emph{SelfIE: Self-Interpretation of Large Language Model Embeddings}.
+\url{https://arxiv.org/abs/2403.10949}
+\end{thebibliography}
+\end{document}
