@@ -1,0 +1,38 @@
+{
+  "model": "allenai/OLMo-2-1124-7B",
+  "ri_data_sha256": "c1912b3318779a3ffec7081ece370d4846f083c9b1b1f9a6e9b014fea25b4800",
+  "eligible_ids_sha256": "7950ec4a0baf6b5a8306779d58da438ab60467e3d304dd0e30d7c0f0c94ccf75",
+  "excluded_self_relation_count": 60,
+  "assessment_ids_sha256": "6b77ae7201873b055aae5dbd9f3f0f7f515900904e2125d5e3fe330fd993a399",
+  "rows_per_relation": 100,
+  "relations": [
+    "COMPARE",
+    "CONJUNCTION",
+    "EVALUATE-FOR",
+    "FEATURE-OF",
+    "HYPONYM-OF",
+    "PART-OF",
+    "USED-FOR"
+  ],
+  "directions": [
+    "forward"
+  ],
+  "strict_tau": 2.2,
+  "text_groups_per_chunk": 20,
+  "target_steps": [
+    150,
+    600,
+    700,
+    850,
+    900,
+    1000,
+    2000,
+    3000,
+    9000,
+    928646
+  ],
+  "primary_qk_gate": "source_is_attention_argmax",
+  "ov_input": "raw_token_embedding",
+  "ov_normalization": "positive_mean_centered_visible_unique_context_tokens",
+  "self_relation_policy": "preserve_in_frozen_source_but_exclude_from_RI_when_head_entity_equals_tail_entity_and_positions_coincide"
+}

@@ -1,0 +1,93 @@
+{
+  "policy": {
+    "version": 1,
+    "protocol": "stage4_design_v2",
+    "seed": 20260923,
+    "metric": "first divergent clean-minus-corrupt logits; prefix teacher forced",
+    "endpoint": "one receiver head at original final colon; K/V at source positions",
+    "freeze": "post-normalization residual branches; source attention live",
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "gate_inert": 0.001,
+    "gate_replication": 0.05,
+    "gate_reconstruction": 0.02,
+    "full_route_cap": 96,
+    "controls_top": 24
+  },
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "configs": [
+    {
+      "source": 434,
+      "site": "all_child",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:all_child:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "all_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:all_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "all_punctuation",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:all_punctuation:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "all_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:all_template:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "colon",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:colon:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "question",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:question:single:434:"
+    }
+  ],
+  "population": "core",
+  "directions": [
+    "noise"
+  ],
+  "parent_schedule_hash": "703460e776ed4a6d1407cafe5f1182127dc100b7848638ec424844420135219f",
+  "parent_runs": {
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/coverage_r0": "9bc51b607e2deb3953d92775c0d7265f9592a824b31dddad79f85529e8205ca7",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/coverage_r1": "0ffb0adaf323141cf4c6b4a42dbb442e5dd21c7f3dcb2abf12964af87a299109",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/coverage_r2": "d5a0af0c4268dbc98b64bc8a8175e1fdcccabfd83bd38814260c8c138ce25392"
+  },
+  "coverage_retained": [
+    434,
+    787
+  ],
+  "coverage_colon": [
+    787
+  ],
+  "phase": "localize_roles"
+}

@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "records": 240,
+  "configuration_count": 6,
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "schedule_hash": "473d8b33e7e7bc7271e65db5907863c1d0a33ea872833bb76bbd69d7ff52b1de",
+  "configs": [
+    {
+      "source": 434,
+      "site": "all_child",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:all_child:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "all_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:all_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "all_punctuation",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:all_punctuation:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "all_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:all_template:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "colon",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:colon:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "question",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:question:single:434:"
+    }
+  ],
+  "population": "core",
+  "family_effects_hash": "9dad5b058256d047f5a20041b93da4ef8a2052ec0e1229417433ca6812bf19ff",
+  "run_manifests": {
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/localize_roles_r0": "fae6ba1f8db5a2b2473b9657d070e71488ea3a68406405aa93dbfd377d7f8fc1",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/localize_roles_r1": "6bf3df8410d233ec038971ba312301fe1d2211afa76a5a5665837e87a4b8865d",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/localize_roles_r2": "24f9de79c4cd244cd8b7eb2b6f2061c0ff0e02dbecb61219dd88a6d9690549ce"
+  },
+  "note": "Discovery summaries; retention is prioritization, not confirmation"
+}

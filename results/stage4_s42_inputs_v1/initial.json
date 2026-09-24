@@ -1,0 +1,3285 @@
+{
+  "plan_hash": "337ea91a871c9e47b0a637fa357812c4292f8426a4a0f1ab5cca30e4d0fd6ff7",
+  "policy": {
+    "version": 1,
+    "seed": 20260923,
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "bootstrap_draws": 20000,
+    "g1_common_cap": 128,
+    "g1_extension_contrasts": 16,
+    "mean_min_families": 10,
+    "mean_scope": "test facts/question/colon; demonstrations and answer prefix live",
+    "mean_weighting": "events within family, then equal families; both orders and variants",
+    "mean_evaluation": "leave-one-family-out",
+    "K_rule": "smallest prefix with symmetric donor clean-minus-corrupt gap fraction in [0.3,0.8]; otherwise closest to 0.55",
+    "mean_reverse": "corrupted-recipient mean replacement; positive restore sign is not literal clean restoration",
+    "split_rule": "retained group interaction/conditional effect: prior-sign halves and pair of largest absolute conditional effects; within original cap",
+    "sensitivity_rule": "repeat selected extended contrasts in both directions, including those not retained after extension; other core-only G1 claims remain provisional",
+    "scope": "S4.2 G1/blocking/G2/G3 only; no mediated search or circuit/heldout execution"
+  },
+  "population": "core",
+  "mode": "donor",
+  "phase": "initial",
+  "configs": [
+    {
+      "id": "0259de511e26cdd14804",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "063ee72b36f310e782c2",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "0696fe9eaa5e0540e8ea",
+      "atoms": [
+        {
+          "head": 863,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": true,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "09711229779df1a68761",
+      "atoms": [
+        {
+          "head": 678,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 690,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": true,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "10b78cbe73e8c21e9e1c",
+      "atoms": [
+        {
+          "head": 690,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 863,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": true,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "11d93f3f15b8d27500ce",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "16ffc4c1ce2cd2f66524",
+      "atoms": [
+        {
+          "head": 568,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "174572c211b4d905ec76",
+      "atoms": [
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "191dd2d0cd7ba8a10723",
+      "atoms": [
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "1d0d86d2dc7a4cdadc3f",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "1f20acc6c79bdb6a7528",
+      "atoms": [
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "2194dce47fb551f89f4a",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "22e1f63a5a051aceed2f",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "269bd10623c6c6b4dca8",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "287a805babc9f16f7b2b",
+      "atoms": [
+        {
+          "head": 690,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "3b7a24242d0a203200cc",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "43b85772a4b05c744b63",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "44fd94434dce0ccdc882",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "47fddc3299d3fa7fa53d",
+      "atoms": [
+        {
+          "head": 426,
+          "site": "query_sentence",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "48861ca75594a7d2600a",
+      "atoms": [
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "4d2fd7b7128fd64234c9",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "5b992e95dfee6ef41f85",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "670e26a2247eec7a78ba",
+      "atoms": [
+        {
+          "head": 545,
+          "site": "query_writer_union",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "698addce07e58e664686",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "6ea845099157ecfa8fbd",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "7055f9fd53c1548e6b28",
+      "atoms": [
+        {
+          "head": 568,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "7458622298d224bf0280",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "74ec64f87afe93eae40c",
+      "atoms": [
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "7620db13559adeff7e12",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "79a24509c59e25181902",
+      "atoms": [
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "7bb1fbf6eff81958a0e2",
+      "atoms": [
+        {
+          "head": 505,
+          "site": "query_child_last",
+          "donor": "other"
+        },
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "7ca75e6221d0c167e25e",
+      "atoms": [
+        {
+          "head": 426,
+          "site": "query_sentence",
+          "donor": "other"
+        },
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "7faa687e58f24b04fba7",
+      "atoms": [
+        {
+          "head": 678,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 690,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 863,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": true,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "8095d33b243ca6a44912",
+      "atoms": [
+        {
+          "head": 545,
+          "site": "query_sentence",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "85b03ec05ae23865c08f",
+      "atoms": [
+        {
+          "head": 505,
+          "site": "query_sentence",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "8cb5266133d8a210604f",
+      "atoms": [
+        {
+          "head": 678,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 690,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": true,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "956497eb78d14eec51bd",
+      "atoms": [
+        {
+          "head": 568,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "9894a904b1107a193d23",
+      "atoms": [
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "98c246f159e0761c2905",
+      "atoms": [
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "a1abdc13c0e9a7f18a24",
+      "atoms": [
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": true,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "a61c88ccfe3a9bafb7d7",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "a6c31fd6980fb2643b0a",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "ad417eb1650e85baa72f",
+      "atoms": [
+        {
+          "head": 678,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 690,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 863,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": true,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "add077cbd013dd8b8ab8",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "b74af1e47d26b1e2f373",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "be8b2ca1555d2b32aa3a",
+      "atoms": [
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "c13e94cb0bf47b740297",
+      "atoms": [
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "c48fe68d367949930dc9",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "c934c16d7a93c39e83e4",
+      "atoms": [
+        {
+          "head": 545,
+          "site": "query_sentence",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "cec41ab38193f8498178",
+      "atoms": [
+        {
+          "head": 690,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": true,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "cfed3c0ca6275f63cfb0",
+      "atoms": [
+        {
+          "head": 545,
+          "site": "query_writer_union",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "d1142e48a101b7bf2de5",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "d1212f6a8d3c39136013",
+      "atoms": [
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "d504eb6a6cfa5a189cb2",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "d5a1286326d7e0ef284d",
+      "atoms": [
+        {
+          "head": 505,
+          "site": "query_sentence",
+          "donor": "other"
+        },
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "d804c71bd6eb483eed1d",
+      "atoms": [
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "self"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "self"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "da5c288e8e11bebdee88",
+      "atoms": [
+        {
+          "head": 568,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "dc1c230b822f241bed29",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "de32ace63bf92b50e9d5",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "dff52201d13be6cd44a2",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "e4506619212ddc74a075",
+      "atoms": [
+        {
+          "head": 568,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "e5f307214446c87899ef",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "e69ef5cba973c53c75b8",
+      "atoms": [
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "e730b3a23b4f6e5ba311",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "e75d0076666e1929da52",
+      "atoms": [
+        {
+          "head": 505,
+          "site": "query_child_last",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    },
+    {
+      "id": "e9d0e3e2436dc2354605",
+      "atoms": [
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "e9e1106421f14bceca7e",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "f2f993ec1a1836b7fabd",
+      "atoms": [
+        {
+          "head": 863,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": true,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "f6865a08231ea4c92d62",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "f77e9c26b1955b27d9dc",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "f80e9c18d50e2c327cc9",
+      "atoms": [
+        {
+          "head": 568,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "fe96f7d2f12c75f5fa9e",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "ff5faca3db4f5d62e944",
+      "atoms": [
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "intact",
+      "atoms": [],
+      "observe": true,
+      "directions": [
+        "noise",
+        "restore"
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "G1:O1:whole",
+      "panel": "G1",
+      "terms": [
+        [
+          "6ea845099157ecfa8fbd",
+          1.0
+        ]
+      ],
+      "group": "O1",
+      "kind": "whole"
+    },
+    {
+      "id": "G1:O1:interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "191dd2d0cd7ba8a10723",
+          -1.0
+        ],
+        [
+          "6ea845099157ecfa8fbd",
+          1.0
+        ],
+        [
+          "e5f307214446c87899ef",
+          -1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "O1",
+      "kind": "interaction"
+    },
+    {
+      "id": "G1:O1:conditional:L16H1",
+      "panel": "G1",
+      "terms": [
+        [
+          "6ea845099157ecfa8fbd",
+          1.0
+        ],
+        [
+          "c13e94cb0bf47b740297",
+          -1.0
+        ]
+      ],
+      "group": "O1",
+      "kind": "conditional",
+      "head": 513
+    },
+    {
+      "id": "G1:O1:conditional:L17H3",
+      "panel": "G1",
+      "terms": [
+        [
+          "6ea845099157ecfa8fbd",
+          1.0
+        ],
+        [
+          "c48fe68d367949930dc9",
+          -1.0
+        ]
+      ],
+      "group": "O1",
+      "kind": "conditional",
+      "head": 547
+    },
+    {
+      "id": "G1:O1:conditional:L18H18",
+      "panel": "G1",
+      "terms": [
+        [
+          "6ea845099157ecfa8fbd",
+          1.0
+        ],
+        [
+          "7620db13559adeff7e12",
+          -1.0
+        ]
+      ],
+      "group": "O1",
+      "kind": "conditional",
+      "head": 594
+    },
+    {
+      "id": "G1:O1:conditional:L18H19",
+      "panel": "G1",
+      "terms": [
+        [
+          "5b992e95dfee6ef41f85",
+          -1.0
+        ],
+        [
+          "6ea845099157ecfa8fbd",
+          1.0
+        ]
+      ],
+      "group": "O1",
+      "kind": "conditional",
+      "head": 595
+    },
+    {
+      "id": "G1:O2:whole",
+      "panel": "G1",
+      "terms": [
+        [
+          "22e1f63a5a051aceed2f",
+          1.0
+        ]
+      ],
+      "group": "O2",
+      "kind": "whole"
+    },
+    {
+      "id": "G1:O2:interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "22e1f63a5a051aceed2f",
+          1.0
+        ],
+        [
+          "d1212f6a8d3c39136013",
+          -1.0
+        ],
+        [
+          "e5f307214446c87899ef",
+          -1.0
+        ]
+      ],
+      "group": "O2",
+      "kind": "interaction"
+    },
+    {
+      "id": "G1:O2:conditional:L16H1",
+      "panel": "G1",
+      "terms": [
+        [
+          "22e1f63a5a051aceed2f",
+          1.0
+        ],
+        [
+          "d1212f6a8d3c39136013",
+          -1.0
+        ]
+      ],
+      "group": "O2",
+      "kind": "conditional",
+      "head": 513
+    },
+    {
+      "id": "G1:O2:conditional:L16H21",
+      "panel": "G1",
+      "terms": [
+        [
+          "22e1f63a5a051aceed2f",
+          1.0
+        ],
+        [
+          "e5f307214446c87899ef",
+          -1.0
+        ]
+      ],
+      "group": "O2",
+      "kind": "conditional",
+      "head": 533
+    },
+    {
+      "id": "G1:O3:whole",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "whole"
+    },
+    {
+      "id": "G1:O3:interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ],
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "174572c211b4d905ec76",
+          -1.0
+        ],
+        [
+          "1f20acc6c79bdb6a7528",
+          -1.0
+        ],
+        [
+          "48861ca75594a7d2600a",
+          -1.0
+        ],
+        [
+          "79a24509c59e25181902",
+          -1.0
+        ],
+        [
+          "a1abdc13c0e9a7f18a24",
+          -1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "interaction"
+    },
+    {
+      "id": "G1:O3:conditional:L18H18",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ],
+        [
+          "e9d0e3e2436dc2354605",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "conditional",
+      "head": 594
+    },
+    {
+      "id": "G1:O3:conditional:L18H19",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ],
+        [
+          "f77e9c26b1955b27d9dc",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "conditional",
+      "head": 595
+    },
+    {
+      "id": "G1:O3:conditional:L18H24",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ],
+        [
+          "dff52201d13be6cd44a2",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "conditional",
+      "head": 600
+    },
+    {
+      "id": "G1:O3:conditional:L19H16",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ],
+        [
+          "d504eb6a6cfa5a189cb2",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "conditional",
+      "head": 624
+    },
+    {
+      "id": "G1:O3:conditional:L20H1",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ],
+        [
+          "dc1c230b822f241bed29",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "conditional",
+      "head": 641
+    },
+    {
+      "id": "G1:O3:conditional:L22H5",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ],
+        [
+          "3b7a24242d0a203200cc",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "conditional",
+      "head": 709
+    },
+    {
+      "id": "G1:O3:conditional:L27H6",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ],
+        [
+          "e730b3a23b4f6e5ba311",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "conditional",
+      "head": 870
+    },
+    {
+      "id": "G1:O4:whole",
+      "panel": "G1",
+      "terms": [
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ]
+      ],
+      "group": "O4",
+      "kind": "whole"
+    },
+    {
+      "id": "G1:O4:interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "O4",
+      "kind": "interaction"
+    },
+    {
+      "id": "G1:O4:conditional:L18H18",
+      "panel": "G1",
+      "terms": [
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "O4",
+      "kind": "conditional",
+      "head": 594
+    },
+    {
+      "id": "G1:O4:conditional:L18H19",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ]
+      ],
+      "group": "O4",
+      "kind": "conditional",
+      "head": 595
+    },
+    {
+      "id": "G1:I1:whole",
+      "panel": "G1",
+      "terms": [
+        [
+          "7458622298d224bf0280",
+          1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "whole"
+    },
+    {
+      "id": "G1:I1:interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "174572c211b4d905ec76",
+          -1.0
+        ],
+        [
+          "1f20acc6c79bdb6a7528",
+          -1.0
+        ],
+        [
+          "7458622298d224bf0280",
+          1.0
+        ],
+        [
+          "98c246f159e0761c2905",
+          -1.0
+        ],
+        [
+          "be8b2ca1555d2b32aa3a",
+          -1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "interaction"
+    },
+    {
+      "id": "G1:I1:conditional:L18H18",
+      "panel": "G1",
+      "terms": [
+        [
+          "7458622298d224bf0280",
+          1.0
+        ],
+        [
+          "74ec64f87afe93eae40c",
+          -1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "conditional",
+      "head": 594
+    },
+    {
+      "id": "G1:I1:conditional:L18H19",
+      "panel": "G1",
+      "terms": [
+        [
+          "7458622298d224bf0280",
+          1.0
+        ],
+        [
+          "e9e1106421f14bceca7e",
+          -1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "conditional",
+      "head": 595
+    },
+    {
+      "id": "G1:I1:conditional:L19H16",
+      "panel": "G1",
+      "terms": [
+        [
+          "43b85772a4b05c744b63",
+          -1.0
+        ],
+        [
+          "7458622298d224bf0280",
+          1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "conditional",
+      "head": 624
+    },
+    {
+      "id": "G1:I1:conditional:L20H1",
+      "panel": "G1",
+      "terms": [
+        [
+          "7458622298d224bf0280",
+          1.0
+        ],
+        [
+          "fe96f7d2f12c75f5fa9e",
+          -1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "conditional",
+      "head": 641
+    },
+    {
+      "id": "G1:I1:conditional:L23H15",
+      "panel": "G1",
+      "terms": [
+        [
+          "7458622298d224bf0280",
+          1.0
+        ],
+        [
+          "b74af1e47d26b1e2f373",
+          -1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "conditional",
+      "head": 751
+    },
+    {
+      "id": "G1:I1:conditional:L25H17",
+      "panel": "G1",
+      "terms": [
+        [
+          "7458622298d224bf0280",
+          1.0
+        ],
+        [
+          "d1142e48a101b7bf2de5",
+          -1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "conditional",
+      "head": 817
+    },
+    {
+      "id": "G1:I2:whole",
+      "panel": "G1",
+      "terms": [
+        [
+          "da5c288e8e11bebdee88",
+          1.0
+        ]
+      ],
+      "group": "I2",
+      "kind": "whole"
+    },
+    {
+      "id": "G1:I2:interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "174572c211b4d905ec76",
+          -1.0
+        ],
+        [
+          "1f20acc6c79bdb6a7528",
+          -1.0
+        ],
+        [
+          "956497eb78d14eec51bd",
+          -1.0
+        ],
+        [
+          "da5c288e8e11bebdee88",
+          1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "I2",
+      "kind": "interaction"
+    },
+    {
+      "id": "G1:I2:conditional:L17H24",
+      "panel": "G1",
+      "terms": [
+        [
+          "da5c288e8e11bebdee88",
+          1.0
+        ],
+        [
+          "f6865a08231ea4c92d62",
+          -1.0
+        ]
+      ],
+      "group": "I2",
+      "kind": "conditional",
+      "head": 568
+    },
+    {
+      "id": "G1:I2:conditional:L18H18",
+      "panel": "G1",
+      "terms": [
+        [
+          "da5c288e8e11bebdee88",
+          1.0
+        ],
+        [
+          "f80e9c18d50e2c327cc9",
+          -1.0
+        ]
+      ],
+      "group": "I2",
+      "kind": "conditional",
+      "head": 594
+    },
+    {
+      "id": "G1:I2:conditional:L18H19",
+      "panel": "G1",
+      "terms": [
+        [
+          "16ffc4c1ce2cd2f66524",
+          -1.0
+        ],
+        [
+          "da5c288e8e11bebdee88",
+          1.0
+        ]
+      ],
+      "group": "I2",
+      "kind": "conditional",
+      "head": 595
+    },
+    {
+      "id": "G1:I2:conditional:L19H16",
+      "panel": "G1",
+      "terms": [
+        [
+          "da5c288e8e11bebdee88",
+          1.0
+        ],
+        [
+          "e4506619212ddc74a075",
+          -1.0
+        ]
+      ],
+      "group": "I2",
+      "kind": "conditional",
+      "head": 624
+    },
+    {
+      "id": "G1:I2:conditional:L20H1",
+      "panel": "G1",
+      "terms": [
+        [
+          "7055f9fd53c1548e6b28",
+          -1.0
+        ],
+        [
+          "da5c288e8e11bebdee88",
+          1.0
+        ]
+      ],
+      "group": "I2",
+      "kind": "conditional",
+      "head": 641
+    },
+    {
+      "id": "G1:I3:whole",
+      "panel": "G1",
+      "terms": [
+        [
+          "43b85772a4b05c744b63",
+          1.0
+        ]
+      ],
+      "group": "I3",
+      "kind": "whole"
+    },
+    {
+      "id": "G1:I3:interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "1f20acc6c79bdb6a7528",
+          -1.0
+        ],
+        [
+          "43b85772a4b05c744b63",
+          1.0
+        ],
+        [
+          "98c246f159e0761c2905",
+          -1.0
+        ],
+        [
+          "be8b2ca1555d2b32aa3a",
+          -1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "I3",
+      "kind": "interaction"
+    },
+    {
+      "id": "G1:I3:conditional:L18H18",
+      "panel": "G1",
+      "terms": [
+        [
+          "43b85772a4b05c744b63",
+          1.0
+        ],
+        [
+          "ff5faca3db4f5d62e944",
+          -1.0
+        ]
+      ],
+      "group": "I3",
+      "kind": "conditional",
+      "head": 594
+    },
+    {
+      "id": "G1:I3:conditional:L18H19",
+      "panel": "G1",
+      "terms": [
+        [
+          "43b85772a4b05c744b63",
+          1.0
+        ],
+        [
+          "a61c88ccfe3a9bafb7d7",
+          -1.0
+        ]
+      ],
+      "group": "I3",
+      "kind": "conditional",
+      "head": 595
+    },
+    {
+      "id": "G1:I3:conditional:L20H1",
+      "panel": "G1",
+      "terms": [
+        [
+          "2194dce47fb551f89f4a",
+          -1.0
+        ],
+        [
+          "43b85772a4b05c744b63",
+          1.0
+        ]
+      ],
+      "group": "I3",
+      "kind": "conditional",
+      "head": 641
+    },
+    {
+      "id": "G1:I3:conditional:L23H15",
+      "panel": "G1",
+      "terms": [
+        [
+          "11d93f3f15b8d27500ce",
+          -1.0
+        ],
+        [
+          "43b85772a4b05c744b63",
+          1.0
+        ]
+      ],
+      "group": "I3",
+      "kind": "conditional",
+      "head": 751
+    },
+    {
+      "id": "G1:I3:conditional:L25H17",
+      "panel": "G1",
+      "terms": [
+        [
+          "43b85772a4b05c744b63",
+          1.0
+        ],
+        [
+          "de32ace63bf92b50e9d5",
+          -1.0
+        ]
+      ],
+      "group": "I3",
+      "kind": "conditional",
+      "head": 817
+    },
+    {
+      "id": "G1:I4:whole",
+      "panel": "G1",
+      "terms": [
+        [
+          "a6c31fd6980fb2643b0a",
+          1.0
+        ]
+      ],
+      "group": "I4",
+      "kind": "whole"
+    },
+    {
+      "id": "G1:I4:interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "191dd2d0cd7ba8a10723",
+          -1.0
+        ],
+        [
+          "a6c31fd6980fb2643b0a",
+          1.0
+        ],
+        [
+          "d1212f6a8d3c39136013",
+          -1.0
+        ],
+        [
+          "e5f307214446c87899ef",
+          -1.0
+        ]
+      ],
+      "group": "I4",
+      "kind": "interaction"
+    },
+    {
+      "id": "G1:I4:conditional:L16H1",
+      "panel": "G1",
+      "terms": [
+        [
+          "9894a904b1107a193d23",
+          -1.0
+        ],
+        [
+          "a6c31fd6980fb2643b0a",
+          1.0
+        ]
+      ],
+      "group": "I4",
+      "kind": "conditional",
+      "head": 513
+    },
+    {
+      "id": "G1:I4:conditional:L16H21",
+      "panel": "G1",
+      "terms": [
+        [
+          "44fd94434dce0ccdc882",
+          -1.0
+        ],
+        [
+          "a6c31fd6980fb2643b0a",
+          1.0
+        ]
+      ],
+      "group": "I4",
+      "kind": "conditional",
+      "head": 533
+    },
+    {
+      "id": "G1:I4:conditional:L17H3",
+      "panel": "G1",
+      "terms": [
+        [
+          "22e1f63a5a051aceed2f",
+          -1.0
+        ],
+        [
+          "a6c31fd6980fb2643b0a",
+          1.0
+        ]
+      ],
+      "group": "I4",
+      "kind": "conditional",
+      "head": 547
+    },
+    {
+      "id": "block:L13H10:query_sentence",
+      "panel": "blocking",
+      "terms": [
+        [
+          "47fddc3299d3fa7fa53d",
+          1.0
+        ],
+        [
+          "7ca75e6221d0c167e25e",
+          -1.0
+        ]
+      ],
+      "kind": "blocking",
+      "source": 426,
+      "site": "query_sentence"
+    },
+    {
+      "id": "block:L13H10:query_sentence:source",
+      "panel": "blocking",
+      "terms": [
+        [
+          "47fddc3299d3fa7fa53d",
+          1.0
+        ]
+      ],
+      "kind": "source",
+      "source": 426,
+      "site": "query_sentence"
+    },
+    {
+      "id": "block:L13H10:query_sentence:self",
+      "panel": "control",
+      "terms": [
+        [
+          "698addce07e58e664686",
+          1.0
+        ]
+      ],
+      "kind": "self_clamp"
+    },
+    {
+      "id": "block:L15H25:query_child_last",
+      "panel": "blocking",
+      "terms": [
+        [
+          "7bb1fbf6eff81958a0e2",
+          -1.0
+        ],
+        [
+          "e75d0076666e1929da52",
+          1.0
+        ]
+      ],
+      "kind": "blocking",
+      "source": 505,
+      "site": "query_child_last"
+    },
+    {
+      "id": "block:L15H25:query_child_last:source",
+      "panel": "blocking",
+      "terms": [
+        [
+          "e75d0076666e1929da52",
+          1.0
+        ]
+      ],
+      "kind": "source",
+      "source": 505,
+      "site": "query_child_last"
+    },
+    {
+      "id": "block:L15H25:query_child_last:self",
+      "panel": "control",
+      "terms": [
+        [
+          "1d0d86d2dc7a4cdadc3f",
+          1.0
+        ]
+      ],
+      "kind": "self_clamp"
+    },
+    {
+      "id": "block:L15H25:query_sentence",
+      "panel": "blocking",
+      "terms": [
+        [
+          "85b03ec05ae23865c08f",
+          1.0
+        ],
+        [
+          "d5a1286326d7e0ef284d",
+          -1.0
+        ]
+      ],
+      "kind": "blocking",
+      "source": 505,
+      "site": "query_sentence"
+    },
+    {
+      "id": "block:L15H25:query_sentence:source",
+      "panel": "blocking",
+      "terms": [
+        [
+          "85b03ec05ae23865c08f",
+          1.0
+        ]
+      ],
+      "kind": "source",
+      "source": 505,
+      "site": "query_sentence"
+    },
+    {
+      "id": "block:L15H25:query_sentence:self",
+      "panel": "control",
+      "terms": [
+        [
+          "1d0d86d2dc7a4cdadc3f",
+          1.0
+        ]
+      ],
+      "kind": "self_clamp"
+    },
+    {
+      "id": "block:L17H1:query_writer_union",
+      "panel": "blocking",
+      "terms": [
+        [
+          "670e26a2247eec7a78ba",
+          1.0
+        ],
+        [
+          "cfed3c0ca6275f63cfb0",
+          -1.0
+        ]
+      ],
+      "kind": "blocking",
+      "source": 545,
+      "site": "query_writer_union"
+    },
+    {
+      "id": "block:L17H1:query_writer_union:source",
+      "panel": "blocking",
+      "terms": [
+        [
+          "670e26a2247eec7a78ba",
+          1.0
+        ]
+      ],
+      "kind": "source",
+      "source": 545,
+      "site": "query_writer_union"
+    },
+    {
+      "id": "block:L17H1:query_writer_union:self",
+      "panel": "control",
+      "terms": [
+        [
+          "269bd10623c6c6b4dca8",
+          1.0
+        ]
+      ],
+      "kind": "self_clamp"
+    },
+    {
+      "id": "block:L17H1:query_sentence",
+      "panel": "blocking",
+      "terms": [
+        [
+          "8095d33b243ca6a44912",
+          -1.0
+        ],
+        [
+          "c934c16d7a93c39e83e4",
+          1.0
+        ]
+      ],
+      "kind": "blocking",
+      "source": 545,
+      "site": "query_sentence"
+    },
+    {
+      "id": "block:L17H1:query_sentence:source",
+      "panel": "blocking",
+      "terms": [
+        [
+          "c934c16d7a93c39e83e4",
+          1.0
+        ]
+      ],
+      "kind": "source",
+      "source": 545,
+      "site": "query_sentence"
+    },
+    {
+      "id": "block:L17H1:query_sentence:self",
+      "panel": "control",
+      "terms": [
+        [
+          "269bd10623c6c6b4dca8",
+          1.0
+        ]
+      ],
+      "kind": "self_clamp"
+    },
+    {
+      "id": "block:L17H3:colon",
+      "panel": "blocking",
+      "terms": [
+        [
+          "191dd2d0cd7ba8a10723",
+          1.0
+        ],
+        [
+          "d804c71bd6eb483eed1d",
+          -1.0
+        ]
+      ],
+      "kind": "blocking",
+      "source": 547,
+      "site": "colon"
+    },
+    {
+      "id": "block:L17H3:colon:source",
+      "panel": "blocking",
+      "terms": [
+        [
+          "191dd2d0cd7ba8a10723",
+          1.0
+        ]
+      ],
+      "kind": "source",
+      "source": 547,
+      "site": "colon"
+    },
+    {
+      "id": "block:L17H3:colon:self",
+      "panel": "control",
+      "terms": [
+        [
+          "4d2fd7b7128fd64234c9",
+          1.0
+        ]
+      ],
+      "kind": "self_clamp"
+    },
+    {
+      "id": "G3:0:conditional",
+      "panel": "G3",
+      "terms": [
+        [
+          "0696fe9eaa5e0540e8ea",
+          1.0
+        ],
+        [
+          "intact",
+          -1.0
+        ]
+      ],
+      "kind": "conditional",
+      "background": []
+    },
+    {
+      "id": "G3:0:change",
+      "panel": "G3",
+      "terms": [
+        [
+          "intact",
+          -1.0
+        ]
+      ],
+      "kind": "change",
+      "background": []
+    },
+    {
+      "id": "G3:1:conditional",
+      "panel": "G3",
+      "terms": [
+        [
+          "10b78cbe73e8c21e9e1c",
+          1.0
+        ],
+        [
+          "cec41ab38193f8498178",
+          -1.0
+        ]
+      ],
+      "kind": "conditional",
+      "background": [
+        "L21H18"
+      ]
+    },
+    {
+      "id": "G3:1:change",
+      "panel": "G3",
+      "terms": [
+        [
+          "0696fe9eaa5e0540e8ea",
+          -1.0
+        ],
+        [
+          "10b78cbe73e8c21e9e1c",
+          1.0
+        ],
+        [
+          "cec41ab38193f8498178",
+          -1.0
+        ]
+      ],
+      "kind": "change",
+      "background": [
+        "L21H18"
+      ]
+    },
+    {
+      "id": "G3:2:conditional",
+      "panel": "G3",
+      "terms": [
+        [
+          "09711229779df1a68761",
+          -1.0
+        ],
+        [
+          "7faa687e58f24b04fba7",
+          1.0
+        ]
+      ],
+      "kind": "conditional",
+      "background": [
+        "L21H18",
+        "L22H5",
+        "L21H6"
+      ]
+    },
+    {
+      "id": "G3:2:change",
+      "panel": "G3",
+      "terms": [
+        [
+          "0696fe9eaa5e0540e8ea",
+          -1.0
+        ],
+        [
+          "09711229779df1a68761",
+          -1.0
+        ],
+        [
+          "7faa687e58f24b04fba7",
+          1.0
+        ]
+      ],
+      "kind": "change",
+      "background": [
+        "L21H18",
+        "L22H5",
+        "L21H6"
+      ]
+    },
+    {
+      "id": "G3:3:conditional",
+      "panel": "G3",
+      "terms": [
+        [
+          "8cb5266133d8a210604f",
+          -1.0
+        ],
+        [
+          "ad417eb1650e85baa72f",
+          1.0
+        ]
+      ],
+      "kind": "conditional",
+      "background": [
+        "L21H18",
+        "L22H5",
+        "L21H6",
+        "L27H6"
+      ]
+    },
+    {
+      "id": "G3:3:change",
+      "panel": "G3",
+      "terms": [
+        [
+          "0696fe9eaa5e0540e8ea",
+          -1.0
+        ],
+        [
+          "8cb5266133d8a210604f",
+          -1.0
+        ],
+        [
+          "ad417eb1650e85baa72f",
+          1.0
+        ]
+      ],
+      "kind": "change",
+      "background": [
+        "L21H18",
+        "L22H5",
+        "L21H6",
+        "L27H6"
+      ]
+    },
+    {
+      "id": "G3:4:conditional",
+      "panel": "G3",
+      "terms": [
+        [
+          "a1abdc13c0e9a7f18a24",
+          -1.0
+        ],
+        [
+          "f2f993ec1a1836b7fabd",
+          1.0
+        ]
+      ],
+      "kind": "conditional",
+      "background": [
+        "L27H6"
+      ]
+    },
+    {
+      "id": "G3:4:change",
+      "panel": "G3",
+      "terms": [
+        [
+          "0696fe9eaa5e0540e8ea",
+          -1.0
+        ],
+        [
+          "a1abdc13c0e9a7f18a24",
+          -1.0
+        ],
+        [
+          "f2f993ec1a1836b7fabd",
+          1.0
+        ]
+      ],
+      "kind": "change",
+      "background": [
+        "L27H6"
+      ]
+    }
+  ]
+}

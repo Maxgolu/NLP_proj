@@ -1,0 +1,34 @@
+[
+  {
+    "id": "block:L17H1:query_sentence",
+    "direction": "noise",
+    "blocking": 1.824571009432332,
+    "source": 2.166586216915859,
+    "ratio": 0.8421409659060849,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L17H1:query_sentence",
+    "direction": "restore",
+    "blocking": 1.750848223654072,
+    "source": 2.012569973977764,
+    "ratio": 0.8699564468775168,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L17H1:query_writer_union",
+    "direction": "noise",
+    "blocking": 1.6084513289205145,
+    "source": 1.904741346166375,
+    "ratio": 0.8444460620114138,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L17H1:query_writer_union",
+    "direction": "restore",
+    "blocking": 1.4979610389538025,
+    "source": 1.7196918230378226,
+    "ratio": 0.8710636515719808,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  }
+]

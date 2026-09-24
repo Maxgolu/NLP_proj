@@ -1,0 +1,682 @@
+[
+  {
+    "config_id": "513:colon:head:547:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:568:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:594:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:595:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:600:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:624:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:630:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:641:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:678:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:690:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:695:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:709:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:751:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:787:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:817:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "513:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:547:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:568:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:594:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:595:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:600:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:624:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:630:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:641:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:678:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:690:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:695:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:709:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:751:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:787:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:817:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "533:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:594:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:595:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:600:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:624:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:630:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:641:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:678:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:690:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:695:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:709:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:751:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:787:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:817:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "547:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:594:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:595:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:600:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:624:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:630:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:641:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:678:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:690:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:709:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:751:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:787:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:817:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "568:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:624:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:630:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:641:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:678:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:690:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:709:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:751:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:787:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "594:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:624:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:630:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:641:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:678:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:680:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:690:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:694:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:709:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:751:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:787:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:804:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:831:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:query_sentence:head:695:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "595:query_sentence:head:817:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:641:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:678:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:690:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:709:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:751:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:787:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:817:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "624:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "641:colon:head:678:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "641:colon:head:690:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "641:colon:head:709:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "641:colon:head:751:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "641:colon:head:787:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "641:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "641:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "641:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "641:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "751:colon:head:787:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "751:colon:head:817:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "751:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "751:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "751:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "751:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "787:colon:head:817:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "787:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "787:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "787:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "787:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "817:colon:head:855:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "817:colon:head:870:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "817:colon:head:973:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  },
+  {
+    "config_id": "817:colon:head:978:KV",
+    "direction": "noise",
+    "reason": "Missing component on identical family population"
+  }
+]

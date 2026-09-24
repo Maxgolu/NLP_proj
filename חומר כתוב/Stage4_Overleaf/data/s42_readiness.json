@@ -1,0 +1,199 @@
+{
+  "scope": "Readiness audit only; no scientific interpretation",
+  "archive_sha256": "879cc3f7f56530c439fa445e38a42b43ffc83a709c2950e9c81bf42a044b3f15",
+  "phases": {
+    "initial": {
+      "records": 3800,
+      "pairs": 40,
+      "families": 20,
+      "configs": 74,
+      "new": 3320,
+      "reused": 480,
+      "diagnostic_records": 560,
+      "historical_effect_only_records": 0
+    },
+    "conditional": {
+      "records": 3120,
+      "pairs": 40,
+      "families": 20,
+      "configs": 78,
+      "new": 1800,
+      "reused": 1320,
+      "diagnostic_records": 80,
+      "historical_effect_only_records": 1240
+    },
+    "refinement": {
+      "records": 840,
+      "pairs": 40,
+      "families": 20,
+      "configs": 21,
+      "new": 280,
+      "reused": 560,
+      "diagnostic_records": 0,
+      "historical_effect_only_records": 0
+    },
+    "extension": {
+      "records": 22072,
+      "pairs": 178,
+      "families": 89,
+      "configs": 62,
+      "new": 17282,
+      "reused": 4790,
+      "diagnostic_records": 356,
+      "historical_effect_only_records": 2492
+    },
+    "sensitivity": {
+      "records": 22072,
+      "pairs": 178,
+      "families": 89,
+      "configs": 62,
+      "new": 22072,
+      "reused": 0,
+      "diagnostic_records": 356,
+      "historical_effect_only_records": 0
+    }
+  },
+  "gates": {
+    "conditional_r0": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "conditional_r1": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "conditional_r2": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "extension_r0": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "extension_r1": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "extension_r2": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "gate_r0": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "initial_r0": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "initial_r1": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "initial_r2": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "refinement_r0": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "refinement_r1": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "refinement_r2": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "sensitivity_r0": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "sensitivity_r1": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    },
+    "sensitivity_r2": {
+      "passed": true,
+      "pairs": 6,
+      "max_error": 6.103515625e-05
+    }
+  },
+  "reproduced_files": [
+    "initial/endpoint_families.csv",
+    "initial/endpoint_summary.csv",
+    "initial/contrast_families.csv",
+    "initial/contrast_summary.csv",
+    "initial/strata.csv",
+    "initial/summary.json",
+    "initial/candidate_accuracy.csv",
+    "initial/g3_diagnostics.csv",
+    "initial/blocking_ratios.json",
+    "conditional/endpoint_families.csv",
+    "conditional/endpoint_summary.csv",
+    "conditional/contrast_families.csv",
+    "conditional/contrast_summary.csv",
+    "conditional/strata.csv",
+    "conditional/summary.json",
+    "conditional/candidate_accuracy.csv",
+    "conditional/g3_diagnostics.csv",
+    "conditional/blocking_ratios.json",
+    "refinement/endpoint_families.csv",
+    "refinement/endpoint_summary.csv",
+    "refinement/contrast_families.csv",
+    "refinement/contrast_summary.csv",
+    "refinement/strata.csv",
+    "refinement/summary.json",
+    "refinement/candidate_accuracy.csv",
+    "refinement/g3_diagnostics.csv",
+    "refinement/blocking_ratios.json",
+    "extension/endpoint_families.csv",
+    "extension/endpoint_summary.csv",
+    "extension/contrast_families.csv",
+    "extension/contrast_summary.csv",
+    "extension/strata.csv",
+    "extension/summary.json",
+    "extension/additional_families.csv",
+    "extension/candidate_accuracy.csv",
+    "extension/g3_diagnostics.csv",
+    "extension/blocking_ratios.json",
+    "sensitivity/endpoint_families.csv",
+    "sensitivity/endpoint_summary.csv",
+    "sensitivity/contrast_families.csv",
+    "sensitivity/contrast_summary.csv",
+    "sensitivity/strata.csv",
+    "sensitivity/summary.json",
+    "sensitivity/additional_families.csv",
+    "sensitivity/candidate_accuracy.csv",
+    "sensitivity/g3_diagnostics.csv",
+    "sensitivity/blocking_ratios.json",
+    "results_summary.json",
+    "baseline_sensitivity.csv"
+  ],
+  "limitations": [
+    "Historical Scope-P reused measurements may have effects only, not individual patched logits; new measurements include both logits.",
+    "Core-only G1 contrasts outside the declared extension cap remain provisional.",
+    "Mean reverse is sensitivity in corrupted recipients, not literal clean restoration.",
+    "Discovery data only; no held-out circuit validation is claimed."
+  ],
+  "new_endpoints": 44754,
+  "reused_endpoints": 7150,
+  "ready_for_full_analysis": true,
+  "additional_gpu_required_for_declared_S42": false
+}

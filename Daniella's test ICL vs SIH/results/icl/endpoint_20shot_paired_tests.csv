@@ -1,0 +1,5 @@
+task,wrong_to_correct,correct_to_wrong,discordant_pairs,raw_p,holm_p,holm_significant_0.05
+binary_fruit_month,18,6,24,0.022655844688415527,0.045311689376831055,True
+binary_furniture_profession,15,11,26,0.557197093963623,0.557197093963623,False
+four_class,27,10,37,0.007632078602910042,0.030528314411640167,True
+nine_class,12,2,14,0.012939453125,0.038818359375,True

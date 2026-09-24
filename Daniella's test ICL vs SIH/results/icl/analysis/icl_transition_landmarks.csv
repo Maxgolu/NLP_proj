@@ -1,0 +1,5 @@
+task,chance,first_20shot_CI_above_chance_checkpoint,first_20shot_CI_above_chance_step,first_20shot_CI_above_chance_B,peak_20shot_checkpoint,peak_20shot_step,peak_20shot_accuracy_B,peak_20shot_accuracy,max_excess_over_chance_checkpoint,max_excess_over_chance_step,max_excess_over_chance_B,max_excess_over_chance,max_20minus1_gain_checkpoint,max_20minus1_gain_step,max_20minus1_gain_B,max_20minus1_gain
+binary_fruit_month,0.5,stage1-step850-tokens4B,850,4,stage1-step4000-tokens17B,4000,17,0.94,stage1-step4000-tokens17B,4000,17,0.43999999999999995,stage1-step4000-tokens17B,4000,17,0.3799999999999999
+binary_furniture_profession,0.5,stage1-step900-tokens4B,900,4,stage1-step1000-tokens5B,1000,5,0.84,stage1-step1000-tokens5B,1000,5,0.33999999999999997,stage1-step1000-tokens5B,1000,5,0.26
+four_class,0.25,stage1-step900-tokens4B,900,4,stage1-step3000-tokens13B,3000,13,0.86,stage1-step3000-tokens13B,3000,13,0.61,stage1-step9000-tokens38B,9000,38,0.58
+nine_class,0.1111111111111111,stage1-step850-tokens4B,850,4,stage1-step9000-tokens38B,9000,38,0.6,stage1-step9000-tokens38B,9000,38,0.4888888888888889,stage1-step9000-tokens38B,9000,38,0.48

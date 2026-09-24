@@ -1,0 +1,17 @@
+{
+  "pdf": "output\\pdf\\Stage4_Experiment_Report.pdf",
+  "pdf_sha256": "38b6c23fb4870a524b96ce863f3b6d9bb38be7062c36c908143505c54765832f",
+  "pages": 13,
+  "overleaf_zip": "חומר כתוב\\Stage4_Experiment_Overleaf.zip",
+  "zip_sha256": "34731a4329b95266faad522de1d590f7e6eb51ed635be71c8fb5db15d6d4efc1",
+  "zip_files": 24,
+  "main_tex_sha256": "451f7672d1eab0564ab5afca7276ba1dff4393c88321e72790cbc061e998e511",
+  "figures": 6,
+  "tables": 4,
+  "compile_engine": "Tectonic/XeTeX",
+  "visual_review": "All final pages rendered at 100 dpi and inspected; figures also inspected separately",
+  "overfull_boxes": 0,
+  "unresolved_references": 0,
+  "original_gpu_artifacts_modified": false,
+  "new_gpu_jobs": 0
+}

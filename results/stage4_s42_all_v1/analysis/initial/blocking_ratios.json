@@ -1,0 +1,98 @@
+[
+  {
+    "id": "block:L13H10:query_sentence",
+    "direction": "noise",
+    "blocking": -0.6655460596084595,
+    "source": -0.5907781839370727,
+    "ratio": 1.1265582882108436,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L13H10:query_sentence",
+    "direction": "restore",
+    "blocking": -0.42905116081237793,
+    "source": -0.3303884983062744,
+    "ratio": 1.2986262022191883,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L15H25:query_child_last",
+    "direction": "noise",
+    "blocking": 0.42649054527282715,
+    "source": 0.42902963161468505,
+    "ratio": 0.9940817925971643,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L15H25:query_child_last",
+    "direction": "restore",
+    "blocking": 0.4421687602996826,
+    "source": 0.45728087425231934,
+    "ratio": 0.9669522282615779,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L15H25:query_sentence",
+    "direction": "noise",
+    "blocking": 0.4541900157928467,
+    "source": 0.4726902484893799,
+    "ratio": 0.9608618270513172,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L15H25:query_sentence",
+    "direction": "restore",
+    "blocking": 0.4415687322616577,
+    "source": 0.45131165981292726,
+    "ratio": 0.9784119746533735,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L17H1:query_writer_union",
+    "direction": "noise",
+    "blocking": 5.017246437072754,
+    "source": 5.697087287902832,
+    "ratio": 0.8806686967437468,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L17H1:query_writer_union",
+    "direction": "restore",
+    "blocking": 4.8619993209838865,
+    "source": 5.456295585632324,
+    "ratio": 0.891080632395841,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L17H1:query_sentence",
+    "direction": "noise",
+    "blocking": 5.480055856704712,
+    "source": 6.217210197448731,
+    "ratio": 0.8814332606855539,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L17H1:query_sentence",
+    "direction": "restore",
+    "blocking": 5.377878093719483,
+    "source": 6.025264549255371,
+    "ratio": 0.8925546836585134,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L17H3:colon",
+    "direction": "noise",
+    "blocking": -0.2598437309265137,
+    "source": -0.40670166015625,
+    "ratio": 0.6389050165831258,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  },
+  {
+    "id": "block:L17H3:colon",
+    "direction": "restore",
+    "blocking": -0.3038646697998047,
+    "source": -0.41690883636474607,
+    "ratio": 0.7288515936706099,
+    "interpretation": "intervention ratio, not unique mediated fraction"
+  }
+]

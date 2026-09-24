@@ -1,0 +1,53 @@
+{
+  "complete": true,
+  "records": 712,
+  "configuration_count": 4,
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "schedule_hash": "703460e776ed4a6d1407cafe5f1182127dc100b7848638ec424844420135219f",
+  "configs": [
+    {
+      "source": 434,
+      "site": "all",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage",
+      "id": "434:all:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "colon",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage",
+      "id": "434:colon:single:434:"
+    },
+    {
+      "source": 787,
+      "site": "all",
+      "kind": "single",
+      "receiver": 787,
+      "channel": "",
+      "panel": "coverage",
+      "id": "787:all:single:787:"
+    },
+    {
+      "source": 787,
+      "site": "colon",
+      "kind": "single",
+      "receiver": 787,
+      "channel": "",
+      "panel": "coverage",
+      "id": "787:colon:single:787:"
+    }
+  ],
+  "population": "all",
+  "family_effects_hash": "22a5bfab1527dc34f5b67f0e65d3603849d20df05cd43e69d53895e6a2a1f208",
+  "run_manifests": {
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/coverage_r0": "41ae5b038470dc802a794066c38b9e8b59ef53f74a3b17d94c4b33e4e3abb0cc",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/coverage_r1": "8c3afee2a79dc5dcf8d9701478f9695f0082c282bb907cc43b0cdee888fdcc32",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/coverage_r2": "84e6d73bd213bffdbe82ce79e422976b65223d2c5a7c931cdc09a5fab9732950"
+  },
+  "note": "Discovery summaries; retention is prioritization, not confirmation"
+}

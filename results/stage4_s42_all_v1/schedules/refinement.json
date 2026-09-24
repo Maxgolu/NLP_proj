@@ -1,0 +1,845 @@
+{
+  "plan_hash": "337ea91a871c9e47b0a637fa357812c4292f8426a4a0f1ab5cca30e4d0fd6ff7",
+  "policy": {
+    "version": 1,
+    "seed": 20260923,
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "bootstrap_draws": 20000,
+    "g1_common_cap": 128,
+    "g1_extension_contrasts": 16,
+    "mean_min_families": 10,
+    "mean_scope": "test facts/question/colon; demonstrations and answer prefix live",
+    "mean_weighting": "events within family, then equal families; both orders and variants",
+    "mean_evaluation": "leave-one-family-out",
+    "K_rule": "smallest prefix with symmetric donor clean-minus-corrupt gap fraction in [0.3,0.8]; otherwise closest to 0.55",
+    "mean_reverse": "corrupted-recipient mean replacement; positive restore sign is not literal clean restoration",
+    "split_rule": "retained group interaction/conditional effect: prior-sign halves and pair of largest absolute conditional effects; within original cap",
+    "sensitivity_rule": "repeat selected extended contrasts in both directions, including those not retained after extension; other core-only G1 claims remain provisional",
+    "scope": "S4.2 G1/blocking/G2/G3 only; no mediated search or circuit/heldout execution"
+  },
+  "population": "core",
+  "mode": "donor",
+  "phase": "refinement",
+  "configs": [
+    {
+      "id": "0072032b92275a7a7e3d",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "0259de511e26cdd14804",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "063ee72b36f310e782c2",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "191dd2d0cd7ba8a10723",
+      "atoms": [
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "1aea0a9cdf05a51cc0f8",
+      "atoms": [
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "22e1f63a5a051aceed2f",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "230de2dbc61ae2724121",
+      "atoms": [
+        {
+          "head": 568,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "43b85772a4b05c744b63",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "6ea845099157ecfa8fbd",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "740f875b6f7aeff378a3",
+      "atoms": [
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "7458622298d224bf0280",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 751,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 817,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "7d19b1152b24724156a0",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 709,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 870,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "a6c31fd6980fb2643b0a",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 547,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "add077cbd013dd8b8ab8",
+      "atoms": [
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "c48fe68d367949930dc9",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "d1212f6a8d3c39136013",
+      "atoms": [
+        {
+          "head": 533,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "d805117759e8bcd87ccf",
+      "atoms": [
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "da5c288e8e11bebdee88",
+      "atoms": [
+        {
+          "head": 568,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 594,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "dc8e0dfdc84b3c07cf1b",
+      "atoms": [
+        {
+          "head": 600,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 624,
+          "site": "colon",
+          "donor": "other"
+        },
+        {
+          "head": 641,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "e5f307214446c87899ef",
+      "atoms": [
+        {
+          "head": 513,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    },
+    {
+      "id": "e69ef5cba973c53c75b8",
+      "atoms": [
+        {
+          "head": 595,
+          "site": "colon",
+          "donor": "other"
+        }
+      ],
+      "observe": false,
+      "directions": [
+        "noise"
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "G1:O1:sign_split",
+      "panel": "G1",
+      "terms": [
+        [
+          "191dd2d0cd7ba8a10723",
+          -1.0
+        ],
+        [
+          "6ea845099157ecfa8fbd",
+          1.0
+        ],
+        [
+          "c48fe68d367949930dc9",
+          -1.0
+        ]
+      ],
+      "group": "O1",
+      "kind": "sign_split"
+    },
+    {
+      "id": "G1:O1:top_pair_interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "O1",
+      "kind": "pair_interaction",
+      "members": [
+        "L18H19",
+        "L18H18"
+      ]
+    },
+    {
+      "id": "G1:O2:top_pair_interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "22e1f63a5a051aceed2f",
+          1.0
+        ],
+        [
+          "d1212f6a8d3c39136013",
+          -1.0
+        ],
+        [
+          "e5f307214446c87899ef",
+          -1.0
+        ]
+      ],
+      "group": "O2",
+      "kind": "pair_interaction",
+      "members": [
+        "L16H21",
+        "L16H1"
+      ]
+    },
+    {
+      "id": "G1:O3:sign_split",
+      "panel": "G1",
+      "terms": [
+        [
+          "0259de511e26cdd14804",
+          1.0
+        ],
+        [
+          "7d19b1152b24724156a0",
+          -1.0
+        ],
+        [
+          "dc8e0dfdc84b3c07cf1b",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "sign_split"
+    },
+    {
+      "id": "G1:O3:top_pair_interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "O3",
+      "kind": "pair_interaction",
+      "members": [
+        "L18H19",
+        "L18H18"
+      ]
+    },
+    {
+      "id": "G1:O4:top_pair_interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "O4",
+      "kind": "pair_interaction",
+      "members": [
+        "L18H19",
+        "L18H18"
+      ]
+    },
+    {
+      "id": "G1:I1:sign_split",
+      "panel": "G1",
+      "terms": [
+        [
+          "0072032b92275a7a7e3d",
+          -1.0
+        ],
+        [
+          "740f875b6f7aeff378a3",
+          -1.0
+        ],
+        [
+          "7458622298d224bf0280",
+          1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "sign_split"
+    },
+    {
+      "id": "G1:I1:top_pair_interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "I1",
+      "kind": "pair_interaction",
+      "members": [
+        "L18H19",
+        "L18H18"
+      ]
+    },
+    {
+      "id": "G1:I2:sign_split",
+      "panel": "G1",
+      "terms": [
+        [
+          "230de2dbc61ae2724121",
+          -1.0
+        ],
+        [
+          "d805117759e8bcd87ccf",
+          -1.0
+        ],
+        [
+          "da5c288e8e11bebdee88",
+          1.0
+        ]
+      ],
+      "group": "I2",
+      "kind": "sign_split"
+    },
+    {
+      "id": "G1:I2:top_pair_interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "I2",
+      "kind": "pair_interaction",
+      "members": [
+        "L18H19",
+        "L18H18"
+      ]
+    },
+    {
+      "id": "G1:I3:sign_split",
+      "panel": "G1",
+      "terms": [
+        [
+          "0072032b92275a7a7e3d",
+          -1.0
+        ],
+        [
+          "1aea0a9cdf05a51cc0f8",
+          -1.0
+        ],
+        [
+          "43b85772a4b05c744b63",
+          1.0
+        ]
+      ],
+      "group": "I3",
+      "kind": "sign_split"
+    },
+    {
+      "id": "G1:I3:top_pair_interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "063ee72b36f310e782c2",
+          -1.0
+        ],
+        [
+          "add077cbd013dd8b8ab8",
+          1.0
+        ],
+        [
+          "e69ef5cba973c53c75b8",
+          -1.0
+        ]
+      ],
+      "group": "I3",
+      "kind": "pair_interaction",
+      "members": [
+        "L18H19",
+        "L18H18"
+      ]
+    },
+    {
+      "id": "G1:I4:sign_split",
+      "panel": "G1",
+      "terms": [
+        [
+          "191dd2d0cd7ba8a10723",
+          -1.0
+        ],
+        [
+          "22e1f63a5a051aceed2f",
+          -1.0
+        ],
+        [
+          "a6c31fd6980fb2643b0a",
+          1.0
+        ]
+      ],
+      "group": "I4",
+      "kind": "sign_split"
+    },
+    {
+      "id": "G1:I4:top_pair_interaction",
+      "panel": "G1",
+      "terms": [
+        [
+          "22e1f63a5a051aceed2f",
+          1.0
+        ],
+        [
+          "d1212f6a8d3c39136013",
+          -1.0
+        ],
+        [
+          "e5f307214446c87899ef",
+          -1.0
+        ]
+      ],
+      "group": "I4",
+      "kind": "pair_interaction",
+      "members": [
+        "L16H1",
+        "L16H21"
+      ]
+    }
+  ],
+  "decision": {
+    "common_configs": 71,
+    "cap": 128,
+    "skipped": []
+  }
+}

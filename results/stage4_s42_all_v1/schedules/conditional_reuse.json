@@ -1,0 +1,10 @@
+[
+  {
+    "schedule": "/home/yandex/DLWorkShop2025b/maximg/pilot_v2/stage4_s42_v1/inputs/initial.json",
+    "runs": [
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/initial_r0",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/initial_r1",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/initial_r2"
+    ]
+  }
+]

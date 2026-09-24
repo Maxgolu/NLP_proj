@@ -1,0 +1,12 @@
+{
+  "pdf_pages": 27,
+  "figures": 13,
+  "labels": 27,
+  "resolved_references": 2,
+  "packaged_files": 60,
+  "pdf_sha256": "f5b66616c2f612c3b06159dbb9b907f33ea1363e565a613b5c7f53344b07c851",
+  "zip_sha256": "3a8da4709089d6e789eb89540a163a9e28625a478659a7e7a47aff0f12245797",
+  "raw_archive_sha256": "879cc3f7f56530c439fa445e38a42b43ffc83a709c2950e9c81bf42a044b3f15",
+  "visual_review": "All 27 rendered pages reviewed; charts and dense tables additionally inspected at page resolution.",
+  "scope": "CPU analysis and report only; no GPU submission or S4.3-S4.5 implementation."
+}

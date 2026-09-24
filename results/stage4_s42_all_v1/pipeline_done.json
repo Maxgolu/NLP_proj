@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "phases": [
+    "initial",
+    "conditional",
+    "refinement",
+    "extension",
+    "sensitivity"
+  ],
+  "time": 1790214783.2815917,
+  "results_hash": "f1c0fec8cd7b637cbd73b5f9ec60f6234b6838248ebbdf4ab70c3f8c700de526",
+  "status": "complete"
+}

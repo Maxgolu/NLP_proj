@@ -1,0 +1,233 @@
+{
+  "complete": true,
+  "records": 8544,
+  "configuration_count": 24,
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "schedule_hash": "94f637a2798c11bc834e7b6bb3368dd2742ba87797f27b980b936ba302af0767",
+  "configs": [
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "426:query_sentence:head:513:KV"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "426:query_sentence:head:547:KV"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "474:query_sentence:head:513:KV"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "KV",
+      "panel": "P2",
+      "id": "505:query_child_last:head:513:KV"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "KV",
+      "panel": "P2",
+      "id": "505:query_child_last:head:533:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "V",
+      "panel": "P3",
+      "id": "513:colon:head:561:V"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "V",
+      "panel": "P3",
+      "id": "533:colon:head:561:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_is_token:head:594:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_is_token:head:595:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:594:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:595:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:709:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_period:head:594:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:624:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:641:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:709:V"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "568:colon:head:695:V"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "594:colon:head:695:V"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "595:colon:head:695:V"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "624:colon:head:695:V"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "641:colon:head:695:V"
+    }
+  ],
+  "population": "all",
+  "family_effects_hash": "e26968737cf42dc92225d91dcb50bdb0e8a8dab4c3362adb653beb3265a6b376",
+  "run_manifests": {
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/extend_refine_r0": "2cd5c050c722d171754e8b7814f674198a4145648c7b657444c76496700d0b7b",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/extend_refine_r1": "f53da2918243da4321e6c8e8d9f90fa7bdb9e2553280926019e4f188c2521413",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/extend_refine_r2": "2a1bcd4440a3c685944ee153350912a89f9e9df9f1b9bb10d3a79737095180a0"
+  },
+  "note": "Discovery summaries; retention is prioritization, not confirmation"
+}

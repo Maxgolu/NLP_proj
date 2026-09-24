@@ -1,0 +1,16 @@
+{
+  "total_records": 70408,
+  "new_records": 70328,
+  "seed_retained": 76,
+  "extended_routes": 96,
+  "retained_noise": 95,
+  "retained_restore": 93,
+  "retained_additional_noise": 94,
+  "controls": 55,
+  "controls_retained": 7,
+  "G1_unique_configurations": 49,
+  "G1_core_endpoints": 1960,
+  "self_endpoint_checks": 2856,
+  "self_endpoint_max": 0.0,
+  "gap": 11.170458413241954
+}

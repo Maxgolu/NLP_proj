@@ -1,0 +1,62 @@
+{
+  "policy": {
+    "version": 1,
+    "protocol": "stage4_design_v2",
+    "seed": 20260923,
+    "metric": "first divergent clean-minus-corrupt logits; prefix teacher forced",
+    "endpoint": "one receiver head at original final colon; K/V at source positions",
+    "freeze": "post-normalization residual branches; source attention live",
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "gate_inert": 0.001,
+    "gate_replication": 0.05,
+    "gate_reconstruction": 0.02,
+    "full_route_cap": 96,
+    "controls_top": 24
+  },
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "configs": [
+    {
+      "source": 434,
+      "site": "all",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage",
+      "id": "434:all:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "colon",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage",
+      "id": "434:colon:single:434:"
+    },
+    {
+      "source": 787,
+      "site": "all",
+      "kind": "single",
+      "receiver": 787,
+      "channel": "",
+      "panel": "coverage",
+      "id": "787:all:single:787:"
+    },
+    {
+      "source": 787,
+      "site": "colon",
+      "kind": "single",
+      "receiver": 787,
+      "channel": "",
+      "panel": "coverage",
+      "id": "787:colon:single:787:"
+    }
+  ],
+  "population": "all",
+  "directions": [
+    "noise"
+  ],
+  "phase": "coverage"
+}

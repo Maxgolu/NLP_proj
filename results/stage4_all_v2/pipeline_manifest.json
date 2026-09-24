@@ -1,0 +1,19 @@
+{
+  "gpus": 6,
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "coverage_hash": "703460e776ed4a6d1407cafe5f1182127dc100b7848638ec424844420135219f",
+  "code": {
+    "stage4_run.py": "6a4027c55aff74a4a8515aeb011ec28556bbc1722b128bc140cfd844d06c11a2",
+    "stage4_plan.py": "38d802b9c2c935c5a50a75af32af1ac26a0bb4150b26468da2a64e916a37e5ec",
+    "stage4_engine.py": "6f68861d427bc02764211390ae310411b5e91f61b7c1d01fccc1d2c8b40aacea",
+    "stage4_analyze.py": "5ad19aeb657bddd72c942593f21382d6bc2b0555ba4e098df4425384e597e747",
+    "stage3_common.py": "19e264bd8392f0a4f0fce4d7eee9ec95a7d1873014611d9c13d61c843b8dd2b9",
+    "stage3_engine.py": "3d86f871796c819aa5b1fb2a313a8c2bc15f65b6bc80ab274b5caf3531057836",
+    "stage2_engine.py": "2aa8cec1db807fd6610c6dc46d6172652014a3bed9b07ee09395552fac3a4de1",
+    "stage1_scan.py": "ae4a6f0f01a3e1f13af6a04da456b8a130260c3ae9d3babe43003d2aae38656f",
+    "stage1_audit.py": "37db25ad1ac25190b2fc95ae10185d9cdab25f594e9965901084bf9c898da77a",
+    "model_lock_olmo2.json": "ecd00ed1eea1fd55fab523fb50aa8bec0f4bdbb718c0aa751905cc0a5b710d37",
+    "test_stage4.py": "6ae096a287b51853d11ed9614fb5125e0016debc162815571da5692b1e0b86b7",
+    "stage4_pipeline.py": "086ac4e65bfb90fba1a550e2d66bd71ef6bc1ec7b5924453b1c20e10ab1d3bd6"
+  }
+}

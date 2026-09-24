@@ -1,0 +1,1714 @@
+{
+  "purpose": "Git publication inventory; not a new numerical replication of the side experiment.",
+  "inputs": [
+    {
+      "path": "data/icl_stream.jsonl",
+      "bytes": 4032731,
+      "sha256": "cef1ad16c7c052f6fa1f0e789086156cfa139b60f5844db9bca24419cde593e3",
+      "rows": 3200
+    },
+    {
+      "path": "data/ri_agenda_olmo_safe.jsonl",
+      "bytes": 2242602,
+      "sha256": "c1912b3318779a3ffec7081ece370d4846f083c9b1b1f9a6e9b014fea25b4800",
+      "rows": 3907
+    },
+    {
+      "path": "data/ri_agenda_stream.jsonl",
+      "bytes": 1761684,
+      "sha256": "8ef249f53e3028d2bfebd0f20e1a85deb291f51158fc9f646602532fd2f7ecac",
+      "rows": 3907
+    }
+  ],
+  "notebooks": [
+    {
+      "path": "code/data_generation.ipynb",
+      "sha256": "c9c64bcbc4e80191fc08f56d6c917115da4c5fb9bff6cebfa1ae2207d174edd7",
+      "note": "Sources preserved; execution counts and embedded outputs cleared for Git."
+    },
+    {
+      "path": "code/olmo_icl_checkpoint_sweep.ipynb",
+      "sha256": "201b308c0ba49a3c93ada7aafdf3d1c143c19120135c6a8a76c797a7346a2710",
+      "note": "Sources preserved; execution counts and embedded outputs cleared for Git."
+    },
+    {
+      "path": "code/olmo_icl_results_analysis.ipynb",
+      "sha256": "85ca2c3be2110acf3236a4e6470e160dff09cd90aa36761f2eed670a897f5041",
+      "note": "Sources preserved; execution counts and embedded outputs cleared for Git."
+    },
+    {
+      "path": "code/olmo_ri_developmental_sweep.ipynb",
+      "sha256": "5967e7a4e927100ceaf9facfad23f305a3f7102b3f2a4af27ef1f211ebf48452",
+      "note": "Sources preserved; execution counts and embedded outputs cleared for Git."
+    },
+    {
+      "path": "code/olmo_ri_results_analysis.ipynb",
+      "sha256": "903faee886d30fe4c8855ec85bf33c2499880ac54dd1f0ebf55475c71202c018",
+      "note": "Sources preserved; execution counts and embedded outputs cleared for Git."
+    }
+  ],
+  "external_measurements": [
+    {
+      "path": "results/icl/stage1-step1000-tokens5B.jsonl",
+      "bytes": 856876,
+      "sha256": "3a73b18d4fff652da1269fb433dbcf95fc909cebfa1a5106bfbea2183fa0cb04"
+    },
+    {
+      "path": "results/icl/stage1-step150-tokens1B(1).jsonl",
+      "bytes": 814965,
+      "sha256": "366400072f39cd861910fcabb0e391b64aa18e66e56b21748466e5d46cd53d84"
+    },
+    {
+      "path": "results/icl/stage1-step150-tokens1B.jsonl",
+      "bytes": 814701,
+      "sha256": "0417672a0948630c3cc26e6f0d07373ae5f280662adbb62a2679651b9db7adc0"
+    },
+    {
+      "path": "results/icl/stage1-step152000-tokens638B.jsonl",
+      "bytes": 899857,
+      "sha256": "6e726aa9893eaf9ac9322ebc1dca3c2265f0c9d745eef0de60ed3a99fbba1c4d"
+    },
+    {
+      "path": "results/icl/stage1-step19000-tokens80B.jsonl",
+      "bytes": 893673,
+      "sha256": "80ffa1b48e85750e221feb583cffecc2c6f5781c547b7ab412821edfd7e3abc9"
+    },
+    {
+      "path": "results/icl/stage1-step2000-tokens9B.jsonl",
+      "bytes": 863595,
+      "sha256": "bd5737a10c70c2436083ed5dbffb351af69bd90d2c6830010a6094bc99775210"
+    },
+    {
+      "path": "results/icl/stage1-step3000-tokens13B.jsonl",
+      "bytes": 883364,
+      "sha256": "67ade7d683313e7a3ef2cbc64c020e8fc60b2ac1d4525c02189eada0363e3588"
+    },
+    {
+      "path": "results/icl/stage1-step357000-tokens1498B.jsonl",
+      "bytes": 906330,
+      "sha256": "839e6b2c05500d8aa1c2b32513532d06971a41015c6cedac3920b5be816993f8"
+    },
+    {
+      "path": "results/icl/stage1-step38000-tokens160B.jsonl",
+      "bytes": 898165,
+      "sha256": "4bdc53fc8cffb06fb3340b88416cefe73051a80f1eee8300eb2b7bcdf0957e89"
+    },
+    {
+      "path": "results/icl/stage1-step4000-tokens17B.jsonl",
+      "bytes": 889180,
+      "sha256": "f6737fa781c398fe8627e07ecb4081c16259446c371c2a68c3bf613fe5463abc"
+    },
+    {
+      "path": "results/icl/stage1-step600-tokens3B.jsonl",
+      "bytes": 856526,
+      "sha256": "c54cfcb7db0415e3d5addc6897614bde65529bdc662ca0be6db96d9c8513a151"
+    },
+    {
+      "path": "results/icl/stage1-step6000-tokens26B.jsonl",
+      "bytes": 897069,
+      "sha256": "c30e2228fe7706d0026c3427e470f3000b9e18f7e00292958692c003482c29b9"
+    },
+    {
+      "path": "results/icl/stage1-step700-tokens3B.jsonl",
+      "bytes": 856333,
+      "sha256": "0243b2829f5a3a3e7139aa6f6687332c4b22f812e0c67b3087796dedafbaace1"
+    },
+    {
+      "path": "results/icl/stage1-step76000-tokens319B.jsonl",
+      "bytes": 900290,
+      "sha256": "2a12a7d56fc7b88ed3c2d4f48daba009d43c86a76fe31af280cccaff4f9a8586"
+    },
+    {
+      "path": "results/icl/stage1-step850-tokens4B.jsonl",
+      "bytes": 854803,
+      "sha256": "4eeec65797c145b36b0ea0b79c5963f0852d6c52eab09bd7476968d55db3335a"
+    },
+    {
+      "path": "results/icl/stage1-step900-tokens4B.jsonl",
+      "bytes": 854153,
+      "sha256": "98ceda380622da70aa54e069dc572157b0e8e8ca873b5ff70fc9ff13c4628832"
+    },
+    {
+      "path": "results/icl/stage1-step9000-tokens38B.jsonl",
+      "bytes": 895320,
+      "sha256": "4b6bbbb389ee852ce6721b8cc4a96d0c5b1bc64a5696898789d45d7e6a9de7fe"
+    },
+    {
+      "path": "results/icl/stage1-step928646-tokens3896B(1).jsonl",
+      "bytes": 846646,
+      "sha256": "e481d6e5047bd29bb43dcaed4b53c62c9d19a291427c6cee78f2dbedf6a0e150"
+    },
+    {
+      "path": "results/icl/stage1-step928646-tokens3896B.jsonl",
+      "bytes": 846636,
+      "sha256": "2e65d1076e812c1bc9812a431399e9b00c2082d5968333ffd7e4a12bcf6843ba"
+    },
+    {
+      "path": "results/ri/developmental_v1/ri_head_trajectory.csv",
+      "bytes": 16032736,
+      "sha256": "afc839a1c563b61db48c1c1500d884a4bed76234cd175cac6e37d7147a66d0c2"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step1000-tokens5B_head_stats.csv",
+      "bytes": 1693685,
+      "sha256": "d615c893bfb257dfa96e780e875b1b492e220288c5619d2fbe964ba6627e13c9"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step150-tokens1B_head_stats.csv",
+      "bytes": 1764013,
+      "sha256": "e5e718dcd02fdd055ca96d0429b5b7e567629384208039a8fd01eb8f08e8c970"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step2000-tokens9B_head_stats.csv",
+      "bytes": 1653845,
+      "sha256": "d6c44bd050df196fab1a35541d85112d15e508e71202e066b96698b2d38a5e74"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step3000-tokens13B_head_stats.csv",
+      "bytes": 1653056,
+      "sha256": "6f204c51a8e7affdc50445c2e66995dc443ab2d1c41aa8c81114e8cea0759758"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step600-tokens3B_head_stats.csv",
+      "bytes": 1733898,
+      "sha256": "b9e46ee8391caf9c2127f2e21b6dc8f13244d5145af46d8913e63ef93fa76f52"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step700-tokens3B_head_stats.csv",
+      "bytes": 1720818,
+      "sha256": "84da6d63d7c34c21563858cbd59b62733e6965bc893955e8d70ca8205c3cd55d"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step850-tokens4B_head_stats.csv",
+      "bytes": 1701508,
+      "sha256": "d11e8d43bff95ddafe2116379c2ba60bf272f920793849f970e306cee708b976"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step900-tokens4B_head_stats.csv",
+      "bytes": 1693224,
+      "sha256": "83dc25b6d562635bcbd18dda626ebb0472e8d9540ce6698d20d780d1f6f65928"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step9000-tokens38B_head_stats.csv",
+      "bytes": 1650705,
+      "sha256": "a8704f98679e211f58baef538dc676013f85666fd622dce27dd429ecd4009c9f"
+    },
+    {
+      "path": "results/ri/developmental_v1/stage1-step928646-tokens3896B_head_stats.csv",
+      "bytes": 1583716,
+      "sha256": "ee6f18b3e0291c56289161627300695ea6099929a79b11e17148bc60a6b22d4b"
+    },
+    {
+      "path": "results/ri/developmental_v1/analysis/head_changes_step600_to_step1000.csv",
+      "bytes": 1788201,
+      "sha256": "4a00a9b0bc9fa837b61b4e76bfc9b3a83c6e5fb81949bacaaf89069f40236916"
+    },
+    {
+      "path": "results/ri/developmental_v1/analysis/head_changes_step600_to_step900.csv",
+      "bytes": 1798015,
+      "sha256": "3741c0fd54370f837274cc5f1cb2348befd0d640f0694a65f8fef77add30677f"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0000.npz",
+      "bytes": 67714,
+      "sha256": "458b22689ca29b95ee6d75a517c99a6ddea1c7f6dcb48a0a4b2a48158a010e3b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0001.npz",
+      "bytes": 64143,
+      "sha256": "1836756d018531cd36751237554749c239a50b31096bf238bdcbb94d671faa89"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0002.npz",
+      "bytes": 81938,
+      "sha256": "9aafa70071a0a01a600db1a3d03d40b3b4bd172e09dfe2beef399ee4137f8eb1"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0003.npz",
+      "bytes": 95786,
+      "sha256": "c6dc9ac72122cde856c20767b8fe5ec66476ecf7ec8a71628821f61398907801"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0004.npz",
+      "bytes": 62503,
+      "sha256": "c28be631d63d27ea330e6343debb692737c8115743310feb8a8156705d0f7d17"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0005.npz",
+      "bytes": 80513,
+      "sha256": "2b47f5000e9a66c216c6301959b285375d6f50f3a4c59ee6272004e1e906bc9a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0006.npz",
+      "bytes": 73195,
+      "sha256": "191484cd0b3044155897591bf295db4113131e8dbb3beb79e6e54e142c8de9c3"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0007.npz",
+      "bytes": 63990,
+      "sha256": "ee201d373d80f9476869f316a06dc38133cfa31819993aab1f6e9d8033d5305a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0008.npz",
+      "bytes": 75694,
+      "sha256": "a39f6936d3483b2c7350bd88a6b91305ad704fef212b5da824074bb7a019adff"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0009.npz",
+      "bytes": 84769,
+      "sha256": "8a6682914fa1af4c6d294a31b595b85dfe77db357caba02660b8e02a288afca9"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0010.npz",
+      "bytes": 82138,
+      "sha256": "1f9b7f3c81035a1597037051b158cd1b00aa290023784670468aaf242c82b66e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0011.npz",
+      "bytes": 59953,
+      "sha256": "1d4762a310d509f5cadc2851e8ca1e3eb0cbd741ae81e3aa970d8f412967434a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0012.npz",
+      "bytes": 86891,
+      "sha256": "5876ba05a17ab3ec97c144212869a260e0d507bacf4017fb5edc9388ca548307"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0013.npz",
+      "bytes": 67781,
+      "sha256": "477031566463e1fc177b3cfd4150add1cf9daa52311e70fe814c5828020d3401"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0014.npz",
+      "bytes": 80680,
+      "sha256": "98fb7c1b11b6194381ec5031c5215ef95b635b9a0d9b64a2c01fb8130512cd82"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0015.npz",
+      "bytes": 69371,
+      "sha256": "d35d2ab3b900d69e56378e421c59cae3fcb187c260586ea86db52c6f50e5a4ee"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0016.npz",
+      "bytes": 82254,
+      "sha256": "24a075d9de07fae8ebc37ed3c2001b94441e5f47af12288f21e6d4ccec256871"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0017.npz",
+      "bytes": 62281,
+      "sha256": "5368a7b72dc1537ba7534aacf8259bb731bef5a7053d9655bd39091c181db093"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0018.npz",
+      "bytes": 89645,
+      "sha256": "00dfff1d7b9102e063cee22c7477005b746c53d926f6fa2b7f348c5039a20490"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0019.npz",
+      "bytes": 75519,
+      "sha256": "0377a88a8d3441f19fa9c8e292a2fb0d6fabe4b0e5fd05e382e69952aa76343b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0020.npz",
+      "bytes": 71240,
+      "sha256": "2836181945696e079df57626cea5cf844b8693deff890130e4bb11ebef923475"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0021.npz",
+      "bytes": 76189,
+      "sha256": "add3f1ff4d8969f7206db2cdfa48f3f4e594852f8f5df2e26f196c7d8532177c"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0022.npz",
+      "bytes": 67983,
+      "sha256": "5eddafd63377fc1e020b49076cdbcb4ba5018d0f346b4d7378ce141b19a83aa0"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0023.npz",
+      "bytes": 80737,
+      "sha256": "8a1f3c9514d09c212d0429e4e32a7f85f48402b497642c8aadbda604602e63b6"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0024.npz",
+      "bytes": 65654,
+      "sha256": "e2ad831df59e60c29c527dcfd7939e8f7deafd5b5a22fefc663d50fccee01a94"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0025.npz",
+      "bytes": 76524,
+      "sha256": "68a2fecd3d89cc4bb92bcef40e68edb09a745455f7eee3aa3f07da272d5c6bf8"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0026.npz",
+      "bytes": 66483,
+      "sha256": "2c96f524f57601db4608e93e9c6f224be907b902fd372a4a4f29998b17cbb752"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0027.npz",
+      "bytes": 73820,
+      "sha256": "6e5bb4bf03d0d01c0f8d05d24205984908014fd99518509d036cfd89c79d5908"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0028.npz",
+      "bytes": 72540,
+      "sha256": "be25da01393b14d5a5cfe199d2e160ff92d76dc456e032dd10a694da8c436a89"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step1000-tokens5B/chunk_0029.npz",
+      "bytes": 33157,
+      "sha256": "495929eea5a66ee81af577e6228347d4add65267d7bf55b8019078f5d0188800"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0000.npz",
+      "bytes": 59854,
+      "sha256": "566a421370bebcf14ed193eea75339e967a477797d702625f117a518c3644a47"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0001.npz",
+      "bytes": 57203,
+      "sha256": "4c167822b7ed123a17f7e285d362207f0a317daeb1355352b63174fcc9aec1eb"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0002.npz",
+      "bytes": 75791,
+      "sha256": "5338eb30ddece4dbe0485c13f5634a9c7e0c525cc396c5ef9a7fc68316a6c356"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0003.npz",
+      "bytes": 79183,
+      "sha256": "e54396cb03955388de4703f0fc88ded2815eccb560ac66d357895d7275ba28cb"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0004.npz",
+      "bytes": 51110,
+      "sha256": "deef030316f9aac407bfe2c152ca33c9880078bb15c2e20935f36000ee374b9a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0005.npz",
+      "bytes": 70205,
+      "sha256": "18dfb31fbc80e0604d6bb566daed10cb2228099ae08996c5d10df4fc232a7a7b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0006.npz",
+      "bytes": 74883,
+      "sha256": "9c8ca13e2fb5db340d53feabef4202f65cfd8eb0c1f0930d35b0ed176d6e0462"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0007.npz",
+      "bytes": 59596,
+      "sha256": "46c9bbaaba939177d96e2d60cf63f23c36a908182d085cb055925b7c7919dfde"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0008.npz",
+      "bytes": 67033,
+      "sha256": "5ec5cd60642df3c546f135308c30f800f218ed0aeb91b3708dedaef5a73d2a8e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0009.npz",
+      "bytes": 76828,
+      "sha256": "7a26a24350b8fcf4cdb61049148af655cc7ecae80c6913f577a5fa7a48f0e1d2"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0010.npz",
+      "bytes": 69992,
+      "sha256": "413caf5b46b7b1e29829af2d157e7f102044d63ee3847bbd03f3b2d2c017fdb4"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0011.npz",
+      "bytes": 61321,
+      "sha256": "ef02a1f8cf1ee5218fb4131314aaabdccfaeaf9f4183c6d929a3d29e0889522f"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0012.npz",
+      "bytes": 79644,
+      "sha256": "79f049f13947db6ec8fb514c543055d71cd586f45ad290ba2bf961ff947c366f"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0013.npz",
+      "bytes": 63560,
+      "sha256": "045773a78dbe37b97400842b93c666750846927fa4f5890808d6edd1f40c46dd"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0014.npz",
+      "bytes": 73838,
+      "sha256": "18455ecb2079011c34aa89b6cc53a0f7fdc58ecac08342129b225e36e7f5e194"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0015.npz",
+      "bytes": 61508,
+      "sha256": "6c0453ce035f4532bef72b82042b3831bcdfedb5845f5546062b3837e8f9d16e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0016.npz",
+      "bytes": 73120,
+      "sha256": "bef728ac7de954444068780fcc47323253e08b3f0e534725bfa5e8a441680018"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0017.npz",
+      "bytes": 54746,
+      "sha256": "56c6f03fbb8ebd64d47913b01fc4e9ee22a6dd12f5c8eb897181aea9b367916c"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0018.npz",
+      "bytes": 71890,
+      "sha256": "a413bc76ce1e2fa3c8350b91f5452d7e9fbfb2c4eedeee1fbd88f28ffc3eb2b5"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0019.npz",
+      "bytes": 67188,
+      "sha256": "3c6701487252095bc593382296fc516728e3b9f4898824236126d3a3b03e27e9"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0020.npz",
+      "bytes": 67120,
+      "sha256": "f772b92d7e4d782674980d985e9a9ca1ff6f2dc9abde9e560c5bad3fc056a8e0"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0021.npz",
+      "bytes": 64013,
+      "sha256": "338b6d988984e054f0d233e4a220e5c0eb9093234b2455d6a730d96fef30f623"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0022.npz",
+      "bytes": 69764,
+      "sha256": "98ec8cf62d8c9b3413cc1636f6cb2c70a746d357175f55aa5b33ba4d4e233718"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0023.npz",
+      "bytes": 64137,
+      "sha256": "d3c478032419c16c368cfe1f4efbb6f42822d170788cf19971ba255002c06eec"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0024.npz",
+      "bytes": 56575,
+      "sha256": "b66f3a3d32bb90cf37a964f8bf17714a100f5dc94808428b6405e09ae54a3a4a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0025.npz",
+      "bytes": 76147,
+      "sha256": "fa7ff732ee6e61f1523887cce6d1b48592448918daf3f1c26635a71dda03f5ce"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0026.npz",
+      "bytes": 57771,
+      "sha256": "a92f9ce64dd3a74be9f26bb0e6df8429ad41ae0d1b9751a2ec3602b60259c56a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0027.npz",
+      "bytes": 76570,
+      "sha256": "dc0f80d4617f30f6bf7aa5fa9fed88a31532988e531d5d6e46f927dc8cdcfd42"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0028.npz",
+      "bytes": 59888,
+      "sha256": "dfd114fd96d5bb5cb71cdfed46aed252ee7e5ced324ea13b0c19ba60967c9681"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step150-tokens1B/chunk_0029.npz",
+      "bytes": 35261,
+      "sha256": "3daa27e474e3776819289557c18ee1149d3c73e8ba315a38d1574bc47d6405d1"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0000.npz",
+      "bytes": 47422,
+      "sha256": "f205e11301cf470d440c3a7bbc0535224b3abae5347b70a3aafd89d45c0809bd"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0001.npz",
+      "bytes": 43587,
+      "sha256": "75fc0c5349f191f9d50fbc5c5a13b2c6160a663023c600a6e11e5653895bbfe3"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0002.npz",
+      "bytes": 57321,
+      "sha256": "5cd09bf9784b4638b0114440877ab7b7aec0543f9f5fd5e32925df6dc5c870ec"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0003.npz",
+      "bytes": 62830,
+      "sha256": "0591836f793ecf1306df5d42ff529123ad1a85b78e17d1b2807db032e01ce8f4"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0004.npz",
+      "bytes": 42479,
+      "sha256": "99a41e1aae20f1d5d779f2064894bc4b0986283d9bdde3fe5f8518fe4a7fa15e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0005.npz",
+      "bytes": 52391,
+      "sha256": "b8fe22b7e09d8a207006d11a6c0b82894ae455e8f00b54eb2bb4150e33bfcdd7"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0006.npz",
+      "bytes": 64447,
+      "sha256": "746eb47747bb8fd36ebcd84bb832b9577c479caa8e270c7c08f6a4684a9f4e95"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0007.npz",
+      "bytes": 53018,
+      "sha256": "1f168dff4d3f0b6e17ba25889997906bd3061245c2193e87d232d1e4e6087d65"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0008.npz",
+      "bytes": 56948,
+      "sha256": "4060f7ed58cce8ced504c91216f838cb780d19408f83b5ed78aa1d5e43fe96cb"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0009.npz",
+      "bytes": 52196,
+      "sha256": "6cf617682af1725cd822ae7bd271684f65f3aabe4f05dd8ee91f857585618d7a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0010.npz",
+      "bytes": 65557,
+      "sha256": "731640ecaf383de53e8246ef5fcdaf57fab3c1670a6d3cec17b1a19ee8992b8a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0011.npz",
+      "bytes": 44175,
+      "sha256": "ab7cde77b1192cfe93b06024699de227e669f2764b44657d590c536b9ded1096"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0012.npz",
+      "bytes": 59882,
+      "sha256": "3874eab13ea98bb537ab9ae19ab2e3df8d7468e21b4186cf10a7defaa298fb7b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0013.npz",
+      "bytes": 42531,
+      "sha256": "51a945b9a9ba6524222f4762693b480ba5ad821ec674ded59f21f12c0bc82224"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0014.npz",
+      "bytes": 64266,
+      "sha256": "8c1ef167095938cc7a65521cf6c4dfdd69ad8af4e6c46c11457b869bd6133737"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0015.npz",
+      "bytes": 45654,
+      "sha256": "fd4c32274bdd2ec4afc8fc24d423f2c050197fa8dcdb6681571c151fd13c8929"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0016.npz",
+      "bytes": 63450,
+      "sha256": "4983b1d60d848be8f36451847dc0751fa0c4a936d881c8b80ac36ad454ef7c50"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0017.npz",
+      "bytes": 41694,
+      "sha256": "59c5bfa4477d78438d6a1755ea378d2012b7f76a5b3804f373a0b59e7acdc90d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0018.npz",
+      "bytes": 59573,
+      "sha256": "5c0ddef9bb4c08e388cf4e9e6d541642997399c70702a96edd7c3ff02a5145fc"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0019.npz",
+      "bytes": 49098,
+      "sha256": "e04e85f4e9b1cbe4c4110c9124914d00c369c6f5260c8e0c42cd74e4993073a0"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0020.npz",
+      "bytes": 50416,
+      "sha256": "c3f69deb49b3f6bfca1cc1610a7a3e98868e7b4e6de60ad3ceca68ec49e045ea"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0021.npz",
+      "bytes": 49631,
+      "sha256": "57743caa2dd70813304494c456ef2cc93160a5ee35bf5476e7b09230f85ccdb0"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0022.npz",
+      "bytes": 50170,
+      "sha256": "6d151d4bec0aaaa6e2876f0c8366e74e8056d0dfb23fc878a7b99acb8d0e8029"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0023.npz",
+      "bytes": 68190,
+      "sha256": "e35575105a73fe1d2c10ab734df95a4528c8c1a72139a57d542cbd6a7605288f"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0024.npz",
+      "bytes": 53230,
+      "sha256": "afd2a318071b02644aa523ef7c16347055429e318732131c7df6977fecbc9588"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0025.npz",
+      "bytes": 52633,
+      "sha256": "42164e41cd7091001d906ffc379041b89f77e0e45c05ed1eb2882202a1237231"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0026.npz",
+      "bytes": 44521,
+      "sha256": "884f5b91ce0f9b1920adc5000a7761dd358e2ebd4228b46a30a2531a14f4bff0"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0027.npz",
+      "bytes": 57362,
+      "sha256": "56da4652be977dd5f34c2df7d19f81c6c40992afca26e9f4f9193db61af823c1"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0028.npz",
+      "bytes": 53287,
+      "sha256": "eafa77c3b7a45e6b4cdf68ff09330155f505c3ead8c69ad0fe3d5315ac78208e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step2000-tokens9B/chunk_0029.npz",
+      "bytes": 25433,
+      "sha256": "c5b814448b9b399ad8a16352f1953daec4e1a1093a7e314cd891bab0ec162d56"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0000.npz",
+      "bytes": 44272,
+      "sha256": "532b4a169dbe94cac2b2c68f94c103c4919afe8ebfd119f64b52084c7b0830e8"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0001.npz",
+      "bytes": 41240,
+      "sha256": "fdb704e8f2c706cf605e2bee11f81515063290f98aff197d6d3626b9a0fbc6e5"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0002.npz",
+      "bytes": 53667,
+      "sha256": "17ac74ba067d13afd177d788a55bfa00a4c89a85205475c8dbdb280055d5b495"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0003.npz",
+      "bytes": 56964,
+      "sha256": "da2148c30a8addf6a3c07193842a04ce34e8fdc84e88b73067cdc00ab141e01a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0004.npz",
+      "bytes": 38732,
+      "sha256": "746b13663ceadc1d21900d582b022938f69ff696022cd8aabd49a82fc81c2973"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0005.npz",
+      "bytes": 48834,
+      "sha256": "3b071a45289ef15e29510e3ff508272de85fb1123f6da18969c383e51bf71f80"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0006.npz",
+      "bytes": 64308,
+      "sha256": "47a5ae5a625100f09503d5c14feb91e014b4d4abe11262cef25872ac27795cc2"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0007.npz",
+      "bytes": 51858,
+      "sha256": "e66e06e95a2d9d21921038a8a66c016aa71369afe11b1cae184d1121b4991bc1"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0008.npz",
+      "bytes": 57807,
+      "sha256": "490de9c783af909c1042d52350a5b4c02e1139f07b359daf51420e908de5fced"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0009.npz",
+      "bytes": 49387,
+      "sha256": "45604422579d6789c85906b6e540aa00127706f249d26b8bc0d16bf42e3b9459"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0010.npz",
+      "bytes": 70426,
+      "sha256": "b0c385640feedbfd70dfbc4bca8486de7b09d11f007a45897a002590aa0aeb9b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0011.npz",
+      "bytes": 43079,
+      "sha256": "0720a056a456c569074f1899f5c970979956a54e1c47f7d0513e9555f320bfcc"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0012.npz",
+      "bytes": 55762,
+      "sha256": "f13989ce3655cd976c7b1945146af0bd09d82c70a85ae55740cb1230b7bbfe38"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0013.npz",
+      "bytes": 38549,
+      "sha256": "4dfe0bb9b67a81ebab3f5b38a8939d509e0d11490e26d746254c36258631c936"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0014.npz",
+      "bytes": 62248,
+      "sha256": "436e1041b4f78cc447159d0d60b463250a7374d9f60d28e74760173273e2c097"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0015.npz",
+      "bytes": 41482,
+      "sha256": "86b617a139122d55d4607f7b10d894995a5f4b7b9fb4f17bd8ee4e287ada6b75"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0016.npz",
+      "bytes": 60782,
+      "sha256": "1a0558d8cab5ecab8cac31317e69d9e4fe812b52c6c40b87a56a3b608cb2ae61"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0017.npz",
+      "bytes": 38269,
+      "sha256": "a458834449965d615c2f38609d87054f05ae9e47fe0e308c0ca56a1274482a12"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0018.npz",
+      "bytes": 53628,
+      "sha256": "d0e38819655af25e3f4ef64cb743289df83d8ecf87e26f5cfec847579ffe2c5b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0019.npz",
+      "bytes": 47874,
+      "sha256": "1ab47fcf77731cb90a81f5baf932749adc005579be4d8ff6b559845979aabe29"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0020.npz",
+      "bytes": 47791,
+      "sha256": "1fe1498f3da0c059c330c4907ad8f35c33b9666ca04cd3c84ece15a4cacf1b19"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0021.npz",
+      "bytes": 43627,
+      "sha256": "9e794faf10193e0cab05ed9a95419f92bf33da856d03d85f57b0b33a880d7ac4"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0022.npz",
+      "bytes": 46713,
+      "sha256": "ae680d138f58b0a26b9e33664cc7db598f71a43953bf4efbbfe45a67868513ef"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0023.npz",
+      "bytes": 64796,
+      "sha256": "0b1c5656bad0c16dab7d8ec90d3408a98d3652e46c5b1889a3a1aa891e01bf1a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0024.npz",
+      "bytes": 50435,
+      "sha256": "ddaee14754bac23917f6349037ffd142b1a380b267eb0cbd3787413ec5afbe05"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0025.npz",
+      "bytes": 48481,
+      "sha256": "1d33a6cab10f0c32127f53ef85c0059c6281460b65440994ec6e4b95dcb18e56"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0026.npz",
+      "bytes": 41104,
+      "sha256": "f7fa4c9f143839c6e1e5770039b24e60290eb1ce9a7326ae6e528babcf8aebce"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0027.npz",
+      "bytes": 52285,
+      "sha256": "c71f8ffac678fd946550d00f648419df2952f7ec6121cb7c3c81cb5dbfe1776e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0028.npz",
+      "bytes": 50927,
+      "sha256": "65698a9d3832c163a3fc90f92418cc186c67f7cd0cc7d7940c81e32fe8d6ccd1"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step3000-tokens13B/chunk_0029.npz",
+      "bytes": 24415,
+      "sha256": "83a7e48042a6f6c24f6277b093b7f0cbdf5ec760a3eccb241ac11e0f9317fd25"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0000.npz",
+      "bytes": 69626,
+      "sha256": "d1c373b8e3d2ef1669ec757563f2da009230b2478e3a5b0f6ac048da653087f2"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0001.npz",
+      "bytes": 65610,
+      "sha256": "da1f68483ad3efb9c50428e57b4da15c7eda6c9388f2af833a8bfbaee33849f7"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0002.npz",
+      "bytes": 85288,
+      "sha256": "b11d2fe808fafba311d090c703ef842991ade79bde00dea9820b79bfa44b0019"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0003.npz",
+      "bytes": 87456,
+      "sha256": "c6672c584a20a8129c2bfd2885279c83d11d5f4d2863ae22f54a359c130b1d2b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0004.npz",
+      "bytes": 64420,
+      "sha256": "fce3955d190d993ce1e3069a2c5cc4a060f749479fae1ec806bf33f68d1221b6"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0005.npz",
+      "bytes": 79055,
+      "sha256": "060ab2b6f14cd2f620d2236f7438bee2014535e2f52cc94edf60d5235fcb0797"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0006.npz",
+      "bytes": 82698,
+      "sha256": "484ec47d8d970188f682aa5786e891e1906818be652d669a70475a30c858d21e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0007.npz",
+      "bytes": 68006,
+      "sha256": "e28734535485bc0527a23ef9d99a711b3a722249bae807b6182f938f7e5931d0"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0008.npz",
+      "bytes": 76450,
+      "sha256": "159168c42eb5da66a0114bd3549462308b0c62364ff0e3c7cf894a7bea26729e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0009.npz",
+      "bytes": 84600,
+      "sha256": "0a3652b2ef1952d073c14db480f134ee9ca77e083131ffd3fcff3a40a280e5cd"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0010.npz",
+      "bytes": 80242,
+      "sha256": "f5538517834e69c1ce1637fb71691d69fe084832ded81d3edc36edec7bbd4b2d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0011.npz",
+      "bytes": 67867,
+      "sha256": "56bd8fb85c99597b34b07b17b6b63af670a9ac1294ac924477b3da32bbc09bc9"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0012.npz",
+      "bytes": 81867,
+      "sha256": "237505075c25ecad73ee53785dd5dbea0f0bc928214ca2267a5889789e93fe4d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0013.npz",
+      "bytes": 67829,
+      "sha256": "26e9cbfbb466abb0e76353f52eddd3c03b82dffc36593a8cb33daeca4fced26d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0014.npz",
+      "bytes": 81336,
+      "sha256": "116be154d7b086c39bc29ace3d12a54070c9c728e65919148b3b8721ea8f1262"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0015.npz",
+      "bytes": 72816,
+      "sha256": "354dbaae001eca7acbe36c02bbe80fa535ee963a8be4446967894e87fe18418d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0016.npz",
+      "bytes": 84595,
+      "sha256": "dde10baa3207e710df278eda47a086103ae3cf0f2d566d5def42e9868e4e6b09"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0017.npz",
+      "bytes": 62647,
+      "sha256": "c1b0e518a3138203fa94dd9b568773c14ad1a72391cdc2e75bdd8165b4a8e2bf"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0018.npz",
+      "bytes": 81687,
+      "sha256": "112db1c40d6e031713aed82c57dce9cdfa417ae4780c4dfc5e6563165647d0a6"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0019.npz",
+      "bytes": 80882,
+      "sha256": "f8a3cd13bb4f683f76cbf7a8b2e3f0a80abac689598c9cb7bb3fd25f8b6ba7f5"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0020.npz",
+      "bytes": 71027,
+      "sha256": "d03fc5fc4100dd49d5da1471e81236f0e62bfab39997d8ae712f2be2ade3a9ad"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0021.npz",
+      "bytes": 75007,
+      "sha256": "3546f9159f9aa425eb83f5b59f9312a3109afb5b94694401a6c54d431344ffbf"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0022.npz",
+      "bytes": 78691,
+      "sha256": "46203f225404921930aa6639a73688dcee3677bec08a46bc0e51d8a45f3929b3"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0023.npz",
+      "bytes": 77504,
+      "sha256": "b891faf193770ecf6b0b5ad004673d9f06c172106f9393abefeff6f65a23e54f"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0024.npz",
+      "bytes": 64717,
+      "sha256": "47df1572736cca2a78c12c059c86fc1ba9098ad11e3becf54072788ef165e3e6"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0025.npz",
+      "bytes": 83488,
+      "sha256": "c7c068ce6673e10cb6aae1ab5a4eaaf70146eb7028ecc8d726af796ab1c30361"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0026.npz",
+      "bytes": 65187,
+      "sha256": "7e9ee8bdbe3ae338f62958cc5cc0367829b6987398c8a52fb0285da9ea385889"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0027.npz",
+      "bytes": 86527,
+      "sha256": "20a3249c1cb0671ec03b61eefdccbe2d3c8ec9b60e305a35db17b535f70b351a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0028.npz",
+      "bytes": 71957,
+      "sha256": "adf639d8401b310746d77418360827465a715349f7aa33a6dc1f93a9e3a9b737"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step600-tokens3B/chunk_0029.npz",
+      "bytes": 38569,
+      "sha256": "4a5f2563e1e1b9a38c691ab3e06dd38f03577fe3d0a10892caf749b399063193"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0000.npz",
+      "bytes": 71471,
+      "sha256": "f3a05532fc4fcb9dc7be7f3e544a716cd7bfb258035a5c723c72163cb31e0557"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0001.npz",
+      "bytes": 67401,
+      "sha256": "d73ec202308012574f73957b1ce4cc65a9c29cc83fb500866adc7234bd4095c5"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0002.npz",
+      "bytes": 86444,
+      "sha256": "e5ac21d38c9e554fb64e41a978950eef5bd8b2ad2fd91cceb9591a2505528cd7"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0003.npz",
+      "bytes": 93852,
+      "sha256": "cc039713d6e7d2ae9cc82b0a97421e48a8435573eb6bf75edaf84a47aa3b2b28"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0004.npz",
+      "bytes": 65056,
+      "sha256": "cc9ae1b250dbf28ffe8e203f8d087c35569c26280456672e8ca529194750779d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0005.npz",
+      "bytes": 82927,
+      "sha256": "8b519e1dc21a5a22508f8cfd93fb1456a4259221edb39d6bdde6afe4873fba3d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0006.npz",
+      "bytes": 81548,
+      "sha256": "493e1b0f1ebb061c1f0f86fae77c33ba74461c87fb3911b3253c8a49b6719af9"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0007.npz",
+      "bytes": 67370,
+      "sha256": "7ee00d73a321ffe023bb3ea5b21a9203576be74d40db3bcdef9316b3961c572d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0008.npz",
+      "bytes": 78405,
+      "sha256": "9220aaf03d08caab66a22385e4db7b0c9aa8eb458b8faa1d41f058d0477d8e72"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0009.npz",
+      "bytes": 88914,
+      "sha256": "e6a5fe40be8370fe20a60938d16bdb13e140b21b0cacb6129685faf52e90a102"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0010.npz",
+      "bytes": 82577,
+      "sha256": "2118c24ad8b2000bd0ac6994c5a16340016a9934058735312856a0e2093f7f07"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0011.npz",
+      "bytes": 69985,
+      "sha256": "d9883a5c3aebea0002dfcc644e07ec0bf263a145d64e48d9c69b8bdc47bf874b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0012.npz",
+      "bytes": 83431,
+      "sha256": "f26988b660425089573108c1a87434a255b78034b287635e350494684cc26cfa"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0013.npz",
+      "bytes": 69792,
+      "sha256": "5cb34b9a695e9feaa59ca0ec5da22e40826383c507899660255ec3b9f4c13c7b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0014.npz",
+      "bytes": 82658,
+      "sha256": "344d40f9e20097b262fc9068af515569c89592109c4b65cb38a1e0315ef66718"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0015.npz",
+      "bytes": 73742,
+      "sha256": "1064936ae212b003628ed3c76c65afefbd9a08658556b064ee9d3e26c460c26c"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0016.npz",
+      "bytes": 86389,
+      "sha256": "f349e8868722d175dc4f31e5c797185e50c76e5f659000907ad2c1a8df294693"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0017.npz",
+      "bytes": 64487,
+      "sha256": "036a591aa891f9194b938f6deed8dccb4664bf7031314af2563921817a242fe3"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0018.npz",
+      "bytes": 85547,
+      "sha256": "d4702ac6170558d08d76f8e54e6be83d42dd07ae5c48b492e418a2fe0f64e535"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0019.npz",
+      "bytes": 80096,
+      "sha256": "f2f5d18d26e81d2b48dc810dec798d33d1371e8d1230afe372dda877d84ddac1"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0020.npz",
+      "bytes": 73306,
+      "sha256": "d3854242c3da713b819a7e2797ea08ef720e30c788cc6804310478420bd0eb89"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0021.npz",
+      "bytes": 77199,
+      "sha256": "2e58c609b9492da149817779a570518935eb3e80f5991691885069391a9f69db"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0022.npz",
+      "bytes": 79801,
+      "sha256": "d91c00ef523e4b5f3ba1e06cce9c50efd62fa76f5ec78e7f19b31d3e6ef7e499"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0023.npz",
+      "bytes": 80659,
+      "sha256": "f40bb1901ef619edc453151df7ebb4f73163588bda40e9dd5318b10400bec8f2"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0024.npz",
+      "bytes": 66574,
+      "sha256": "86e2b8928a8ceed99ee3da65ba2d91603882840ebbc0f344cea36f8906dbc264"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0025.npz",
+      "bytes": 85845,
+      "sha256": "c55aa5b38543836a4d1676a1de3fbf03ffcaeac0547e371b172b61e664eaeeda"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0026.npz",
+      "bytes": 65324,
+      "sha256": "917a16efb32a255031b4c0fc1f5d05d68f49b004b42f41c0f071e5f0254a4cfb"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0027.npz",
+      "bytes": 85281,
+      "sha256": "74a5d6c418e173ac9dddd903e2f80bdf11686d0a5fe47464cb4f932418df05f8"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0028.npz",
+      "bytes": 76392,
+      "sha256": "d278b859c5a621bea054ef71bee1d3f37f5940fb20efc6b99186de1b9ea0a336"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step700-tokens3B/chunk_0029.npz",
+      "bytes": 39444,
+      "sha256": "0d4c6fd56f9f0456417448a0729724a492c4b70e651897c14777b5430fbdea4e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0000.npz",
+      "bytes": 73645,
+      "sha256": "6efae42b9e5c75d45caaf96e25832217bcd6c5579c019beee3717c773658c724"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0001.npz",
+      "bytes": 70527,
+      "sha256": "720dd4181842c599d0035f80032322a5214279c60cfd658a17ccc279f086c94a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0002.npz",
+      "bytes": 87474,
+      "sha256": "3c579b83b081c33f4c48017f094bf5d5467193616d202aceec0770604661cb72"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0003.npz",
+      "bytes": 100174,
+      "sha256": "1a3069cb173faf80eca5220e5ff477328e9006f76d17e2b7406086e23a333cc1"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0004.npz",
+      "bytes": 69169,
+      "sha256": "229502c3123218422e6f6b2eec4ce55a3e0f2ad7e5c50fab68f2f51184a1f9ed"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0005.npz",
+      "bytes": 87441,
+      "sha256": "7072b92c3db5b70a4cd07a2f7d16b06587eef0fa7595249635f53b9fba2fdd1d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0006.npz",
+      "bytes": 81057,
+      "sha256": "9cc1bcab1742736094a302966f2333c456c9d438f3e0b45ff074999414e98193"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0007.npz",
+      "bytes": 70357,
+      "sha256": "988aa39b153987513849ecc7c3aa0d59aebd501e992b52fcd2c94ab517979b53"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0008.npz",
+      "bytes": 79481,
+      "sha256": "ac7c74d5c048ffabe871139d27f3ed16653c643816809a8b57730b2f0259bf42"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0009.npz",
+      "bytes": 93717,
+      "sha256": "ed56d148b25e997c1562995bf3c590388d9dfeee51f0d550759b03e98bd89ed5"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0010.npz",
+      "bytes": 85581,
+      "sha256": "83c0fdb013ca4164e064dbc2b7569df75f499bc249096d3cd19e18808da870dd"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0011.npz",
+      "bytes": 69249,
+      "sha256": "55c4a372e086b4fed645094312792e94c1c59bfa242e7e3e5f14f7242d2357d4"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0012.npz",
+      "bytes": 88933,
+      "sha256": "9d491fd368f2e74e7c57d35ab693deb2fbb6e821540986a80bcb58d8d54d4f06"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0013.npz",
+      "bytes": 73343,
+      "sha256": "5ebe92f18312a69120bbcf9584c12bc76278ccfa3601945209955dfc81dc4cb8"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0014.npz",
+      "bytes": 86119,
+      "sha256": "85521faee3a6df4658cc119bb0625df8cc536e1b043e27ed803c37bc75cfe5d3"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0015.npz",
+      "bytes": 77772,
+      "sha256": "17cb9a7229b85925528bcc2edce2c1cfa340bf8318919634b924ddcca8e98149"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0016.npz",
+      "bytes": 87194,
+      "sha256": "db91d5ccc6aec3f1381fea3f782c95b77603db0c7350298e933ba93aeeb43534"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0017.npz",
+      "bytes": 67565,
+      "sha256": "b867fa8dec652c46067dce155c810ca27bef57fa5cefdc2a13fb76a506e5f604"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0018.npz",
+      "bytes": 93664,
+      "sha256": "6f51c85fe64266407f3afb065b686140fb1328c307a7e271d2b9ce284e99d081"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0019.npz",
+      "bytes": 82108,
+      "sha256": "bf2afa55b4cd4be88fc302a80cd008abd8c498f8fdb1ddda651916c71a67093a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0020.npz",
+      "bytes": 76435,
+      "sha256": "b8b3caf9f3c6342271ad67b5dae383c011868233ca8cea555ea6d443026db476"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0021.npz",
+      "bytes": 80442,
+      "sha256": "120166470e0f66af1320c1c0da1726ae8e45d06431f53795f8cbc10aed25bd24"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0022.npz",
+      "bytes": 78726,
+      "sha256": "a76505173a7fde76001c0eb4fb22a8ea9c7d8769504c7ab9cb5380a0631987e8"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0023.npz",
+      "bytes": 87463,
+      "sha256": "57df32327a0c5e3f96d7263640b7a5e59b53d4606e1fcc4d47c69eb5ca01ec58"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0024.npz",
+      "bytes": 69328,
+      "sha256": "d66b8e61562c6ebe6c76f3a07b7b4628a433c4b103d79b9cd6dc1f5702c36bde"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0025.npz",
+      "bytes": 87433,
+      "sha256": "dd7ed8eb4001fce6aa97eb1fd0ece8c9b9b24dbe9c34b8ba435ce3525c4426ff"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0026.npz",
+      "bytes": 70051,
+      "sha256": "6e9a08dba57b814fcdb91b581c3f889df79075fbf0716cdeb44788ccda274942"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0027.npz",
+      "bytes": 83190,
+      "sha256": "a105f3b0d9a4ec916212a04081f7c547b8486400556411dffe8e3815a60d9c56"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0028.npz",
+      "bytes": 78332,
+      "sha256": "5450e7d594327d5426e77a28a610d3ae629fdc7f2b5b20d691f16bbb9760d41e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step850-tokens4B/chunk_0029.npz",
+      "bytes": 38661,
+      "sha256": "4eff110ce8d645b68627946a670bc7667b313cf820131817db2e1d8897a67b0c"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0000.npz",
+      "bytes": 71841,
+      "sha256": "a2b1787789813256e6283aaf3b309b9a253b5f4979548af8cc8ccec6ee0b7848"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0001.npz",
+      "bytes": 69518,
+      "sha256": "1b4141de8a202e69ddd4c558f42fdf3dae66eec80473aff64fa7770085cd27f6"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0002.npz",
+      "bytes": 87248,
+      "sha256": "e0ca5ae49e597a4cd4a0f5ab803d93b910087bc3b080fd46d7f199f24a7c7a34"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0003.npz",
+      "bytes": 99652,
+      "sha256": "4a6d0c7b223710354f22ff046affd3d70baad58831ae2867b56cb5b4670fbcba"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0004.npz",
+      "bytes": 67516,
+      "sha256": "9a6e819bafcba85c86e436169f3e902020cde97db43be9f1be5d104f501f5e0a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0005.npz",
+      "bytes": 85784,
+      "sha256": "ed08a0cd0237cdc8ab72cb7cbe74e712aaf25ea3bda796d4fa358f739624bbc6"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0006.npz",
+      "bytes": 78115,
+      "sha256": "00f4d1daf40b80077bf76ec3fa3007b840cab20f29c2df7188339e08f2873875"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0007.npz",
+      "bytes": 66847,
+      "sha256": "061b6b1de2b038c0ba9c0949f6052a73f1392b87dbce5fe6404f6d7e0fc7aa20"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0008.npz",
+      "bytes": 77951,
+      "sha256": "c06587c8991967e185c1e30eba58aafdac7766b105ab9bd6cad6d345443ffb57"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0009.npz",
+      "bytes": 92472,
+      "sha256": "e0272669cabf9fa0d73fefcd034e425d861fa7b3b0b60e1bf7af21dacb5a297a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0010.npz",
+      "bytes": 83086,
+      "sha256": "b3bad1812eb8d8897180c443faec490311df5cb5774952303db8c85e971b3d1c"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0011.npz",
+      "bytes": 66367,
+      "sha256": "125262b816689018b3f12e3cf97dcf5cd7fcc17c6fd44c6704acdda226c24f86"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0012.npz",
+      "bytes": 87991,
+      "sha256": "838ace66d512fee87645418725dafb17a5c0f2bcf1d1eecad4485b5038e8998d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0013.npz",
+      "bytes": 72149,
+      "sha256": "327d3dc3cd43852e41e23ccc783bb344fed90ebd9b56187df5a34219ee94e6ab"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0014.npz",
+      "bytes": 84707,
+      "sha256": "832c04ee9843da03a62fcca618876df58d88cc4979220a564241c4b1e53a26ee"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0015.npz",
+      "bytes": 74429,
+      "sha256": "586781b0c94fc441cf649f05129e4c6c6309277dfe7abe2e9631b5558e3e0949"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0016.npz",
+      "bytes": 85042,
+      "sha256": "ff3f4a511ce53f1fa7df3e39a43f474231abb713addde01e9aabf3263f487b3b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0017.npz",
+      "bytes": 65916,
+      "sha256": "8e28697ac8c3481a0c9046ed3be50483cb503bb42ed87840cd769e5516e18137"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0018.npz",
+      "bytes": 92397,
+      "sha256": "49173f7316e1873967aa98078526c443b6ce3a0029d1cc44b1db97923b8aa514"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0019.npz",
+      "bytes": 79051,
+      "sha256": "261d0ddd14e23737ea0d4680d034827e7da97f2f84343d94c10da40cc905dcc8"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0020.npz",
+      "bytes": 74571,
+      "sha256": "5e78cbf49d0d0fc0bbc4d18e96ca528174f294c80e9e22337c43055899c25ea6"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0021.npz",
+      "bytes": 79155,
+      "sha256": "b2591ac4c73dcf6452041311b16cca9934043491a93dda9977accd8fbd048e0e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0022.npz",
+      "bytes": 76781,
+      "sha256": "f7d43717c0686973b44f2543d589675e11669b551507163300c02b1df268434f"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0023.npz",
+      "bytes": 85766,
+      "sha256": "a30f72a430d532c1af3491618ce8ea76772232576117dab5a2d7b43faae22817"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0024.npz",
+      "bytes": 68839,
+      "sha256": "bcab3ce14a200d95f4fb9d9293f55abc6ed9587678ca8bf406ecff724deb07db"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0025.npz",
+      "bytes": 83633,
+      "sha256": "be3898fc1fdb5d22fa71e02ed223256fb6df00b61f703a2bdf2e41b24e978f98"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0026.npz",
+      "bytes": 68936,
+      "sha256": "5e332ce3a885992ede07acdf9dfef20643b8f3e39bb747c9a216de6585a77403"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0027.npz",
+      "bytes": 79734,
+      "sha256": "b77a8d678ae58df84ff5c0f486ad05dc620297e33214cce02bc0f14b7fea1899"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0028.npz",
+      "bytes": 77750,
+      "sha256": "e870d1f12135592d01ec81cc64c847b73fc0c9d89ac2cea938a6c6aa5cc5b39d"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step900-tokens4B/chunk_0029.npz",
+      "bytes": 36721,
+      "sha256": "70633c6a1b89504bb7af829f9429be99667b51f1eff6c23c9ce3445817f67309"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0000.npz",
+      "bytes": 39990,
+      "sha256": "2368bf4de40282678d658444a13c3414cf37bbc1d3b4c0f42ef018aa04cef90b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0001.npz",
+      "bytes": 36263,
+      "sha256": "e0dcdbda43574617bbd621c05b564649d261e03f8236d3f21d3c2a2e4cac5f4c"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0002.npz",
+      "bytes": 49290,
+      "sha256": "ebb9fc6884c4bb663bc5162f6c15ad1e02ffd4ea81b2541ad44322f6f5a84b60"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0003.npz",
+      "bytes": 51112,
+      "sha256": "d87dd538b058c4f7ab59572d0ccca21565e196363fb83c57ac28863677a6ae67"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0004.npz",
+      "bytes": 35681,
+      "sha256": "91ac971cf94d6123a00c03f470cf80ccfb117eb8b5fe2f9c5be8463773cca656"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0005.npz",
+      "bytes": 47657,
+      "sha256": "9f4dd4fdcadd02fec2b2549c2b0ec9d5f12d2460b117ff10b3440309fe8ad793"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0006.npz",
+      "bytes": 62606,
+      "sha256": "bc0453193102bfeebfdcd72d57b76b503758b988e10cd83960e1cf51545f2711"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0007.npz",
+      "bytes": 47964,
+      "sha256": "c0a99ed076a4af1a39784583ea7590e7ec93172afc965c8db8abef551bfb4139"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0008.npz",
+      "bytes": 55417,
+      "sha256": "145320393936e91e051db5df7d84c37bdace2251492040b1731b3250dad9468a"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0009.npz",
+      "bytes": 46063,
+      "sha256": "33b8982e118eb6cb911b2ec94ad1949084ef4721ff664e95598c48c76673f380"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0010.npz",
+      "bytes": 70302,
+      "sha256": "f71ffdc28de1032b30cbd4349c1b85d57e7da7719d70c2bf377a1cbd79f7ebc6"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0011.npz",
+      "bytes": 39318,
+      "sha256": "63a0bb66ec514d4d2e9a0e0158a265e43a3e4e3b52b7524cf8ecdbab5b3c7d38"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0012.npz",
+      "bytes": 51125,
+      "sha256": "3d098f6fb59f9fbc7b54508bc38df06ea2bd312c2471a5dbeef16a2e916d98e9"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0013.npz",
+      "bytes": 35269,
+      "sha256": "42ac9c73a7c752b5a28cd50c23a179608a2c10a88f9c8ab857fc2eb77ef708ea"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0014.npz",
+      "bytes": 57944,
+      "sha256": "73bb764d175779bf6987f7b6f4284672e8f8e56793780b6093864f0f82219b20"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0015.npz",
+      "bytes": 37627,
+      "sha256": "20e352c74c59fcc5924224d8f35f03569447fe02b9e613130aacb51b856a92c8"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0016.npz",
+      "bytes": 59805,
+      "sha256": "8291f9c7844491cad4bbe5dd8b096a2839b15facd0f1531fd09b73fc56dd6be0"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0017.npz",
+      "bytes": 34700,
+      "sha256": "ef34f8c10e736da7dd7112bc3f536eefe4d33a276d16fb51246edc8e401b4e43"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0018.npz",
+      "bytes": 46980,
+      "sha256": "9ed3190d064189195d1155c553c5ebfa869dab69c6ab82402f55e026c856c360"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0019.npz",
+      "bytes": 44654,
+      "sha256": "5785d2386bf55e84c8de0d28ef7af6d932de847c07fc8fd7b4222967622710d5"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0020.npz",
+      "bytes": 44148,
+      "sha256": "30632cb65ae1f9501acd831203ec87fd228d2592468850149dd9836fbdc72bc9"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0021.npz",
+      "bytes": 37689,
+      "sha256": "1d472a8f5a953735921fed66482020c0232609a640fa801df7e5149c96cc1cda"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0022.npz",
+      "bytes": 45390,
+      "sha256": "0741543d6816ac3d50e66353923ad4a18b66b72991d1e44b6879fef494350b2f"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0023.npz",
+      "bytes": 62071,
+      "sha256": "906f213f63c48004ed208c6b68e11bc337255b17ef7270bafd2425d83fd90bbe"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0024.npz",
+      "bytes": 48308,
+      "sha256": "dce9e5e533053ea5a3ae6126f75c1d0f2d95870e31c4f00e7217c26224e6b12c"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0025.npz",
+      "bytes": 44953,
+      "sha256": "3da5a45a453382f3a08e36e2a0c9f059a091f3f0109ea3cec0670fe8b9493fc7"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0026.npz",
+      "bytes": 37112,
+      "sha256": "020b029a216a277966a021cc6b0cb76c0aa922ba1ce31fb4fbb40440efd517af"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0027.npz",
+      "bytes": 46866,
+      "sha256": "aa0d575802d01bd78904c06e7b62f531dd048aa0b47c1bbb42b9292e736b0847"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0028.npz",
+      "bytes": 47205,
+      "sha256": "31263a5c6738ba4e702633132f233135b14673fc3e3b3e13f0b98cbdc0bebf28"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step9000-tokens38B/chunk_0029.npz",
+      "bytes": 22333,
+      "sha256": "71f9cfec313b410d5f855b4b565b1dd8e5b93626059d064f301c35324e75f4fe"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0000.npz",
+      "bytes": 20240,
+      "sha256": "71f937d06c9098a676079830bd9bc5f8b034e17cab410d9f2ae9412961bee8d2"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0001.npz",
+      "bytes": 16388,
+      "sha256": "f2d9d17dbc7197db81b0b88624b1b984e8dbe9e45ac9680b112c74d68eea5b0b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0002.npz",
+      "bytes": 24809,
+      "sha256": "f879c8884eeea0df0624d9001a82b686a4db40c98182b60dee8c71683ed5f242"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0003.npz",
+      "bytes": 23785,
+      "sha256": "1e40b213a810659ef760b98183ba6fd9e1c5e74c52441906c9914f6d08116a43"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0004.npz",
+      "bytes": 18918,
+      "sha256": "fae059cc6d0a6100a7a35428c3ce5bfa92623479390383322f2927ecdf9322a1"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0005.npz",
+      "bytes": 23628,
+      "sha256": "f30f69a956b650d839747247ee02ab73e64bf0e46ce22bde5a1f7598d15677ee"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0006.npz",
+      "bytes": 45363,
+      "sha256": "d128dd75070712dd4bcf6114304da67b3ccdc5efdec664aeec55548b835c2f85"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0007.npz",
+      "bytes": 25252,
+      "sha256": "b2f54bc35b3e61b9747b38b913932b74ce94a10cad83ec412576af0411898b40"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0008.npz",
+      "bytes": 38632,
+      "sha256": "251eaaffb712ea136d61f40f2b981970bb5fa96eb381a391da6aa4c75c4b9625"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0009.npz",
+      "bytes": 22432,
+      "sha256": "832c9c1fa18032aea5c98e1b2777d43febb8e4d258e01374b04692b5f38497fb"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0010.npz",
+      "bytes": 57854,
+      "sha256": "5fc791a1d1a1d99abd5f78594d3afb34c6c6411410623444cc7548a3bd3869cc"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0011.npz",
+      "bytes": 19496,
+      "sha256": "89499ccbec60060aacd03fc36673ef9f367b2ddce8372fa3e36ec44052e79b6e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0012.npz",
+      "bytes": 27636,
+      "sha256": "16a60ede20e6531431beb5640f50a0645b7f47cbd7f749d249e244ed2069134e"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0013.npz",
+      "bytes": 17308,
+      "sha256": "d2e973dd4752c2da113adc6e2c882da8dfdfba88b3516ff7410d4310fffab8e4"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0014.npz",
+      "bytes": 39785,
+      "sha256": "507f12063b61785316c88dfc4aa0117cbe017d4d09ec6d81201f22667b77a838"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0015.npz",
+      "bytes": 16391,
+      "sha256": "fe79062beab5ee02e09a2fde1533d16aacfa9cd657f5718ce04128732a8f7ec8"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0016.npz",
+      "bytes": 41116,
+      "sha256": "82f0ed74860742eeb7dd45c707069bf76cebf95e31e75c1644e58672121dbb5b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0017.npz",
+      "bytes": 17430,
+      "sha256": "9acdccf5833468b634315c22e0b18e765a0568f8ab13d85d8531a85448507b1c"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0018.npz",
+      "bytes": 22796,
+      "sha256": "2eb1cc350b63d185f024ba71b04f4a33345911f5b07479f568c8913e00a576da"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0019.npz",
+      "bytes": 19877,
+      "sha256": "5dd448d9be3a253d10be43c812cbaa4f96c147dd182988970c32501069e01170"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0020.npz",
+      "bytes": 24016,
+      "sha256": "7c0a1c7255906e9ca58aadf08c9b429ee2e9d324c698d850a506e4ed9897565b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0021.npz",
+      "bytes": 18613,
+      "sha256": "9918eae64d6b176095afa90380a5d9b47e78c87ff4d434dc60b75db3d6b06671"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0022.npz",
+      "bytes": 22125,
+      "sha256": "6d578e92ad89847b6b0dd37a6b8259db16e7046ffb84e12f61cdce0656cf6b9b"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0023.npz",
+      "bytes": 42168,
+      "sha256": "f3e717cc80e5f79eeaf4fd3797c2f1741b8c62cb5f2c8bdac21743ca04b1b9be"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0024.npz",
+      "bytes": 34864,
+      "sha256": "11d8495bbd1b55fcac3dfecac6c0390de477eee3ae8af666ce40f5b8d89d46f0"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0025.npz",
+      "bytes": 22559,
+      "sha256": "a59aa69f7b5e4a42a02e97ad322ec5ad2370865f7ac63aa5c286234f2681c8c7"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0026.npz",
+      "bytes": 18843,
+      "sha256": "8cba4d71cd739f846a0e0a5c0c4d50716e55e077ccddaf8c9cfc8529cc8d4ff5"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0027.npz",
+      "bytes": 24136,
+      "sha256": "038d7e639337df9483d29c43a5ebda56438b88d7a72fad3e80edd39a83128faa"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0028.npz",
+      "bytes": 32377,
+      "sha256": "fc634fcd245498c64920cee4bed9c24c188545f4bef0b2b18272b11ce6c21a06"
+    },
+    {
+      "path": "results/ri/developmental_v1/chunks/stage1-step928646-tokens3896B/chunk_0029.npz",
+      "bytes": 12097,
+      "sha256": "f15fbc7fe1640591f7a57a0fbad666f15b57bcfa0882183b48f0f60d684cccc6"
+    }
+  ],
+  "data_provenance": "AGENDA/GraphWriter transformed streams plus synthetic ICL prompts; see data_generation.ipynb and README.md.",
+  "ri_input_hash_matches_executed_config": true
+}

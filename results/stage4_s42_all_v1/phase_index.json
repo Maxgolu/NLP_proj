@@ -1,0 +1,42 @@
+[
+  {
+    "schedule": "/home/yandex/DLWorkShop2025b/maximg/pilot_v2/stage4_s42_v1/inputs/initial.json",
+    "runs": [
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/initial_r0",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/initial_r1",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/initial_r2"
+    ]
+  },
+  {
+    "schedule": "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/schedules/conditional.json",
+    "runs": [
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/conditional_r0",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/conditional_r1",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/conditional_r2"
+    ]
+  },
+  {
+    "schedule": "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/schedules/refinement.json",
+    "runs": [
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/refinement_r0",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/refinement_r1",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/refinement_r2"
+    ]
+  },
+  {
+    "schedule": "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/schedules/extension.json",
+    "runs": [
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/extension_r0",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/extension_r1",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/extension_r2"
+    ]
+  },
+  {
+    "schedule": "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/schedules/sensitivity.json",
+    "runs": [
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/sensitivity_r0",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/sensitivity_r1",
+      "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_s42_all_v1/runs/sensitivity_r2"
+    ]
+  }
+]

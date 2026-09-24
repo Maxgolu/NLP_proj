@@ -1,0 +1,11 @@
+revision,step,tokens_B
+stage1-step150-tokens1B,150,1
+stage1-step600-tokens3B,600,3
+stage1-step700-tokens3B,700,3
+stage1-step850-tokens4B,850,4
+stage1-step900-tokens4B,900,4
+stage1-step1000-tokens5B,1000,5
+stage1-step2000-tokens9B,2000,9
+stage1-step3000-tokens13B,3000,13
+stage1-step9000-tokens38B,9000,38
+stage1-step928646-tokens3896B,928646,3896

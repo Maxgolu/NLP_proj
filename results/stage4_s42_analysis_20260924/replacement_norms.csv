@@ -1,0 +1,13 @@
+group,mode,mean_joint_head_output_delta_norm,median,note
+O3,donor,6.580474898837492,6.915107883206614,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+O3,mean,6.686193474839801,6.627337344078276,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+RI23,donor,13.984158230606155,13.440342595646008,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+RI23,mean,29.954807482233115,29.64063638908288,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+reference1,donor,8.120500289688648,6.50582999361172,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+reference1,mean,12.370013762946213,11.438227265882242,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+reference2,donor,9.743114091002978,9.599911603012826,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+reference2,mean,18.976447461011595,18.148946052123016,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+reference3,donor,8.149629094578552,7.52339173778398,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+reference3,mean,14.397753430198666,14.42910464438528,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+reference4,donor,11.467921888167186,8.110089769644238,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"
+reference4,mean,18.152364087165594,17.11193873413921,"Unprojected concatenated head outputs across patched positions; descriptive, not a norm-matched causal control"

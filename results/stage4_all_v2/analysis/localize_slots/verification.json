@@ -1,0 +1,89 @@
+{
+  "complete": true,
+  "records": 320,
+  "configuration_count": 8,
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "schedule_hash": "471ed3cf2726d786c5040078ecf14fe0b8460884b154977deb904f9bc4b51a79",
+  "configs": [
+    {
+      "source": 434,
+      "site": "fact0_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact0_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact0_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact0_template:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact1_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact1_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact1_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact1_template:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact2_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact2_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact2_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact2_template:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact3_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact3_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact3_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact3_template:single:434:"
+    }
+  ],
+  "population": "core",
+  "family_effects_hash": "ef2c9fea93e8db2b20162cd431eaf679016d51f9cf47f8b2d18d0f97242561c6",
+  "run_manifests": {
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/localize_slots_r0": "7e08633f7d9b7f966b6889b2db006a2e527cfebefea6a32f189963f03c02217a",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/localize_slots_r1": "730060d17e66c6a45a4e17cc17601dd116813c8932e9bdf4e1d955cbf173f9c9",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/localize_slots_r2": "b3d39c74d3feade66339f5e74304969b3dea1e51045c0db2f6c52aafa8de539e"
+  },
+  "note": "Discovery summaries; retention is prioritization, not confirmation"
+}

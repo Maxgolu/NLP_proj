@@ -1,0 +1,267 @@
+{
+  "archive_sha256": "30d3ed8dbb95808c426b7d8b3faa4f437b9962b9872a17a7dd8f63689848ac5f",
+  "bundle_verified": {
+    "RUNBOOK_stage4_s41.md": "results\\stage4_s41_v2\\RUNBOOK_stage4_s41.md",
+    "inputs/coverage.json": "results\\stage4_s41_v2\\inputs\\coverage.json",
+    "inputs/pairs.jsonl.gz": "results\\stage4_s41_v2\\inputs\\pairs.jsonl.gz",
+    "inputs/plan.json": "results\\stage4_s41_v2\\inputs\\plan.json",
+    "inputs/seed.json": "results\\stage4_s41_v2\\inputs\\seed.json",
+    "model_lock_olmo2.json": "results\\stage4_s41_v2\\model_lock_olmo2.json",
+    "stage1_audit.py": "results\\stage4_s41_v2\\stage1_audit.py",
+    "stage1_scan.py": "results\\stage4_s41_v2\\stage1_scan.py",
+    "stage2_engine.py": "results\\stage4_s41_v2\\stage2_engine.py",
+    "stage3_common.py": "results\\stage4_s41_v2\\stage3_common.py",
+    "stage3_engine.py": "results\\stage4_s41_v2\\stage3_engine.py",
+    "stage4.sbatch": "results\\stage4_s41_v2\\stage4.sbatch",
+    "stage4_analyze.py": "results\\stage4_s41_v2\\stage4_analyze.py",
+    "stage4_engine.py": "results\\stage4_s41_v2\\stage4_engine.py",
+    "stage4_pipeline.py": "results\\stage4_s41_v2\\stage4_pipeline.py",
+    "stage4_pipeline.sbatch": "results\\stage4_s41_v2\\stage4_pipeline.sbatch",
+    "stage4_plan.py": "results\\stage4_s41_v2\\stage4_plan.py",
+    "stage4_run.py": "results\\stage4_s41_v2\\stage4_run.py",
+    "submit_stage4.sh": "results\\stage4_s41_v2\\submit_stage4.sh",
+    "submit_stage4_pipeline.sh": "results\\stage4_s41_v2\\submit_stage4_pipeline.sh",
+    "test_stage4.py": "results\\stage4_s41_v2\\test_stage4.py",
+    "test_stage4_pipeline.py": "results\\stage4_s41_v2\\test_stage4_pipeline.py"
+  },
+  "gate_maxima": {
+    "P_505": 0.0,
+    "P_545": 0.0,
+    "P_595": 0.0,
+    "P_863": 0.0,
+    "clean_no_hook": 0.0,
+    "clean_saved": 0.0,
+    "clean_sdpa": 4.76837158203125e-07,
+    "corr_no_hook": 0.0,
+    "corr_saved": 0.0,
+    "corr_sdpa": 6.103515625e-05,
+    "cross_position_Q": 0.0,
+    "cross_position_bypass": 0.0,
+    "joint_self": 0.0,
+    "qkv_output": 0.0,
+    "saved_clean_logits": 0.0,
+    "self_505": 0.0,
+    "self_545": 0.0,
+    "self_595": 0.0,
+    "self_863": 0.0,
+    "self_path": 0.0,
+    "temporal_505": 0.0,
+    "temporal_545": 0.0
+  },
+  "phases": [
+    {
+      "phase": "coverage",
+      "configs": 4,
+      "records": 712,
+      "reused": 80
+    },
+    {
+      "phase": "localize_roles",
+      "configs": 6,
+      "records": 240,
+      "reused": 0
+    },
+    {
+      "phase": "localize_slots",
+      "configs": 8,
+      "records": 320,
+      "reused": 0
+    },
+    {
+      "phase": "seed",
+      "configs": 769,
+      "records": 30760,
+      "reused": 0
+    },
+    {
+      "phase": "refine",
+      "configs": 105,
+      "records": 4200,
+      "reused": 0
+    },
+    {
+      "phase": "extend_seed",
+      "configs": 72,
+      "records": 25632,
+      "reused": 0
+    },
+    {
+      "phase": "extend_refine",
+      "configs": 24,
+      "records": 8544,
+      "reused": 0
+    }
+  ],
+  "total_records": 70408,
+  "csv_reproduction": [
+    {
+      "phase": "coverage",
+      "file": "events.csv",
+      "rows": 712,
+      "equal": true
+    },
+    {
+      "phase": "coverage",
+      "file": "family_effects.csv",
+      "rows": 356,
+      "equal": true
+    },
+    {
+      "phase": "coverage",
+      "file": "route_summary.csv",
+      "rows": 4,
+      "equal": true
+    },
+    {
+      "phase": "coverage",
+      "file": "context_summary.csv",
+      "rows": 8,
+      "equal": true
+    },
+    {
+      "phase": "localize_roles",
+      "file": "events.csv",
+      "rows": 240,
+      "equal": true
+    },
+    {
+      "phase": "localize_roles",
+      "file": "family_effects.csv",
+      "rows": 120,
+      "equal": true
+    },
+    {
+      "phase": "localize_roles",
+      "file": "route_summary.csv",
+      "rows": 6,
+      "equal": true
+    },
+    {
+      "phase": "localize_roles",
+      "file": "context_summary.csv",
+      "rows": 12,
+      "equal": true
+    },
+    {
+      "phase": "localize_slots",
+      "file": "events.csv",
+      "rows": 320,
+      "equal": true
+    },
+    {
+      "phase": "localize_slots",
+      "file": "family_effects.csv",
+      "rows": 160,
+      "equal": true
+    },
+    {
+      "phase": "localize_slots",
+      "file": "route_summary.csv",
+      "rows": 8,
+      "equal": true
+    },
+    {
+      "phase": "localize_slots",
+      "file": "context_summary.csv",
+      "rows": 16,
+      "equal": true
+    },
+    {
+      "phase": "seed",
+      "file": "events.csv",
+      "rows": 30760,
+      "equal": true
+    },
+    {
+      "phase": "seed",
+      "file": "family_effects.csv",
+      "rows": 15380,
+      "equal": true
+    },
+    {
+      "phase": "seed",
+      "file": "route_summary.csv",
+      "rows": 769,
+      "equal": true
+    },
+    {
+      "phase": "seed",
+      "file": "context_summary.csv",
+      "rows": 1538,
+      "equal": true
+    },
+    {
+      "phase": "refine",
+      "file": "events.csv",
+      "rows": 4200,
+      "equal": true
+    },
+    {
+      "phase": "refine",
+      "file": "family_effects.csv",
+      "rows": 2100,
+      "equal": true
+    },
+    {
+      "phase": "refine",
+      "file": "route_summary.csv",
+      "rows": 105,
+      "equal": true
+    },
+    {
+      "phase": "refine",
+      "file": "context_summary.csv",
+      "rows": 210,
+      "equal": true
+    },
+    {
+      "phase": "extend_seed",
+      "file": "events.csv",
+      "rows": 25632,
+      "equal": true
+    },
+    {
+      "phase": "extend_seed",
+      "file": "family_effects.csv",
+      "rows": 12816,
+      "equal": true
+    },
+    {
+      "phase": "extend_seed",
+      "file": "route_summary.csv",
+      "rows": 144,
+      "equal": true
+    },
+    {
+      "phase": "extend_seed",
+      "file": "context_summary.csv",
+      "rows": 288,
+      "equal": true
+    },
+    {
+      "phase": "extend_refine",
+      "file": "events.csv",
+      "rows": 8544,
+      "equal": true
+    },
+    {
+      "phase": "extend_refine",
+      "file": "family_effects.csv",
+      "rows": 4272,
+      "equal": true
+    },
+    {
+      "phase": "extend_refine",
+      "file": "route_summary.csv",
+      "rows": 48,
+      "equal": true
+    },
+    {
+      "phase": "extend_refine",
+      "file": "context_summary.csv",
+      "rows": 96,
+      "equal": true
+    }
+  ],
+  "adaptive_decisions_reproduced": true
+}

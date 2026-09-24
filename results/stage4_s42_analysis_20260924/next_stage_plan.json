@@ -1,0 +1,656 @@
+{
+  "status": "Prospective plan from S4.1/S4.2; not implemented or executed",
+  "seed": 20260923,
+  "removed": "broad all-head/MLP attribution search and fallback scan",
+  "C0": [
+    "L6H24",
+    "L8H15",
+    "L13H10",
+    "L13H18",
+    "L14H23",
+    "L14H26",
+    "L15H3",
+    "L15H25",
+    "L16H1",
+    "L16H21",
+    "L16H31",
+    "L17H1",
+    "L17H3",
+    "L17H17",
+    "L17H24",
+    "L18H18",
+    "L18H19",
+    "L18H24",
+    "L19H16",
+    "L19H22",
+    "L20H1",
+    "L20H7",
+    "L21H6",
+    "L21H18",
+    "L21H23",
+    "L22H5",
+    "L23H15",
+    "L24H19",
+    "L25H17",
+    "L26H23",
+    "L27H6",
+    "L30H13",
+    "L30H18"
+  ],
+  "C50_if_C0_fails": [
+    "L1H27",
+    "L6H24",
+    "L8H8",
+    "L8H15",
+    "L9H6",
+    "L9H17",
+    "L11H4",
+    "L11H7",
+    "L12H2",
+    "L13H10",
+    "L13H18",
+    "L14H23",
+    "L14H26",
+    "L15H3",
+    "L15H25",
+    "L16H1",
+    "L16H4",
+    "L16H16",
+    "L16H21",
+    "L16H24",
+    "L16H31",
+    "L17H1",
+    "L17H3",
+    "L17H5",
+    "L17H17",
+    "L17H24",
+    "L18H18",
+    "L18H19",
+    "L18H24",
+    "L19H16",
+    "L19H22",
+    "L20H1",
+    "L20H7",
+    "L21H6",
+    "L21H18",
+    "L21H23",
+    "L21H25",
+    "L22H5",
+    "L23H10",
+    "L23H15",
+    "L24H19",
+    "L25H17",
+    "L25H18",
+    "L26H23",
+    "L26H31",
+    "L27H6",
+    "L27H23",
+    "L30H3",
+    "L30H13",
+    "L30H18"
+  ],
+  "RI14": [
+    "L6H24",
+    "L8H15",
+    "L14H23",
+    "L15H3",
+    "L16H1",
+    "L16H21",
+    "L16H31",
+    "L17H24",
+    "L18H19",
+    "L19H16",
+    "L20H7",
+    "L22H5",
+    "L23H15",
+    "L26H23"
+  ],
+  "nonRI19": [
+    "L13H10",
+    "L13H18",
+    "L14H26",
+    "L15H25",
+    "L17H1",
+    "L17H3",
+    "L17H17",
+    "L18H18",
+    "L18H24",
+    "L19H22",
+    "L20H1",
+    "L21H6",
+    "L21H18",
+    "L21H23",
+    "L24H19",
+    "L25H17",
+    "L27H6",
+    "L30H13",
+    "L30H18"
+  ],
+  "R6": [
+    "L6H24",
+    "L8H15",
+    "L14H23",
+    "L15H3",
+    "L16H31",
+    "L20H7"
+  ],
+  "R17": [
+    "L1H27",
+    "L8H8",
+    "L9H6",
+    "L9H17",
+    "L11H4",
+    "L11H7",
+    "L12H2",
+    "L16H4",
+    "L16H16",
+    "L16H24",
+    "L17H5",
+    "L21H25",
+    "L23H10",
+    "L25H18",
+    "L26H31",
+    "L27H23",
+    "L30H3"
+  ],
+  "RI23": [
+    "L1H27",
+    "L6H24",
+    "L8H8",
+    "L8H15",
+    "L9H6",
+    "L9H17",
+    "L11H4",
+    "L11H7",
+    "L12H2",
+    "L14H23",
+    "L15H3",
+    "L16H4",
+    "L16H16",
+    "L16H24",
+    "L16H31",
+    "L17H5",
+    "L20H7",
+    "L21H25",
+    "L23H10",
+    "L25H18",
+    "L26H31",
+    "L27H23",
+    "L30H3"
+  ],
+  "reference_cohorts": [
+    [
+      "L1H1",
+      "L6H31",
+      "L8H28",
+      "L8H18",
+      "L9H26",
+      "L9H27",
+      "L11H11",
+      "L11H19",
+      "L12H31",
+      "L14H30",
+      "L15H4",
+      "L16H25",
+      "L16H5",
+      "L16H9",
+      "L16H30",
+      "L17H23",
+      "L20H31",
+      "L21H4",
+      "L23H20",
+      "L25H30",
+      "L26H24",
+      "L27H14",
+      "L30H28"
+    ],
+    [
+      "L1H20",
+      "L6H9",
+      "L8H25",
+      "L8H24",
+      "L9H1",
+      "L9H2",
+      "L11H11",
+      "L11H17",
+      "L12H4",
+      "L14H29",
+      "L15H14",
+      "L16H12",
+      "L16H5",
+      "L16H18",
+      "L16H22",
+      "L17H2",
+      "L20H0",
+      "L21H14",
+      "L23H21",
+      "L25H0",
+      "L26H7",
+      "L27H10",
+      "L30H20"
+    ],
+    [
+      "L1H13",
+      "L6H15",
+      "L8H31",
+      "L8H30",
+      "L9H7",
+      "L9H13",
+      "L11H12",
+      "L11H9",
+      "L12H27",
+      "L14H5",
+      "L15H16",
+      "L16H10",
+      "L16H26",
+      "L16H6",
+      "L16H14",
+      "L17H10",
+      "L20H31",
+      "L21H8",
+      "L23H9",
+      "L25H12",
+      "L26H18",
+      "L27H9",
+      "L30H15"
+    ],
+    [
+      "L1H17",
+      "L6H27",
+      "L8H18",
+      "L8H12",
+      "L9H11",
+      "L9H9",
+      "L11H2",
+      "L11H5",
+      "L12H31",
+      "L14H29",
+      "L15H12",
+      "L16H6",
+      "L16H15",
+      "L16H20",
+      "L16H7",
+      "L17H14",
+      "L20H27",
+      "L21H3",
+      "L23H3",
+      "L25H21",
+      "L26H14",
+      "L27H5",
+      "L30H30"
+    ]
+  ],
+  "reduction_blocks": {
+    "W": [
+      "L15H25",
+      "L17H1"
+    ],
+    "D": [
+      "L16H1",
+      "L16H21"
+    ],
+    "P": [
+      "L18H18",
+      "L18H19"
+    ],
+    "A": [
+      "L21H6",
+      "L21H18",
+      "L22H5",
+      "L27H6"
+    ],
+    "N": [
+      "L13H10",
+      "L17H3",
+      "L18H24",
+      "L19H16",
+      "L20H1",
+      "L23H15",
+      "L26H23",
+      "L30H18"
+    ],
+    "R6": [
+      "L6H24",
+      "L8H15",
+      "L14H23",
+      "L15H3",
+      "L16H31",
+      "L20H7"
+    ],
+    "T": [
+      "L14H26",
+      "L17H17",
+      "L17H24",
+      "L19H22",
+      "L21H23",
+      "L25H17",
+      "L30H13"
+    ],
+    "U": [
+      "L13H18",
+      "L24H19"
+    ]
+  },
+  "local_S43": [
+    {
+      "source": "L13H18",
+      "sites": [
+        "fact1_mother",
+        "fact3_mother",
+        "fact3_template"
+      ],
+      "receivers": [
+        "L16H1",
+        "L16H21",
+        "L18H18",
+        "L18H19"
+      ],
+      "channels": [
+        "K",
+        "V"
+      ],
+      "mediators": [
+        [
+          "MLP13"
+        ],
+        [
+          "MLP14"
+        ],
+        [
+          "MLP13",
+          "MLP14"
+        ]
+      ],
+      "configs": 72
+    },
+    {
+      "source": "L8H15",
+      "sites": [
+        "query_sentence",
+        "other_answer_fact_sentence"
+      ],
+      "receivers": [
+        "L16H1",
+        "L16H21",
+        "L18H18",
+        "L18H19"
+      ],
+      "channels": [
+        "K",
+        "V"
+      ],
+      "mediators": [
+        [],
+        [
+          "MLP8"
+        ],
+        [
+          "MLP9"
+        ],
+        [
+          "MLP8",
+          "MLP9"
+        ]
+      ],
+      "configs": 64
+    },
+    {
+      "source": "L16H31",
+      "sites": [
+        "colon"
+      ],
+      "receivers": [
+        "L19H16",
+        "L21H6",
+        "L21H18",
+        "L22H5",
+        "residual_to_logits"
+      ],
+      "channels": [
+        "Q_or_bypass"
+      ],
+      "mediators": [
+        [],
+        [
+          "MLP16"
+        ],
+        [
+          "block17"
+        ],
+        [
+          "block18"
+        ],
+        [
+          "MLP16",
+          "block17",
+          "block18"
+        ]
+      ],
+      "configs": 25
+    },
+    {
+      "source": "L20H7",
+      "sites": [
+        "colon"
+      ],
+      "receivers": [
+        "L23H15",
+        "L25H17",
+        "L27H6",
+        "L30H18",
+        "residual_to_logits"
+      ],
+      "channels": [
+        "Q_or_bypass"
+      ],
+      "mediators": [
+        [],
+        [
+          "MLP20"
+        ],
+        [
+          "block21"
+        ],
+        [
+          "block22"
+        ],
+        [
+          "MLP20",
+          "block21",
+          "block22"
+        ]
+      ],
+      "configs": 25
+    },
+    {
+      "source": "L26H23",
+      "sites": [
+        "colon"
+      ],
+      "receivers": [
+        "L30H13",
+        "L30H18",
+        "residual_to_logits"
+      ],
+      "channels": [
+        "Q_or_bypass"
+      ],
+      "mediators": [
+        [],
+        [
+          "MLP26"
+        ],
+        [
+          "block27"
+        ],
+        [
+          "block28"
+        ],
+        [
+          "MLP26",
+          "block27",
+          "block28"
+        ]
+      ],
+      "configs": 15
+    }
+  ],
+  "composed_chains": [
+    {
+      "source": "L15H25",
+      "sites": [
+        "query_child_last",
+        "query_sentence"
+      ],
+      "live_head_groups": [
+        [
+          "L16H1",
+          "L16H21"
+        ],
+        [
+          "L16H1"
+        ],
+        [
+          "L16H21"
+        ]
+      ],
+      "receivers": [
+        "L18H18",
+        "L18H19"
+      ],
+      "channel": "Q",
+      "configs": 12
+    },
+    {
+      "source": "L17H1",
+      "sites": [
+        "query_writer_union"
+      ],
+      "live_head_groups": [
+        [
+          "L18H18",
+          "L18H19"
+        ],
+        [
+          "L18H18"
+        ],
+        [
+          "L18H19"
+        ]
+      ],
+      "receivers": [
+        "L21H6",
+        "L21H18",
+        "L22H5",
+        "L27H6"
+      ],
+      "channel": "Q",
+      "configs": 12
+    }
+  ],
+  "controls": {
+    "L13H18_alternate_sites": [
+      "fact0_mother",
+      "fact2_mother",
+      "fact2_template"
+    ],
+    "mediators": [
+      "MLP13",
+      "MLP14"
+    ],
+    "configs": 24
+  },
+  "S43_config_cap": 249,
+  "S43_additional_direct_comparator_cap": 56,
+  "S43_scientific_registry_cap": 305,
+  "S43_rounds": 1,
+  "S43_extension_claim_cap": 16,
+  "heldout": "sealed",
+  "S44": {
+    "unit": "groups/mechanisms only",
+    "enable_four_condition_panel": true,
+    "conditions": [
+      "x00",
+      "x10",
+      "x01",
+      "x11"
+    ],
+    "final_configs": [
+      "full",
+      "Cstar",
+      "Cstar_minus_RI_members",
+      "Cstar_minus_nonRI_members",
+      "full_minus_O3_at_colon",
+      "full_minus_RI23_at_all_test"
+    ],
+    "independent_configs": [
+      "full",
+      "full_minus_O3_at_colon",
+      "full_minus_RI23_at_all_test"
+    ],
+    "orders": 2,
+    "core_families": 20,
+    "max_configs": 6,
+    "primary_baseline": "LOFO role mean",
+    "extension": "same six configurations to 89 discovery families only if a C-vs-full condition accuracy discrepancy exceeds 5 points or B reverses sign; no new search"
+  },
+  "S45": {
+    "initial_configs": [
+      "full",
+      "all_test_heads_mean",
+      "C0"
+    ],
+    "fallback_config": "C0_plus_R17_if_C0_fails",
+    "scope": "all test positions; MLPs/demos/prefix live",
+    "faithfulness": {
+      "F_min": 0.8,
+      "F_max": 1.2,
+      "L_max": 0.2,
+      "condition_accuracy_loss_max": 0.05
+    },
+    "reduction": "group-first greedy, recompute after accepted removal, at most two passes",
+    "reduction_trial_cap": 96,
+    "completeness_groups": [
+      "W",
+      "D",
+      "P",
+      "A",
+      "N",
+      "RI_current",
+      "nonRI_current",
+      "R6"
+    ],
+    "group_intersection_with_C": true,
+    "RI_current": "C intersect RI31 (initially RI14)",
+    "nonRI_current": "C minus RI31 (initially nonRI19)",
+    "final_baseline_sensitivity": "paired donors on identical masks, both conditions",
+    "single_head_tests": "not part of S44; only a later explicitly targeted C-background membership question, no exhaustive sweep"
+  },
+  "dependencies": [
+    [
+      "S43_local",
+      "final_route_interpretation"
+    ],
+    [
+      "S45_C0_pilot",
+      "S45_reduction"
+    ],
+    [
+      "S45_reduction",
+      "S44_final_Cstar_cells"
+    ],
+    [
+      "S44_final_Cstar_cells",
+      "S45_final_joint_acceptance"
+    ],
+    [
+      "S45_final_joint_acceptance",
+      "freeze_then_heldout"
+    ]
+  ],
+  "may_run_in_parallel": [
+    "S43_local",
+    "S45_C0_pilot",
+    "S44_three_fixed_full_model_configs"
+  ]
+}

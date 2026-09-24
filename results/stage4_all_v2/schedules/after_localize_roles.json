@@ -1,0 +1,112 @@
+{
+  "policy": {
+    "version": 1,
+    "protocol": "stage4_design_v2",
+    "seed": 20260923,
+    "metric": "first divergent clean-minus-corrupt logits; prefix teacher forced",
+    "endpoint": "one receiver head at original final colon; K/V at source positions",
+    "freeze": "post-normalization residual branches; source attention live",
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "gate_inert": 0.001,
+    "gate_replication": 0.05,
+    "gate_reconstruction": 0.02,
+    "full_route_cap": 96,
+    "controls_top": 24
+  },
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "configs": [
+    {
+      "source": 434,
+      "site": "fact0_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact0_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact0_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact0_template:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact1_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact1_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact1_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact1_template:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact2_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact2_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact2_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact2_template:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact3_mother",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact3_mother:single:434:"
+    },
+    {
+      "source": 434,
+      "site": "fact3_template",
+      "kind": "single",
+      "receiver": 434,
+      "channel": "",
+      "panel": "coverage_localize",
+      "id": "434:fact3_template:single:434:"
+    }
+  ],
+  "population": "core",
+  "directions": [
+    "noise"
+  ],
+  "parent_schedule_hash": "473d8b33e7e7bc7271e65db5907863c1d0a33ea872833bb76bbd69d7ff52b1de",
+  "parent_runs": {
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/localize_roles_r0": "fc27f9b51f436fc703a9671fb9a11d776eeecf4101284d9133d17d56f012937f",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/localize_roles_r1": "4489fc16d525088e03e00adbc2e512a2e0392adc45fe527e8b923432711951bd",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/localize_roles_r2": "8c7391d40e077c2ed8c0230b155a6f76eae05cd33f821eef313ad036e4c2a5ee"
+  },
+  "coverage_retained": [
+    434,
+    787
+  ],
+  "coverage_colon": [
+    787
+  ],
+  "coverage_source_sites": [],
+  "phase": "localize_slots"
+}

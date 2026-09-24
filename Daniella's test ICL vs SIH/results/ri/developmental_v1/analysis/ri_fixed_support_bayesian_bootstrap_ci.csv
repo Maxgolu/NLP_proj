@@ -1,0 +1,25 @@
+step_from,step_to,scope,metric,bootstrap_type,n_fixed_heads,observed_delta,ci_2_5,ci_97_5,fraction_bootstrap_positive,n_bootstrap,min_scored_both_endpoints,resampling_unit
+600,850,COMPARE,conditional_ri_fixed_support,paired_bayesian_cluster,699,-0.0005990373316943076,-0.0021341612858703533,0.0007711255089959041,0.2208,5000,10,20-text-group chunk
+600,850,CONJUNCTION,conditional_ri_fixed_support,paired_bayesian_cluster,724,0.0009422277264364287,-0.0016907905787483446,0.0028423247838480718,0.796,5000,10,20-text-group chunk
+600,850,EVALUATE-FOR,conditional_ri_fixed_support,paired_bayesian_cluster,813,-0.0017276984437496895,-0.004675616892949697,0.0010355861000249601,0.0944,5000,10,20-text-group chunk
+600,850,FEATURE-OF,conditional_ri_fixed_support,paired_bayesian_cluster,766,-0.00031256446836523677,-0.0029127915971517266,0.002562636508753211,0.3664,5000,10,20-text-group chunk
+600,850,HYPONYM-OF,conditional_ri_fixed_support,paired_bayesian_cluster,805,0.00041283101522467114,-0.00187715292064629,0.0027597753801444705,0.6138,5000,10,20-text-group chunk
+600,850,PART-OF,conditional_ri_fixed_support,paired_bayesian_cluster,799,-0.0011236817483073896,-0.0038952623864947802,0.0019313065773536341,0.248,5000,10,20-text-group chunk
+600,850,USED-FOR,conditional_ri_fixed_support,paired_bayesian_cluster,800,0.00012536130547095847,-0.001687955816811916,0.001742819797605378,0.5488,5000,10,20-text-group chunk
+600,850,RELATION_BALANCED_OVERALL,conditional_ri_fixed_support,paired_bayesian_cluster,5406,-0.000326080277854926,-0.0011760627315575186,0.0004523006859371327,0.1932,5000,10,20-text-group chunk
+600,900,COMPARE,conditional_ri_fixed_support,paired_bayesian_cluster,685,-0.0009706428083076923,-0.0028549537829872166,0.0010717939961517608,0.1838,5000,10,20-text-group chunk
+600,900,CONJUNCTION,conditional_ri_fixed_support,paired_bayesian_cluster,716,0.0009531261667484608,-0.001565760832035928,0.0028195959709057016,0.7972,5000,10,20-text-group chunk
+600,900,EVALUATE-FOR,conditional_ri_fixed_support,paired_bayesian_cluster,813,-0.0006048527864113834,-0.003542292155381886,0.002019172246897536,0.2744,5000,10,20-text-group chunk
+600,900,FEATURE-OF,conditional_ri_fixed_support,paired_bayesian_cluster,761,0.00015671552737378525,-0.0026493745181657325,0.002696033520225533,0.506,5000,10,20-text-group chunk
+600,900,HYPONYM-OF,conditional_ri_fixed_support,paired_bayesian_cluster,798,0.002306091325899373,-0.00031435574689094476,0.00507246127487475,0.955,5000,10,20-text-group chunk
+600,900,PART-OF,conditional_ri_fixed_support,paired_bayesian_cluster,786,-0.0028683971346259024,-0.005677315583395529,-6.561438699190071e-05,0.023,5000,10,20-text-group chunk
+600,900,USED-FOR,conditional_ri_fixed_support,paired_bayesian_cluster,785,-9.848377505944361e-05,-0.0021864553363917204,0.0019248626183594809,0.4328,5000,10,20-text-group chunk
+600,900,RELATION_BALANCED_OVERALL,conditional_ri_fixed_support,paired_bayesian_cluster,5344,-0.00016092049776897377,-0.0010944993904776382,0.0006933788493235233,0.3032,5000,10,20-text-group chunk
+600,1000,COMPARE,conditional_ri_fixed_support,paired_bayesian_cluster,678,0.0001787608862876544,-0.002819436524972658,0.003404731177219208,0.5414,5000,10,20-text-group chunk
+600,1000,CONJUNCTION,conditional_ri_fixed_support,paired_bayesian_cluster,698,0.003730613393387594,0.0011718775428143518,0.005798948365041116,0.9974,5000,10,20-text-group chunk
+600,1000,EVALUATE-FOR,conditional_ri_fixed_support,paired_bayesian_cluster,796,-0.0004517217626972131,-0.0030573119646900722,0.0018996832625401228,0.3246,5000,10,20-text-group chunk
+600,1000,FEATURE-OF,conditional_ri_fixed_support,paired_bayesian_cluster,735,0.000460085757371817,-0.0036753020176253054,0.0036451496239375777,0.5066,5000,10,20-text-group chunk
+600,1000,HYPONYM-OF,conditional_ri_fixed_support,paired_bayesian_cluster,773,0.003681569595374065,-0.0007412054750970145,0.007441281465708114,0.9488,5000,10,20-text-group chunk
+600,1000,PART-OF,conditional_ri_fixed_support,paired_bayesian_cluster,759,-0.0019829847865743544,-0.004915366651577652,0.0010536736970413313,0.1028,5000,10,20-text-group chunk
+600,1000,USED-FOR,conditional_ri_fixed_support,paired_bayesian_cluster,766,0.001040096533231033,-0.001709661661445921,0.003324342384683292,0.7762,5000,10,20-text-group chunk
+600,1000,RELATION_BALANCED_OVERALL,conditional_ri_fixed_support,paired_bayesian_cluster,5205,0.0009509170880543788,-0.00012893108909721205,0.001853191729001761,0.9524,5000,10,20-text-group chunk

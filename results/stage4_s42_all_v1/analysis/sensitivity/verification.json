@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "schedule_hash": "03fca3fe79616ab26511ccadee76a1f90c3946735214cdef21d62b1fb6c2db2b",
+  "files": {
+    "endpoint_families.csv": "e2df37d278187b30a29258f6fc5657ca8e4e910ed36fc2cf1832fea07cc9e5d2",
+    "endpoint_summary.csv": "4baf58c22fc69db4081705f5e1337b02c5abb552fff25539f75a1584cf4a77e3",
+    "contrast_families.csv": "7f8bdfe4978b17c8ee67a6c1a3afad3856ee918dde849de1864fcd9417002483",
+    "contrast_summary.csv": "866db77b74183a1630088d2643789d03a72afd615ab398b9b663a7013855c40a",
+    "strata.csv": "4a89437f121fd43d89b6bc39d15f81116513d1a9a2ce63818142ef56bd07668a",
+    "summary.json": "53e9fa23007837c99a0d27e2104f76efbc37cf0c182c403884143bc9c1e19dfb",
+    "additional_families.csv": "05d35fe81622d3b0860990e9d2ec8f6f02536ebca7352695d8bc2c991689d1e1",
+    "candidate_accuracy.csv": "b9d20abe51ab8ecefec34b3f76b251c5591f3376c4709cf69428a462b7aad31b",
+    "g3_diagnostics.csv": "c8d2b83cb2672184c32c025396fc6c305f19ef89e692f64599eb94ef332b27d9",
+    "blocking_ratios.json": "a28c2ba42dca22116336aa2427e0f4e69f9d4768e5f3d8294ec6c5c5b27a9f16"
+  },
+  "records": 22072,
+  "reused": 0,
+  "new": 22072,
+  "interpretation": "Adaptive discovery summaries and bootstrap intervals are descriptive, not held-out validation."
+}

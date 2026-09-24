@@ -1,0 +1,952 @@
+{
+  "policy": {
+    "version": 1,
+    "seed": 20260923,
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "bootstrap_draws": 20000,
+    "g1_common_cap": 128,
+    "g1_extension_contrasts": 16,
+    "mean_min_families": 10,
+    "mean_scope": "test facts/question/colon; demonstrations and answer prefix live",
+    "mean_weighting": "events within family, then equal families; both orders and variants",
+    "mean_evaluation": "leave-one-family-out",
+    "K_rule": "smallest prefix with symmetric donor clean-minus-corrupt gap fraction in [0.3,0.8]; otherwise closest to 0.55",
+    "mean_reverse": "corrupted-recipient mean replacement; positive restore sign is not literal clean restoration",
+    "split_rule": "retained group interaction/conditional effect: prior-sign halves and pair of largest absolute conditional effects; within original cap",
+    "sensitivity_rule": "repeat selected extended contrasts in both directions, including those not retained after extension; other core-only G1 claims remain provisional",
+    "scope": "S4.2 G1/blocking/G2/G3 only; no mediated search or circuit/heldout execution"
+  },
+  "model": {
+    "model_id": "allenai/OLMo-2-1124-7B",
+    "revision": "7df9a82518afdecae4e8c026b27adccc8c1f0032",
+    "requested_revision": "main"
+  },
+  "proposal": {
+    "status": "Data-informed S4.2 proposal; not GPU implementation or submitted schedule",
+    "groups": [
+      {
+        "id": "O1",
+        "type": "outgoing",
+        "source": "L13H10",
+        "site": "query_sentence",
+        "members": [
+          "L16H1",
+          "L17H3",
+          "L18H18",
+          "L18H19"
+        ],
+        "reason": "V and K routes; mixed signs",
+        "unique_within_group": 9,
+        "intervention_site": "colon"
+      },
+      {
+        "id": "O2",
+        "type": "outgoing",
+        "source": "L15H25",
+        "site": "query_child_last",
+        "members": [
+          "L16H1",
+          "L16H21"
+        ],
+        "reason": "Both V routes extend in both directions",
+        "unique_within_group": 3,
+        "intervention_site": "colon"
+      },
+      {
+        "id": "O3",
+        "type": "outgoing",
+        "source": "L17H1",
+        "site": "query_mother",
+        "members": [
+          "L18H18",
+          "L18H19",
+          "L18H24",
+          "L19H16",
+          "L20H1",
+          "L22H5",
+          "L27H6"
+        ],
+        "reason": "One common source mask with all seven V routes extended",
+        "unique_within_group": 15,
+        "intervention_site": "colon"
+      },
+      {
+        "id": "O4",
+        "type": "outgoing",
+        "source": "L17H3",
+        "site": "colon",
+        "members": [
+          "L18H18",
+          "L18H19"
+        ],
+        "reason": "Two opposing Q routes",
+        "unique_within_group": 3,
+        "intervention_site": "colon"
+      },
+      {
+        "id": "I1",
+        "type": "incoming",
+        "receiver": "L27H6",
+        "channel": "Q",
+        "site": "colon",
+        "members": [
+          "L18H18",
+          "L18H19",
+          "L19H16",
+          "L20H1",
+          "L23H15",
+          "L25H17"
+        ],
+        "reason": "Highest ranked incoming group",
+        "unique_within_group": 13,
+        "intervention_site": "colon"
+      },
+      {
+        "id": "I2",
+        "type": "incoming",
+        "receiver": "L21H23",
+        "channel": "KV",
+        "site": "colon",
+        "members": [
+          "L17H24",
+          "L18H18",
+          "L18H19",
+          "L19H16",
+          "L20H1"
+        ],
+        "reason": "KV/V identical node roster deduplicated; L17H24 remains core-only for KV",
+        "unique_within_group": 11,
+        "intervention_site": "colon"
+      },
+      {
+        "id": "I3",
+        "type": "incoming",
+        "receiver": "L30H18",
+        "channel": "Q",
+        "site": "colon",
+        "members": [
+          "L18H18",
+          "L18H19",
+          "L20H1",
+          "L23H15",
+          "L25H17"
+        ],
+        "reason": "Next distinct incoming group",
+        "unique_within_group": 11,
+        "intervention_site": "colon"
+      },
+      {
+        "id": "I4",
+        "type": "incoming",
+        "receiver": "L18H18",
+        "channel": "Q",
+        "site": "colon",
+        "members": [
+          "L16H1",
+          "L16H21",
+          "L17H3"
+        ],
+        "reason": "Same source roster also reaches L18H19 Q; one node-group measurement",
+        "unique_within_group": 7,
+        "intervention_site": "colon"
+      }
+    ],
+    "g1_unique_colon_node_configurations": 49,
+    "g1_endpoint_evaluations_core": 1960,
+    "group_measurements": [
+      [
+        "L16H1"
+      ],
+      [
+        "L16H21"
+      ],
+      [
+        "L17H24"
+      ],
+      [
+        "L17H3"
+      ],
+      [
+        "L18H18"
+      ],
+      [
+        "L18H19"
+      ],
+      [
+        "L18H24"
+      ],
+      [
+        "L19H16"
+      ],
+      [
+        "L20H1"
+      ],
+      [
+        "L22H5"
+      ],
+      [
+        "L23H15"
+      ],
+      [
+        "L25H17"
+      ],
+      [
+        "L27H6"
+      ],
+      [
+        "L16H1",
+        "L16H21"
+      ],
+      [
+        "L16H1",
+        "L17H3"
+      ],
+      [
+        "L16H21",
+        "L17H3"
+      ],
+      [
+        "L18H18",
+        "L18H19"
+      ],
+      [
+        "L16H1",
+        "L16H21",
+        "L17H3"
+      ],
+      [
+        "L16H1",
+        "L17H3",
+        "L18H18"
+      ],
+      [
+        "L16H1",
+        "L17H3",
+        "L18H19"
+      ],
+      [
+        "L16H1",
+        "L18H18",
+        "L18H19"
+      ],
+      [
+        "L17H3",
+        "L18H18",
+        "L18H19"
+      ],
+      [
+        "L16H1",
+        "L17H3",
+        "L18H18",
+        "L18H19"
+      ],
+      [
+        "L17H24",
+        "L18H18",
+        "L18H19",
+        "L19H16"
+      ],
+      [
+        "L17H24",
+        "L18H18",
+        "L18H19",
+        "L20H1"
+      ],
+      [
+        "L17H24",
+        "L18H18",
+        "L19H16",
+        "L20H1"
+      ],
+      [
+        "L17H24",
+        "L18H19",
+        "L19H16",
+        "L20H1"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L19H16",
+        "L20H1"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L20H1",
+        "L23H15"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L20H1",
+        "L25H17"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L23H15",
+        "L25H17"
+      ],
+      [
+        "L18H18",
+        "L20H1",
+        "L23H15",
+        "L25H17"
+      ],
+      [
+        "L18H19",
+        "L20H1",
+        "L23H15",
+        "L25H17"
+      ],
+      [
+        "L17H24",
+        "L18H18",
+        "L18H19",
+        "L19H16",
+        "L20H1"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L19H16",
+        "L20H1",
+        "L23H15"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L19H16",
+        "L20H1",
+        "L25H17"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L19H16",
+        "L23H15",
+        "L25H17"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L20H1",
+        "L23H15",
+        "L25H17"
+      ],
+      [
+        "L18H18",
+        "L19H16",
+        "L20H1",
+        "L23H15",
+        "L25H17"
+      ],
+      [
+        "L18H19",
+        "L19H16",
+        "L20H1",
+        "L23H15",
+        "L25H17"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L18H24",
+        "L19H16",
+        "L20H1",
+        "L22H5"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L18H24",
+        "L19H16",
+        "L20H1",
+        "L27H6"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L18H24",
+        "L19H16",
+        "L22H5",
+        "L27H6"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L18H24",
+        "L20H1",
+        "L22H5",
+        "L27H6"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L19H16",
+        "L20H1",
+        "L22H5",
+        "L27H6"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L19H16",
+        "L20H1",
+        "L23H15",
+        "L25H17"
+      ],
+      [
+        "L18H18",
+        "L18H24",
+        "L19H16",
+        "L20H1",
+        "L22H5",
+        "L27H6"
+      ],
+      [
+        "L18H19",
+        "L18H24",
+        "L19H16",
+        "L20H1",
+        "L22H5",
+        "L27H6"
+      ],
+      [
+        "L18H18",
+        "L18H19",
+        "L18H24",
+        "L19H16",
+        "L20H1",
+        "L22H5",
+        "L27H6"
+      ]
+    ],
+    "g1_max_common_configurations": 128,
+    "full_discovery_group_contrast_cap": 16,
+    "g2": {
+      "ri31": [
+        "L1H27",
+        "L6H24",
+        "L8H8",
+        "L8H15",
+        "L9H6",
+        "L9H17",
+        "L11H4",
+        "L11H7",
+        "L12H2",
+        "L14H23",
+        "L15H3",
+        "L16H1",
+        "L16H4",
+        "L16H16",
+        "L16H21",
+        "L16H24",
+        "L16H31",
+        "L17H5",
+        "L17H24",
+        "L18H19",
+        "L19H16",
+        "L20H7",
+        "L21H25",
+        "L22H5",
+        "L23H10",
+        "L23H15",
+        "L25H18",
+        "L26H23",
+        "L26H31",
+        "L27H23",
+        "L30H3"
+      ],
+      "positive": [
+        "L16H1",
+        "L16H21",
+        "L17H24",
+        "L18H19",
+        "L22H5"
+      ],
+      "negative": [
+        "L19H16",
+        "L23H15",
+        "L26H23"
+      ],
+      "residual23": [
+        "L1H27",
+        "L6H24",
+        "L8H8",
+        "L8H15",
+        "L9H6",
+        "L9H17",
+        "L11H4",
+        "L11H7",
+        "L12H2",
+        "L14H23",
+        "L15H3",
+        "L16H4",
+        "L16H16",
+        "L16H24",
+        "L16H31",
+        "L17H5",
+        "L20H7",
+        "L21H25",
+        "L23H10",
+        "L25H18",
+        "L26H31",
+        "L27H23",
+        "L30H3"
+      ],
+      "reference_cohorts": [
+        [
+          "L1H1",
+          "L6H31",
+          "L8H28",
+          "L8H18",
+          "L9H26",
+          "L9H27",
+          "L11H11",
+          "L11H19",
+          "L12H31",
+          "L14H30",
+          "L15H4",
+          "L16H25",
+          "L16H5",
+          "L16H9",
+          "L16H30",
+          "L17H23",
+          "L20H31",
+          "L21H4",
+          "L23H20",
+          "L25H30",
+          "L26H24",
+          "L27H14",
+          "L30H28"
+        ],
+        [
+          "L1H20",
+          "L6H9",
+          "L8H25",
+          "L8H24",
+          "L9H1",
+          "L9H2",
+          "L11H11",
+          "L11H17",
+          "L12H4",
+          "L14H29",
+          "L15H14",
+          "L16H12",
+          "L16H5",
+          "L16H18",
+          "L16H22",
+          "L17H2",
+          "L20H0",
+          "L21H14",
+          "L23H21",
+          "L25H0",
+          "L26H7",
+          "L27H10",
+          "L30H20"
+        ],
+        [
+          "L1H13",
+          "L6H15",
+          "L8H31",
+          "L8H30",
+          "L9H7",
+          "L9H13",
+          "L11H12",
+          "L11H9",
+          "L12H27",
+          "L14H5",
+          "L15H16",
+          "L16H10",
+          "L16H26",
+          "L16H6",
+          "L16H14",
+          "L17H10",
+          "L20H31",
+          "L21H8",
+          "L23H9",
+          "L25H12",
+          "L26H18",
+          "L27H9",
+          "L30H15"
+        ],
+        [
+          "L1H17",
+          "L6H27",
+          "L8H18",
+          "L8H12",
+          "L9H11",
+          "L9H9",
+          "L11H2",
+          "L11H5",
+          "L12H31",
+          "L14H29",
+          "L15H12",
+          "L16H6",
+          "L16H15",
+          "L16H20",
+          "L16H7",
+          "L17H14",
+          "L20H27",
+          "L21H3",
+          "L23H3",
+          "L25H21",
+          "L26H14",
+          "L27H5",
+          "L30H30"
+        ]
+      ],
+      "K_prefix_order": [
+        "L21H18",
+        "L22H5",
+        "L21H6",
+        "L27H6"
+      ],
+      "K_site": "colon",
+      "candidate_site": "all_original_prompt",
+      "K_target_gap_fraction": [
+        0.3,
+        0.8
+      ],
+      "K_fallback_closest_to": 0.55
+    },
+    "g3": {
+      "head": "L26H31",
+      "site": "colon",
+      "backgrounds": [
+        [],
+        [
+          "L21H18"
+        ],
+        [
+          "L21H18",
+          "L22H5",
+          "L21H6"
+        ],
+        [
+          "L21H18",
+          "L22H5",
+          "L21H6",
+          "L27H6"
+        ]
+      ],
+      "downstream_attention_null": [
+        "L27H6"
+      ]
+    },
+    "blocking": [
+      {
+        "source": "L13H10",
+        "source_masks": [
+          "query_sentence"
+        ],
+        "receivers": [
+          "L16H1",
+          "L17H3",
+          "L18H18",
+          "L18H19"
+        ],
+        "receiver_site": "colon",
+        "both_directions": true
+      },
+      {
+        "source": "L15H25",
+        "source_masks": [
+          "query_child_last",
+          "query_sentence"
+        ],
+        "receivers": [
+          "L16H1",
+          "L16H21"
+        ],
+        "receiver_site": "colon",
+        "both_directions": true
+      },
+      {
+        "source": "L17H1",
+        "source_masks": [
+          "query_writer_union",
+          "query_sentence"
+        ],
+        "receivers": [
+          "L18H18",
+          "L18H19",
+          "L18H24",
+          "L19H16",
+          "L20H1",
+          "L22H5",
+          "L27H6"
+        ],
+        "receiver_site": "colon",
+        "both_directions": true
+      },
+      {
+        "source": "L17H3",
+        "source_masks": [
+          "colon"
+        ],
+        "receivers": [
+          "L18H18",
+          "L18H19"
+        ],
+        "receiver_site": "colon",
+        "both_directions": true
+      }
+    ],
+    "separately_targeted": [
+      {
+        "source": "L14H26",
+        "site": "query_sentence",
+        "receiver": "L16H1",
+        "reason": "Singleton; do not invent an outgoing coalition"
+      }
+    ],
+    "unresolved": [
+      "L13H18: local mediated-path expansion warranted",
+      "L21H18 and L21H6: weak/missing mapped incoming support does not erase prior causal effects",
+      "L26H23 and L26H31: conditional RI/backup audit remains necessary"
+    ],
+    "boundaries": [
+      "L17H24 to L21H23 KV is core-only; extended V falls below selection rule",
+      "No group, membership or faithfulness result has yet been measured"
+    ]
+  },
+  "core_families": [
+    0,
+    16,
+    32,
+    48,
+    56,
+    64,
+    82,
+    96,
+    98,
+    102,
+    116,
+    130,
+    150,
+    154,
+    162,
+    176,
+    178,
+    186,
+    192,
+    196
+  ],
+  "gate_families": [
+    0,
+    16,
+    168
+  ],
+  "families": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    12,
+    14,
+    16,
+    20,
+    24,
+    26,
+    28,
+    30,
+    32,
+    34,
+    36,
+    38,
+    40,
+    44,
+    46,
+    48,
+    50,
+    52,
+    54,
+    56,
+    58,
+    60,
+    62,
+    64,
+    66,
+    68,
+    70,
+    72,
+    76,
+    78,
+    80,
+    82,
+    84,
+    86,
+    88,
+    90,
+    92,
+    94,
+    96,
+    98,
+    100,
+    102,
+    104,
+    108,
+    110,
+    112,
+    114,
+    116,
+    118,
+    120,
+    122,
+    124,
+    126,
+    128,
+    130,
+    132,
+    134,
+    136,
+    138,
+    140,
+    142,
+    148,
+    150,
+    152,
+    154,
+    156,
+    158,
+    160,
+    162,
+    166,
+    168,
+    170,
+    172,
+    174,
+    176,
+    178,
+    180,
+    182,
+    186,
+    188,
+    192,
+    194,
+    196,
+    198
+  ],
+  "mean_keys": [
+    "*|*|*",
+    "*|child|*",
+    "*|child|first",
+    "*|child|interior",
+    "*|child|last",
+    "*|child|single",
+    "*|colon|*",
+    "*|colon|fixed",
+    "*|fact_period|*",
+    "*|fact_period|fixed",
+    "*|fact_template_0|*",
+    "*|fact_template_0|fixed",
+    "*|fact_template_1|*",
+    "*|fact_template_1|fixed",
+    "*|fact_template_2|*",
+    "*|fact_template_2|fixed",
+    "*|fact_template_3|*",
+    "*|fact_template_3|fixed",
+    "*|fixed_token_16533|*",
+    "*|fixed_token_16533|fixed",
+    "*|mother|*",
+    "*|mother|first",
+    "*|mother|interior",
+    "*|mother|last",
+    "*|mother|single",
+    "*|question_name|*",
+    "*|question_name|first",
+    "*|question_name|interior",
+    "*|question_name|last",
+    "*|question_name|single",
+    "*|question_template_0|*",
+    "*|question_template_0|fixed",
+    "*|question_template_1|*",
+    "*|question_template_1|fixed",
+    "*|question_template_2|*",
+    "*|question_template_2|fixed",
+    "*|question_template_3|*",
+    "*|question_template_3|fixed",
+    "*|question_template_4|*",
+    "*|question_template_4|fixed",
+    "*|question_template_5|*",
+    "*|question_template_5|fixed",
+    "*|question_template_6|*",
+    "*|question_template_6|fixed",
+    "*|question_template_7|*",
+    "*|question_template_7|fixed",
+    "0|child|first",
+    "0|child|interior",
+    "0|child|last",
+    "0|fact_period|fixed",
+    "0|fact_template_0|fixed",
+    "0|fact_template_1|fixed",
+    "0|fact_template_2|fixed",
+    "0|fact_template_3|fixed",
+    "0|mother|first",
+    "0|mother|interior",
+    "0|mother|last",
+    "0|mother|single",
+    "1|child|first",
+    "1|child|interior",
+    "1|child|last",
+    "1|child|single",
+    "1|fact_period|fixed",
+    "1|fact_template_0|fixed",
+    "1|fact_template_1|fixed",
+    "1|fact_template_2|fixed",
+    "1|fact_template_3|fixed",
+    "1|mother|first",
+    "1|mother|interior",
+    "1|mother|last",
+    "2|child|first",
+    "2|child|interior",
+    "2|child|last",
+    "2|fact_period|fixed",
+    "2|fact_template_0|fixed",
+    "2|fact_template_1|fixed",
+    "2|fact_template_2|fixed",
+    "2|fact_template_3|fixed",
+    "2|mother|first",
+    "2|mother|interior",
+    "2|mother|last",
+    "2|mother|single",
+    "3|child|first",
+    "3|child|interior",
+    "3|child|last",
+    "3|child|single",
+    "3|fact_period|fixed",
+    "3|fact_template_0|fixed",
+    "3|fact_template_1|fixed",
+    "3|fact_template_2|fixed",
+    "3|fact_template_3|fixed",
+    "3|mother|first",
+    "3|mother|interior",
+    "3|mother|last",
+    "answer|colon|fixed",
+    "question|question_name|first",
+    "question|question_name|interior",
+    "question|question_name|last",
+    "question|question_name|single",
+    "question|question_template_0|fixed",
+    "question|question_template_1|fixed",
+    "question|question_template_2|fixed",
+    "question|question_template_3|fixed",
+    "question|question_template_4|fixed",
+    "question|question_template_5|fixed",
+    "question|question_template_6|fixed",
+    "question|question_template_7|fixed",
+    "structure|fixed_token_16533|fixed"
+  ],
+  "pair_hash": "79f4c09a042998774890c2b8db158b53e28735dad40e3aae759bbe54d5fa89f0",
+  "source_hashes": {
+    "results\\stage4_inputs_v1\\plan.json": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+    "results\\stage4_review_20260924\\s42_proposal.json": "84128c5d495ac8ee8edf4fa5f79ad5f7c7404a00ab933305e0d9fe89b2b71913",
+    "results\\stage3_v1\\manifest.json": "ed43eee24932de367a0efc8015b96c7427369a7eee676d0f420b1322d624f090"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "K": [
+    "L21H18"
+  ],
+  "floor_warning": false,
+  "original_gap": 11.200063323974609,
+  "candidates": [
+    {
+      "K": [
+        "L21H18"
+      ],
+      "fraction": 0.6639212894121564,
+      "noise": 1.8519536972045898,
+      "restore": 1.912149143218994
+    },
+    {
+      "K": [
+        "L21H18",
+        "L22H5"
+      ],
+      "fraction": 0.45275391315904395,
+      "noise": 3.0237497329711913,
+      "restore": 3.105441093444824
+    },
+    {
+      "K": [
+        "L21H18",
+        "L22H5",
+        "L21H6"
+      ],
+      "fraction": 0.3156490190459264,
+      "noise": 3.811577033996582,
+      "restore": 3.8531972885131838
+    },
+    {
+      "K": [
+        "L21H18",
+        "L22H5",
+        "L21H6",
+        "L27H6"
+      ],
+      "fraction": -0.11422192758015307,
+      "noise": 6.2430727005004885,
+      "restore": 6.236283445358277
+    }
+  ],
+  "rule": "smallest prefix with symmetric donor clean-minus-corrupt gap fraction in [0.3,0.8]; otherwise closest to 0.55"
+}

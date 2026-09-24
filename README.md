@@ -10,10 +10,11 @@ confounds, the current priority became a controlled **single-hop causal audit**:
 > carry OLMo-2-7B's in-context relational ability, and does RI miss important
 > components of a larger circuit?
 
-Two-hop composition and checkpoint-development analyses remain later extensions.
-No circuit has yet been established.
+Two-hop composition remains a later extension. A separate checkpoint-development
+experiment is now completed and documented below. No sufficient causal circuit has
+yet been established.
 
-## Current status (23 September 2026)
+## Current status (24 September 2026)
 
 Model: base `allenai/OLMo-2-1124-7B`, revision
 `7df9a82518afdecae4e8c026b27adccc8c1f0032`, with 32 layers and 32 attention
@@ -66,18 +67,37 @@ heads. The model is used without fine-tuning.
   "is" (negative in 20/20 families); L15H25's child-last site is unresolved because the
   source-swap control itself exposes no mother preference. Independent check:
   `results/stage3_readout_review_20260922/Stage3_section1_5_analysis.md`.
-- Stage 4 (planning only, no GPU code or runs): proposed protocol
-  `חומר כתוב/Stage4_Protocol.tex` integrating
-  `Stage4_Circuits_and_Communication_preliminary.tex` and `Stage4_Experiment.tex`;
-  configuration registry `results/stage4_design_v1/` (`manifest_proposal.json`,
-  `seed_route_configurations.csv`). External review of Stage 3:
-  `results/stage3_review_20260922/Stage3_review.md`.
-- Stage 4 will test paths, group interventions, circuits and validation on the
-  components handed off in Section 10 of the Stage-3 report. It is deliberately
-  separate from Stage-3 individual-head characterization.
+- Stage 4.1: `stage4_all_v2` (Slurm 923239) completed and independently verified:
+  70,408 records, including controls, local refinements and both discovery extensions.
+  The map supports L17H1 fact-site V influence into L18H18/L18H19 and an upstream
+  L15H25–L16H1/L16H21 motif, alongside opposing routes and unresolved sources.
+  Separately measured edges do not establish a composed chain.
+- Stage 4.2: `stage4_s42_all_v1` (Slurm 924204) completed and analyzed:
+  51,904 records (44,754 new endpoints and 7,150 reused), all 49 numerical exports
+  reproduced locally. Group tests repeatedly implicate L18H18/L18H19; clamping O3
+  removes about 88–90% of L17H1's tested intervention effect. Residual RI participation
+  is heterogeneous and baseline-sensitive; the tested L26H31 backup is unsupported.
+  Fact order and donor-versus-mean replacement materially affect interpretation.
+- Current combined report: [Stage 4 PDF](output/pdf/Stage4_Experiment_Report.pdf);
+  [Overleaf sources](<חומר כתוב/Stage4_Overleaf/main.tex>). Sections 1–6 cover S4.1,
+  7–10 S4.2 results, 11 hypotheses/limits, and 12 the exact prospective S4.3–S4.5 plan.
+  Analysis/audits: `results/stage4_review_20260924/`,
+  `results/stage4_s42_readiness_20260924/`, `results/stage4_s42_analysis_20260924/`.
+- Stage 4.3–4.5 remain **planned, not implemented or submitted**. The revised plan
+  retains one bounded local expansion and removes the broad second search. S4.4
+  tests groups/mechanisms only; S4.4/S4.5 share cached measurements. The fixed local
+  routes, C0 pilot and full-model group panel can start independently; C-based
+  semantic tests wait for reduction/completeness. Exact named sets, caps and
+  conditional decisions are in `results/stage4_s42_analysis_20260924/next_stage_plan.json`.
+  The 87 held-out families remain sealed.
+- Developmental side experiment: completed ICL and RI checkpoint sweeps in
+  [Daniella's test ICL vs SIH](<Daniella's test ICL vs SIH/README.md>). This asks whether
+  behavioral ICL acquisition coincides with emerging SIH-like structure. The supplied
+  analysis finds an early source-routing increase near the ICL transition, but no
+  clear population-wide jump in conditional RI. This is temporal association,
+  not a causal demonstration or an exact replication of the original SIH result.
 
-The authoritative transition notes are in `RESEARCH_HANDOFF.md` (its top
-"UPDATE" section is the latest state). For the current method and evidence,
+The authoritative transition notes are in `RESEARCH_HANDOFF.md` (the top status section is the latest state). For the current method and evidence,
 read the files in this order:
 
 1. `חומר כתוב/Single_Hop_Methodology_stage1_updated.tex` (+ Section 4 and 5
@@ -90,18 +110,24 @@ read the files in this order:
 6. `חומר כתוב/Stage3_Results_and_Analysis.tex` (Stage-3 results and analysis,
    including the Section-7.7 readout; Overleaf copy `חומר כתוב/Stage3_Overleaf/main.tex`)
 7. `pilot_v2/RUNBOOK_stage3_v1.md`, `pilot_v2/RUNBOOK_stage3_readout.md` (run books)
-8. `חומר כתוב/Stage4_Protocol.tex` (proposed Stage-4 protocol; not yet implemented)
+8. `חומר כתוב/Stage4_Overleaf/main.tex` and `s42_results.tex` (current S4.1/S4.2
+   results and revised follow-up plan); `חומר כתוב/Stage4_Protocol.tex` is the
+   historical protocol, preserved rather than retroactively rewritten.
+9. `Daniella's test ICL vs SIH/README.md` (separate developmental experiment,
+   data provenance, execution order, results and reproduction limits).
 
 ## Documentation map
 
-There is one entry point: this file. Every other `README*`/`*_README*` is a
-**run book** for a specific experiment (commands to upload, submit, monitor,
-verify and download) written at the time of that run, or a historical record.
+This file is the project entry point. Experiment-specific READMEs explain their
+local data and evidence; `RUNBOOK_*` files contain operational instructions written
+at the time of a run. Status in old run books does not supersede the current handoff.
 
 | File | Role | Status |
 |---|---|---|
 | `README.md` (this file) | project entry point, status, reading order | current |
-| `RESEARCH_HANDOFF.md` | assistant/collaborator handoff, evidence hierarchy | current |
+| `RESEARCH_HANDOFF.md` | tracked collaborator handoff, evidence hierarchy | current |
+| `חומר כתוב/Stage4_Overleaf/` | combined S4.1/S4.2 report and exact follow-up design | current |
+| `Daniella's test ICL vs SIH/README.md` | developmental side-experiment guide and repository policy | current |
 | `pilot_v2/RUNBOOK_stage3_v1.md` | run book: `stage3_v1` (completed) — preparation, gate/run, analysis, transfer | current |
 | `pilot_v2/RUNBOOK_stage3_readout.md` | run book: Section-1.5 readout (`stage3_readout_v1`, job 918689, completed) — prepare, gate/run, analysis, transfer | current |
 | `pilot_v2/RUNBOOK_stage2_v1.md` | run book: `stage2_v1` (job 888691) | current |
@@ -261,22 +287,23 @@ non-finite vectors. Keep these distinctions explicit:
   scope, redundancy, nonlinear interactions, and the chosen output metric matter;
 - a list of intervention-sensitive heads is not an edge-validated circuit.
 
-Stage 3 passed these checks and characterized the heads individually. The next
-scientific stage (Stage 4) is path interventions between the localized writer sites
-(L17H1, L15H25) and the answer-position heads, downstream tests for the heads whose
-effects exceed their vocabulary projections, joint positive/negative-head
-interventions, and a minimal-circuit faithfulness evaluation on the held-out
-validation families. The pre-registered
-faithfulness criterion is at least 80% recovery of the full model's
-clean–corrupted logit-difference gap.
+Stage 3 characterized the heads individually; S4.1/S4.2 have now measured routes,
+joint interventions and conditional contributions. Retained-mechanism faithfulness,
+completeness, fact-by-query behavior and frozen held-out validation are still future
+work. The current prospective criteria and stopping rules are in Section 12 of the
+combined Stage-4 report; passing a single recovery score would not establish a
+complete or uniquely minimal circuit.
 
 ## Repository map
 
-- `pilot_v2/` — OLMo/Pythia runners, Stage 0–3 code (incl. the Section-1.5 readout),
+- `pilot_v2/` — OLMo/Pythia runners, Stage 0–4.2 code (incl. the Section-1.5 readout),
   Slurm wrappers, tests, model locks, and operational documentation.
 - `pilot_v3/` — later behavioral generators, tokenizer audits, and the current
   single-hop generator/data.
-- `results/` — downloaded run outputs, audits, and reports.
+- `results/` — versioned plans, run metadata, numerical summaries and audits;
+  local copies additionally contain raw outputs excluded from Git.
+- `Daniella's test ICL vs SIH/` — separate developmental checkpoint experiment.
+- `output/pdf/Stage4_Experiment_Report.pdf` — current compiled Stage-4 report.
 - `חומר כתוב/` — current methodology and research reports for Overleaf.
 - `research_history_overleaf_en.tex` — detailed pre-Phase-A research history.
 - `RESEARCH_HANDOFF.md` — current handoff, evidence hierarchy, and collaboration
@@ -289,3 +316,23 @@ The original proposal and course requirements are one directory above this
 repository. The final submission is an ACL-format paper limited to eight pages,
 excluding references and appendix; it must report reproducible settings,
 baselines, limitations, negative results, and an AI disclosure.
+
+## What is versioned and how to reproduce
+
+Git contains the code, tests, frozen plan/selection metadata, current report sources
+and figures, compact measured summaries, and the collaborator handoff. Stage-4
+raw worker chunks, mean-bank tensors, event dumps, copied runtime packages, archive
+bundles, temporary logs and duplicate analysis reproductions stay on OneDrive/cluster.
+Archive identities and package hashes are retained so restored data can be checked.
+The Overleaf ZIP is regenerable from its tracked directory and is not committed.
+
+Reading the reports and saved summaries needs no GPU. Re-running a raw-data audit
+requires restoring the named run archive and matching executed package to the paths
+in `RESEARCH_HANDOFF.md`; Git alone does not contain those raw measurements or model
+weights. The S4.2 review and audit code checks identities, coverage and reused records
+before interpretation. New S4.3–S4.5 runs are not part of this repository update.
+
+The developmental folder follows the same separation: generated input streams,
+clean notebook sources, small manifests, current summary tables/figures and two
+reports are versioned. Raw ICL predictions, RI chunks and large all-head tables remain
+external. Its README gives exact exclusions, checksums and preprocessing caveats.

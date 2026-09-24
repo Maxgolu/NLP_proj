@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "records": 51904,
+  "phases": [
+    "initial",
+    "conditional",
+    "refinement",
+    "extension",
+    "sensitivity"
+  ]
+}

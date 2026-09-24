@@ -1,0 +1,268 @@
+{
+  "policy": {
+    "version": 1,
+    "protocol": "stage4_design_v2",
+    "seed": 20260923,
+    "metric": "first divergent clean-minus-corrupt logits; prefix teacher forced",
+    "endpoint": "one receiver head at original final colon; K/V at source positions",
+    "freeze": "post-normalization residual branches; source attention live",
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "gate_inert": 0.001,
+    "gate_replication": 0.05,
+    "gate_reconstruction": 0.02,
+    "full_route_cap": 96,
+    "controls_top": 24
+  },
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "configs": [
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "426:query_sentence:head:513:KV"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "426:query_sentence:head:547:KV"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "474:query_sentence:head:513:KV"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "KV",
+      "panel": "P2",
+      "id": "505:query_child_last:head:513:KV"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "KV",
+      "panel": "P2",
+      "id": "505:query_child_last:head:533:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "V",
+      "panel": "P3",
+      "id": "513:colon:head:561:V"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "V",
+      "panel": "P3",
+      "id": "533:colon:head:561:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_is_token:head:594:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_is_token:head:595:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:594:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:595:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:709:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_period:head:594:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:624:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:641:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:709:V"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "568:colon:head:695:V"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "594:colon:head:695:V"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "595:colon:head:695:V"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "624:colon:head:695:V"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "641:colon:head:695:V"
+    }
+  ],
+  "population": "all",
+  "directions": [
+    "noise",
+    "restore"
+  ],
+  "parent_schedule_hash": "108c43ff13f22dd283d2788484f6da744c3c54f99ccaf555f25c8c15be0e32dd",
+  "parent_runs": {
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/refine_r0": "03cefa7fdd8483e7e5b0df7458db51d552309d86e123829039c6a9c2be4159f9",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/refine_r1": "82b01ff0f5443b3893930ec2e7711cdf626e021fee02bd003816b470c628054a",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/refine_r2": "f3b53bbb3b52afabf5fe002d3435c4770fc6e6e938de13a21742080a06c21596"
+  },
+  "prior_extension_hash": "f6023d68819de8ef6facf93c01fe35dca9b648761640f7f5a13eda077ae8d5c4",
+  "phase": "extension",
+  "overflow_ids": [
+    "545:query_mother:head:600:KV",
+    "545:query_period:head:595:KV",
+    "545:query_mother:head:870:KV",
+    "545:query_writer_union:head:870:V",
+    "595:colon:head:817:V",
+    "545:query_is_token:head:600:KV",
+    "594:colon:head:817:V",
+    "545:query_period:head:600:KV",
+    "545:query_mother:head:641:KV",
+    "426:query_sentence:head:595:KV",
+    "641:colon:head:817:V",
+    "545:query_writer_union:mlp:17:",
+    "545:query_is_token:head:709:KV",
+    "426:query_sentence:head:594:KV",
+    "545:query_mother:head:624:KV"
+  ],
+  "remaining_full_route_budget": 0
+}

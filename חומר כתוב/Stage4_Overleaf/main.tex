@@ -1,0 +1,232 @@
+% Standalone Overleaf project. Compiler: pdfLaTeX. Main document: main.tex.
+% S4.1 and S4.2 are measured; S4.3--S4.5 are prospective and unexecuted.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.15cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,array,longtable,graphicx}
+\usepackage{enumitem,float,placeins,xcolor}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{3em}
+\setlist{nosep,leftmargin=1.5em}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\newcommand{\E}{\mathbb{E}}
+\title{Experiment Stage 4: Causal Communication and RI Participation\\
+\large S4.1--S4.2 results and a bounded group-level follow-up plan}
+\author{Single-hop in-context mother-of reasoning\\OLMo-2-1124-7B}
+\date{24 September 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report combines the verified S4.1 route map with completed S4.2 group and conditional-intervention results in OLMo-2-1124-7B. S4.1 identifies strong fact-site V influence from L17H1 into L18H18/L18H19 and an upstream L15H25--L16H1/L16H21 motif, alongside opposing routes and unresolved sources. S4.2 confirms large joint effects involving the layer-18 pair and live-model dependence on route-supported receiver groups: clamping O3 removes about 88--90\% of L17H1's tested intervention effect. This ratio is not a unique mediation share. The RI audit extends 14 conditional candidates; the residual RI23 group is collectively non-negligible but its signed effect depends on the replacement baseline. L26H31 does not satisfy the backup rule in the tested backgrounds. Group effects remain order-dependent after accounting for the full model's own order-dependent confidence, and donor versus mean replacement can yield very different post-intervention accuracies. All 51,904 S4.2 records and 49 numerical exports reproduce locally. We distinguish measured findings from hypotheses and propose one bounded local S4.3 expansion, omitting broad search, followed by a shared S4.4/S4.5 measurement registry for group-only relational behavior and conditional head-mechanism evaluation. Exact head sets, caps, reuse rules and dependencies are stated. No sufficient circuit, new GPU result, universal semanticity claim or held-out validation is implied.
+\end{abstract}
+
+\newpage
+\setcounter{tocdepth}{1}
+\tableofcontents
+\newpage
+\section{Scope, provenance and verification}
+\label{sec:verification}
+Sections 1--6 document S4.1 as measured before the group audit. They analyze \file{stage4_all_v2}, Slurm job 923239, using the executed v2 package and actual adaptive schedules. The pinned model revision is
+\file{7df9a82518afdecae4e8c026b27adccc8c1f0032}. The recorded runtime is PyTorch 2.14.0+cu126 and Transformers 4.51.3 on node s-004. Six GPUs were arranged as three independent two-GPU workers. No new model run was performed for this analysis.
+
+The source archive SHA-256 is:
+\par{\footnotesize\file{30d3ed8dbb95808c426b7d8b3faa4f437b9962b9872a17a7dd8f63689848ac5f}}\par
+The downloaded package's declared hashes were checked against available package files and, for shared dependencies, exact matching local sources. All worker code hashes agree with the controller manifest. Every checksummed chunk was verified, and every expected pair/configuration/direction identifier was present exactly once in the appropriate phase. There were no unmarked JSON chunks. The original outputs were preserved.
+
+\begin{table}[htbp]\centering\small
+\input{tables/execution}
+\caption{Actual completed measurement schedule. Record counts include both directions in the extension phases. They exclude gate and capture forwards.}
+\end{table}
+
+There are 70,408 records: 70,328 newly measured endpoints and 80 reused Stage-2 Scope-P effects, explicitly labelled as reused. The 584-configuration seed preview was expanded by the measured coverage decisions to 769 configurations. All 21 measurement workers and the initial gate worker passed six-pair full-model gates and the mandatory tiny-model tests. Across saved gates, no-op, temporal-null, cross-position-null, QKV/output equivalence and saved patch/logit errors were zero; the maximum recorded SDPA reconstruction error was $6.10\times10^{-5}$. The 2,856 recorded per-configuration self-endpoint checks also had zero drift. These are checks of the implemented interventions, not evidence that every scientific hypothesis is correct.
+
+All four exported CSV tables in each of the seven measurement phases were regenerated and matched within $10^{-12}$ absolute/relative tolerance. The two interaction tables were reproduced, and all six adaptive scheduling decisions were reconstructed with identical scientific content. An independent arithmetic check recovered each new endpoint effect from its two answer logits. These checks establish internal integrity and reproducibility; they do not independently validate every modeling assumption.
+
+\section{What was measured}
+\label{sec:measurement}
+There are 89 discovery families, each in two orders (178 paired clean/corrupted inputs). Initial mapping uses the fixed 20-family/40-pair subset. The remaining 69 families are an expansion check, \emph{not} a pristine confirmatory population: earlier research stages already used them. The 87 held-out families were not opened.
+
+With a fixed clean-answer sign, the metric is
+\[
+ M(x)=z(y_c\mid x,p)-z(y_r\mid x,p),\qquad
+ I=M(x_c)-M(x_c;T_{r\to c}),\quad
+ J=M(x_r;T_{c\to r})-M(x_r).
+\]
+The shared answer prefix $p$ is teacher-forced and the first divergent answer token is scored. Positive $I$ means noising harms the clean-answer margin; positive $J$ means restoration improves it. Negative effects are preserved. Orders are averaged within family before equally weighting families. The measured full clean-minus-corrupted gap is 11.17046 logits. Intact candidate-margin accuracy is 178/178 in both conditions on this population; this is not a full-name generation metric.
+
+\textbf{A route is an answer intervention, not just an activation difference.}
+The source head's pre-output-projection $z=AV$ slice is replaced with its donor value. Its shared attention-output normalization stays live. Other intervening residual branch increments are frozen \emph{after} normalization. The resulting receiver channel is captured and injected in a fresh recipient run, with subsequent computation live. For a fact-site K/V route, injection occurs at the fact positions, but only the receiver head's original colon output row is released. For Q, injection is at the colon. MLP tests inject the changed local MLP input; bypass tests keep downstream branches frozen and the final normalization live.
+
+Thus a measured route is conditional on its declared recipient background and live/frozen boundaries. It does not prove a semantic code in an isolated head, establish an additive fraction of total importance, or prove that independently measured edges compose into an end-to-end chain. In particular, shared normalization prevents attributing a route to a linearly isolated normalized head contribution.
+
+\textbf{Fixed retention rule.} With $\tau=0.10$ logits, a coherent candidate has $|\bar I|\ge\tau$ and at least 70\% family sign agreement. A heterogeneous candidate has $\E_f|I_f|\ge\tau$ and at least 20\% of families with $|I_f|\ge\tau$. The thresholds prioritize measurements; they are not significance tests. We retain signed and absolute effects, direction, per-family variation and 20,000-draw family-bootstrap intervals (seed 20260923). All discovery intervals are descriptive after selection. No multiple-comparison-confirmed membership claim is made here.
+
+\section{Coverage changes the candidate map}
+\label{sec:coverage}
+\begin{table}[htbp]\centering\small
+\input{tables/coverage}
+\caption{Outside-inventory candidates on all 89 discovery families. Scope P covers original prompt positions; Scope F is the original colon.}
+\end{table}
+
+\textbf{L13H18 is a supported unresolved fact-site candidate.}
+Its P effect is $+0.314$, compared with F $+0.022$. On the common panel, the joint all-mother mask has effect $+0.230$ and the all-template mask $+0.149$. Slot localization retains fact1-mother, fact3-mother and fact3-template (zero-based slot names). These are jointly measured masks, not sums of token effects. Slot0 masks have zero donor effects in these measurements; this is not a general statement of positional irrelevance.
+
+The resulting 138 direct configurations from the three retained source masks (132 head-channel and six MLP tests) yield no retained route. The largest mean absolute family effect is only $0.035$, for fact3-template to L18H18 K. This supports a bounded local mediation follow-up in S4.3. It does not exclude L13H18, prove that it is redundant, or justify adding it to a specific G1 consumer group without evidence.
+
+\textbf{L24H19 is principally an answer-position candidate.}
+Its P and F effects are $+0.344$ and $+0.349$. Its extended colon residual bypass has $I=+0.165$, while no tested head/MLP outgoing route meets the common-panel rule. The bypass is a real isolated residual effect under the frozen background, but cannot be subtracted from the total F effect to estimate an unexplained causal remainder. Both candidates are non-RI coverage additions; their distinct outcomes illustrate why coverage should not be inferred from the original shortlist.
+
+\section{The measured communication map}
+\label{sec:map}
+Of 769 initial configurations, 76 meet the common-panel rule: 62 head-channel routes, seven MLP routes and seven bypasses. There are 115 retained non-control configurations after combining seed and refinement; 96 were extended and 19 remain common-panel only because of the fixed budget. Multiple configurations can refer to the same head pair with different sites/channels and must not be counted as distinct circuit members.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{figures/route_schematic.png}
+\caption{A selected communication motif, with 89-family mean effects. Each arrow summarizes separately measured routes; grouped boxes do not denote a measured joint intervention. The full ledger includes additional and opposing routes. In particular, the displayed successive arrows have not yet been tested as a complete mediated chain.}
+\label{fig:map}
+\end{figure}
+
+\subsection{L17H1: strong V routes with both effect signs}
+The clearest fact-to-answer effects run from L17H1 into L18H18 and L18H19 V. Combining query-mother, \texttt{is} and period as an explicitly measured union gives $I=+3.400$ and $+2.074$, with $J=+3.335$ and $+2.054$. Both noising effects have the positive sign in all 89 families. The additional-69 means are $+3.391$ and $+2.057$, close to the initial-panel values.
+
+The same union has negative routes into L18H24 ($-1.004$), L20H1 ($-0.582$), and L19H16 ($-0.247$), and a positive route into L22H5 ($+0.898$). The two leading positive means are 30.4\% and 18.6\% of the full-model gap on the same population; these are scale-normalized effects, not explained fractions, and must not be added as mediation shares. The route ledger provides the corresponding ratio of means for every extended route. Consequently, a common source supports routes with opposite effects on the answer contrast. Group tests must retain that sign structure. Summing the positive routes would overstate an unmeasured joint contribution; removing negative routes merely to increase a performance score would also distort the mechanism.
+
+K-only routes from this source did not meet the initial retention rule. This supports V as the leading \emph{tested direct channel}, not a claim that keys never matter. Joint KV tests and their interactions below show why a small standalone K effect does not establish separability.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{figures/fact_routes.png}
+\caption{Selected receiver columns of the complete common-panel V measurements. Cells contain signed mean effects, including below-threshold effects. Blank cells are temporally ineligible, not measured zeros. Different source sites are separate interventions.}
+\end{figure}
+
+\subsection{L15H25: a narrower route into the layer-16 pair}
+At child-last, L15H25 reaches L16H1 and L16H21 through V with extended effects $+0.182$ and $+0.210$; reverse restoration gives $+0.187$ and $+0.223$. Joint KV is very similar ($+0.185$ and $+0.212$). No local MLP route meets the initial rule. These results give a concrete consumer hypothesis despite the inconclusive Stage-3 readout; they do not determine whether the transmitted representation is an address, a name identity, or another feature.
+
+The layer-16 heads in turn have colon Q routes into L18H18 and L18H19. Together with L17H1's fact-site V routes, this suggests a convergence of fact-site influence and colon-state influence on the same pair. It is premature to call Q the query-selection code: this run used fact-swap donors, not a query-only intervention.
+
+\subsection{Colon routes: downstream continuation and parallel exits}
+L18H18 and L18H19 have Q routes into L27H6 ($+0.662$ and $+0.731$), KV/V routes into L21H23, and additional routes toward L25H17 and several negative contributors. They also have measured MLP19 routes ($+0.410$ and $+0.532$) and residual bypasses ($+0.547$ and $+0.754$). Hence their answer effects are not supported only through a single type of downstream exit. These routes overlap causally in the live network and are not an additive partition.
+
+Negative sources also have supported downstream routes: L20H1, for example, reaches L21H23 KV and L27H6 Q with negative mean effects. A negative route from a positive source to a negative head, or vice versa, must be described by the measured source/site/channel/background; signs are not interchangeable with a global ``good head/bad head'' label.
+
+\subsection{Secondary sources and gaps}
+L13H10 at the whole query sentence reaches L16H1 V negatively ($-0.175$), L17H3 V positively ($+0.150$), L18H18 K negatively ($-0.107$), L18H19 V negatively ($-0.116$), and MLP14 positively ($+0.184$). This mixed pattern argues against assigning one universal sign to all of its outgoing routes. L14H26 has one retained head recipient, L16H1 V ($+0.136$); it does not yet justify a multi-member outgoing group.
+
+L17H3's retained routes originate at the colon and reach L18H18/L18H19 Q negatively ($-0.158/-0.106$). Its early masks yield no retained route. This strengthens the colon/mixed interpretation and does not establish a strong early writer.
+
+Some previously important heads remain weakly explained by this map, notably L21H18 and L21H6. L26H23's prior causal relevance and L26H31's backup hypothesis are also not resolved by this direct-route panel. These are explicit coverage boundaries, not negative membership results.
+
+\begin{table}[htbp]\centering\small
+\input{tables/key_routes}
+\caption{Selected extended routes in logits. $I_{89}$ and $J_{89}$ average 89 family means; $I_{69}$ uses only the additional families. ``Union'' means query-mother, \texttt{is} and period; ``sentence'' is the query fact. Numerical details, intervals and all 96 configurations are provided in \file{data/route_ledger_96.csv} and \file{data/extension_population_summary.csv}.}
+\label{tab:routes}
+\end{table}
+\FloatBarrier
+
+\section{Expansion, controls and interaction evidence}
+\label{sec:controls}
+\subsection{Expansion is largely consistent, with informative boundary cases}
+The pipeline selected 72 seed routes and 24 refinement routes for both-direction measurement on all 178 pairs. On 89 families, noising retains 93 coherent and two heterogeneous routes; restoration retains 91 coherent and two heterogeneous routes. Mean signs agree between noising and restoration for all 96 routes, although signs alone do not imply equal magnitudes or strong effects. The 69-family panel retains 94 noising and 92 restoration routes.
+
+L17H24 to L21H23 V falls below the rule in both directions on the expanded panel ($I=+0.092$, $J=+0.092$). Its joint KV counterpart was retained on the common panel but not extended; failure of V alone is not a measured KV failure. L18H18 to L22H5 Q is borderline ($I=+0.099$, mean absolute effect $0.100$) and drops below the rule in the additional families and in restoration. L18H19 to MLP18 also fails the restoration rule. The L17H1 mother-to-MLP17 route remains heterogeneous on all families, but its reverse effect does not retain on the additional 69 alone. These cases must not be presented with the same evidential strength as the leading V routes.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{figures/replication.png}
+\caption{All 96 selected routes: common-panel versus additional-family means (left), and noising versus restoration means (right). Dashed lines indicate equality. This is selected discovery consistency, not held-out confirmation or a false-discovery estimate.}
+\end{figure}
+
+\subsection{Controls support selectivity, not exclusivity}
+The refinement contains 55 distinct control configurations: 17 other-site and 38 random-receiver controls, including the targeted L15H25 \texttt{is} controls. All controls have smaller mean absolute family effects than their linked target route. None of the random-receiver controls meets the retention rule. However, seven other-site controls do meet it. For example, the L17H1 other-mother to L18H24 V control has mean absolute effect $0.399$, compared with $0.548$ for the target mother route on the same core population.
+
+This supports a relative preference for the selected sites/receivers under the tested interventions, not exclusive communication from the answer fact. Control channel norms were recorded, but random controls were not norm-matched; these comparisons are not a calibrated null distribution or significance test. Controls were targeted to high-ranked routes, not applied uniformly to all 769 configurations. Some control IDs are shared after deduplication, so counts should not be interpreted as 24 entirely disjoint control triplets.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{figures/controls.png}
+\caption{Paired target/control summaries on the same 20 families. All points lie below equality, but several other-site effects are substantial. Norm matching was not enforced.}
+\end{figure}
+
+\subsection{K/V and source sites are not uniformly additive}
+Forty paired interaction contrasts can be computed from measured matching terms on the common panel; eight meet the operational rule. For L17H1 mother to L20H1, $I_{KV}-I_K-I_V=+0.277$ on average, opposing part of the negative V-only effect. For L17H1 \texttt{is} to L18H18, the signed interaction mean is $+0.096$, but the mean absolute family interaction is $0.180$.
+
+For L17H1 to L18H18 V, the union-minus-sum-of-three-sites contrast has signed mean $+0.058$ but mean absolute family magnitude $0.293$. Its corresponding L18H19 values are $+0.091$ and $0.125$. Thus approximate average additivity would hide meaningful family-level interactions. The 136 unavailable contrast entries in the original comparison output reflect missing matched component measurements, including controls; they are not zeros, failed model runs, or 136 additional required GPU experiments.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{figures/interactions.png}
+\caption{The eight interaction contrasts meeting the frozen common-panel rule. Bars compare signed means with mean absolute family effects; they are not uncertainty bars. Neither a KV contrast nor a source-site union contrast is a measured multi-head interaction.}
+\end{figure}
+
+\subsection{Order and prefix sensitivity constrain the interpretation}
+The leading L17H1 union-to-L18H18 V effect averages $4.657$ when the queried fact precedes the competing fact and $2.144$ when it follows. Its mean absolute within-family order difference is $2.528$ logits. For L18H19 V the corresponding means are $2.504$ and $1.645$, with absolute difference $1.046$. The effects remain positive, but their magnitudes are not order-invariant. This makes group-level order robustness an informative later test, not a redundant repeat of a solved question.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{figures/order_sensitivity.png}
+\caption{Each point pairs the two orders of one family for a fixed route. Consistent sign does not imply invariant magnitude. These analyses use existing S4.1 endpoints and required no new GPU computation.}
+\end{figure}
+
+Families 168 and 174 have shared answer prefixes. Every extended colon bypass has exactly zero effect on these families in both directions. This is the expected structural null: a frozen residual branch graph cannot move a colon-local residual change to the later metric position. It is not evidence against the source head. All-family and no-prefix summaries are retained, and other route types let later prefix computation remain live.
+
+\subsection{Implementation scope versus the full protocol}
+The implemented controls and extensions completed; no duplicate run is needed. Nevertheless, the broad protocol wording must be narrowed to the executed scope: per-configuration self-endpoint checks apply once per worker to head/MLP routes, not every pair or bypass; impossible routes are gate checks; wrong-site controls are omitted for Q and bypass; random receivers apply only to head routes; refinement controls are measured on 40 pairs, not automatically in reverse or on all 178. The additional-69 summaries and paired order comparisons in this report were computed locally from saved records. At this S4.1 boundary, named multi-step mediation, G1--G3, mean-ablation circuits and held-out validation were unexecuted; the completed G1--G3 audit is reported in Sections 7--10.
+\FloatBarrier
+
+\section{What S4.1 establishes about RI}
+The map supports a meaningful intersection between RI candidates and task-relevant communication: L16H1/L16H21 receive L15H25 V influence and send colon Q influence; L18H19 is a major receiver and downstream source; L22H5 receives L17H1 V influence; L19H16 and L23H15 participate in opposing routes. L17H24 has a supported bypass and a local negative MLP route, while its L21H23 continuation is weaker. L26H23 and L26H31 are not settled by the current map.
+
+The large non-RI source effects, particularly L17H1, L15H25 and the newly covered L13H18, remain important omissions of RI selection. At the S4.1 boundary, these observations motivated a targeted conditional RI audit rather than blanket acceptance or rejection of RI; the measured audit appears later in this report. Exact routes are only one part of the membership criterion: conditional removal/restoration tests and eventual frozen validation are still required. \file{data/ri31_route_ledger.csv} records the observed status without labelling untested candidates absent.
+
+\input{s42_results}
+
+\appendix
+\small
+\section{Evidence files and reproduction}
+Primary data: \file{results/stage4_all_v2/}; executed inputs/package:
+\file{results/stage4_s41_v2/}; authoritative design:
+\file{results/stage4_design_v2/manifest_proposal.json}; protocol:
+\file{Stage4_Protocol.tex}. The Stage-3 interpretation is grounded in its completed report and independent reviews, not the superseded early Stage-4 proposal.
+
+Local audit and supplementary analysis:
+\file{results/stage4_review_20260924/verification.json},
+\file{analyze_s41.py}, \file{build_report_assets.py},
+\file{gate_errors.csv}, \file{all_events.csv.gz}, and \file{reproduced/}.
+The package includes all figures and the following portable derived evidence:
+\begin{itemize}
+\item \file{data/route_ledger_96.csv}: complete extended-route ledger.
+\item \file{data/extension_population_summary.csv}: 20/69/89-family summaries in both directions, including descriptive intervals.
+\item \file{data/control_comparisons.csv}: paired control/target summaries.
+\item \file{data/retained_not_extended.csv}: the 19 retained but unextended configurations.
+\item \file{data/seed_map_coverage.csv}: tested and retained source/site/channel counts, including null panels.
+\item \file{data/order_sensitivity.csv} and \file{data/prefix_summary.csv}: saved-data sensitivity analyses.
+\item \file{data/ri31_route_ledger.csv}: route nominations without premature membership labels.
+\item \file{data/s42_proposal.json}: the S4.1-derived rosters and masks subsequently used in S4.2; not runnable GPU code.
+\end{itemize}
+
+For S4.1 CPU reproduction from the project root, use the two supplied S4.1 analysis scripts. The first re-verifies raw hashes/coverage and uses the source analyzer on saved chunks; the second builds the report tables and figures. No model weights or GPU are needed. The original protocol's bootstrap seed and retention thresholds are unchanged. Original GPU artifacts and analysis CSVs were not edited.
+
+\section{S4.2 data, reproducibility and exact follow-up rosters}
+\label{sec:future_rosters}
+Executed data: \file{results/stage4_s42_all_v1/}; isolated package and frozen inputs: \file{results/stage4_s42_v1/}. Readiness verification is in \file{results/stage4_s42_readiness_20260924/}. Additional saved-data analysis and report builders are in \file{results/stage4_s42_analysis_20260924/}. The GPU results and original analyzer exports are preserved. All new statistics are derived on CPU.
+
+The portable Overleaf package includes:
+\begin{itemize}
+\item \file{data/s42_contrast_ledger.csv}: all measured contrast summaries, with phase, direction and baseline.
+\item \file{data/s42_g1_interactions_cpu_extended.csv}: new matched G1 interactions on the available 20/69/89-family populations; no new endpoints.
+\item \file{data/s42_g1_task_performance.csv}, \file{s42_g1_order_effects.csv} and \file{s42_full_model_order_baselines.csv}: behavior and properly scaled order comparisons.
+\item \file{data/s42_blocking_paired.csv}: source, blocking and residual effects, plus jointly bootstrapped intervention ratios.
+\item \file{data/s42_ri31_audit.csv}, \file{s42_residual_vs_references.csv} and \file{s42_residual_nonadditivity.csv}: conditional RI results and paired group comparisons.
+\item \file{data/s42_g3_backup_audit.csv}: backup effects and before-intervention attention/output diagnostics.
+\item \file{data/s42_replacement_norms.csv}: descriptive intervention magnitudes; these do not constitute matched-norm controls.
+\item \file{data/s42_facts.json}, \file{s42_readiness.json}, and \file{s42_next_stage_plan.json}: numerical provenance, verification and the exact prospective head sets/dependencies.
+\end{itemize}
+
+The fixed residual RI23 set used by the six-configuration S4.4 panel is:
+\begin{quote}\small
+L1H27, L6H24, L8H8, L8H15, L9H6, L9H17, L11H4, L11H7, L12H2, L14H23, L15H3, L16H4, L16H16, L16H24, L16H31, L17H5, L20H7, L21H25, L23H10, L25H18, L26H31, L27H23, L30H3.
+\end{quote}
+The four reference cohorts are unchanged from the original proposal and are explicitly enumerated in both proposal and follow-up JSON files. They are layer-matched descriptive controls, not randomization-test samples.
+
+The added analysis uses the same $0.10$-logit retention rule, 20,000 family bootstrap draws and seed 20260923. An interval or apparent comparison selected on discovery data is not presented as a confirmatory held-out test. The four-condition panel, retained-head mechanisms, local mediation expansion and reduction curves remain prospective. The prior S4.1-only PDF and sources were archived locally before this report was updated.
+
+\end{document}

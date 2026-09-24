@@ -1,0 +1,665 @@
+{
+  "complete": true,
+  "records": 25632,
+  "configuration_count": 72,
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "schedule_hash": "f6023d68819de8ef6facf93c01fe35dca9b648761640f7f5a13eda077ae8d5c4",
+  "configs": [
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:513:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:547:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "K",
+      "panel": "P4",
+      "id": "426:query_sentence:head:594:K"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P4",
+      "id": "426:query_sentence:head:595:V"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "mlp",
+      "receiver": 14,
+      "channel": "",
+      "panel": "P4",
+      "id": "426:query_sentence:mlp:14:"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "V",
+      "panel": "P4",
+      "id": "474:query_sentence:head:513:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:513:V"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "V",
+      "panel": "P2",
+      "id": "505:query_child_last:head:533:V"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:547:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "513:colon:head:561:KV"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:594:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "513:colon:head:595:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:547:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "533:colon:head:561:KV"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:594:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "533:colon:head:595:Q"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:641:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_is_token:head:709:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:624:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:641:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:709:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_mother:head:870:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P1",
+      "id": "545:query_mother:mlp:17:"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_period:head:600:V"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:594:Q"
+    },
+    {
+      "source": 547,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "547:colon:head:595:Q"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "568:colon:bypass:31:"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P3",
+      "id": "568:colon:mlp:17:"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "594:colon:bypass:31:"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:624:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:641:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:695:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:709:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:751:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "594:colon:head:817:KV"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:870:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "594:colon:head:978:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 19,
+      "channel": "",
+      "panel": "P3",
+      "id": "594:colon:mlp:19:"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "595:colon:bypass:31:"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:624:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:641:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:695:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:709:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 751,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:751:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "595:colon:head:817:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:870:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "595:colon:head:978:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 18,
+      "channel": "",
+      "panel": "P3",
+      "id": "595:colon:mlp:18:"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "mlp",
+      "receiver": 19,
+      "channel": "",
+      "panel": "P3",
+      "id": "595:colon:mlp:19:"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "624:colon:bypass:31:"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:641:Q"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "624:colon:head:695:KV"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "624:colon:head:870:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "641:colon:bypass:31:"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:695:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "P3",
+      "id": "641:colon:head:817:KV"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:870:Q"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "641:colon:head:978:Q"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "751:colon:head:870:Q"
+    },
+    {
+      "source": 751,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "751:colon:head:978:Q"
+    },
+    {
+      "source": 787,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "coverage_route",
+      "id": "787:colon:bypass:31:"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "bypass",
+      "receiver": 31,
+      "channel": "",
+      "panel": "P3",
+      "id": "817:colon:bypass:31:"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "817:colon:head:870:Q"
+    },
+    {
+      "source": 817,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 978,
+      "channel": "Q",
+      "panel": "P3",
+      "id": "817:colon:head:978:Q"
+    }
+  ],
+  "population": "all",
+  "family_effects_hash": "19ab85c11eb6c1a62169dbee22181c1fe558b41587dcd69122b3e49cf9624bc7",
+  "run_manifests": {
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/extend_seed_r0": "39d966e1a4bc9db2850ff9f04d30d5a7cfa4493dc50ad84c3429f7a6cf99ef47",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/extend_seed_r1": "bb97c47c2392c6f3fa009be6e89fc263b15e2fbb9666621cdc87c4903afa4880",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/extend_seed_r2": "b3236015c153385dd4a30e9720b1155086a3d6e36b4e09dbe29c6c45dba8d53a"
+  },
+  "note": "Discovery summaries; retention is prioritization, not confirmation"
+}

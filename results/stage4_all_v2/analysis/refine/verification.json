@@ -1,0 +1,1017 @@
+{
+  "complete": true,
+  "records": 4200,
+  "configuration_count": 105,
+  "plan_hash": "ac140335d67272e028a338b370c2b8f84bca7ab8651962c79b7446ab3a6f141f",
+  "schedule_hash": "108c43ff13f22dd283d2788484f6da744c3c54f99ccaf555f25c8c15be0e32dd",
+  "configs": [
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "426:query_sentence:head:513:KV"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 547,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "426:query_sentence:head:547:KV"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "426:query_sentence:head:594:KV"
+    },
+    {
+      "source": 426,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "426:query_sentence:head:595:KV"
+    },
+    {
+      "source": 474,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "KV",
+      "panel": "P4",
+      "id": "474:query_sentence:head:513:KV"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "KV",
+      "panel": "P2",
+      "id": "505:query_child_last:head:513:KV"
+    },
+    {
+      "source": 505,
+      "site": "query_child_last",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "KV",
+      "panel": "P2",
+      "id": "505:query_child_last:head:533:KV"
+    },
+    {
+      "source": 505,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 513,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "505:query_child_last:head:513:V",
+      "id": "505:query_is_token:head:513:V"
+    },
+    {
+      "source": 505,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 533,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "505:query_child_last:head:533:V",
+      "id": "505:query_is_token:head:533:V"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "K",
+      "panel": "P3",
+      "id": "513:colon:head:561:K"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "V",
+      "panel": "P3",
+      "id": "513:colon:head:561:V"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 579,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "513:colon:head:594:Q",
+      "id": "513:colon:head:579:Q"
+    },
+    {
+      "source": 513,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 604,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "513:colon:head:594:Q",
+      "id": "513:colon:head:604:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "K",
+      "panel": "P3",
+      "id": "533:colon:head:561:K"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 561,
+      "channel": "V",
+      "panel": "P3",
+      "id": "533:colon:head:561:V"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 578,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "533:colon:head:594:Q",
+      "id": "533:colon:head:578:Q"
+    },
+    {
+      "source": 533,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 586,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "533:colon:head:594:Q",
+      "id": "533:colon:head:586:Q"
+    },
+    {
+      "source": 545,
+      "site": "other_is_token",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_is_token:head:594:V",
+      "id": "545:other_is_token:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "other_is_token",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_is_token:head:595:V",
+      "id": "545:other_is_token:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "other_is_token",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_is_token:head:600:V",
+      "id": "545:other_is_token:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "other_mother",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:594:V",
+      "id": "545:other_mother:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "other_mother",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:595:V",
+      "id": "545:other_mother:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "other_mother",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:600:V",
+      "id": "545:other_mother:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "other_mother",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:641:V",
+      "id": "545:other_mother:head:641:V"
+    },
+    {
+      "source": 545,
+      "site": "other_mother",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:709:V",
+      "id": "545:other_mother:head:709:V"
+    },
+    {
+      "source": 545,
+      "site": "other_mother",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:870:V",
+      "id": "545:other_mother:head:870:V"
+    },
+    {
+      "source": 545,
+      "site": "other_period",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_period:head:594:V",
+      "id": "545:other_period:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "other_period",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_period:head:595:V",
+      "id": "545:other_period:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 576,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_is_token:head:600:V",
+      "id": "545:query_is_token:head:576:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 582,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_is_token:head:594:V",
+      "id": "545:query_is_token:head:582:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 583,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_is_token:head:600:V",
+      "id": "545:query_is_token:head:583:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 584,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_is_token:head:595:V",
+      "id": "545:query_is_token:head:584:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 586,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_is_token:head:595:V",
+      "id": "545:query_is_token:head:586:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_is_token:head:594:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_is_token:head:595:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_is_token:head:600:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 602,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_is_token:head:594:V",
+      "id": "545:query_is_token:head:602:V"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_is_token:head:641:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_is_token",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_is_token:head:709:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 577,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:594:V",
+      "id": "545:query_mother:head:577:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 593,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:600:V",
+      "id": "545:query_mother:head:593:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:594:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:595:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:600:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 601,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:595:V",
+      "id": "545:query_mother:head:601:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 602,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:595:V",
+      "id": "545:query_mother:head:602:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 606,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:600:V",
+      "id": "545:query_mother:head:606:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 607,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:594:V",
+      "id": "545:query_mother:head:607:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:624:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:641:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 655,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:641:V",
+      "id": "545:query_mother:head:655:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 668,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:641:V",
+      "id": "545:query_mother:head:668:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 705,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:709:V",
+      "id": "545:query_mother:head:705:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:709:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 733,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:709:V",
+      "id": "545:query_mother:head:733:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_mother:head:870:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 878,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:870:V",
+      "id": "545:query_mother:head:878:V"
+    },
+    {
+      "source": 545,
+      "site": "query_mother",
+      "kind": "head",
+      "receiver": 884,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_mother:head:870:V",
+      "id": "545:query_mother:head:884:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 577,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_period:head:595:V",
+      "id": "545:query_period:head:577:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 590,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_period:head:594:V",
+      "id": "545:query_period:head:590:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_period:head:594:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_period:head:595:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "KV",
+      "panel": "P1",
+      "id": "545:query_period:head:600:KV"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 601,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_period:head:595:V",
+      "id": "545:query_period:head:601:V"
+    },
+    {
+      "source": 545,
+      "site": "query_period",
+      "kind": "head",
+      "receiver": 607,
+      "channel": "V",
+      "panel": "control",
+      "control_of": "545:query_period:head:594:V",
+      "id": "545:query_period:head:607:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 594,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:594:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 595,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:595:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 600,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:600:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 624,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:624:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 641,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:641:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 709,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:709:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "head",
+      "receiver": 870,
+      "channel": "V",
+      "panel": "P1",
+      "id": "545:query_writer_union:head:870:V"
+    },
+    {
+      "source": 545,
+      "site": "query_writer_union",
+      "kind": "mlp",
+      "receiver": 17,
+      "channel": "",
+      "panel": "P1",
+      "id": "545:query_writer_union:mlp:17:"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P3",
+      "id": "568:colon:head:695:K"
+    },
+    {
+      "source": 568,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "568:colon:head:695:V"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P3",
+      "id": "594:colon:head:695:K"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "594:colon:head:695:V"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P3",
+      "id": "594:colon:head:817:K"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P3",
+      "id": "594:colon:head:817:V"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 885,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "594:colon:head:870:Q",
+      "id": "594:colon:head:885:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 895,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "594:colon:head:870:Q",
+      "id": "594:colon:head:895:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 960,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "594:colon:head:978:Q",
+      "id": "594:colon:head:960:Q"
+    },
+    {
+      "source": 594,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 976,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "594:colon:head:978:Q",
+      "id": "594:colon:head:976:Q"
+    },
+    {
+      "source": 594,
+      "site": "query_sentence",
+      "kind": "mlp",
+      "receiver": 19,
+      "channel": "",
+      "panel": "control",
+      "control_of": "594:colon:mlp:19:",
+      "id": "594:query_sentence:mlp:19:"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 651,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "595:colon:head:641:Q",
+      "id": "595:colon:head:651:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 670,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "595:colon:head:641:Q",
+      "id": "595:colon:head:670:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 680,
+      "channel": "KV",
+      "panel": "control",
+      "control_of": "595:colon:head:695:KV",
+      "id": "595:colon:head:680:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 694,
+      "channel": "KV",
+      "panel": "control",
+      "control_of": "595:colon:head:695:KV",
+      "id": "595:colon:head:694:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P3",
+      "id": "595:colon:head:695:K"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "595:colon:head:695:V"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 804,
+      "channel": "KV",
+      "panel": "control",
+      "control_of": "595:colon:head:817:KV",
+      "id": "595:colon:head:804:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P3",
+      "id": "595:colon:head:817:K"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P3",
+      "id": "595:colon:head:817:V"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 831,
+      "channel": "KV",
+      "panel": "control",
+      "control_of": "595:colon:head:817:KV",
+      "id": "595:colon:head:831:KV"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 867,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "595:colon:head:870:Q",
+      "id": "595:colon:head:867:Q"
+    },
+    {
+      "source": 595,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 873,
+      "channel": "Q",
+      "panel": "control",
+      "control_of": "595:colon:head:870:Q",
+      "id": "595:colon:head:873:Q"
+    },
+    {
+      "source": 595,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "KV",
+      "panel": "control",
+      "control_of": "595:colon:head:695:KV",
+      "id": "595:query_sentence:head:695:KV"
+    },
+    {
+      "source": 595,
+      "site": "query_sentence",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "KV",
+      "panel": "control",
+      "control_of": "595:colon:head:817:KV",
+      "id": "595:query_sentence:head:817:KV"
+    },
+    {
+      "source": 595,
+      "site": "query_sentence",
+      "kind": "mlp",
+      "receiver": 19,
+      "channel": "",
+      "panel": "control",
+      "control_of": "595:colon:mlp:19:",
+      "id": "595:query_sentence:mlp:19:"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P3",
+      "id": "624:colon:head:695:K"
+    },
+    {
+      "source": 624,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "624:colon:head:695:V"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "K",
+      "panel": "P3",
+      "id": "641:colon:head:695:K"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 695,
+      "channel": "V",
+      "panel": "P3",
+      "id": "641:colon:head:695:V"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "K",
+      "panel": "P3",
+      "id": "641:colon:head:817:K"
+    },
+    {
+      "source": 641,
+      "site": "colon",
+      "kind": "head",
+      "receiver": 817,
+      "channel": "V",
+      "panel": "P3",
+      "id": "641:colon:head:817:V"
+    }
+  ],
+  "population": "core",
+  "family_effects_hash": "5e0e319a7fc86ebb340f50335d9cc930dc96d13f31203e687870927144bcafcb",
+  "run_manifests": {
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/refine_r0": "c625f9d866487207bb4e4bb1a8f660db59e0bf5f0de9703bc4660fd436deb547",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/refine_r1": "4de91f2b937669202e6513f209c6d4f5ad0536ff5f813abb87c7759064b34fd3",
+    "/home/yandex/DLWorkShop2025b/maximg/storage/runs/stage4_all_v2/runs/refine_r2": "cf90a3aff768384593e79e3fdec9fd5dc81dabdb1dc8640dc115b248dd4ac3a6"
+  },
+  "note": "Discovery summaries; retention is prioritization, not confirmation"
+}

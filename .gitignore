@@ -70,3 +70,53 @@ results/stage3_v1_results.tar.gz
 results/stage3_readout_v1_results.tar.gz
 results/stage3_readout_v1/runtime.json
 # Overleaf ZIP bundles: regenerable from the .tex sources
+
+# Stage 4: keep plans, completion metadata, compact analyses and report assets.
+# Raw measurements, mean tensors and duplicate reproductions stay on OneDrive/cluster.
+results/stage4_all_v2/runs/
+results/stage4_all_v2/logs/
+results/stage4_all_v2/pipeline_state.json
+results/stage4_all_v2/analysis/**/events.csv
+results/stage4_s42_all_v1/runs/
+results/stage4_s42_all_v1/logs/
+results/stage4_s42_all_v1/mean_bank/
+results/stage4_s42_all_v1/pipeline_state.json
+results/stage4_review_20260924/all_events.csv.gz
+results/stage4_review_20260924/reproduced/
+results/stage4_s42_readiness_20260924/reproduced/
+results/stage4_s42_analysis_20260924/prior_report/*.pdf
+results/stage4_inputs_v1/*.gz
+results/stage4_s42_inputs_v1/*.gz
+results/stage3_v1/state_*.json
+
+# Extracted execution packages duplicate pilot_v2 source; retain their identities/plans.
+results/stage4_s41_v2/*
+!results/stage4_s41_v2/bundle_hashes.json
+!results/stage4_s41_v2/model_lock_olmo2.json
+!results/stage4_s41_v2/inputs/
+results/stage4_s41_v2/inputs/*.gz
+results/stage4_s42_v1/*
+!results/stage4_s42_v1/bundle_hashes.json
+!results/stage4_s42_v1/model_lock_olmo2.json
+!results/stage4_s42_v1/inputs/
+results/stage4_s42_v1/inputs/*.gz
+results/stage4_implementation_review/bundle_smoke/stage4_s41_v1/*
+results/stage4_implementation_review/bundle_v2_smoke/stage4_s41_v2/*
+
+# Compiled duplicates/build intermediates; the published Stage-4 PDF is in output/pdf.
+חומר כתוב/Stage4_Overleaf/main.pdf
+חומר כתוב/Stage4_Overleaf/main.log
+חומר כתוב/Stage4_Overleaf/*.aux
+חומר כתוב/Stage4_Overleaf/*.toc
+חומר כתוב/Stage4_Overleaf/*.out
+
+# Developmental side experiment: sources/inputs/compact current summaries are versioned.
+Daniella's test ICL vs SIH/results/icl/*.jsonl
+Daniella's test ICL vs SIH/results/icl/*(1).csv
+Daniella's test ICL vs SIH/results/icl/old_analysis/
+Daniella's test ICL vs SIH/results/ri/developmental_v1/chunks/
+Daniella's test ICL vs SIH/results/ri/developmental_v1/*_head_stats.csv
+Daniella's test ICL vs SIH/results/ri/developmental_v1/ri_head_trajectory.csv
+Daniella's test ICL vs SIH/results/ri/developmental_v1/analysis/head_changes_*.csv
+Daniella's test ICL vs SIH/Documentataion/OLMo_ICL_RI_side_experiment_methodology.pdf
+**/.ipynb_checkpoints/

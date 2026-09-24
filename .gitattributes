@@ -1,0 +1,13 @@
+# Keep executable sources portable across Windows and the Linux cluster.
+*.py text eol=lf
+*.sh text eol=lf
+*.sbatch text eol=lf
+*.ipynb text eol=lf
+
+# Preserve exact bytes of frozen inputs and checksummed research artifacts.
+# -text disables automatic CRLF conversion without disabling textual diffs.
+results/stage4* -text whitespace=trailing-space,space-before-tab,cr-at-eol
+results/stage4*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+"Daniella's test ICL vs SIH/data/**" -text whitespace=trailing-space,space-before-tab,cr-at-eol
+"Daniella's test ICL vs SIH/results/**" -text whitespace=trailing-space,space-before-tab,cr-at-eol
+"חומר כתוב/Stage4_Overleaf/**" -text whitespace=trailing-space,space-before-tab,cr-at-eol
