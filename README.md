@@ -14,7 +14,7 @@ Two-hop composition remains a later extension. A separate checkpoint-development
 experiment is now completed and documented below. No sufficient causal circuit has
 yet been established.
 
-## Current status (24 September 2026)
+## Current status (26 September 2026)
 
 Model: base `allenai/OLMo-2-1124-7B`, revision
 `7df9a82518afdecae4e8c026b27adccc8c1f0032`, with 32 layers and 32 attention
@@ -83,11 +83,25 @@ heads. The model is used without fine-tuning.
   7–10 S4.2 results, 11 hypotheses/limits, and 12 the exact prospective S4.3–S4.5 plan.
   Analysis/audits: `results/stage4_review_20260924/`,
   `results/stage4_s42_readiness_20260924/`, `results/stage4_s42_analysis_20260924/`.
-- Stage 4.3–4.5 remain **planned, not implemented or submitted**. The revised plan
-  retains one bounded local expansion and removes the broad second search. S4.4
-  tests groups/mechanisms only; S4.4/S4.5 share cached measurements. The fixed local
-  routes, C0 pilot and full-model group panel can start independently; C-based
-  semantic tests wait for reduction/completeness. Exact named sets, caps and
+- Stage 4.3: **completed** (Daniella Simonovsky, Google Colab, 25–26 September; integrated
+  26 September). Bounded local expansion exactly as planned in
+  `results/stage4_s42_analysis_20260924/next_stage_plan.json`: an initial noising screen of
+  305 configurations on the 40 common pairs (`results/stage4_s43_all_v1/initial_v2/`, 12,200
+  records), a frozen selection of 16 route contrasts plus 11 direct prerequisites, and a
+  bidirectional extension to all 178 discovery pairs
+  (`results/stage4_s43_all_v1/extension_v4_family034_final/`, 9,612 records). All 16 selected
+  routes retain in both directions; 14 are coherent. Main results: the composed dependency
+  L17H1 → {L18H18, L18H19} → L27H6 Q (+1.64 noising / +1.51 restoration, 98.9% family sign
+  match), the L15H25 → {L16H1, L16H21} → layer-18 Q chains (+0.15 to +0.22), attenuation of
+  the direct L8H15 → layer-18 V routes when MLP9 is released, a block-mediated L26H23 effect,
+  and an unstable L20H7 downstream sensitivity. L13H18 and L16H31 produced no retained route.
+  Frozen inputs: `results/stage4_s43_inputs_v1/`, `results/stage4_s43_extension_inputs_v1/`;
+  code `pilot_v2/s43_engine.py`, `s43_run_v2.py`, `s43_extension_run_v3.py`, `test_s43.py`;
+  run book `pilot_v2/RUNBOOK_stage4_s43.md`; reports
+  `חומר כתוב/Stage4_3_Methodology_and_Results.pdf`, `Stage4_3_Summary.pdf`; independent
+  re-analysis `results/stage4_s43_review_20260926/`. Held-out families were not accessed.
+- Stage 4.4–4.5 remain **planned, not implemented or submitted**. S4.4 tests
+  groups/mechanisms only; S4.4/S4.5 share cached measurements. Exact named sets, caps and
   conditional decisions are in `results/stage4_s42_analysis_20260924/next_stage_plan.json`.
   The 87 held-out families remain sealed.
 - Developmental side experiment: completed ICL and RI checkpoint sweeps in
@@ -116,6 +130,12 @@ read the files in this order:
 9. `Daniella's test ICL vs SIH/README.md` (separate developmental experiment,
    data provenance, execution order, results and reproduction limits).
 
+## Paper
+
+The ACL-format paper lives in `חומר כתוב/paper/` (`main.tex`, `sections/`, `appendix/`,
+`figs/`, `refs.bib`); Overleaf holds the compiled master copy, the folder is the Git copy and
+transfer medium. `main.pdf` there is a local compile only.
+
 ## Documentation map
 
 This file is the project entry point. Experiment-specific READMEs explain their
@@ -128,6 +148,8 @@ at the time of a run. Status in old run books does not supersede the current han
 | `RESEARCH_HANDOFF.md` | tracked collaborator handoff, evidence hierarchy | current |
 | `חומר כתוב/Stage4_Overleaf/` | combined S4.1/S4.2 report and exact follow-up design | current |
 | `Daniella's test ICL vs SIH/README.md` | developmental side-experiment guide and repository policy | current |
+| `חומר כתוב/Stage4_3_Methodology_and_Results.pdf` | S4.3 methodology and results (executed 25–26 Sept.) | current |
+| `pilot_v2/RUNBOOK_stage4_s43.md` | run book: S4.3 (executed on Colab; how to re-run on the cluster, what is missing) | current |
 | `pilot_v2/RUNBOOK_stage3_v1.md` | run book: `stage3_v1` (completed) — preparation, gate/run, analysis, transfer | current |
 | `pilot_v2/RUNBOOK_stage3_readout.md` | run book: Section-1.5 readout (`stage3_readout_v1`, job 918689, completed) — prepare, gate/run, analysis, transfer | current |
 | `pilot_v2/RUNBOOK_stage2_v1.md` | run book: `stage2_v1` (job 888691) | current |
@@ -296,7 +318,7 @@ complete or uniquely minimal circuit.
 
 ## Repository map
 
-- `pilot_v2/` — OLMo/Pythia runners, Stage 0–4.2 code (incl. the Section-1.5 readout),
+- `pilot_v2/` — OLMo/Pythia runners, Stage 0–4.3 code (incl. the Section-1.5 readout),
   Slurm wrappers, tests, model locks, and operational documentation.
 - `pilot_v3/` — later behavioral generators, tokenizer audits, and the current
   single-hop generator/data.
@@ -330,7 +352,10 @@ Reading the reports and saved summaries needs no GPU. Re-running a raw-data audi
 requires restoring the named run archive and matching executed package to the paths
 in `RESEARCH_HANDOFF.md`; Git alone does not contain those raw measurements or model
 weights. The S4.2 review and audit code checks identities, coverage and reused records
-before interpretation. New S4.3–S4.5 runs are not part of this repository update.
+before interpretation. S4.3 follows the same rule: frozen inputs, run manifests, gates,
+per-chunk `.ok` hashes, compact analysis tables and the two reports are versioned; the raw
+chunk files and the large per-pair tables stay on OneDrive (see
+`pilot_v2/RUNBOOK_stage4_s43.md`). S4.4–S4.5 runs are not part of this repository.
 
 The developmental folder follows the same separation: generated input streams,
 clean notebook sources, small manifests, current summary tables/figures and two

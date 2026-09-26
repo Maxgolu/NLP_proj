@@ -1,0 +1,114 @@
+\section{The relation index of \citet{ren2024semantic}}
+\label{app:ri}
+
+This appendix restates the SIH criterion as defined in the original paper (their
+\S3, Eq.~2--3), so that the main text can stay short, and lists the evidence behind
+the limitations noted in \S\ref{sec:sih}. Our own re-implementation, with its
+controls and calibration, is described in \S\ref{sec:method-ri}.
+
+\paragraph{Notation.}
+The model has $L$ layers of $H$ heads. For head $h$, $W^h_{OV}=W^h_v W^h_o$ is the OV
+matrix, $W^h_{QK}=W^h_q (W^h_k)^{\top}$ the QK matrix, $W_e$ the input embedding and
+$W_U$ the unembedding. For an input $[t_1,\ldots,t_n]$, $x_i=t_i W_e$ is the
+\emph{input embedding} of token $t_i$. A relation is a triplet $T=(t_s,r,t_o)$ with
+head token at position $s$ and tail token at position $o$.
+
+\paragraph{Step 1: attention condition (QK).}
+At a current position $j\ge\max(s,o)$, let $A^h_j$ be head $h$'s attention over
+positions $1..j$, written in the original paper as $\mathrm{softmax}(x_j W^h_{QK}
+x^{\top}/\sqrt{d_h})$ in the notation of Eq.~1 there. The head qualifies for $(T,j)$
+if
+\begin{equation*}
+s=\arg\max_{k\le j} A^h_{j,k}
+\quad\text{and}\quad
+\frac{A^h_{j,s}}{\max_{k\ne s} A^h_{j,k}}>\tau,\qquad \tau=2.2 .
+\end{equation*}
+The paper's formula writes the attention in terms of the embedding matrix $x$; in our
+implementation $A^h_j$ is the attention pattern actually produced by the model's
+forward pass at the head's layer (captured from the attention kernel), and only the
+OV projection of Step~2 uses the raw embedding.
+
+\paragraph{Step 2: output condition (OV).}
+The head's output at $j$ is projected onto the vocabulary from the input embedding of
+the current token,
+\begin{equation*}
+p^{h,j}=\mathrm{softmax}\!\left(x_j W^h_{OV} W_U\right)\in\mathbb{R}^{|V|}.
+\end{equation*}
+Only the tokens $t_k$, $k\le j$, that appear in the context are kept (duplicates
+counted once). Their probabilities are centred and clipped,
+$q^{h,j}_{t_k}=\max\!\big(0,\;p^{h,j}_{t_k}-\mathbb{E}_{k'\le j}[p^{h,j}_{t_{k'}}]\big)$,
+and the score for $(T,j)$ is the share of the clipped mass on the tail token,
+\begin{equation*}
+a^{h,j}_T=\frac{q^{h,j}_{t_o}}{\sum_{k\le j} q^{h,j}_{t_k}} .
+\end{equation*}
+
+\paragraph{Worked example.}
+Table~\ref{tab:ri-example} carries the computation through for one event, with
+illustrative numbers. The context is ``Anna is the mother of Ben .'' and the current
+token is the period ($j{=}7$), so seven distinct tokens are visible. Suppose head $h$
+attends most to \emph{Anna} with a margin above $\tau$, so the event qualifies with
+$t_s{=}$Anna. The raw-embedding projection of the period is pushed through $W^h_{OV}W_U$
+and the softmax is restricted to the visible tokens; the mean of the seven values,
+$\bar p{=}0.143$, is subtracted and negatives are clipped. The tail token \emph{Ben}
+holds $0.52$ of the clipped mass, which is the event score. Two properties of the
+score are visible here: it depends only on the current token's embedding and on
+which tokens are visible, so every event of this head at a period with the same
+visible set receives the same vector $p$; and the tail competes with all visible
+tokens, including \emph{is} and \emph{the}, not with other names.
+
+\begin{table}[h]
+\centering\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+$t_k$ & Anna & is & the & mother & of & Ben & . \\
+\midrule
+$p^{h,j}_{t_k}$ & 0.30 & 0.05 & 0.05 & 0.15 & 0.05 & 0.32 & 0.08 \\
+$q^{h,j}_{t_k}$ & 0.157 & 0 & 0 & 0.007 & 0 & 0.177 & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Illustrative event score. $q=\max(0,p-\bar p)$ with $\bar p=0.143$;
+$\sum_k q_k=0.341$; $a^{h,j}_T=q_{\text{Ben}}/\sum_k q_k=0.177/0.341=0.52$. The numbers are chosen for
+the example, not measured.}
+\label{tab:ri-example}
+\end{table}
+
+\paragraph{Step 3: aggregation.}
+$\mathrm{RI}_h$ is the mean of $a^{h,j}_T$ over all qualifying $(T,j)$ for a given
+relation type. There is no threshold that turns an index into a label: the paper
+reports heatmaps of $\mathrm{RI}_h$ per relation and calls heads with salient values
+SIHs. An appendix of the original paper shows that $\tau\in\{2.0,2.5\}$ yields a
+similar set of salient heads.
+
+\paragraph{Setting of the original study.}
+InternLM2-1.8B (24 layers, 16 heads); the AGENDA test set (1,000 abstracts with
+annotated knowledge graphs); three syntactic dependencies (subject, object,
+modifier) and seven relation types; multi-token entities replaced by single capital
+letters and frequent function words removed before scoring.
+
+\paragraph{Evidence for the limitations in \S\ref{sec:sih}.}
+\begin{itemize}\setlength\itemsep{1pt}
+\item[(i)] The word ``ablation'' occurs once in the original paper and refers to
+varying $\tau$ (their Appendix~A). No activation, weight or attention intervention is
+reported.
+\item[(ii)] The training analysis (their \S4.2) uses a model the authors train
+themselves ($d{=}2048$, 40k steps on SlimPajama, checkpoints every 200 steps), not
+the released InternLM2-1.8B in which the SIHs of \S3 are identified. In that analysis
+the margin condition on $\tau$ is dropped (``it is too challenging to find attention
+heads having an extremely high attention probability''), and the plotted heads are
+``sampled \ldots with an increasing relation index''. The inference is stated as
+``we infer that the formation of semantic induction heads plays a crucial role in the
+development of the ICL ability.''
+\item[(iii)] The projection $x_j W^h_{OV} W_U$ uses $x_j=t_j W_e$. The paper justifies
+this by quoting \citet{elhage2021mathematical}: ``both the QK circuit and OV circuit
+are directly performed on input embeddings.'' That statement describes attention-only
+models without MLPs and normalization, where the residual at every layer is a sum of
+head outputs added to the embedding; in a 24- or 32-layer model with MLPs and
+layer normalization the value input of head $h$ at position $j$ is the normalized
+residual $\mathrm{LN}(r^{\ell}_j)$, and the head's output at $j$ is
+$\sum_k A^h_{j,k}\,\mathrm{LN}(r^{\ell}_k)W^h_{OV}$, a function of the attended
+positions $k$.
+\item[(iv)] In $a^{h,j}_T$ the tail competes with every earlier distinct token, not
+with tokens of the same type (other entities), and no reference distribution for
+$\mathrm{RI}_h$ is reported.
+\end{itemize}

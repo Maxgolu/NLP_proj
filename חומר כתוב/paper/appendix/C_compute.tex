@@ -1,0 +1,56 @@
+\section{Compute, runs and released artifacts}
+\label{app:compute}
+
+All GPU work ran on the Tel Aviv University Slurm cluster (partition
+\texttt{studentkillable}) on TODO-GPU-TYPE GPUs of 11--12\,GB memory each; the model
+is sharded in fp16 over two GPUs per worker. Table~\ref{tab:compute} lists the
+production runs. Every run is driven by a frozen plan whose SHA-256, together with
+the hashes of the code files and the model revision, is written to a manifest; a
+gate at the start of each run reproduces reference candidate logits and, where
+applicable, previously saved importances to a fixed tolerance before any
+measurement, and the run aborts otherwise. Records carry per-item provenance and
+runs resume from checkpoints. Code, plans, manifests and analysis tables are at
+\url{https://github.com/Maxgolu/NLP_proj}.
+
+\begin{figure}[h]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[>=stealth, font=\scriptsize, node distance=4pt,
+  box/.style={draw, rounded corners=2pt, inner sep=3pt, align=center, minimum width=2.2cm, minimum height=1.6em}]
+\node[box] (plan) {frozen plan\\(hashes of data, code, model)};
+\node[box, right=of plan] (gate) {gate\\(reference logits, saved $I_h$)};
+\node[box, right=of gate, fill=orange!25] (run) {workers\\(2 GPUs each)};
+\node[box, below=8pt of run] (rec) {records with provenance\\checksummed chunks};
+\node[box, left=of rec] (ana) {CPU analysis\\reproduces every table};
+\node[box, left=of ana] (ver) {independent re-check\\of saved effects};
+\draw[->] (plan) -- (gate); \draw[->] (gate) -- node[above, text=black!65] {pass} (run);
+\draw[->] (run) -- (rec); \draw[->] (rec) -- (ana); \draw[->] (ana) -- (ver);
+\draw[->, dashed] (gate.south) |- ++(0.3,-0.35) node[right, text=black!65] {fail: abort};
+\end{tikzpicture}}
+\caption{Run protocol shared by every stage. A run starts from a frozen plan, passes a
+gate that reproduces reference quantities, writes checksummed records, and its
+analysis tables are recomputed on CPU from those records and re-checked
+independently.}
+\label{fig:pipeline}
+\end{figure}
+
+\begin{table}[h]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrp{2.5cm}@{}}
+\toprule
+Run & Job & Wall-clock & Content \\
+\midrule
+Stage 1, RI scan & TODO & TODO & all 1,024 heads, 534 prompts \\
+Stage 1, test-only RI & 905839 & TODO & name/word controls \\
+Stage 2, causal map & 888691 & 1h15m (6 GPUs) & all heads, 40 pairs; 92 heads, 178 pairs \\
+Stage 2, extension & 912879 & 33m & Scope P/F, 178 pairs \\
+Stage 3, characterization & TODO & $\approx$3.7h (6 GPUs) & 263,328 patched forwards \\
+Stage 3, readout & 918689 & 33m & 1,920 readout records \\
+Stage 4, routes and groups & TODO & TODO & TODO \\
+Developmental sweep & TODO & TODO & 17 checkpoints \\
+\bottomrule
+\end{tabular}
+\caption{Production runs. Wall-clock is the Slurm elapsed time of the job.}
+\label{tab:compute}
+\end{table}

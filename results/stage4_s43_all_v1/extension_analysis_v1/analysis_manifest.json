@@ -1,0 +1,157 @@
+{
+  "analysis": "S4.3_post_extension_full89_bidirectional_v1",
+  "bidirectional_descriptives": {
+    "family_pearson_noise_restore": "descriptive Pearson correlation across 89 family-level matched increments; not a significance test",
+    "family_sign_match_fraction": "fraction of 89 families for which the sign of the noising matched increment equals the sign of the restoration matched increment",
+    "selection_or_reranking": false,
+    "status_labels": [
+      "both_retained_same_mean_sign",
+      "both_retained_opposite_mean_sign",
+      "noise_only_retained",
+      "restore_only_retained",
+      "neither_retained"
+    ]
+  },
+  "common20_reproducibility": {
+    "families": [
+      0,
+      16,
+      32,
+      48,
+      56,
+      64,
+      82,
+      96,
+      98,
+      102,
+      116,
+      130,
+      150,
+      154,
+      162,
+      176,
+      178,
+      186,
+      192,
+      196
+    ],
+    "purpose": "compare the extension rerun of the original common 20 families with the frozen initial_v2 screen summaries",
+    "used_for_selection": false
+  },
+  "effect_definitions": {
+    "matched_increment": "raw effect of selected route minus raw effect of its prospectively matched direct/no-release comparator, computed within pair/order/direction before averaging the two prompt orders to family level",
+    "noise": "raw effect = M(clean recipient) - M(clean recipient with corrupt donor route)",
+    "restore": "raw effect = M(corrupt recipient with clean donor route) - M(corrupt recipient)"
+  },
+  "family034_compatibility": {
+    "exception_pair_ids": [
+      "034/direct/base/0/order0",
+      "034/direct/base/0/order1"
+    ],
+    "frozen_reference_tolerance": 1e-06,
+    "global_historical_margin_tolerance_unchanged": 0.05,
+    "production_max_exception_reference_error": 0.0,
+    "scientific_pairs_excluded": false
+  },
+  "family_aggregation": {
+    "families": 89,
+    "orders_per_family": 2,
+    "separate_by_direction": true
+  },
+  "interpretation_guards": [
+    "The 16 routes were fixed prospectively before this full-89 analysis; no new configurations are selected.",
+    "Retention is a descriptive screen, not a significance test.",
+    "A retained matched increment supports dependence under the specified intervention, not unique mediation.",
+    "Whole-block releases are interpreted only as block-mediated.",
+    "Negative matched increments are attenuation/opposition under the tested intervention, not negative information.",
+    "Noising/restoration agreement does not establish literal semantic content.",
+    "Held-out families were not accessed."
+  ],
+  "production": {
+    "baseline_gate_sha256": "f4f5b30405021ff60af1238b0450bf5c100c459781ae5741e7e1af717c3d8d29",
+    "directions": [
+      "noise",
+      "restore"
+    ],
+    "directory": "/content/drive/MyDrive/NLP_Project/stage 4/s4.3/results_s4.3/extension_v4_family034_final",
+    "done_sha256": "d09a00b4bc9ab4c28218fdf9dda06987b16d0b1faf28bef133e77d5b2e0f2267",
+    "families": 89,
+    "heldout": "sealed",
+    "identity_hash": "1f6d18be982d12ce7d1c0a4a88f19f2fe94bff4c5af89ee66c6bb46a2836039b",
+    "pairs": 178,
+    "records": 9612,
+    "run_manifest_sha256": "c98e0b21e8fb017f3dbb0ea0ee3a7c749761f46dba069dfdd596bcdb61ff91c1",
+    "self_gate_sha256": "3f77c642cabcb4a1c73a1e065d7f77eb91c69198c60dd3e3ecc0c1c19e4b70e0",
+    "stage": "S4.3_extension_v3_family034_compat_hardware_independent",
+    "state_sha256": "ee607b5b52e790629db0f037b22d0c7fcd4f8354bb7c2acf81f01b362a20e6fd"
+  },
+  "products": {
+    "bidirectional_summary.csv": "09dba64929ce9080e64f6fb8c129760954b90c83650abde4f0546839c83a9eb9",
+    "common20_replication.csv": "e2c602747f3419b22eefb332a6ced3c18d0e8c665f5248e38dcb9b8e8f6c816a",
+    "config_direction_summary.csv": "47db6baa65d2a7caa546d81cac558f56c3e1bb3ab3c0dbdf2ccd9eb2725e2ac6",
+    "family_bidirectional.csv": "0b45c683ad29dca8d375cd4abdb51199b5598d54ca67202cb17acdd42a4f05d1",
+    "family_direction_level.csv": "2084a5006eb5c5b2f0e4b957b6bd72b7113620e7303af82728df8e0e75455d00",
+    "family_direction_sign_agreement.png": "d5e44127c9e2fc167050b183201691be01222fc948290f353182b52896b1b976",
+    "full89_noise_vs_restore.png": "8a86de319ec6fa3149e36a4d1c244a397e8ac7a5121553715adbe5f2445a79b4",
+    "pair_metadata.csv": "3456b251661925b531b3a82abc4d493a2ec57cdc4a146706ea8a6c69704f2ab5",
+    "pair_order_matched.csv": "22525af7ac318b46c68784c502ac9e7f80ea3fa940463f8fe257be53afd0b857",
+    "screen20_vs_full89_noise.png": "e9c5311019c8c89ce5dabf3c336c2dc7706fb0bbb303eee02dd7a955fdb6b4e9",
+    "selected_extension_contrasts_frozen.csv": "b010eb3c0e833d67ff4c3bec4cee840f749bc1e9d479ae0578e94bed1d19ce03",
+    "selected_extension_prerequisites_frozen.csv": "dc7e69faa905dfb16edcfc6821720941bc99f05c040fc9f8459fd7c8c9c374b0",
+    "source_summary.csv": "39bdd0e0128fab4a616c16cc75fc7570c925da3ae4d73804a0eabe378146e2e8"
+  },
+  "retention": {
+    "applied_separately_to": [
+      "noise",
+      "restore"
+    ],
+    "coherent": {
+      "abs_mean_signed_gte": 0.1,
+      "family_sign_agreement_gte": 0.7
+    },
+    "descriptive_not_significance_test": true,
+    "heterogeneous": {
+      "fraction_abs_family_effect_gte_tau": 0.2,
+      "mean_abs_gte": 0.1
+    },
+    "tau": 0.1
+  },
+  "selection_provenance": {
+    "analysis_manifest_sha256": "f7929c84ef8a0317c0052644a94029b1c70ee5b28b2b838d85949defd1a7dda9",
+    "direct_prerequisites": [
+      "direct_chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=none",
+      "direct_chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=none",
+      "direct_chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=none",
+      "direct_chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=none",
+      "direct_chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=none",
+      "direct_chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=none",
+      "direct_chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=none",
+      "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=none|live=none",
+      "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=none|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=none|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=none|live=none"
+    ],
+    "initial_analysis": "S4.3_initial_v2_family_screen_v1",
+    "selected_configs": [
+      "chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=L16H1+L16H21",
+      "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H18+L18H19",
+      "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=MLP20+block21+block22|live=none",
+      "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=MLP26+block27+block28|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=MLP8+MLP9|live=none",
+      "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H18",
+      "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H19",
+      "chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=L18H18+L18H19",
+      "chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=L18H18+L18H19",
+      "chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=L16H1+L16H21",
+      "chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=L18H18+L18H19",
+      "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=MLP9|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=MLP9|live=none",
+      "chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=L16H1+L16H21",
+      "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=block27|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=MLP8+MLP9|live=none"
+    ],
+    "selected_extension_contrasts_sha256": "0ae04006e7757ef987023d925d4ea3d936c7ffddcea209bb64cd897b80375413",
+    "selected_extension_prerequisites_sha256": "3f4c9ada32d01cc76884b20771dc606a17cbd6b59e44833f8acfc8e12bba5d87",
+    "selection_reopened": false
+  }
+}

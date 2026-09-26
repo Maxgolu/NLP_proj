@@ -1,0 +1,252 @@
+\section{Stage 4: rules, rosters and configurations}
+\label{app:stage4}
+
+S4.1 and S4.2 below describe executed measurements; S4.3--S4.5 describe the frozen
+plan for the parts not yet executed at the time of writing, marked TODO where the
+executed rosters will replace it.
+
+\paragraph{Route semantics.}
+The source's pre-projection slice $z=AV$ is replaced by the donor value; the shared
+attention-output normalization stays live; all other residual-branch increments
+between source and receiver are frozen after their normalization in the hybrid run.
+The receiver's channel is recaptured from the hybrid residual and injected into a
+fresh recipient run: for fact-site K/V routes at the fact positions, with only the
+receiver's original colon output row released; for Q routes at the colon. In the
+recipient run all later computation is live. Effects are averaged over orders
+within family and then over families; 20,000-draw family-bootstrap intervals are
+descriptive after selection. \emph{Retention rule}, fixed in advance with
+$\tau=0.10$ logits: coherent if $|\bar I|\ge\tau$ with the same sign in at least
+70\% of families; heterogeneous if $\mathbb{E}_f|I_f|\ge\tau$ and $|I_f|\ge\tau$ in
+at least 20\% of families. The rule orders measurements; it is not a significance
+test.
+
+\paragraph{S4.1 sources, receivers, controls.}
+Sources with fact-site masks: L17H1 (query-fact mother tokens, ``is'', period, and
+their union), L15H25 (child-last, query sentence), L13H10 and L17H3 (sentence
+masks), and two coverage candidates outside the inventory, L13H18 and L24H19,
+added after a coverage check of the exact common-subset map. Colon sources: the
+strong answer-position heads. Receivers are a bounded candidate list built from the
+Stage-3 attention profiles and coverage rules, not every later head: for fact-site
+sources, later heads attending to the site, channels K and V; for colon sources,
+later heads on Q and a residual bypass that tests whether the source's write reaches
+the answer without passing through a tested head. Initial measurement on the 40
+common pairs; retained routes extended to all 178 pairs in both donor directions
+under a cap of 96 extended configurations. Controls by intervention type: random
+receivers for head routes; wrong-site masks for fact-site routes; self patches;
+reverse-direction routes; the ordinary single-head patch as comparator; order and
+prefix sensitivity per route. Counts of retained routes are reported with the
+results.
+
+\paragraph{S4.2 groups.}
+\begin{center}\small
+\begin{tabular}{@{}llp{5.4cm}@{}}
+\toprule
+ID & Source / site & Members (all replaced at the colon) \\
+\midrule
+O1 & L13H10 / sentence & L16H1, L17H3, L18H18, L18H19 \\
+O2 & L15H25 / child-last & L16H1, L16H21 \\
+O3 & L17H1 / mother & L18H18, L18H19, L18H24, L19H16, L20H1, L22H5, L27H6 \\
+O4 & L17H3 / colon & L18H18, L18H19 \\
+I1 & L27H6 / Q & L18H18, L18H19, L19H16, L20H1, L23H15, L25H17 \\
+I2 & L21H23 / KV & L17H24, L18H18, L18H19, L19H16, L20H1 \\
+I3 & L30H18 / Q & L18H18, L18H19, L20H1, L23H15, L25H17 \\
+I4 & L18H18 / Q & L16H1, L16H21, L17H3 \\
+\bottomrule
+\end{tabular}
+\end{center}
+Outgoing groups (O) collect the receivers of one source; incoming groups (I) the
+sources of one receiver. Singles, whole groups and group-minus-one masks
+deduplicate to 49 base masks under a 128-configuration cap; selected group
+contrasts and two blocking contrasts were extended to all 89 families. Receiver
+blocking: L17H1's clean activation restored in the corrupted run at its source
+masks with the O3 members clamped to their corrupted colon outputs; L15H25 restored
+with the O2 pair clamped; self-clamp and reverse controls. Mean-replacement
+sensitivity was run for the extended contrasts, not for every configuration.
+
+\paragraph{S4.2 RI participation.}
+RI31: the RI-selected heads retained by the rule ``best original RI rank $\le3$ in
+any ranking, or $\max(|I_h|,|I^F_h|)\ge0.1$'' (23 by rank, 8 by effect). It
+contains the eight strong RI heads (positive: L16H1, L16H21, L17H24, L18H19, L22H5;
+negative: L19H16, L23H15, L26H23) and 23 residual heads. Reference cohorts: four
+sets of 23 non-selected heads matched to the residual set in size and layer
+composition; they are compared with the residual 23, not with all 31. Weakened
+background $K$: the smallest prefix of the strongest colon readers whose replacement
+leaves the symmetric clean-minus-corrupted gap inside a pre-specified range, with a
+fallback rule if no prefix qualifies; the rule selected $K=\{$L21H18$\}$ (66\% of the
+gap left). All 31 candidates were measured on the common panel; 14 were extended
+(the eight strong heads and six retained conditional candidates: L6H24, L8H15,
+L14H23, L15H3, L16H31, L20H7). Means are indexed by head, fact slot, token role and
+within-name bucket, computed over the 89 families with the evaluated family
+excluded. Backup test: L26H31, a name mover with negligible standalone effect, in
+five backgrounds with upstream or downstream members replaced; the same retention
+rule applies.
+
+\paragraph{S4.1 results: retained routes.}
+Of the 96 configurations extended to all 89 families, 95 retain under noising and 93
+under restoration; 94 and 92 retain on the additional 69 families alone, and all 96
+mean signs agree between the two donor directions (Figure~\ref{fig:routes-app}a).
+Table~\ref{tab:routes-app} lists the main retained routes. All 55 controls are smaller
+than their target in mean absolute family effect (Figure~\ref{fig:routes-app}b); 7 of
+17 other-site controls nevertheless retain under the rule, and 0 of 38 random
+receivers. Controls are not norm-matched. Nineteen retained core configurations were
+not extended (cap), and L13H18 has no retained route among 138 localized direct
+configurations.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{figH_routes}
+\caption{Route mapping on the 89 discovery families. (a) Noising against restoration
+effect of the 96 extended configurations, by receiver type. (b) Mean absolute family
+effect of each control against that of its target route (log axes); every control lies
+below the diagonal.}
+\label{fig:routes-app}
+\end{figure}
+
+\begin{table}[h]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Source / site & Receiver / channel & $I_{89}$ & $J_{89}$ & $I_{69}$ \\
+\midrule
+L17H1 / union & L18H18 / V & $+3.400$ & $+3.335$ & $+3.391$ \\
+L17H1 / union & L18H19 / V & $+2.074$ & $+2.054$ & $+2.057$ \\
+L17H1 / union & L18H24 / V & $-1.004$ & $-1.070$ & $-0.988$ \\
+L17H1 / union & L22H5 / V & $+0.898$ & $+0.865$ & $+0.882$ \\
+L17H1 / union & L20H1 / V & $-0.582$ & $-0.576$ & $-0.567$ \\
+L17H1 / union & L19H16 / V & $-0.247$ & $-0.225$ & $-0.243$ \\
+L15H25 / child-last & L16H1 / V & $+0.182$ & $+0.187$ & $+0.182$ \\
+L15H25 / child-last & L16H21 / V & $+0.210$ & $+0.223$ & $+0.215$ \\
+L16H1 / colon & L18H18 / Q & $+0.372$ & $+0.370$ & $+0.367$ \\
+L16H21 / colon & L18H18 / Q & $+0.349$ & $+0.407$ & $+0.348$ \\
+L18H18 / colon & L27H6 / Q & $+0.662$ & $+0.663$ & $+0.674$ \\
+L18H19 / colon & L27H6 / Q & $+0.731$ & $+0.742$ & $+0.736$ \\
+L13H10 / sentence & L16H1 / V & $-0.175$ & $-0.175$ & $-0.172$ \\
+L13H10 / sentence & L17H3 / V & $+0.150$ & $+0.139$ & $+0.151$ \\
+L14H26 / sentence & L16H1 / V & $+0.136$ & $+0.140$ & $+0.139$ \\
+L17H3 / colon & L18H18 / Q & $-0.158$ & $-0.172$ & $-0.155$ \\
+L18H19 / colon & MLP 19 & $+0.532$ & $+0.554$ & $+0.514$ \\
+L18H19 / colon & bypass & $+0.754$ & $+0.770$ & $+0.748$ \\
+L18H18 / colon & bypass & $+0.547$ & $+0.562$ & $+0.546$ \\
+L24H19 / colon & bypass & $+0.165$ & $+0.165$ & $+0.160$ \\
+\bottomrule
+\end{tabular}
+\caption{Main retained routes: noising ($I$) and restoration ($J$) effects on the 89
+discovery families and noising on the additional 69 families outside the common
+subset. ``Union'' is the union of L17H1's mother-token, ``is'' and period masks;
+``bypass'' tests the source's write reaching the answer without passing through a
+tested head.}
+\label{tab:routes-app}
+\end{table}
+
+\paragraph{S4.2 results: blocking, RI participation, backup.}
+Table~\ref{tab:blocking-app} gives the receiver-blocking results and
+Table~\ref{tab:ri31-app} the RI-participation audit for the 14 extended candidates.
+The whole-group effects of the eight G1 groups overlap heavily because the
+L18H18/L18H19 pair belongs to most of them (O1, O3, O4, I1, I2, I3); group differences
+persist after same-order normalization, and the full-model gap itself depends on fact
+order (14.6 vs.\ 7.8 logits). Donor and mean replacement can give very different
+candidate accuracies (O3: 36.0\% vs.\ 97.8\% clean). In the backup test, L26H31 stays
+below the retention rule in all five backgrounds (intact, $-$L21H18, $-\{$L21H18,
+L22H5, L21H6$\}$, the same plus L27H6, and $-$L27H6: mean effect at most $+0.024$
+logits, mean absolute at most $0.040$).
+
+\begin{table}[h]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Source & Mask & $n_f$ & $J_W$ & $B$ & $B/J_W$ \\
+\midrule
+L17H1 & writer-union & 89 & $+5.358$ & $+4.790$ & 89.4\% \\
+L17H1 & sentence & 89 & $+5.972$ & $+5.351$ & 89.6\% \\
+L15H25 & child-last & 20 & $+0.457$ & $+0.442$ & 96.7\% \\
+L15H25 & sentence & 20 & $+0.451$ & $+0.442$ & 97.8\% \\
+L13H10 & sentence & 20 & $-0.330$ & $-0.429$ & 129.9\% \\
+L17H3 & colon & 20 & $-0.417$ & $-0.304$ & 72.9\% \\
+\bottomrule
+\end{tabular}
+\caption{Receiver blocking. $J_W$: restoration obtained by restoring the source's
+clean activation at its mask in the corrupted run; $B$: the part of it lost when the
+source's receivers (O3 for L17H1, O2 for L15H25, O1 for L13H10, O4 for L17H3) are
+clamped to their corrupted colon outputs. Ratios are not exclusive mediation shares.}
+\label{tab:blocking-app}
+\end{table}
+
+\begin{table}[h]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Head & $I_{K}$ & $J_{K}$ & $I_{K,\mu}$ & $\mathbb{E}_f|I_{K,f}|$ & $I_K-I_0$ \\
+\midrule
+L18H19 & $+3.006$ & $+3.129$ & $+1.689$ & 3.006 & $-0.066$ \\
+L22H5  & $+1.088$ & $+1.115$ & $+0.304$ & 1.088 & $+0.105$ \\
+L16H21 & $+0.893$ & $+0.999$ & $+0.999$ & 0.899 & $-0.032$ \\
+L16H1  & $+0.798$ & $+0.769$ & $+1.688$ & 0.803 & $-0.070$ \\
+L17H24 & $+0.413$ & $+0.413$ & $+0.324$ & 0.413 & $-0.020$ \\
+L19H16 & $-0.874$ & $-0.893$ & $-0.448$ & 0.874 & $-0.054$ \\
+L23H15 & $-0.933$ & $-0.902$ & $-0.394$ & 0.933 & $+0.014$ \\
+L26H23 & $-0.367$ & $-0.354$ & $-0.167$ & 0.376 & $+0.001$ \\
+\midrule
+L8H15  & $+0.284$ & $+0.316$ & $+0.130$ & 0.379 & $+0.005$ \\
+L14H23 & $-0.215$ & $-0.201$ & $-0.134$ & 0.246 & $-0.003$ \\
+L16H31 & $-0.173$ & $-0.167$ & $-0.261$ & 0.174 & $+0.014$ \\
+L15H3  & $-0.104$ & $-0.086$ & $-0.154$ & 0.115 & $+0.002$ \\
+L6H24  & $+0.096$ & $+0.103$ & $-0.065$ & 0.241 & $-0.005$ \\
+L20H7  & $+0.032$ & $+0.099$ & $-0.177$ & 0.318 & $+0.058$ \\
+\bottomrule
+\end{tabular}
+\caption{RI participation on the weakened background $K=\{$L21H18$\}$, 89 families:
+noising ($I_K$) and restoration ($J_K$) with the corrupted donor, noising with mean
+replacement ($I_{K,\mu}$), mean absolute family effect, and the change from the
+intact-model single ($I_K-I_0$). Top: the eight strong RI heads; bottom: the six
+conditional candidates retained for extension. Conditional participation is not a
+newly unmasked backup for any head.}
+\label{tab:ri31-app}
+\end{table}
+
+\paragraph{S4.3 local expansion (plan).}
+Sources: L13H18 (three retained slot masks; receivers L16H1, L16H21, L18H18,
+L18H19; K and V; MLP13, MLP14 or both released), L8H15 (two sentence masks; same
+receivers; MLP8/MLP9), L16H31, L20H7 and L26H23 (colon sources; Q receivers in
+later layers and residual continuation; local MLPs or blocks released), and two
+chains (L15H25 $\to$ \{L16H1, L16H21\} $\to$ Q of L18H18/L18H19; L17H1 $\to$
+\{L18H18, L18H19\} $\to$ Q of the late readers). 249 configurations before
+deduplication; noising on 40 common pairs first, at most 9,960 endpoints plus at
+most 2,240 matched direct comparators before reuse of compatible S4.1 records; at
+most 16 retained contrasts extended to 178 pairs. TODO: executed panel.
+
+\paragraph{S4.5 retention, reduction, completeness (plan).}
+$C_0$ (33 heads) in eight disjoint reduction units---practical units, not
+established functional modules: $W=\{$L15H25, L17H1$\}$; $D=\{$L16H1, L16H21$\}$;
+$P=\{$L18H18, L18H19$\}$; $A=\{$L21H6, L21H18, L22H5, L27H6$\}$; $N=\{$L13H10,
+L17H3, L18H24, L19H16, L20H1, L23H15, L26H23, L30H18$\}$; $R_6$ as above;
+$T=\{$L14H26, L17H17, L17H24, L19H22, L21H23, L25H17, L30H13$\}$; $U=\{$L13H18,
+L24H19$\}$. Acceptance: with $g_f(C)$ the family's clean-minus-corrupted gap,
+\begin{align*}
+F(C)&=\frac{\mathbb{E}_f\,g_f(C)}{\mathbb{E}_f\,g_f(\mathrm{full})}\in[0.8,1.2],\\
+L(C)&=\frac{\mathbb{E}_f|g_f(C)-g_f(\mathrm{full})|}{\mathbb{E}_f|g_f(\mathrm{full})|}\le0.2,
+\end{align*}
+at most five points of candidate-accuracy loss in each condition and each order,
+and the all-heads-mean baseline must not itself pass. Pre-declared addback if $C_0$
+fails: the remaining 17 RI31 heads ($C_{50}$). Reduction: remove the unit whose
+removal gives the smallest increase in $L$ while all guards hold, recompute the
+remaining candidates in the new background, and allow at most two passes over the
+units; evaluate the reduced mask on all 178 pairs and restore units in reverse
+order if it fails. Completeness: remove $W,D,P,A,N$, the current RI members
+($C\cap$RI31), the current non-RI members and $R_6$ from the full model and from
+$C$ with identical masks. TODO: executed $C^*$ and guard values.
+
+\paragraph{S4.4 fact $\times$ query panel (plan).}
+Cells $x_{00}$ (clean), $x_{10}$ (fact swap), $x_{01}$ (query change), $x_{11}$
+(both), with correct answers rebuilt from the fact table and a fixed $a{-}b$ scoring
+sign in all four cells. Configurations: full model; full minus O3 (colon); full
+minus the residual RI23 (all eligible test positions); retained $C^*$; $C^*$ minus
+$C^*\cap$RI31; $C^*$ minus $C^*\setminus$RI31. Reported per configuration: the two
+fact-axis and two query-axis contrasts, each cell's accuracy, and $B_D$. Panel: 20
+common families, both orders; extension to the 89 families only if a core
+condition-wise accuracy discrepancy between $C^*$ and the full model exceeds five
+points or the sign of $B$ changes relative to the full model. Query-only changes
+leave fact-site activations identical by causality, so the panel is a group-level
+test. TODO: executed cells.

@@ -120,3 +120,20 @@ Daniella's test ICL vs SIH/results/ri/developmental_v1/ri_head_trajectory.csv
 Daniella's test ICL vs SIH/results/ri/developmental_v1/analysis/head_changes_*.csv
 Daniella's test ICL vs SIH/Documentataion/OLMo_ICL_RI_side_experiment_methodology.pdf
 **/.ipynb_checkpoints/
+
+# Stage 4.3 (integrated 26 Sept 2026): raw chunks and large per-pair tables stay on OneDrive
+results/stage4_s43_all_v1/*/chunks/*.json
+results/stage4_s43_all_v1/analysis_v1/pair_order_level.csv
+results/stage4_s43_all_v1/analysis_v1/family_level.csv
+results/stage4_s43_all_v1/extension_analysis_v1/pair_order_matched.csv
+results/stage4_s43_all_v1/extension_analysis_v1/family_direction_level.csv
+Daniellas S4.3/
+
+# Paper: sources only
+חומר כתוב/paper/main.pdf
+חומר כתוב/paper/*.aux
+חומר כתוב/paper/*.log
+חומר כתוב/paper/*.bbl
+חומר כתוב/paper/*.blg
+חומר כתוב/paper/*.out
+חומר כתוב/paper/*.synctex.gz

@@ -1,0 +1,18 @@
+{
+  "configs_per_direction": 27,
+  "direct_prerequisites": 11,
+  "directions": [
+    "noise",
+    "restore"
+  ],
+  "expected_records": 9612,
+  "families": 89,
+  "heldout": "sealed",
+  "historical_margin_tolerance": 0.05,
+  "pairs": 178,
+  "records_per_pair": 54,
+  "sdpa_reconstruction_tolerance": 0.02,
+  "selected_contrasts": 16,
+  "self_donor_tolerance": 0.001,
+  "stage": "S4.3_extension_v1_full178_bidirectional"
+}

@@ -1,0 +1,16 @@
+{
+  "configs_per_direction": 27,
+  "directions": [
+    "clean_self",
+    "corrupt_self"
+  ],
+  "endpoint_tests": 54,
+  "historical_margin_error": 0.01171875,
+  "hybrid_groups_per_direction": 16,
+  "identity_hash": "1f6d18be982d12ce7d1c0a4a88f19f2fe94bff4c5af89ee66c6bb46a2836039b",
+  "max_nonlive_clamp_error": 0.0,
+  "max_self_endpoint_error": 0.0,
+  "pair_id": "000/direct/base/0/order0",
+  "passed": true,
+  "seconds": 14.701035737991333
+}

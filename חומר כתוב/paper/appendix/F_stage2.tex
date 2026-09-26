@@ -1,0 +1,167 @@
+\section{Causal map: details}
+\label{app:stage2}
+
+\paragraph{Coverage and head sets.}
+The screen was computed for all heads on all 178 discovery pairs. Exact Scope-P
+patching covered all 1,024 heads on a common subset of 20 randomly chosen families
+(40 pairs). Exact Scope-P patching on all 178 pairs covered 148 heads: a 92-head set
+selected on discovery data before the extension measurements (the screen's top 25,
+the two heads selected by the original pooled index, fixed Stage-1 example heads
+and 25 random controls), the 46 test-only RI candidates not already in that set, and
+ten further heads completing the set of 19 heads with at least one answer-position
+QK event to a test-fact source. Exact Scope-F patching on all 178 pairs covered the
+union of the 59 RI candidates and the 19 answer-position heads (69 heads). The
+extension heads were chosen after the common-subset results were available and
+before any measurement on the remaining 138 pairs; their selection uses discovery
+data only, so intervals for selected heads describe stability within the run and
+are not selection-adjusted. Twenty-five heads with the largest common-subset effects
+were all already covered, since the 92-head set contained the screen's top 25. The
+common-subset values of the extension heads were taken from the existing all-head
+run, not recomputed; a reproduction check on six heads of one family matched the
+saved effects exactly.
+
+\paragraph{Gates.}
+Before measurement, each worker verified zero drift of the behavioural candidate
+scores under hooks, zero effect of self-patching (at all positions and at the final
+position), zero self-attribution, and zero effect of patching positions before the
+first differing token, whose activations are identical under causal attention.
+
+\paragraph{Screen calibration.}
+On the 40 common pairs, with the same pairs for both, the signed head-ranking
+Spearman correlation between $\widehat I_h$ and exact $I_h$ is 0.945 (0.921 for
+absolute means, 0.903 pair-by-head), above the pre-registered 0.7, so the
+integrated-gradients fallback was not used. Among the 148 extension heads on the
+identical 178 pairs the correlation is 0.990; comparing the 178-pair screen with the
+40-pair exact values gives 0.698, a difference that mixes approximation error with
+family sampling. Rank agreement does not imply per-head accuracy: the screen
+under-shoots the strongest heads (same-pair residuals L17H1 2.24, L27H6 0.51,
+L18H19 0.28 logits), as expected of a local linear approximation.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{figF_screen_layers}
+\caption{The causal map. (a) Gradient screen against exact importance on the same 40
+pairs for the 148 heads with full coverage (symmetric-log axes); the screen
+under-shoots the strongest head. (b) Exact importance of all 1,024 heads by layer;
+orange marks the 25 heads with $|I_h|\ge0.3$ on the 178 pairs. Strong heads of both
+signs lie in layers 13--30.}
+\label{fig:map-app}
+\end{figure}
+
+\paragraph{Behavioural contrast.}
+Over the 89 discovery families (orders averaged) the clean metric is 5.68
+[5.34, 6.03], the corrupted metric with the clean sign fixed $-5.49$
+[$-5.85$, $-5.14$], and the gap 11.17 [10.63, 11.73]; every clean pair has $M>0$ and
+every corrupted pair $M<0$. Four of the 178 pairs have a non-empty shared answer
+prefix. Intervals are percentile family bootstraps (20,000 resamples), computed
+after the results were seen.
+
+\paragraph{Stability across subsets and orders.}
+The all-head exact scan on the 20-family common subset ranks the same four heads
+first, with effects 5.742 (L17H1), 3.222 (L27H6), 3.080 (L18H19) and 2.768
+(L18H18) against 5.701, 3.071, 3.072 and 2.704 on all 178 pairs.
+Over all 1,024 heads the Spearman correlation between the order-0 and order-1
+exact rankings on the common subset is 0.46, a value dominated by the many heads
+with near-zero effect; within the 92-head extension set it is 0.73 and among the
+top 25 it is 0.66, with 17 heads in both order-specific top-25 lists. All ten
+strongest heads have positive mean importance in both orders.
+
+\paragraph{Scope F: how the answer-position heads act.}
+Table~\ref{tab:scopeF-app} splits the Scope-F effect of the strongest heads of the
+69-head Scope-F set into the change of the clean-answer, corrupted-answer and
+source-name logits at the first divergent token. For the 69 heads the two scopes
+correlate at 0.79, but the ratio $I^F_h/I^P_h$ is bimodal: between 0.91 and 1.09 for
+every head in layers 16--26 with $|I_h|>0.04$, indistinguishable from zero for every
+such head in layers 6--11 (L6H24, L8H8, L8H15, L9H16, L10H16, L11H15), and
+intermediate for L14H23 (0.12) and L15H3 (0.46). The promotion is not perfectly
+specific to the answer: for L18H19, L16H21 and L16H1 the logit of the source (child)
+name also rises by 0.3--0.4, so a Scope-F effect shows that the head raises the name
+retrieved on the donor run, not that it retrieves only the correct one.
+
+\begin{table}[h]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Head & $I^P_h$ & $I^F_h$ & $\Delta$ clean & $\Delta$ corr. & $\Delta$ source \\
+\midrule
+L18H19 & 3.07 & 3.08 & $-0.20$ & $+2.88$ & $+0.37$ \\
+L22H5  & 0.98 & 0.98 & $-0.06$ & $+0.92$ & $+0.02$ \\
+L16H21 & 0.93 & 0.89 & $+0.01$ & $+0.90$ & $+0.32$ \\
+L16H1  & 0.87 & 0.86 & $-0.05$ & $+0.81$ & $+0.33$ \\
+L17H24 & 0.43 & 0.43 & $-0.03$ & $+0.40$ & $+0.06$ \\
+L26H23 & $-0.37$ & $-0.37$ & $+0.08$ & $-0.29$ & $-0.06$ \\
+L19H16 & $-0.82$ & $-0.83$ & $0.00$ & $-0.83$ & $-0.16$ \\
+L23H15 & $-0.95$ & $-0.95$ & $+0.01$ & $-0.94$ & $-0.19$ \\
+\bottomrule
+\end{tabular}
+\caption{Scope-F patch of the eight strongest heads in the Scope-F set: importance
+under both scopes and the mean change of the clean-answer, corrupted-answer and
+source (child) name logits, 89 families, orders averaged. Positive heads promote the
+name retrieved on the donor run rather than suppressing the alternative; negative
+heads lower it.}
+\label{tab:scopeF-app}
+\end{table}
+
+\paragraph{Pre-registered audit criteria.}
+The selection is judged \emph{sound} if selected heads have systematically larger
+importance than layer-matched non-selected heads; \emph{incomplete} if heads in the
+top decile of exact importance lie outside the selection, with the reason recorded
+(no qualifying QK event, insufficient support, or a supported but non-positive name
+gap at both anchors); and \emph{misleading} if the median importance of selected
+heads does not exceed that of the 25 random controls (family bootstrap of the median
+difference). The criteria are not mutually exclusive. They were written for the
+pooled index and re-applied to the test-only selection, whose membership was
+decided after Stage-1 results were inspected; the second application is
+exploratory.
+
+\paragraph{Rank correlations and verdicts.}
+Table~\ref{tab:corr-app} lists the Spearman correlations between the Stage-1
+statistics and exact importance on the 40 common pairs; support means at least 20
+comparisons in ten families. The two pooled-index heads have $I_h=-0.002$ logits on
+all 178 pairs, with the expected sign in 47\% and 42\% of families, against a median
+of 0.0002 for the 25 random controls. Top-25 overlap with the exact ranking is 0.02
+by Jaccard for both RI versions, against 0.52 for the gradient screen. Of the 102
+heads in the top decile of importance, 88 lie outside the test-only selection: 23
+have no qualifying attention event, 22 fall below the support rule, 18 pass with a
+non-positive name gap at both anchors, and 25 have a positive gap that did not reach
+any top ten. The two strongest misses illustrate two of these routes: L17H1
+($I_h=5.70$) has only two qualifying attention events in the whole scan, and L27H6
+($I_h=3.07$) has 85 qualifying events but a pooled index of zero, so its
+raw-embedding projection does not favour the target at those events. Under the pre-registered criteria the pooled index is
+\emph{incomplete} (101 of the 102 top-decile heads fall below even the lenient
+control threshold of 0.137; the second-strongest head has index zero) and
+\emph{misleading} (median importance of its two heads $-0.0021$ against 0.0002 for
+the random controls); soundness is not supported. Re-applied to the test-only
+selection: incomplete (88 of 102 top-decile heads outside it); the median importance
+of selected heads exceeds the controls by 0.003 logits (bootstrap interval
+[0.0009, 0.0067]), 0.03\% of the gap, with 56\% positive signs against 60\% for the
+controls; the pooled layer-matched difference is $+0.035$ logits [0.023, 0.047] but
+positive in only 12 of 28 layers and carried by four heads in layers 16--22 that the
+gradient screen had already selected.
+
+\begin{table}[h]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Statistic & $n$ & $\rho$ vs.\ $I_h$ \\
+\midrule
+Pooled index, first anchor (all heads) & 1,024 & $+0.135$ \\
+Test-only target, first anchor & 172 & $-0.013$ \\
+Test-only name gap, first anchor & 167 & $-0.252$ \\
+\quad ranks within layer & 158 & $-0.302$ \\
+\quad without layers 16--18 & 144 & $-0.278$ \\
+\quad without the 25 strongest heads & 153 & $-0.214$ \\
+\quad positive gaps only & 78 & $-0.102$ \\
+\quad self-attention events only & 39 & $-0.537$ \\
+Test-only name gap, query fact, first & 103 & $-0.335$ \\
+Test-only name gap, last anchor & 167 & $-0.091$ \\
+Control-name mean (other visible names) & 167 & $+0.143$ \\
+Gradient screen (Eq.~\ref{eq:screen}) & 1,024 & $+0.945$ \\
+\bottomrule
+\end{tabular}
+\caption{Spearman rank correlations with exact Scope-P importance on the 40 common
+pairs. Family-bootstrap interval for the main name-gap value: $[-0.289,-0.169]$.}
+\label{tab:corr-app}
+\end{table}

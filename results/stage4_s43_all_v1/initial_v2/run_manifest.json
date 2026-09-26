@@ -1,0 +1,22 @@
+{
+  "created": 1790348194.137362,
+  "identity": {
+    "configs": 305,
+    "direction": "noise",
+    "heldout": "sealed",
+    "historical_compatibility": "abs(current_margin - saved_margin) <= 0.05; individual-logit differences diagnostic only",
+    "hybrid_groups": 53,
+    "input_manifest_sha256": "a148758b2ed8d18b7cddb0e08ac74858c7233962d94c999c4015688a9225fb27",
+    "model_id": "allenai/OLMo-2-1124-7B",
+    "model_revision": "7df9a82518afdecae4e8c026b27adccc8c1f0032",
+    "population": "40 common discovery pairs",
+    "runner_sha256": "96ee95045083c0882ab0cb9274cbc5e51d7333c10ecb5be8c8d70037bd6b3bac",
+    "s43_engine_sha256": "34641cf191a8ddbf71541b3a2b893c7a67c5db87a84fe61f7a1e070864ff4bca",
+    "scientific_registry_sha256": "23dc04c11c8dd11a53296905a2eef174fe68593bb39c208bc58ca7d637bd8134",
+    "stage": "S4.3_initial_v2_margin_compat",
+    "test_s43_sha256": "728224830b30824d4bb187263e4efb9b2a81bdce39e50a9b67992da852ede602"
+  },
+  "identity_hash": "a971c12fb73cf3c2e10ee6d5dc57a41ab28576765e5379688e06e4159c48f6af",
+  "inputs": "/content/drive/MyDrive/NLP_Project/stage 4/s4.3/work/stage4_s43_inputs_v1",
+  "smoke_report": "/content/drive/MyDrive/NLP_Project/stage 4/s4.3/results_s4.3/smoke_v1/smoke_report.json"
+}

@@ -1,0 +1,75 @@
+\section{Prompt format and variants}
+\label{app:data}
+
+Figure~\ref{fig:data} shows the test block of one discovery family in its variants.
+Every prompt begins with four demonstrations of the same form (four facts, a
+question and its answer), identical across all variants and orders of a family, so
+that twins differ only in the test block. A test block holds two chains of two facts
+each: the \emph{query chain}, whose middle name is asked about, and a
+\emph{distractor chain} of the same shape. The answer is the mother of the queried
+name, i.e.\ the top of the query chain; the distractor is the top of the other chain.
+The queried name therefore occurs three times (as a mother, as a child, and in the
+question), and the two candidate answers occur once each. All names are generated
+strings absent from the model's vocabulary as single tokens; names are
+length-matched under the OLMo-2 tokenizer so that clean and corrupted prompts are
+aligned position by position. Relation annotations (head, tail, character spans) are
+produced at construction time for every fact, including demonstrations.
+
+\begin{figure*}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{@{}p{0.48\textwidth}p{0.48\textwidth}@{}}
+\toprule
+\textbf{Clean} (answer: Rarnia) & \textbf{Corrupted} (answer: Dirlna) \\
+\midrule
+\texttt{Jarlia is the mother of Kernna.} & \texttt{Jarlia is the mother of Kernna.} \\
+\texttt{\textbf{Rarnia} is the mother of Jarlia.} & \texttt{\textbf{Dirlna} is the mother of Jarlia.} \\
+\texttt{Kulnra is the mother of Tilnia.} & \texttt{Kulnra is the mother of Tilnia.} \\
+\texttt{\textbf{Dirlna} is the mother of Kulnra.} & \texttt{\textbf{Rarnia} is the mother of Kulnra.} \\
+\texttt{Question: Who is the mother of Jarlia?} & \texttt{Question: Who is the mother of Jarlia?} \\
+\texttt{Answer:} & \texttt{Answer:} \\
+\midrule
+\textbf{Reorder} (answer: Rarnia) & \textbf{Other fact order} (answer: Rarnia) \\
+\midrule
+\texttt{Kulnra is the mother of Tilnia.} & \texttt{Kulnra is the mother of Tilnia.} \\
+\texttt{Jarlia is the mother of Kernna.} & \texttt{Dirlna is the mother of Kulnra.} \\
+\texttt{Rarnia is the mother of Jarlia.} & \texttt{Jarlia is the mother of Kernna.} \\
+\texttt{Dirlna is the mother of Kulnra.} & \texttt{Rarnia is the mother of Jarlia.} \\
+\texttt{Question: Who is the mother of Jarlia?} & \texttt{Question: Who is the mother of Jarlia?} \\
+\texttt{Answer:} & \texttt{Answer:} \\
+\bottomrule
+\end{tabular}
+\caption{Test block of discovery family 0 (the four demonstrations that precede it
+are omitted). Top: the clean prompt and its corrupted twin; only the two bold names
+are swapped, so the two prompts are token-aligned and the distractor becomes the
+answer. Bottom left: the reorder variant, with the same facts in a different order.
+Bottom right: the second fact order of the clean prompt, in which the distractor
+chain precedes the query chain. The query fact is the one whose child is the queried
+name (``Rarnia is the mother of Jarlia.''); the final colon of ``Answer:'' is the
+answer position at which Scope-F interventions are applied.}
+\label{fig:data}
+\end{figure*}
+
+
+\begin{table}[h]
+\centering\scriptsize
+\begin{tabular}{@{}lr@{}}
+\toprule
+Quantity & Value \\
+\midrule
+Generated families & 200 \\
+4-shot accuracy, clean / corrupted / reorder (both orders) & 93 / 94 / 89\% \\
+Families correct on clean and corrupted, both orders & 176 \\
+\quad discovery / held-out (split by family id) & 89 / 87 \\
+Clean--corrupted pairs, discovery & 178 \\
+Common subset (all-head measurements) & 20 families / 40 pairs \\
+Prompts per family (base, corrupted, reorder $\times$ 2 orders) & 6 \\
+Demonstrations per prompt & 4 \\
+Prompt length, tokens (mean) & 282 \\
+Positions differing between twins (mean) & 44 \\
+Pairs with a shared answer prefix & 4 \\
+\bottomrule
+\end{tabular}
+\caption{Data set and split.}
+\label{tab:data}
+\end{table}

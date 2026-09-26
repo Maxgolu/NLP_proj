@@ -1,0 +1,11 @@
+{
+  "completed_pairs": 26,
+  "completed_records": 7930,
+  "expected_pairs": 40,
+  "expected_records": 12200,
+  "identity_hash": "0af61ee5d36da3e5502783eb4119eefb3358e716a0388da4d264f56901752b11",
+  "last_pair": "150/direct/base/0/order1",
+  "last_pair_seconds": 30.411645889282227,
+  "status": "running",
+  "updated": 1790347549.900816
+}

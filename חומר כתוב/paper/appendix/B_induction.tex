@@ -1,0 +1,46 @@
+\section{Induction heads: background}
+\label{app:ih}
+
+\citet{elhage2021mathematical} decompose an attention head into a query--key (QK)
+circuit, which decides where the head attends, and an output--value (OV) circuit,
+which decides what the head writes. In one- and two-layer attention-only models they
+identify \emph{induction heads}: on a sequence $[A][B]\ldots[A]$, the QK circuit
+attends from the second $[A]$ to $[B]$ (prefix matching) and the OV circuit raises the
+logit of $[B]$ (copying). \citet{olsson2022induction} define both properties
+behaviourally, as a prefix-matching score and a copying score measured on repeated
+random token sequences, and show that ablating induction heads removes most of the
+in-context loss reduction of small models; they also observe that induction heads form
+in a narrow window of training that coincides with a sharp improvement in in-context
+learning.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[tok/.style={draw, rounded corners=1pt, minimum height=1.4em, inner sep=2.5pt, font=\small},
+  lab/.style={font=\scriptsize, text=black!65}, >=stealth, node distance=2pt]
+\node[tok] (a1) {$[A]$}; \node[tok, right=of a1] (b1) {$[B]$}; \node[tok, right=of b1] (d) {$\cdots$};
+\node[tok, right=of d, fill=black!8] (a2) {$[A]$}; \node[right=6pt of a2, font=\small] (out) {$\Rightarrow [B]$};
+\draw[->, thick] (a2.north) to[out=120, in=60, looseness=0.6] node[lab, above, pos=.5] {QK: prefix match} (b1.north);
+\draw[->, thick, dotted] (b1.south) to[out=-60, in=-120, looseness=0.6] node[lab, below, pos=.5] {OV: copy $[B]$} (out.south);
+\end{tikzpicture}
+\caption{The induction-head template. The QK circuit attends from the second $[A]$
+to the token that followed the first, and the OV circuit raises that token's logit.
+The SIH criterion keeps the template but lets the written token differ from the
+attended one: it attends to $t_s$ and writes $t_o$ (Figure~\ref{fig:ri}).}
+\label{fig:ih}
+\end{figure}
+
+Two later developments are relevant here. \citet{wu2024retrieval} identify
+\emph{retrieval heads}, heads with the same behavioural signature that copy a needle
+from a long context; they show that a small set of such heads is largely universal
+across models and that masking them destroys long-context factual recall, whereas
+masking random heads does not. \citet{edelman2024evolution} study how statistical
+induction heads emerge during training on Markov-chain data and show that in-context
+learning develops through phases in which simpler statistical strategies precede the
+induction mechanism.
+
+Two features of this literature are the contrast for semantic induction heads. First,
+the head type is defined by a behaviour the head produces on a controlled input, so a
+head either performs the behaviour or does not. Second, the importance of the head
+type is established by intervention on the model, not by the score alone. In our
+setting the repeated-sequence and key--value retrieval probes of
+\S\ref{sec:method-char} apply these behavioural tests to every head in our inventory.

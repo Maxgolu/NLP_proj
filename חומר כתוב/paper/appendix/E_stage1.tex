@@ -1,0 +1,165 @@
+\section{Relation-index scan: details and sensitivity}
+\label{app:stage1}
+
+\paragraph{Run.}
+The scan (\texttt{stage1\_v4\_calibrated}) covered all 1,024 heads on 534 prompts
+(89 discovery families $\times$ base/corrupted/reorder $\times$ two orders, four
+demonstrations each). Preflight checks reproduced the behavioural candidate scores
+and showed zero drift under inert hooks and self-patching; attention capture had a
+maximum vocabulary-logit drift of 0.039 on one prompt. The test-only extension
+(\texttt{ri\_test\_v2}) scored all 46,634 saved test-block events; 237,685
+replication checks of saved scores passed. Independent recomputation reproduced all
+reported means, contrasts and support counts.
+
+\paragraph{Method details.}
+\emph{Event score.} For a qualifying $(T,j)$ with anchor token $t_o$, the score is
+$a^{h,j}_T=q^{h,j}_{t_o}/\sum_{k\le j}q^{h,j}_{t_k}$ with
+$q^{h,j}_t=\max(0,p^{h,j}_t-\bar p^{h,j})$ and
+$p^{h,j}=\mathrm{softmax}(x_jW^h_{OV}W_U)$ restricted to the distinct token ids
+visible at $j$ (Appendix~\ref{app:ri}); anchor-token collisions between target and
+control names are treated as ties. \emph{Aggregation.} Scores are averaged within
+family and then with equal weight across the families that have at least one
+scored event for that head; families without events do not enter the mean.
+\emph{Name controls.} The other test-fact mothers whose full name is visible at
+$j$; token length need not match. \emph{Word controls.} Up to three word types
+sampled from the visible non-name tokens of the prompt (mostly template words);
+they provide a weaker specificity check. All reported means and counts use the
+name-control-eligible subset of events; events without an available control are
+excluded from the gap statistics but retained in the pooled index.
+\emph{Calibration population.} Test-block events in which both the target and a
+control mention are fully visible, of equal token length and with distinct first
+tokens; 19,901 of 278,134 QK events qualify. Heads need at least 50 such events
+across ten families (80 heads). The null swaps target and control labels
+consistently within each family (100{,}000 replicates) and assumes the two labels
+are exchangeable under the null; heads are tested with Holm correction over 1,024.
+\emph{Selection population.} All name-control-eligible events; a ranking requires
+at least 20 events in ten families. The 50-event threshold of the calibration and
+the 20-event threshold of the selection are different requirements for different
+purposes and yield different head populations.
+
+\paragraph{Why the pooled index is dominated by demonstrations.}
+Under the original pooled index and the descriptive 99.9th-percentile rule the two
+top heads are L3H11 and L9H22. Table~\ref{tab:pooled} splits their events by block:
+demonstrations contribute over 99\% of each head's summed target score, and neither
+head has a single event from a test position attending to a demonstration source.
+Inspection of the events shows why: all 86 passes of L9H22 attend from a position to
+itself, and all 149 passes of L3H11 attend one token back, from a period or newline
+to the end of the preceding name. In both cases the OV projection is computed from
+the same current-token embedding for every event, so the reported index varies only
+with which target token is selected and how the visible context normalizes it. A
+high pooled index can thus be obtained from local attention with a static token
+preference, without any event that demonstrates retrieval of a test relation. This
+does not show that these heads take no part in relational retrieval; it shows that
+the pooled score does not require it, which motivates the test-block restriction of
+\S\ref{sec:method-ri}.
+
+\begin{table}[h]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Head & Pooled RI & QK freq.\ (\%) & Demo: $n$ / RI & Test: $n$ / RI \\
+\midrule
+L3H11 & 0.243 & 0.0097 & 144 / 0.250 & 5 / 0.038 \\
+L9H22 & 0.374 & 0.0056 & 72 / 0.445 & 14 / 0.007 \\
+\bottomrule
+\end{tabular}
+\caption{The two heads selected by the pooled index and the descriptive
+99.9th-percentile rule, split by whether the annotated fact and the current position
+lie in a demonstration or in the test block. Frequency is the share of eligible
+fact--position evaluations that pass the QK gate.}
+\label{tab:pooled}
+\end{table}
+
+\paragraph{Matched-target calibration.}
+The matched subset retained 19,901 of 278,134 QK events; 80 heads had at least 50
+matched events across ten families. Under 100{,}000 family-consistent target/control
+swaps, no head passed Holm correction at $\alpha{=}0.05$, over 1,024 or over the 80
+supported heads. The three smallest raw $p$ values are L16H4 ($p{=}0.006$, target
+0.0147 vs.\ control 0.0093, 87 events, 40 families), L9H18 ($p{=}0.023$) and L13H13
+($p{=}0.025$). Neither pooled-index head had a matched event.
+
+\paragraph{Test-only candidates.}
+Table~\ref{tab:ricands} lists the leading heads under the test-only index with name
+controls (all test facts, all test positions). The frozen rule (\S\ref{sec:method-ri})
+selects 59 heads in total, 36 of which enter at least one name-gap ranking. Two
+patterns recur among high scorers. Some heads owe much of their score to events in
+which the current token is part of the target name itself (L23H10: 31 of 60
+comparisons; L15H18: 104 of 110); such events can be scored without any retrieval
+across positions, so they do not demonstrate it, although they do not exclude it.
+Excluding those events reduces but does not remove L23H10's gap. Others depend on one current token (for L17H5 the
+token \emph{mother} contributes 66\% of the family-weighted target score) or on the
+reorder variant (299 of L9H16's 343 comparisons). Paired base/corrupted events
+that follow the changed fact are rare: L11H4 has 21 jointly passing pairs in 18
+families, with a positive name gap in both versions for only five families.
+
+\begin{table}[h]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Head & Anchor & Events & Fam. & Target & Control & Gap \\
+\midrule
+L11H4  & first & 94  & 39 & 0.0147 & 0.0081 & $+0.0065$ \\
+L17H5  & first & 65  & 34 & 0.0229 & 0.0168 & $+0.0061$ \\
+L9H16  & last  & 343 & 87 & 0.0209 & 0.0135 & $+0.0074$ \\
+L12H2  & first & 52  & 32 & 0.0201 & 0.0129 & $+0.0072$ \\
+L25H18 & last  & 46  & 17 & 0.0287 & 0.0156 & $+0.0131$ \\
+L23H10 & first & 60  & 24 & 0.0283 & 0.0068 & $+0.0215$ \\
+\bottomrule
+\end{tabular}
+\caption{Leading test-only candidates (all test facts and positions). Events are
+target/control comparisons; family-weighted means over the name-control-eligible
+subset.}
+\label{tab:ricands}
+\end{table}
+
+\paragraph{The answer position and the raw-embedding invariance.}
+At the final colon, 20 heads have qualifying events (748 in total, 744 to test
+sources); L16H21 and L16H1 attend to the query fact in over 220 prompts each (41\%
+of prompts). Their name gaps at that position are near zero or negative
+(Table~\ref{tab:final}). Part of the reason is structural. The current token at the answer position is
+always the colon, so for a fixed head the raw-embedding projection vector is the same
+in every prompt, and the normalized score is the same whenever the set of visible
+token ids is the same; only the attention condition can differ between such prompts.
+In all 49 jointly passing base/corrupted pairs of L16H21 the sign of the
+old-versus-new-mother contrast flips exactly when the target label flips, at both
+anchors: once the head attends, the scoring component cannot follow a reassignment
+of mothers at this position. The same holds at any earlier position whose current
+token and visible token set are unchanged. This is a limit of the score, not a
+statement about what the head's actual output carries.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Head & Query events & Fam. & QK (\%) & First gap & Last gap \\
+\midrule
+L16H21 & 222 & 77 & 41.6 & $-0.0004$ & $+0.0034$ \\
+L16H1  & 223 & 76 & 41.8 & $-0.0025$ & $-0.0034$ \\
+L16H24 & 68  & 35 & 12.7 & $-0.0028$ & $+0.0036$ \\
+L16H4  & 63  & 32 & 11.8 & $+0.0004$ & $-0.0072$ \\
+\bottomrule
+\end{tabular}
+\caption{Heads whose attention at the answer position selects the query fact
+(denominator 534 prompts), with their name gaps at the two anchors.}
+\label{tab:final}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{figE_ri_distribution}
+\caption{The pooled index over heads. (a) Distribution of the first-anchor index for
+the 342 heads with at least one qualifying event (log count); the two heads selected by
+the percentile rule are marked. (b) First- against last-anchor index for all heads;
+the anchor changes which heads lead (L29H14 tops the last-anchor ranking).}
+\label{fig:ri-dist}
+\end{figure}
+
+\paragraph{Dominance margin.}
+Over all 1,455,940 eligible dominance ratios (event-weighted, demonstrations
+included), 80.9\% are at or below the published $\tau{=}2.2$ and the 95th percentile
+is 4.48. Refiltering the saved passes at 4.48 keeps 72,797 events; the two pooled
+heads keep 30 and 49 passes respectively. The anchor also matters: under the last
+token, L29H14 tops the conditional-strength ranking (Figure~\ref{fig:ri-dist}b). All such variants are reported
+as sensitivity analyses; the audit itself keeps the published parameters.

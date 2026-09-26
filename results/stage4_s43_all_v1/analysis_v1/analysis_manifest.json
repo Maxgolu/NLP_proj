@@ -1,0 +1,72 @@
+{
+  "analysis": "S4.3_initial_v2_family_screen_v1",
+  "configs": 305,
+  "direction": "noise",
+  "effect_definition": "raw_effect = baseline clean-vs-corrupt margin - intervened clean-vs-corrupt margin",
+  "extension": {
+    "full_178_run": false,
+    "max_contrasts": 16,
+    "required_direct_comparators": [
+      "direct_chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=none",
+      "direct_chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=none",
+      "direct_chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=none",
+      "direct_chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=none",
+      "direct_chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=none",
+      "direct_chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=none",
+      "direct_chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=none",
+      "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=none|live=none",
+      "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=none|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=none|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=none|live=none"
+    ],
+    "reverse_restoration_run": false,
+    "selected_configs": [
+      "chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=L16H1+L16H21",
+      "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H18+L18H19",
+      "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=MLP20+block21+block22|live=none",
+      "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=MLP26+block27+block28|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=MLP8+MLP9|live=none",
+      "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H18",
+      "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H19",
+      "chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=L18H18+L18H19",
+      "chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=L18H18+L18H19",
+      "chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=L16H1+L16H21",
+      "chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=L18H18+L18H19",
+      "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=MLP9|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=MLP9|live=none",
+      "chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=L16H1+L16H21",
+      "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=block27|live=none",
+      "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=MLP8+MLP9|live=none"
+    ]
+  },
+  "interpretation_guards": [
+    "Retention is a descriptive screen, not a significance test.",
+    "Retained matched increments support dependence under the specified intervention, not unique mediation.",
+    "Whole-block release is interpreted only as block-mediated.",
+    "Slot controls remain visible and cannot become extension candidates.",
+    "Held-out families were not accessed by this analysis."
+  ],
+  "matched_increment_definition": "raw effect of released route minus raw effect of the matched direct/no-release comparator, computed within pair/order before averaging the two orders to family level",
+  "population": {
+    "families": 20,
+    "heldout_accessed": false,
+    "orders_per_family": 2,
+    "pairs": 40
+  },
+  "production_dir": "/content/drive/MyDrive/NLP_Project/stage 4/s4.3/results_s4.3/initial_v2",
+  "production_manifest_sha256": "de9fc0482ec130cd04dbbed0448ce6e562d6ca6ea8fe3627facf726c5a6c9d68",
+  "production_stage": "S4.3_initial_v2_margin_compat",
+  "production_state_sha256": "765c46c69eff4a4e1da9ded42f41b5c759072c54d1726d3d6389fc312d385a77",
+  "records": 12200,
+  "retention": {
+    "coherent": {
+      "abs_mean_signed_gte": 0.1,
+      "family_sign_agreement_gte": 0.7
+    },
+    "heterogeneous": {
+      "fraction_abs_family_effect_gte_tau": 0.2,
+      "mean_abs_gte": 0.1
+    },
+    "tau": 0.1
+  }
+}

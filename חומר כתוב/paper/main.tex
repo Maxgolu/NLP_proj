@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+
+% "review" hides authors; use "final" for the submitted version.
+\usepackage[final]{acl}
+
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\IfFileExists{inconsolata.sty}{\usepackage{inconsolata}}{}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,decorations.pathreplacing,fit}
+\graphicspath{{figs/}}
+
+\title{SIH Behind the Stage: A Causal Audit of Semantic Induction Heads}
+
+\author{Maxim Golubkov \\
+  Tel Aviv University \\
+  \texttt{TODO@mail.tau.ac.il} \\\And
+  Daniella Simonovsky \\
+  Tel Aviv University \\
+  \texttt{TODO@mail.tau.ac.il} \\}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TODO (written last).
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+TODO (written last).
+
+\input{sections/02_background}
+\input{sections/02b_related}
+\input{sections/03_setting}
+\input{sections/04_method}
+\input{sections/05_results}
+% \input{sections/06_discussion}
+
+% Placeholder labels for results subsections not yet written; remove when they exist.
+\subsection{Routes and groups}\label{sec:results-routes} TODO.
+\subsection{Emergence is not identity}\label{sec:results-dev} TODO.
+
+\section*{Limitations}
+TODO.
+
+\section*{AI Disclosure and Reflection}
+TODO (required by the course guidelines).
+
+\input{papers_used}
+
+\bibliography{refs}
+
+\appendix
+\input{appendix/A_ri}
+\input{appendix/B_induction}
+\input{appendix/C_compute}
+\input{appendix/D_data}
+\input{appendix/E_stage1}
+\input{appendix/F_stage2}
+\input{appendix/G_stage3}
+\input{appendix/H_stage4}
+\input{appendix/I_dev}
+
+\end{document}

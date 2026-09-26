@@ -1,10 +1,295 @@
 # Research handoff — authoritative current state
 
-Updated 24 September 2026 after the full S4.2 report and repository curation of
-the separate ICL/SIH developmental experiment.
-Read this file first. The old chronology is preserved in
-`research_history/RESEARCH_HANDOFF_before_stage4_consolidation_20260923.md`;
-its CURRENT/LATEST headings are historical, not instructions for the current run.
+Updated 26 September 2026. **The project is now in the paper-writing phase.** Read the
+section "PAPER WRITING" below first; it supersedes every "Where we are NOW / Immediate
+next action" statement further down (those describe the experimental phase and are kept
+as provenance). The old chronology is preserved in
+`research_history/RESEARCH_HANDOFF_before_stage4_consolidation_20260923.md`.
+
+## PAPER WRITING — status on 25 September 2026 (READ THIS FIRST)
+
+### 0. One-paragraph status
+
+All experiments that will appear in the paper are finished except Stage 4.4–4.5, which are
+planned in detail but not executed (plan: `חומר כתוב/Stage4_Overleaf/s42_results.tex`, last
+section, and `results/stage4_s42_analysis_20260924/next_stage_plan.json`). **Stage 4.3 was
+executed by Daniella on Colab (25–26 September) and integrated on 26 September** (Section
+0a below). Daniella's developmental side experiment is complete (Section 1 below). Paper
+writing started on 24 September. Sections 2, 3, 4, 5.1–5.3 and appendices A–I are written,
+reviewed by the user and approved; appendices A–I carry figures/tables from every stage.
+**The next task is Section 5.4 (routes and groups: S4.1, S4.2 and now S4.3), then 5.5
+(developmental), 6 Discussion, Limitations, Introduction, Abstract, AI disclosure.**
+Deadline: 30 September 2026. Do not run, resubmit or re-analyze experiments unless the user
+asks; every number in the paper must be taken from the existing reports/CSVs.
+
+### 0a. Stage 4.3 (integrated 26 September)
+
+Received as folder `project/Daniellas S4.3/` (kept as-is on OneDrive for reference; not in
+Git) and redistributed into the project layout:
+- Code: `pilot_v2/s43_engine.py`, `s43_run_v2.py` (initial screen), `s43_extension_run_v3.py`
+  (extension), `test_s43.py`; superseded versions in `pilot_v2/s43_superseded/`. Imports our
+  `s42_engine`/`stage4_engine`/`stage1_scan`/`stage3_common` unchanged (byte-identical).
+- Frozen inputs: `results/stage4_s43_inputs_v1/` (305 configurations, plan, registries,
+  pairs identical to `results/stage3_inputs_v1/pairs.jsonl.gz`),
+  `results/stage4_s43_extension_inputs_v1/` (16 selected contrasts + 11 prerequisites).
+- Runs and analyses: `results/stage4_s43_all_v1/{smoke_v1, initial_v1 (aborted, metadata
+  only), initial_v2 (production screen, 12,200 records), extension_v1 and
+  extension_v3_original_80gb (gate failures, manifests only), extension_v4_family034_final
+  (production extension, 9,612 records), diagnostics, analysis_v1, extension_analysis_v1,
+  colab_setup_manifest.json}`. Raw `chunks/` of initial_v2 (40 files) and extension_v4
+  (178 files) stay on OneDrive, outside Git; `.ok` files with per-chunk SHA-256 are in Git.
+- Reports: `חומר כתוב/Stage4_3_Methodology_and_Results.pdf`, `Stage4_3_Summary.pdf`.
+- Run book: `pilot_v2/RUNBOOK_stage4_s43.md` (Hebrew; how it was run, how to re-run on the
+  cluster, what code is missing).
+- Independent review: `results/stage4_s43_review_20260926/{S43_review.md, verify_s43.py}`.
+  All numbers of the report reproduce exactly from `pair_order_matched.csv`; 800 raw chunk
+  records spot-checked. Points to carry into the paper: (i) the seven chain comparators are
+  structurally zero, so chain "increments" are raw effects through the released heads;
+  (ii) the direct prerequisites are unreported results — L8H15/query_sentence → L18H18 V
+  +0.465 and → L18H19 V +0.460 (coherent, both directions, 100% sign agreement), L26H23
+  bypass −0.172 coherent, L20H7 bypass not retained; (iii) the negative L8H15 "routes"
+  are attenuations (raw +0.29…+0.33 vs direct +0.44…+0.47) — report raw, direct and
+  increment; (iv) block27 of the L26H23 release contains L27H6; (v) order sensitivity is
+  general (largest chain 2.22 vs 1.05); (vi) no bootstrap intervals — add from
+  `family_bidirectional.csv`.
+- Missing from the package (ask Daniella): input-builder from `next_stage_plan.json`, smoke
+  script, analysis/selection code for `analysis_v1`/`selection.json`/`extension_analysis_v1`,
+  compatibility-diagnostic script. Re-running is possible; re-deriving/modifying is not yet.
+- Paper consequences: §4.4 and Appendix H were written with S4.3 as a plan with TODO
+  markers; they must now be rewritten as executed (rosters, counts: 305 screened, 22
+  retained, 16 extended, 9,612 records) and 5.4 must report the S4.3 findings. S4.4–S4.5
+  remain unexecuted and must be described as such.
+
+### 1. Daniella's developmental folder (received 24 September)
+
+Path: `project/Daniella's test ICL vs SIH/`. Author: Daniella Simonovsky (project partner).
+Entry point: its `README.md`. Contents:
+- `Documentataion/` (sic): `OLMo_ICL_RI_side_experiment_complete.pdf` (full report),
+  `OLMo_ICL_RI_side_experiment_methodology.pdf`, `OLMo_ICL_RI_summary.pdf` (two pages).
+  Read the summary first; the complete report is the primary source for numbers.
+- `code/`: five notebooks — `data_generation.ipynb`, `olmo_icl_checkpoint_sweep.ipynb`,
+  `olmo_icl_results_analysis.ipynb`, `olmo_ri_developmental_sweep.ipynb`,
+  `olmo_ri_results_analysis.ipynb` (outputs cleared for Git; originals local).
+- `data/`: `icl_stream.jsonl`, `ri_agenda_stream.jsonl`, `ri_agenda_olmo_safe.jsonl`
+  (the frozen inputs); `results/icl/`, `results/ri/` (tables, figures, per-checkpoint
+  summaries); `repository_manifest.json` (hashes of inputs and measurements).
+
+What it is: a replication, on the public OLMo-2-1124-7B intermediate checkpoints, of the
+developmental analysis of Ren et al. (2024): does the relation index (RI) rise together with
+in-context learning ability during pretraining? 17 behavioural checkpoints (4 synthetic ICL
+tasks, constrained accuracy, 1,600 fixed assessments per checkpoint) and 10 RI checkpoints
+(steps 150, 600, 700, 850, 900, 1000, 2000, 3000, 9000 and the final 928646; 700 balanced
+AGENDA-style forward-relation triplets; all 1,024 heads). Three RI indices are kept separate:
+QK pass rate (routing), conditional RI given a pass, and per-opportunity RI. A fixed-final-head
+backward trace with Jaccard overlap asks whether the heads that score high at the end are the
+heads that scored high early.
+
+Findings (as reported by Daniella; the assistant curated the folder for Git but did not
+re-run the numbers): the ICL transition happens around steps 850–900 (≈4B tokens); the QK
+routing index peaks early (≈step 850, +0.013); conditional RI shows no clear jump on the
+fixed support; Jaccard overlap between final high-RI heads and early high-RI heads is
+0–0.005, i.e. the final "semantic induction heads" are not the early ones. The dense
+behavioural checkpoints 700/850/900 were added after the RI peak was observed, so the timing
+comparison is partly post hoc. Preprocessing is not an exact replication of the paper's
+pipeline (no spaCy filtering). This is temporal association only; it is deliberately kept
+apart from the causal Stage-4 evidence.
+
+How the paper uses it: §4.5 "Developmental check" (`sections/04_method.tex`, label
+`sec:method-dev`) and Appendix I (`appendix/I_dev.tex`, label `app:dev`) are written and
+approved; §2.1 ends with one sentence pointing to `sec:method-dev` and `sec:results-dev`.
+The results subsection (planned 5.5 or 5.7, label `sec:results-dev`, working title
+"Emergence is not identity") is still to be written from the complete PDF.
+
+### 2. Stage 4 status relevant to the paper
+
+S4.1 (route mapping; Slurm 923239, `results/stage4_all_v2`) and S4.2 (groups, receiver
+blocking, RI31 audit, backup test; Slurm 924204, `results/stage4_s42_all_v1`) are executed,
+verified and reported in `חומר כתוב/Stage4_Overleaf/main.tex` (S4.1) and `s42_results.tex`
+(S4.2 + revised S4.3–S4.5 plan). Compiled: `output/pdf/Stage4_Experiment_Report.pdf`.
+S4.3 is now executed (Section 0a). S4.4 (fact×query panel) and S4.5 (retained mechanism C,
+blocks W/D/P/A/N/R6/T/U, ≤2 passes) are planned only. The paper's §4.4 and Appendix H were
+written by the rules of the plan, with `TODO` markers; the S4.3 TODOs must be replaced by
+the executed values, and if S4.4–S4.5 are never run before the deadline, the Results and
+Limitations must say so plainly and their TODOs must become "not executed" statements — do
+not leave TODOs in the submitted PDF.
+
+### 3. The paper: where it lives and how the Overleaf workflow operates
+
+Location on the user's computer: `project/חומר כתוב/paper/` (the assistant keeps a working
+copy at `/home/claude/paper/` in its sandbox and compiles there with `pdflatex` + `bibtex`;
+pdflatex IS available in the cloud sandbox, contrary to the older note below). The same
+files are uploaded by the user, by hand, into an Overleaf project with the identical folder
+layout. **Overleaf is the master copy for compilation; the local folder is the transfer
+medium and the Git copy.** The user sometimes edits text directly in Overleaf (he edited the
+last sentence of `sections/02_background.tex` himself); before editing any file, re-stage it
+from the user's folder or ask whether Overleaf has newer text.
+
+File layout (all paths relative to `paper/`):
+- `main.tex` — ACL 2023+ template (`\usepackage[final]{acl}`, times, T1, utf8, `\IfFileExists`
+  guards for microtype/inconsolata, graphicx, booktabs, amsmath+amssymb, tikz with libraries
+  `positioning,arrows.meta,decorations.pathreplacing,fit`, `\graphicspath{{figs/}}`). Title
+  "SIH Behind the Stage: A Causal Audit of Semantic Induction Heads"; authors Maxim Golubkov
+  and Daniella Simonovsky, Tel Aviv University (emails still TODO). Abstract and Introduction
+  are placeholders (written last). Sections are pulled in with `\input{sections/...}`; the
+  Results/Limitations/AI-Disclosure placeholders live inline in `main.tex`, then
+  `\input{papers_used}`, `\bibliography{refs}`, `\appendix`, `\input{appendix/...}`.
+- `sections/02_background.tex` (§2 + 2.1 SIH: Eq. RI, TikZ Fig. 1 of the relation index, the
+  three "what the original study does not establish" points), `sections/02b_related.tex`
+  (2.2 Causal interventions on heads, 2.3 Reading what a head writes, 2.4 From heads to
+  circuits, 2.5 The gap — three questions), `sections/03_setting.tex` (model, task, data,
+  metric and scopes, developmental setting, reproducibility), `sections/04_method.tex`
+  (4.1 Reproducing the SIH criterion; 4.2 Causal importance of every head with Eq. importance,
+  Eq. screen, Table 1 coverage, Fig. 2 patching schematic; 4.3 Characterizing important heads,
+  three questions, Table 2; 4.4 From heads to a mechanism, three questions, Fig. 3 route,
+  Fig. 4 retained-mechanism grid, Eq. bd; 4.5 Developmental check).
+- `appendix/A_ri.tex` (exact RI definition) … `I_dev.tex`; labels `app:ri, app:ih,
+  app:compute, app:data, app:stage1, app:stage2, app:stage3, app:stage4, app:dev`.
+- `refs.bib` (14 entries; several carry `note = {TODO-VERIFY ...}` — verify venues/pages
+  against the ACL Anthology before submission and delete the notes), `papers_used.tex`
+  (working list of every cited paper with bib key and link, placed before References;
+  decide before submission whether to keep it), `acl.sty`, `acl_natbib.bst` (from the
+  acl-org/acl-style-files repository), `figs/` (empty so far; all figures are TikZ or tables;
+  any raster/plot figure must be added as a PDF/vector file under `figs/`).
+- `main.pdf` — local compile output only. **Never upload `main.pdf` to Overleaf.**
+
+Section labels in use: `sec:background, sec:sih, sec:rw-patching, sec:rw-readout,
+sec:rw-circuits, sec:rw-gap, sec:setting, sec:method, sec:method-ri, sec:method-causal,
+sec:method-char, sec:method-circuits, sec:method-dev`. Forward references already made from
+§2/§4 to unwritten parts: `sec:results`, `sec:results-why`, `sec:results-dev`. These three
+are currently defined by placeholder lines in `main.tex` (lines "Placeholder labels
+referenced from Section 2"); when `sections/05_results.tex` is written it must define them
+and the placeholder lines must be deleted, otherwise LaTeX reports duplicate labels.
+
+Per-round workflow (this is what the user expects each time a section is written or edited):
+1. Read the relevant primary sources (stage reports in `חומר כתוב/`, CSV/JSON under
+   `results/`), draft the section in English, compile locally twice (`pdflatex; bibtex;
+   pdflatex; pdflatex`) and check page count and overfull boxes.
+2. Commit the changed files to the user's folder `חומר כתוב/paper/...` with
+   `device_commit_files` (there is no device shell; use stage/commit). Update `main.tex` only
+   when a new `\input` line or placeholder change is needed.
+3. Tell the user, in Hebrew, exactly which files are **NEW** (he creates them in the matching
+   Overleaf folder: `sections/`, `appendix/`, or the root) and which are **REPLACED**
+   (he re-uploads the same path, overwriting). Always list `main.tex` if it changed. Remind
+   him to recompile twice in Overleaf if new labels/citations were added (otherwise `??`).
+4. Give a short Hebrew explanation of what the section says and why it is organized so.
+   The user then reviews and returns numbered corrections; apply all of them, re-commit,
+   and repeat the NEW/REPLACED list.
+5. Keep `\input` modularity: one file per section/appendix; never paste a section's text
+   into `main.tex`.
+
+Current size: 18 pages compiled in total, of which the body (§2–§4) is ≈5.3 pages.
+The ACL limit is 8 pages of body (references and appendices excluded). Budget agreed:
+Results ≈2.2 pages, Introduction ≈0.6, Discussion+Limitations+Conclusion ≈0.6–0.8,
+Abstract ≈0.15. If Section 5 overruns, shorten §4 (move detail to appendices) rather than
+cutting results.
+
+### 4. Rules the writing must follow
+
+Sources of the rules:
+- Course guidelines PDF: `C:/Users/User/OneDrive/Documents/computer science/4B/NLP/final proj/
+  NLP_course_2025b___project_guidelines.pdf` (the folder `final proj` above `project/` is
+  granted to the session; re-stage the PDF when a rule must be checked). Requirements used so
+  far: ACL format, ≤8 pages body (references/appendix excluded), `\citet`/`\citep`, a mandatory
+  section titled "AI Disclosure and Reflection", a Limitations section recommended, figures as
+  vector/PDF. Grading: literature review 20, method 20, results 20, presentation 20,
+  research question 10, ambition 10.
+- Writing-style guide the user wants followed: Vered Shwartz, "Tips for writing NLP papers",
+  https://medium.com/@vered1986/tips-for-writing-nlp-papers-9c729a2f9e1f (concise; every
+  paragraph has one point; claims proportional to evidence; figures and tables carry the
+  numbers; no chronology of the work; related work compared, not listed).
+- Format model the user pointed to: the ACL 2025 paper "Position-aware Automatic Circuit
+  Discovery" (Haklay et al.), in `final proj/papers/`.
+
+Content and style rules established with the user (violating these produced most of his
+corrections so far — reread before every draft):
+- Method text explains **what was done and why**, in general rules; exact thresholds,
+  rosters, head names, counts of configurations and job details go to the appendices. The
+  body names no individual head (L17H1 etc.) except where a figure/table needs it; head
+  names are allowed in appendices and in Results where a finding is about a specific head.
+- No chronology ("first we did… then we…"), no work-log, no "stage" jargon as narrative;
+  stages appear only as the four questions the method answers.
+- Use equations, figures and tables instead of prose wherever they save words; every
+  figure is TikZ or a vector PDF; every table uses `booktabs`.
+- Claims must be no stronger than the evidence: "consistent with", "does not establish",
+  "selected discovery result"; never "proves", never "first ever"; the layer-matched
+  comparison is "sound", the Stage-4 findings are discovery-only (89 families), the 87
+  held-out families are still sealed and must be described as such.
+- Terminology fixed in the text: relation index (RI); QK gate with τ=2.2 (4.48 only as a
+  sensitivity); Scope P / Scope F; importance I_h (noising) — J_h (denoising) appears only in
+  Stage 4; "route", "receiver blocking", "retained mechanism C"; "constrained accuracy" for
+  the developmental tasks; three developmental indices (pass rate, conditional RI,
+  per-opportunity RI), never "the RI" alone in that context.
+- Cite only papers that are in `final proj/papers/` or already in `papers_used.tex`; a new
+  paper must be added to `refs.bib` and to `papers_used.tex` marked "(not in folder)" if the
+  PDF is missing, and the user is told.
+- Attribution-patching screen: Î_h = −⟨∇_{a_h} M(x_c), a_h^r − a_h^c⟩, cite Syed et al.
+  (2023); Spearman 0.945 with exact patching.
+- Communication with the user: concise Hebrew. **Never mix English terms, numbers or file
+  names inside a Hebrew sentence** — put every English term, number, label or path in its own
+  code span or code block, and keep the Hebrew sentence free of them. Paper text itself is
+  English. No praise, no recap of what he already knows, no repeated questions.
+
+### 5. Plan for the remaining sections and where their numbers come from
+
+Section 5, Results (`sections/05_results.tex`, NEW; add `\input{sections/05_results}` to
+`main.tex` and delete the placeholder block). Mirror the order of §4:
+- 5.1 The criterion selects heads that are not causally important (label `sec:results-why`,
+  referenced from §2.1). Sources: `חומר כתוב/Stage1_Results_and_Analysis_updated.tex`,
+  `Stage1_RI_Test_Extension_Results_and_Analysis.md`, `results/ri_test_v2/candidates.json`,
+  `results/ri_test_v2_analysis/`; for the RI-vs-importance contrast
+  `חומר כתוב/Stage2_Results_and_Analysis.tex` and `results/stage2_v2_analysis/`. Planned first
+  results figure: RI rank/score of the 59 (61) selected heads against their Scope-P and
+  Scope-F importance, showing that the strong heads are mostly outside the selection and the
+  selected heads are mostly weak (numbers: 25 strong heads with |P|≥0.3; eight of them RI-
+  selected: positives L16H1, L16H21, L17H24, L18H19, L22H5; negatives L19H16, L23H15,
+  L26H23). Also the two pooled-index heads (L3H11, L9H22) and the calibration null (no head
+  passes Holm) — those numbers are already in Appendix E tables, so the body cites them.
+- 5.2 Causal map: coverage and screen calibration, the 25/21 strong heads, positives vs
+  negatives, P vs F split (writer-like early heads vs colon heads). Source: Stage 2 report and
+  `results/stage2_v2_analysis/`.
+- 5.3 What the important heads do: positions (single-position scan), attention vs value,
+  contextual projection, attended-name outcomes (name movers, negative movers), readout
+  (L17H1 mother-token preference at `is`, L15H25 unresolved). Source:
+  `חומר כתוב/Stage3_Results_and_Analysis.tex` §5–§7.7, `results/stage3_v1/analysis/*.csv`,
+  `results/stage3_readout_v1/`, and the two review files under `results/stage3_*review_*/`.
+- 5.4 Routes and groups (S4.1, S4.2, S4.3): L17H1→L18H18/L18H19 V routes, L15H25→L16H1/L16H21,
+  receiver blocking 89%, RI31 vs cohorts (larger absolute, sign-unstable), K={L21H18} leaves
+  66% of the gap, L26H31 not a backup; S4.3 composed chains (L17H1→L18 pair→L27H6 Q +1.64,
+  L15H25→L16 pair→L18 Q +0.15…+0.22), L8H15 direct V routes and their MLP9 attenuation,
+  L26H23 block-mediated, L20H7 unstable, L13H18/L16H31 null. Sources: `Stage4_Overleaf/main.tex`,
+  `s42_results.tex`, `results/stage4_review_20260924/report_facts.json`,
+  `results/stage4_s42_analysis_20260924/`, `חומר כתוב/Stage4_3_Methodology_and_Results.pdf`,
+  `results/stage4_s43_all_v1/extension_analysis_v1/bidirectional_summary.csv`,
+  `results/stage4_s43_review_20260926/S43_review.md`. S4.4–S4.5: one sentence, future work.
+- 5.5 Emergence is not identity (label `sec:results-dev`): the developmental findings of
+  Section 1 above, one figure from Daniella's results if a vector version exists (otherwise a
+  small table).
+Then: 6 Discussion (answer the three questions of §2.5; what the RI criterion does and does
+not capture; what a causal audit adds), Limitations (single model, single relation, 89
+discovery families, discovery-only Stage 4, sealed held-out not opened, developmental
+association only, readout scope), Conclusion, then Introduction and Abstract (last), and the
+"AI Disclosure and Reflection" section (the user will describe how the assistant was used:
+experiment design partner, code, analysis, LaTeX drafting; every number checked by the
+authors — write it with him, not for him).
+
+Outstanding TODOs inside the paper (grep `TODO` in `paper/`): author emails; Appendix C GPU
+type and job-id/wall-time table (known so far: RI test-only 905839; Stage 2 causal map 888691 1h15m, Stage 2
+extension 912879 33m; Stage 3 characterization 916699 ≈3.7 h on 6 GPUs; Stage 3 readout
+918689 33m; S4.1 923239; S4.2 924204; the GPU type and the Stage-1 scan job id must be
+asked from the user);
+Appendix D reorder line order to verify against `results/stage3_inputs_v1/`; Appendix H
+executed rosters for S4.3–S4.5; Appendix I null-target controls wording; `refs.bib`
+TODO-VERIFY entries.
+
+### 6. Housekeeping still open
+
+- `README.md` (project root) was updated on 24 September for S4.1/S4.2 but says nothing
+  about the paper folder; add a short "Paper" paragraph when convenient.
+- Git: `חומר כתוב/paper/` (sources only, not `main.pdf`, `.aux`, `.log`) has not been added
+  to the repository yet; give the user explicit `git add` lines for it. Continue to avoid
+  `git add .`.
+- The project-space copy of this handoff (Claude project doc `RESEARCH_HANDOFF.md`) is synced
+  from this file whenever it changes.
 
 ## Repository update and developmental side experiment
 

@@ -1,0 +1,173 @@
+\section{Results}
+\label{sec:results}
+
+We report the four audit stages in the order of \S\ref{sec:method}.
+Results use discovery data; aggregation, per-head estimates and sensitivity
+analyses are detailed in Appendices~\ref{app:stage1}--\ref{app:stage4}.
+
+\subsection{RI poorly identifies causal contributors}
+\label{sec:results-why}
+
+\paragraph{What RI selects.}
+Under the descriptive percentile rule, the published pooled index selects two
+heads whose qualifying attention is exclusively self- or previous-token
+attention. Demonstrations contribute over 99\% of their summed scores
+(Table~\ref{tab:pooled}), consistent with static token preferences rather
+than evidence of retrieval. A separate matched-target test finds no head with
+a significant preference after Holm correction; neither pooled-index head
+has eligible matched events. The descriptive test-only rule selects
+59 heads, with several candidates sensitive to the current token,
+target anchor or fact order (Appendix~\ref{app:stage1}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_ri_vs_importance}
+\caption{RI versus signed causal importance (Scope~P, exact patching,
+40 common pairs; symmetric-log axis). Orange: the combined 61-head
+selection. (a) Pooled RI for all heads. (b) First-token name gap for
+167 supported heads. Shading marks $|I_h|<0.3$.}
+\label{fig:ri-vs-imp}
+\end{figure}
+
+\paragraph{Against the causal map.}
+Pooled RI correlates weakly with signed importance ($\rho=0.13$),
+while the test-only name gap correlates negatively
+($\rho=-0.25$, and $-0.30$ within layer; Figure~\ref{fig:ri-vs-imp}).
+The two pooled-index heads have near-zero measured effects.
+Of the combined 61 selected heads, 48 have $|I_h|<0.1$,
+less than 1\% of the clean--corrupted gap.
+Among the 148 heads measured on all 178 pairs, 25 have
+$|I_h|\geq0.3$, but only eight are selected.
+The test-only selection also misses 88 of the 102 heads with the
+largest positive common-subset effects.
+Both selections are incomplete; the pooled selection additionally
+meets our pre-registered misleading criterion
+(Appendix~\ref{app:stage2}).
+
+\paragraph{Why RI can miss retrieval.}
+At the answer position, the current token is always a colon:
+with unchanged visible token IDs, raw-embedding RI cannot adapt
+its name preferences when mothers are reassigned.
+All 49 jointly qualifying L16H21 clean/corrupted query pairs
+exhibit this invariance.
+A further hypothesis is that copying a current non-target name
+raises the name-control score, penalizing potentially useful heads;
+\S\ref{sec:results-char} examines this explanation.
+These limitations concern the index, not the model's capacity
+for semantic computation.
+
+\subsection{The causal map}
+\label{sec:results-map}
+
+\paragraph{A few heads carry most of the effect.}
+The gradient screen reproduces the exact ranking (Spearman 0.945 on the same
+pairs), so the map below rests on exact patching wherever it is reported
+(Appendix~\ref{app:stage2}). Against a mean clean--corrupted gap of 11.2 logits,
+replacing a single head moves the metric by up to 5.7 logits (L17H1, half of the
+gap), and three further heads each move it by about a quarter; all four have the
+expected sign in every family (Figure~\ref{fig:causal-map}a). Twenty-five heads
+reach $|I_h|\ge0.3$: 17 positive and 8 negative, the latter moving the model
+\emph{toward} the stated fact when their corrupted-run output is inserted. Effects
+of this size are not independent shares of the gap, since single-head patches can
+interact. The same four heads lead the exact all-head scan on the common subset,
+with effects within 5\% of their 178-pair values, so the leading heads are not an
+artefact of the extension set (Appendix~\ref{app:stage2}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_causal_map}
+\caption{The causal map. (a) Signed Scope-P importance of the 25 strong heads on
+all 178 pairs, with family-bootstrap intervals; orange marks RI-selected heads.
+(b) Ratio of Scope-F to Scope-P importance by layer for the 20 heads of the
+Scope-F set with $|I_h|>0.04$; marker size grows with $|I_h|$.}
+\label{fig:causal-map}
+\end{figure}
+
+\paragraph{Two positions, two kinds of head.}
+Restricting the patch to the final colon splits the map by depth
+(Figure~\ref{fig:causal-map}b). Every measurable head in layers 16--26 keeps
+between 91\% and 109\% of its effect when only the colon is patched, so its
+contribution is delivered at the answer position; every measurable head in layers
+6--11 loses all of it, so it acts only through what it writes at earlier test
+positions for later components to read; two heads in layers 14--15 are
+intermediate. The stored logits show how the
+answer-position heads act: the positive ones raise the logit of the name retrieved
+on the donor run and leave the alternative almost untouched, and the negative ones
+lower it (Table~\ref{tab:scopeF-app}). The sign alone does not say by what
+mechanism---promotion of an attended name, suppression of it, or an indirect
+path---and the three strongest heads lie outside this Scope-F set;
+\S\ref{sec:results-char} localizes every strong head's effect and tests these readings.
+
+These positional differences suggest a writer--reader organization, but do not
+identify computations or connections. The next stages characterize the heads
+(\S\ref{sec:results-char}) and test causal routes between them
+(\S\ref{sec:results-routes}).
+
+\subsection{What the important heads do}
+\label{sec:results-char}
+
+\paragraph{Where the heads act, and what the writer writes.}
+Twenty of the 25 strong heads deliver their whole effect at the colon
+($I^F_h/I_h$ between 0.96 and 1.07; Appendix~\ref{app:stage3}). The exception is
+the strongest head: L17H1 has no effect at the colon and acts inside the query
+fact, at the mother's tokens, at ``is'' and at the period
+(Figure~\ref{fig:profiles}a). At ``is'', ``of'' and the period the two prompts
+have identical inputs, so the head's output there depends on the preceding mother
+and matters for the answer. L15H25 acts at the last token of the query child. The
+main writer thus sits in the same layer band as the readers, and the shallow heads
+of \S\ref{sec:results-map} are all weak. A controlled readout of the residual at
+``is'' exposes a mother-token preference that depends on L17H1: replacing the head
+shifts the readout by $-0.46$ against $-0.52$ for the full source swap, negative in
+all 20 families. This supports an identity-sensitive write, not a relational
+binding; the content at L15H25's site is unresolved, since the readout does not
+respond even to the source swap.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_head_profiles}
+\caption{Head profiles. (a) Single-position patches of the three fact-position
+heads, summed by token role in the query fact (M: mother tokens, C: child tokens,
+oth.: the other test facts, Q: question, colon); family mean and SD over the 20
+common families. (b) Attention mass at the colon of the strong answer-position
+heads, split over the query mother, the query child, the three distractor mothers
+and the colon itself, with each head's Scope-F importance.}
+\label{fig:profiles}
+\end{figure}
+
+\paragraph{What the readers select and what they carry.}
+The answer-position heads fall into three attention types
+(Figure~\ref{fig:profiles}b): mother-attenders, of both signs; child-attenders,
+which select the second mention of the queried child; and heads whose largest
+target is the colon itself. For the mother- and child-attenders, changing only the
+question moves attention to the newly queried fact in all 20 common families
+(controls: at most a fifth of that shift), while reordering or swapping the mothers
+leaves the family-mean attention almost unchanged. One negative head, L30H18,
+attends to the distractor mothers. Separating attention from values at the colon,
+value replacement carries most of the mean effect for the leading heads (L18H19:
+values $+3.16$, pattern $+0.08$): the source selection follows the question, and
+the swap acts through what is read there. Family-level interactions are large,
+however, so separability is not assumed downstream. What the heads write is only
+partly visible in their output vectors: L27H6 writes the answer directly ($+3.0$
+logits for the query mother over the distractors), but for L18H19, L18H18, the
+strong negative heads and the child-attenders the projection is far below the
+effect. Their causal effects are not explained by this projection, which motivates
+tests of downstream mediation. Recomputing the criterion from each head's actual
+contextual input does not repair its correlation with importance ($-0.26\to-0.17$
+on the 68 supported heads).
+
+\paragraph{Copying is part of the story, not the mechanism.}
+Six heads promote the first token of the name they attend to in at least 80\% of
+events and one suppresses it; at the last-token anchor every label disappears. For
+the positive movers the RI name gap is negative precisely at events whose current
+token is a control name, as the copy-penalizing account of \S\ref{sec:results-why}
+predicts. But copying is neither necessary nor sufficient (Appendix~\ref{app:stage3}):
+the strongest weight copier hurts the answer by copying the distractor, and L23H15
+favours the name it attends to while its effect is $-0.95$, so the sign of a head's
+projection is not the sign of its effect. ``Negative mover'' covers at least two
+patterns, and how L23H15 acts is open.
+
+The profiles turn the map into testable connections: a fact-position writer whose
+sites may feed the mother-attenders' keys or values, a second writer at the child
+for the child-attenders, strong colon heads whose effects need a downstream path,
+and positive and negative movers whose joint behaviour is untested
+(\S\ref{sec:results-routes}).

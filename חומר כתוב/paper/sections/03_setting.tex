@@ -1,0 +1,72 @@
+\section{Experimental Setting}
+\label{sec:setting}
+
+\paragraph{Model.}
+All experiments use the base OLMo-2-1124-7B \citep{olmo2024olmo2} (32 layers, 32
+heads per layer, $d_{\text{model}}{=}4096$), revision
+\texttt{7df9a82}, without fine-tuning, in fp16. We chose OLMo-2 because its training
+checkpoints are public, which the developmental analysis needs, and because at 7B it
+is the largest model on which our per-head, per-position interventions were
+affordable on the available GPUs (Appendix~\ref{app:compute}).
+
+\paragraph{Task.}
+The model must retrieve a relation stated in its context. A prompt contains four
+in-context demonstrations followed by a test block of four facts of the form
+``$\langle$mother$\rangle$ is the mother of $\langle$child$\rangle$.'' and the
+question ``Question: Who is the mother of $\langle$child$\rangle$? Answer:''. The
+answer is the mother named in the \emph{query fact}, the fact whose child is asked
+about. All names are invented, so the answer cannot come from parametric knowledge,
+and the test block always contains a second, structurally identical fact whose mother
+is the \emph{distractor}. This is the SIH setting of \S\ref{sec:sih}---a head token
+(the child), a relation (mother-of) and a tail token (the mother)---with the relation
+annotated at construction time rather than by a parser.
+
+\paragraph{Data.}
+We generated 200 \emph{families} of invented names. Each family yields a
+\emph{clean} prompt, a \emph{corrupted} twin in which the two answer-side mothers are
+swapped inside the fact lines (so the distractor becomes the answer while every token
+position and mention count is unchanged, as activation patching requires), and a
+\emph{reorder} variant with shuffled fact lines; each in two fact orders.
+Appendix~\ref{app:data} shows a complete example. Before any intervention we
+verified that the model performs the task: 4-shot accuracy on clean, corrupted and
+reordered prompts, in both orders, is 93\%, 94\% and 89\% of families. The 176
+families correct on clean and corrupted prompts in both orders are split by family
+id: 89 \emph{discovery} families (178 clean/corrupted pairs) for all scoring and
+selection, and 87 \emph{held-out} families reserved for the final faithfulness and
+generalization tests. A fixed subset of 20 discovery families (40 pairs) is used
+where a measurement must cover all 1,024 heads.
+
+\paragraph{Metric and intervention scopes.}
+Following \citet{zhang2024bestpractices}, the outcome of every intervention is the
+logit difference between the clean answer $y_c$ and the corrupted answer $y_r$,
+\begin{equation}
+\label{eq:metric}
+M(x)=\operatorname{logit}(y_c\mid x)-\operatorname{logit}(y_r\mid x),
+\end{equation}
+evaluated at the first token at which the two answers differ (a shared prefix, when
+one exists, is teacher-forced). The sign is fixed to the clean answer on both inputs,
+so $M(x_c)>0$ and $M(x_r)<0$ mean that the model follows the stated fact. The
+\emph{importance} of head $h$ is the drop in $M$ on the clean prompt when the head's
+output is replaced by its output on the corrupted twin, $I_h=M(x_c)-M(x_c;a_h
+\leftarrow a^r_h)$ (noising); the \emph{recovery} $J_h$ is the rise in $M$ on the
+corrupted prompt when the clean output is inserted (denoising). Two scopes are used
+throughout: \emph{Scope~P} replaces the head at all original prompt positions,
+\emph{Scope~F} only at the final colon of ``Answer:''. Effects are averaged over the
+two orders within a family and then over families; the family is the unit of
+analysis, and we report signed means alongside mean absolute family effects, since
+large effects of opposite sign can cancel.
+
+\paragraph{Developmental setting.}
+The training-time analysis (\S\ref{sec:method-dev}) uses 17 public checkpoints of
+the same model's first pre-training stage, densely sampled between steps 600 and
+1{,}000 (about 3--5B tokens). In-context learning is measured, as in
+\citet{ren2024semantic}, by few-shot accuracy on four synthetic classification tasks
+at 0--20 shots with 50 frozen prompts per condition; the relation index is computed
+for all 1,024 heads on a balanced set of 700 AGENDA relation triplets.
+
+\paragraph{Reproducibility.}
+Every run is driven by a frozen plan file with content hashes of the model
+revision, data and code; each run repeats a gate that reproduces reference logits and
+saved importances before measuring; results are written with per-record provenance.
+Code, plans and analysis tables are released with the paper
+(Appendix~\ref{app:compute}).

@@ -1,0 +1,80 @@
+\subsection{Causal interventions on heads}
+\label{sec:rw-patching}
+
+\emph{Activation patching} replaces the activation of one component on a clean input
+with its activation on a minimally different corrupted input and measures the change
+in the model's output \citep{wang2023ioi,heimersheim2024patching}. Run in the
+\emph{noising} direction (corrupted activation into the clean run) it measures how
+much of the output depends on the component; run in the \emph{denoising} direction
+(clean activation into the corrupted run) it measures how much the component alone
+restores. \citet{heimersheim2024patching} note that the two are not symmetric and
+recommend reporting both. The choice of metric matters as much as the intervention:
+\citet{zhang2024bestpractices} show that logit difference between the correct and the
+corrupted answer is more informative and less brittle than probability or accuracy,
+and that conclusions about which components matter can flip between metrics. The
+indirect-object-identification (IOI) study of \citet{wang2023ioi} established the
+per-head, per-position form of these tools on GPT-2 small and introduced the
+vocabulary that later work inherited: \emph{name movers} that copy the answer,
+\emph{negative name movers} that suppress it, and \emph{backup} heads that activate
+only when others are removed. We use noising and denoising head patching with the
+logit-difference metric throughout (\S\ref{sec:setting}), at all prompt positions and
+at the answer position separately, and we split a head's patched output into the
+attention pattern and the values it reads, as in the QK/OV decomposition of
+\S\ref{sec:sih}.
+
+\subsection{Reading what a head writes}
+\label{sec:rw-readout}
+
+Intervention tells us that a head matters; a second family of tools asks what it
+contributes. \emph{Direct logit attribution} projects a head's output vector onto the
+unembedding to see which tokens it promotes \citep{elhage2021mathematical,wang2023ioi};
+the relation index of \S\ref{sec:sih} is a weight-only version of this projection that
+uses the current token's embedding instead of the head's actual output. Behavioural
+\emph{fingerprints} test a head on controlled synthetic inputs: prefix-matching and
+copying scores on repeated random sequences \citep{olsson2022induction} and
+needle-retrieval scores on key--value contexts \citep{wu2024retrieval} identify
+induction and retrieval heads independently of any natural-language task. Finally,
+\emph{Patchscopes} \citep{ghandeharioun2024patchscopes} decode a hidden
+representation by injecting it into a separate prompt whose continuation exposes its
+content; the method reads representations, not head contributions, so head
+attribution requires comparing intact and head-intervened representations under the
+same readout. We use all three: the contextual output projection and its
+raw-embedding counterpart side by side, both synthetic fingerprints on every head in
+our inventory, and a controlled Patchscopes-style readout of the sites where our
+strongest head writes.
+
+\subsection{From heads to circuits}
+\label{sec:rw-circuits}
+
+A list of important heads is not a mechanism. \emph{Path patching}
+\citep{wang2023ioi} isolates a single edge: the output of a source component is
+patched only along its path into a chosen receiver (for a head, its query, key or
+value input), so an effect on the output shows that the receiver uses what the source
+wrote. \citet{conmy2023acdc} automate this search, pruning edges whose removal does
+not change a task metric, and \citet{haklay2025position} show that edges must be
+indexed by token position: the same head can be essential at one position and inert
+at another, and position-agnostic circuits miss this. How a discovered circuit is
+judged also matters. \citet{hanna2024faithfulness} argue that overlap with a
+hand-found reference is the wrong target and that a circuit should be evaluated by
+\emph{faithfulness}: how much of the full model's behaviour it reproduces when
+everything outside it is ablated, checked with several ablation schemes and metrics.
+Our Stage-4 design follows these three points: edges are tested by path patching
+into keys and values at the source's fact positions, routes are indexed by position,
+and the resulting head mechanism is evaluated by faithfulness on families held out
+from every earlier stage.
+
+\subsection{The gap}
+\label{sec:rw-gap}
+
+The two lines of work reviewed above rarely meet on the same heads. Descriptive
+criteria propose what a head does from its weights or attention; circuit studies
+find what heads do by intervening on a task. For semantic induction heads the two
+have not been connected: \citet{ren2024semantic} show that some heads stand out on
+their relation index and read this as evidence that the heads ``encode'' relations,
+but the index is not checked against the model's behaviour. This work examines the
+relation between the descriptive SIH criterion and the causal mechanisms that
+support the use of in-context relations. Using head-, group- and path-level
+interventions in OLMo-2-7B, we characterize the overlap and the gaps between
+identification by RI and contribution to behaviour on a relational task; a
+complementary analysis across training checkpoints separates the development of
+attention routing from the development of the conditional relation index.

@@ -1,0 +1,73 @@
+\section{Developmental check: details}
+\label{app:dev}
+
+\paragraph{Correspondence with \citet{ren2024semantic}.}
+Same: the four task families (fruit/month and furniture/profession binary tasks, a
+four-class fruit/month task, a nine-class fruit/animal/month task); the shot ladder
+$\{0,1,2,3,4,5,10,20\}$ with class coverage enforced in the demonstrations when the
+number of shots permits; the format-versus-pattern distinction; the AGENDA relation
+set with seven relation types and entities reduced to single letters; the
+developmental QK gate (argmax only) with $\tau{=}2.2$ as sensitivity; the
+raw-embedding OV score. Adapted: accuracy is constrained to the legal task labels,
+with vocabulary-wide format validity and legal-label probability mass reported
+separately; inputs are relation-bearing sentences extracted from the corpus rather
+than whole abstracts; rows are filtered for unambiguous single occurrences and
+tokenizer-safe single-letter anchors under the OLMo-2 tokenizer, 60 self-relation
+rows (source and target collapsing to the same entity) are excluded and listed, and
+the assessment is balanced to 100 triplets per relation (700); the QK gate uses the
+model's actual attention probabilities; the OV score is computed exactly on the
+visible-token subset (the full-vocabulary softmax normalization cancels after
+centring and in the ratio; verified numerically); the original spaCy function-word
+removal is not applied (documented deviation); only the forward relation direction
+is run. Per relation type, the 15 heads with the highest index are reported, with a
+support requirement of at least ten scored events.
+
+\paragraph{Checkpoints.}
+Behaviour: 17 Stage-1 checkpoints of OLMo-2-1124-7B (steps 150, 600, 700, 850, 900,
+1{,}000, 2{,}000, 3{,}000, 4{,}000, 6{,}000, 9{,}000, 19{,}000, 38{,}000, 76{,}000,
+152{,}000, 357{,}000, 928{,}646; 1B to 3.9T tokens). Relation index: ten of these
+(steps 150, 600, 700, 850, 900, 1{,}000, 2{,}000, 3{,}000, 9{,}000, 928{,}646).
+The broad behavioural window (steps 600--1{,}000) was established before the index
+timing was analysed; steps 700, 850 and 900 were added to the behavioural
+measurement after the index sweep showed a routing maximum near step 850. The
+850/900 localization is therefore targeted follow-up evidence rather than an
+independent temporal prediction. Checkpoint identity is the exact optimizer step,
+since OLMo's rounded token labels coincide for steps 600/700 and 850/900.
+
+\paragraph{Behavioural metrics.}
+Per task, shot count and checkpoint: constrained accuracy; gold-versus-best-wrong
+margin; format validity (vocabulary-wide top token is a legal label); legal-label
+probability mass; the 20-shot minus 1-shot accuracy gain; Wilson 95\% intervals
+against task-specific chance; exact paired McNemar/binomial tests between adjacent
+checkpoints on the reused prompt ids. The paired tests span 64 comparisons; raw
+significance of some comparisons does not survive correction over that family, and
+the report treats them as descriptive.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{figI_developmental}
+\caption{Developmental measurements (shaded: steps 700--900). (a) 20-shot constrained
+accuracy per task with Wilson intervals; dotted lines mark chance. (b) The three index
+statistics averaged over all heads and relations at the ten RI checkpoints: the
+argmax gate pass rate peaks near step 850 and then falls, the index per opportunity
+follows it, and the conditional index rises slowly and monotonically. (c) Overlap of
+each checkpoint's top-15 heads with the final checkpoint's (Jaccard) and all-head rank
+correlation with the final checkpoint.}
+\label{fig:dev-app}
+\end{figure}
+
+\paragraph{Index statistics.}
+Per head and checkpoint: the index over gated events (conditional on the gate);
+the gate pass rate under the argmax gate and under $\tau{=}2.2$; the index per
+measurement opportunity (failed gates contribute zero), which combines frequency
+and strength; and two null-target controls. Developmental changes in the
+conditional index are tested on a fixed-support population (relation--head cells
+with at least ten scored events at both endpoints) with a paired Bayesian cluster
+bootstrap whose resampling unit is a cluster of text groups, not heads or events
+(Dirichlet weights, 5,000 replicates); changes in pass rate use a paired cluster
+bootstrap over the same units. Head stability: the top-$k$ heads at the final
+checkpoint are traced backwards; per-checkpoint top-$k$ Jaccard overlap with the
+final set and all-head rank correlation with the final checkpoint are reported.
+Absence of a clear change in the conditional index is not evidence of no change,
+and stability or instability of head identity is not a causal test of the heads'
+role.

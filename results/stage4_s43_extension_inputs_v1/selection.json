@@ -1,0 +1,55 @@
+{
+  "analysis_manifest_sha256": "f7929c84ef8a0317c0052644a94029b1c70ee5b28b2b838d85949defd1a7dda9",
+  "config_count_per_direction": 27,
+  "directions": [
+    "noise",
+    "restore"
+  ],
+  "effect_definitions": {
+    "noise": "M(clean recipient) - M(clean recipient with corrupt donor route)",
+    "restore": "M(corrupt recipient with clean donor route) - M(corrupt recipient)"
+  },
+  "population": {
+    "families": 89,
+    "heldout": "sealed",
+    "orders_per_family": 2,
+    "pairs": 178,
+    "split": "discovery"
+  },
+  "prerequisite_count": 11,
+  "required_direct_comparators": [
+    "direct_chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=none",
+    "direct_chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=none",
+    "direct_chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=none",
+    "direct_chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=none",
+    "direct_chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=none",
+    "direct_chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=none",
+    "direct_chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=none",
+    "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=none|live=none",
+    "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=none|live=none",
+    "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=none|live=none",
+    "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=none|live=none"
+  ],
+  "selected_configs": [
+    "chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=L16H1+L16H21",
+    "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H18+L18H19",
+    "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=MLP20+block21+block22|live=none",
+    "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=MLP26+block27+block28|live=none",
+    "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=MLP8+MLP9|live=none",
+    "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H18",
+    "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H19",
+    "chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=L18H18+L18H19",
+    "chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=L18H18+L18H19",
+    "chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=L16H1+L16H21",
+    "chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=L18H18+L18H19",
+    "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=MLP9|live=none",
+    "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=MLP9|live=none",
+    "chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=L16H1+L16H21",
+    "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=block27|live=none",
+    "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=MLP8+MLP9|live=none"
+  ],
+  "selected_count": 16,
+  "selected_extension_contrasts_sha256": "0ae04006e7757ef987023d925d4ea3d936c7ffddcea209bb64cd897b80375413",
+  "selected_extension_prerequisites_sha256": "3f4c9ada32d01cc76884b20771dc606a17cbd6b59e44833f8acfc8e12bba5d87",
+  "stage": "S4.3_extension_v1"
+}

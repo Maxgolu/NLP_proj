@@ -1,0 +1,1540 @@
+{
+  "configs": 305,
+  "historical_logit_error": 0.015625,
+  "historical_margin_error": 0.01171875,
+  "hybrid_groups": 53,
+  "identity_hash": "a971c12fb73cf3c2e10ee6d5dc57a41ab28576765e5379688e06e4159c48f6af",
+  "max_nonlive_clamp_error": 0.0,
+  "max_self_endpoint_error": 0.0,
+  "pair_id": "000/direct/base/0/order0",
+  "passed": true,
+  "rows": [
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact0_mother|recv=L16H1|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact0_mother|recv=L16H1|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact0_mother|recv=L16H21|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact0_mother|recv=L16H21|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact0_mother|recv=L18H18|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact0_mother|recv=L18H18|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact0_mother|recv=L18H19|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact0_mother|recv=L18H19|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H1|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H1|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H21|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H21|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H18|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H18|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H19|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H19|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_mother|recv=L16H1|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_mother|recv=L16H1|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_mother|recv=L16H21|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_mother|recv=L16H21|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_mother|recv=L18H18|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_mother|recv=L18H18|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_mother|recv=L18H19|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_mother|recv=L18H19|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_template|recv=L16H1|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_template|recv=L16H1|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_template|recv=L16H21|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_template|recv=L16H21|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_template|recv=L18H18|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_template|recv=L18H18|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_template|recv=L18H19|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "slot_control|src=L13H18|site=fact2_template|recv=L18H19|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H1|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H1|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H21|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H21|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H18|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H18|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H19|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H19|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H1|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H1|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H21|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H21|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H18|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H18|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H19|ch=K|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H19|ch=V|med=MLP13+MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H1|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H1|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H21|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H21|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H18|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H18|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H19|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H19|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H1|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H1|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H21|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H21|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H18|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H18|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H19|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H19|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H1|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H1|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H21|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H21|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H18|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H18|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H19|ch=K|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H19|ch=V|med=MLP13|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H1|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H1|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H21|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L16H21|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H18|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H18|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H19|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact1_mother|recv=L18H19|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H1|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H1|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H21|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L16H21|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H18|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H18|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H19|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_mother|recv=L18H19|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H1|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H1|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H21|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L16H21|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H18|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H18|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H19|ch=K|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L13H18|site=fact3_template|recv=L18H19|ch=V|med=MLP14|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L19H16|ch=Q|med=MLP16+block17+block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H6|ch=Q|med=MLP16+block17+block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H18|ch=Q|med=MLP16+block17+block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L22H5|ch=Q|med=MLP16+block17+block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=residual_to_logits|ch=bypass|med=MLP16+block17+block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L19H16|ch=Q|med=MLP16|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H6|ch=Q|med=MLP16|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H18|ch=Q|med=MLP16|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L22H5|ch=Q|med=MLP16|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=residual_to_logits|ch=bypass|med=MLP16|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L19H16|ch=Q|med=block17|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H6|ch=Q|med=block17|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H18|ch=Q|med=block17|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L22H5|ch=Q|med=block17|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=residual_to_logits|ch=bypass|med=block17|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L19H16|ch=Q|med=block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H6|ch=Q|med=block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H18|ch=Q|med=block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L22H5|ch=Q|med=block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=residual_to_logits|ch=bypass|med=block18|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L23H15|ch=Q|med=MLP20+block21+block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L25H17|ch=Q|med=MLP20+block21+block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L27H6|ch=Q|med=MLP20+block21+block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L30H18|ch=Q|med=MLP20+block21+block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=MLP20+block21+block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L23H15|ch=Q|med=MLP20|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L25H17|ch=Q|med=MLP20|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L27H6|ch=Q|med=MLP20|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L30H18|ch=Q|med=MLP20|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=MLP20|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L23H15|ch=Q|med=block21|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L25H17|ch=Q|med=block21|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L27H6|ch=Q|med=block21|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L30H18|ch=Q|med=block21|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=block21|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L23H15|ch=Q|med=block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L25H17|ch=Q|med=block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L27H6|ch=Q|med=block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L30H18|ch=Q|med=block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=block22|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H13|ch=Q|med=MLP26+block27+block28|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H18|ch=Q|med=MLP26+block27+block28|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=MLP26+block27+block28|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H13|ch=Q|med=MLP26|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H18|ch=Q|med=MLP26|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=MLP26|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H13|ch=Q|med=block27|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H18|ch=Q|med=block27|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=block27|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H13|ch=Q|med=block28|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H18|ch=Q|med=block28|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=block28|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H1|ch=K|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H1|ch=V|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H21|ch=K|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H21|ch=V|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H18|ch=K|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H18|ch=V|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H19|ch=K|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H19|ch=V|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H1|ch=K|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H1|ch=V|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H21|ch=K|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H21|ch=V|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H18|ch=K|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H19|ch=K|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=MLP8+MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H1|ch=K|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H1|ch=V|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H21|ch=K|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H21|ch=V|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H18|ch=K|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H18|ch=V|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H19|ch=K|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H19|ch=V|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H1|ch=K|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H1|ch=V|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H21|ch=K|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H21|ch=V|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H18|ch=K|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H19|ch=K|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=MLP8|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H1|ch=K|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H1|ch=V|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H21|ch=K|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H21|ch=V|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H18|ch=K|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H18|ch=V|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H19|ch=K|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H19|ch=V|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H1|ch=K|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H1|ch=V|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H21|ch=K|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H21|ch=V|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H18|ch=K|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H19|ch=K|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=MLP9|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=L16H1+L16H21",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_child_last|recv=L18H19|ch=Q|med=none|live=L16H1+L16H21",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=L16H1+L16H21",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=L16H1+L16H21",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=L16H1",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_child_last|recv=L18H19|ch=Q|med=none|live=L16H1",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=L16H1",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=L16H1",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=L16H21",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_child_last|recv=L18H19|ch=Q|med=none|live=L16H21",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=L16H21",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=L16H21",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=L18H18+L18H19",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=L18H18+L18H19",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=L18H18+L18H19",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H18+L18H19",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=L18H18",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=L18H18",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=L18H18",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H18",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=L18H19",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=L18H19",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=L18H19",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": 0.0,
+      "config_id": "chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=L18H19",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L19H16|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H6|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L21H18|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=L22H5|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L16H31|site=colon|recv=residual_to_logits|ch=bypass|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L23H15|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L25H17|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L27H6|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=L30H18|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L20H7|site=colon|recv=residual_to_logits|ch=bypass|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H13|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=L30H18|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L26H23|site=colon|recv=residual_to_logits|ch=bypass|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact0_mother|recv=L16H1|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact0_mother|recv=L16H1|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact0_mother|recv=L16H21|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact0_mother|recv=L16H21|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact0_mother|recv=L18H18|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact0_mother|recv=L18H18|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact0_mother|recv=L18H19|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact0_mother|recv=L18H19|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact1_mother|recv=L16H1|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact1_mother|recv=L16H1|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact1_mother|recv=L16H21|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact1_mother|recv=L16H21|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact1_mother|recv=L18H18|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact1_mother|recv=L18H18|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact1_mother|recv=L18H19|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact1_mother|recv=L18H19|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_mother|recv=L16H1|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_mother|recv=L16H1|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_mother|recv=L16H21|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_mother|recv=L16H21|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_mother|recv=L18H18|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_mother|recv=L18H18|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_mother|recv=L18H19|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_mother|recv=L18H19|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_template|recv=L16H1|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_template|recv=L16H1|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_template|recv=L16H21|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_template|recv=L16H21|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_template|recv=L18H18|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_template|recv=L18H18|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_template|recv=L18H19|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_control|src=L13H18|site=fact2_template|recv=L18H19|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_mother|recv=L16H1|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_mother|recv=L16H1|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_mother|recv=L16H21|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_mother|recv=L16H21|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_mother|recv=L18H18|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_mother|recv=L18H18|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_mother|recv=L18H19|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_mother|recv=L18H19|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_template|recv=L16H1|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_template|recv=L16H1|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_template|recv=L16H21|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_template|recv=L16H21|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_template|recv=L18H18|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_template|recv=L18H18|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_template|recv=L18H19|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_l13_primary|src=L13H18|site=fact3_template|recv=L18H19|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H1|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H1|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H21|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L16H21|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H18|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H18|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H19|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=other_answer_fact_sentence|recv=L18H19|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_chain|src=L15H25|site=query_child_last|recv=L18H18|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_chain|src=L15H25|site=query_child_last|recv=L18H19|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H1|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H1|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H21|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L16H21|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H18|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H18|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H19|ch=K|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "local|src=L8H15|site=query_sentence|recv=L18H19|ch=V|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_chain|src=L15H25|site=query_sentence|recv=L18H18|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_chain|src=L15H25|site=query_sentence|recv=L18H19|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_chain|src=L17H1|site=query_writer_union|recv=L21H6|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_chain|src=L17H1|site=query_writer_union|recv=L21H18|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_chain|src=L17H1|site=query_writer_union|recv=L22H5|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    },
+    {
+      "clamp_error": null,
+      "config_id": "direct_chain|src=L17H1|site=query_writer_union|recv=L27H6|ch=Q|med=none|live=none",
+      "self_endpoint_error": 0.0
+    }
+  ],
+  "sdpa_reconstruction_error": 0.0001220703125,
+  "seconds": 37.32372307777405
+}

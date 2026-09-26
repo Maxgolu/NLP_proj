@@ -1,0 +1,11 @@
+{
+  "files": {
+    "extension_registry.jsonl": "372c2165c8108b099ee1231d0ebf3bb2def0b5d10faccde4129db0f464132c79",
+    "pairs.jsonl.gz": "93e4740c47362dfe21405d0fcb2d72be00c0ebdd1e2397d6af0a521b6a2a8d6a",
+    "plan.json": "c09fc010537db7e016e7cee0507e6ba0f128ab0f66080e4f91471b5a95857424",
+    "selection.json": "62cedc67f9996c96aa9629a27a8710abc44b60f5387ef1cadc81bb08a6bcaf41"
+  },
+  "source_analysis_manifest_sha256": "f7929c84ef8a0317c0052644a94029b1c70ee5b28b2b838d85949defd1a7dda9",
+  "source_frozen_manifest_sha256": "a148758b2ed8d18b7cddb0e08ac74858c7233962d94c999c4015688a9225fb27",
+  "stage": "S4.3_extension_inputs_v1"
+}
