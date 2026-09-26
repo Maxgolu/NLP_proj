@@ -1,6 +1,6 @@
 # Research handoff — authoritative current state
 
-Updated 26 September 2026. **The project is now in the paper-writing phase.** Read the
+Updated 25 September 2026. **The project is now in the paper-writing phase.** Read the
 section "PAPER WRITING" below first; it supersedes every "Where we are NOW / Immediate
 next action" statement further down (those describe the experimental phase and are kept
 as provenance). The old chronology is preserved in
@@ -10,55 +10,49 @@ as provenance). The old chronology is preserved in
 
 ### 0. One-paragraph status
 
-All experiments that will appear in the paper are finished except Stage 4.4–4.5, which are
-planned in detail but not executed (plan: `חומר כתוב/Stage4_Overleaf/s42_results.tex`, last
-section, and `results/stage4_s42_analysis_20260924/next_stage_plan.json`). **Stage 4.3 was
-executed by Daniella on Colab (25–26 September) and integrated on 26 September** (Section
-0a below). Daniella's developmental side experiment is complete (Section 1 below). Paper
-writing started on 24 September. Sections 2, 3, 4, 5.1–5.3 and appendices A–I are written,
-reviewed by the user and approved; appendices A–I carry figures/tables from every stage.
-**The next task is Section 5.4 (routes and groups: S4.1, S4.2 and now S4.3), then 5.5
-(developmental), 6 Discussion, Limitations, Introduction, Abstract, AI disclosure.**
-Deadline: 30 September 2026. Do not run, resubmit or re-analyze experiments unless the user
-asks; every number in the paper must be taken from the existing reports/CSVs.
+All experiments that will appear in the paper are finished except Stage 4.3–4.5, which are
+planned in detail but not executed (see Section "Latest S4.2 status" below; the plan is
+`חומר כתוב/Stage4_Overleaf/s42_results.tex`, last section, and
+`results/stage4_s42_analysis_20260924/next_stage_plan.json`). Daniella's developmental side
+experiment is complete (Section 1 below). Paper writing started on 24 September. Sections 2
+(Background and Related Work), 3 (Experimental Setting) and 4 (Method, five subsections) and
+appendices A–I are written, reviewed line by line by the user and approved. **The next task
+is Section 5, Results, starting with 5.1** (the observational relation-index findings and
+their relation to causal importance, with the paper's first results figure). Deadline:
+30 September 2026. Do not run, resubmit or re-analyze experiments unless the user asks;
+the job now is writing, and every number in the paper must be taken from the existing
+reports/CSVs listed in Section 5 below.
 
-### 0a. Stage 4.3 (integrated 26 September)
+### 0b. Final experiment S4.5 — implemented 26 September, NOT executed
 
-Received as folder `project/Daniellas S4.3/` (kept as-is on OneDrive for reference; not in
-Git) and redistributed into the project layout:
-- Code: `pilot_v2/s43_engine.py`, `s43_run_v2.py` (initial screen), `s43_extension_run_v3.py`
-  (extension), `test_s43.py`; superseded versions in `pilot_v2/s43_superseded/`. Imports our
-  `s42_engine`/`stage4_engine`/`stage1_scan`/`stage3_common` unchanged (byte-identical).
-- Frozen inputs: `results/stage4_s43_inputs_v1/` (305 configurations, plan, registries,
-  pairs identical to `results/stage3_inputs_v1/pairs.jsonl.gz`),
-  `results/stage4_s43_extension_inputs_v1/` (16 selected contrasts + 11 prerequisites).
-- Runs and analyses: `results/stage4_s43_all_v1/{smoke_v1, initial_v1 (aborted, metadata
-  only), initial_v2 (production screen, 12,200 records), extension_v1 and
-  extension_v3_original_80gb (gate failures, manifests only), extension_v4_family034_final
-  (production extension, 9,612 records), diagnostics, analysis_v1, extension_analysis_v1,
-  colab_setup_manifest.json}`. Raw `chunks/` of initial_v2 (40 files) and extension_v4
-  (178 files) stay on OneDrive, outside Git; `.ok` files with per-chunk SHA-256 are in Git.
-- Reports: `חומר כתוב/Stage4_3_Methodology_and_Results.pdf`, `Stage4_3_Summary.pdf`.
-- Run book: `pilot_v2/RUNBOOK_stage4_s43.md` (Hebrew; how it was run, how to re-run on the
-  cluster, what code is missing).
-- Independent review: `results/stage4_s43_review_20260926/{S43_review.md, verify_s43.py}`.
-  All numbers of the report reproduce exactly from `pair_order_matched.csv`; 800 raw chunk
-  records spot-checked. Points to carry into the paper: (i) the seven chain comparators are
-  structurally zero, so chain "increments" are raw effects through the released heads;
-  (ii) the direct prerequisites are unreported results — L8H15/query_sentence → L18H18 V
-  +0.465 and → L18H19 V +0.460 (coherent, both directions, 100% sign agreement), L26H23
-  bypass −0.172 coherent, L20H7 bypass not retained; (iii) the negative L8H15 "routes"
-  are attenuations (raw +0.29…+0.33 vs direct +0.44…+0.47) — report raw, direct and
-  increment; (iv) block27 of the L26H23 release contains L27H6; (v) order sensitivity is
-  general (largest chain 2.22 vs 1.05); (vi) no bootstrap intervals — add from
-  `family_bidirectional.csv`.
-- Missing from the package (ask Daniella): input-builder from `next_stage_plan.json`, smoke
-  script, analysis/selection code for `analysis_v1`/`selection.json`/`extension_analysis_v1`,
-  compatibility-diagnostic script. Re-running is possible; re-deriving/modifying is not yet.
-- Paper consequences: §4.4 and Appendix H were written with S4.3 as a plan with TODO
-  markers; they must now be rewritten as executed (rosters, counts: 305 screened, 22
-  retained, 16 extended, 9,612 records) and 5.4 must report the S4.3 findings. S4.4–S4.5
-  remain unexecuted and must be described as such.
+The last experiment is specified in `חומר כתוב/RI_Structure_Final_Protocol_20260926.md`
+("RI participation in measured structures", supersedes `Final_S44_S45_Proposal_20260926.md`;
+the old S4.4/S4.5 greedy-reduction design is dropped). Implementation lives in `pilot_v2/s45/`
+(self-contained package: `s45_plan.py`, `s45_means.py`, `s45_engine.py`, `s45_run.py`,
+`s45_analyze.py`, `s45_freeze.py`, `s45_pipeline.py`, Slurm wrappers, `test_s45.py`,
+`test_s45_pipeline.py`, byte-identical copies of the frozen S4.1–S4.3 dependencies) and the
+Hebrew runbook `pilot_v2/s45/RUNBOOK_stage4_s45.md` (prepare → discovery submission →
+freeze → prepare-heldout → held-out submission). Design decisions accepted by the user:
+one Slurm pipeline with frozen decision files, split into a discovery submission (Stages
+A–D + 89-family behaviour + freeze manifest) and a separate held-out submission; the "empty
+head mask" is all 1,024 heads mean-replaced at test-block positions; x01/x11 question-name
+roles fall back by bucket to the original-query bank; 6 GPUs / 3 replicas. The user's four
+precision notes are implemented and tested: (a) changed-query cells rebuild every derived
+field (query_source/question_entity, token_ids, offsets, masks, prefix metadata, cell
+identity); (b) the mean bank has `lofo` (discovery) and `full` (held-out) modes and refuses
+the wrong population; (c) recipient/donor/hybrid/endpoint are captured inside the same
+background object, freezing never cancels source replacement, and a control receiver must
+be live in both compared contexts (loader refuses otherwise; a clamped receiver is a
+documented silent null); (d) the held-out opens only with a signed freeze manifest listing
+completed stages, identities, code/data versions, validation spec and primary signs.
+Tiny-model tests pass on CPU (15 engine/plan/means/freeze gates in `test_s45.py`, 8 analysis-formula
+tests with known answers in `test_s45_analysis.py`, an end-to-end Stage D/freeze/validation exercise in
+`test_s45_pipeline.py`, and a full discovery-pipeline dry run on a random 32×32-head model). `prepare`
+was also run once locally on the real discovery data with the pinned tokenizer: every historical
+reproduction gate passed and the 87 held-out families are identified from the behavioural baseline. Nothing has run
+on OLMo-2-7B yet; the runbook says how. Known deviation from the spec: intermediate captures
+are not stored to disk (recomputed deterministically, shared per pair/state in process).
+Realistic prior: low chance of a positive result; a null is a legitimate conclusion.
 
 ### 1. Daniella's developmental folder (received 24 September)
 
@@ -106,12 +100,12 @@ S4.1 (route mapping; Slurm 923239, `results/stage4_all_v2`) and S4.2 (groups, re
 blocking, RI31 audit, backup test; Slurm 924204, `results/stage4_s42_all_v1`) are executed,
 verified and reported in `חומר כתוב/Stage4_Overleaf/main.tex` (S4.1) and `s42_results.tex`
 (S4.2 + revised S4.3–S4.5 plan). Compiled: `output/pdf/Stage4_Experiment_Report.pdf`.
-S4.3 is now executed (Section 0a). S4.4 (fact×query panel) and S4.5 (retained mechanism C,
-blocks W/D/P/A/N/R6/T/U, ≤2 passes) are planned only. The paper's §4.4 and Appendix H were
-written by the rules of the plan, with `TODO` markers; the S4.3 TODOs must be replaced by
-the executed values, and if S4.4–S4.5 are never run before the deadline, the Results and
-Limitations must say so plainly and their TODOs must become "not executed" statements — do
-not leave TODOs in the submitted PDF.
+S4.3 (bounded local expansion, 249 configurations), S4.4 (fact×query panel) and S4.5
+(retained mechanism C, blocks W/D/P/A/N/R6/T/U, ≤2 passes) are planned only. The paper's
+§4.4 and Appendix H were written by the rules of the plan, with `TODO` markers where the
+executed rosters/values of S4.3–S4.5 would go. If those stages are never run before the
+deadline, the Results and Limitations must say so plainly and the TODOs in Appendix H must
+be replaced by "not executed" statements — do not leave TODOs in the submitted PDF.
 
 ### 3. The paper: where it lives and how the Overleaf workflow operates
 
@@ -252,15 +246,12 @@ Section 5, Results (`sections/05_results.tex`, NEW; add `\input{sections/05_resu
   (L17H1 mother-token preference at `is`, L15H25 unresolved). Source:
   `חומר כתוב/Stage3_Results_and_Analysis.tex` §5–§7.7, `results/stage3_v1/analysis/*.csv`,
   `results/stage3_readout_v1/`, and the two review files under `results/stage3_*review_*/`.
-- 5.4 Routes and groups (S4.1, S4.2, S4.3): L17H1→L18H18/L18H19 V routes, L15H25→L16H1/L16H21,
+- 5.4 Routes and groups (S4.1, S4.2): L17H1→L18H18/L18H19 V routes, L15H25→L16H1/L16H21,
   receiver blocking 89%, RI31 vs cohorts (larger absolute, sign-unstable), K={L21H18} leaves
-  66% of the gap, L26H31 not a backup; S4.3 composed chains (L17H1→L18 pair→L27H6 Q +1.64,
-  L15H25→L16 pair→L18 Q +0.15…+0.22), L8H15 direct V routes and their MLP9 attenuation,
-  L26H23 block-mediated, L20H7 unstable, L13H18/L16H31 null. Sources: `Stage4_Overleaf/main.tex`,
-  `s42_results.tex`, `results/stage4_review_20260924/report_facts.json`,
-  `results/stage4_s42_analysis_20260924/`, `חומר כתוב/Stage4_3_Methodology_and_Results.pdf`,
-  `results/stage4_s43_all_v1/extension_analysis_v1/bidirectional_summary.csv`,
-  `results/stage4_s43_review_20260926/S43_review.md`. S4.4–S4.5: one sentence, future work.
+  66% of the gap, L26H31 not a backup. Source: `Stage4_Overleaf/main.tex`, `s42_results.tex`,
+  `results/stage4_review_20260924/report_facts.json`, `results/stage4_s42_analysis_20260924/`.
+  If S4.3–S4.5 are still unexecuted, one paragraph says what the plan would test and that it
+  is future work.
 - 5.5 Emergence is not identity (label `sec:results-dev`): the developmental findings of
   Section 1 above, one figure from Daniella's results if a vector version exists (otherwise a
   small table).
