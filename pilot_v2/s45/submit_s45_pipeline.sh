@@ -30,7 +30,7 @@ done
 [[ "$name" =~ ^[A-Za-z0-9_.-]+$ ]] || { echo 'Pass a simple --name' >&2; exit 2; }
 (( ${#name} <= 80 )) || { echo 'Run name too long' >&2; exit 2; }
 [[ "$gpus" =~ ^(2|4|6)$ ]] || { echo '--gpus must be 2, 4 or 6' >&2; exit 2; }
-[[ -n "$inputs" ]] || inputs="$package/inputs_s45$( [[ "$mode" == heldout ]] && echo _heldout )"
+if [[ -z "$inputs" ]]; then inputs="$package/inputs_s45"; [[ "$mode" == heldout ]] && inputs="${inputs}_heldout"; fi; true
 cd -- "$parent"
 source runtime.sh
 test -d "$PILOT_STORAGE/model/7df9a82518afdecae4e8c026b27adccc8c1f0032"
@@ -41,8 +41,9 @@ flock -n 9 || { echo 'Another submission check is in progress' >&2; exit 2; }
 resume_flag=()
 [[ " ${args[*]} " == *" --resume "* ]] && resume_flag=(--resume)
 python3 "$package/s45_submit.py" --out "$PILOT_RUNS/$name" --job-name "s45_$name" "${resume_flag[@]}"
-( cd "$package" && python3 -m unittest -q test_s45 test_s43 ) || { echo 'Tiny-model tests failed on the login node; not submitting' >&2; exit 2; }
-python3 "$package/s45_run.py" check --inputs "$inputs" --schedule "$inputs/$( [[ "$mode" == heldout ]] && echo validation || echo stage_a ).json"
+# Tiny-model tests are the worker gate on the GPU node (login-node torch import is slow over NFS).
+schedule=stage_a; [[ "$mode" == heldout ]] && schedule=validation
+python3 "$package/s45_run.py" check --inputs "$inputs" --schedule "$inputs/$schedule.json"
 if [[ -z "$wall" ]]; then
   partition_info="$(scontrol show partition studentkillable -o)"
   wall="$(python3 - "$partition_info" <<'PY'

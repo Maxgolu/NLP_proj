@@ -1,4 +1,5 @@
 {
  "file": "s45_bundle_v1.tar.gz",
- "sha256": "3034f2254dc97e1343be82a2b0e9fad080224662c5880bd57e4fe5b37914251d"
+ "sha256": "b34cad2c1fc7401bb4246e6fd54a96265fcf220362f62e3861e6a29a336ce2fb",
+ "note": "v1 as extracted on the cluster on 26 Sep had the two submit-script lines patched in place after extraction; code identity is unaffected (submit script is not hashed into run identity)"
 }
