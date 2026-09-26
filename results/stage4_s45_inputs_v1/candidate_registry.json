@@ -1,0 +1,150 @@
+{
+  "candidates": [
+    "L1H27",
+    "L11H4",
+    "L17H5",
+    "L23H10",
+    "L25H18",
+    "L9H16"
+  ],
+  "references": [
+    "L18H19",
+    "L8H15"
+  ],
+  "original59": [
+    "L1H27",
+    "L2H21",
+    "L2H22",
+    "L4H0",
+    "L5H18",
+    "L6H2",
+    "L6H24",
+    "L7H18",
+    "L7H25",
+    "L8H8",
+    "L8H15",
+    "L8H16",
+    "L9H6",
+    "L9H16",
+    "L9H17",
+    "L10H16",
+    "L11H3",
+    "L11H4",
+    "L11H7",
+    "L11H15",
+    "L12H2",
+    "L12H9",
+    "L13H1",
+    "L13H22",
+    "L14H10",
+    "L14H23",
+    "L15H0",
+    "L15H2",
+    "L15H3",
+    "L15H18",
+    "L15H28",
+    "L15H29",
+    "L16H1",
+    "L16H2",
+    "L16H4",
+    "L16H16",
+    "L16H21",
+    "L16H24",
+    "L16H31",
+    "L17H5",
+    "L17H24",
+    "L18H15",
+    "L18H19",
+    "L19H16",
+    "L20H7",
+    "L20H14",
+    "L21H24",
+    "L21H25",
+    "L21H27",
+    "L22H5",
+    "L23H10",
+    "L23H15",
+    "L24H17",
+    "L25H18",
+    "L26H23",
+    "L26H31",
+    "L27H23",
+    "L30H3",
+    "L31H1"
+  ],
+  "RI31_note": "RI membership always comes from the original 59-head candidate JSON; R(B)=B intersect original59",
+  "in_original59": {
+    "L1H27": true,
+    "L11H4": true,
+    "L17H5": true,
+    "L23H10": true,
+    "L25H18": true,
+    "L9H16": true
+  },
+  "control_rosters": {
+    "L11H4|all_sentence|L16H1|V": {
+      "control": "L16H5",
+      "eligible": 25
+    },
+    "L11H4|all_sentence|L18H18|V": {
+      "control": "L18H1",
+      "eligible": 28
+    },
+    "L11H4|all_sentence|L20H1|V": {
+      "control": "L20H0",
+      "eligible": 29
+    },
+    "L17H5|all_sentence|L18H18|V": {
+      "control": "L18H21",
+      "eligible": 28
+    },
+    "L17H5|all_sentence|L20H1|V": {
+      "control": "L20H9",
+      "eligible": 29
+    },
+    "L17H5|colon|L18H18|Q": {
+      "control": "L18H31",
+      "eligible": 28
+    },
+    "L18H18|colon|L23H10|Q": {
+      "control": "L23H18",
+      "eligible": 30
+    },
+    "L18H18|colon|L25H18|Q": {
+      "control": "L25H28",
+      "eligible": 30
+    },
+    "L1H27|all_sentence|L16H1|V": {
+      "control": "L16H8",
+      "eligible": 25
+    },
+    "L1H27|all_sentence|L18H18|V": {
+      "control": "L18H23",
+      "eligible": 28
+    },
+    "L1H27|all_sentence|L20H1|V": {
+      "control": "L20H2",
+      "eligible": 29
+    },
+    "L23H10|colon|L27H6|Q": {
+      "control": "L27H3",
+      "eligible": 30
+    },
+    "L25H18|colon|L27H6|Q": {
+      "control": "L27H12",
+      "eligible": 30
+    },
+    "L9H16|all_sentence|L16H1|V": {
+      "control": "L16H19",
+      "eligible": 25
+    },
+    "L9H16|all_sentence|L18H18|V": {
+      "control": "L18H28",
+      "eligible": 28
+    },
+    "L9H16|all_sentence|L20H1|V": {
+      "control": "L20H9",
+      "eligible": 29
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "structures": {
+    "T1": {
+      "retained": [
+        "L17H1",
+        "L18H18",
+        "L18H19",
+        "L27H6"
+      ],
+      "anchor": {
+        "source": "L17H1",
+        "site": "query_writer_union",
+        "live": [
+          "L18H18",
+          "L18H19"
+        ],
+        "receiver": "L27H6",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      },
+      "retained_ids": [
+        545,
+        594,
+        595,
+        870
+      ]
+    },
+    "T2": {
+      "retained": [
+        "L15H25",
+        "L16H1",
+        "L16H21",
+        "L18H18",
+        "L18H19"
+      ],
+      "anchor": {
+        "source": "L15H25",
+        "site": "query_child_last",
+        "live": [
+          "L16H1",
+          "L16H21"
+        ],
+        "receiver": "L18H18",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      },
+      "retained_ids": [
+        505,
+        513,
+        533,
+        594,
+        595
+      ]
+    },
+    "T3": {
+      "retained": [
+        "L17H1",
+        "L18H18",
+        "L27H6"
+      ],
+      "anchor": {
+        "source": "L17H1",
+        "site": "query_writer_union",
+        "live": [
+          "L18H18"
+        ],
+        "receiver": "L27H6",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      },
+      "retained_ids": [
+        545,
+        594,
+        870
+      ]
+    },
+    "T4": {
+      "retained": [
+        "L8H15",
+        "L18H18"
+      ],
+      "anchor": {
+        "source": "L8H15",
+        "site": "query_sentence",
+        "live": [],
+        "receiver": "L18H18",
+        "channel": "V"
+      },
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      },
+      "retained_ids": [
+        271,
+        594
+      ]
+    },
+    "T5": {
+      "retained": [
+        "L20H1",
+        "L27H6"
+      ],
+      "anchor": {
+        "source": "L20H1",
+        "site": "colon",
+        "live": [],
+        "receiver": "L27H6",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      },
+      "retained_ids": [
+        641,
+        870
+      ]
+    }
+  },
+  "C33": [
+    "L6H24",
+    "L8H15",
+    "L13H10",
+    "L13H18",
+    "L14H23",
+    "L14H26",
+    "L15H3",
+    "L15H25",
+    "L16H1",
+    "L16H21",
+    "L16H31",
+    "L17H1",
+    "L17H3",
+    "L17H17",
+    "L17H24",
+    "L18H18",
+    "L18H19",
+    "L18H24",
+    "L19H16",
+    "L19H22",
+    "L20H1",
+    "L20H7",
+    "L21H6",
+    "L21H18",
+    "L21H23",
+    "L22H5",
+    "L23H15",
+    "L24H19",
+    "L25H17",
+    "L26H23",
+    "L27H6",
+    "L30H13",
+    "L30H18"
+  ],
+  "C50": [
+    "L1H27",
+    "L6H24",
+    "L8H8",
+    "L8H15",
+    "L9H6",
+    "L9H17",
+    "L11H4",
+    "L11H7",
+    "L12H2",
+    "L13H10",
+    "L13H18",
+    "L14H23",
+    "L14H26",
+    "L15H3",
+    "L15H25",
+    "L16H1",
+    "L16H4",
+    "L16H16",
+    "L16H21",
+    "L16H24",
+    "L16H31",
+    "L17H1",
+    "L17H3",
+    "L17H5",
+    "L17H17",
+    "L17H24",
+    "L18H18",
+    "L18H19",
+    "L18H24",
+    "L19H16",
+    "L19H22",
+    "L20H1",
+    "L20H7",
+    "L21H6",
+    "L21H18",
+    "L21H23",
+    "L21H25",
+    "L22H5",
+    "L23H10",
+    "L23H15",
+    "L24H19",
+    "L25H17",
+    "L25H18",
+    "L26H23",
+    "L26H31",
+    "L27H6",
+    "L27H23",
+    "L30H3",
+    "L30H13",
+    "L30H18"
+  ],
+  "R17": [
+    "L1H27",
+    "L8H8",
+    "L9H6",
+    "L9H17",
+    "L11H4",
+    "L11H7",
+    "L12H2",
+    "L16H4",
+    "L16H16",
+    "L16H24",
+    "L17H5",
+    "L21H25",
+    "L23H10",
+    "L25H18",
+    "L26H31",
+    "L27H23",
+    "L30H3"
+  ],
+  "nesting": "T3 is nested in T1 (comparison, not independent replication)",
+  "structural_zero_comparators": [
+    "T1",
+    "T2",
+    "T3"
+  ]
+}

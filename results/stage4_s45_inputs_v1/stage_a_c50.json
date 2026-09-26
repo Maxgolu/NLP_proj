@@ -1,0 +1,107 @@
+{
+  "policy": {
+    "version": 1,
+    "protocol": "ri_structure_final_protocol_20260926",
+    "seed": 20260926,
+    "metric": "logit(a)-logit(b) at first divergent answer token; shared prefix teacher forced; a,b fixed by x00",
+    "cells": {
+      "x00": "original facts, original query (gold a)",
+      "x10": "swapped mothers, original query (gold b)",
+      "x01": "original facts, alternative query (gold b)",
+      "x11": "swapped mothers, alternative query (gold a)"
+    },
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "bootstrap_draws": 20000,
+    "fidelity_F": [
+      0.8,
+      1.2
+    ],
+    "fidelity_L": 0.2,
+    "accuracy_drop": 0.05,
+    "mean_min_families": 10,
+    "max_selected": 3,
+    "max_pairs_per_candidate": 2,
+    "background": "retained heads live at every original test-block position; other head-output slices replaced by role means; MLPs, embeddings, demonstrations, shared normalization and answer prefix live",
+    "mean_bank": "all 1024 heads; discovery x00/x10 cells, both orders; leave-one-family-out in discovery, fixed full bank on held-out",
+    "routes": "S4.1/S4.3 executors inside the declared background: source replaced at site, post-normalization branches frozen, selective live intermediates, receiver channel recaptured and injected into a fresh run",
+    "gamma": "I_t(B_h_plus)-I_t(B_h_minus); difference of matched intervention effects",
+    "scope": "single-hop contextual task; head-subset mechanisms conditional on the live background"
+  },
+  "plan_hash": "47d762d4486b1dc5f738b53168ff9449b214100fd443815583daf3645c3d082f",
+  "phase": "stage_a_c50",
+  "population": "core",
+  "states": {
+    "5c539bfa2d4004a5": {
+      "id": "5c539bfa2d4004a5",
+      "label": "C50",
+      "live": [
+        59,
+        216,
+        264,
+        271,
+        294,
+        305,
+        356,
+        359,
+        386,
+        426,
+        434,
+        471,
+        474,
+        483,
+        505,
+        513,
+        516,
+        528,
+        533,
+        536,
+        543,
+        545,
+        547,
+        549,
+        561,
+        568,
+        594,
+        595,
+        600,
+        624,
+        630,
+        641,
+        647,
+        678,
+        690,
+        695,
+        697,
+        709,
+        746,
+        751,
+        787,
+        817,
+        818,
+        855,
+        863,
+        870,
+        887,
+        963,
+        973,
+        978
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "id": "behavior|5c539bfa2d4004a5|mean|x00x10x01x11",
+      "kind": "behavior",
+      "state": "5c539bfa2d4004a5",
+      "baseline": "mean",
+      "cells": [
+        "x00",
+        "x10",
+        "x01",
+        "x11"
+      ]
+    }
+  ]
+}

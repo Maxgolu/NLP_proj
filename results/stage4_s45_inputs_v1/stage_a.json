@@ -1,0 +1,230 @@
+{
+  "policy": {
+    "version": 1,
+    "protocol": "ri_structure_final_protocol_20260926",
+    "seed": 20260926,
+    "metric": "logit(a)-logit(b) at first divergent answer token; shared prefix teacher forced; a,b fixed by x00",
+    "cells": {
+      "x00": "original facts, original query (gold a)",
+      "x10": "swapped mothers, original query (gold b)",
+      "x01": "original facts, alternative query (gold b)",
+      "x11": "swapped mothers, alternative query (gold a)"
+    },
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "bootstrap_draws": 20000,
+    "fidelity_F": [
+      0.8,
+      1.2
+    ],
+    "fidelity_L": 0.2,
+    "accuracy_drop": 0.05,
+    "mean_min_families": 10,
+    "max_selected": 3,
+    "max_pairs_per_candidate": 2,
+    "background": "retained heads live at every original test-block position; other head-output slices replaced by role means; MLPs, embeddings, demonstrations, shared normalization and answer prefix live",
+    "mean_bank": "all 1024 heads; discovery x00/x10 cells, both orders; leave-one-family-out in discovery, fixed full bank on held-out",
+    "routes": "S4.1/S4.3 executors inside the declared background: source replaced at site, post-normalization branches frozen, selective live intermediates, receiver channel recaptured and injected into a fresh run",
+    "gamma": "I_t(B_h_plus)-I_t(B_h_minus); difference of matched intervention effects",
+    "scope": "single-hop contextual task; head-subset mechanisms conditional on the live background"
+  },
+  "plan_hash": "47d762d4486b1dc5f738b53168ff9449b214100fd443815583daf3645c3d082f",
+  "phase": "stage_a",
+  "population": "core",
+  "states": {
+    "full": {
+      "id": "full",
+      "label": "full",
+      "live": null
+    },
+    "4f53cda18c2baa0c": {
+      "id": "4f53cda18c2baa0c",
+      "label": "empty",
+      "live": []
+    },
+    "2d707d1b6c9e44c5": {
+      "id": "2d707d1b6c9e44c5",
+      "label": "T1",
+      "live": [
+        545,
+        594,
+        595,
+        870
+      ]
+    },
+    "312f44bcc909abc8": {
+      "id": "312f44bcc909abc8",
+      "label": "T2",
+      "live": [
+        505,
+        513,
+        533,
+        594,
+        595
+      ]
+    },
+    "5a17fa1c182fb520": {
+      "id": "5a17fa1c182fb520",
+      "label": "T3",
+      "live": [
+        545,
+        594,
+        870
+      ]
+    },
+    "94ddd39ca463dc45": {
+      "id": "94ddd39ca463dc45",
+      "label": "T4",
+      "live": [
+        271,
+        594
+      ]
+    },
+    "a320f393f0513ff7": {
+      "id": "a320f393f0513ff7",
+      "label": "T5",
+      "live": [
+        641,
+        870
+      ]
+    },
+    "4ac1f4354a609954": {
+      "id": "4ac1f4354a609954",
+      "label": "C33",
+      "live": [
+        216,
+        271,
+        426,
+        434,
+        471,
+        474,
+        483,
+        505,
+        513,
+        533,
+        543,
+        545,
+        547,
+        561,
+        568,
+        594,
+        595,
+        600,
+        624,
+        630,
+        641,
+        647,
+        678,
+        690,
+        695,
+        709,
+        751,
+        787,
+        817,
+        855,
+        870,
+        973,
+        978
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "id": "behavior|full|mean|x00x10x01x11",
+      "kind": "behavior",
+      "state": "full",
+      "baseline": "mean",
+      "cells": [
+        "x00",
+        "x10",
+        "x01",
+        "x11"
+      ]
+    },
+    {
+      "id": "behavior|4f53cda18c2baa0c|mean|x00x10x01x11",
+      "kind": "behavior",
+      "state": "4f53cda18c2baa0c",
+      "baseline": "mean",
+      "cells": [
+        "x00",
+        "x10",
+        "x01",
+        "x11"
+      ]
+    },
+    {
+      "id": "behavior|2d707d1b6c9e44c5|mean|x00x10x01x11",
+      "kind": "behavior",
+      "state": "2d707d1b6c9e44c5",
+      "baseline": "mean",
+      "cells": [
+        "x00",
+        "x10",
+        "x01",
+        "x11"
+      ]
+    },
+    {
+      "id": "behavior|312f44bcc909abc8|mean|x00x10x01x11",
+      "kind": "behavior",
+      "state": "312f44bcc909abc8",
+      "baseline": "mean",
+      "cells": [
+        "x00",
+        "x10",
+        "x01",
+        "x11"
+      ]
+    },
+    {
+      "id": "behavior|5a17fa1c182fb520|mean|x00x10x01x11",
+      "kind": "behavior",
+      "state": "5a17fa1c182fb520",
+      "baseline": "mean",
+      "cells": [
+        "x00",
+        "x10",
+        "x01",
+        "x11"
+      ]
+    },
+    {
+      "id": "behavior|94ddd39ca463dc45|mean|x00x10x01x11",
+      "kind": "behavior",
+      "state": "94ddd39ca463dc45",
+      "baseline": "mean",
+      "cells": [
+        "x00",
+        "x10",
+        "x01",
+        "x11"
+      ]
+    },
+    {
+      "id": "behavior|a320f393f0513ff7|mean|x00x10x01x11",
+      "kind": "behavior",
+      "state": "a320f393f0513ff7",
+      "baseline": "mean",
+      "cells": [
+        "x00",
+        "x10",
+        "x01",
+        "x11"
+      ]
+    },
+    {
+      "id": "behavior|4ac1f4354a609954|mean|x00x10x01x11",
+      "kind": "behavior",
+      "state": "4ac1f4354a609954",
+      "baseline": "mean",
+      "cells": [
+        "x00",
+        "x10",
+        "x01",
+        "x11"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,746 @@
+{
+  "policy": {
+    "version": 1,
+    "protocol": "ri_structure_final_protocol_20260926",
+    "seed": 20260926,
+    "metric": "logit(a)-logit(b) at first divergent answer token; shared prefix teacher forced; a,b fixed by x00",
+    "cells": {
+      "x00": "original facts, original query (gold a)",
+      "x10": "swapped mothers, original query (gold b)",
+      "x01": "original facts, alternative query (gold b)",
+      "x11": "swapped mothers, alternative query (gold a)"
+    },
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "bootstrap_draws": 20000,
+    "fidelity_F": [
+      0.8,
+      1.2
+    ],
+    "fidelity_L": 0.2,
+    "accuracy_drop": 0.05,
+    "mean_min_families": 10,
+    "max_selected": 3,
+    "max_pairs_per_candidate": 2,
+    "background": "retained heads live at every original test-block position; other head-output slices replaced by role means; MLPs, embeddings, demonstrations, shared normalization and answer prefix live",
+    "mean_bank": "all 1024 heads; discovery x00/x10 cells, both orders; leave-one-family-out in discovery, fixed full bank on held-out",
+    "routes": "S4.1/S4.3 executors inside the declared background: source replaced at site, post-normalization branches frozen, selective live intermediates, receiver channel recaptured and injected into a fresh run",
+    "gamma": "I_t(B_h_plus)-I_t(B_h_minus); difference of matched intervention effects",
+    "scope": "single-hop contextual task; head-subset mechanisms conditional on the live background"
+  },
+  "model": {
+    "model_id": "allenai/OLMo-2-1124-7B",
+    "revision": "7df9a82518afdecae4e8c026b27adccc8c1f0032",
+    "requested_revision": "main"
+  },
+  "families": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    12,
+    14,
+    16,
+    20,
+    24,
+    26,
+    28,
+    30,
+    32,
+    34,
+    36,
+    38,
+    40,
+    44,
+    46,
+    48,
+    50,
+    52,
+    54,
+    56,
+    58,
+    60,
+    62,
+    64,
+    66,
+    68,
+    70,
+    72,
+    76,
+    78,
+    80,
+    82,
+    84,
+    86,
+    88,
+    90,
+    92,
+    94,
+    96,
+    98,
+    100,
+    102,
+    104,
+    108,
+    110,
+    112,
+    114,
+    116,
+    118,
+    120,
+    122,
+    124,
+    126,
+    128,
+    130,
+    132,
+    134,
+    136,
+    138,
+    140,
+    142,
+    148,
+    150,
+    152,
+    154,
+    156,
+    158,
+    160,
+    162,
+    166,
+    168,
+    170,
+    172,
+    174,
+    176,
+    178,
+    180,
+    182,
+    186,
+    188,
+    192,
+    194,
+    196,
+    198
+  ],
+  "core_families": [
+    0,
+    16,
+    32,
+    48,
+    56,
+    64,
+    82,
+    96,
+    98,
+    102,
+    116,
+    130,
+    150,
+    154,
+    162,
+    176,
+    178,
+    186,
+    192,
+    196
+  ],
+  "gate_families": [
+    0,
+    16,
+    168
+  ],
+  "mean_keys": [
+    "*|*|*",
+    "*|child|*",
+    "*|child|first",
+    "*|child|interior",
+    "*|child|last",
+    "*|child|single",
+    "*|colon|*",
+    "*|colon|fixed",
+    "*|fact_period|*",
+    "*|fact_period|fixed",
+    "*|fact_template_0|*",
+    "*|fact_template_0|fixed",
+    "*|fact_template_1|*",
+    "*|fact_template_1|fixed",
+    "*|fact_template_2|*",
+    "*|fact_template_2|fixed",
+    "*|fact_template_3|*",
+    "*|fact_template_3|fixed",
+    "*|fixed_token_16533|*",
+    "*|fixed_token_16533|fixed",
+    "*|mother|*",
+    "*|mother|first",
+    "*|mother|interior",
+    "*|mother|last",
+    "*|mother|single",
+    "*|question_name|*",
+    "*|question_name|first",
+    "*|question_name|interior",
+    "*|question_name|last",
+    "*|question_name|single",
+    "*|question_template_0|*",
+    "*|question_template_0|fixed",
+    "*|question_template_1|*",
+    "*|question_template_1|fixed",
+    "*|question_template_2|*",
+    "*|question_template_2|fixed",
+    "*|question_template_3|*",
+    "*|question_template_3|fixed",
+    "*|question_template_4|*",
+    "*|question_template_4|fixed",
+    "*|question_template_5|*",
+    "*|question_template_5|fixed",
+    "*|question_template_6|*",
+    "*|question_template_6|fixed",
+    "*|question_template_7|*",
+    "*|question_template_7|fixed",
+    "0|child|first",
+    "0|child|interior",
+    "0|child|last",
+    "0|fact_period|fixed",
+    "0|fact_template_0|fixed",
+    "0|fact_template_1|fixed",
+    "0|fact_template_2|fixed",
+    "0|fact_template_3|fixed",
+    "0|mother|first",
+    "0|mother|interior",
+    "0|mother|last",
+    "0|mother|single",
+    "1|child|first",
+    "1|child|interior",
+    "1|child|last",
+    "1|child|single",
+    "1|fact_period|fixed",
+    "1|fact_template_0|fixed",
+    "1|fact_template_1|fixed",
+    "1|fact_template_2|fixed",
+    "1|fact_template_3|fixed",
+    "1|mother|first",
+    "1|mother|interior",
+    "1|mother|last",
+    "2|child|first",
+    "2|child|interior",
+    "2|child|last",
+    "2|fact_period|fixed",
+    "2|fact_template_0|fixed",
+    "2|fact_template_1|fixed",
+    "2|fact_template_2|fixed",
+    "2|fact_template_3|fixed",
+    "2|mother|first",
+    "2|mother|interior",
+    "2|mother|last",
+    "2|mother|single",
+    "3|child|first",
+    "3|child|interior",
+    "3|child|last",
+    "3|child|single",
+    "3|fact_period|fixed",
+    "3|fact_template_0|fixed",
+    "3|fact_template_1|fixed",
+    "3|fact_template_2|fixed",
+    "3|fact_template_3|fixed",
+    "3|mother|first",
+    "3|mother|interior",
+    "3|mother|last",
+    "answer|colon|fixed",
+    "question|question_name|first",
+    "question|question_name|interior",
+    "question|question_name|last",
+    "question|question_name|single",
+    "question|question_template_0|fixed",
+    "question|question_template_1|fixed",
+    "question|question_template_2|fixed",
+    "question|question_template_3|fixed",
+    "question|question_template_4|fixed",
+    "question|question_template_5|fixed",
+    "question|question_template_6|fixed",
+    "question|question_template_7|fixed",
+    "structure|fixed_token_16533|fixed"
+  ],
+  "original59": [
+    59,
+    85,
+    86,
+    128,
+    178,
+    194,
+    216,
+    242,
+    249,
+    264,
+    271,
+    272,
+    294,
+    304,
+    305,
+    336,
+    355,
+    356,
+    359,
+    367,
+    386,
+    393,
+    417,
+    438,
+    458,
+    471,
+    480,
+    482,
+    483,
+    498,
+    508,
+    509,
+    513,
+    514,
+    516,
+    528,
+    533,
+    536,
+    543,
+    549,
+    568,
+    591,
+    595,
+    624,
+    647,
+    654,
+    696,
+    697,
+    699,
+    709,
+    746,
+    751,
+    785,
+    818,
+    855,
+    863,
+    887,
+    963,
+    993
+  ],
+  "structures": {
+    "T1": {
+      "retained": [
+        "L17H1",
+        "L18H18",
+        "L18H19",
+        "L27H6"
+      ],
+      "anchor": {
+        "source": "L17H1",
+        "site": "query_writer_union",
+        "live": [
+          "L18H18",
+          "L18H19"
+        ],
+        "receiver": "L27H6",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    "T2": {
+      "retained": [
+        "L15H25",
+        "L16H1",
+        "L16H21",
+        "L18H18",
+        "L18H19"
+      ],
+      "anchor": {
+        "source": "L15H25",
+        "site": "query_child_last",
+        "live": [
+          "L16H1",
+          "L16H21"
+        ],
+        "receiver": "L18H18",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    "T3": {
+      "retained": [
+        "L17H1",
+        "L18H18",
+        "L27H6"
+      ],
+      "anchor": {
+        "source": "L17H1",
+        "site": "query_writer_union",
+        "live": [
+          "L18H18"
+        ],
+        "receiver": "L27H6",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    "T4": {
+      "retained": [
+        "L8H15",
+        "L18H18"
+      ],
+      "anchor": {
+        "source": "L8H15",
+        "site": "query_sentence",
+        "live": [],
+        "receiver": "L18H18",
+        "channel": "V"
+      },
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    "T5": {
+      "retained": [
+        "L20H1",
+        "L27H6"
+      ],
+      "anchor": {
+        "source": "L20H1",
+        "site": "colon",
+        "live": [],
+        "receiver": "L27H6",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    }
+  },
+  "C33": [
+    "L6H24",
+    "L8H15",
+    "L13H10",
+    "L13H18",
+    "L14H23",
+    "L14H26",
+    "L15H3",
+    "L15H25",
+    "L16H1",
+    "L16H21",
+    "L16H31",
+    "L17H1",
+    "L17H3",
+    "L17H17",
+    "L17H24",
+    "L18H18",
+    "L18H19",
+    "L18H24",
+    "L19H16",
+    "L19H22",
+    "L20H1",
+    "L20H7",
+    "L21H6",
+    "L21H18",
+    "L21H23",
+    "L22H5",
+    "L23H15",
+    "L24H19",
+    "L25H17",
+    "L26H23",
+    "L27H6",
+    "L30H13",
+    "L30H18"
+  ],
+  "R17": [
+    "L1H27",
+    "L8H8",
+    "L9H6",
+    "L9H17",
+    "L11H4",
+    "L11H7",
+    "L12H2",
+    "L16H4",
+    "L16H16",
+    "L16H24",
+    "L17H5",
+    "L21H25",
+    "L23H10",
+    "L25H18",
+    "L26H31",
+    "L27H23",
+    "L30H3"
+  ],
+  "C50": [
+    "L1H27",
+    "L6H24",
+    "L8H8",
+    "L8H15",
+    "L9H6",
+    "L9H17",
+    "L11H4",
+    "L11H7",
+    "L12H2",
+    "L13H10",
+    "L13H18",
+    "L14H23",
+    "L14H26",
+    "L15H3",
+    "L15H25",
+    "L16H1",
+    "L16H4",
+    "L16H16",
+    "L16H21",
+    "L16H24",
+    "L16H31",
+    "L17H1",
+    "L17H3",
+    "L17H5",
+    "L17H17",
+    "L17H24",
+    "L18H18",
+    "L18H19",
+    "L18H24",
+    "L19H16",
+    "L19H22",
+    "L20H1",
+    "L20H7",
+    "L21H6",
+    "L21H18",
+    "L21H23",
+    "L21H25",
+    "L22H5",
+    "L23H10",
+    "L23H15",
+    "L24H19",
+    "L25H17",
+    "L25H18",
+    "L26H23",
+    "L26H31",
+    "L27H6",
+    "L27H23",
+    "L30H3",
+    "L30H13",
+    "L30H18"
+  ],
+  "candidates": [
+    "L1H27",
+    "L11H4",
+    "L17H5",
+    "L23H10",
+    "L25H18",
+    "L9H16"
+  ],
+  "references": [
+    "L18H19",
+    "L8H15"
+  ],
+  "attachments": [
+    {
+      "structures": [
+        "T1",
+        "T3",
+        "T4"
+      ],
+      "candidates": [
+        "L1H27",
+        "L9H16",
+        "L11H4",
+        "L17H5"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "all_sentence",
+        "receiver": "L18H18",
+        "channel": "V"
+      }
+    },
+    {
+      "structures": [
+        "T2"
+      ],
+      "candidates": [
+        "L1H27",
+        "L9H16",
+        "L11H4"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "all_sentence",
+        "receiver": "L16H1",
+        "channel": "V"
+      }
+    },
+    {
+      "structures": [
+        "T2"
+      ],
+      "candidates": [
+        "L17H5"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "colon",
+        "receiver": "L18H18",
+        "channel": "Q"
+      }
+    },
+    {
+      "structures": [
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "candidates": [
+        "L23H10",
+        "L25H18"
+      ],
+      "attachment": {
+        "source": "L18H18",
+        "site": "colon",
+        "receiver": "h",
+        "channel": "Q"
+      }
+    },
+    {
+      "structures": [
+        "T5"
+      ],
+      "candidates": [
+        "L1H27",
+        "L9H16",
+        "L11H4",
+        "L17H5"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "all_sentence",
+        "receiver": "L20H1",
+        "channel": "V"
+      }
+    },
+    {
+      "structures": [
+        "T5"
+      ],
+      "candidates": [
+        "L23H10",
+        "L25H18"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "colon",
+        "receiver": "L27H6",
+        "channel": "Q"
+      }
+    }
+  ],
+  "control_rosters": {
+    "L11H4|all_sentence|L16H1|V": {
+      "control": "L16H5",
+      "eligible": 25
+    },
+    "L11H4|all_sentence|L18H18|V": {
+      "control": "L18H1",
+      "eligible": 28
+    },
+    "L11H4|all_sentence|L20H1|V": {
+      "control": "L20H0",
+      "eligible": 29
+    },
+    "L17H5|all_sentence|L18H18|V": {
+      "control": "L18H21",
+      "eligible": 28
+    },
+    "L17H5|all_sentence|L20H1|V": {
+      "control": "L20H9",
+      "eligible": 29
+    },
+    "L17H5|colon|L18H18|Q": {
+      "control": "L18H31",
+      "eligible": 28
+    },
+    "L18H18|colon|L23H10|Q": {
+      "control": "L23H18",
+      "eligible": 30
+    },
+    "L18H18|colon|L25H18|Q": {
+      "control": "L25H28",
+      "eligible": 30
+    },
+    "L1H27|all_sentence|L16H1|V": {
+      "control": "L16H8",
+      "eligible": 25
+    },
+    "L1H27|all_sentence|L18H18|V": {
+      "control": "L18H23",
+      "eligible": 28
+    },
+    "L1H27|all_sentence|L20H1|V": {
+      "control": "L20H2",
+      "eligible": 29
+    },
+    "L23H10|colon|L27H6|Q": {
+      "control": "L27H3",
+      "eligible": 30
+    },
+    "L25H18|colon|L27H6|Q": {
+      "control": "L27H12",
+      "eligible": 30
+    },
+    "L9H16|all_sentence|L16H1|V": {
+      "control": "L16H19",
+      "eligible": 25
+    },
+    "L9H16|all_sentence|L18H18|V": {
+      "control": "L18H28",
+      "eligible": 28
+    },
+    "L9H16|all_sentence|L20H1|V": {
+      "control": "L20H9",
+      "eligible": 29
+    }
+  },
+  "heldout": {
+    "sealed": true,
+    "dataset": "reference/singlehop_v1_4shot.jsonl",
+    "baseline": "reference/olmo2_singlehop_4shot_results.jsonl",
+    "dataset_hash": "7b9e4bb24ef5ee4f06c5c410634e316e166d16c7e1a120a5ae9e9f1989792cd9",
+    "baseline_hash": "b0bbbcb2b8f47616533b626c39d083b8ca199169b41cb664134ca5bc451b1f31"
+  },
+  "pair_hash": "c1012da22d3402dbeb5fe178a70839075aa53bdce07411b6291df44c068037d9",
+  "source_hashes": {
+    "/mnt/user-data/uploads/project/results/stage3_inputs_v1/prompts.jsonl.gz": "e4b6e4454eba18f9e0bfbf03e0cd7ade5a5a7243a9d7dee45b30dc7de9df4087",
+    "/mnt/user-data/uploads/project/results/stage4_s42_inputs_v1/pairs.jsonl.gz": "79f4c09a042998774890c2b8db158b53e28735dad40e3aae759bbe54d5fa89f0",
+    "reference/ri_test_v2_candidates.json": "5e27d7addaa0c5a8a750b5bf2323d2a2363f4aa2e975d9a5a8f6bd4d96499e6d",
+    "reference/a100_40gb_full178_compatibility.json": "5334843a8997748930e630a8fb42006f92e5b863fb5b45b9d8b1c562fa24523b"
+  },
+  "compatibility_exceptions": {
+    "034/direct/base/0/order0": {
+      "margin": 9.517984390258789,
+      "clean_logit": 0.0023593902587890625,
+      "corr_logit": -9.515625,
+      "historical_margin_error": 0.052664995193481445,
+      "gpu": "NVIDIA A100-SXM4-40GB",
+      "source_sha256": "5334843a8997748930e630a8fb42006f92e5b863fb5b45b9d8b1c562fa24523b",
+      "reference_tolerance": 0.001
+    },
+    "034/direct/base/0/order1": {
+      "margin": 7.99560546875,
+      "clean_logit": 0.40576171875,
+      "corr_logit": -7.58984375,
+      "historical_margin_error": 0.067626953125,
+      "gpu": "NVIDIA A100-SXM4-40GB",
+      "source_sha256": "5334843a8997748930e630a8fb42006f92e5b863fb5b45b9d8b1c562fa24523b",
+      "reference_tolerance": 0.001
+    }
+  }
+}

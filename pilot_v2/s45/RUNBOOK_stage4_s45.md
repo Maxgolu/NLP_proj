@@ -21,38 +21,65 @@
 | `test_s45_pipeline.py` | הרצה מקצה לקצה על מודל קטן: Stage D עם בחירה כפויה (מסלולים בשני הכיוונים, חיבור+בקרה ברקע האבחוני), הקפאה, איטום held-out סינתטי, worker במצב `full`, תוויות סופיות. איטי (דקות); להריץ ידנית. |
 | `stage*_*.py`, `s42_*.py`, `s43_engine.py`, `test_s42.py`, `test_s43.py`, `test_stage4.py`, `model_lock_olmo2.json` | עותקים בייט־זהים של התלויות הקפואות (S4.1–S4.3). |
 
-## 2. העלאה לאשכול
+## 2. העלאה לאשכול (scp של חבילה, כמו בשלבים הקודמים)
 
-```bash
-cd /home/yandex/DLWorkShop2025b/maximg/pilot_v2
-# העלה את התיקייה s45/ מהריפו (git pull), או חלץ את s45_package.zip לכאן -> pilot_v2/s45/
-cd s45 && python3 -m unittest -q test_s45 test_s45_analysis test_s43 test_s42.TinyJoint test_stage4.TinyRoutes && cd ..
+הקוד באשכול **לא** מתעדכן מ־git; מעלים חבילה. החבילה `pilot_v2/s45_bundle_v1.tar.gz` (עם
+`s45_bundle_v1.tar.gz.sha256.json`) כוללת את הקוד, את הקלטים הקפואים `s45/inputs_s45/` (כבר הוכנו
+מקומית עם הטוקנייזר הנעול; ראה §3) ואת `s45/reference/` — הדאטה הגולמי, תוצאות ריצת הבסיס, אבחון
+התאימות של S4.3 ו־`candidates.json` — כך שאיטום ה־held-out לא תלוי בקבצים שאולי חסרים באשכול.
+
+PowerShell משורש הפרויקט, החיבור שכבר שימש בפרויקט:
+
+```powershell
+scp -o StrictHostKeyChecking=yes -o UpdateHostKeys=no -o HostKeyAlgorithms=ssh-ed25519 -o UserKnownHostsFile=tmp/slurm_c002_known_hosts .\pilot_v2\s45_bundle_v1.tar.gz "maximg@132.67.130.126:/home/yandex/DLWorkShop2025b/maximg/pilot_v2/"
 ```
 
-הבדיקות רצות על CPU, ללא משקולות, כדקה.
-
-## 3. הקפאת קלטים (CPU, login node)
-
-בוצע כבר פעם אחת מקומית על הנתונים האמיתיים עם הטוקנייזר הנעול: כל שערי השחזור ההיסטורי עברו (token_ids,
-offsets, מסכות, `mean_keys`, קידומת), 89 משפחות, ליבה 20, 108 מפתחות ממוצע, חריג משפחה 034 נטען, ו־87 משפחות
-validation מזוהות מהבסיס ההתנהגותי. יש להריץ שוב על האשכול (7 שניות) כדי שהנתיבים וההאשים בקובץ יהיו של האשכול.
+בשרת, Bash (CPU בלבד, כדקה):
 
 ```bash
 cd /home/yandex/DLWorkShop2025b/maximg/pilot_v2
+test ! -e s45 || { echo 'Package already exists: use a new bundle version instead of overwriting'; exit 1; }
+sha256sum s45_bundle_v1.tar.gz     # להשוות ל־s45_bundle_v1.tar.gz.sha256.json
+tar -xzf s45_bundle_v1.tar.gz
 source runtime.sh
-python3 s45/s45_run.py prepare \
-  --stage3-inputs ../results/stage3_inputs_v1 \
-  --s42-inputs    ../results/stage4_s42_inputs_v1 \
-  --candidates    ../results/ri_test_v2/candidates.json \
-  --dataset       ../pilot_v3/data_singlehop/singlehop_v1_4shot.jsonl \
-  --baseline      "$PILOT_RUNS/olmo2_singlehop_4shot/results.jsonl" \
-  --compatibility ../results/stage4_s43_all_v1/diagnostics/a100_40gb_full178_compatibility.json \
-  --out s45/inputs_s45
+python3 - <<'PY'
+import hashlib,json,pathlib
+p=pathlib.Path('s45')
+for name,expected in json.loads((p/'bundle_hashes.json').read_text()).items():
+    if name=='bundle_hashes.json':continue
+    assert hashlib.sha256((p/name).read_bytes()).hexdigest()==expected,name
+print('Bundle verified')
+PY
+cd s45 && python3 -m unittest -q test_s45 test_s45_analysis test_s43 test_s42.TinyJoint test_stage4.TinyRoutes && cd ..
 python3 s45/s45_run.py check --inputs s45/inputs_s45
 ```
 
-מה זה עושה: משחזר את 178 זוגות ה־discovery מהקלטים הקפואים של S4.2 (מסכות, `mean_keys`, baselines
-שמורים), **מאמת** שהטוקניזציה וההערות ההיסטוריות משוחזרות בייט־בבייט, בונה לכל זוג ארבעה תאים:
+צפוי: `Bundle verified`, `OK`, ואז `{'pairs': 40, 'states': 8, 'jobs': 8, 'records': 1280}`.
+על שרת ה־GPU יש לוודא שבדיקות המודל הקטן אינן מדולגות (torch/transformers קיימים דרך `runtime.sh`).
+
+## 3. הקלטים הקפואים (כבר בוצע; לתיעוד ולשחזור בלבד)
+
+`inputs_s45/` נוצר מקומית ב־26.9 בפקודה הבאה (7 שניות, CPU), מתוך `s45/`:
+
+```bash
+python3 s45_run.py prepare \
+  --stage3-inputs ../../results/stage3_inputs_v1 \
+  --s42-inputs    ../../results/stage4_s42_inputs_v1 \
+  --candidates    reference/ri_test_v2_candidates.json \
+  --dataset       reference/singlehop_v1_4shot.jsonl \
+  --baseline      reference/olmo2_singlehop_4shot_results.jsonl \
+  --compatibility reference/a100_40gb_full178_compatibility.json \
+  --tokenizer     ../../pilot_v3/olmo2_tokenizer/tokenizer.json \
+  --out inputs_s45
+```
+
+כל שערי השחזור ההיסטורי עברו (token_ids, offsets, מסכות, `mean_keys`, קידומת — בייט־בבייט מול S4.2),
+89 משפחות, ליבה 20, 108 מפתחות ממוצע, חריג משפחה 034 נטען, ו־87 משפחות validation מזוהות מהבסיס
+ההתנהגותי. עותק של הקלטים נמצא גם ב־`results/stage4_s45_inputs_v1/` בריפו. אין להריץ `prepare` שוב
+לאותה תיקייה (מסרב לדרוס); גרסה חדשה = תיקייה חדשה + חבילה חדשה.
+
+מה `prepare` עושה: משחזר את 178 זוגות ה־discovery מהקלטים הקפואים של S4.2 (מסכות, `mean_keys`, baselines
+שמורים), **מאמת** שהטוקניזציה וההערות ההיסטוריות משוחזרות בייט־בבייט, ובונה לכל זוג ארבעה תאים:
 
 - `x00` עובדות מקוריות/שאלה מקורית (זהב a), `x10` אימהות מוחלפות/שאלה מקורית (זהב b),
 - `x01` עובדות מקוריות/שאלה חלופית (זהב b), `x11` מוחלפות/חלופית (זהב a).
@@ -62,10 +89,8 @@ python3 s45/s45_run.py check --inputs s45/inputs_s45
 עם הקידומת המשותפת, `n`, `tok_a/tok_b`, וזהות התא. נבדק שהזוגות `x00/x10` ו־`x01/x11` מיושרים
 (אורך זהה, ≤6 טוקנים שונים, מסכות ומפתחות זהים, קידומת זהה), ושהשאלה החדשה מזיזה את העובדה הנשאלת.
 המדד בכל התאים: `logit(a) − logit(b)` בטוקן התשובה הראשון השונה, עם הקידומת המשותפת ב־teacher forcing.
-
-`--dataset/--baseline` רק נרשמים בהאש (לא נקראים לתוך discovery) כדי שאיטום held-out יהיה כבול לאותם
-קבצים. `--compatibility` מייבא את חריג משפחה 034 של S4.3 כערך ייחוס חלופי מפורש (סובלנות 1e-3
-מול הערך הדטרמיניסטי מהאבחון; לתא המוחלף סובלנות 0.10) — אין הרפיה אוטומטית של הסף 0.05.
+`--compatibility` מייבא את חריג משפחה 034 של S4.3 כערך ייחוס חלופי מפורש (סובלנות 1e-3 מול הערך
+הדטרמיניסטי מהאבחון; לתא המוחלף סובלנות 0.10) — אין הרפיה אוטומטית של הסף 0.05.
 
 נוצרים: `plan.json` (כולל `control_rosters` — קולט בקרה אחד לכל חיבור אפשרי, `Random(20260926)` על
 רשימת ראשים ממוינת, בעיבוד מפתחות בסדר לקסיקלי, לפני כל מדידה), `structure_registry.json`,
@@ -115,8 +140,8 @@ source runtime.sh
 python3 s45/s45_run.py prepare-heldout \
   --inputs   s45/inputs_s45 \
   --freeze   "$PILOT_RUNS/s45_discovery_v1/freeze_manifest.json" \
-  --dataset  ../pilot_v3/data_singlehop/singlehop_v1_4shot.jsonl \
-  --baseline "$PILOT_RUNS/olmo2_singlehop_4shot/results.jsonl" \
+  --dataset  s45/reference/singlehop_v1_4shot.jsonl \
+  --baseline s45/reference/olmo2_singlehop_4shot_results.jsonl \
   --out s45/inputs_s45_heldout
 bash s45/submit_s45_pipeline.sh --mode heldout --name s45_heldout_v1 --gpus 6 \
   --freeze    "$PILOT_RUNS/s45_discovery_v1/freeze_manifest.json" \
@@ -157,7 +182,10 @@ bash s45/submit_s45_pipeline.sh --mode heldout --name s45_heldout_v1 --gpus 6 \
 
 ```bash
 git add pilot_v2/s45/*.py pilot_v2/s45/*.sh pilot_v2/s45/*.sbatch pilot_v2/s45/*.md pilot_v2/s45/model_lock_olmo2.json
-git commit -m "S4.5: RI participation in measured structures (implementation, not yet executed)"
+git add pilot_v2/s45_bundle_v1.tar.gz.sha256.json results/stage4_s45_inputs_v1
+git commit -m "S4.5: RI participation in measured structures (implementation, frozen inputs; not yet executed)"
 ```
+
+הארכיון `s45_bundle_v1.tar.gz` עצמו אינו ב־git (כמו קודמיו); רק ה־sha256 שלו.
 
 תוצאות ריצה (`$PILOT_RUNS/...`) אינן בריפו; לאחר ריצה — `results/stage4_s45_*` לפי הנוהל של S4.2/S4.3.
