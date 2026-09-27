@@ -23,7 +23,7 @@ def build(inputs,out,stages,B,B_status,selection,signs,bank_manifest,code):
         listing[label]=dict(schedule=digest(st['schedule']) if st.get('schedule') else None,
             runs={str(Path(r).name):digest(Path(r)/'manifest.json') for r in st['runs']},
             done=all(json_read(Path(r)/'done.json')['complete'] for r in st['runs']),
-            analysis={str(Path(x).name):digest(x) for x in st.get('analysis',[])})
+            analysis={str(Path(x).name):digest(x) for x in st.get('analysis',[])},reused_from=st.get('reused_from'))
     missing=[s for s in REQUIRED_STAGES if s not in listing or not listing[s]['done']]
     if missing:raise ValueError('Discovery stages incomplete: '+','.join(missing))
     body=dict(policy=POLICY,plan_hash=digest(inputs/'plan.json'),pair_hash=plan['pair_hash'],model=plan['model'],code=code,

@@ -1,0 +1,16 @@
+{
+  "B": "C50",
+  "status": "partial",
+  "C33": "fail:F,L,accuracy:x00_order0,accuracy:x00_order1,accuracy:x10_order0,accuracy:x10_order1,accuracy:x01_order0,accuracy:x01_order1,accuracy:x11_order0,accuracy:x11_order1",
+  "C50": "fail:F,L,accuracy:x00_order0,accuracy:x00_order1,accuracy:x10_order0,accuracy:x10_order1,accuracy:x01_order0,accuracy:x01_order1,accuracy:x11_order0,accuracy:x11_order1",
+  "empty": "fail:F,L,accuracy:x00_order0,accuracy:x00_order1,accuracy:x10_order0,accuracy:x10_order1,accuracy:x01_order0,accuracy:x01_order1,accuracy:x11_order0,accuracy:x11_order1",
+  "note": "Stage A selects B only; T rosters are never tuned. If the empty mask passes, no isolated head-mechanism claim is made.",
+  "empty_passes": false,
+  "T_masks": {
+    "T1": "fail:F,L,accuracy:x00_order0,accuracy:x00_order1,accuracy:x10_order0,accuracy:x10_order1,accuracy:x01_order0,accuracy:x01_order1,accuracy:x11_order0,accuracy:x11_order1",
+    "T2": "fail:F,L,accuracy:x00_order0,accuracy:x00_order1,accuracy:x10_order0,accuracy:x10_order1,accuracy:x01_order0,accuracy:x01_order1,accuracy:x11_order0,accuracy:x11_order1",
+    "T3": "fail:F,L,accuracy:x00_order0,accuracy:x00_order1,accuracy:x10_order0,accuracy:x10_order1,accuracy:x01_order0,accuracy:x01_order1,accuracy:x11_order0,accuracy:x11_order1",
+    "T4": "fail:F,L,accuracy:x00_order0,accuracy:x00_order1,accuracy:x10_order0,accuracy:x10_order1,accuracy:x01_order0,accuracy:x01_order1,accuracy:x11_order0,accuracy:x11_order1",
+    "T5": "fail:F,L,accuracy:x00_order0,accuracy:x00_order1,accuracy:x10_order0,accuracy:x10_order1,accuracy:x01_order0,accuracy:x01_order1,accuracy:x11_order0,accuracy:x11_order1"
+  }
+}

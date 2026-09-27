@@ -51,7 +51,7 @@ Attention--value separation & 105 & 178 pairs \\
 Weight copying score & 105 & 314 name-token ids \\
 Attended-name contrast & 105 & 160 prompts \\
 Matched contextual RI & 70 & saved Stage-1 events \\
-Synthetic probes & 105 & 992 + 32 probes \\
+Synthetic probes & 105 & 32 + 32 prompts \\
 Controlled readout & 2 & 4 sites, 40 pairs \\
 \bottomrule
 \end{tabular}
@@ -65,14 +65,23 @@ one test-block position at a time, from the first differing token to the colon;
 query-fact positions are labelled (mother tokens, ``is'', ``of'', child tokens,
 period). Reverse patching inserts the clean activation into the corrupted run for
 the ten heads with the largest $|I_h|$, at Scope P and Scope F, to test the
-intervention in the opposite direction and its symmetry.
+intervention in the opposite direction and its symmetry. A colon-localized effect
+suggests a reader role, but does not identify what is read; an earlier-site effect
+suggests a writer role. The causal site need not coincide with a qualifying RI
+event. Single-position effects need not sum to the all-position effect, and
+restoration measures recovery conditional on the corrupted model, not sufficiency
+of the restored head alone.
 
 \paragraph{Attention profile and controls.}
 On the 20 common families, both orders, four prompt types are captured: base,
 corrupted, reorder and changed-query. Attention at the colon is summed over the
 token spans of the query mother, the query child, each distractor mother and the
 colon, for every head on every prompt, independently of the criterion's gate.
-Controls are paired within family. Family means and per-prompt absolute changes are
+The changed query asks about the other answer-side child while leaving the facts
+unchanged; reorder changes fact positions, and corruption swaps the two answer-side
+mothers. Together these controls distinguish attention that follows the question
+from sensitivity to position or mother assignment. Controls are paired within
+family. Family means and per-prompt absolute changes are
 both reported, since signed means can hide opposite-sign changes.
 
 \paragraph{Output projections.}
@@ -85,11 +94,21 @@ criterion. Both are diagnostics of one vector, not attributions of the causal
 effect.
 
 \paragraph{Attention--value separation.}
-For each pair, the head's output at the colon is recomputed as $A^hV^h$ with the
-pattern and the values taken independently from the clean or the corrupted run;
-the reconstruction is gated against the actual attention output. The interaction is
-the full patch minus the sum of the two single replacements, reported as a family
-mean and as a mean absolute value.
+For each pair, recompute the head's pre-projection activation at the colon using
+the attention pattern and values independently from the clean ($c$) or corrupted
+($r$) run. Let $m_{uv}$ be the clean recipient's answer contrast after inserting
+$A_u^hV_v^h$ into that head's colon slice; all subsequent computation stays live.
+The four conditions define
+\begin{align*}
+I_h^{\mathrm{pattern}}&=m_{cc}-m_{rc},\\
+I_h^{\mathrm{value}}&=m_{cc}-m_{cr},\\
+I_h^{\mathrm{joint}}&=m_{cc}-m_{rr},\\
+\eta_h&=I_h^{\mathrm{joint}}-I_h^{\mathrm{pattern}}-I_h^{\mathrm{value}}.
+\end{align*}
+For every measured head and pair, clean reconstruction must reproduce the intact
+readout and joint replacement the ordinary Scope-F patch. Report signed family
+means and mean absolute family interactions; a small mean interaction does not
+establish separability if effects cancel across families.
 
 \paragraph{Weight copying and attended-name contrast.}
 The weight score projects each of the 314 first/last test-name token ids through
@@ -108,15 +127,22 @@ base prompts only.
 \paragraph{Matched contextual RI.}
 For every saved Stage-1 event of an inventory head, the raw embedding in the OV
 projection is replaced by the head's actual normalized value input at the same
-position, with events, controls, anchors and family weights unchanged; 70 heads
-have valid events. This isolates the embedding choice from every other ingredient
-of the criterion.
+position, with events, controls, anchors and family weights unchanged. Seventy
+heads have valid events, of which 68 have supported name-gap estimates and enter
+the correlation analysis. This isolates the embedding choice from every other
+ingredient of the criterion. It differs from the actual-output projection above:
+it still projects the current position's own input rather than the
+attention-weighted values from attended positions.
 
 \paragraph{Synthetic probes.}
-Repeated random token sequences and key--value retrieval contexts are presented to
-the model; for each head, attention to the copy source (argmax rate) and the sign of
-its output on the gold token are recorded. The model's accuracy on the probes is
-reported with the results.
+The repeated-sequence test uses 32 prompts, each repeating 32 distinct random
+tokens, with 31 next-token predictions in the second copy (992 scored positions).
+The retrieval test uses 32 prompts containing 16 key--value pairs each and one
+queried key (32 scored positions). Tokens come from the 128-token non-name pool.
+For each head, record attention mass and argmax at the copy source, and the
+projected gold-token logit relative to the other candidate tokens. Report the
+model's vocabulary-wide accuracy separately; these probes characterize induction
+and retrieval behaviour, not causal participation in the mother-of task.
 
 \paragraph{Controlled readout.}
 For the two heads whose effect localizes to positions inside the query fact and is
@@ -157,6 +183,8 @@ effect of every strong colon head is dominated by the corrupted-answer logit (88
 of $I^F_h$); L27H6 alone also lowers the clean answer ($+1.96$ and $+1.10$).
 
 \paragraph{Results: attention and output.}
+Figure~\ref{fig:colon-attention} shows the colon attention of the strong
+answer-position heads.
 Mother-attenders (mass on the query mother): L27H6 0.58, L21H18 0.60, L23H15 0.51,
 L22H5 0.34, L19H22 0.31, L21H6 0.30, L19H16 0.21, L26H23 0.21, L20H1 0.17, L18H18
 0.14, L18H19 0.13, L17H24 0.13. Child-attenders: L16H21 0.40, L16H1 0.36. Self-attenders:
@@ -172,13 +200,25 @@ distractor mothers, first token): L27H6 $+2.99$, L30H13 $+0.76$, L22H5 $+0.41$,
 L21H6 $+0.33$, L21H18 $+0.25$, L30H18 $-0.88$; L18H19 $+0.16$, L18H18 $+0.11$,
 L25H17 $+0.16$, L20H1 $-0.09$, L23H15 $+0.04$, L19H16 $-0.04$, L16H21 and L16H1
 within $\pm0.02$. Raw-embedding projection: all within $\pm0.008$ (Spearman with
-$I^F_h$ $-0.07$). Matched contextual RI (70 heads with valid events): Spearman of the
-main name gap with importance $-0.26\to-0.17$; the raw target statistic $+0.01\to
-+0.02$. Weight copying score: Spearman $+0.37$ with signed $I_h$, $+0.02$ with
+$I^F_h$ $-0.07$). Matched contextual RI: Spearman correlation of the main name gap
+with importance changes from $-0.26$ to $-0.17$ over 68 supported heads;
+the raw target statistic changes from $+0.01$ to $+0.02$ over 70 heads.
+Weight copying score: Spearman $+0.37$ with signed $I_h$, $+0.02$ with
 $|I_h|$; L30H18 $+0.60$, L21H6 $+0.35$, L26H23 $-0.20$, L27H6 $+0.04$, L18H18
 $-0.08$, L17H1 $+0.01$. Current-token partition of the saved RI events: for L18H19,
 L21H18 and L21H6 the name gap is $-0.023$, $-0.017$ and $-0.025$ when the current
 token is a control name and within $\pm0.004$ otherwise.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{figG_colon_attention}
+\caption{Colon attention of the strong answer-position heads over the query mother,
+query child, the three distractor mothers and the colon itself (base prompts, 20
+common families); labels report Scope-F importance. Mother-attenders occur with
+both effect signs, the two child-attenders select the queried child's second
+mention, and colon-attenders put most mass on the colon.}
+\label{fig:colon-attention}
+\end{figure}
 
 \begin{figure}[h]
 \centering
@@ -245,6 +285,11 @@ source and under head replacement at the site; neg.: families with a negative he
 change.}
 \label{tab:readout-app}
 \end{table}
+
+For L15H25 at the child-last site, neither readout responds materially to
+the full source swap (identity: $+0.020$; mother-of: $+0.002$), so its null
+response to head replacement is uninformative and the content written at
+this site remains unresolved.
 
 \begin{table*}[t]
 \centering\scriptsize

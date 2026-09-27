@@ -1,0 +1,816 @@
+{
+  "policy": {
+    "version": 1,
+    "protocol": "ri_structure_final_protocol_20260926",
+    "seed": 20260926,
+    "metric": "logit(a)-logit(b) at first divergent answer token; shared prefix teacher forced; a,b fixed by x00",
+    "cells": {
+      "x00": "original facts, original query (gold a)",
+      "x10": "swapped mothers, original query (gold b)",
+      "x01": "original facts, alternative query (gold b)",
+      "x11": "swapped mothers, alternative query (gold a)"
+    },
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "bootstrap_draws": 20000,
+    "fidelity_F": [
+      0.8,
+      1.2
+    ],
+    "fidelity_L": 0.2,
+    "accuracy_drop": 0.05,
+    "mean_min_families": 10,
+    "max_selected": 3,
+    "max_pairs_per_candidate": 2,
+    "background": "retained heads live at every original test-block position; other head-output slices replaced by role means; MLPs, embeddings, demonstrations, shared normalization and answer prefix live",
+    "mean_bank": "all 1024 heads; discovery x00/x10 cells, both orders; leave-one-family-out in discovery, fixed full bank on held-out",
+    "routes": "S4.1/S4.3 executors inside the declared background: source replaced at site, post-normalization branches frozen, selective live intermediates, receiver channel recaptured and injected into a fresh run",
+    "gamma": "I_t(B_h_plus)-I_t(B_h_minus); difference of matched intervention effects",
+    "scope": "single-hop contextual task; head-subset mechanisms conditional on the live background"
+  },
+  "plan_hash": "47d762d4486b1dc5f738b53168ff9449b214100fd443815583daf3645c3d082f",
+  "pair_hash": "c1012da22d3402dbeb5fe178a70839075aa53bdce07411b6291df44c068037d9",
+  "model": {
+    "model_id": "allenai/OLMo-2-1124-7B",
+    "revision": "7df9a82518afdecae4e8c026b27adccc8c1f0032",
+    "requested_revision": "main"
+  },
+  "code": {
+    "model_lock_olmo2.json": "ecd00ed1eea1fd55fab523fb50aa8bec0f4bdbb718c0aa751905cc0a5b710d37",
+    "s42_engine.py": "4758a16db6471ef7a1f77b7efbab5d5702349afd07b16860679a5af5794510a6",
+    "s42_means.py": "32bc1ca1edef99ef8969de7745a4d0e37a5fb463356cba623e51b066d36ee94d",
+    "s42_plan.py": "19c22d0ef450da13b360c091a3f2a32e5ed97c143c1e55be9b84008a42ca0242",
+    "s43_engine.py": "34641cf191a8ddbf71541b3a2b893c7a67c5db87a84fe61f7a1e070864ff4bca",
+    "s45_analyze.py": "6e12a8e8953bd1089f2dbf0ac5544534ec5839509896d0f4e4603c95f7413540",
+    "s45_engine.py": "3fd484a678bbfbb418e92641181cf2a89702ad1fcdb327479da400a8cd9ebfcf",
+    "s45_freeze.py": "7b624b1257dc3b81cc380c164155e03b65cd8153a5959e706275effcb2f8aae3",
+    "s45_means.py": "117e1ea4ba052e4d0c6c60834dfbddfca54bf40fc42293bffa38a807c973d689",
+    "s45_pipeline.py": "efc836690119c32490dbb8ad4058d6f0f9017c3c1203549c7d7ee1573c3d6fb1",
+    "s45_plan.py": "02de7471627bc6aea15857b9b0001b6bdf7e4f9576d6c59dd6ee6dacf9dbd6c9",
+    "s45_run.py": "0996d2399bef780f48738ab7d7bd181de7f54afa4f2eaf0645d469f1ed303804",
+    "stage1_audit.py": "37db25ad1ac25190b2fc95ae10185d9cdab25f594e9965901084bf9c898da77a",
+    "stage1_scan.py": "ae4a6f0f01a3e1f13af6a04da456b8a130260c3ae9d3babe43003d2aae38656f",
+    "stage2_engine.py": "2aa8cec1db807fd6610c6dc46d6172652014a3bed9b07ee09395552fac3a4de1",
+    "stage3_common.py": "19e264bd8392f0a4f0fce4d7eee9ec95a7d1873014611d9c13d61c843b8dd2b9",
+    "stage3_engine.py": "3d86f871796c819aa5b1fb2a313a8c2bc15f65b6bc80ab274b5caf3531057836",
+    "stage4_engine.py": "6f68861d427bc02764211390ae310411b5e91f61b7c1d01fccc1d2c8b40aacea",
+    "stage4_plan.py": "38d802b9c2c935c5a50a75af32af1ac26a0bb4150b26468da2a64e916a37e5ec",
+    "stage4_run.py": "6a4027c55aff74a4a8515aeb011ec28556bbc1722b128bc140cfd844d06c11a2",
+    "test_s42.py": "b17ecf0b2af0052b2c388dc1e9ae37ce1c7e94b3b68d595a11eeee9eaf5b56f0",
+    "test_s43.py": "728224830b30824d4bb187263e4efb9b2a81bdce39e50a9b67992da852ede602",
+    "test_s45.py": "651c43ef00f821449ad4ad110b8037e2e30d248c36f5e5bd45bd3ac819123ed3",
+    "test_stage4.py": "6ae096a287b51853d11ed9614fb5125e0016debc162815571da5692b1e0b86b7"
+  },
+  "mean_bank": {
+    "manifest_hash": "f1d4d26abe0a17e448eb1007f37bf597cd6af2a83b95fbf5305e4daea7caa49a",
+    "mode_discovery": "lofo",
+    "mode_validation": "full"
+  },
+  "stages": {
+    "means": {
+      "schedule": null,
+      "runs": {
+        "means_r0": "b493fdfdd9e96ddcd02008aef21d1c610f2d9225b68afb4c74e9aca3da21a7af",
+        "means_r1": "638551e23576d78557644dc101f37f3e647606ec9a7a966d09a754020de6538b",
+        "means_r2": "a174b7d4830a172be5b5cb5a4e9d501a72d989b8f568d2d5e2d7cb8d3ba64c00"
+      },
+      "done": true,
+      "analysis": {
+        "mean_bank_manifest.json": "f1d4d26abe0a17e448eb1007f37bf597cd6af2a83b95fbf5305e4daea7caa49a"
+      },
+      "reused_from": "/home/yandex/DLWorkShop2025b/maximg/storage/runs/s45_discovery_v1"
+    },
+    "stage_a": {
+      "schedule": "6440f74efb63342761b972432928dbf608e58f6f00e4a49c4b74f7b6e26e2338",
+      "runs": {
+        "stage_a_r0": "f8ba04cf1b75b74d4efbb0223eac16544f9b67abb68534d6c97aac3aa0518f0f",
+        "stage_a_r1": "710a9b83fe35919db12d4feec24168cef04e778de8a1f9c3a9012a3f2ec8bcb8",
+        "stage_a_r2": "117b278399b98600b92a73a4c0db27d932392b2fce32091b89cbb11cb6f2b020"
+      },
+      "done": true,
+      "analysis": {
+        "B_decision.json": "982897fd74e4074d18157b9d50a742cdd40d105daf25af0f5c5d69e8c8535383",
+        "stage_a_summary.json": "910ff9a449fd813f0bba24c30ef950a2be7869aee70b3b45d594d87d1bcdbdbf"
+      },
+      "reused_from": null
+    },
+    "stage_a_c50": {
+      "schedule": "da14bd57b54c1060399ddbcec1f80d0a7f770145cc492010b235d7af277cd272",
+      "runs": {
+        "stage_a_c50_r0": "2174c00980ff51a9c95fade99082ad1921c320a90870a9a5e5de3788f37f744a",
+        "stage_a_c50_r1": "7c6aa58aede611f4d97f76bd407d31854f5c43b50f8ddb4f295f52d67c045382",
+        "stage_a_c50_r2": "ab601ae53537f7669d97133a502278b9871f902e851090af7e492c34d00fc290"
+      },
+      "done": true,
+      "analysis": {},
+      "reused_from": null
+    },
+    "stage_b": {
+      "schedule": "9e40abf6d71c3478644910d5a9f417f14201fafc38d8f2b8d0c7ec30342e0c8d",
+      "runs": {
+        "stage_b_r0": "4f46e97d53796ae94264f0096a24d0eca0cc83cfebf52f5be21bf7b2010eb5f2",
+        "stage_b_r1": "a60c65c4519a336dc1ef1d0749c5529eed163c0c5a18cc70726430a33de00232",
+        "stage_b_r2": "6845c85250a4d9ae1a25e7afc23d0e4da1ce12d2c930cdd3c539793486646b3e"
+      },
+      "done": true,
+      "analysis": {
+        "stage_b_summary.json": "84d6de2e07a3bdd6d5aa8a0804ad11ecb340e1c72b97d12f86b93411b8101f6b"
+      },
+      "reused_from": null
+    },
+    "stage_c": {
+      "schedule": "44dcb3ec130dbb3789f4120e913b9fbdfd54df81ac10ac3ec632fb58157914e8",
+      "runs": {
+        "stage_c_r0": "64539c3cdb5e02449ffc14eef77fe98dc4444bf6b2336640dfee37537b32b0df",
+        "stage_c_r1": "a7886941a91ce52ca8e58a1de8ae790b915842cc00e172271c53509befa1364d",
+        "stage_c_r2": "a3a67e9bedc4fe7aa51f59d9e2afd1a3ee86e95bcde495af073271fcb61c8c82"
+      },
+      "done": true,
+      "analysis": {
+        "frozen_selection.json": "7be0701fa2d0a4b4b4c0bab201fec3dfa363d444c959a27b3836a35f8aba2ca9",
+        "stage_c_summary.json": "bd42cbde0bc4f5bd24bbf92338c5c96dfb0def4c605422a914a65e29afb24039"
+      },
+      "reused_from": null
+    },
+    "stage_d": {
+      "schedule": "0861816c036d52704ec3a3e3cfee24a3a50bd3f77c59789e93a7f78ea0a6e928",
+      "runs": {},
+      "done": true,
+      "analysis": {
+        "stage_d_summary.json": "b0232b7aa5fa2a469e08abc72688e8d694d94bd3ed2f74fc6e57dee6d579ce89"
+      },
+      "reused_from": null
+    },
+    "full_discovery": {
+      "schedule": "104a437e9f52a20d9cf6662022eda9e25fe85d695e05dfae50f90e0c9ced79de",
+      "runs": {
+        "full_discovery_r0": "fb13ada281f901919071e6d80e34ae221822f35c857825cc21684819e98732c0",
+        "full_discovery_r1": "6acfd94df0ce3e8483e83fa9eca70ba90232ad796f6ed63f96158f82c99ed1d1",
+        "full_discovery_r2": "95f2d5c88efd2ce1597e07caf3531fec5c06d69df7094a54c80e8af08c632dee"
+      },
+      "done": true,
+      "analysis": {
+        "extension_summary.json": "06348e32be7669577643543b84a43af0357b30de14479a76e9039fa91c9cdfde"
+      },
+      "reused_from": null
+    }
+  },
+  "B": {
+    "members": [
+      "L1H27",
+      "L6H24",
+      "L8H8",
+      "L8H15",
+      "L9H6",
+      "L9H17",
+      "L11H4",
+      "L11H7",
+      "L12H2",
+      "L13H10",
+      "L13H18",
+      "L14H23",
+      "L14H26",
+      "L15H3",
+      "L15H25",
+      "L16H1",
+      "L16H4",
+      "L16H16",
+      "L16H21",
+      "L16H24",
+      "L16H31",
+      "L17H1",
+      "L17H3",
+      "L17H5",
+      "L17H17",
+      "L17H24",
+      "L18H18",
+      "L18H19",
+      "L18H24",
+      "L19H16",
+      "L19H22",
+      "L20H1",
+      "L20H7",
+      "L21H6",
+      "L21H18",
+      "L21H23",
+      "L21H25",
+      "L22H5",
+      "L23H10",
+      "L23H15",
+      "L24H19",
+      "L25H17",
+      "L25H18",
+      "L26H23",
+      "L26H31",
+      "L27H6",
+      "L27H23",
+      "L30H3",
+      "L30H13",
+      "L30H18"
+    ],
+    "status": "partial",
+    "size": 50
+  },
+  "structures": {
+    "T1": {
+      "retained": [
+        "L17H1",
+        "L18H18",
+        "L18H19",
+        "L27H6"
+      ],
+      "anchor": {
+        "source": "L17H1",
+        "site": "query_writer_union",
+        "live": [
+          "L18H18",
+          "L18H19"
+        ],
+        "receiver": "L27H6",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    "T2": {
+      "retained": [
+        "L15H25",
+        "L16H1",
+        "L16H21",
+        "L18H18",
+        "L18H19"
+      ],
+      "anchor": {
+        "source": "L15H25",
+        "site": "query_child_last",
+        "live": [
+          "L16H1",
+          "L16H21"
+        ],
+        "receiver": "L18H18",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    "T3": {
+      "retained": [
+        "L17H1",
+        "L18H18",
+        "L27H6"
+      ],
+      "anchor": {
+        "source": "L17H1",
+        "site": "query_writer_union",
+        "live": [
+          "L18H18"
+        ],
+        "receiver": "L27H6",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    "T4": {
+      "retained": [
+        "L8H15",
+        "L18H18"
+      ],
+      "anchor": {
+        "source": "L8H15",
+        "site": "query_sentence",
+        "live": [],
+        "receiver": "L18H18",
+        "channel": "V"
+      },
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    "T5": {
+      "retained": [
+        "L20H1",
+        "L27H6"
+      ],
+      "anchor": {
+        "source": "L20H1",
+        "site": "colon",
+        "live": [],
+        "receiver": "L27H6",
+        "channel": "Q"
+      },
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    }
+  },
+  "C33": [
+    "L6H24",
+    "L8H15",
+    "L13H10",
+    "L13H18",
+    "L14H23",
+    "L14H26",
+    "L15H3",
+    "L15H25",
+    "L16H1",
+    "L16H21",
+    "L16H31",
+    "L17H1",
+    "L17H3",
+    "L17H17",
+    "L17H24",
+    "L18H18",
+    "L18H19",
+    "L18H24",
+    "L19H16",
+    "L19H22",
+    "L20H1",
+    "L20H7",
+    "L21H6",
+    "L21H18",
+    "L21H23",
+    "L22H5",
+    "L23H15",
+    "L24H19",
+    "L25H17",
+    "L26H23",
+    "L27H6",
+    "L30H13",
+    "L30H18"
+  ],
+  "C50": [
+    "L1H27",
+    "L6H24",
+    "L8H8",
+    "L8H15",
+    "L9H6",
+    "L9H17",
+    "L11H4",
+    "L11H7",
+    "L12H2",
+    "L13H10",
+    "L13H18",
+    "L14H23",
+    "L14H26",
+    "L15H3",
+    "L15H25",
+    "L16H1",
+    "L16H4",
+    "L16H16",
+    "L16H21",
+    "L16H24",
+    "L16H31",
+    "L17H1",
+    "L17H3",
+    "L17H5",
+    "L17H17",
+    "L17H24",
+    "L18H18",
+    "L18H19",
+    "L18H24",
+    "L19H16",
+    "L19H22",
+    "L20H1",
+    "L20H7",
+    "L21H6",
+    "L21H18",
+    "L21H23",
+    "L21H25",
+    "L22H5",
+    "L23H10",
+    "L23H15",
+    "L24H19",
+    "L25H17",
+    "L25H18",
+    "L26H23",
+    "L26H31",
+    "L27H6",
+    "L27H23",
+    "L30H3",
+    "L30H13",
+    "L30H18"
+  ],
+  "candidates": [
+    "L1H27",
+    "L11H4",
+    "L17H5",
+    "L23H10",
+    "L25H18",
+    "L9H16"
+  ],
+  "references": [
+    "L18H19",
+    "L8H15"
+  ],
+  "attachments": [
+    {
+      "structures": [
+        "T1",
+        "T3",
+        "T4"
+      ],
+      "candidates": [
+        "L1H27",
+        "L9H16",
+        "L11H4",
+        "L17H5"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "all_sentence",
+        "receiver": "L18H18",
+        "channel": "V"
+      }
+    },
+    {
+      "structures": [
+        "T2"
+      ],
+      "candidates": [
+        "L1H27",
+        "L9H16",
+        "L11H4"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "all_sentence",
+        "receiver": "L16H1",
+        "channel": "V"
+      }
+    },
+    {
+      "structures": [
+        "T2"
+      ],
+      "candidates": [
+        "L17H5"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "colon",
+        "receiver": "L18H18",
+        "channel": "Q"
+      }
+    },
+    {
+      "structures": [
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "candidates": [
+        "L23H10",
+        "L25H18"
+      ],
+      "attachment": {
+        "source": "L18H18",
+        "site": "colon",
+        "receiver": "h",
+        "channel": "Q"
+      }
+    },
+    {
+      "structures": [
+        "T5"
+      ],
+      "candidates": [
+        "L1H27",
+        "L9H16",
+        "L11H4",
+        "L17H5"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "all_sentence",
+        "receiver": "L20H1",
+        "channel": "V"
+      }
+    },
+    {
+      "structures": [
+        "T5"
+      ],
+      "candidates": [
+        "L23H10",
+        "L25H18"
+      ],
+      "attachment": {
+        "source": "h",
+        "site": "colon",
+        "receiver": "L27H6",
+        "channel": "Q"
+      }
+    }
+  ],
+  "control_rosters": {
+    "L11H4|all_sentence|L16H1|V": {
+      "control": "L16H5",
+      "eligible": 25
+    },
+    "L11H4|all_sentence|L18H18|V": {
+      "control": "L18H1",
+      "eligible": 28
+    },
+    "L11H4|all_sentence|L20H1|V": {
+      "control": "L20H0",
+      "eligible": 29
+    },
+    "L17H5|all_sentence|L18H18|V": {
+      "control": "L18H21",
+      "eligible": 28
+    },
+    "L17H5|all_sentence|L20H1|V": {
+      "control": "L20H9",
+      "eligible": 29
+    },
+    "L17H5|colon|L18H18|Q": {
+      "control": "L18H31",
+      "eligible": 28
+    },
+    "L18H18|colon|L23H10|Q": {
+      "control": "L23H18",
+      "eligible": 30
+    },
+    "L18H18|colon|L25H18|Q": {
+      "control": "L25H28",
+      "eligible": 30
+    },
+    "L1H27|all_sentence|L16H1|V": {
+      "control": "L16H8",
+      "eligible": 25
+    },
+    "L1H27|all_sentence|L18H18|V": {
+      "control": "L18H23",
+      "eligible": 28
+    },
+    "L1H27|all_sentence|L20H1|V": {
+      "control": "L20H2",
+      "eligible": 29
+    },
+    "L23H10|colon|L27H6|Q": {
+      "control": "L27H3",
+      "eligible": 30
+    },
+    "L25H18|colon|L27H6|Q": {
+      "control": "L27H12",
+      "eligible": 30
+    },
+    "L9H16|all_sentence|L16H1|V": {
+      "control": "L16H19",
+      "eligible": 25
+    },
+    "L9H16|all_sentence|L18H18|V": {
+      "control": "L18H28",
+      "eligible": 28
+    },
+    "L9H16|all_sentence|L20H1|V": {
+      "control": "L20H9",
+      "eligible": 29
+    }
+  },
+  "original59": [
+    59,
+    85,
+    86,
+    128,
+    178,
+    194,
+    216,
+    242,
+    249,
+    264,
+    271,
+    272,
+    294,
+    304,
+    305,
+    336,
+    355,
+    356,
+    359,
+    367,
+    386,
+    393,
+    417,
+    438,
+    458,
+    471,
+    480,
+    482,
+    483,
+    498,
+    508,
+    509,
+    513,
+    514,
+    516,
+    528,
+    533,
+    536,
+    543,
+    549,
+    568,
+    591,
+    595,
+    624,
+    647,
+    654,
+    696,
+    697,
+    699,
+    709,
+    746,
+    751,
+    785,
+    818,
+    855,
+    863,
+    887,
+    963,
+    993
+  ],
+  "selection": {
+    "selected": [
+      {
+        "candidate": "L9H16",
+        "structure": "B",
+        "record": "functional_only",
+        "d_b_class": "coherent",
+        "d_b_mean": 0.6012463450431824,
+        "label": "functional_only: behavioural extension/validation only; no Gamma or attachment"
+      },
+      {
+        "candidate": "L1H27",
+        "structure": "B",
+        "record": "functional_only",
+        "d_b_class": "coherent",
+        "d_b_mean": 0.25976855158805845,
+        "label": "functional_only: behavioural extension/validation only; no Gamma or attachment"
+      }
+    ],
+    "B": [
+      "L1H27",
+      "L6H24",
+      "L8H8",
+      "L8H15",
+      "L9H6",
+      "L9H17",
+      "L11H4",
+      "L11H7",
+      "L12H2",
+      "L13H10",
+      "L13H18",
+      "L14H23",
+      "L14H26",
+      "L15H3",
+      "L15H25",
+      "L16H1",
+      "L16H4",
+      "L16H16",
+      "L16H21",
+      "L16H24",
+      "L16H31",
+      "L17H1",
+      "L17H3",
+      "L17H5",
+      "L17H17",
+      "L17H24",
+      "L18H18",
+      "L18H19",
+      "L18H24",
+      "L19H16",
+      "L19H22",
+      "L20H1",
+      "L20H7",
+      "L21H6",
+      "L21H18",
+      "L21H23",
+      "L21H25",
+      "L22H5",
+      "L23H10",
+      "L23H15",
+      "L24H19",
+      "L25H17",
+      "L25H18",
+      "L26H23",
+      "L26H31",
+      "L27H6",
+      "L27H23",
+      "L30H3",
+      "L30H13",
+      "L30H18"
+    ],
+    "rule": "coherent first, then heterogeneous; decreasing mean|Gamma|; then layer/head; then T index; pass 1 one pair per candidate, pass 2 at most two per candidate; functional-only fill; at most three slots and three candidates",
+    "matrix_pairs": 30,
+    "eligible_pairs": 18,
+    "retained_gamma_pairs": 0,
+    "full_background_regression": [
+      {
+        "anchor": "T1",
+        "direction": "noise",
+        "measured": 1.6639799118041991,
+        "historical": 1.635,
+        "drift": 0.02897991180419912,
+        "within_0_05": true,
+        "families": 20,
+        "note": "S4.3 family-034 accommodation: report per-family drift explicitly; tolerances are not relaxed automatically"
+      },
+      {
+        "anchor": "T2",
+        "direction": "noise",
+        "measured": 0.17850618362426757,
+        "historical": 0.172,
+        "drift": 0.006506183624267581,
+        "within_0_05": true,
+        "families": 20,
+        "note": "S4.3 family-034 accommodation: report per-family drift explicitly; tolerances are not relaxed automatically"
+      },
+      {
+        "anchor": "T3",
+        "direction": "noise",
+        "measured": 0.8587411880493164,
+        "historical": 0.876,
+        "drift": 0.017258811950683572,
+        "within_0_05": true,
+        "families": 20,
+        "note": "S4.3 family-034 accommodation: report per-family drift explicitly; tolerances are not relaxed automatically"
+      },
+      {
+        "anchor": "T4",
+        "direction": "noise",
+        "measured": 0.477254581451416,
+        "historical": 0.465,
+        "drift": 0.012254581451416002,
+        "within_0_05": true,
+        "families": 20,
+        "note": "S4.3 family-034 accommodation: report per-family drift explicitly; tolerances are not relaxed automatically"
+      },
+      {
+        "anchor": "T5",
+        "direction": "noise",
+        "measured": -0.209564208984375,
+        "historical": -0.236,
+        "drift": 0.026435791015624988,
+        "within_0_05": true,
+        "families": 20,
+        "note": "S4.3 family-034 accommodation: report per-family drift explicitly; tolerances are not relaxed automatically"
+      }
+    ],
+    "discovery_only": "unselected discoveries remain discovery-only"
+  },
+  "primary_signs": {
+    "L1H27": {
+      "d_b": 1
+    },
+    "L9H16": {
+      "d_b": 1
+    }
+  },
+  "thresholds": {
+    "tau": 0.1,
+    "coherent_fraction": 0.7,
+    "heterogeneous_fraction": 0.2,
+    "fidelity_F": [
+      0.8,
+      1.2
+    ],
+    "fidelity_L": 0.2,
+    "accuracy_drop": 0.05
+  },
+  "validation_spec": {
+    "populations": "87 sealed families, both orders, 174 pairs",
+    "cells": [
+      "x00",
+      "x10",
+      "x01",
+      "x11"
+    ],
+    "items": [
+      "four-cell means: full, empty, B, B-R(B), extra state per selected candidate (<=7)",
+      "selected Gamma pairs: both B_h states, both directions, original axis (<=3)",
+      "selected attachments and matched controls in frozen diagnostic backgrounds, both directions (<=6)",
+      "B, B-R(B), selected toggles under paired-donor replacement, original axis (<=5)"
+    ],
+    "rule": "no replacement of failed candidates, no new links, frozen signs and thresholds"
+  },
+  "held_out": {
+    "sealed": true,
+    "dataset": "reference/singlehop_v1_4shot.jsonl",
+    "baseline": "reference/olmo2_singlehop_4shot_results.jsonl",
+    "dataset_hash": "7b9e4bb24ef5ee4f06c5c410634e316e166d16c7e1a120a5ae9e9f1989792cd9",
+    "baseline_hash": "b0bbbcb2b8f47616533b626c39d083b8ca199169b41cb664134ca5bc451b1f31"
+  },
+  "frozen_before_heldout": true,
+  "signature": "0dcf30579defc1cc6f017e7df91b4775e043b0f72929186b8b2e8e3460c494ae"
+}

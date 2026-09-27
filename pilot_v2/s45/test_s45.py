@@ -237,13 +237,20 @@ class TinyBackground(unittest.TestCase):
             if live==[]:continue
             r=e.route(self.rec,self.don,live,self.rep,self.rep2,dict(source=1,site='site',live=[],receiver=9,channel='Q',direction='noise'),{})
             self.assertLess(abs(r['effect']),1e-6);self.assertLess(r['channel_norm'],1e-6)
+    def test_route_refuses_clamped_source_or_intermediate(self):
+        e=self.e
+        with self.assertRaises(ValueError):e.route(self.rec,self.rec,[5,9],self.rep,self.rep,dict(source=1,site='site',live=[],receiver=9,channel='V',direction='noise'),{})
+        with self.assertRaises(ValueError):e.route(self.rec,self.rec,[1,9],self.rep,self.rep,dict(source=1,site='site',live=[5],receiver=9,channel='Q',direction='noise'),{})
+        with self.assertRaises(ValueError):e.route(self.rec,self.rec,[1],self.rep,self.rep,dict(source=1,site='site',live=[],receiver=9,channel='V',direction='noise'),{})
+        # a clamped SOURCE is exactly the case where self-donor is not an identity (source patch overrides the mask)
+        r=e.route(self.rec,self.rec,None,None,None,dict(source=1,site='site',live=[],receiver=9,channel='V',direction='noise'),{});self.assertLess(abs(r['effect']),1e-6)
     def test_clamped_control_receiver_is_null_and_live_control_is_not(self):
         e=self.e;job=dict(source=1,site='all_sentence',live=[],receiver=10,channel='V',direction='noise')
-        clamped=e.route(self.rec,self.don,[1,9],self.rep,self.rep2,job,{});self.assertEqual(clamped['effect'],0.);self.assertGreater(clamped['channel_norm'],0)  # channel moves, output is clamped: a silent null
+        clamped=e.route(self.rec,self.don,[1,9],self.rep,self.rep2,job,{},allow_clamped_receiver=True);self.assertEqual(clamped['effect'],0.);self.assertGreater(clamped['channel_norm'],0)  # channel moves, output is clamped: a silent null
         live=e.route(self.rec,self.don,[1,9,10],self.rep,self.rep2,job,{});self.assertNotEqual(live['effect'],0.);self.assertGreater(live['channel_norm'],0)
         # shared-prefix case with a receiver below the last layer
         job=dict(source=1,site='all_sentence',live=[],receiver=6,channel='V',direction='noise')
-        clamped=e.route(self.prec,self.pdon,[1,9],self.rep,self.rep2,job,{});self.assertLess(abs(clamped['effect']),1e-6)
+        clamped=e.route(self.prec,self.pdon,[1,9],self.rep,self.rep2,job,{},allow_clamped_receiver=True);self.assertLess(abs(clamped['effect']),1e-6)
         live=e.route(self.prec,self.pdon,[1,6,9],self.rep,self.rep2,job,{});self.assertNotEqual(live['effect'],0.);self.assertGreater(live['channel_norm'],0)
     def test_question_change_cannot_alter_earlier_positions(self):
         e=self.e;a=self.t.tensor([[1,3,4,5,6,7,2]]);b=self.t.tensor([[1,3,4,5,6,8,9,2]])

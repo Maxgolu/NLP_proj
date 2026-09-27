@@ -158,6 +158,8 @@ def gates(e,pairs,plan,bank,s):
                 live=bg_types[name];cache={}
                 for t in ['T4','T1']:
                     a=STRUCTURES[t]['anchor'];job=dict(source=hid(a['source']),site=a['site'],live=ids(a['live']),receiver=hid(a['receiver']),channel=a['channel'],direction='noise')
+                    if any(h not in set(live) for h in [job['source'],job['receiver'],*job['live']]):
+                        errs[f'skipped_{name}_{t}']='route component not live in this background (e.g. T4 source L8H15 removed)';continue
                     same=e.route(sp,sp,live,reps['x00'],reps['x00'],job,cache)
                     errs[f'self_donor_{name}_{t}']=check(abs(same['effect']),.001,'self-donor identity in background')
                     errs[f'self_donor_endpoint_{name}_{t}']=check(error(same['endpoint'],same['intact']),.001,'self-donor endpoint logits')
@@ -169,7 +171,7 @@ def gates(e,pairs,plan,bank,s):
                 errs[f'structural_zero_norm_{name}']=check(zero['channel_norm'],.001,'no-intermediate Q channel')
             # A mean-clamped receiver silently returns a null: the diagnostic background must keep it live.
             att=attachment('T1',CANDIDATES[0]);job=dict(source=hid(att['source']),site=att['site'],live=[],receiver=ctrl,channel=att['channel'],direction='noise')
-            clamped=e.route(sp,sd,bg_types['C33+h'],reps['x00'],reps['x10'],job,{})
+            clamped=e.route(sp,sd,bg_types['C33+h'],reps['x00'],reps['x10'],job,{},allow_clamped_receiver=True)
             errs['clamped_control_is_null']=check(abs(clamped['effect']),.001,'mean-clamped receiver must be inert')
             livec=e.route(sp,sd,bg_types['diag'],reps['x00'],reps['x10'],job,{})
             errs['live_control_effect']=float(livec['effect'])

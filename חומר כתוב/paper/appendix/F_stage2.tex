@@ -1,13 +1,33 @@
 \section{Causal map: details}
 \label{app:stage2}
 
+\paragraph{Intervention and readout.}
+The patched activation $a_h$ is head $h$'s slice of the input to the attention
+output projection. For an aligned clean/corrupted pair $(x_c,x_r)$, replace it on
+the clean run by the corrupted-run value $a_h^r$ and measure
+\begin{equation}
+\label{eq:importance}
+I_h=M(x_c)-M\!\left(x_c;\,a_h\leftarrow a_h^r\right).
+\end{equation}
+Scope~P replaces all original prompt positions; Scope~F replaces only the final
+colon (Figure~\ref{fig:patch}). The demonstrations and first test fact are
+identical, so replacements before the first differing token have no effect under
+causal attention; on average, only the last 44 of 282 prompt tokens can be affected.
+Both scopes read the first divergent answer token, leaving any teacher-forced
+shared prefix unpatched. Scope-F runs store both answer logits separately:
+with $\Delta$ denoting patched minus clean logits,
+$I_h^F=\Delta\operatorname{logit}(y_r)-\Delta\operatorname{logit}(y_c)$,
+separating promotion of the corrupted answer from suppression of the clean answer.
+
 \paragraph{Coverage and head sets.}
 The screen was computed for all heads on all 178 discovery pairs. Exact Scope-P
 patching covered all 1,024 heads on a common subset of 20 randomly chosen families
 (40 pairs). Exact Scope-P patching on all 178 pairs covered 148 heads: a 92-head set
-selected on discovery data before the extension measurements (the screen's top 25,
-the two heads selected by the original pooled index, fixed Stage-1 example heads
-and 25 random controls), the 46 test-only RI candidates not already in that set, and
+selected on discovery data before the extension measurements (the top 25 absolute
+screen estimates; the top 25 supported pooled-RI scores at each mother anchor,
+requiring at least 50 events; the fixed references L3H11, L9H22 and L16H4;
+and 25 random controls sampled outside that union), the 46 test-only RI candidates
+not already in that set, and
 ten further heads completing the set of 19 heads with at least one answer-position
 QK event to a test-fact source. Exact Scope-F patching on all 178 pairs covered the
 union of the 59 RI candidates and the 19 answer-position heads (69 heads). The
@@ -19,6 +39,13 @@ were all already covered, since the 92-head set contained the screen's top 25. T
 common-subset values of the extension heads were taken from the existing all-head
 run, not recomputed; a reproduction check on six heads of one family matched the
 saved effects exactly.
+
+All-head RI comparisons and layer-matched contrasts use exact importance on the
+40 common pairs; selected-versus-random median comparisons use the 178-pair
+measurements available for both groups. RI rank correlations are reported both
+overall and after ranking within layer, using the statistic's eligible head
+population. Effects are averaged over orders within family before aggregation;
+family-bootstrap intervals are descriptive and are not selection-adjusted.
 
 \paragraph{Gates.}
 Before measurement, each worker verified zero drift of the behavioural candidate
@@ -60,6 +87,10 @@ after the results were seen.
 The all-head exact scan on the 20-family common subset ranks the same four heads
 first, with effects 5.742 (L17H1), 3.222 (L27H6), 3.080 (L18H19) and 2.768
 (L18H18) against 5.701, 3.071, 3.072 and 2.704 on all 178 pairs.
+
+These differences are all below 5\%; after averaging the two fact orders
+within each family, all four heads have the expected positive sign in every
+discovery family.
 Over all 1,024 heads the Spearman correlation between the order-0 and order-1
 exact rankings on the common subset is 0.46, a value dominated by the many heads
 with near-zero effect; within the 92-head extension set it is 0.73 and among the
@@ -77,6 +108,18 @@ intermediate for L14H23 (0.12) and L15H3 (0.46). The promotion is not perfectly
 specific to the answer: for L18H19, L16H21 and L16H1 the logit of the source (child)
 name also rises by 0.3--0.4, so a Scope-F effect shows that the head raises the name
 retrieved on the donor run, not that it retrieves only the correct one.
+Figure~\ref{fig:scopeF-ratio} plots the ratio by layer.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{figF_scopeF_ratio}
+\caption{Share of each head's effect delivered at the colon: Scope-F/Scope-P ratio
+by layer for the 20 heads in the Scope-F set with $|I_h|>0.04$; marker size denotes
+$|I_h|$. Heads in layers 16--26 keep essentially all of their effect under the
+colon-only patch (answer-position heads); heads in layers 6--11 lose it (writers at
+earlier positions); L14H23 and L15H3 are intermediate.}
+\label{fig:scopeF-ratio}
+\end{figure}
 
 \begin{table}[h]
 \centering\scriptsize

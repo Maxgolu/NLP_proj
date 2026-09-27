@@ -10,7 +10,7 @@ parent="$(dirname -- "$package")"
 gpus=6; name=''; wall=''; mode=''; extra=(); args=(); inputs=''
 while (( $# )); do
   case "$1" in
-    --name|--gpus|--time|--nodelist|--exclude|--mem|--mode|--freeze|--bank|--discovery|--inputs)
+    --name|--gpus|--time|--nodelist|--exclude|--mem|--mode|--freeze|--bank|--discovery|--inputs|--reuse-means)
       [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 2; }
       case "$1" in
         --name) name="$2";;
@@ -18,7 +18,7 @@ while (( $# )); do
         --time) wall="$2";;
         --mode) mode="$2";;
         --inputs) inputs="$2";;
-        --freeze|--bank|--discovery) args+=("$1" "$(readlink -f -- "$2")");;
+        --freeze|--bank|--discovery|--reuse-means) args+=("$1" "$(readlink -f -- "$2")");;
         *) extra+=("$1=$2");;
       esac
       shift 2;;

@@ -1,0 +1,5 @@
+{
+ "file": "s45_bundle_v2.tar.gz",
+ "sha256": "4e910f9ea4001fb22911543705ce8eb0ff612caa46e4101a8a54c8dbf3cd1e0b",
+ "changes": "gate skips anchors whose source/intermediates are not live; engine refuses clamped source/intermediates; --reuse-means; diag script"
+}

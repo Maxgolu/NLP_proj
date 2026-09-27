@@ -54,6 +54,62 @@ on OLMo-2-7B yet; the runbook says how. Known deviation from the spec: intermedi
 are not stored to disk (recomputed deterministically, shared per pair/state in process).
 Realistic prior: low chance of a positive result; a null is a legitimate conclusion.
 
+### 0c. S4.5 design in one page (what is measured, in what order, and what each result may claim)
+
+Question: do the six additional high-RI candidate heads (L1H27, L11H4, L17H5, L23H10, L25H18,
+L9H16; all from the ORIGINAL 59-head RI candidate JSON, five of them failed G2 in S4.2)
+participate in the five measured structures T1–T5, and if so, functionally (four-cell
+behaviour) or by modulating a measured communication (Gamma), in a broad retained background B?
+
+Populations: core = the 20 common families (40 pairs); discovery = 89 families (178 pairs);
+held-out = 87 sealed families (174 pairs), opened once, with a frozen suite. Four input cells
+per pair: x00 (original facts, original query, gold a), x10 (mothers swapped, gold b), x01
+(original facts, alternative query = the other answer-side child, gold b), x11 (swapped +
+alternative query, gold a). Metric everywhere: logit(a) − logit(b) at the first divergent
+answer token, shared prefix teacher-forced, a/b fixed by x00. Aggregation: mean of the two
+orders within family, then families; each order, |family effects| and mean |order difference|
+reported too; family bootstrap 20,000 draws, seed 20260926, descriptive only.
+
+Structures (retained-node sets, all ⊂ C33) and their primary route anchors (S4.1/S4.3):
+T1 {L17H1,L18H18,L18H19,L27H6}: L17H1 query_writer_union → live {L18H18,L18H19} → L27H6 Q (+1.635/+1.511);
+T2 {L15H25,L16H1,L16H21,L18H18,L18H19}: L15H25 query_child_last → live {L16H1,L16H21} → L18H18 Q (+0.172/+0.179);
+T3 {L17H1,L18H18,L27H6} (nested in T1): → live {L18H18} → L27H6 Q (+0.876/+0.809);
+T4 {L8H15,L18H18}: L8H15 query_sentence → L18H18 V, direct (+0.465/+0.442);
+T5 {L20H1,L27H6}: L20H1 colon → L27H6 Q, direct, opposing (−0.236/−0.223).
+Background: retained heads live at every test-block position; every other head's o_proj
+slice replaced by family-balanced role means (keys = slot|role|bucket only); MLPs, demos,
+normalization and answer prefix live. B = C33 if it passes the guards, else C50 (=C33+R17)
+if it passes, else C50 as a predeclared PARTIAL background. R(B) = B ∩ original59 (= RI14
+for C33). B_h± = B without/with candidate h (at most seven distinct B states).
+
+Order of measurement (discovery submission): means (356 forwards, all 1,024 heads) →
+gates → Stage A: full/empty/T1–T5/C33 × 4 cells × 40 (guards F∈[0.8,1.2], L≤0.2, candidate
+accuracy within 5 points of full in every cell×order; b_f = (M00−M10−M01+M11)/4) → Stage B:
+B_h± for six h, B−L18H19, B−L8H15, B−R(B) on the panel (d_b, four fixed-sign and gold-oriented
+differences, accuracy/F/L changes; coherent/heterogeneous rule τ=0.10 on d_b and on original-
+cell gold differences) → Stage C: I_t(B_state) for 7 states × 5 anchors × 40, noising;
+Γ_{h,t} = I_t(B_h+) − I_t(B_h−); a route must be retained in at least one state to be eligible;
+select ≤3 (h,t) pairs (coherent first, then heterogeneous, decreasing mean|Γ|, head, T index;
+pass 1 one per candidate, pass 2 ≤2 per candidate), fill with functional-only candidates;
+zero selected is a valid stop → Stage D: restoration Γ in both states; one predeclared
+attachment per pair (e.g. h all-fact-sentences → L18H18/L16H1/L20H1 V, or colon Q links) and a
+frozen same-layer control receiver, both computed in the diagnostic background B+h+control,
+both directions; paired |target|−|control| → full discovery (178 pairs, original axis):
+full/empty/B/B−R(B)/selected toggles under means, and B/B−R(B)/toggles under paired-donor
+replacement (baseline sensitivity, reported as discordance) → freeze manifest. Held-out
+submission (after `prepare-heldout` with the manifest): the same four blocks on 174 pairs,
+fixed full bank, frozen signs; final labels per candidate: (a) reproduced functional and
+communication participation, (b) functional participant / attachment unresolved, (c) route
+modulation only, (d) no effect in this bounded scope, (e) order/baseline sensitive or not
+reproduced. Any claim is restricted to the single-hop contextual task and the stated live
+background; Gamma is an interaction, not proof of serial membership; shared L18H18/L27H6
+endpoints are shared; T1–T5 standalone behaviour and unselected candidates stay discovery-only.
+
+Outputs land in `$PILOT_RUNS/<name>/` (see runbook §6); when finished, copy to
+`results/stage4_s45_*` and write the report from `analysis/**` CSV/JSON only. For the paper:
+this stage answers "is the new RI shortlist connected to the measured structures?" and can
+legitimately conclude "no, within this scope".
+
 ### 1. Daniella's developmental folder (received 24 September)
 
 Path: `project/Daniella's test ICL vs SIH/`. Author: Daniella Simonovsky (project partner).

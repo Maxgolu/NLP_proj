@@ -44,6 +44,16 @@ class Pipeline:
             for i in range(count):
                 run=self.out/'runs'/f'{label}_r{i}';runs.append(run)
                 ident=mean_identity(self.a.inputs,i,count) if means else identity(self.a.inputs,schedule,i,count,bank,self.mode if bank else None)
+                if means and self.a.reuse_means:
+                    # Explicit reuse of a completed mean collection from an earlier run of the SAME frozen inputs
+                    # (the capture code did not change; the code identity did). Provenance is recorded in the freeze.
+                    src=Path(self.a.reuse_means)/'runs'/f'means_r{i}'
+                    if not run.exists():
+                        if not (src/'done.json').exists() or not json_read(src/'done.json')['complete']:raise ValueError('Reused means incomplete: '+str(src))
+                        old=json_read(src/'manifest.json')['identity']
+                        if old['plan_hash']!=ident['plan_hash'] or old['shard']!=i or old['shards']!=count:raise ValueError('Reused means belong to different inputs/sharding')
+                        run.symlink_to(src.resolve(),target_is_directory=True);print('Reusing means replica',i,'from',src,flush=True)
+                    continue
                 if (run/'manifest.json').exists() and json_read(run/'manifest.json')['identity']!=ident:raise ValueError('Changed worker identity: '+label)
                 if (run/'done.json').exists():
                     if not json_read(run/'done.json')['complete']:raise ValueError('Failed completion marker')
@@ -92,7 +102,12 @@ class Pipeline:
     def discovery(self):
         plan,_=load(self.a.inputs);inputs=self.a.inputs;out=self.out
         mr=self.work('means',means=True);bank=out/'mean_bank';self.state('cpu_mean_reduction')
-        reduce_bank(inputs,mr,bank);MeanBank(bank,inputs,'lofo');self.stages['means']=dict(schedule=None,runs=[str(r) for r in mr],analysis=[str(bank/'mean_bank_manifest.json')])
+        if self.a.reuse_means and not bank.exists():
+            src=Path(self.a.reuse_means)/'mean_bank'
+            if not (src/'mean_bank_manifest.json').exists():raise ValueError('Reused run has no mean bank')
+            bank.symlink_to(src.resolve(),target_is_directory=True);print('Reusing mean bank from',src,flush=True)
+        reduce_bank(inputs,mr,bank);MeanBank(bank,inputs,'lofo');self.stages['means']=dict(schedule=None,runs=[str(r) for r in mr],analysis=[str(bank/'mean_bank_manifest.json')],
+            reused_from=str(self.a.reuse_means) if self.a.reuse_means else None)
         self.work('gate',inputs/'stage_a.json',bank=bank,gate=True)
         ra=self.work('stage_a',inputs/'stage_a.json',bank=bank);an=out/'analysis'
         decision=A.analyze_stage_a(inputs,inputs/'stage_a.json',ra,an/'stage_a');extra=[]
@@ -149,10 +164,12 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--mode',choices=['discovery','heldout'],required=True)
     p.add_argument('--inputs',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     p.add_argument('--gpus',type=int,choices=[2,4,6],default=6);p.add_argument('--resume',action='store_true')
-    p.add_argument('--freeze',type=Path);p.add_argument('--bank',type=Path);p.add_argument('--discovery',type=Path);a=p.parse_args()
+    p.add_argument('--freeze',type=Path);p.add_argument('--bank',type=Path);p.add_argument('--discovery',type=Path)
+    p.add_argument('--reuse-means',type=Path,help='earlier discovery run dir whose completed means/mean_bank are reused (same frozen inputs)');a=p.parse_args()
     a.inputs=a.inputs.resolve();a.out=a.out.resolve()
     if a.mode=='heldout' and not (a.freeze and a.bank and a.discovery):raise SystemExit('heldout mode needs --freeze, --bank and --discovery')
-    ident=dict(mode=a.mode,gpus=a.gpus,plan_hash=digest(a.inputs/'plan.json'),code=code_identity(),freeze=digest(a.freeze) if a.freeze else None)
+    ident=dict(mode=a.mode,gpus=a.gpus,plan_hash=digest(a.inputs/'plan.json'),code=code_identity(),freeze=digest(a.freeze) if a.freeze else None,
+               reuse_means=str(a.reuse_means.resolve()) if a.reuse_means else None)
     if a.out.exists() and not a.resume:raise FileExistsError('Use --resume with identical code/inputs')
     a.out.mkdir(parents=True,exist_ok=True)
     for name in ['logs','schedules','runs','analysis']:(a.out/name).mkdir(exist_ok=True)

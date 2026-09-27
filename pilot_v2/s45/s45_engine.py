@@ -69,12 +69,20 @@ class S45Engine(S43Engine):
         with self.background(live,sp['positions'],rep,norms):out=self.output(sp['ids'],sp['g'],sp['d'])
         return out,dict(replaced_norm=float(np.sqrt(sum(v*v for v in norms.values()))) if norms else 0.)
 
-    def route(self,sp_rec,sp_don,live,rep_rec,rep_don,job,cache=None,capture_heads=None,capture_layers=None):
+    def route(self,sp_rec,sp_don,live,rep_rec,rep_don,job,cache=None,capture_heads=None,capture_layers=None,allow_clamped_receiver=False):
         """One route/attachment endpoint inside a declared background; all components share it.
 
         Recipient/donor captures may cover a superset of heads/layers (shared across anchors of
         one background state); they are always captured under this same background.
+        The source and every live intermediate must be live in the background: a mean-clamped
+        source would make source replacement override the mask, so a self-donor would not be an
+        identity. A clamped receiver yields a silent null; it is refused unless explicitly allowed
+        (the gate documents that null on purpose).
         """
+        if live is not None:
+            missing=[h for h in [job['source'],*job.get('live',[])] if h not in set(live)]
+            if missing:raise ValueError(f'Route component not live in its background: {missing}')
+            if job['receiver'] not in set(live) and not allow_clamped_receiver:raise ValueError('Receiver is mean-clamped in this background (silent null)')
         heads=sorted({job['source'],job['receiver'],*job.get('live',[])});layers=sorted({h//self.H for h in job.get('live',[])})
         cheads=sorted(set(heads)|set(capture_heads or []));clayers=sorted(set(layers)|set(capture_layers or []))
         site=job['site'];n=sp_rec['n'];g,d=sp_rec['g'],sp_rec['d'];pos=sp_rec['masks'][site]

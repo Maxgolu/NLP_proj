@@ -1,0 +1,2886 @@
+{
+  "routes": [
+    {
+      "state": "463f91d471cf8fc9",
+      "label": "B-L25H18",
+      "anchor": "T1",
+      "direction": "noise",
+      "mean": 0.6065607070922852,
+      "mean_absolute": 0.6065607070922852,
+      "median": 0.62176513671875,
+      "minimum": 0.0672607421875,
+      "maximum": 1.1556053161621094,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.45798281669616697,
+        0.7509456205368042
+      ],
+      "order0": 1.0335865020751953,
+      "order1": 0.179534912109375,
+      "abs_order_difference": 0.8540515899658203,
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    {
+      "state": "463f91d471cf8fc9",
+      "label": "B-L25H18",
+      "anchor": "T2",
+      "direction": "noise",
+      "mean": 0.04224319458007812,
+      "mean_absolute": 0.04684524536132813,
+      "median": 0.04421234130859375,
+      "minimum": -0.02294921875,
+      "maximum": 0.118896484375,
+      "sign_fraction": 0.85,
+      "above_tau_fraction": 0.05,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        0.026781463623046876,
+        0.05790105819702148
+      ],
+      "order0": 0.053985595703125,
+      "order1": 0.03050079345703125,
+      "abs_order_difference": 0.04834442138671875,
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    {
+      "state": "463f91d471cf8fc9",
+      "label": "B-L25H18",
+      "anchor": "T3",
+      "direction": "noise",
+      "mean": 0.38365955352783204,
+      "mean_absolute": 0.38365955352783204,
+      "median": 0.42279052734375,
+      "minimum": 0.0391845703125,
+      "maximum": 0.7064208984375,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.85,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.28905208587646486,
+        0.47495905876159655
+      ],
+      "order0": 0.6389591217041015,
+      "order1": 0.1283599853515625,
+      "abs_order_difference": 0.5114292144775391,
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    {
+      "state": "463f91d471cf8fc9",
+      "label": "B-L25H18",
+      "anchor": "T4",
+      "direction": "noise",
+      "mean": 0.25512237548828126,
+      "mean_absolute": 0.2577911376953125,
+      "median": 0.24102783203125,
+      "minimum": -0.0266876220703125,
+      "maximum": 0.4378662109375,
+      "sign_fraction": 0.95,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.20838092803955077,
+        0.30026554107666015
+      ],
+      "order0": 0.37923431396484375,
+      "order1": 0.13101043701171874,
+      "abs_order_difference": 0.248223876953125,
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    {
+      "state": "463f91d471cf8fc9",
+      "label": "B-L25H18",
+      "anchor": "T5",
+      "direction": "noise",
+      "mean": -0.01750640869140625,
+      "mean_absolute": 0.02245330810546875,
+      "median": -0.011474609375,
+      "minimum": -0.0611572265625,
+      "maximum": 0.01611328125,
+      "sign_fraction": 0.7,
+      "above_tau_fraction": 0.0,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        -0.02760467529296875,
+        -0.007766571044921888
+      ],
+      "order0": -0.0295196533203125,
+      "order1": -0.0054931640625,
+      "abs_order_difference": 0.0419708251953125,
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    },
+    {
+      "state": "4f198d517137d88d",
+      "label": "B+L9H16",
+      "anchor": "T1",
+      "direction": "noise",
+      "mean": 0.6485626220703125,
+      "mean_absolute": 0.6485626220703125,
+      "median": 0.67449951171875,
+      "minimum": 0.0670166015625,
+      "maximum": 1.19097900390625,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.49188991546630856,
+        0.8003753662109375
+      ],
+      "order0": 1.06053466796875,
+      "order1": 0.236590576171875,
+      "abs_order_difference": 0.830169677734375,
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    {
+      "state": "4f198d517137d88d",
+      "label": "B+L9H16",
+      "anchor": "T2",
+      "direction": "noise",
+      "mean": 0.04973526000976562,
+      "mean_absolute": 0.05513687133789062,
+      "median": 0.05682373046875,
+      "minimum": -0.02197265625,
+      "maximum": 0.135986328125,
+      "sign_fraction": 0.85,
+      "above_tau_fraction": 0.1,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        0.031678142547607424,
+        0.06753623962402343
+      ],
+      "order0": 0.05962066650390625,
+      "order1": 0.039849853515625,
+      "abs_order_difference": 0.05337677001953125,
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    {
+      "state": "4f198d517137d88d",
+      "label": "B+L9H16",
+      "anchor": "T3",
+      "direction": "noise",
+      "mean": 0.398284912109375,
+      "mean_absolute": 0.398284912109375,
+      "median": 0.4326171875,
+      "minimum": 0.033935546875,
+      "maximum": 0.72735595703125,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.9,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.301413631439209,
+        0.49153638839721675
+      ],
+      "order0": 0.630035400390625,
+      "order1": 0.166534423828125,
+      "abs_order_difference": 0.474951171875,
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    {
+      "state": "4f198d517137d88d",
+      "label": "B+L9H16",
+      "anchor": "T4",
+      "direction": "noise",
+      "mean": 0.26220359802246096,
+      "mean_absolute": 0.2654544830322266,
+      "median": 0.25360107421875,
+      "minimum": -0.03250885009765625,
+      "maximum": 0.4248046875,
+      "sign_fraction": 0.95,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.21473941802978516,
+        0.3069519329071045
+      ],
+      "order0": 0.3640617370605469,
+      "order1": 0.160345458984375,
+      "abs_order_difference": 0.20891647338867186,
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    {
+      "state": "4f198d517137d88d",
+      "label": "B+L9H16",
+      "anchor": "T5",
+      "direction": "noise",
+      "mean": -0.031529998779296874,
+      "mean_absolute": 0.032726287841796875,
+      "median": -0.02730560302734375,
+      "minimum": -0.0836181640625,
+      "maximum": 0.011962890625,
+      "sign_fraction": 0.95,
+      "above_tau_fraction": 0.0,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        -0.04284526824951172,
+        -0.020861778259277347
+      ],
+      "order0": -0.03774871826171875,
+      "order1": -0.025311279296875,
+      "abs_order_difference": 0.04902496337890625,
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    },
+    {
+      "state": "5c539bfa2d4004a5",
+      "label": "B",
+      "anchor": "T1",
+      "direction": "noise",
+      "mean": 0.6182134628295899,
+      "mean_absolute": 0.6182134628295899,
+      "median": 0.6317138671875,
+      "minimum": 0.06317138671875,
+      "maximum": 1.178253173828125,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.4661235857009888,
+        0.7663252925872803
+      ],
+      "order0": 1.055953598022461,
+      "order1": 0.18047332763671875,
+      "abs_order_difference": 0.8754802703857422,
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    {
+      "state": "5c539bfa2d4004a5",
+      "label": "B",
+      "anchor": "T2",
+      "direction": "noise",
+      "mean": 0.042236328125,
+      "mean_absolute": 0.047650146484375,
+      "median": 0.04422760009765625,
+      "minimum": -0.027099609375,
+      "maximum": 0.11962890625,
+      "sign_fraction": 0.85,
+      "above_tau_fraction": 0.05,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        0.026205406188964844,
+        0.05843700408935543
+      ],
+      "order0": 0.05380401611328125,
+      "order1": 0.03066864013671875,
+      "abs_order_difference": 0.04942626953125,
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    {
+      "state": "5c539bfa2d4004a5",
+      "label": "B",
+      "anchor": "T3",
+      "direction": "noise",
+      "mean": 0.3927713394165039,
+      "mean_absolute": 0.3927713394165039,
+      "median": 0.4266357421875,
+      "minimum": 0.037109375,
+      "maximum": 0.739959716796875,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.85,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.2953881549835205,
+        0.4870712566375731
+      ],
+      "order0": 0.6561107635498047,
+      "order1": 0.12943191528320314,
+      "abs_order_difference": 0.5278995513916016,
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    {
+      "state": "5c539bfa2d4004a5",
+      "label": "B",
+      "anchor": "T4",
+      "direction": "noise",
+      "mean": 0.2550617218017578,
+      "mean_absolute": 0.2578937530517578,
+      "median": 0.2432861328125,
+      "minimum": -0.0283203125,
+      "maximum": 0.441162109375,
+      "sign_fraction": 0.95,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.20822090148925781,
+        0.3002210044860839
+      ],
+      "order0": 0.37958526611328125,
+      "order1": 0.13053817749023439,
+      "abs_order_difference": 0.24904708862304686,
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    {
+      "state": "5c539bfa2d4004a5",
+      "label": "B",
+      "anchor": "T5",
+      "direction": "noise",
+      "mean": -0.018550872802734375,
+      "mean_absolute": 0.023363494873046876,
+      "median": -0.01318359375,
+      "minimum": -0.0631103515625,
+      "maximum": 0.015625,
+      "sign_fraction": 0.75,
+      "above_tau_fraction": 0.0,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        -0.02899932861328125,
+        -0.008461761474609374
+      ],
+      "order0": -0.0313079833984375,
+      "order1": -0.00579376220703125,
+      "abs_order_difference": 0.04164886474609375,
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    },
+    {
+      "state": "8324433237827f03",
+      "label": "B-L23H10",
+      "anchor": "T1",
+      "direction": "noise",
+      "mean": 0.611573600769043,
+      "mean_absolute": 0.611573600769043,
+      "median": 0.6361083984375,
+      "minimum": 0.04901123046875,
+      "maximum": 1.1743965148925781,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.46176479339599613,
+        0.7570706939697265
+      ],
+      "order0": 1.0457420349121094,
+      "order1": 0.17740516662597655,
+      "abs_order_difference": 0.8683368682861328,
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    {
+      "state": "8324433237827f03",
+      "label": "B-L23H10",
+      "anchor": "T2",
+      "direction": "noise",
+      "mean": 0.041925239562988284,
+      "mean_absolute": 0.046289253234863284,
+      "median": 0.041034698486328125,
+      "minimum": -0.025390625,
+      "maximum": 0.11669921875,
+      "sign_fraction": 0.85,
+      "above_tau_fraction": 0.05,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        0.026452651023864744,
+        0.05749227523803709
+      ],
+      "order0": 0.05452880859375,
+      "order1": 0.029321670532226562,
+      "abs_order_difference": 0.04892539978027344,
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    {
+      "state": "8324433237827f03",
+      "label": "B-L23H10",
+      "anchor": "T3",
+      "direction": "noise",
+      "mean": 0.38719844818115234,
+      "mean_absolute": 0.38719844818115234,
+      "median": 0.42254638671875,
+      "minimum": 0.0260009765625,
+      "maximum": 0.7364540100097656,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.85,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.2908469009399414,
+        0.47984250545501705
+      ],
+      "order0": 0.6473442077636719,
+      "order1": 0.1270526885986328,
+      "abs_order_difference": 0.520511245727539,
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    {
+      "state": "8324433237827f03",
+      "label": "B-L23H10",
+      "anchor": "T4",
+      "direction": "noise",
+      "mean": 0.2538203239440918,
+      "mean_absolute": 0.2567744255065918,
+      "median": 0.23779296875,
+      "minimum": -0.029541015625,
+      "maximum": 0.4298095703125,
+      "sign_fraction": 0.95,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.20678212642669677,
+        0.2987682819366455
+      ],
+      "order0": 0.377685546875,
+      "order1": 0.12995510101318358,
+      "abs_order_difference": 0.24773044586181642,
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    {
+      "state": "8324433237827f03",
+      "label": "B-L23H10",
+      "anchor": "T5",
+      "direction": "noise",
+      "mean": -0.01984527111053467,
+      "mean_absolute": 0.02216155529022217,
+      "median": -0.01239013671875,
+      "minimum": -0.062255859375,
+      "maximum": 0.0111083984375,
+      "sign_fraction": 0.75,
+      "above_tau_fraction": 0.0,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        -0.02964479327201843,
+        -0.010584704279899599
+      ],
+      "order0": -0.0318511962890625,
+      "order1": -0.007839345932006836,
+      "abs_order_difference": 0.04035706520080566,
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    },
+    {
+      "state": "adae3cba245fe41c",
+      "label": "B-L17H5",
+      "anchor": "T1",
+      "direction": "noise",
+      "mean": 0.6278266906738281,
+      "mean_absolute": 0.6278266906738281,
+      "median": 0.63336181640625,
+      "minimum": 0.073272705078125,
+      "maximum": 1.19781494140625,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.47367598533630373,
+        0.7784909534454344
+      ],
+      "order0": 1.0739524841308594,
+      "order1": 0.18170089721679689,
+      "abs_order_difference": 0.8922515869140625,
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    {
+      "state": "adae3cba245fe41c",
+      "label": "B-L17H5",
+      "anchor": "T2",
+      "direction": "noise",
+      "mean": 0.042333984375,
+      "mean_absolute": 0.047186279296875,
+      "median": 0.04076385498046875,
+      "minimum": -0.0264892578125,
+      "maximum": 0.119384765625,
+      "sign_fraction": 0.85,
+      "above_tau_fraction": 0.1,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        0.026359443664550782,
+        0.05837497711181639
+      ],
+      "order0": 0.053228759765625,
+      "order1": 0.031439208984375,
+      "abs_order_difference": 0.04930419921875,
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    {
+      "state": "adae3cba245fe41c",
+      "label": "B-L17H5",
+      "anchor": "T3",
+      "direction": "noise",
+      "mean": 0.39954605102539065,
+      "mean_absolute": 0.39954605102539065,
+      "median": 0.4310302734375,
+      "minimum": 0.0458984375,
+      "maximum": 0.74102783203125,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.9,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.30080571174621584,
+        0.4949632930755614
+      ],
+      "order0": 0.6693412780761718,
+      "order1": 0.12975082397460938,
+      "abs_order_difference": 0.5395904541015625,
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    {
+      "state": "adae3cba245fe41c",
+      "label": "B-L17H5",
+      "anchor": "T4",
+      "direction": "noise",
+      "mean": 0.26204848289489746,
+      "mean_absolute": 0.264999532699585,
+      "median": 0.25115966796875,
+      "minimum": -0.029510498046875,
+      "maximum": 0.453125,
+      "sign_fraction": 0.95,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.21451912045478821,
+        0.30757214903831476
+      ],
+      "order0": 0.39092330932617186,
+      "order1": 0.13317365646362306,
+      "abs_order_difference": 0.2577496528625488,
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    {
+      "state": "adae3cba245fe41c",
+      "label": "B-L17H5",
+      "anchor": "T5",
+      "direction": "noise",
+      "mean": -0.019617557525634766,
+      "mean_absolute": 0.022087955474853517,
+      "median": -0.01397705078125,
+      "minimum": -0.058837890625,
+      "maximum": 0.01123046875,
+      "sign_fraction": 0.75,
+      "above_tau_fraction": 0.0,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        -0.029192771911621094,
+        -0.010404200553894044
+      ],
+      "order0": -0.02918548583984375,
+      "order1": -0.01004962921142578,
+      "abs_order_difference": 0.03927745819091797,
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    },
+    {
+      "state": "cef37988435db144",
+      "label": "B-L1H27",
+      "anchor": "T1",
+      "direction": "noise",
+      "mean": 0.6098415374755859,
+      "mean_absolute": 0.6098415374755859,
+      "median": 0.62255859375,
+      "minimum": 0.0618896484375,
+      "maximum": 1.1790771484375,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.4594640636444092,
+        0.7581726455688477
+      ],
+      "order0": 1.0577690124511718,
+      "order1": 0.1619140625,
+      "abs_order_difference": 0.8958549499511719,
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    {
+      "state": "cef37988435db144",
+      "label": "B-L1H27",
+      "anchor": "T2",
+      "direction": "noise",
+      "mean": 0.04099349975585938,
+      "mean_absolute": 0.046504974365234375,
+      "median": 0.0394287109375,
+      "minimum": -0.030517578125,
+      "maximum": 0.1171875,
+      "sign_fraction": 0.85,
+      "above_tau_fraction": 0.05,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        0.025316600799560548,
+        0.05648962020874023
+      ],
+      "order0": 0.05259857177734375,
+      "order1": 0.029388427734375,
+      "abs_order_difference": 0.04826812744140625,
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    {
+      "state": "cef37988435db144",
+      "label": "B-L1H27",
+      "anchor": "T3",
+      "direction": "noise",
+      "mean": 0.3951887130737305,
+      "mean_absolute": 0.3951887130737305,
+      "median": 0.42584228515625,
+      "minimum": 0.0355224609375,
+      "maximum": 0.75750732421875,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.85,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.2973622417449951,
+        0.4910583925247192
+      ],
+      "order0": 0.6735317230224609,
+      "order1": 0.116845703125,
+      "abs_order_difference": 0.5566860198974609,
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    {
+      "state": "cef37988435db144",
+      "label": "B-L1H27",
+      "anchor": "T4",
+      "direction": "noise",
+      "mean": 0.25247726440429685,
+      "mean_absolute": 0.25510177612304685,
+      "median": 0.25439453125,
+      "minimum": -0.0262451171875,
+      "maximum": 0.4459228515625,
+      "sign_fraction": 0.95,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.20459884643554688,
+        0.299140567779541
+      ],
+      "order0": 0.38398284912109376,
+      "order1": 0.1209716796875,
+      "abs_order_difference": 0.26301116943359376,
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    {
+      "state": "cef37988435db144",
+      "label": "B-L1H27",
+      "anchor": "T5",
+      "direction": "noise",
+      "mean": -0.012137603759765626,
+      "mean_absolute": 0.020754241943359376,
+      "median": -0.008392333984375,
+      "minimum": -0.0546875,
+      "maximum": 0.0242919921875,
+      "sign_fraction": 0.7,
+      "above_tau_fraction": 0.0,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        -0.022271766662597656,
+        -0.0021377372741699235
+      ],
+      "order0": -0.02374420166015625,
+      "order1": -0.000531005859375,
+      "abs_order_difference": 0.03888702392578125,
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    },
+    {
+      "state": "d7b401c2eec20f08",
+      "label": "B-L11H4",
+      "anchor": "T1",
+      "direction": "noise",
+      "mean": 0.6175383567810059,
+      "mean_absolute": 0.6175383567810059,
+      "median": 0.6263427734375,
+      "minimum": 0.06549072265625,
+      "maximum": 1.171295166015625,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.4659412384033203,
+        0.7656316494941712
+      ],
+      "order0": 1.0551054000854492,
+      "order1": 0.1799713134765625,
+      "abs_order_difference": 0.8751340866088867,
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    {
+      "state": "d7b401c2eec20f08",
+      "label": "B-L11H4",
+      "anchor": "T2",
+      "direction": "noise",
+      "mean": 0.0418243408203125,
+      "mean_absolute": 0.0465118408203125,
+      "median": 0.043243408203125,
+      "minimum": -0.029052734375,
+      "maximum": 0.12255859375,
+      "sign_fraction": 0.85,
+      "above_tau_fraction": 0.1,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        0.02604816436767578,
+        0.0578826904296875
+      ],
+      "order0": 0.054046630859375,
+      "order1": 0.02960205078125,
+      "abs_order_difference": 0.04727783203125,
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    {
+      "state": "d7b401c2eec20f08",
+      "label": "B-L11H4",
+      "anchor": "T3",
+      "direction": "noise",
+      "mean": 0.39279327392578123,
+      "mean_absolute": 0.39279327392578123,
+      "median": 0.42584228515625,
+      "minimum": 0.0390625,
+      "maximum": 0.737823486328125,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.85,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.2958197402954102,
+        0.48691246032714836
+      ],
+      "order0": 0.6559249877929687,
+      "order1": 0.12966156005859375,
+      "abs_order_difference": 0.528607177734375,
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    {
+      "state": "d7b401c2eec20f08",
+      "label": "B-L11H4",
+      "anchor": "T4",
+      "direction": "noise",
+      "mean": 0.25446014404296874,
+      "mean_absolute": 0.25752410888671873,
+      "median": 0.2388916015625,
+      "minimum": -0.0306396484375,
+      "maximum": 0.4393310546875,
+      "sign_fraction": 0.95,
+      "above_tau_fraction": 0.95,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.2079329299926758,
+        0.2989733123779297
+      ],
+      "order0": 0.37923583984375,
+      "order1": 0.1296844482421875,
+      "abs_order_difference": 0.2495513916015625,
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    {
+      "state": "d7b401c2eec20f08",
+      "label": "B-L11H4",
+      "anchor": "T5",
+      "direction": "noise",
+      "mean": -0.01878204345703125,
+      "mean_absolute": 0.02261505126953125,
+      "median": -0.012939453125,
+      "minimum": -0.06103515625,
+      "maximum": 0.0150146484375,
+      "sign_fraction": 0.75,
+      "above_tau_fraction": 0.0,
+      "retained": false,
+      "classification": "below_rule",
+      "families": 20,
+      "interval": [
+        -0.02882244110107422,
+        -0.009153709411621096
+      ],
+      "order0": -0.030975341796875,
+      "order1": -0.0065887451171875,
+      "abs_order_difference": 0.0419647216796875,
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    },
+    {
+      "state": "full",
+      "label": "full",
+      "anchor": "T1",
+      "direction": "noise",
+      "mean": 1.6639799118041991,
+      "mean_absolute": 1.6639799118041991,
+      "median": 1.5008544921875,
+      "minimum": 0.1195068359375,
+      "maximum": 3.6955528259277344,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 1.0,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        1.2247237539291382,
+        2.119044494628906
+      ],
+      "order0": 2.2464351654052734,
+      "order1": 1.081524658203125,
+      "abs_order_difference": 1.1900920867919922,
+      "historical": {
+        "I": 1.635,
+        "J": 1.511
+      }
+    },
+    {
+      "state": "full",
+      "label": "full",
+      "anchor": "T2",
+      "direction": "noise",
+      "mean": 0.17850618362426757,
+      "mean_absolute": 0.17850618362426757,
+      "median": 0.14719676971435547,
+      "minimum": 0.064239501953125,
+      "maximum": 0.34600830078125,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 0.85,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.1408443093299866,
+        0.21884643316268912
+      ],
+      "order0": 0.16348667144775392,
+      "order1": 0.19352569580078124,
+      "abs_order_difference": 0.06997356414794922,
+      "historical": {
+        "I": 0.172,
+        "J": 0.179
+      }
+    },
+    {
+      "state": "full",
+      "label": "full",
+      "anchor": "T3",
+      "direction": "noise",
+      "mean": 0.8587411880493164,
+      "mean_absolute": 0.8588327407836914,
+      "median": 0.852996826171875,
+      "minimum": -0.00091552734375,
+      "maximum": 1.73138427734375,
+      "sign_fraction": 0.95,
+      "above_tau_fraction": 0.9,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.6246578025817872,
+        1.089792294502258
+      ],
+      "order0": 1.1363239288330078,
+      "order1": 0.581158447265625,
+      "abs_order_difference": 0.5857196807861328,
+      "historical": {
+        "I": 0.876,
+        "J": 0.809
+      }
+    },
+    {
+      "state": "full",
+      "label": "full",
+      "anchor": "T4",
+      "direction": "noise",
+      "mean": 0.477254581451416,
+      "mean_absolute": 0.477254581451416,
+      "median": 0.4221916198730469,
+      "minimum": 0.2099609375,
+      "maximum": 0.8541183471679688,
+      "sign_fraction": 1.0,
+      "above_tau_fraction": 1.0,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        0.3987511372566223,
+        0.562470417022705
+      ],
+      "order0": 0.5184900283813476,
+      "order1": 0.4360191345214844,
+      "abs_order_difference": 0.14912738800048828,
+      "historical": {
+        "I": 0.465,
+        "J": 0.442
+      }
+    },
+    {
+      "state": "full",
+      "label": "full",
+      "anchor": "T5",
+      "direction": "noise",
+      "mean": -0.209564208984375,
+      "mean_absolute": 0.21384124755859374,
+      "median": -0.21365737915039062,
+      "minimum": -0.49908447265625,
+      "maximum": 0.02288818359375,
+      "sign_fraction": 0.9,
+      "above_tau_fraction": 0.7,
+      "retained": true,
+      "classification": "coherent",
+      "families": 20,
+      "interval": [
+        -0.2738965177536011,
+        -0.14480265140533455
+      ],
+      "order0": -0.1074310302734375,
+      "order1": -0.3116973876953125,
+      "abs_order_difference": 0.22470169067382811,
+      "historical": {
+        "I": -0.236,
+        "J": -0.223
+      }
+    }
+  ],
+  "matrix": [
+    {
+      "candidate": "L1H27",
+      "structure": "T1",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.6182134628295899,
+        "mean_absolute": 0.6182134628295899,
+        "median": 0.6317138671875,
+        "minimum": 0.06317138671875,
+        "maximum": 1.178253173828125,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.4661235857009888,
+          0.7663252925872803
+        ]
+      },
+      "route_minus": {
+        "mean": 0.6098415374755859,
+        "mean_absolute": 0.6098415374755859,
+        "median": 0.62255859375,
+        "minimum": 0.0618896484375,
+        "maximum": 1.1790771484375,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.4594640636444092,
+          0.7581726455688477
+        ]
+      },
+      "gamma": {
+        "mean": 0.008371925354003907,
+        "mean_absolute": 0.01815967559814453,
+        "median": 0.009033203125,
+        "minimum": -0.0278778076171875,
+        "maximum": 0.060302734375,
+        "sign_fraction": 0.6,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.000620121955871582,
+          0.017529158592224117
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L1H27",
+      "structure": "T2",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.042236328125,
+        "mean_absolute": 0.047650146484375,
+        "median": 0.04422760009765625,
+        "minimum": -0.027099609375,
+        "maximum": 0.11962890625,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.026205406188964844,
+          0.05843700408935543
+        ]
+      },
+      "route_minus": {
+        "mean": 0.04099349975585938,
+        "mean_absolute": 0.046504974365234375,
+        "median": 0.0394287109375,
+        "minimum": -0.030517578125,
+        "maximum": 0.1171875,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.025316600799560548,
+          0.05648962020874023
+        ]
+      },
+      "gamma": {
+        "mean": 0.001242828369140625,
+        "mean_absolute": 0.004816436767578125,
+        "median": 0.001953125,
+        "minimum": -0.011474609375,
+        "maximum": 0.016357421875,
+        "sign_fraction": 0.6,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0015655517578125,
+          0.003997802734375
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L1H27",
+      "structure": "T3",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.3927713394165039,
+        "mean_absolute": 0.3927713394165039,
+        "median": 0.4266357421875,
+        "minimum": 0.037109375,
+        "maximum": 0.739959716796875,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2953881549835205,
+          0.4870712566375731
+        ]
+      },
+      "route_minus": {
+        "mean": 0.3951887130737305,
+        "mean_absolute": 0.3951887130737305,
+        "median": 0.42584228515625,
+        "minimum": 0.0355224609375,
+        "maximum": 0.75750732421875,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2973622417449951,
+          0.4910583925247192
+        ]
+      },
+      "gamma": {
+        "mean": -0.0024173736572265627,
+        "mean_absolute": 0.014461898803710937,
+        "median": -0.0015411376953125,
+        "minimum": -0.04156494140625,
+        "maximum": 0.0390625,
+        "sign_fraction": 0.5,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.010643157958984375,
+          0.005635843276977539
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L1H27",
+      "structure": "T4",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.2550617218017578,
+        "mean_absolute": 0.2578937530517578,
+        "median": 0.2432861328125,
+        "minimum": -0.0283203125,
+        "maximum": 0.441162109375,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.20822090148925781,
+          0.3002210044860839
+        ]
+      },
+      "route_minus": {
+        "mean": 0.25247726440429685,
+        "mean_absolute": 0.25510177612304685,
+        "median": 0.25439453125,
+        "minimum": -0.0262451171875,
+        "maximum": 0.4459228515625,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.20459884643554688,
+          0.299140567779541
+        ]
+      },
+      "gamma": {
+        "mean": 0.0025844573974609375,
+        "mean_absolute": 0.009490585327148438,
+        "median": 0.00421142578125,
+        "minimum": -0.027099609375,
+        "maximum": 0.0208740234375,
+        "sign_fraction": 0.65,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0025421142578125,
+          0.007306671142578125
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L1H27",
+      "structure": "T5",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": -0.018550872802734375,
+        "mean_absolute": 0.023363494873046876,
+        "median": -0.01318359375,
+        "minimum": -0.0631103515625,
+        "maximum": 0.015625,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.02899932861328125,
+          -0.008461761474609374
+        ]
+      },
+      "route_minus": {
+        "mean": -0.012137603759765626,
+        "mean_absolute": 0.020754241943359376,
+        "median": -0.008392333984375,
+        "minimum": -0.0546875,
+        "maximum": 0.0242919921875,
+        "sign_fraction": 0.7,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.022271766662597656,
+          -0.0021377372741699235
+        ]
+      },
+      "gamma": {
+        "mean": -0.00641326904296875,
+        "mean_absolute": 0.00653533935546875,
+        "median": -0.00699615478515625,
+        "minimum": -0.016357421875,
+        "maximum": 0.001220703125,
+        "sign_fraction": 0.9,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.008341236114501953,
+          -0.004517345428466798
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L11H4",
+      "structure": "T1",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.6182134628295899,
+        "mean_absolute": 0.6182134628295899,
+        "median": 0.6317138671875,
+        "minimum": 0.06317138671875,
+        "maximum": 1.178253173828125,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.4661235857009888,
+          0.7663252925872803
+        ]
+      },
+      "route_minus": {
+        "mean": 0.6175383567810059,
+        "mean_absolute": 0.6175383567810059,
+        "median": 0.6263427734375,
+        "minimum": 0.06549072265625,
+        "maximum": 1.171295166015625,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.4659412384033203,
+          0.7656316494941712
+        ]
+      },
+      "gamma": {
+        "mean": 0.0006751060485839844,
+        "mean_absolute": 0.0039465904235839845,
+        "median": 0.00048828125,
+        "minimum": -0.010986328125,
+        "maximum": 0.0081024169921875,
+        "sign_fraction": 0.55,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0014607501029968262,
+          0.002777500152587889
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L11H4",
+      "structure": "T2",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.042236328125,
+        "mean_absolute": 0.047650146484375,
+        "median": 0.04422760009765625,
+        "minimum": -0.027099609375,
+        "maximum": 0.11962890625,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.026205406188964844,
+          0.05843700408935543
+        ]
+      },
+      "route_minus": {
+        "mean": 0.0418243408203125,
+        "mean_absolute": 0.0465118408203125,
+        "median": 0.043243408203125,
+        "minimum": -0.029052734375,
+        "maximum": 0.12255859375,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.1,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.02604816436767578,
+          0.0578826904296875
+        ]
+      },
+      "gamma": {
+        "mean": 0.0004119873046875,
+        "mean_absolute": 0.00278472900390625,
+        "median": 0.0,
+        "minimum": -0.00677490234375,
+        "maximum": 0.005706787109375,
+        "sign_fraction": 0.5,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0010246658325195313,
+          0.001833343505859375
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L11H4",
+      "structure": "T3",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.3927713394165039,
+        "mean_absolute": 0.3927713394165039,
+        "median": 0.4266357421875,
+        "minimum": 0.037109375,
+        "maximum": 0.739959716796875,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2953881549835205,
+          0.4870712566375731
+        ]
+      },
+      "route_minus": {
+        "mean": 0.39279327392578123,
+        "mean_absolute": 0.39279327392578123,
+        "median": 0.42584228515625,
+        "minimum": 0.0390625,
+        "maximum": 0.737823486328125,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2958197402954102,
+          0.48691246032714836
+        ]
+      },
+      "gamma": {
+        "mean": -2.193450927734375e-05,
+        "mean_absolute": 0.0027551651000976562,
+        "median": -0.0002288818359375,
+        "minimum": -0.006103515625,
+        "maximum": 0.0079345703125,
+        "sign_fraction": 0.55,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0015077638626098634,
+          0.0014984226226806632
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L11H4",
+      "structure": "T4",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.2550617218017578,
+        "mean_absolute": 0.2578937530517578,
+        "median": 0.2432861328125,
+        "minimum": -0.0283203125,
+        "maximum": 0.441162109375,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.20822090148925781,
+          0.3002210044860839
+        ]
+      },
+      "route_minus": {
+        "mean": 0.25446014404296874,
+        "mean_absolute": 0.25752410888671873,
+        "median": 0.2388916015625,
+        "minimum": -0.0306396484375,
+        "maximum": 0.4393310546875,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2079329299926758,
+          0.2989733123779297
+        ]
+      },
+      "gamma": {
+        "mean": 0.0006015777587890625,
+        "mean_absolute": 0.0034030914306640626,
+        "median": 0.0016937255859375,
+        "minimum": -0.0078125,
+        "maximum": 0.0091552734375,
+        "sign_fraction": 0.6,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0011677074432373047,
+          0.002320127487182615
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L11H4",
+      "structure": "T5",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": -0.018550872802734375,
+        "mean_absolute": 0.023363494873046876,
+        "median": -0.01318359375,
+        "minimum": -0.0631103515625,
+        "maximum": 0.015625,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.02899932861328125,
+          -0.008461761474609374
+        ]
+      },
+      "route_minus": {
+        "mean": -0.01878204345703125,
+        "mean_absolute": 0.02261505126953125,
+        "median": -0.012939453125,
+        "minimum": -0.06103515625,
+        "maximum": 0.0150146484375,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.02882244110107422,
+          -0.009153709411621096
+        ]
+      },
+      "gamma": {
+        "mean": 0.000231170654296875,
+        "mean_absolute": 0.001799774169921875,
+        "median": 0.0003204345703125,
+        "minimum": -0.00390625,
+        "maximum": 0.00732421875,
+        "sign_fraction": 0.6,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.00078582763671875,
+          0.0013641548156738265
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L17H5",
+      "structure": "T1",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.6182134628295899,
+        "mean_absolute": 0.6182134628295899,
+        "median": 0.6317138671875,
+        "minimum": 0.06317138671875,
+        "maximum": 1.178253173828125,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.4661235857009888,
+          0.7663252925872803
+        ]
+      },
+      "route_minus": {
+        "mean": 0.6278266906738281,
+        "mean_absolute": 0.6278266906738281,
+        "median": 0.63336181640625,
+        "minimum": 0.073272705078125,
+        "maximum": 1.19781494140625,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.47367598533630373,
+          0.7784909534454344
+        ]
+      },
+      "gamma": {
+        "mean": -0.009613227844238282,
+        "mean_absolute": 0.01409320831298828,
+        "median": -0.005889892578125,
+        "minimum": -0.0466156005859375,
+        "maximum": 0.0126953125,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.016743593215942383,
+          -0.002914037704467774
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L17H5",
+      "structure": "T2",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.042236328125,
+        "mean_absolute": 0.047650146484375,
+        "median": 0.04422760009765625,
+        "minimum": -0.027099609375,
+        "maximum": 0.11962890625,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.026205406188964844,
+          0.05843700408935543
+        ]
+      },
+      "route_minus": {
+        "mean": 0.042333984375,
+        "mean_absolute": 0.047186279296875,
+        "median": 0.04076385498046875,
+        "minimum": -0.0264892578125,
+        "maximum": 0.119384765625,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.1,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.026359443664550782,
+          0.05837497711181639
+        ]
+      },
+      "gamma": {
+        "mean": -9.765625e-05,
+        "mean_absolute": 0.00249176025390625,
+        "median": -0.00042724609375,
+        "minimum": -0.00537109375,
+        "maximum": 0.009033203125,
+        "sign_fraction": 0.6,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.001514453887939453,
+          0.0014572334289550764
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L17H5",
+      "structure": "T3",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.3927713394165039,
+        "mean_absolute": 0.3927713394165039,
+        "median": 0.4266357421875,
+        "minimum": 0.037109375,
+        "maximum": 0.739959716796875,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2953881549835205,
+          0.4870712566375731
+        ]
+      },
+      "route_minus": {
+        "mean": 0.39954605102539065,
+        "mean_absolute": 0.39954605102539065,
+        "median": 0.4310302734375,
+        "minimum": 0.0458984375,
+        "maximum": 0.74102783203125,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.9,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.30080571174621584,
+          0.4949632930755614
+        ]
+      },
+      "gamma": {
+        "mean": -0.006774711608886719,
+        "mean_absolute": 0.01050395965576172,
+        "median": -0.00656890869140625,
+        "minimum": -0.0384521484375,
+        "maximum": 0.01470947265625,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.01248847484588623,
+          -0.0015899085998535207
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L17H5",
+      "structure": "T4",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.2550617218017578,
+        "mean_absolute": 0.2578937530517578,
+        "median": 0.2432861328125,
+        "minimum": -0.0283203125,
+        "maximum": 0.441162109375,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.20822090148925781,
+          0.3002210044860839
+        ]
+      },
+      "route_minus": {
+        "mean": 0.26204848289489746,
+        "mean_absolute": 0.264999532699585,
+        "median": 0.25115966796875,
+        "minimum": -0.029510498046875,
+        "maximum": 0.453125,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.21451912045478821,
+          0.30757214903831476
+        ]
+      },
+      "gamma": {
+        "mean": -0.006986761093139648,
+        "mean_absolute": 0.008284997940063477,
+        "median": -0.0068359375,
+        "minimum": -0.0244140625,
+        "maximum": 0.0079345703125,
+        "sign_fraction": 0.8,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.010214242935180664,
+          -0.0037386667728424093
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L17H5",
+      "structure": "T5",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": -0.018550872802734375,
+        "mean_absolute": 0.023363494873046876,
+        "median": -0.01318359375,
+        "minimum": -0.0631103515625,
+        "maximum": 0.015625,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.02899932861328125,
+          -0.008461761474609374
+        ]
+      },
+      "route_minus": {
+        "mean": -0.019617557525634766,
+        "mean_absolute": 0.022087955474853517,
+        "median": -0.01397705078125,
+        "minimum": -0.058837890625,
+        "maximum": 0.01123046875,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.029192771911621094,
+          -0.010404200553894044
+        ]
+      },
+      "gamma": {
+        "mean": 0.0010666847229003906,
+        "mean_absolute": 0.003398227691650391,
+        "median": 0.000827789306640625,
+        "minimum": -0.0047607421875,
+        "maximum": 0.009521484375,
+        "sign_fraction": 0.65,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0006938076019287109,
+          0.0029459095001220697
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L23H10",
+      "structure": "T1",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.6182134628295899,
+        "mean_absolute": 0.6182134628295899,
+        "median": 0.6317138671875,
+        "minimum": 0.06317138671875,
+        "maximum": 1.178253173828125,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.4661235857009888,
+          0.7663252925872803
+        ]
+      },
+      "route_minus": {
+        "mean": 0.611573600769043,
+        "mean_absolute": 0.611573600769043,
+        "median": 0.6361083984375,
+        "minimum": 0.04901123046875,
+        "maximum": 1.1743965148925781,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.46176479339599613,
+          0.7570706939697265
+        ]
+      },
+      "gamma": {
+        "mean": 0.006639862060546875,
+        "mean_absolute": 0.015002822875976563,
+        "median": 0.0039424896240234375,
+        "minimum": -0.019775390625,
+        "maximum": 0.059814453125,
+        "sign_fraction": 0.6,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0014735031127929687,
+          0.01594583034515381
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L23H10",
+      "structure": "T2",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.042236328125,
+        "mean_absolute": 0.047650146484375,
+        "median": 0.04422760009765625,
+        "minimum": -0.027099609375,
+        "maximum": 0.11962890625,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.026205406188964844,
+          0.05843700408935543
+        ]
+      },
+      "route_minus": {
+        "mean": 0.041925239562988284,
+        "mean_absolute": 0.046289253234863284,
+        "median": 0.041034698486328125,
+        "minimum": -0.025390625,
+        "maximum": 0.11669921875,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.026452651023864744,
+          0.05749227523803709
+        ]
+      },
+      "gamma": {
+        "mean": 0.00031108856201171874,
+        "mean_absolute": 0.002733802795410156,
+        "median": -0.00018310546875,
+        "minimum": -0.005126953125,
+        "maximum": 0.0067138671875,
+        "sign_fraction": 0.5,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0010858631134033202,
+          0.0017616319656372067
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L23H10",
+      "structure": "T3",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.3927713394165039,
+        "mean_absolute": 0.3927713394165039,
+        "median": 0.4266357421875,
+        "minimum": 0.037109375,
+        "maximum": 0.739959716796875,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2953881549835205,
+          0.4870712566375731
+        ]
+      },
+      "route_minus": {
+        "mean": 0.38719844818115234,
+        "mean_absolute": 0.38719844818115234,
+        "median": 0.42254638671875,
+        "minimum": 0.0260009765625,
+        "maximum": 0.7364540100097656,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2908469009399414,
+          0.47984250545501705
+        ]
+      },
+      "gamma": {
+        "mean": 0.005572891235351563,
+        "mean_absolute": 0.011344528198242188,
+        "median": 0.0030956268310546875,
+        "minimum": -0.012451171875,
+        "maximum": 0.0399169921875,
+        "sign_fraction": 0.65,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.00029662609100341794,
+          0.012242321968078613
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L23H10",
+      "structure": "T4",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.2550617218017578,
+        "mean_absolute": 0.2578937530517578,
+        "median": 0.2432861328125,
+        "minimum": -0.0283203125,
+        "maximum": 0.441162109375,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.20822090148925781,
+          0.3002210044860839
+        ]
+      },
+      "route_minus": {
+        "mean": 0.2538203239440918,
+        "mean_absolute": 0.2567744255065918,
+        "median": 0.23779296875,
+        "minimum": -0.029541015625,
+        "maximum": 0.4298095703125,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.20678212642669677,
+          0.2987682819366455
+        ]
+      },
+      "gamma": {
+        "mean": 0.0012413978576660157,
+        "mean_absolute": 0.0046786308288574215,
+        "median": 0.000274658203125,
+        "minimum": -0.010498046875,
+        "maximum": 0.01416015625,
+        "sign_fraction": 0.5,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0014419245719909668,
+          0.0040539216995239226
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L23H10",
+      "structure": "T5",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": -0.018550872802734375,
+        "mean_absolute": 0.023363494873046876,
+        "median": -0.01318359375,
+        "minimum": -0.0631103515625,
+        "maximum": 0.015625,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.02899932861328125,
+          -0.008461761474609374
+        ]
+      },
+      "route_minus": {
+        "mean": -0.01984527111053467,
+        "mean_absolute": 0.02216155529022217,
+        "median": -0.01239013671875,
+        "minimum": -0.062255859375,
+        "maximum": 0.0111083984375,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.02964479327201843,
+          -0.010584704279899599
+        ]
+      },
+      "gamma": {
+        "mean": 0.001294398307800293,
+        "mean_absolute": 0.002521204948425293,
+        "median": 0.000732421875,
+        "minimum": -0.00494384765625,
+        "maximum": 0.011962890625,
+        "sign_fraction": 0.7,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.0001465570926666259,
+          0.002908797264099119
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L25H18",
+      "structure": "T1",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.6182134628295899,
+        "mean_absolute": 0.6182134628295899,
+        "median": 0.6317138671875,
+        "minimum": 0.06317138671875,
+        "maximum": 1.178253173828125,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.4661235857009888,
+          0.7663252925872803
+        ]
+      },
+      "route_minus": {
+        "mean": 0.6065607070922852,
+        "mean_absolute": 0.6065607070922852,
+        "median": 0.62176513671875,
+        "minimum": 0.0672607421875,
+        "maximum": 1.1556053161621094,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.45798281669616697,
+          0.7509456205368042
+        ]
+      },
+      "gamma": {
+        "mean": 0.011652755737304687,
+        "mean_absolute": 0.013820648193359375,
+        "median": 0.00643157958984375,
+        "minimum": -0.0098876953125,
+        "maximum": 0.073974609375,
+        "sign_fraction": 0.8,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.003359389305114746,
+          0.022143259048461907
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L25H18",
+      "structure": "T2",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.042236328125,
+        "mean_absolute": 0.047650146484375,
+        "median": 0.04422760009765625,
+        "minimum": -0.027099609375,
+        "maximum": 0.11962890625,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.026205406188964844,
+          0.05843700408935543
+        ]
+      },
+      "route_minus": {
+        "mean": 0.04224319458007812,
+        "mean_absolute": 0.04684524536132813,
+        "median": 0.04421234130859375,
+        "minimum": -0.02294921875,
+        "maximum": 0.118896484375,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.026781463623046876,
+          0.05790105819702148
+        ]
+      },
+      "gamma": {
+        "mean": -6.866455078125e-06,
+        "mean_absolute": 0.001717376708984375,
+        "median": 0.000244140625,
+        "minimum": -0.0048828125,
+        "maximum": 0.0029296875,
+        "sign_fraction": 0.4,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.000995655059814453,
+          0.00091400146484375
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L25H18",
+      "structure": "T3",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.3927713394165039,
+        "mean_absolute": 0.3927713394165039,
+        "median": 0.4266357421875,
+        "minimum": 0.037109375,
+        "maximum": 0.739959716796875,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2953881549835205,
+          0.4870712566375731
+        ]
+      },
+      "route_minus": {
+        "mean": 0.38365955352783204,
+        "mean_absolute": 0.38365955352783204,
+        "median": 0.42279052734375,
+        "minimum": 0.0391845703125,
+        "maximum": 0.7064208984375,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.28905208587646486,
+          0.47495905876159655
+        ]
+      },
+      "gamma": {
+        "mean": 0.009111785888671875,
+        "mean_absolute": 0.010973358154296875,
+        "median": 0.00383758544921875,
+        "minimum": -0.0052490234375,
+        "maximum": 0.06160736083984375,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.002867860794067383,
+          0.017117366790771478
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L25H18",
+      "structure": "T4",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.2550617218017578,
+        "mean_absolute": 0.2578937530517578,
+        "median": 0.2432861328125,
+        "minimum": -0.0283203125,
+        "maximum": 0.441162109375,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.20822090148925781,
+          0.3002210044860839
+        ]
+      },
+      "route_minus": {
+        "mean": 0.25512237548828126,
+        "mean_absolute": 0.2577911376953125,
+        "median": 0.24102783203125,
+        "minimum": -0.0266876220703125,
+        "maximum": 0.4378662109375,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.20838092803955077,
+          0.30026554107666015
+        ]
+      },
+      "gamma": {
+        "mean": -6.06536865234375e-05,
+        "mean_absolute": 0.0036060333251953123,
+        "median": 0.000274658203125,
+        "minimum": -0.01220703125,
+        "maximum": 0.006591796875,
+        "sign_fraction": 0.5,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.002116432189941406,
+          0.0018024539947509757
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L25H18",
+      "structure": "T5",
+      "candidate_in_B": true,
+      "families": 20,
+      "route_plus": {
+        "mean": -0.018550872802734375,
+        "mean_absolute": 0.023363494873046876,
+        "median": -0.01318359375,
+        "minimum": -0.0631103515625,
+        "maximum": 0.015625,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.02899932861328125,
+          -0.008461761474609374
+        ]
+      },
+      "route_minus": {
+        "mean": -0.01750640869140625,
+        "mean_absolute": 0.02245330810546875,
+        "median": -0.011474609375,
+        "minimum": -0.0611572265625,
+        "maximum": 0.01611328125,
+        "sign_fraction": 0.7,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.02760467529296875,
+          -0.007766571044921888
+        ]
+      },
+      "gamma": {
+        "mean": -0.001044464111328125,
+        "mean_absolute": 0.002376556396484375,
+        "median": -0.000732421875,
+        "minimum": -0.008056640625,
+        "maximum": 0.00341796875,
+        "sign_fraction": 0.55,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.00229644775390625,
+          0.0001220703125
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": false,
+      "stage_b_rule": "below_rule",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L9H16",
+      "structure": "T1",
+      "candidate_in_B": false,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.6485626220703125,
+        "mean_absolute": 0.6485626220703125,
+        "median": 0.67449951171875,
+        "minimum": 0.0670166015625,
+        "maximum": 1.19097900390625,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.49188991546630856,
+          0.8003753662109375
+        ]
+      },
+      "route_minus": {
+        "mean": 0.6182134628295899,
+        "mean_absolute": 0.6182134628295899,
+        "median": 0.6317138671875,
+        "minimum": 0.06317138671875,
+        "maximum": 1.178253173828125,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.4661235857009888,
+          0.7663252925872803
+        ]
+      },
+      "gamma": {
+        "mean": 0.030349159240722658,
+        "mean_absolute": 0.03411045074462891,
+        "median": 0.020843505859375,
+        "minimum": -0.0258941650390625,
+        "maximum": 0.1063232421875,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.015856633186340334,
+          0.046352672576904286
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L9H16",
+      "structure": "T2",
+      "candidate_in_B": false,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.04973526000976562,
+        "mean_absolute": 0.05513687133789062,
+        "median": 0.05682373046875,
+        "minimum": -0.02197265625,
+        "maximum": 0.135986328125,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.1,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.031678142547607424,
+          0.06753623962402343
+        ]
+      },
+      "route_minus": {
+        "mean": 0.042236328125,
+        "mean_absolute": 0.047650146484375,
+        "median": 0.04422760009765625,
+        "minimum": -0.027099609375,
+        "maximum": 0.11962890625,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.05,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.026205406188964844,
+          0.05843700408935543
+        ]
+      },
+      "gamma": {
+        "mean": 0.007498931884765625,
+        "mean_absolute": 0.011940765380859374,
+        "median": 0.00507354736328125,
+        "minimum": -0.0121612548828125,
+        "maximum": 0.0330810546875,
+        "sign_fraction": 0.6,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.00194854736328125,
+          0.013212661743164055
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L9H16",
+      "structure": "T3",
+      "candidate_in_B": false,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.398284912109375,
+        "mean_absolute": 0.398284912109375,
+        "median": 0.4326171875,
+        "minimum": 0.033935546875,
+        "maximum": 0.72735595703125,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.9,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.301413631439209,
+          0.49153638839721675
+        ]
+      },
+      "route_minus": {
+        "mean": 0.3927713394165039,
+        "mean_absolute": 0.3927713394165039,
+        "median": 0.4266357421875,
+        "minimum": 0.037109375,
+        "maximum": 0.739959716796875,
+        "sign_fraction": 1.0,
+        "above_tau_fraction": 0.85,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.2953881549835205,
+          0.4870712566375731
+        ]
+      },
+      "gamma": {
+        "mean": 0.005513572692871093,
+        "mean_absolute": 0.021060371398925783,
+        "median": 0.00295257568359375,
+        "minimum": -0.05810546875,
+        "maximum": 0.0567626953125,
+        "sign_fraction": 0.6,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.006977906227111816,
+          0.017679681777954096
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L9H16",
+      "structure": "T4",
+      "candidate_in_B": false,
+      "families": 20,
+      "route_plus": {
+        "mean": 0.26220359802246096,
+        "mean_absolute": 0.2654544830322266,
+        "median": 0.25360107421875,
+        "minimum": -0.03250885009765625,
+        "maximum": 0.4248046875,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.21473941802978516,
+          0.3069519329071045
+        ]
+      },
+      "route_minus": {
+        "mean": 0.2550617218017578,
+        "mean_absolute": 0.2578937530517578,
+        "median": 0.2432861328125,
+        "minimum": -0.0283203125,
+        "maximum": 0.441162109375,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.95,
+        "retained": true,
+        "classification": "coherent",
+        "families": 20,
+        "interval": [
+          0.20822090148925781,
+          0.3002210044860839
+        ]
+      },
+      "gamma": {
+        "mean": 0.007141876220703125,
+        "mean_absolute": 0.0117645263671875,
+        "median": 0.00457763671875,
+        "minimum": -0.016357421875,
+        "maximum": 0.032958984375,
+        "sign_fraction": 0.6,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          0.001335124969482422,
+          0.013332748413085937
+        ]
+      },
+      "route_eligible": true,
+      "status": "eligible",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "below_rule",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    },
+    {
+      "candidate": "L9H16",
+      "structure": "T5",
+      "candidate_in_B": false,
+      "families": 20,
+      "route_plus": {
+        "mean": -0.031529998779296874,
+        "mean_absolute": 0.032726287841796875,
+        "median": -0.02730560302734375,
+        "minimum": -0.0836181640625,
+        "maximum": 0.011962890625,
+        "sign_fraction": 0.95,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.04284526824951172,
+          -0.020861778259277347
+        ]
+      },
+      "route_minus": {
+        "mean": -0.018550872802734375,
+        "mean_absolute": 0.023363494873046876,
+        "median": -0.01318359375,
+        "minimum": -0.0631103515625,
+        "maximum": 0.015625,
+        "sign_fraction": 0.75,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.02899932861328125,
+          -0.008461761474609374
+        ]
+      },
+      "gamma": {
+        "mean": -0.0129791259765625,
+        "mean_absolute": 0.01365203857421875,
+        "median": -0.01263427734375,
+        "minimum": -0.0346221923828125,
+        "maximum": 0.0032958984375,
+        "sign_fraction": 0.85,
+        "above_tau_fraction": 0.0,
+        "retained": false,
+        "classification": "below_rule",
+        "families": 20,
+        "interval": [
+          -0.017674293518066406,
+          -0.008409862518310548
+        ]
+      },
+      "route_eligible": false,
+      "status": "route unavailable/weak in this background",
+      "stage_b_functional": true,
+      "stage_b_rule": "d_b",
+      "gamma_class": "ineligible",
+      "interpretation": "interaction: h changes the efficacy of this measured communication in B; not proof of serial membership"
+    }
+  ]
+}
