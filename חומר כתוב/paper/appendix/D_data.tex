@@ -9,10 +9,7 @@ each: the \emph{query chain}, whose middle name is asked about, and a
 \emph{distractor chain} of the same shape. The answer is the mother of the queried
 name, i.e.\ the top of the query chain; the distractor is the top of the other chain.
 The queried name therefore occurs three times (as a mother, as a child, and in the
-question), and the two candidate answers occur once each. All names are generated
-strings absent from the model's vocabulary as single tokens; names are
-length-matched under the OLMo-2 tokenizer so that clean and corrupted prompts are
-aligned position by position. Relation annotations (head, tail, character spans) are
+question), and the two candidate answers occur once each. Each invented name spans multiple OLMo-2 tokens, and candidate names are matched in token length so that clean and corrupted prompts remain positionally aligned. Relation annotations (head, tail, character spans) are
 produced at construction time for every fact, including demonstrations.
 
 \begin{figure*}[t]
@@ -50,6 +47,14 @@ answer position at which Scope-F interventions are applied.}
 \label{fig:data}
 \end{figure*}
 
+\paragraph{Variants.}
+The clean variant leaves both candidate mothers in their original fact lines.
+The corrupted variant swaps only the two answer-side mother spans, so the
+distractor becomes correct; because the candidate names are matched in token
+length, all token positions and mention counts remain unchanged. The reordered
+variant permutes the four test facts without changing their contents. Each
+variant is instantiated in two fact orders. In the released data, the clean and
+reordered variants are named \texttt{base} and \texttt{reorder}, respectively.
 
 \begin{table}[h]
 \centering\scriptsize
@@ -58,7 +63,7 @@ answer position at which Scope-F interventions are applied.}
 Quantity & Value \\
 \midrule
 Generated families & 200 \\
-4-shot accuracy, clean / corrupted / reorder (both orders) & 93 / 94 / 89\% \\
+4-shot accuracy, clean / corrupted / reorder (both orders) & 93\% / 94\% / 89\% \\
 Families correct on clean and corrupted, both orders & 176 \\
 \quad discovery / held-out (split by family id) & 89 / 87 \\
 Clean--corrupted pairs, discovery & 178 \\

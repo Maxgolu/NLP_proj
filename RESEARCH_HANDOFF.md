@@ -110,6 +110,30 @@ Outputs land in `$PILOT_RUNS/<name>/` (see runbook §6); when finished, copy to
 this stage answers "is the new RI shortlist connected to the measured structures?" and can
 legitimately conclude "no, within this scope".
 
+### 0d. S4.5 discovery EXECUTED (27 September, job 937878) — results in `results/stage4_s45_discovery_v2/`
+
+Full analysis: `results/stage4_s45_discovery_v2/S45_discovery_analysis.md`; independent audit that
+reproduced every number and corrected over-strong wording: `results/stage4_s45_review_20260927/REVIEW_HE.md`
+(+ standalone report `חומר כתוב/Stage45_Overleaf/`). Read both before writing about S4.5.
+Headlines: all gates exact; full-background anchors reproduce S4.1/S4.3 within 0.03. Stage A: no
+retained set is a faithful mechanism — C33 F=0.05, C50 F=0.11 (B = C50, PARTIAL); empty mask is zero
+on every contrast; under role means the 50 heads prefer the first chain's mother in 85 % of prompts
+(candidate accuracy 50 %; full model 52 %/98 %) and do not preserve question-conditioned behaviour
+(query contrast 1.5 vs 10.9) — the design does not localise the missing computation. Stage B: L9H16
+(+0.60, 20/20; not in RI31) and L1H27 (+0.26, 20/20) contribute behaviourally in B; L11H4/L17H5/
+L23H10/L25H18 below the rule (|d_b|<0.015); restoring RI31 changes the gap by +1.45 (means) / +4.6
+(donor) — collective, not apportioned; B−RI31 keeps the primacy copy (±5.6 by order) without the mean
+gap. Post-hoc T1−T3: releasing L18H19 adds +0.225 in B / +0.805 full, 20/20. Stage C: routes keep
+37–53 % inside B (T2, T5 below rule); Gamma all below rule (max +0.030, interval excludes 0) — no new
+route association under the frozen rule; zero route pairs selected, two functional-only records
+(L9H16, L1H27), Stage D not run (so attachments were never tested: do NOT write "not route members"
+or "redundant"). Baseline sensitivity: under paired-donor replacement the sign flip disappears (+3.1/
++1.4) and the two candidates contribute only +0.003/+0.006 → protocol category (e). Held-out suite
+(6 mean + 4 donor configurations, 174 pairs, ~2 h) awaits the user's decision; nothing validated yet.
+Paper implication: within this scope the new high-RI shortlist gets no route association and only
+background-conditional behavioural effects; RI-head participation is supported collectively and for
+known members (L18H19), not for the new candidates.
+
 ### 1. Daniella's developmental folder (received 24 September)
 
 Path: `project/Daniella's test ICL vs SIH/`. Author: Daniella Simonovsky (project partner).

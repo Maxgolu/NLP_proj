@@ -11,6 +11,27 @@ maximum vocabulary-logit drift of 0.039 on one prompt. The test-only extension
 replication checks of saved scores passed. Independent recomputation reproduced all
 reported means, contrasts and support counts.
 
+\paragraph{Attention condition and populations.}
+Every annotated fact, demonstrations included, supplies a child source at its last
+token $s$ and a mother target anchored at its first token (primary) or last token
+(sensitivity). At a current position $j$ where both names are fully visible, the
+model's actual attention must satisfy
+\begin{equation}
+\label{eq:qkgate}
+s=\arg\max_{k\le j}A^h_{j,k}
+\quad\text{and}\quad
+A^h_{j,s}>\tau\max_{\substack{k\le j\\k\ne s}}A^h_{j,k},
+\end{equation}
+with the published $\tau=2.2$; the raw embedding is used only for the OV score.
+The pooled index includes demonstration and test events. The test-only extension
+requires both the fact and the current position to lie in the test block, and
+crosses two fact scopes (all test facts or only the query fact) with two position
+scopes (all test positions or only the final colon), giving four test-only
+populations in addition to the pooled index. Each test-only population uses both
+mother anchors and pools the base, corrupted and reorder variants and both orders;
+the original full visible context, including demonstrations, is retained for score
+normalization.
+
 \paragraph{Method details.}
 \emph{Event score.} For a qualifying $(T,j)$ with anchor token $t_o$, the score is
 $a^{h,j}_T=q^{h,j}_{t_o}/\sum_{k\le j}q^{h,j}_{t_k}$ with
@@ -22,8 +43,9 @@ family and then with equal weight across the families that have at least one
 scored event for that head; families without events do not enter the mean.
 \emph{Name controls.} The other test-fact mothers whose full name is visible at
 $j$; token length need not match. \emph{Word controls.} Up to three word types
-sampled from the visible non-name tokens of the prompt (mostly template words);
-they provide a weaker specificity check. All reported means and counts use the
+sampled from fully visible non-name words in the test block (mostly template words);
+sampling is shared across heads and facts at a given prompt position. They provide
+a weaker specificity check. All reported test-only means and counts use the
 name-control-eligible subset of events; events without an available control are
 excluded from the gap statistics but retained in the pooled index.
 \emph{Calibration population.} Test-block events in which both the target and a
@@ -32,8 +54,14 @@ tokens; 19,901 of 278,134 QK events qualify. Heads need at least 50 such events
 across ten families (80 heads). The null swaps target and control labels
 consistently within each family (100{,}000 replicates) and assumes the two labels
 are exchangeable under the null; heads are tested with Holm correction over 1,024.
-\emph{Selection population.} All name-control-eligible events; a ranking requires
-at least 20 events in ten families. The 50-event threshold of the calibration and
+\emph{Selection rule.} From the name-control-eligible events, rank heads by the
+family-weighted target score, name gap and word gap separately for each of the
+four test-only populations and both anchors. Retain the ten largest positive
+means per ranking, requiring at least 20 scored events in ten families for the
+corresponding statistic, and take their union. The pooled-index selection uses the
+separate descriptive 99.9th-percentile rule. The causal audit includes the union
+of these test-only and pooled candidates; references to the test-only set exclude
+the pooled-only additions. The 50-event threshold of the calibration and
 the 20-event threshold of the selection are different requirements for different
 purposes and yield different head populations.
 

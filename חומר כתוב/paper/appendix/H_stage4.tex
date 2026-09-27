@@ -1,9 +1,9 @@
 \section{Stage 4: rules, rosters and configurations}
 \label{app:stage4}
 
-S4.1 and S4.2 below describe executed measurements; S4.3--S4.5 describe the frozen
-plan for the parts not yet executed at the time of writing, marked TODO where the
-executed rosters will replace it.
+S4.1--S4.3 below describe executed measurements. The final experiment in
+Appendix~\ref{app:final-ri} is specified prospectively and has not yet been run;
+it replaces the earlier S4.4--S4.5 retention/reduction and fact--query design.
 
 \paragraph{Route semantics.}
 The source's pre-projection slice $z=AV$ is replaced by the donor value; the shared
@@ -12,7 +12,11 @@ between source and receiver are frozen after their normalization in the hybrid r
 The receiver's channel is recaptured from the hybrid residual and injected into a
 fresh recipient run: for fact-site K/V routes at the fact positions, with only the
 receiver's original colon output row released; for Q routes at the colon. In the
-recipient run all later computation is live. Effects are averaged over orders
+recipient run all later computation is live. A retained route supports transmission
+through the declared source, site and receiver channel in this frozen background;
+its effect is not an additive share of the source's full-model importance.
+Separately measured routes do not establish their composition into a chain.
+Effects are averaged over orders
 within family and then over families; 20,000-draw family-bootstrap intervals are
 descriptive after selection. \emph{Retention rule}, fixed in advance with
 $\tau=0.10$ logits: coherent if $|\bar I|\ge\tau$ with the same sign in at least
@@ -55,12 +59,22 @@ I4 & L18H18 / Q & L16H1, L16H21, L17H3 \\
 \end{tabular}
 \end{center}
 Outgoing groups (O) collect the receivers of one source; incoming groups (I) the
-sources of one receiver. Singles, whole groups and group-minus-one masks
+sources of one receiver. With $I(S)$ the importance under simultaneous replacement
+of group $S$, whole-group, singleton and group-minus-member patches give
+\begin{align*}
+N(S)&=I(S)-\sum_{h\in S}I(h),\\
+\delta_h(S)&=I(S)-I(S\setminus\{h\}).
+\end{align*}
+$N(S)$ measures nonadditivity and $\delta_h(S)$ the member's contribution
+conditional on the other group members being replaced. Singles, whole groups and group-minus-one masks
 deduplicate to 49 base masks under a 128-configuration cap; selected group
 contrasts and two blocking contrasts were extended to all 89 families. Receiver
 blocking: L17H1's clean activation restored in the corrupted run at its source
 masks with the O3 members clamped to their corrupted colon outputs; L15H25 restored
-with the O2 pair clamped; self-clamp and reverse controls. Mean-replacement
+with the O2 pair clamped; self-clamp and reverse controls. The loss of source
+restoration under receiver clamping measures dependence on receiver response;
+overlapping paths and interactions prevent an exclusive partition into mediation
+shares. Mean-replacement
 sensitivity was run for the extended contrasts, not for every configuration.
 
 \paragraph{S4.2 RI participation.}
@@ -206,47 +220,327 @@ newly unmasked backup for any head.}
 \label{tab:ri31-app}
 \end{table}
 
-\paragraph{S4.3 local expansion (plan).}
+\paragraph{S4.3 local expansion.}
+Local mediator tests release only specified MLP branches or whole blocks from the
+frozen hybrid. Releasing a block frees both its normalized attention and MLP
+branches; a block effect is not attributed to every constituent head. Composed
+chains instead release named intermediate head slices while clamping the other
+heads in their attention layers, then recompute the shared output projection and
+normalization. Their MLP branches remain frozen unless explicitly released.
+The resulting receiver channel is tested in a fresh recipient as in S4.1.
 Sources: L13H18 (three retained slot masks; receivers L16H1, L16H21, L18H18,
 L18H19; K and V; MLP13, MLP14 or both released), L8H15 (two sentence masks; same
 receivers; MLP8/MLP9), L16H31, L20H7 and L26H23 (colon sources; Q receivers in
 later layers and residual continuation; local MLPs or blocks released), and two
 chains (L15H25 $\to$ \{L16H1, L16H21\} $\to$ Q of L18H18/L18H19; L17H1 $\to$
-\{L18H18, L18H19\} $\to$ Q of the late readers). 249 configurations before
-deduplication; noising on 40 common pairs first, at most 9,960 endpoints plus at
-most 2,240 matched direct comparators before reuse of compatible S4.1 records; at
-most 16 retained contrasts extended to 178 pairs. TODO: executed panel.
+\{L18H18, L18H19\} $\to$ Q of the late readers). The initial design comprised
+249 configurations plus 56 direct comparators before deduplication, on the 40
+common pairs. Sixteen selected contrasts and 11 direct prerequisites were extended
+to 178 pairs in both directions. For composed fact-to-colon-Q chains, the
+no-intermediate comparator is structurally zero: a fact-site change cannot reach
+the later colon query when every intervening component is frozen. Their route
+effects are therefore reported directly; the zero subtraction supplies no
+additional evidence of mediation.
 
-\paragraph{S4.5 retention, reduction, completeness (plan).}
-$C_0$ (33 heads) in eight disjoint reduction units---practical units, not
-established functional modules: $W=\{$L15H25, L17H1$\}$; $D=\{$L16H1, L16H21$\}$;
-$P=\{$L18H18, L18H19$\}$; $A=\{$L21H6, L21H18, L22H5, L27H6$\}$; $N=\{$L13H10,
-L17H3, L18H24, L19H16, L20H1, L23H15, L26H23, L30H18$\}$; $R_6$ as above;
-$T=\{$L14H26, L17H17, L17H24, L19H22, L21H23, L25H17, L30H13$\}$; $U=\{$L13H18,
-L24H19$\}$. Acceptance: with $g_f(C)$ the family's clean-minus-corrupted gap,
+\subsection{Final experiment: RI participation in measured structures}
+\label{app:final-ri}
+
+The design separates three questions: whether a retained set preserves the task,
+whether an RI head changes that behaviour, and whether it changes communication
+along a measured route. All rosters below are fixed from discovery evidence before
+the new measurements. There is no greedy reduction or expansion beyond the
+declared fallback. Table~\ref{tab:final-coverage} gives the measurement order and
+populations; every family contributes both fact orders.
+
+\paragraph{Structures and broad backgrounds.}
+Table~\ref{tab:final-structures} distinguishes each retained head set from its
+primary route anchor. Node retention keeps those heads live at every original
+test-block position; route interventions use the narrower historical source mask
+and receiver channel. All five sets lie inside $C_{33}$. $T_3\subset T_1$ is a
+nested comparison, not independent replication; $T_3$ and $T_5$ contain no head
+from the original 59-head RI selection. $T_2$ includes both layer-18 receivers,
+but its anchor tests only the L18H18 branch. $T_4$ and $T_5$ are direct two-head
+routes; $T_5$ is an opposing route and need not solve the task alone.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.04\textwidth}p{0.36\textwidth}p{0.53\textwidth}@{}}
+\toprule
+ID & Retained heads & Primary route anchor \\
+\midrule
+$T_1$ & L17H1, L18H18, L18H19, L27H6 &
+L17H1 / writer-union $\to$ live \{L18H18, L18H19\} $\to$ L27H6 / Q \\
+$T_2$ & L15H25, L16H1, L16H21, L18H18, L18H19 &
+L15H25 / query-child-last $\to$ live \{L16H1, L16H21\} $\to$ L18H18 / Q \\
+$T_3$ & L17H1, L18H18, L27H6 &
+L17H1 / writer-union $\to$ live \{L18H18\} $\to$ L27H6 / Q \\
+$T_4$ & L8H15, L18H18 &
+L8H15 / query sentence $\to$ L18H18 / V (no MLP release) \\
+$T_5$ & L20H1, L27H6 &
+L20H1 / colon $\to$ L27H6 / Q \\
+\bottomrule
+\end{tabular}
+\caption{Fixed structures and distinct route interventions. Writer-union comprises
+the query mother's tokens, \texttt{is} and period. Q is injected at the colon; V at the
+source positions. Only the receiver's colon output row is released in the fresh
+recipient. The no-intermediate comparators of $T_1$--$T_3$ are structurally zero.}
+\label{tab:final-structures}
+\end{table*}
+
+$C_{33}$ inherits the earlier broad candidate set: L6H24, L8H15, L13H10,
+L13H18, L14H23, L14H26, L15H3, L15H25, L16H1, L16H21, L16H31, L17H1,
+L17H3, L17H17, L17H24, L18H18, L18H19, L18H24, L19H16, L19H22, L20H1,
+L20H7, L21H6, L21H18, L21H23, L22H5, L23H15, L24H19, L25H17, L26H23,
+L27H6, L30H13 and L30H18. The only fallback, $C_{50}$, adds the remaining
+17 RI31 heads: L1H27, L8H8, L9H6, L9H17, L11H4, L11H7, L12H2, L16H4,
+L16H16, L16H24, L17H5, L21H25, L23H10, L25H18, L26H31, L27H23 and L30H3.
+The chosen broad background is denoted $C$ throughout this appendix.
+
+\paragraph{RI candidates and references.}
+The six candidates in Table~\ref{tab:final-candidates} span existing RI rankings
+and diagnostics; they are not selected using the new outcomes. Five (all except
+L9H16) failed the S4.2 G2 retention rule on its weakened background, so the new
+test concerns different structures and backgrounds. L18H19 and L8H15 serve as
+functional references on the core panel, without entering the six-candidate route
+screen. Define $R(C)$ as the members of $C$ in the original 59-head test-only RI
+selection; the two pooled-only heads are not added.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{1.15cm}p{6.2cm}@{}}
+\toprule
+Head & Selection reason and qualification \\
+\midrule
+L1H27 & Query-fact first-anchor target RI rank 1; broad support. \\
+L11H4 & Query-fact first-anchor name-gap rank 2; survives concentration checks. \\
+L17H5 & Query-fact first-anchor name-gap rank 1; nonlocal attention, template dependence. \\
+L23H10 & All-facts first-anchor name-gap rank 1; current-target alternative. \\
+L25H18 & All-facts last-anchor name-gap rank 2; limited query-fact support. \\
+L9H16 & Previously prioritized last-anchor candidate; broad support, order sensitivity; outside RI31. \\
+\bottomrule
+\end{tabular}
+\caption{Additional RI candidates fixed before the final experiment.}
+\label{tab:final-candidates}
+\end{table}
+
+\paragraph{Replacement background.}
+Excluded head-output slices are replaced at every original test-block position;
+embeddings, MLPs, shared normalization, demonstrations and answer-prefix
+computation remain live (Figure~\ref{fig:retained}). The empty mask replaces all
+1,024 heads at those positions. Role means use syntactic slot, role and token
+bucket (single, first, interior, last), never identity, query relevance or the
+answer. The reference bank covers all heads and is family-balanced over the 89
+discovery families, original queries, both fact assignments and orders. Discovery
+uses leave-one-family-out means; held-out uses the fixed full discovery bank.
+Changed-query and held-out examples never update it.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize,
+  head/.style={draw, minimum width=0.42cm, minimum height=0.42cm, inner sep=0pt},
+  lab/.style={text=black!65}]
+\foreach \r/\name in {0/full model,1/$C_h^-$,2/$C_h^+$} {
+  \node[lab, anchor=east] at (-0.25,-\r*0.7) {\name};
+  \foreach \i in {0,...,7} {\node[head] (h\r\i) at (\i*0.5,-\r*0.7) {};}
+}
+\foreach \r in {1,2} {
+  \foreach \i in {1,3,4,6} {
+    \fill[black!25] ([shift={(-0.2,-0.2)}]h\r\i.center) rectangle ++(0.4,0.4);
+  }
+}
+\fill[black!25] ([shift={(-0.2,-0.2)}]h17.center) rectangle ++(0.4,0.4);
+\fill[orange!45] ([shift={(-0.2,-0.2)}]h27.center) rectangle ++(0.4,0.4);
+\node at (h17.center) {$h$};
+\node at (h27.center) {$h$};
+\node[lab] at (1.75,0.45) {head outputs at test-block positions};
+\end{tikzpicture}
+\caption{Candidate toggle in a fixed retained background. White: live;
+grey: role-mean replacement; orange: the candidate restored to live computation.
+The two retained configurations differ only in $h$. One is the chosen $C$.
+Non-head computation, demonstrations and answer prefixes remain live.}
+\label{fig:retained}
+\end{figure}
+
+\paragraph{A. Behaviour and background selection.}
+On the 20 common families, cross original/swapped mother assignments with the
+original/alternative queried child. The cells $x_{00},x_{10},x_{01},x_{11}$ have
+gold answers $a,b,b,a$ and retain the fixed $a-b$ scoring sign. Rebuild
+tokenization, offsets, masks and the shared answer prefix for changed queries;
+do not filter out new-cell errors. For configuration $D$, define
+\begin{align}
+b_f(D)&=\tfrac14\,\mathbb{E}_o\bigl[
+ M_D(x_{00})-M_D(x_{10}) \notag\\
+&\hspace{3.7em}{}-M_D(x_{01})+M_D(x_{11})\bigr], \notag\\
+B_D&=\mathbb{E}_f b_f(D). \label{eq:bd}
+\end{align}
+Report the four margins and accuracies, both fact-axis and both query-axis
+contrasts, and full-vocabulary first-token outcomes. $B_D$ alone does not establish
+correct behaviour in every cell; ratios to the full-model contrast require a
+stable denominator.
+
+Evaluate full, empty, $T_1$--$T_5$ and $C_{33}$; evaluate $C_{50}$ only if
+$C_{33}$ fails. With
+$g_f(D)=\mathbb{E}_o[M_D(x_{00})-M_D(x_{10})]$, the fidelity guards are
 \begin{align*}
-F(C)&=\frac{\mathbb{E}_f\,g_f(C)}{\mathbb{E}_f\,g_f(\mathrm{full})}\in[0.8,1.2],\\
-L(C)&=\frac{\mathbb{E}_f|g_f(C)-g_f(\mathrm{full})|}{\mathbb{E}_f|g_f(\mathrm{full})|}\le0.2,
+F(D)&=\frac{\mathbb{E}_f g_f(D)}{\mathbb{E}_f g_f(\mathrm{full})}
+       \in[0.8,1.2],\\
+L(D)&=\frac{\mathbb{E}_f|g_f(D)-g_f(\mathrm{full})|}
+           {\mathbb{E}_f|g_f(\mathrm{full})|}\le0.2,
 \end{align*}
-at most five points of candidate-accuracy loss in each condition and each order,
-and the all-heads-mean baseline must not itself pass. Pre-declared addback if $C_0$
-fails: the remaining 17 RI31 heads ($C_{50}$). Reduction: remove the unit whose
-removal gives the smallest increase in $L$ while all guards hold, recompute the
-remaining candidates in the new background, and allow at most two passes over the
-units; evaluate the reduced mask on all 178 pairs and restore units in reverse
-order if it fails. Completeness: remove $W,D,P,A,N$, the current RI members
-($C\cap$RI31), the current non-RI members and $R_6$ from the full model and from
-$C$ with identical masks. TODO: executed $C^*$ and guard values.
+with candidate accuracy at most five percentage points below full in every cell
+and order separately. Use $C=C_{33}$ if it passes, otherwise $C=C_{50}$; if
+both fail, retain $C_{50}$ explicitly as a partial background. If the empty mask
+passes, do not claim that the retained heads explain the behaviour. A failed
+small-set mask does not disqualify its route from testing inside $C$.
 
-\paragraph{S4.4 fact $\times$ query panel (plan).}
-Cells $x_{00}$ (clean), $x_{10}$ (fact swap), $x_{01}$ (query change), $x_{11}$
-(both), with correct answers rebuilt from the fact table and a fixed $a{-}b$ scoring
-sign in all four cells. Configurations: full model; full minus O3 (colon); full
-minus the residual RI23 (all eligible test positions); retained $C^*$; $C^*$ minus
-$C^*\cap$RI31; $C^*$ minus $C^*\setminus$RI31. Reported per configuration: the two
-fact-axis and two query-axis contrasts, each cell's accuracy, and $B_D$. Panel: 20
-common families, both orders; extension to the 89 families only if a core
-condition-wise accuracy discrepancy between $C^*$ and the full model exceeds five
-points or the sign of $B$ changes relative to the full model. Query-only changes
-leave fact-site activations identical by causality, so the panel is a group-level
-test. TODO: executed cells.
+\paragraph{B. Functional participation.}
+Evaluate $C_h^-$ and $C_h^+$ for all six candidates on the core four-cell panel,
+plus $C\setminus\{\mathrm{L18H19}\}$,
+$C\setminus\{\mathrm{L8H15}\}$ and $C\setminus R(C)$.
+One state per candidate equals $C$, leaving at most seven distinct candidate
+backgrounds. Adding L9H16 to $C_{50}$ gives a 51-head test configuration, not a new
+fallback. Record family-level $d_{h,f}=b_f(C_h^+)-b_f(C_h^-)$,
+fixed-sign and gold-oriented cell margins, accuracies and changes in $F,L$.
+Apply the inherited coherent/heterogeneous rule separately to $d_{h,f}$ and
+original-cell gold-oriented margin effects. These tests assess functional
+participation in $C$, not membership in a particular route.
+
+\paragraph{C. Association with measured routes.}
+Screen all six candidates against all five anchors on the original 40 fact-swap
+pairs, in the noising direction. For each state $D=C_h^\pm$,
+\begin{align*}
+I_{t,f}(D)&=\mathbb{E}_o\bigl[M_D(x_{00})\\
+ &\quad{}-M_D(x_{00};t\leftarrow x_{10})\bigr],\\
+\gamma_{h,t,f}&=I_{t,f}(C_h^+)-I_{t,f}(C_h^-),
+\end{align*}
+so $\Gamma_{h,t}=\mathbb{E}_f\gamma_{h,t,f}$ in
+Eq.~\ref{eq:ri-route}. Preserve historical route masks, channels and selective
+releases. Source donors, frozen increments, receiver captures and fresh recipients
+all belong to the same $D$; full-model donors are not reused in retained
+backgrounds. Both raw route effects accompany $\Gamma$: a negative difference can
+attenuate a positive route or strengthen a negative one. Downstream amplification
+can change $\Gamma$ without placing $h$ on the serial path.
+
+A pair is eligible only if the route itself passes the inherited effect rule in
+at least one state and its family-level $\gamma$ also passes. Select at most
+three pairs: coherent before heterogeneous, then decreasing
+$\mathbb{E}_f|\gamma|$, then layer/head and structure ID. A first pass allows
+one pair per candidate; a second fills remaining slots with at most two per
+candidate. Fill otherwise unused slots only with candidates passing the
+functional $d$ rule but having no selected pair, ordered by class,
+$\mathbb{E}_f|d|$ and head ID. These receive behavioural follow-up only. Fewer
+than three, including zero, is valid; at most three distinct candidates are
+selected. Record whether each route-modulation candidate also has a functional
+effect. Selection is not revised after reverse patching.
+
+\paragraph{D. Direction and named-connection checks.}
+For selected route pairs, repeat the comparison with restoration
+$J_t(D)=M_D(x_{10};t\leftarrow x_{00})-M_D(x_{10})$ on the same 40 pairs.
+Test one predeclared direct connection per pair
+(Table~\ref{tab:final-attachments}) in both directions, alongside a matched
+alternative receiver. For each unique connection, sample a receiver from the
+same layer, excluding $C_{50}$, all structure members, the original RI set and
+the candidate. Freeze controls for every possible connection before new
+measurements, using seed 20260926, sorted eligible IDs and lexically ordered
+connection keys.
+
+Both the target and control receiver must be live in both compared runs. Thus
+these diagnostics use $C_h^+$ plus the control receiver, with the target connection
+recomputed in that same background; this differs from the primary modulation
+background. V connections use all four fact sentences, excluding question and
+colon, without an oracle query-fact restriction; Q connections originate and end
+at the colon. Sources precede receivers in layer order; only the receiver's colon
+output row is released.
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{1.05cm}p{1.5cm}p{4.55cm}@{}}
+\toprule
+Structure & Candidate & Direct connection \\
+\midrule
+$T_1,T_3,T_4$ & $h\in E$ & $h$ / all facts $\to$ L18H18 / V \\
+$T_2$ & $h\in E$ except L17H5 & $h$ / all facts $\to$ L16H1 / V \\
+$T_2$ & L17H5 & $h$ / colon $\to$ L18H18 / Q \\
+$T_1$--$T_4$ & $h\in A$ & L18H18 / colon $\to$ $h$ / Q \\
+$T_5$ & $h\in E$ & $h$ / all facts $\to$ L20H1 / V \\
+$T_5$ & $h\in A$ & $h$ / colon $\to$ L27H6 / Q \\
+\bottomrule
+\end{tabular}
+\caption{Frozen direct-connection hypotheses.
+$E=\{\mathrm{L1H27,L9H16,L11H4,L17H5}\}$ and
+$A=\{\mathrm{L23H10,L25H18}\}$.
+Shared endpoints do not constitute independent discoveries for each structure.}
+\label{tab:final-attachments}
+\end{table}
+
+\paragraph{Extension, sensitivity and held-out evaluation.}
+On all 89 discovery families, extend only original-query behaviour: full, empty,
+$C$, $C\setminus R(C)$ and the additional state of each selected candidate
+(at most seven configurations). Repeat the latter retained configurations
+(at most five) using the paired opposite-fact donor instead of means,
+symmetrically on original and swapped inputs. Report baseline disagreement rather
+than selecting the favourable replacement. A fidelity failure leaves $C$ fixed
+and labels it partial; it does not trigger another search. New route modulation
+and connection checks remain on the 20 common families until validation.
+
+Before the 87 held-out families are opened, freeze $C$, selected candidates and
+pairs, controls, expected signs, mean bank, thresholds and input construction.
+Validation evaluates the four-cell panel for the same at-most-seven
+configurations, selected route modulation in both states and both directions,
+selected connections and controls in both directions, and paired-donor
+sensitivity. Route and donor tests use the original fact axis only.
+Unselected candidates and standalone $T_1$--$T_5$ behaviour remain discovery-only.
+Failed validation never triggers replacements or new selection.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{1.2cm}p{1.25cm}p{4.6cm}@{}}
+\toprule
+Step & Families & Measurements \\
+\midrule
+A & 20 & Four cells: full, empty, five structures, $C_{33}$; $C_{50}$ only on failure. \\
+B & 20 & Four cells: six candidate toggles, two references, collective RI removal. \\
+C & 20 & All 30 candidate--route pairs; noising on the original fact axis. \\
+D & 20 & At most three selected pairs: restoration; direct connections and controls, both directions. \\
+Extension & 89 & Original-query behaviour and paired-donor sensitivity for selected candidates and collective RI removal. \\
+Validation & 87 & Frozen four-cell behaviour; selected modulation, connections/controls and donor sensitivity. \\
+\bottomrule
+\end{tabular}
+\caption{Logical order and coverage of the final experiment. Each family has two
+fact orders. Functional-only selections omit route and connection tests.}
+\label{tab:final-coverage}
+\end{table}
+
+\paragraph{Inference and interpretation.}
+Average orders within family before aggregating. Report signed and absolute
+family effects, each order separately, and mean absolute within-family order
+differences. Use 20,000 paired family-bootstrap resamples (seed 20260926);
+discovery intervals are descriptive, not selection-adjusted. Apply the inherited
+coherent/heterogeneous rule separately to modulation and direct connections in
+each direction. A coherent bidirectional result requires coherence in both
+directions, the same mean sign, and at least 70\% family sign agreement between
+directions. Otherwise report heterogeneity, asymmetry or failure to reproduce.
+Report the paired difference in absolute family effects between target connection
+and receiver control; without an excess over control, do not claim receiver
+selectivity. Its interval is descriptive rather than a new significance test.
+
+Reproduced functional effects and communication support participation in this
+task under the declared live background, possibly with an opposing sign. A
+functional effect without a retained connection leaves the connection unresolved;
+modulation alone leaves overall functional contribution unresolved. A null is
+limited to the tested backgrounds, channels and sites. A named connection supports
+a link to a member or branch, not exclusive mediation through the whole chain,
+and collective RI dependence does not assign a relational role to every member.
+
+\paragraph{Validity checks.}
+All-live retention must reproduce the full model, self-donor patches must be
+identity interventions in each background, and historical full-model route
+anchors must reproduce before new comparisons. Verify structurally zero
+no-intermediate fact-to-colon-Q comparators, unchanged earlier fact activations
+under query-only edits, identity-free role keys, and live control receivers in
+both diagnostic contexts. Input, background, mean-bank population, source/receiver
+masks, direction and selective releases must match within every paired contrast.

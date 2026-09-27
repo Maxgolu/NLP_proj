@@ -1,135 +1,50 @@
 \section{Method}
 \label{sec:method}
 
-The audit has four parts, each answering one question on the setting of
-\S\ref{sec:setting}. (1) We compute the SIH criterion for every head
-(\S\ref{sec:method-ri}) and (2) the causal importance of every head
-(\S\ref{sec:method-causal}), so that the two rankings can be compared without any
-head being excluded by construction. (3) We characterize the heads that matter
-causally, and the RI-selected heads among them, by where they act, what they read
-and what they write (\S\ref{sec:method-char}), and (4) we test how they communicate
-and whether the resulting mechanism is faithful (\S\ref{sec:method-circuits}). A
-separate analysis across training checkpoints (\S\ref{sec:method-dev}) revisits the
-original paper's developmental claim.
+We compare the SIH criterion with causal importance across all heads
+(\S\ref{sec:method-ri}--\ref{sec:method-causal}), profile causally important and
+RI-selected heads
+(\S\ref{sec:method-char}), and test RI participation in communication and task
+behaviour (\S\ref{sec:method-circuits}). A separate checkpoint analysis tests the
+proposed link between RI and the emergence of in-context learning
+(\S\ref{sec:method-dev}).
 
 \subsection{Reproducing the SIH criterion}
 \label{sec:method-ri}
 
-\paragraph{Inputs.}
-All 1,024 heads are scored on the 534 discovery prompts (89 families $\times$
-base/corrupted/reorder $\times$ two orders). Every fact line, demonstrations
-included, is annotated with its head token $t_s$ (the child), tail token $t_o$ (the
-mother) and character spans. Since names span several tokens, $t_o$ is anchored at
-the first or at the last token of the mother's name; both anchors are reported.
-
-\paragraph{Attention condition.}
-Head $h$ qualifies for fact $T$ at current position $j\ge\max(s,o)$ if its actual
-attention $A^h_j$, taken from the model's forward pass, satisfies
-\begin{equation}
-\label{eq:qkgate}
-s=\arg\max_{k\le j}A^h_{j,k}
-\quad\text{and}\quad
-A^h_{j,s} > \tau\max_{k\ne s}A^h_{j,k},
-\end{equation}
-with the published margin $\tau{=}2.2$. Sensitivity to $\tau$ (the 95th percentile of the observed
-dominance ratios is 4.5) is reported in Appendix~\ref{app:stage1}.
-
-\paragraph{Event score.}
-For each qualifying $(T,j)$ the score $a^{h,j}_T$ is the clipped, centred share of
-the raw-embedding OV projection $x_jW^h_{OV}W_U$ that falls on $t_o$, exactly as in
-Appendix~\ref{app:ri}. The index $\mathrm{RI}_h$ is the family-weighted mean of
-$a^{h,j}_T$ over events, computed separately for four event populations: all events
-(the original pooled index) and, within the test block, events on any test fact or
-on the query fact, at any position or at the final answer position.
+\paragraph{Scoring.}
+We apply Eq.~\ref{eq:ri} to every head on all discovery prompts. An event
+qualifies when the head's actual attention selects the child with the published
+dominance margin ($\tau=2.2$). Its score is the mother's share of the clipped,
+centred probability mass obtained from $x_jW^h_{OV}W_U$, using the
+\emph{current token's raw embedding} and both first- and last-token mother
+anchors. Scores are averaged within family, then across families with events.
+We report the pooled index (including demonstrations) and test-only indices
+separating all versus query facts and all test positions versus the answer position.
 
 \paragraph{Controls.}
-Each event is paired with the mean score of the other fully visible test-fact
-mothers (\emph{name gap}) and of up to three sampled visible non-name word types
-(\emph{word gap}). The gaps measure preference for the target relative to these
-alternatives; they do not remove a head's static preference for particular tokens
-and do not by themselves show that the head represents the relation.
+Subtracting the mean score of other visible test-fact mothers or sampled non-name
+words yields the \emph{name gap} and \emph{word gap}. These measure relative
+target preference; static token preferences can survive the controls.
 
 \paragraph{Calibration and selection.}
-Two separate procedures follow. A \emph{calibration} tests, on a restricted matched
-subset (target and control fully visible, equal in token length, distinct in first
-token; at least 50 events in ten families), whether the target is preferred over a
-matched alternative under family-consistent label swaps with Holm correction over
-all heads. Independently, a \emph{selection rule} fixed before the results ranks
-heads descriptively: for each statistic, anchor and event population, the ten
-largest positive family-weighted means with at least 20 events in ten families. The
-union of these rankings is the \emph{RI-selected} set used in all later
-comparisons; membership in it is not a significance claim. Definitions, populations
-and sampling policies are given in Appendix~\ref{app:stage1}.
+On a length-matched subset, family-consistent target/control swaps test target
+preference, with Holm correction across all heads. Separately, a fixed rule selects
+heads with the highest positive target or gap scores within each anchor and
+test-only population, subject to minimum support. These candidates and the pooled-index selection form
+the \emph{RI-selected} set for the causal audit; membership is not a significance
+claim. Exact definitions, selection thresholds and sensitivity analyses are in
+Appendix~\ref{app:stage1}.
 
 \subsection{Causal importance of every head}
 \label{sec:method-causal}
 
 \paragraph{Intervention.}
-For head $h$ and a clean/corrupted pair $(x_c,x_r)$, the head's pre-projection
-activation $a_h$ (its slice of the input to the attention output projection) on the
-clean run is replaced by its value on the corrupted run, and the metric of
-Eq.~\ref{eq:metric} is re-read (Figure~\ref{fig:patch}):
-\begin{equation}
-\label{eq:importance}
-I_h = M(x_c) - M\!\left(x_c;\, a_h \leftarrow a_h^{r}\right).
-\end{equation}
-$I_h>0$ means that the corrupted output of $h$ alone moves the model toward the
-corrupted answer. Under Scope~P the replacement covers all original prompt
-positions; the two prompts share the demonstrations and the first test fact, so
-replacements before the first differing token have no effect, and the patch is
-effective on the last 44 of 282 tokens on average. Under Scope~F only the final
-colon is replaced. The metric is read at the first divergent answer token in both
-scopes; a shared answer prefix is never patched. Scope-F runs store the clean- and
-corrupted-answer logits separately, so $I^F_h$ splits into promotion of the
-corrupted answer and suppression of the clean one.
-
-\paragraph{Coverage.}
-To reduce computation we combine a first-order screen with exact measurements at
-two levels of coverage (Table~\ref{tab:coverage}). The screen
-\citep{syed2023attribution} estimates every head's importance from one clean
-forward, one corrupted forward and one backward pass,
-\begin{equation}
-\label{eq:screen}
-\widehat I_h = -\big\langle \nabla_{a_h} M(x_c),\; a^r_h - a^c_h \big\rangle ,
-\end{equation}
-a local linear approximation that uses the metric's sensitivity on the clean run
-and is obtained for all heads at once. Exact Scope-P patching of \emph{all} 1,024
-heads on the 40-pair common subset provides the all-head comparison and calibrates
-the screen (pre-registered acceptance: Spearman $\ge 0.7$ against the screen on the
-same pairs). Exact Scope-P patching on all 178 pairs is then run for a 148-head
-extension set (the screen's top 25, the RI candidates, the heads whose attention at
-the answer position selects a test fact, and 25 random controls; composition in
-Appendix~\ref{app:stage2}), and Scope-F patching on all 178 pairs for the 69
-RI-candidate and answer-position heads. All-head rankings use the common subset
-only; extension rankings use the 178 pairs within the extension set; the two are
-never mixed. Extension membership was chosen on discovery data before any
-measurement outside the common subset.
-
-\begin{table}[t]
-\centering\small
-\begin{tabular}{@{}lrrl@{}}
-\toprule
-Measurement & Heads & Pairs & Purpose \\
-\midrule
-Screen (Eq.~\ref{eq:screen}) & 1,024 & 178 & broad ranking \\
-Exact, Scope P & 1,024 & 40 & all-head comparison; calibration \\
-Exact, Scope P & 148 & 178 & stable estimates for selected heads \\
-Exact, Scope F & 69 & 178 & answer position vs.\ earlier positions \\
-\bottomrule
-\end{tabular}
-\caption{Coverage of the causal map.}
-\label{tab:coverage}
-\end{table}
-
-\paragraph{Comparisons.}
-Effects are averaged over the two orders within a family and then across
-families; family-bootstrap intervals are descriptive. The RI selection is compared
-with importance in three ways: rank correlation of the RI statistics with $I_h$ (on
-the common subset for all heads; within layer as well, since depth affects both);
-the share of top-decile heads that lie outside the selection, split by the reason
-they were missed; and the median importance of selected heads against the random
-controls. Appendix~\ref{app:stage2} gives the pre-registered form of these
-criteria.
+Figure~\ref{fig:patch} shows how one head's corrupted-run activations replace its
+clean-run activations before the output projection. Importance $I_h$ is the resulting
+drop in the answer contrast $M$ (\S\ref{sec:setting}): positive for a shift toward
+the corrupted answer, negative for the reverse. Comparing the two patching scopes
+tests whether the effect is confined to the answer position.
 
 \begin{figure}[t]
 \centering
@@ -166,184 +81,120 @@ criteria.
   node[midway, above=3pt, text=black!65] {Scope F};
 \draw[->] (\W,-0.25) -- ++(0.35,0) node[right] {$M$};
 \end{tikzpicture}}
-\caption{Single-head activation patching. At a fixed layer, the corrupted run
-supplies one head's pre-projection activations to the clean run. Scope~P replaces
-all original prompt positions; replacements before the first token difference have
-no effect because their activations are identical. Scope~F replaces only the final
-colon. The answer contrast is evaluated at the first divergent answer token, leaving
-any shared answer prefix unpatched.}
+\caption{Single-head activation patching. Scope~P replaces all original prompt
+positions; Scope~F only the final colon. Grey positions have identical activations,
+so replacing them has no effect. Shared answer-prefix tokens remain unpatched.}
 \label{fig:patch}
 \end{figure}
+
+\paragraph{Coverage.}
+Attribution patching \citep{syed2023attribution} provides a first-order estimate
+for all heads from clean and corrupted forwards and a clean backward pass:
+\begin{equation}
+\label{eq:screen}
+\widehat I_h=-\big\langle\nabla_{a_h}M(x_c),\,a_h^r-a_h^c\big\rangle .
+\end{equation}
+Exact patching of every head on a common panel provides a causal ranking
+independent of the RI selection and calibrates this approximation. An extension
+set receives exact measurements across all discovery families
+(Table~\ref{tab:coverage}). All-head comparisons use the common panel; rankings
+never mix effects measured on different family sets.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Measurement & Heads & Pairs \\
+\midrule
+Screen, Scope P & 1,024 & 178 \\
+Exact, Scope P: common panel & 1,024 & 40 \\
+Exact, Scope P: extension & 148 & 178 \\
+Exact, Scope F & 69 & 178 \\
+\bottomrule
+\end{tabular}
+\caption{Causal-map coverage. Each family contributes two fact orders.}
+\label{tab:coverage}
+\end{table}
+
+\paragraph{Comparisons.}
+We compare RI with exact importance through rank correlations (overall and within
+layer), top-decile omissions and their causes, and selected-head effects relative
+to layer-matched non-selected heads and random controls. Family-bootstrap intervals
+describe uncertainty within the discovery sample, without correcting for selection.
+Head sets, calibration thresholds, intervention details and audit criteria are in
+Appendix~\ref{app:stage2}.
 
 \subsection{Characterizing important heads}
 \label{sec:method-char}
 
-The causal map says which heads matter and by how much, but not what they do. To
-turn a list of heads into hypotheses about a mechanism that Stage~4 can test as
-routes and groups, we profile a fixed inventory of 105 heads: every head with a
-strong effect on the map, positive or negative, every RI-selected head, a few heads
-of moderate effect and the 25 random controls (composition in
-Appendix~\ref{app:stage3}). Three questions organize the profile
-(Table~\ref{tab:profile}); each is answered per head, and each answer is a
-candidate role, not an established one.
+We profile strong and RI-selected heads, moderate-effect candidates and random
+controls to propose components and connections for causal testing
+(Table~\ref{tab:profile}). The inventory and measurement coverage are in
+Appendix~\ref{app:stage3}.
 
 \paragraph{Where does the head act?}
-Scope-F importance is compared with Scope-P importance, and a single-position scan
-patches one test-block position at a time. A head whose effect is confined to the
-colon is a candidate \emph{reader}; one whose effect enters at earlier positions is
-a candidate \emph{writer}. Neither label follows from the comparison alone: equal
-Scope-F and Scope-P effects do not show that the head reads from any particular
-position, and single-position effects need not add up to the all-position effect.
-Reverse patching, $J_h=M(x_r;\,a_h\leftarrow a^c_h)-M(x_r)$, applies the
-intervention in the opposite direction to check its symmetry; recovery is not
-assumed and, where found, does not show that one head suffices. The relevance to
-the criterion is that the position at which a head's effect enters may differ from
-the positions at which it passes the criterion's attention condition or scores
-highly on it.
+Comparing Scope~F with Scope~P tests how much of a head's effect is expressed at
+the answer colon. Patching individual test positions then locates earlier
+contributions. Colon and earlier effects suggest reader and writer roles,
+respectively; neither establishes a connection. Single-position effects need not
+add up. Reverse patching checks symmetry by restoring clean activations in the
+corrupted run.
 
-\paragraph{What does it read, and what does it promote?}
-At the colon, each head's attention mass is split over the query fact's mother and
-child, the distractor mothers and the colon itself, on all prompts rather than only
-on events that pass the criterion's gate, so that behaviour the criterion misses is
-profiled too. A \emph{changed-query} prompt (the other child is asked about, facts
-unchanged) tests whether attention follows the question; reorder and corruption
-prompts test whether it follows position. What the head promotes is read from its
-actual output vector projected onto the vocabulary, alongside the criterion's
-raw-embedding projection of the same position; both are content diagnostics, not
-measurements of the effect on the model's output, since a head can act through
-later components. Two alternative explanations of a high score are tested directly:
-a static preference for repeating tokens (the weight copying score, and whether the
-head promotes the name it attends to) and generic induction or retrieval behaviour
-(the synthetic probes of \S\ref{sec:rw-readout}). For heads whose effect is
-localized to a position that the projections do not explain, a controlled readout
-compares the site's residual under the intact head and under a replaced head
-activation, with a source-swap control that bounds what the readout can see
-(Appendix~\ref{app:stage3}).
+\paragraph{What does it read and promote?}
+These diagnostics ask whether a head follows the queried fact and promotes its
+answer, or instead reflects copying or positional preferences. We track attention
+from the colon to fact entities and to the colon itself across query changes, fact reordering and
+mother swaps, and project actual head outputs onto the vocabulary alongside the
+criterion's raw-embedding projection. To isolate the embedding choice, we also
+recompute RI with contextual inputs at the same positions, keeping events and
+controls fixed. Copying and synthetic induction/retrieval probes assess alternative
+roles. For selected writers, residual transfer into diagnostic prompts compares
+intact and head-replaced sources; a full source swap checks whether the readout
+can detect the changed content. Projections and readouts diagnose content rather
+than establish a causal route.
 
 \paragraph{What carries the effect?}
-At the colon the head's output $A^hV^h$ is recomputed with the attention pattern
-$A^h$ and the values $V^h$ taken independently from the clean or the corrupted run.
-The two single replacements give a routing term (corrupted pattern, clean values)
-and a value term (clean pattern, corrupted values); their sum is compared with the
-full patch, and the interaction is reported per family. Whether the values or the
-routing dominate is an outcome of this test, not a consequence of the head using
-contextual information.
-
-\paragraph{Output of the stage.}
-Each head receives a profile: where its effect enters, what it attends to, what its
-output promotes, and which alternative explanations apply. The profiles select
-components and positions for Stage~4: a head with a localized effect inside a fact
-proposes a source position for a route; a later head that attends to that position
-proposes a receiver; the routing/value split says which input of the receiver to
-test; heads with similar or opposite roles propose groups for redundancy and
-interaction tests. Similar profiles are not evidence of a connection. Stage~3
-proposes roles and possible connections; Stage~4 tests whether the connections
-carry causal effect.
+The head forms $A^hV^h$: its attention pattern $A^h$ weights value vectors $V^h$
+from attended positions. At the colon, we replace either factor with its
+corrupted-run counterpart while keeping the other clean, then replace both.
+Changes in the answer contrast $M$ (Eq.~\ref{eq:metric}) distinguish routing from
+retrieved content. The joint effect minus the two separate effects measures their
+interaction, reported per family.
 
 \begin{table}[t]
 \centering\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}p{2.3cm}p{2.5cm}p{2.5cm}@{}}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{1.55cm}p{3.1cm}p{2.55cm}@{}}
 \toprule
-Question & Central test & Use in Stage 4 \\
+Question & Main diagnostic & Use in route tests \\
 \midrule
-Where does the head act? & Scope F vs.\ P; single-position patches & source and receiver positions \\
-What does it read and promote? & query-change control; attention and output profiles & role and connection hypotheses \\
-What carries the effect? & attention--value separation & which route input to test \\
+Where? & Scope/position patches & Source sites \\
+Read / promote? & Attention, controls, projections & Receiver/role hypotheses \\
+How carried? & Pattern--value swaps & Channel hypotheses \\
 \bottomrule
 \end{tabular}
-\caption{Head profile: questions, central tests and what Stage~4 does with the
-answers. Coverage of every measurement is in Appendix~\ref{app:stage3}.}
+\caption{Head profiles guide the causal tests of
+\S\ref{sec:method-circuits}; they do not establish connections.}
 \label{tab:profile}
 \end{table}
 
 \subsection{From heads to a mechanism}
 \label{sec:method-circuits}
 
-Stages 2 and 3 measure heads one at a time. The question of the paper is whether
-the heads the criterion selects take part in the \emph{mechanism} by which the model
-uses a stated relation---heads that pass information to one another, with the
-model's MLPs and normalization possibly mediating between them. Stage~3 supplies
-the candidates: a localized effect proposes a source position, an attention
-profile proposes receivers, and the routing/value split proposes which channel to
-test; none of these is yet a connection. Stage~4 asks three questions of them.
-All selections use the discovery families; the held-out families are opened once,
-for the frozen mechanism.
+We test whether the profiled heads communicate, depend on one another, and
+include RI-selected participants in the model's use of the stated relation.
 
-\paragraph{Communication: which effects between components can be isolated?}
-A \emph{route} is a source head, a site, a receiver head and a channel
-(Figure~\ref{fig:route}). It is measured in two runs. In a hybrid run, the source's
-activation is replaced by its corrupted-run value at the site and the residual
-increments of all other components are frozen at their clean values, so that only
-the source's change reaches the receiver; the receiver's input on the chosen
-channel (keys or values at the site, or its query at the colon) is captured from
-this run. In a fresh clean run, the captured channel is injected, only the
-receiver's own colon output row changes as a result, and the rest of the model
-computes normally to the answer. The change in $M$ is the route effect. A route
-shows that the receiver uses what the source wrote, on the declared channel and
-against the declared frozen background; it is not an additive share of the
-source's total effect, and separately measured routes do not by themselves compose
-into a chain. Routes are measured on the 40 common pairs, retained by a fixed
-effect-size rule, and the retained ones extended to all 178 pairs in both donor
-directions. Sources and receivers come from the Stage-3 profiles and a coverage
-check of heads outside the inventory; controls are matched to the type of
-intervention (Appendix~\ref{app:stage4}). Where retained routes leave a source's
-effect unexplained, a bounded local expansion repeats the measurement with the
-MLPs or blocks between source and receiver released rather than frozen; no broad
-search over heads is run, and an unresolved source is reported as such.
-
-\paragraph{Joint dependence: how do heads act together, and does a source's
-effect need its receivers?}
-Retained routes define \emph{groups}: the receivers of one source and the sources
-of one receiver. Each group is patched as a whole and minus one member, which gives
-the group's nonadditivity $N(S)=I(S)-\sum_{h\in S}I(h)$ and each member's
-conditional contribution $\delta_h=I(S)-I(S\setminus\{h\})$. \emph{Receiver
-blocking} tests communication in the live model: the source's clean activation is
-restored in the corrupted run while its proposed receivers are clamped to their
-corrupted outputs; the restoration that is lost measures how much the source's
-effect depends on the receivers' response (with self-clamp and reverse controls).
-Because of interactions and overlapping paths it is not a partition of the source's
-effect into shares. \emph{RI participation} tests the RI-selected heads that pass a
-fixed relevance rule (31 heads): each is measured alone, in the intact model and on
-a weakened background in which a strong reader has been replaced so that a masked
-contribution can show, and the residual RI heads (the 23 without a strong
-standalone effect) are compared as a group with layer-matched cohorts of
-non-selected heads of the same size. A \emph{backup} test applies the same logic
-to a head that moves names strongly but has a negligible standalone effect.
-Selected group contrasts are repeated with mean-activation replacement in place of
-the corrupted donor, since the baseline changes the strength of group effects.
-
-\paragraph{Explanation quality: does a reduced set of heads preserve the behaviour
-and its dependence on facts and query?}
-A candidate set $C_0$ is fixed by rule from the strong heads, the coverage
-candidates and the RI heads that pass the conditional test. In the \emph{retained}
-model (Figure~\ref{fig:retained}) the heads of $C$ stay live at all test-block
-positions and the output of every \emph{other head} at those positions is replaced
-by its role-matched mean; embeddings, MLPs, normalization, demonstrations and the
-answer prefix stay live, so the claim is a head mechanism conditional on the rest
-of the model. $C$ is accepted if, family by family, it preserves the model's
-clean-minus-corrupted gap, its candidate accuracy in each condition and each order,
-and does so more than an all-heads-mean baseline (thresholds in
-Appendix~\ref{app:stage4}). The accepted set is \emph{reduced} by removing
-pre-declared blocks of heads while the guards hold, and its \emph{completeness} is
-checked by removing the same blocks from the full model and from the reduced set
-and comparing the losses. Finally, a four-cell panel crosses the fact swap with a
-\emph{query change}, with the answer sign held fixed across all four cells, so that
-the interaction
-\begin{equation}
-\label{eq:bd}
-B_D=\tfrac14\,\mathbb{E}_{f,o}\!\left[M_D(x_{00})-M_D(x_{10})-M_D(x_{01})+M_D(x_{11})\right]
-\end{equation}
-measures whether a configuration's answer preference follows the queried binding
-rather than the fact swap alone; the
-preference and accuracy in each cell are reported alongside it, since a mean
-interaction can hide a failing cell. The panel is run on the full model, on the
-full model minus the main receiver group and minus the residual RI group, on the
-reduced set $C^*$, and on $C^*$ minus its RI members or minus its non-RI members.
-The last two test collective dependence on RI-selected heads \emph{inside} the
-retained mechanism; they do not show that each member has a relational role or
-that the criterion identifies it uniquely. The mask, rosters and thresholds are
-frozen before the held-out families are evaluated.
+\paragraph{Communication.}
+We first test whether one head affects the answer through another.
+A route links a \emph{source}, whose output we replace at a specified site, to a
+later \emph{receiver} through its query, key or value input.
+The two-run intervention in Figure~\ref{fig:route} isolates a source-induced
+channel change against frozen intermediate components, then measures its effect
+on $M$ through the receiver's colon output in a fresh run. Retained routes are
+extended across discovery families in both donor directions. Separately measured
+routes need not compose: bounded tests release selected intermediate heads, MLPs
+or blocks to examine composed chains and mediated effects
+(Appendix~\ref{app:stage4}).
 
 \begin{figure}[t]
 \centering
@@ -361,64 +212,77 @@ frozen before the held-out families are evaluated.
 \draw[->, thick] (C) -- (I);
 \draw[->, thick] (I) -- (M);
 \end{tikzpicture}
-\caption{A route. Zone 1: the source is replaced and all other residual increments
-are frozen, so the receiver's channel reflects only the source's change. Zone 2:
-the captured channel is injected into a fresh clean run; the receiver's colon output
-changes and the rest of the model runs normally to the answer.}
+\caption{Direct-route measurement. The hybrid isolates a source-induced change
+in one receiver channel; a fresh clean run measures its effect through the
+receiver's colon output. Shared normalization remains live
+(Appendix~\ref{app:stage4}).}
 \label{fig:route}
 \end{figure}
 
-\begin{figure}[t]
-\centering
-\begin{tikzpicture}[>=stealth, font=\scriptsize,
-  head/.style={draw, minimum width=0.42cm, minimum height=0.42cm, inner sep=0pt},
-  lab/.style={text=black!65}]
-\foreach \r/\name in {0/full model, 1/retained $C$, 2/completeness} {
-  \node[lab, anchor=east] at (-0.2,-\r*0.7) {\name};
-  \foreach \i in {0,...,7} {\node[head] (h\r\i) at (\i*0.5,-\r*0.7) {};}
-}
-\foreach \i in {1,3,4,6} {\fill[black!25] ([shift={(-0.2,-0.2)}]h1\i.center) rectangle ++(0.4,0.4);}
-\foreach \i in {1,3,4,6} {\fill[black!25] ([shift={(-0.2,-0.2)}]h2\i.center) rectangle ++(0.4,0.4);}
-\foreach \i in {5,7} {\fill[orange!45] ([shift={(-0.2,-0.2)}]h2\i.center) rectangle ++(0.4,0.4);}
-\node[lab] at (1.75,0.45) {head outputs at test-block positions};
-\end{tikzpicture}
-\caption{The retained-mechanism test. Only head outputs at test-block positions are
-intervened on. White: head live. Grey: head output replaced by its role-matched
-mean. Orange: a block removed for the completeness check, removed identically from
-the full model. MLPs, normalization, embeddings, demonstrations and the answer
-prefix are live in every configuration.}
-\label{fig:retained}
-\end{figure}
+\paragraph{Joint and conditional effects.}
+We next ask whether connected heads make overlapping or complementary
+contributions, grouping heads that share a source or receiver in the measured
+routes. Whole-group and
+group-minus-member patches measure nonadditivity and conditional contributions.
+Receiver blocking restores a source's clean activation while clamping its
+receivers to corrupted outputs; lost recovery measures dependence on their
+response, not an additive mediation share. To expose contributions hidden by
+redundancy, RI candidates are tested with and without a strong reader replaced,
+and those without strong
+standalone effects collectively against layer-matched non-RI cohorts. A name
+copier with little standalone effect is tested for backup behaviour. Selected
+contrasts are repeated with mean replacement to assess baseline sensitivity.
+
+\paragraph{RI participation in retained mechanisms.}
+The planned final experiment tests RI participation in these structures' use of
+the queried relation. It tests fixed small structures and a
+broad head set, replacing excluded test-block head outputs by role means while
+leaving the rest of the model live. We cross a swap of two mothers with a query
+change to the other affected child. The original condition, facts changed, query changed, and
+both changed have correct answers $(a,b,b,a)$: $a$ is the original mother and $b$
+the mother exchanged with her. This tests dependence on the queried binding.
+Fidelity checks against the
+full model and an all-heads-mean baseline select a broad background $C$ from two
+fixed sets; failure leaves it explicitly partial.
+
+For candidate $h$, compare $C_h^-=C\setminus\{h\}$ with $C_h^+=C\cup\{h\}$:
+\begin{align}
+\Delta B_h &= B_{C_h^+}-B_{C_h^-}, \label{eq:ri-functional}\\
+\Gamma_{h,t} &= I_t(C_h^+)-I_t(C_h^-). \label{eq:ri-route}
+\end{align}
+Here $B_D$ is the four-cell binding contrast (Eq.~\ref{eq:bd}), reported with
+cell-wise performance, and $I_t(D)$ is route $t$'s noising effect in background
+$D$. The two contrasts separate behavioural contribution from route modulation.
+Collective RI removal tests group dependence. Candidates are screened
+against every fixed route; selected associations receive reverse patching and a
+predeclared connection test with a matched receiver control. Behavioural
+follow-up checks donor-replacement sensitivity before freezing comparisons for
+held-out evaluation. Modulation alone does not place a head on a route; any
+semantic interpretation remains specific to this task and background. Exact
+rosters, fidelity guards and measurement coverage are in
+Appendix~\ref{app:final-ri}.
 
 \subsection{Developmental check}
 \label{sec:method-dev}
 
-The second gap of \S\ref{sec:sih} concerns training: \citet{ren2024semantic} infer
-that SIHs drive the emergence of in-context learning from the co-timing of a
-behavioural transition with rising indices in heads selected because their index
-rises. We run an adapted version of that analysis on OLMo-2's public pre-training
-checkpoints: not a replication of the original emergence point, which a different
-model, training run and preprocessing can shift, but a test of the same
-developmental relation inside our model.
+To address the training-time gap of \S\ref{sec:sih}, we adapt the analysis of
+\citet{ren2024semantic} to OLMo-2's public checkpoints, asking whether in-context
+learning emerges alongside RI changes and whether the same heads remain
+high-scoring. This tests temporal association, not causation.
 
 \paragraph{Design.}
-Behaviour is measured as in the original, with the same four synthetic
-classification task families, the same shot ladder and the same distinction
-between format compliance and pattern discovery; accuracy is constrained to the
-legal task labels, and format validity is checked separately against the
-vocabulary-wide top token. Fifty frozen prompts per task and shot count are reused
-at every checkpoint (17 checkpoints, 1B--3.9T tokens), so comparisons are paired.
-The relation index is computed for all 1,024 heads at ten of these checkpoints on
-700 balanced AGENDA relation triplets, with the original developmental gate (source
-token is the attention argmax) as primary and the full $\tau{=}2.2$ gate as
-sensitivity. Two additions go beyond the original. First, alongside the index over
-gated events, we record how often the gate passes and the index per measurement
-opportunity, in which events that fail the gate contribute zero; a developmental
-change can then be located in routing frequency or in selectivity among routed
-events. Second, instead of following selected rising curves, the heads with the
-highest index at the final checkpoint are traced backwards and the overlap between
-each checkpoint's top heads and the final set is measured, which tests whether the
-early and the mature high-index heads are the same heads. The broad behavioural
-window was fixed before the index timing was analysed; three checkpoints inside it
-were added to the behavioural measurement after a routing peak had been seen in the
-index, and the results keep the two apart (Appendix~\ref{app:dev}).
+We reuse frozen prompts from the original four synthetic classification task
+families across checkpoints at each shot count, measuring accuracy among legal labels
+separately from output-format validity. All heads are scored on a fixed AGENDA
+relation set, primarily requiring the source token to receive maximum attention.
+To distinguish routing frequency from selectivity, we track the gate pass rate,
+RI conditional on passing, and RI per opportunity, with failed gates contributing
+zero to the last measure.
+
+Rather than selecting rising trajectories, we trace the final checkpoint's
+highest-RI heads backwards and compare each checkpoint's top heads with that
+final set. This tests whether early and mature high scores belong to the same
+heads. The broad behavioural window preceded analysis of RI timing; denser
+behavioural sampling within it followed an observed routing peak and is treated
+as targeted follow-up. Coverage, preprocessing differences and statistical tests
+are detailed in Appendix~\ref{app:dev}.

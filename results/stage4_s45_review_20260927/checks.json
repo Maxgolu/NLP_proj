@@ -1,0 +1,5177 @@
+[
+  {
+    "check": "A/2d707d1b6c9e44c5/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/2d707d1b6c9e44c5/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/312f44bcc909abc8/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/stored_b",
+    "passed": true,
+    "max_error": 1.1102230246251565e-16
+  },
+  {
+    "check": "A/4ac1f4354a609954/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4ac1f4354a609954/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/4f53cda18c2baa0c/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5a17fa1c182fb520/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/stored_b",
+    "passed": true,
+    "max_error": 5.551115123125783e-17
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/5c539bfa2d4004a5/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/94ddd39ca463dc45/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/a320f393f0513ff7/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/stored_b",
+    "passed": true,
+    "max_error": 4.440892098500626e-16
+  },
+  {
+    "check": "A/full/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "A/full/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/stored_b",
+    "passed": true,
+    "max_error": 5.551115123125783e-17
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/22a9d6c17ad8f8de/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2d707d1b6c9e44c5/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/stored_b",
+    "passed": true,
+    "max_error": 9.367506770274758e-17
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/2ea7a51d8aa60b60/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/312f44bcc909abc8/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/463f91d471cf8fc9/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/stored_b",
+    "passed": true,
+    "max_error": 1.1102230246251565e-16
+  },
+  {
+    "check": "B/4ac1f4354a609954/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4ac1f4354a609954/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/stored_b",
+    "passed": true,
+    "max_error": 4.440892098500626e-16
+  },
+  {
+    "check": "B/4f198d517137d88d/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f198d517137d88d/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/4f53cda18c2baa0c/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5a17fa1c182fb520/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/stored_b",
+    "passed": true,
+    "max_error": 5.551115123125783e-17
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/5c539bfa2d4004a5/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/stored_b",
+    "passed": true,
+    "max_error": 2.220446049250313e-16
+  },
+  {
+    "check": "B/8324433237827f03/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/8324433237827f03/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/94ddd39ca463dc45/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/a320f393f0513ff7/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/adae3cba245fe41c/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/stored_b",
+    "passed": true,
+    "max_error": 5.551115123125783e-17
+  },
+  {
+    "check": "B/cef37988435db144/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/cef37988435db144/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/stored_b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/d7b401c2eec20f08/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/stored_b",
+    "passed": true,
+    "max_error": 1.1102230246251565e-16
+  },
+  {
+    "check": "B/f95d725dece5e51f/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/f95d725dece5e51f/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/g_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/b_mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/g_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/g_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/L",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/stored_b",
+    "passed": true,
+    "max_error": 4.440892098500626e-16
+  },
+  {
+    "check": "B/full/g_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/b_interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/x00/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/x00/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/x10/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/x10/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/x01/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/x01/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/x11/acc0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "B/full/x11/acc1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "candidate/L1H27/x00/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x00/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x00/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x10/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x10/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x01/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x01/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x01/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x11/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x11/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L1H27/x11/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "candidate/L11H4/x00/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/x00/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/x00/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/x10/mean",
+    "passed": true,
+    "max_error": 1.111307226797642e-17
+  },
+  {
+    "check": "candidate/L11H4/x10/interval",
+    "passed": true,
+    "max_error": 1.1275702593849246e-17
+  },
+  {
+    "check": "candidate/L11H4/x10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/x01/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/x01/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/x01/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/x11/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/x11/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L11H4/x11/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "candidate/L17H5/x00/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x00/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x00/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x10/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x10/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x01/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x01/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x01/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x11/mean",
+    "passed": true,
+    "max_error": 3.469446951953614e-18
+  },
+  {
+    "check": "candidate/L17H5/x11/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L17H5/x11/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "candidate/L23H10/x00/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x00/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x00/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x10/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x10/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x01/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x01/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x01/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x11/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x11/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L23H10/x11/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "candidate/L25H18/x00/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/x00/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/x00/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/x10/mean",
+    "passed": true,
+    "max_error": 1.3877787807814457e-17
+  },
+  {
+    "check": "candidate/L25H18/x10/interval",
+    "passed": true,
+    "max_error": 1.0408340855860843e-17
+  },
+  {
+    "check": "candidate/L25H18/x10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/x01/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/x01/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/x01/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/x11/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/x11/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L25H18/x11/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "candidate/L9H16/x00/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x00/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x00/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x10/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x10/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x01/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x01/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x01/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x11/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x11/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L9H16/x11/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "candidate/L18H19/x00/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x00/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x00/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x10/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x10/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x01/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x01/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x01/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x11/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x11/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L18H19/x11/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "candidate/L8H15/x00/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x00/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x00/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x10/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x10/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x01/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x01/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x01/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x11/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x11/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/L8H15/x11/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "candidate/R/x00/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x00/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x00/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x10/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x10/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x10/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x01/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x01/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x01/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x11/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x11/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "candidate/R/x11/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route endpoint arithmetic",
+    "passed": true,
+    "max_error": 3.552713678800501e-15
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/463f91d471cf8fc9/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/4f198d517137d88d/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/4f198d517137d88d/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/4f198d517137d88d/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/4f198d517137d88d/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/4f198d517137d88d/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/4f198d517137d88d/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/5c539bfa2d4004a5/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/8324433237827f03/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/8324433237827f03/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/8324433237827f03/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/8324433237827f03/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/8324433237827f03/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/8324433237827f03/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/adae3cba245fe41c/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/adae3cba245fe41c/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/adae3cba245fe41c/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/adae3cba245fe41c/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/adae3cba245fe41c/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/adae3cba245fe41c/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/cef37988435db144/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/cef37988435db144/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/cef37988435db144/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/cef37988435db144/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/cef37988435db144/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/cef37988435db144/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/d7b401c2eec20f08/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/full/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/full/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/full/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/full/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "route/full/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "route/full/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L1H27/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L1H27/T1/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L1H27/T2/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L1H27/T3/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L1H27/T4/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L1H27/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L1H27/T5/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L11H4/T1/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L11H4/T2/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L11H4/T3/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L11H4/T4/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L11H4/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L11H4/T5/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L17H5/T1/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L17H5/T2/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L17H5/T3/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L17H5/T4/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T5/mean",
+    "passed": true,
+    "max_error": 6.505213034913027e-19
+  },
+  {
+    "check": "gamma/L17H5/T5/mean_absolute",
+    "passed": true,
+    "max_error": 8.673617379884035e-19
+  },
+  {
+    "check": "gamma/L17H5/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L17H5/T5/interval",
+    "passed": true,
+    "max_error": 1.3010426069826053e-18
+  },
+  {
+    "check": "gamma/L17H5/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L17H5/T5/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L23H10/T1/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T2/mean",
+    "passed": true,
+    "max_error": 1.4094628242311558e-18
+  },
+  {
+    "check": "gamma/L23H10/T2/mean_absolute",
+    "passed": true,
+    "max_error": 1.3010426069826053e-18
+  },
+  {
+    "check": "gamma/L23H10/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T2/interval",
+    "passed": true,
+    "max_error": 4.119968255444917e-18
+  },
+  {
+    "check": "gamma/L23H10/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L23H10/T2/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L23H10/T3/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L23H10/T4/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T5/mean",
+    "passed": true,
+    "max_error": 4.336808689942018e-19
+  },
+  {
+    "check": "gamma/L23H10/T5/mean_absolute",
+    "passed": true,
+    "max_error": 4.336808689942018e-19
+  },
+  {
+    "check": "gamma/L23H10/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L23H10/T5/interval",
+    "passed": true,
+    "max_error": 2.710505431213761e-20
+  },
+  {
+    "check": "gamma/L23H10/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L23H10/T5/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L25H18/T1/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L25H18/T2/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L25H18/T3/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L25H18/T4/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L25H18/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L25H18/T5/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T1/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T1/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T1/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T1/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T1/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L9H16/T1/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T2/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T2/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T2/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T2/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T2/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L9H16/T2/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T3/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T3/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T3/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T3/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T3/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L9H16/T3/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T4/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T4/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T4/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T4/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T4/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L9H16/T4/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T5/mean",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T5/mean_absolute",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T5/sign_fraction",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T5/interval",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "gamma/L9H16/T5/classification",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "gamma/L9H16/T5/eligible",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "freeze signature",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "pipeline freeze signature",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "hash/B_decision.json",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "hash/analysis\\stage_a\\B_decision.json",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "hash/analysis\\stage_a\\stage_a_summary.json",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "hash/analysis\\stage_b\\stage_b_summary.json",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "hash/frozen_selection.json",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "hash/analysis\\stage_c\\frozen_selection.json",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "hash/analysis\\stage_c\\stage_c_summary.json",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "hash/analysis\\stage_d\\stage_d_summary.json",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "hash/analysis\\full_discovery\\extension_summary.json",
+    "passed": true,
+    "max_error": null
+  },
+  {
+    "check": "extension exported family count",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension four-cell row count",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension retained core/M_x00_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension retained core/M_x00_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension retained core/M_x01_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension retained core/M_x01_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension retained core/M_x10_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension retained core/M_x10_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension retained core/M_x11_order0",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension retained core/M_x11_order1",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension retained core/b",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B-R/donor/order averaging",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B-R/donor/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B-R/mean/order averaging",
+    "passed": true,
+    "max_error": 6.938893903907228e-17
+  },
+  {
+    "check": "extension/B-R/mean/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B+L9H16/donor/order averaging",
+    "passed": true,
+    "max_error": 4.440892098500626e-16
+  },
+  {
+    "check": "extension/B+L9H16/donor/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B+L9H16/mean/order averaging",
+    "passed": true,
+    "max_error": 4.440892098500626e-16
+  },
+  {
+    "check": "extension/B+L9H16/mean/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/empty/mean/order averaging",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/empty/mean/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B/donor/order averaging",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B/donor/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B/mean/order averaging",
+    "passed": true,
+    "max_error": 2.220446049250313e-16
+  },
+  {
+    "check": "extension/B/mean/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B-L1H27/donor/order averaging",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B-L1H27/donor/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/B-L1H27/mean/order averaging",
+    "passed": true,
+    "max_error": 4.440892098500626e-16
+  },
+  {
+    "check": "extension/B-L1H27/mean/F",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/full/mean/order averaging",
+    "passed": true,
+    "max_error": 0.0
+  },
+  {
+    "check": "extension/full/mean/F",
+    "passed": true,
+    "max_error": 0.0
+  }
+]

@@ -38,7 +38,19 @@ induction heads emerge during training on Markov-chain data and show that in-con
 learning develops through phases in which simpler statistical strategies precede the
 induction mechanism.
 
-Two features of this literature are the contrast for semantic induction heads. First,
+\paragraph{Causal head roles in IOI.}
+The indirect-object-identification analysis of \citet{wang2023ioi} introduced
+several influential functional labels: \emph{name-mover heads} attend to and
+promote the relevant name, \emph{negative name-mover heads} reduce its relative
+logit, and \emph{backup heads} acquire a substantial contribution when primary
+heads are removed. We use these terms only as functional shorthand: the
+name-mover classifications in Appendix~\ref{app:stage3} do not imply that a
+head instantiates the complete IOI circuit, and a weak head is treated as a
+backup candidate unless the weakened-background test of
+Appendix~\ref{app:stage4} exposes a conditional causal contribution.
+
+Two features of this literature provide the relevant contrast for semantic
+induction heads. First,
 the head type is defined by a behaviour the head produces on a controlled input, so a
 head either performs the behaviour or does not. Second, the importance of the head
 type is established by intervention on the model, not by the score alone. In our

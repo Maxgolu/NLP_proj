@@ -10,37 +10,39 @@ first way; we audit them with the tools of the second.
 \label{sec:sih}
 
 \paragraph{Induction heads.}
-An attention head can be split into a QK circuit, which chooses where the head
-attends, and an OV circuit, which determines what it writes
-\citep{elhage2021mathematical}. An \emph{induction head} uses the QK circuit to attend
-from a repeated token $[A]$ to the token $[B]$ that followed its earlier occurrence,
-and the OV circuit to raise the logit of $[B]$. The behaviour is defined on controlled
-repeated sequences, and its importance for in-context learning was established by
-ablation \citep{olsson2022induction}. Appendix~\ref{app:ih} gives the fuller picture,
+An attention head can be decomposed into a QK circuit that selects where to attend
+and an OV circuit that determines what to write
+\citep{elhage2021mathematical}. On a repeated-token sequence, an
+\emph{induction head} attends from the second occurrence of $[A]$ to the token
+$[B]$ that followed its first occurrence and raises the logit of $[B]$.
+Its importance for in-context learning was established by ablation
+\citep{olsson2022induction}; Appendix~\ref{app:ih} covers the broader literature,
 including retrieval heads \citep{wu2024retrieval}.
 
 \paragraph{Semantic induction heads.}
-\citet{ren2024semantic} keep the same QK/OV template but let the written token differ
-from the attended one. Given a relation triplet $(t_s, r, t_o)$ in the context---a
-\emph{head} token $t_s$, a relation $r$ and a \emph{tail} token $t_o$---a
-\emph{semantic induction head} (SIH) is a head that, at a later current token $t_j$,
-attends to $t_s$ and raises the logit of $t_o$ (Figure~\ref{fig:ri}). The
-\emph{relation index} (RI) turns this into a score. Let $p^{h,j}=\mathrm{softmax}(x_j
-W^h_{OV} W_U)$ be the vocabulary distribution obtained by pushing the current token's
-input embedding $x_j$ through head $h$'s OV weights and the unembedding, restricted to
-the tokens seen so far and centred at zero. Then
+\citet{ren2024semantic} generalize this template by allowing the attended and
+written tokens to differ. For a relation triplet $(t_s,r,t_o)$ in context, a
+\emph{semantic induction head} (SIH) attends from a later position $t_j$ to the
+head token $t_s$ and raises the logit of the tail token $t_o$
+(Figure~\ref{fig:ri}). The \emph{relation index} (RI) scores this behavior using
 \begin{equation}
 \label{eq:ri}
-\mathrm{RI}_h \;=\; \operatorname*{mean}_{(T,j)\,:\,\text{$h$ attends to } t_s}
-\;\frac{q^{h,j}_{t_o}}{\sum_{k\le j} q^{h,j}_{t_k}},
+\mathrm{RI}_h
+=\operatorname*{mean}_{(T,j):\,h\text{ attends to }t_s}
+\frac{q^{h,j}_{t_o}}{\sum_{k\le j}q^{h,j}_{t_k}},
 \end{equation}
-where $q^{h,j}_t=\max(0,\,p^{h,j}_t-\bar p^{h,j})$ and the mean runs over all
-(triplet, position) pairs at which the head's attention argmax is $t_s$ by a fixed
-margin. The index is the share of the head's positive output mass that lands on the
-tail token; heads with a high index for a relation are called SIHs. The authors also
-report that in a model they train, the index of some heads rises at the training
-stage where few-shot pattern discovery emerges, and conclude that SIHs play a crucial
-role in in-context learning. Appendix~\ref{app:ri} restates the definition exactly.
+where
+$p^{h,j}=\mathrm{softmax}(x_jW^h_{OV}W_U)$,
+$q^{h,j}_t=\max(0,p^{h,j}_t-\bar p^{h,j})$, and $x_j$ is the current token's
+raw input embedding. The mean $\bar p^{h,j}$ and the denominator use distinct
+visible tokens.
+Thus RI measures the share of positive centred projection
+mass assigned to $t_o$, averaged over positions whose attention argmax selects
+$t_s$ by a fixed margin. Heads with high relation-specific RI are called SIHs.
+The original study also reports that some indices rise when few-shot pattern
+discovery emerges during training, interpreting this co-timing as evidence that
+SIHs support in-context learning. Appendix~\ref{app:ri} gives the exact
+definition and selection procedure.
 
 \begin{figure}[t]
 \centering
@@ -69,30 +71,24 @@ role in in-context learning. Appendix~\ref{app:ri} restates the definition exact
 \draw[->, thick] (t9.south) -- ++(0,-0.62) -| (voc.east);
 \draw[->, thick, dotted] (voc.north -| t6) -- node[lab, right=3pt, pos=.35] {raises $t_o$?} (t6.south |- t6.south) ;
 \end{tikzpicture}
-\caption{The relation index. For a relation (Anna, mother-of, Ben) stated in the
-context, a head scores on a later current token $t_j$ if its attention argmax falls
-on the head token $t_s$ and the vocabulary projection of its OV output, computed from
-the \emph{input embedding} of $t_j$, puts a large share of its mass on the tail token
-$t_o$. The projection is read at $t_j$, not at the attended position.}
+\caption{The relation-index template. At a later position $t_j$, a qualifying
+head attends to the relation's head token $t_s$, while its raw-embedding OV
+projection assigns mass to the tail token $t_o$. The projection is computed at
+$t_j$, not from the attended position.}
 \label{fig:ri}
 \end{figure}
 
 \paragraph{What the original study does not establish.}
-The SIH evidence is descriptive. \emph{(i)} No head is intervened on, so it is not
-tested whether high-RI heads are needed for the model to use a relation, or whether
-the heads that are needed have a high RI. \emph{(ii)} The training-dynamics claim
-rests on co-timing between a selected set of rising indices and a behavioural
-transition, in a separately trained model; it is not shown that the heads whose
-index rises are the heads that carry the ability, nor that they are the final SIHs.
-\emph{(iii)} The index projects the \emph{raw embedding} of the current token, an
-approximation borrowed from attention-only models. In a deep model the head's value
-input is a contextual residual, and what the head writes at $t_j$ depends on the
-positions it attends to, not on the embedding at $t_j$. There is no evident reason
-for such a score to track the head's contribution. \emph{(iv)} The index has no
-control (the tail competes only with all earlier tokens) and no null distribution, so
-``high'' has no reference. Appendix~\ref{app:ri} details each point against the
-original text. We address (i) by causal measurement of every head
-(\S\ref{sec:method-causal}); (iii) and (iv) by re-implementing the RI with matched
-controls and a null calibration (\S\ref{sec:method-ri}) and by testing whether the
-head's actual contextual input repairs the score (\S\ref{sec:results-char}). We do not
-study training dynamics; (ii) remains a limitation of the original evidence.
+The SIH evidence remains descriptive and leaves four questions open.
+\emph{(i)} No head-level intervention tests whether high-RI heads contribute
+causally to relational behaviour, or whether causally important heads receive
+high RI. \emph{(ii)} Co-timing between rising indices and a behavioural
+transition establishes neither causal responsibility nor continuity between
+early and final high-RI heads. \emph{(iii)} RI projects the current token's raw
+embedding rather than the contextual, attention-weighted output of a head in a
+deep Transformer, so it need not track that head's actual output or causal
+contribution. \emph{(iv)} Without matched alternative entities or a calibrated
+null distribution, a large RI has no relation-specific reference.
+Appendix~\ref{app:ri} documents these limitations against the original
+formulation; together, they motivate the causal, contextual, calibrated, and
+developmental tests in \S\ref{sec:method}.

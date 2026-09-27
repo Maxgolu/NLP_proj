@@ -35,6 +35,8 @@ independent temporal prediction. Checkpoint identity is the exact optimizer step
 since OLMo's rounded token labels coincide for steps 600/700 and 850/900.
 
 \paragraph{Behavioural metrics.}
+Fifty frozen prompts per task and shot count are reused at every checkpoint
+(1,600 assessments per checkpoint), enabling paired comparisons.
 Per task, shot count and checkpoint: constrained accuracy; gold-versus-best-wrong
 margin; format validity (vocabulary-wide top token is a legal label); legal-label
 probability mass; the 20-shot minus 1-shot accuracy gain; Wilson 95\% intervals
@@ -57,6 +59,7 @@ correlation with the final checkpoint.}
 \end{figure}
 
 \paragraph{Index statistics.}
+All 1,024 heads are scored on the same 700 assessment triplets across checkpoints.
 Per head and checkpoint: the index over gated events (conditional on the gate);
 the gate pass rate under the argmax gate and under $\tau{=}2.2$; the index per
 measurement opportunity (failed gates contribute zero), which combines frequency

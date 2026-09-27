@@ -1,16 +1,22 @@
 \section{Compute, runs and released artifacts}
 \label{app:compute}
 
-All GPU work ran on the Tel Aviv University Slurm cluster (partition
-\texttt{studentkillable}) on TODO-GPU-TYPE GPUs of 11--12\,GB memory each; the model
-is sharded in fp16 over two GPUs per worker. Table~\ref{tab:compute} lists the
-production runs. Every run is driven by a frozen plan whose SHA-256, together with
-the hashes of the code files and the model revision, is written to a manifest; a
-gate at the start of each run reproduces reference candidate logits and, where
-applicable, previously saved importances to a fixed tolerance before any
-measurement, and the run aborts otherwise. Records carry per-item provenance and
-runs resume from checkpoints. Code, plans, manifests and analysis tables are at
-\url{https://github.com/Maxgolu/NLP_proj}.
+The cluster-based RI and intervention runs used the Tel Aviv University Slurm cluster
+(partition \texttt{studentkillable}) using NVIDIA GPUs with 11--12\,GB of
+memory. Each worker sharded the base OLMo-2-1124-7B model in fp16 across two
+GPUs. The mature-model audit used the model without fine-tuning at revision
+\texttt{7df9a82518afdecae4e8c026b27adccc8c1f0032}.
+S4.3 also used Colab runtimes with A100 GPUs, including 40\,GB and 80\,GB devices;
+the developmental sweep instead uses the checkpoints of Appendix~\ref{app:dev}.
+
+Table~\ref{tab:compute} lists the production runs. Cluster intervention runs use a
+frozen plan. The plan's SHA-256, the hashes of the relevant code and data files,
+and the model revision are recorded in a manifest. Before measurement, a
+validation gate reproduces reference candidate logits and, where applicable,
+previously saved importance values within a fixed tolerance; the run aborts if
+the gate fails. Output records retain per-item provenance, and interrupted runs
+resume from checksummed checkpoints. Code, plans, manifests and analysis tables
+are available at \url{https://github.com/Maxgolu/NLP_proj}.
 
 \begin{figure}[h]
 \centering
@@ -27,7 +33,7 @@ runs resume from checkpoints. Code, plans, manifests and analysis tables are at
 \draw[->] (run) -- (rec); \draw[->] (rec) -- (ana); \draw[->] (ana) -- (ver);
 \draw[->, dashed] (gate.south) |- ++(0.3,-0.35) node[right, text=black!65] {fail: abort};
 \end{tikzpicture}}
-\caption{Run protocol shared by every stage. A run starts from a frozen plan, passes a
+\caption{Cluster intervention workflow. A run starts from a frozen plan, passes a
 gate that reproduces reference quantities, writes checksummed records, and its
 analysis tables are recomputed on CPU from those records and re-checked
 independently.}
@@ -51,6 +57,6 @@ Stage 4, routes and groups & TODO & TODO & TODO \\
 Developmental sweep & TODO & TODO & 17 checkpoints \\
 \bottomrule
 \end{tabular}
-\caption{Production runs. Wall-clock is the Slurm elapsed time of the job.}
+\caption{Production runs. For cluster jobs, wall-clock is the Slurm elapsed time.}
 \label{tab:compute}
 \end{table}

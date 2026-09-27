@@ -1,4 +1,5 @@
-\section{The relation index of \citet{ren2024semantic}}
+\section{The relation index of
+\texorpdfstring{\citet{ren2024semantic}}{Ren et al. (2024)}}
 \label{app:ri}
 
 This appendix restates the SIH criterion as defined in the original paper (their
@@ -112,3 +113,12 @@ positions $k$.
 with tokens of the same type (other entities), and no reference distribution for
 $\mathrm{RI}_h$ is reported.
 \end{itemize}
+
+\paragraph{Connection to our audit.}
+These limitations correspond to four parts of our analysis. The absence of
+causal evidence motivates the all-head intervention map of
+\S\ref{sec:method-causal}; the developmental ambiguity motivates the
+checkpoint analysis of \S\ref{sec:method-dev}; the raw-embedding approximation
+motivates the contextual diagnostics of \S\ref{sec:method-char}; and the lack
+of controls and calibration motivates the controlled RI variants of
+\S\ref{sec:method-ri}.
