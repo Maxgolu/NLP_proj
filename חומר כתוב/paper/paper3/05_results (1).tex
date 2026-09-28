@@ -41,11 +41,12 @@ and the pooled selection also meets our pre-registered misleading criterion
 (Appendix~\ref{app:stage2}).
 
 \paragraph{Why RI can miss retrieval.}
-At the answer position the current token is always a colon, so with visible
-token IDs unchanged, raw-embedding RI cannot adapt its name preferences when
-mothers are reassigned. Copying a current non-target name may also raise the
-name-control score and penalize useful heads, a hypothesis tested in
-\S\ref{sec:results-char}. These limitations concern the index, not the
+At the answer position the current token is always a colon, so when the visible
+token IDs are unchanged, raw-embedding RI cannot adapt its name preferences
+when mothers are reassigned (Appendix~\ref{app:stage1}). Copying a current
+non-target name may also raise the name-control score and penalize a useful
+head, as examined through the current-token and name-gap diagnostics in
+Appendix~\ref{app:stage3}. These limitations concern the index, not the
 model's capacity for semantic computation.
 
 \subsection{The causal map}
@@ -94,7 +95,7 @@ whose computations and connections are tested in
 Twenty of the 25 strong heads deliver nearly all their effect at the colon.
 The strongest, L17H1, instead acts within the query fact, at mother tokens and
 shared syntax positions (Figure~\ref{fig:profiles}). A controlled readout shows
-that its write carries mother-identity information. L15H25 acts at the query
+that its write carries mother-identity information (Table~\ref{tab:readout-app}). L15H25 acts at the query
 child's final token, but its written content remains unresolved. The strongest
 writer thus shares the readers' layer band rather than belonging to the shallow
 group of \S\ref{sec:results-map}.
@@ -111,29 +112,18 @@ group of \S\ref{sec:results-map}.
 \paragraph{Question-guided selection, value-carried effects.}
 At the colon, heads attend to mothers, children or the colon itself
 (Figure~\ref{fig:colon-attention}). Mother- and child-attenders follow a changed
-query to the newly relevant fact in all 20 families; reordering or swapping
+query to the newly relevant fact in all 20 families(Figure~\ref{fig:stage3-app}(a)); reordering or swapping
 mothers has little effect on family-mean attention. Values carry most of the
-leading heads' mean effects. Together, these findings suggest question-guided
+leading heads' mean effects(Figure~\ref{fig:stage3-app}(b)). Together, these findings suggest question-guided
 selection of positions whose content changes with the mother assignment.
 L27H6's output directly favors the answer, whereas several strong heads have
 output projections much smaller than their causal effects, motivating tests
-of downstream computation.
+of downstream computation. Even with contextual inputs instead of raw embeddings,
+the RI name gap remains negatively correlated with causal importance
+(Appendix~\ref{app:stage3}).
 
 \paragraph{Copying does not determine causal role.}
-Six heads promote attended names and one suppresses them under the first-token
-criterion; none retains its label at the last-token anchor. Positive movers'
-negative RI gaps on control-name events support the copy-penalization hypothesis
-of \S\ref{sec:results-why}; contextualizing the criterion does not repair it.
-Yet copying is neither necessary nor sufficient for a strong effect: L18H18 is
-not a weight copier, while the strongest weight copier attends to a distractor.
-L23H15 favors its attended name despite a negative causal effect, so promotion
-and causal sign need not agree.
-
-These profiles motivate Stage 4: test writer--reader routes from mother and child
-sites, downstream paths for colon heads, and joint effects of positive and
-negative contributors (\S\ref{sec:results-routes}). Detailed readouts, projections,
-copying diagnostics and attention--value interactions are in
-Appendix~\ref{app:stage3}.
+Attended-name labels depend on the token anchor, and weight copying alone does not determine whether a head supports the correct answer. L18H18 has a positive causal effect ($I_h=+2.70$) despite a negative weight-copying score ($-0.08$); L30H18 has the highest weight-copying score ($+0.60$) but attends to a distractor and has a negative effect ($I_h=-1.06$; Table~\ref{tab:profiles-app}). Appendix~\ref{app:stage3} reports the event counts, anchor checks, control-name gaps, and synthetic-probe fingerprints.
 
 \subsection{Measured routes and RI participation}
 \label{sec:results-routes}
@@ -179,14 +169,6 @@ five previously measured routes, including those in Figure~\ref{fig:stage4-chain
 (rosters: Appendix~\ref{app:final-ri}). L9H16 and L1H27 improve the four-cell
 binding contrast by 0.601 and 0.260 logits, positive in every family. Three
 routes remain retained, but no candidate--route interaction passes the effect
-rule, leaving the candidates' connections unresolved.
+rule, leaving the candidates' connections unresolved (Appendix~\ref{app:s44-results}).
 
-On 87 held-out families, the binding improvements reproduce at 0.585/0.261,
-positive in every family. L9H16 also raises candidate accuracy by 2.3 percentage
-points. However, their fact-swap improvements are 1.170/0.532 under means versus
-$-0.002$/0.029 under paired donors: functional participation reproduces, but
-remains baseline-sensitive. RI31 effects persist under both baselines, still
-including the strong heads. C50 retains only 12.8\% of the full gap under means
-and prefers the first chain's mother in 85.5\% of cases. Validation confirms
-these behavioural findings, not new route assignments
-(Appendix~\ref{app:s44-validation}).
+On 87 held-out families, L9H16 and L1H27 reproduce the four-cell binding gains (0.585 and 0.261 logits), each positive in every family. Their original fact-swap effects are positive with mean replacement but nearly vanish with paired donors; RI31’s collective effect persists under both baselines, though the group includes eight already-strong heads. Under mean replacement, C50 retains only 12.8\% of the full fact-swap gap. Validation thus supports the binding effects in this partial background, not a sufficient circuit or new route assignments (Appendix~\ref{app:s44-validation}).

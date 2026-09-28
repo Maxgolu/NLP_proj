@@ -1,9 +1,11 @@
 \section{Stage 4: rules, rosters and configurations}
 \label{app:stage4}
 
-S4.1--S4.3 below describe executed measurements. The final experiment in
-Appendix~\ref{app:final-ri} is specified prospectively and has not yet been run;
-it replaces the earlier S4.4--S4.5 retention/reduction and fact--query design.
+S4.1--S4.3 and both discovery and held-out evaluation of the revised final
+S4.4 experiment (S45 in the implementation) have been executed. The latter
+replaces the earlier S4.4--S4.5 retention/reduction design. The design is in
+Appendix~\ref{app:final-ri}; discovery results and frozen 87-family validation
+are reported separately below with their actual populations.
 
 \paragraph{Route semantics.}
 The source's pre-projection slice $z=AV$ is replaced by the donor value; the shared
@@ -220,6 +222,29 @@ newly unmasked backup for any head.}
 \label{tab:ri31-app}
 \end{table}
 
+\paragraph{S4.2 results: residual RI group and nonadditivity.}
+\label{app:s42-residual-results}
+RI23 is RI31 minus its eight strong members, not the 23 heads originally
+selected by rank. On 89 families, its intact-background donor-noising mean is
+$+0.116$, with mean absolute family effect $0.594$; the four layer-matched
+reference cohorts average $0.215$ in absolute effect. The paired magnitude
+excess is $0.379$ (95\% descriptive interval $[0.280,0.488]$).
+Under the weakened background these values are $+0.185$, $0.656$ and $0.197$,
+respectively. Mean replacement gives signed/absolute effects of
+$-0.633/0.954$ intact and $-0.636/0.979$ weakened. References are non-null and
+not matched for perturbation norm; the comparison supports collective influence
+of the RI remainder, not RI-specific semantic selectivity.
+
+The L18H18/L18H19 pair has joint noising effect $5.630$ on 89 families.
+Incoming groups I1--I3 have nonadditivity $+1.575,+1.585,+0.981$, whereas the
+pair's mean is $-0.173$ with mean absolute family interaction $0.564$.
+On the core panel, interactions between positive and negative partitions are
+$2.285,1.754,1.831$ for I1--I3. These overlapping groups therefore cannot be
+summed as independent circuit contributions. For example, L16H1's conditional
+effect is $0.961$ in the child-reader pair but $0.197$ in O1, where downstream
+readers are also replaced. Such context dependence motivates the retained-set
+test rather than identifying a sufficient group from large singleton effects.
+
 \paragraph{S4.3 local expansion.}
 Local mediator tests release only specified MLP branches or whole blocks from the
 frozen hybrid. Releasing a block frees both its normalized attention and MLP
@@ -241,6 +266,62 @@ no-intermediate comparator is structurally zero: a fact-site change cannot reach
 the later colon query when every intervening component is frozen. Their route
 effects are therefore reported directly; the zero subtraction supplies no
 additional evidence of mediation.
+
+\paragraph{S4.3 results: composed chains and local processing.}
+\label{app:s43-results}
+All 16 selected contrasts retain on 89 families in both donor directions;
+14 are coherent and two retain only through the heterogeneous rule. The same
+classification holds on the additional 69 discovery families. The principal
+composed effects are in Table~\ref{tab:s43-chains}. These are measurements of
+complete selectively released paths, not concatenations of independent edges.
+For these chains the matched no-intermediate comparator is zero on every pair,
+so the reported increment equals the raw effect.
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{4.8cm}rr@{}}
+\toprule
+Composed path / source mask & $I$ & $J$ \\
+\midrule
+L17H1 $\to$ \{L18H18,L18H19\} $\to$ L27H6 Q / union & 1.635 & 1.511 \\
+L17H1 $\to$ L18H18 $\to$ L27H6 Q / union & 0.876 & 0.809 \\
+L17H1 $\to$ L18H19 $\to$ L27H6 Q / union & 0.430 & 0.409 \\
+L17H1 $\to$ pair $\to$ L21H6 Q / union & 0.208 & 0.194 \\
+L17H1 $\to$ pair $\to$ L22H5 Q / union & 0.194 & 0.170 \\
+L17H1 $\to$ pair $\to$ L21H18 Q / union & 0.159 & 0.174 \\
+L15H25 $\to$ \{L16H1,L16H21\} $\to$ L18H18 Q / child-last & 0.172 & 0.179 \\
+L15H25 $\to$ child pair $\to$ L18H18 Q / sentence & 0.217 & 0.222 \\
+L15H25 $\to$ child pair $\to$ L18H19 Q / sentence & 0.151 & 0.149 \\
+\bottomrule
+\end{tabular}
+\caption{S4.3 composed routes, 89 families. $I$: noising; $J$: restoration.
+``Pair'' denotes the layer-18 pair and ``child pair'' the layer-16 pair.
+Union is the query mother's tokens, ``is'' and period.}
+\label{tab:s43-chains}
+\end{table}
+
+The leading L17H1 chain has 98.9\% family-level agreement between donor-direction
+signs. Its noising effect differs by fact order ($2.220$ versus $1.050$).
+The child-last L15H25 chain has 96.6\% directional sign agreement.
+Both chains include RI intermediates, while their fact-site sources are non-RI.
+
+The 11 extended direct prerequisites also reveal L8H15 sentence-to-L18H18/L18H19
+V effects of $+0.465/+0.460$ in noising, with coherent effects in both directions.
+Releasing MLP9 reduces these positive routes: the noising increments are
+$-0.145/-0.147$, leaving raw effects approximately $+0.321/+0.313$.
+Releasing MLP8 and MLP9 gives increments $-0.160/-0.131$ and raw effects
+approximately $+0.306/+0.329$. Thus these negative increments describe attenuation,
+not negative raw routes. Restoration increments have the same signs.
+
+For L26H23, releasing MLP26+block27+block28 changes its residual continuation by
+$-0.183/-0.166$ (noising/restoration), with 91.0\% directional sign agreement.
+Block27 alone gives increments $-0.089/-0.084$ and retains only as heterogeneous;
+it includes L27H6, a candidate component not isolated by this whole-block test.
+L20H7's full-release increments are $-0.069/-0.061$, with only 47.2\% directional
+sign agreement: heterogeneous sensitivity rather than a stable negative route.
+No tested local route for L13H18 or L16H31 passed the initial rule. Six retained
+contrasts omitted by the extension cap remain core-panel findings.
 
 \subsection{Final experiment: RI participation in measured structures}
 \label{app:final-ri}
@@ -544,3 +625,216 @@ no-intermediate fact-to-colon-Q comparators, unchanged earlier fact activations
 under query-only edits, identity-free role keys, and live control receivers in
 both diagnostic contexts. Input, background, mean-bank population, source/receiver
 masks, direction and selective releases must match within every paired contrast.
+
+\subsection{Final-experiment discovery results}
+\label{app:s44-results}
+The completed run uses the frozen design above: 20 core families, with two orders
+and four fact--query cells, followed by the original fact axis on all 89 discovery
+families. Its implementation is S45 discovery v2. All numbers here precede the
+87-family held-out evaluation reported in Appendix~\ref{app:s44-validation};
+the expansion includes the 20 core families.
+
+\paragraph{Retention and order bias.}
+All five small sets and both broad sets fail the fidelity guards. Core full-model
+gap $g=11.200$ falls to $0.582$ for C33 and $1.283$ for C50; C50 is therefore the
+predeclared partial background $C$. Its four-cell contrast is $B_C=0.752$ versus
+$5.562$ in full. C50 prefers the first chain's answer candidate in 85\% of the
+160 cell--order examples, versus 51.9\% in full, while candidate accuracy is
+50\% versus 98.1\%. The original-facts query contrast is $1.497$ versus $10.936$.
+The empty-mask core contrasts are zero, although margins vary between families;
+its 89-family gap is $0.018$. Retention failure does not locate the missing
+computation outside C50 or invalidate routes measured within a richer background.
+
+\paragraph{Individual and collective functional effects.}
+Table~\ref{tab:s44-functional} reports core changes in the four-cell contrast.
+L9H16 and L1H27 pass coherently, positive in all 20 families. No candidate changes
+two-candidate accuracy, although L1H27 increases full-vocabulary top-token
+accuracy by five percentage points in two cell--order conditions.
+The 31 RI members include eight strong heads; their collective effect does not
+isolate the weaker remainder, unlike the S4.2 RI23 comparison.
+
+\begin{table}[t]
+\centering\scriptsize
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Head/group & $\Delta B$ & 95\% family interval \\
+\midrule
+L9H16 & $+0.601$ & $[0.518,0.688]$ \\
+L1H27 & $+0.260$ & $[0.215,0.306]$ \\
+L11H4 & $+0.004$ & $[0.002,0.006]$ \\
+L17H5 & $-0.009$ & $[-0.015,-0.003]$ \\
+L23H10 & $+0.004$ & $[0.001,0.007]$ \\
+L25H18 & $+0.0003$ & $[-0.004,0.004]$ \\
+L18H19 (reference) & $+0.247$ & $[0.197,0.303]$ \\
+L8H15 (reference) & $+0.133$ & $[0.103,0.164]$ \\
+RI31 jointly & $+0.759$ & $[0.643,0.882]$ \\
+\bottomrule
+\end{tabular}
+\caption{Core functional contributions, 20 families. Intervals are descriptive;
+selection follows the predeclared effect rule rather than interval exclusion of zero.}
+\label{tab:s44-functional}
+\end{table}
+
+\paragraph{Routes and candidate association.}
+In C50, T1, T3 and T4 have effects $0.618,0.393,0.255$, retaining 37.2\%, 45.7\%
+and 53.4\% of their corresponding full-background core means. T2 and T5 fall
+below the rule ($0.042,-0.019$). All 30 candidate--route combinations were
+measured; 18 have a retained route in at least one candidate state. None passes
+the coherent or heterogeneous modulation rule. The largest mean $\Gamma$ is
+L9H16--T1: $+0.0303$ ($[0.0159,0.0464]$); its mean absolute family effect is
+$0.0341$, below $0.1$. A small directional interaction is therefore observed,
+but no new route association is selected. Only the two functional candidates
+advance; the conditional reverse-modulation and attachment tests are not triggered.
+
+A post hoc paired comparison of T1 and T3 isolates the added release of L18H19
+alongside L18H18: $+0.225$ ($[0.168,0.283]$) in C50 and $+0.805$
+($[0.573,1.055]$) in full, positive in all 20 families. This supports a conditional
+contribution of a known RI participant, not an additive share or new candidate
+assignment. Below-threshold modulation does not establish that the additional
+candidates are outside these routes or act in parallel.
+
+\paragraph{Extension and replacement sensitivity.}
+On 89 families, full-model $g=11.170$; C50 retains $1.342$ under means and $2.272$
+under opposite-fact donors. Adding L9H16 changes $g$ by $1.210$ or $0.003$;
+retaining L1H27 changes it by $0.552$ or $0.006$. Retaining RI31 changes it by
+$1.448$ or $4.615$, respectively. These original-axis changes are not the core
+four-cell $\Delta B$ values. Under means, C50 gaps are $9.937/-7.253$ by order;
+under donors they are $3.141/1.403$. The non-RI remainder under means has gaps
+$5.556/-5.767$, cancelling to $-0.106$, rather than being inert. Changing the
+baseline changes both the surrounding background and the absent candidate's
+replacement; sensitivity alone does not identify redundancy or compensation.
+
+\paragraph{Verification and validation status.}
+Independent recomputation reproduced core behaviour, candidate effects and all
+1,600 pair-level route records; 1,035 arithmetic and consistency checks passed.
+The local extension export contains only the 20 core families, so 89-family
+statistics are taken from the frozen summary; their paired intervals were not
+independently reconstructed. Figures~\ref{fig:s44-retention-app} and
+\ref{fig:s44-effects-app} show the main diagnostics.
+The actual frozen validation suite contains six mean configurations on all four
+cells and four donor configurations on the original axis, with no selected route
+or attachment jobs. Its completed results are reported below.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figH_final_retention}
+\caption{Final discovery retention and four-cell behaviour on 20 families.
+Left: fact-swap gaps with family-bootstrap intervals. Right: fixed-sign margins
+by cell and order; correct answers are $a,b,b,a$.}
+\label{fig:s44-retention-app}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figH_final_effects}
+\caption{Core functional contributions and candidate--route modulation.
+Intervals are descriptive family bootstraps; stars mark routes below retention
+in both candidate states. No candidate--route combination passes the effect rule.}
+\label{fig:s44-effects-app}
+\end{figure*}
+
+\subsection{Final-experiment held-out evaluation}
+\label{app:s44-validation}
+
+\paragraph{Frozen scope and verification.}
+The completed evaluation uses 87 families disjoint from the 89 discovery
+families, with two orders each. The discovery freeze fixes C50 as a partial
+background, RI31 and two functional-only candidates, L9H16 and L1H27.
+Six mean-replacement configurations cover all four cells; four paired-donor
+configurations cover the original fact axis. No candidate--route pair was
+selected, so no scientific Gamma or attachment validation was scheduled.
+Route probes in the implementation gate are not a route-validation panel.
+
+The completion marker, canonical freeze signature, freeze-file and held-out-plan
+hashes, discovery-plan linkage, rosters and code hashes match the frozen run.
+Independent recomputation from 522 mean-baseline family records reproduced
+state contrasts, fidelity, candidate accuracy, paired effects and bootstrap
+intervals; all 226 consistency checks passed. This export includes all eight
+cell--order margins for each mean configuration but no donor family vectors,
+worker records or mean-bank files. Donor results below therefore use the supplied
+87-family summary; no new paired donor intervals are reconstructed. The recorded
+gate passed, with zero inert/all-live and earlier-prefix-invariance errors;
+maximum clean/corrupted attention reconstruction error was $2.44\times10^{-4}$.
+
+\paragraph{Functional effects reproduce.}
+Table~\ref{tab:s44-heldout-functional} contrasts the core discovery effects
+with the held-out results. Both candidates pass the frozen coherent rule and
+improve the four-cell contrast in every held-out family after averaging orders.
+The mean changes by order are $0.592/0.577$ for L9H16 and $0.263/0.259$ for
+L1H27; mean gold-oriented margin changes are positive in every cell. The claim
+of 87/87 positive families does not mean every family--order effect is positive.
+L9H16 raises average two-candidate accuracy from 51.01\% to 53.30\% (16 net
+correct decisions over 696 cell--order examples). Retaining L1H27 raises it from
+50.57\% to 51.01\% (three net decisions). These accuracy differences are
+descriptive; the frozen selection criterion concerns margin contrasts.
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+Head/group & Disc.\ $\Delta B$ & Held-out $\Delta B$ & 95\% interval \\
+\midrule
+L9H16 & 0.601 & 0.585 & $[0.525,0.656]$ \\
+L1H27 & 0.260 & 0.261 & $[0.229,0.301]$ \\
+RI31 & 0.759 & 0.727 & $[0.656,0.818]$ \\
+\bottomrule
+\end{tabular}
+\caption{Four-cell contributions under mean replacement: 20 discovery versus
+87 held-out families. All three held-out effects are positive in 87/87 families.
+Intervals use the frozen 20,000-draw paired family bootstrap.}
+\label{tab:s44-heldout-functional}
+\end{table}
+
+\paragraph{Replacement dependence also reproduces.}
+The original-axis comparisons in Table~\ref{tab:s44-heldout-baselines} use
+$\Delta g$, not the four-cell $\Delta B$. Individual candidate effects remain
+much smaller under paired-donor replacement. L9H16's mean is near zero and
+slightly negative; L1H27's is positive but small. The missing donor family
+vectors preclude an independent assessment of donor-effect heterogeneity.
+Collective RI31 dependence persists, but includes the eight previously strong
+heads and must not be read as validation of RI23 alone.
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+Contribution & Mean $\Delta g$ & Donor $\Delta g$ & Mean 95\% interval \\
+\midrule
+L9H16 & 1.170 & $-0.002$ & $[1.028,1.345]$ \\
+L1H27 & 0.532 & 0.029 & $[0.449,0.633]$ \\
+RI31 & 1.404 & 4.427 & $[1.201,1.628]$ \\
+\bottomrule
+\end{tabular}
+\caption{Held-out fact-swap contributions, 87 families. Donor differences are
+computed from the supplied configuration means; intervals are reconstructed
+only for the mean-baseline paired differences.}
+\label{tab:s44-heldout-baselines}
+\end{table}
+
+\paragraph{The retained set remains partial.}
+Held-out full-model $g=10.918$ and $B=5.433$, versus $g=1.397$ and $B=0.729$
+for C50 under means. Candidate accuracy is 98.71\% versus 51.01\%; first-chain
+preference is 51.29\% versus 85.49\%. The original-facts query contrast is
+$10.899$ versus $1.499$. C50 retains 12.8\% of the fact-swap gap, increasing to
+23.5\% with L9H16, still below the fidelity guard. The empty-mask gap is
+$-0.013$ and its four-cell contrast $0.002$.
+
+C50 order-specific gaps are $9.820/-7.026$ under means and $2.634/1.213$
+under donors; donor fidelity is 17.6\%. Without RI31, its mean-baseline gap
+is $-0.007$, but the order-specific values are $5.454/-5.469$: cancellation,
+not absence of fact sensitivity. Its four-cell contrast falls to $0.002$.
+The corresponding donor gap is $-2.504$ versus $1.923$ with RI31 live.
+
+\paragraph{Outcome labels and interpretation.}
+The supplied analyzer labels both candidates ``functional participant,
+attachment unresolved''. This label uses mean-baseline functional reproduction;
+the label assignment does not incorporate the donor comparisons. We therefore
+report reproduced functional participation together with baseline sensitivity,
+rather than treating the automatic label as evidence of robustness across
+replacement methods. No new threshold or candidate selection is introduced
+after validation. The complete-chain measurements, the 30 discovery modulation
+contrasts and the post hoc nested-route comparison remain discovery evidence;
+the held-out result validates the frozen behavioural comparisons, not new
+connections or a sufficient retained circuit.

@@ -1,0 +1,7 @@
+Semantic induction heads (SIHs) are identified by a relation index (RI) combining attention to a relation’s head entity with a weight-based preference for its tail.
+We examine RI in OLMo-2-7B using single-hop relation prompts, activation patching across 1,024 heads, and path interventions. 
+RI correlates weakly with causal importance: it misses most strong contributors and selects many heads with negligible standalone effects.
+Interventions reveal interacting fact-position writers and answer-position readers, including RI-selected heads with collective or context-dependent contributions. 
+A retained set of 50 heads, however, fails to preserve full task behavior.
+Across training checkpoints, early attention-routing changes do not identify mature high-RI heads. 
+Thus, some RI-selected heads participate in contextual retrieval, but RI does not reliably identify the causal circuit.

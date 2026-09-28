@@ -1,0 +1,41 @@
+{
+  "review_date": "2026-09-28",
+  "remote_and_local_head": "ff627501b7265c66aeb16a4dbc122d588d4d5c1a",
+  "source_sha256": {
+    "חומר כתוב\\paper\\paper3\\00_abstract.tex": "abb9c63195e06a2f6dfd3760db4578d71a1c1360ef281caf6fb2b0eeb753fdfc",
+    "חומר כתוב\\paper\\paper3\\01_introduction.tex": "d0f292f5f51dafeb8d205782ef4f731c3cff4877d7cbfa6b28266635a1c75ce0",
+    "חומר כתוב\\paper\\paper3\\02b_related.tex": "00cda17e6a51f77bd5f5937758a6e521fc6c11a687d6b33f69ac0b0edfbf70e1",
+    "חומר כתוב\\paper\\paper3\\03_setting.tex": "e6c9571630d89de8039f6026b4768c559a7f58855d523a5cb704d2399191340a",
+    "חומר כתוב\\paper\\paper3\\04_method.tex": "cf6560ad29989d9de0e85a4885e6b3ef61d893c385fdbc6ccac1d800ab8295ba",
+    "חומר כתוב\\paper\\paper3\\05_results (1).tex": "226c55c6e789a4a1f05eb5b7ba0c896a9bbf8b882ad2d26534a7a5820e4b0fdb",
+    "חומר כתוב\\paper\\paper3\\06_conclusions.tex": "73fd4af111b7183c6fa89ccbe6becaef04ee4b3865ab5d6f105ac9d4be4ba318",
+    "חומר כתוב\\paper\\paper3\\07_limitations.tex": "dc33dd818da68f7ccfd45ecd91a780d1134786d43e7a5e993027ff034a6f85ed",
+    "חומר כתוב\\paper\\paper3\\08_ai_disclosure.tex": "cddbb18eb8aa18c87cc60305ee4e81dcd5207aee7a598dc3d8c9eb3bc7ccbe43",
+    "חומר כתוב\\paper\\paper3\\acl.sty": "38750404ede97249892fbaa0e6e958c678089f4acaa68e9e33be2737693ea00d",
+    "חומר כתוב\\paper\\paper3\\acl_natbib.bst": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e",
+    "חומר כתוב\\paper\\paper3\\main (1).tex": "12e946be9c04324e1b4b668520c5f5236cc18a8d576a2fa6bb9a52416fd1dc94",
+    "חומר כתוב\\paper\\paper3\\main.md": "1fdfb35fb6e1f9fa81185e02c215bce10f4593654a5a7a60009a60d89e32f264",
+    "חומר כתוב\\paper\\paper3\\refs.bib": "88022c7cbf79ed57ce2d3ce0720ef7862cb06d1ee8412b4c801fee9f31c1833f"
+  },
+  "independent_table_recomputations": {
+    "strong_heads": 25,
+    "strong_positive": 17,
+    "strong_RI": 8,
+    "RI_union": 61,
+    "RI_below_0_1": 48,
+    "strong_colon_ratio_0_96_to_1_07": 20
+  },
+  "heldout_audit_rerun": {
+    "checks": 226,
+    "failures": 0
+  },
+  "missing_citation_keys_in_new_bibliography": [],
+  "developmental_results_scope": "User confirms present in Overleaf; absent from supplied main.md and 05_results (1).tex; actual subsection not reviewed.",
+  "coverage_limits": [
+    "No final compiled PDF/layout audit.",
+    "No independent donor-family reconstruction: vectors absent.",
+    "No complete discovery-extension family reconstruction: vectors absent.",
+    "Latest separately updated appendix sources were not supplied; appendix review uses main.md."
+  ],
+  "manuscript_edited": false
+}

@@ -1,0 +1,906 @@
+[
+  {
+    "name": "canonical freeze signature",
+    "passed": true
+  },
+  {
+    "name": "run used discovery freeze",
+    "passed": true
+  },
+  {
+    "name": "freeze file hash",
+    "passed": true
+  },
+  {
+    "name": "heldout plan hash",
+    "passed": true
+  },
+  {
+    "name": "discovery plan link",
+    "passed": true
+  },
+  {
+    "name": "run completion",
+    "passed": true
+  },
+  {
+    "name": "families disjoint",
+    "passed": true
+  },
+  {
+    "name": "87 families",
+    "passed": true
+  },
+  {
+    "name": "fixed policy",
+    "passed": true
+  },
+  {
+    "name": "fixed structures",
+    "passed": true
+  },
+  {
+    "name": "fixed C33",
+    "passed": true
+  },
+  {
+    "name": "fixed C50",
+    "passed": true
+  },
+  {
+    "name": "fixed candidates",
+    "passed": true
+  },
+  {
+    "name": "fixed references",
+    "passed": true
+  },
+  {
+    "name": "fixed original59",
+    "passed": true
+  },
+  {
+    "name": "fixed control_rosters",
+    "passed": true
+  },
+  {
+    "name": "frozen code model_lock_olmo2.json",
+    "passed": true
+  },
+  {
+    "name": "local code model_lock_olmo2.json",
+    "passed": true
+  },
+  {
+    "name": "frozen code s42_engine.py",
+    "passed": true
+  },
+  {
+    "name": "local code s42_engine.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s42_means.py",
+    "passed": true
+  },
+  {
+    "name": "local code s42_means.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s42_plan.py",
+    "passed": true
+  },
+  {
+    "name": "local code s42_plan.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s43_engine.py",
+    "passed": true
+  },
+  {
+    "name": "local code s43_engine.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s45_analyze.py",
+    "passed": true
+  },
+  {
+    "name": "local code s45_analyze.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s45_engine.py",
+    "passed": true
+  },
+  {
+    "name": "local code s45_engine.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s45_freeze.py",
+    "passed": true
+  },
+  {
+    "name": "local code s45_freeze.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s45_means.py",
+    "passed": true
+  },
+  {
+    "name": "local code s45_means.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s45_pipeline.py",
+    "passed": true
+  },
+  {
+    "name": "local code s45_pipeline.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s45_plan.py",
+    "passed": true
+  },
+  {
+    "name": "local code s45_plan.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code s45_run.py",
+    "passed": true
+  },
+  {
+    "name": "local code s45_run.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code stage1_audit.py",
+    "passed": true
+  },
+  {
+    "name": "local code stage1_audit.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code stage1_scan.py",
+    "passed": true
+  },
+  {
+    "name": "local code stage1_scan.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code stage2_engine.py",
+    "passed": true
+  },
+  {
+    "name": "local code stage2_engine.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code stage3_common.py",
+    "passed": true
+  },
+  {
+    "name": "local code stage3_common.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code stage3_engine.py",
+    "passed": true
+  },
+  {
+    "name": "local code stage3_engine.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code stage4_engine.py",
+    "passed": true
+  },
+  {
+    "name": "local code stage4_engine.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code stage4_plan.py",
+    "passed": true
+  },
+  {
+    "name": "local code stage4_plan.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code stage4_run.py",
+    "passed": true
+  },
+  {
+    "name": "local code stage4_run.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code test_s42.py",
+    "passed": true
+  },
+  {
+    "name": "local code test_s42.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code test_s43.py",
+    "passed": true
+  },
+  {
+    "name": "local code test_s43.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code test_s45.py",
+    "passed": true
+  },
+  {
+    "name": "local code test_s45.py",
+    "passed": true
+  },
+  {
+    "name": "frozen code test_stage4.py",
+    "passed": true
+  },
+  {
+    "name": "local code test_stage4.py",
+    "passed": true
+  },
+  {
+    "name": "exported mean family rows",
+    "passed": true
+  },
+  {
+    "name": "B-R family coverage",
+    "passed": true
+  },
+  {
+    "name": "B-R/g_mean",
+    "passed": true
+  },
+  {
+    "name": "B-R/b_mean",
+    "passed": true
+  },
+  {
+    "name": "B-R/g_interval",
+    "passed": true
+  },
+  {
+    "name": "B-R/b_interval",
+    "passed": true
+  },
+  {
+    "name": "B-R/g_order0",
+    "passed": true
+  },
+  {
+    "name": "B-R/g_order1",
+    "passed": true
+  },
+  {
+    "name": "B-R/b_order0",
+    "passed": true
+  },
+  {
+    "name": "B-R/b_order1",
+    "passed": true
+  },
+  {
+    "name": "B-R/g_abs_order_difference",
+    "passed": true
+  },
+  {
+    "name": "B-R/g_abs_family_mean",
+    "passed": true
+  },
+  {
+    "name": "B-R/query_contrast_original_facts",
+    "passed": true
+  },
+  {
+    "name": "B-R/query_contrast_swapped_facts",
+    "passed": true
+  },
+  {
+    "name": "B-R/fact_contrast_alt_query",
+    "passed": true
+  },
+  {
+    "name": "B-R/exported b",
+    "passed": true
+  },
+  {
+    "name": "B-R/accuracy/x00/0",
+    "passed": true
+  },
+  {
+    "name": "B-R/accuracy/x00/1",
+    "passed": true
+  },
+  {
+    "name": "B-R/accuracy/x10/0",
+    "passed": true
+  },
+  {
+    "name": "B-R/accuracy/x10/1",
+    "passed": true
+  },
+  {
+    "name": "B-R/accuracy/x01/0",
+    "passed": true
+  },
+  {
+    "name": "B-R/accuracy/x01/1",
+    "passed": true
+  },
+  {
+    "name": "B-R/accuracy/x11/0",
+    "passed": true
+  },
+  {
+    "name": "B-R/accuracy/x11/1",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16 family coverage",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/g_mean",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/b_mean",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/g_interval",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/b_interval",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/g_order0",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/g_order1",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/b_order0",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/b_order1",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/g_abs_order_difference",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/g_abs_family_mean",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/query_contrast_original_facts",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/query_contrast_swapped_facts",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/fact_contrast_alt_query",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/exported b",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/accuracy/x00/0",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/accuracy/x00/1",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/accuracy/x10/0",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/accuracy/x10/1",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/accuracy/x01/0",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/accuracy/x01/1",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/accuracy/x11/0",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/accuracy/x11/1",
+    "passed": true
+  },
+  {
+    "name": "empty family coverage",
+    "passed": true
+  },
+  {
+    "name": "empty/g_mean",
+    "passed": true
+  },
+  {
+    "name": "empty/b_mean",
+    "passed": true
+  },
+  {
+    "name": "empty/g_interval",
+    "passed": true
+  },
+  {
+    "name": "empty/b_interval",
+    "passed": true
+  },
+  {
+    "name": "empty/g_order0",
+    "passed": true
+  },
+  {
+    "name": "empty/g_order1",
+    "passed": true
+  },
+  {
+    "name": "empty/b_order0",
+    "passed": true
+  },
+  {
+    "name": "empty/b_order1",
+    "passed": true
+  },
+  {
+    "name": "empty/g_abs_order_difference",
+    "passed": true
+  },
+  {
+    "name": "empty/g_abs_family_mean",
+    "passed": true
+  },
+  {
+    "name": "empty/query_contrast_original_facts",
+    "passed": true
+  },
+  {
+    "name": "empty/query_contrast_swapped_facts",
+    "passed": true
+  },
+  {
+    "name": "empty/fact_contrast_alt_query",
+    "passed": true
+  },
+  {
+    "name": "empty/exported b",
+    "passed": true
+  },
+  {
+    "name": "empty/accuracy/x00/0",
+    "passed": true
+  },
+  {
+    "name": "empty/accuracy/x00/1",
+    "passed": true
+  },
+  {
+    "name": "empty/accuracy/x10/0",
+    "passed": true
+  },
+  {
+    "name": "empty/accuracy/x10/1",
+    "passed": true
+  },
+  {
+    "name": "empty/accuracy/x01/0",
+    "passed": true
+  },
+  {
+    "name": "empty/accuracy/x01/1",
+    "passed": true
+  },
+  {
+    "name": "empty/accuracy/x11/0",
+    "passed": true
+  },
+  {
+    "name": "empty/accuracy/x11/1",
+    "passed": true
+  },
+  {
+    "name": "B family coverage",
+    "passed": true
+  },
+  {
+    "name": "B/g_mean",
+    "passed": true
+  },
+  {
+    "name": "B/b_mean",
+    "passed": true
+  },
+  {
+    "name": "B/g_interval",
+    "passed": true
+  },
+  {
+    "name": "B/b_interval",
+    "passed": true
+  },
+  {
+    "name": "B/g_order0",
+    "passed": true
+  },
+  {
+    "name": "B/g_order1",
+    "passed": true
+  },
+  {
+    "name": "B/b_order0",
+    "passed": true
+  },
+  {
+    "name": "B/b_order1",
+    "passed": true
+  },
+  {
+    "name": "B/g_abs_order_difference",
+    "passed": true
+  },
+  {
+    "name": "B/g_abs_family_mean",
+    "passed": true
+  },
+  {
+    "name": "B/query_contrast_original_facts",
+    "passed": true
+  },
+  {
+    "name": "B/query_contrast_swapped_facts",
+    "passed": true
+  },
+  {
+    "name": "B/fact_contrast_alt_query",
+    "passed": true
+  },
+  {
+    "name": "B/exported b",
+    "passed": true
+  },
+  {
+    "name": "B/accuracy/x00/0",
+    "passed": true
+  },
+  {
+    "name": "B/accuracy/x00/1",
+    "passed": true
+  },
+  {
+    "name": "B/accuracy/x10/0",
+    "passed": true
+  },
+  {
+    "name": "B/accuracy/x10/1",
+    "passed": true
+  },
+  {
+    "name": "B/accuracy/x01/0",
+    "passed": true
+  },
+  {
+    "name": "B/accuracy/x01/1",
+    "passed": true
+  },
+  {
+    "name": "B/accuracy/x11/0",
+    "passed": true
+  },
+  {
+    "name": "B/accuracy/x11/1",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27 family coverage",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/g_mean",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/b_mean",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/g_interval",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/b_interval",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/g_order0",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/g_order1",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/b_order0",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/b_order1",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/g_abs_order_difference",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/g_abs_family_mean",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/query_contrast_original_facts",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/query_contrast_swapped_facts",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/fact_contrast_alt_query",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/exported b",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/accuracy/x00/0",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/accuracy/x00/1",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/accuracy/x10/0",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/accuracy/x10/1",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/accuracy/x01/0",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/accuracy/x01/1",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/accuracy/x11/0",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/accuracy/x11/1",
+    "passed": true
+  },
+  {
+    "name": "full family coverage",
+    "passed": true
+  },
+  {
+    "name": "full/g_mean",
+    "passed": true
+  },
+  {
+    "name": "full/b_mean",
+    "passed": true
+  },
+  {
+    "name": "full/g_interval",
+    "passed": true
+  },
+  {
+    "name": "full/b_interval",
+    "passed": true
+  },
+  {
+    "name": "full/g_order0",
+    "passed": true
+  },
+  {
+    "name": "full/g_order1",
+    "passed": true
+  },
+  {
+    "name": "full/b_order0",
+    "passed": true
+  },
+  {
+    "name": "full/b_order1",
+    "passed": true
+  },
+  {
+    "name": "full/g_abs_order_difference",
+    "passed": true
+  },
+  {
+    "name": "full/g_abs_family_mean",
+    "passed": true
+  },
+  {
+    "name": "full/query_contrast_original_facts",
+    "passed": true
+  },
+  {
+    "name": "full/query_contrast_swapped_facts",
+    "passed": true
+  },
+  {
+    "name": "full/fact_contrast_alt_query",
+    "passed": true
+  },
+  {
+    "name": "full/exported b",
+    "passed": true
+  },
+  {
+    "name": "full/accuracy/x00/0",
+    "passed": true
+  },
+  {
+    "name": "full/accuracy/x00/1",
+    "passed": true
+  },
+  {
+    "name": "full/accuracy/x10/0",
+    "passed": true
+  },
+  {
+    "name": "full/accuracy/x10/1",
+    "passed": true
+  },
+  {
+    "name": "full/accuracy/x01/0",
+    "passed": true
+  },
+  {
+    "name": "full/accuracy/x01/1",
+    "passed": true
+  },
+  {
+    "name": "full/accuracy/x11/0",
+    "passed": true
+  },
+  {
+    "name": "full/accuracy/x11/1",
+    "passed": true
+  },
+  {
+    "name": "B-R/donor/F algebra",
+    "passed": true
+  },
+  {
+    "name": "B-R/mean/F algebra",
+    "passed": true
+  },
+  {
+    "name": "B-R/L",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/donor/F algebra",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/mean/F algebra",
+    "passed": true
+  },
+  {
+    "name": "B+L9H16/L",
+    "passed": true
+  },
+  {
+    "name": "empty/mean/F algebra",
+    "passed": true
+  },
+  {
+    "name": "empty/L",
+    "passed": true
+  },
+  {
+    "name": "B/donor/F algebra",
+    "passed": true
+  },
+  {
+    "name": "B/mean/F algebra",
+    "passed": true
+  },
+  {
+    "name": "B/L",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/donor/F algebra",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/mean/F algebra",
+    "passed": true
+  },
+  {
+    "name": "B-L1H27/L",
+    "passed": true
+  },
+  {
+    "name": "full/mean/F algebra",
+    "passed": true
+  },
+  {
+    "name": "full/L",
+    "passed": true
+  },
+  {
+    "name": "L9H16/delta b",
+    "passed": true
+  },
+  {
+    "name": "L9H16/delta b interval",
+    "passed": true
+  },
+  {
+    "name": "L9H16/all positive",
+    "passed": true
+  },
+  {
+    "name": "L1H27/delta b",
+    "passed": true
+  },
+  {
+    "name": "L1H27/delta b interval",
+    "passed": true
+  },
+  {
+    "name": "L1H27/all positive",
+    "passed": true
+  },
+  {
+    "name": "gate passed",
+    "passed": true
+  }
+]

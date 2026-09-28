@@ -1,0 +1,22 @@
+\section{Conclusions}
+\label{sec:conclusions}
+
+On synthetic single-hop mother-of retrieval, RI poorly identifies causally
+important heads: it misses major contributors and selects many with weak
+standalone effects (Section~\ref{sec:results-why}). Path interventions reveal
+interacting fact-position writers and answer-position readers. RI-selected
+heads transmit fact-dependent information through value channels and influence
+later readers' queries; copying alone does not explain these roles
+(Sections~\ref{sec:results-char}--\ref{sec:results-routes};
+Appendix~\ref{app:stage3}). This establishes task-specific participation,
+not that individual heads encode the relation.
+
+Weaker RI heads contribute collectively, but their signed group effect
+depends on the replacement baseline (Section~\ref{sec:results-routes}).
+L9H16 and L1H27 reproduce binding gains on held-out families, though their
+fact-swap effects nearly vanish with paired donors
+(Appendix~\ref{app:s44-validation}). The retained 50-head set does not
+preserve the full task, and these weaker heads' routes remain unresolved
+(Appendix~\ref{app:s44-results}). Early routing changes during training do
+not identify mature high-RI heads (Appendix~\ref{app:dev}). Thus, neither RI
+nor training-time association identifies a sufficient causal circuit.

@@ -13,11 +13,16 @@ in git. Raw chunk folders of the largest runs are git-ignored.
 | §5.1, App. A, App. E (Stage 1: RI) | `stage1_analysis/`, `stage1_v4_review/`, `ri_test_v2/` (candidates.json = the original 59-head selection), `ri_test_v2_analysis/`, `stage2_ri_extension_coverage/` | RI scan, calibration, matched-target test, 59-head test-only selection, post-selection audit |
 | §5.2, App. F (Stage 2: causal map) | `stage2_v1/`, `stage2_v1_analysis/`, `stage2_v2_extension/`, `stage2_v2_analysis/` (head_table_v2.csv), `stage2_v2_coverage/` | Gradient screen, exact Scope-P/Scope-F patching, 25 strong heads, audit criteria |
 | §5.3, App. G (Stage 3: head profiles) | `stage3_plan/`, `stage3_inputs_v1/`, `stage3_v1/` (analysis/), `stage3_review_20260922/`, `stage3_readout_inputs_v1/`, `stage3_readout_v1/`, `stage3_readout_review_20260922/` | Position profiles, attention/value separation, projections, contextual RI, controlled readout |
-| §5.4, App. H (Stage 4: routes, groups, mechanisms) | `stage4_design_v1/`, `stage4_design_v2/`, `stage4_inputs_v1/`, `stage4_all_v2/` (S4.1 routes), `stage4_review_20260924/`, `stage4_s42_inputs_v1/`, `stage4_s42_all_v1/`, `stage4_s42_analysis_20260924/` (next_stage_plan.json), `stage4_s43_inputs_v1/`, `stage4_s43_extension_inputs_v1/`, `stage4_s43_all_v1/`, `stage4_s43_review_20260926/`, `stage4_s45_inputs_v1/`, `stage4_s45_discovery_v2/`, `stage4_s45_review_20260927/` | S4.1 route mapping; S4.2 groups/blocking/RI31/backup; S4.3 local expansion and chains; S4.5 RI participation in retained backgrounds (discovery; held-out sealed) |
+| §5.4, App. H (Stage 4: routes, groups, mechanisms) | `stage4_design_v1/`, `stage4_design_v2/`, `stage4_inputs_v1/`, `stage4_all_v2/` (S4.1 routes), `stage4_review_20260924/`, `stage4_s42_inputs_v1/`, `stage4_s42_all_v1/`, `stage4_s42_analysis_20260924/` (next_stage_plan.json), `stage4_s43_inputs_v1/`, `stage4_s43_extension_inputs_v1/`, `stage4_s43_all_v1/`, `stage4_s43_review_20260926/`, `stage4_s45_inputs_v1/`, `stage4_s45_discovery_v2/`, `stage4_s45_review_20260927/`, `stage4_s45_heldout_received_20260928/`, `heldout_plan.json` | S4.1 route mapping; S4.2 groups/blocking/RI31/backup; S4.3 local expansion and chains; revised S4.4 / code S45 RI participation in retained backgrounds (discovery and completed frozen 87-family validation) |
 | §5.5, App. I (developmental) | `../Daniella's test ICL vs SIH/results/` | Training-time RI/ICL measurements (Daniella) |
 | Housekeeping | `stage4_implementation_review/`, `stage4_s42_readiness_20260924/`, `stage4_s42_build_verification.json`, `stage4_s41_v2/`, `stage4_s42_v1/` | Implementation reviews, bundle verification, superseded/early run stubs |
 
 Analysis documents to read first per stage: `stage1_v4_review/`, `stage2_v2_analysis/summary.json`,
 `stage3_review_20260922/`, `stage4_review_20260924/`, `stage4_s42_analysis_20260924/`,
 `stage4_s43_review_20260926/S43_review.md`, `stage4_s45_discovery_v2/S45_discovery_analysis.md` and
-`stage4_s45_review_20260927/REVIEW_HE.md`. The narrative reports live in `חומר כתוב/`.
+`stage4_s45_review_20260927/REVIEW_HE.md`, and `stage4_s45_heldout_received_20260928/REVIEW_HE.md`. The narrative reports live in `חומר כתוב/`.
+
+Final manuscript review (no manuscript edits): `paper_final_review_20260928/REVIEW_HE.md`.
+The held-out export includes 522 mean-baseline family records; donor effects are summary-only.
+The final discovery extension likewise lacks all 89-family vectors locally. Preserve these
+reconstruction limits when interpreting audits; all GPU experiments are now complete.
